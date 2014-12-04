@@ -1,0 +1,562 @@
+# Copyright (C) 2014 WebMan - Oliver Juhas
+# This file is distributed under the same license as the WordPress package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Auberge v1.0\n"
+"Report-Msgid-Bugs-To: http://support.webmandesign.eu\n"
+"POT-Creation-Date: 2014-11-07 12:00:00+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Last-Translator: Oliver Juhas <webmandesigneu@gmail.com>\n"
+
+
+
+#. Text in function
+#: inc/setup.php:1
+msgid " - do not use Google Font"
+msgstr ""
+
+#. Text in function
+#: inc/core.php:1
+msgid "\"%s\" table of contents"
+msgstr ""
+
+#. Text in function
+#: inc/setup-theme-options.php:1
+msgid "%s is free WordPress theme developed by WebMan. You can buy other professional WordPress themes at <strong><a href=\"%s\" target=\"_blani\">WebManDesign.eu</a></strong>. Thank you for using this awesome theme!"
+msgstr ""
+
+#. Text in function
+#: inc/core.php:1
+msgid "%s logo"
+msgstr ""
+
+#. Text in function
+#: inc/setup.php:1
+msgid "%s site navigation"
+msgstr ""
+
+#. Text in function
+#: comments.php:88
+msgid "&larr; Older comments"
+msgstr ""
+
+#. Text in function
+#: inc/setup.php:1
+msgid "&uarr; Menu sections"
+msgstr ""
+
+#. Text in function
+#: inc/core.php:1
+msgid "(page %s)"
+msgstr ""
+
+#. Text in function
+#: inc/core.php:1
+msgid "<span class=\"comments-title\">Comments: </span>%s"
+msgstr ""
+
+#. Text in function
+#: inc/setup.php:1
+msgid "<span class=\"meta-nav\">Next</span><span class=\"post-title\">%title</span>"
+msgstr ""
+
+#. Text in function
+#: inc/setup.php:1
+msgid "<span class=\"meta-nav\">Previous</span><span class=\"post-title\">%title</span>"
+msgstr ""
+
+#. Text in function
+#: inc/setup.php:1
+msgid "<span class=\"meta-nav\">Published In</span><span class=\"post-title\">%title</span>"
+msgstr ""
+
+#. Text in function
+#: inc/setup-theme-options.php:1
+msgid "Accent color"
+msgstr ""
+
+#. Text in function
+#: inc/setup-theme-options.php:1
+msgid "Accent text color"
+msgstr ""
+
+#. Text in function
+#: comments.php:38
+msgid "Add yours &rarr;"
+msgstr ""
+
+#. Text in function
+#: inc/setup-theme-options.php:1
+msgid "All other font sizes are calculated automatically from this basic font size"
+msgstr ""
+
+#. Text in function
+#: inc/setup.php:1
+msgid "All posts"
+msgstr ""
+
+#. Text in echo
+#: archive.php:20
+msgid "Archives"
+msgstr ""
+
+#. Text in function
+#: archive.php:20
+msgid "Author: %s"
+msgstr ""
+
+#. Text in function
+#: inc/setup.php:1
+msgid "Back to top &uarr;"
+msgstr ""
+
+#. Text in function
+#: inc/setup-theme-options.php:1
+msgid "Basic font size"
+msgstr ""
+
+#. Text in function
+#: inc/admin.php:1
+msgid "Blockquote"
+msgstr ""
+
+#. Text in function
+#: loop-blog-condensed.php:33
+msgid "Blog"
+msgstr ""
+
+#. Text in function
+#: inc/admin.php:1
+msgid "Button link"
+msgstr ""
+
+#. Text in function
+#: inc/admin.php:1
+msgid "Cite"
+msgstr ""
+
+#. Text in function
+#: inc/setup-theme-options.php:1
+msgid "Color of text over accent color background"
+msgstr ""
+
+#. Text in function
+#: inc/setup-theme-options.php:1
+msgid "Colors"
+msgstr ""
+
+#. Text in echo
+#: comments.php:85
+msgid "Comment navigation"
+msgstr ""
+
+#. Text in echo
+#: comments.php:61
+msgid "Comments are closed. You can not add new comments."
+msgstr ""
+
+#. Text in function
+#: inc/core.php:1
+msgid "Comments: %s"
+msgstr ""
+
+#. Text in function
+#: inc/setup-theme-options.php:1
+msgid "Condensed blog posts"
+msgstr ""
+
+#. Text in function
+#: inc/setup.php:1
+msgid "Continue reading%s&hellip;"
+msgstr ""
+
+#. Text in function
+#: inc/setup-theme-options.php:1
+msgid "Disable section"
+msgstr ""
+
+#. Text in function
+#: inc/core.php:1
+#: inc/setup.php:1
+msgid "Edit"
+msgstr ""
+
+#. Text in function
+#: inc/core.php:1
+#: inc/setup.php:1
+msgid "Edit the \"%s\""
+msgstr ""
+
+#. Text in function
+#: inc/setup-theme-options.php:1
+msgid "First section above page content"
+msgstr ""
+
+#. Text in function
+#: inc/setup-theme-options.php:1
+msgid "First section below page content"
+msgstr ""
+
+#. Text in function
+#: inc/setup-theme-options.php:1
+msgid "Font matches recommendations from <a%s>Google Web Fonts Typographic Project</a>."
+msgstr ""
+
+#. Text in function
+#: inc/setup-theme-options.php:1
+msgid "Font subset"
+msgstr ""
+
+#. Text in function
+#: inc/setup-theme-options.php:1
+msgid "Fonts"
+msgstr ""
+
+#. Text in function
+#: inc/setup.php:1
+msgid "Fonts selection"
+msgstr ""
+
+#. Text in function
+#: inc/setup-theme-options.php:1
+msgid "Food menu"
+msgstr ""
+
+#. Text in function
+#: inc/setup.php:1
+msgid "Footer Widgets"
+msgstr ""
+
+#. Text in function
+#: inc/setup-theme-options.php:1
+msgid "Footer background color"
+msgstr ""
+
+#. Text in function
+#: inc/setup-theme-options.php:1
+msgid "Footer color"
+msgstr ""
+
+#. Text in function
+#: inc/setup-theme-options.php:1
+msgid "Footer text color"
+msgstr ""
+
+#. Text in function
+#: inc/setup.php:1
+msgid "Front Page Widgets"
+msgstr ""
+
+#. Text in function
+#: inc/setup-theme-options.php:1
+msgid "Front page layout"
+msgstr ""
+
+#. Text in function
+#: inc/setup-theme-options.php:1
+msgid "Front page widgets color"
+msgstr ""
+
+#. Text in function
+#: inc/setup-theme-options.php:1
+msgid "Front widgets background color"
+msgstr ""
+
+#. Text in function
+#: inc/setup-theme-options.php:1
+msgid "Front widgets text color"
+msgstr ""
+
+#. Text in function
+#: inc/setup-theme-options.php:1
+msgid "General text font"
+msgstr ""
+
+#. Text in function
+#: inc/setup-theme-options.php:1
+msgid "Header background color"
+msgstr ""
+
+#. Text in function
+#: inc/setup-theme-options.php:1
+msgid "Header color"
+msgstr ""
+
+#. Text in function
+#: inc/setup-theme-options.php:1
+msgid "Header text color"
+msgstr ""
+
+#. Text in function
+#: inc/setup-theme-options.php:1
+msgid "Headings font"
+msgstr ""
+
+#. Text in function
+#: inc/admin.php:1
+msgid "Highlighted (marked) text"
+msgstr ""
+
+#. Text in function
+#: inc/admin.php:1
+msgid "Image"
+msgstr ""
+
+#. Text in echo
+#: image.php:84
+msgid "Image file name:"
+msgstr ""
+
+#. Text in echo
+#: image.php:76
+msgid "Image published on:"
+msgstr ""
+
+#. Text in echo
+#: image.php:80
+msgid "Image size:"
+msgstr ""
+
+#. Text in echo
+#: 404.php:24
+msgid "It looks like nothing was found at this location. Maybe try a search?"
+msgstr ""
+
+#. Text in echo
+#: content-none.php:32
+msgid "It seems we can not find what you are looking for. Perhaps searching can help."
+msgstr ""
+
+#. Text in function
+#: inc/setup-theme-options.php:1
+msgid "Layout"
+msgstr ""
+
+#. Text in function
+#: inc/setup.php:1
+msgid "Load more&hellip;"
+msgstr ""
+
+#. Text in function
+#: inc/setup-theme-options.php:1
+msgid "Logo (site title) font"
+msgstr ""
+
+#. Text in function
+#: inc/setup.php:1
+msgid "Masonry layout is used to display footer widgets."
+msgstr ""
+
+#. Text in function
+#: loop-food-menu.php:35
+#: inc/setup.php:1
+msgid "Menu"
+msgstr ""
+
+#. Text in function
+#: inc/setup.php:1
+msgid "Menu page"
+msgstr ""
+
+#. Text in function
+#: comments.php:92
+msgid "Newer comments &rarr;"
+msgstr ""
+
+#. Text in function
+#: loop-blog-condensed.php:33
+msgid "News"
+msgstr ""
+
+#. Text in function
+#: inc/setup-theme-options.php:1
+msgid "Note that for certain header elements the color will be faded out a bit"
+msgstr ""
+
+#. Text in echo
+#: content-none.php:16
+msgid "Nothing Found"
+msgstr ""
+
+#. Text in echo
+#: 404.php:20
+msgid "Oops! That page can not be found."
+msgstr ""
+
+#. Text in function
+#: inc/core.php:1
+msgid "Page %s"
+msgstr ""
+
+#. Text in function
+#: inc/setup.php:1
+msgid "Page sidebar."
+msgstr ""
+
+#. Text in function
+#: inc/core.php:1
+msgid "Part %"
+msgstr ""
+
+#. Text in function
+#: inc/core.php:1
+msgid "Permalink to %s"
+msgstr ""
+
+#. Text in function
+#: inc/setup.php:1
+msgid "Post navigation"
+msgstr ""
+
+#. Text in echo
+#: inc/controls/class-WM_Customizer_Multiselect.php:38
+msgid "Press CTRL key for multiple selection."
+msgstr ""
+
+#. Text in function
+#: inc/setup.php:1
+msgid "Primary Menu"
+msgstr ""
+
+#. Text in function
+#: inc/admin.php:1
+msgid "Pullquote - align left"
+msgstr ""
+
+#. Text in function
+#: inc/admin.php:1
+msgid "Pullquote - align right"
+msgstr ""
+
+#. Text in function
+#: inc/admin.php:1
+msgid "Quotes"
+msgstr ""
+
+#. Text in function
+#: content-none.php:22
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#. Text in function
+#: inc/setup.php:1
+msgid "Recommendation #%d"
+msgstr ""
+
+#. Text in echo
+#: searchform.php:13
+#: inc/setup.php:1
+msgid "Search"
+msgstr ""
+
+#. Text in function
+#: search.php:20
+msgid "Search Results for: %s"
+msgstr ""
+
+#. Text in echo
+#: searchform.php:14
+msgid "Search field: type and press enter"
+msgstr ""
+
+#. Text in function
+#: inc/setup-theme-options.php:1
+msgid "Second section above page content"
+msgstr ""
+
+#. Text in function
+#: inc/setup-theme-options.php:1
+msgid "Second section below page content"
+msgstr ""
+
+#. Text in function
+#: inc/setup-theme-options.php:1
+msgid "Select if and where to display this page section"
+msgstr ""
+
+#. Text in function
+#: inc/setup-theme-options.php:1
+msgid "Set a Google Font to be used for website logo, headings and general text."
+msgstr ""
+
+#. Text in function
+#: inc/setup.php:1
+msgid "Sidebar"
+msgstr ""
+
+#. Text in function
+#: inc/core.php:1
+msgid "Skip to content"
+msgstr ""
+
+#. Text in function
+#: inc/core.php:1
+msgid "Skip to navigation"
+msgstr ""
+
+#. Text in function
+#: inc/setup.php:1
+msgid "Social Links Menu"
+msgstr ""
+
+#. Text in echo
+#: content-none.php:26
+msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr ""
+
+#. Text in function
+#: inc/admin.php:1
+msgid "Text styles"
+msgstr ""
+
+#. Text in function
+#: inc/setup-theme-options.php:1
+msgid "Theme Credits"
+msgstr ""
+
+#. Text in function
+#: inc/setup.php:1
+msgid "Theme by %s."
+msgstr ""
+
+#. Text in function
+#: inc/setup.php:1
+msgid "Theme default"
+msgstr ""
+
+#. Text in function
+#: inc/setup-theme-options.php:1
+msgid "This color affects links, buttons and other elements of the website"
+msgstr ""
+
+#. Text in function
+#: inc/setup.php:1
+msgid "This content is password protected. To view it please <a%s>enter the password</a>."
+msgstr ""
+
+#. Text in function
+#: inc/setup.php:1
+msgid "This is sticky post"
+msgstr ""
+
+#. Text in function
+#: inc/setup.php:1
+msgid "This widgets area is displayed below the Banner area on the front page (homepage)."
+msgstr ""
+
+#. Text in echo
+#: sidebar.php:20
+msgid "Toggle sidebar"
+msgstr ""
+
+#. Text in function
+#: inc/admin.php:1
+msgid "Uppercase heading or paragraph"
+msgstr ""
+
+#. Text in function
+#: inc/setup.php:1
+msgid "WordPress"
+msgstr ""

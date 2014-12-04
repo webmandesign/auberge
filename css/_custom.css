@@ -1,0 +1,116 @@
+/**
+ * Theme custom styles
+ *
+ * @package    Auberge
+ * @copyright  2014 WebMan - Oliver Juhas
+ * @version    1.0
+ */
+
+
+
+	/* Background color */
+		body { background-color: [[background_color]]; }
+
+	/* Header color */
+		.site-header {
+			background-color: [[color-header]];
+			color: [[color-header-text]];
+		}
+
+	/* Footer color */
+		.site-footer {
+			background-color: [[color-footer]];
+			color: [[color-footer-text]];
+		}
+
+	/* Front page widgets color */
+		.front-page-widgets-wrapper {
+			background-color: [[color-front-widgets]];
+			color: [[color-front-widgets-text]];
+		}
+
+		.site-banner { background-color: [[color-front-widgets]]; }
+			.site-banner-media:before {
+				background: -webkit-linear-gradient(       top, [[color-front-widgets|alpha=0]] 0%, [[color-front-widgets]] 100% );
+				background:         linear-gradient( to bottom, [[color-front-widgets|alpha=0]] 0%, [[color-front-widgets]] 100% );
+			}
+
+	/* Accent color and accent text color */
+
+		a,
+		.accent-color { color: [[color-accent]]; }
+		.entry-content div.sharedaddy .sd-content ul li a.sd-button:not(.no-text) { color: [[color-accent-text]] !important; }
+
+		.nav-search-form .form-search { background-color: [[color-accent]]; }
+		.infinite-loader .spinner > div > div { background: [[color-accent]] !important; }
+
+		mark,
+		ins,
+		.highlight,
+		pre:before,
+		.pagination a,
+		.pagination span,
+		.label-sticky,
+		.button,
+		button,
+		input[type="button"],
+		input[type="reset"],
+		input[type="submit"],
+		.menu-group-nav a,
+		.entry-content div.sharedaddy .sd-content ul li a.sd-button:not(.no-text),
+		.post-navigation .nav-previous,
+		.post-navigation .nav-next,
+		.bypostauthor > .comment-body .comment-author:before,
+		.comment-navigation a,
+		.widget_calendar tbody a,
+		.widget .tagcloud a:hover,
+		body #infinite-handle span,
+		.menu-toggle:before {
+			background-color: [[color-accent]];
+			color: [[color-accent-text]];
+		}
+
+		.label-sticky:before,
+		.label-sticky:after {
+			border-top-color: [[color-accent]];
+			border-right-color: [[color-accent]];
+		}
+
+		input:focus,
+		select:focus,
+		textarea:focus,
+		.widget .tagcloud a:hover { border-color: [[color-accent]]; }
+
+		mark,
+		ins,
+		.highlight {
+			-webkit-box-shadow: .38em 0 0 [[color-accent]], -.38em 0 0 [[color-accent]];
+			        box-shadow: .38em 0 0 [[color-accent]], -.38em 0 0 [[color-accent]];
+		}
+
+		.post-navigation .has-post-thumbnail:before {
+			background: [[color-accent]];
+			background: -webkit-linear-gradient(   right, [[color-accent|alpha=0]] 19%, [[color-accent]] 81% );
+			background:         linear-gradient( to left, [[color-accent|alpha=0]] 19%, [[color-accent]] 81% );
+		}
+			.post-navigation .nav-next.has-post-thumbnail:before {
+				background: [[color-accent]];
+				background: -webkit-linear-gradient(     left, [[color-accent|alpha=0]] 19%, [[color-accent]] 81% );
+				background:         linear-gradient( to right, [[color-accent|alpha=0]] 19%, [[color-accent]] 81% );
+			}
+
+	/* Fonts */
+
+		html {
+			font-family: [[font-family-body]]'Helvetica Neue', Helvetica, Arial, sans-serif;
+			font-size: [[font-size-body]]px;
+		}
+
+		h1, h2, h3, h4, h5, h6,
+		.h1, .h2, .h3, .h4, .h5, .h6 { font-family: [[font-family-headings]]'Helvetica Neue', Helvetica, Arial, sans-serif; }
+
+		.site-title { font-family: [[font-family-logo]]'Helvetica Neue', Helvetica, Arial, sans-serif; }
+
+
+
+/* End of file */

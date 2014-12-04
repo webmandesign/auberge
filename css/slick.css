@@ -1,0 +1,199 @@
+/**
+ * Slick slider styles
+ *
+ * @package    Auberge
+ * @copyright  2014 WebMan - Oliver Juhas
+ * @version    1.0
+ */
+
+
+
+	/**
+	 * Slider container
+	 */
+
+		.slick-slider {
+			display: block;
+			position: relative;
+			-webkit-touch-callout: none;
+			  -webkit-user-select: none;
+			     -moz-user-select: none;
+			      -ms-user-select: none;
+			          user-select: none;
+			     -ms-touch-action: pan-y;
+			         touch-action: pan-y;
+			-webkit-tap-highlight-color: transparent;
+		}
+
+			.slick-list,
+			.slick-track,
+			.slick-slide,
+			.slick-slide img {
+				-webkit-transform: translate3d(0, 0, 0);
+				   -moz-transform: translate3d(0, 0, 0);
+				    -ms-transform: translate3d(0, 0, 0);
+				        transform: translate3d(0, 0, 0);
+			}
+
+
+
+		/**
+		 * Slides wrapper container
+		 */
+
+			.slick-list {
+				display: block;
+				position: relative;
+				padding: 0;
+				margin: 0;
+				overflow: hidden;
+				-webkit-transition: all .4s ease-in-out;
+				   -moz-transition: all .4s ease-in-out;
+				    -ms-transition: all .4s ease-in-out;
+				        transition: all .4s ease-in-out;
+			}
+			.slick-list:focus { outline: none; }
+			.slick-list.dragging {
+				cursor: pointer;
+				cursor: hand;
+				cursor: move;
+				cursor: -webkit-grab;
+				cursor: -o-grab;
+				cursor: -ms-grab;
+				cursor: grab;
+			}
+
+
+
+			/**
+			 * Slides container
+			 */
+
+				.slick-track {
+					position: relative;
+					left: 0;
+					top: 0;
+					display: block;
+					zoom: 1;
+				}
+				.slick-track:before,
+				.slick-track:after {
+					content: '';
+					display: table;
+				}
+				.slick-track:after { clear: both; }
+				.slick-loading .slick-track { visibility: hidden; }
+
+
+
+				/**
+				 * Slides
+				 */
+
+					.slick-slide {
+						float: left;
+						display: none;
+						height: 100%;
+						min-height: 1px;
+					}
+					.slick-slide img {
+						display: block;
+						pointer-events: none;
+					}
+					.slick-slide.slick-loading img { display: none; }
+					.slick-slide.dragging img { pointer-events: none; }
+					.slick-initialized .slick-slide { display: block; }
+					.slick-loading .slick-slide { visibility: hidden; }
+					.slick-vertical .slick-slide {
+						display: block;
+						height: auto;
+						border-top: 1px solid transparent;
+					}
+
+
+
+		/**
+		 * Navigation
+		 */
+
+			.slick-slider button .genericon { font-size: 1.62em; }
+
+				.slick-prev.slick-disabled,
+				.slick-next.slick-disabled { opacity: .25; }
+
+
+
+	/**
+	 * Theme modifications
+	 */
+
+		/**
+		 * Banner slider
+		 */
+
+			.site-banner .slick-slider .slider-nav,
+			.site-banner .slick-slider .slick-dots {
+				position: relative;
+				height: 0;
+				padding: 0;
+			}
+			.site-banner .slider-nav { z-index: 1; }
+
+			.site-banner .slick-prev,
+			.site-banner .slick-next {
+				display: inline-block;
+				position: absolute;
+				width: 4.25em;
+				height: 4.25em;
+				right: 5.25em;
+				bottom: 5.25em;
+				padding: 0;
+				margin: 0;
+				text-align: center;
+				font-size: 1em;
+				background-color: transparent;
+				color: #fff;
+				border: 1px solid #fff;
+				border-radius: 50%;
+				opacity: .5;
+				-webkit-transition: opacity .4s ease-in-out;
+				   -moz-transition: opacity .4s ease-in-out;
+				    -ms-transition: opacity .4s ease-in-out;
+				        transition: opacity .4s ease-in-out;
+			}
+			.site-banner .slick-next { right: 0; }
+
+				.site-banner .slick-prev:hover,
+				.site-banner .slick-next:hover,
+				.site-banner .slick-dots .slick-active button { opacity: 1; }
+
+				.site-banner .slick-prev .genericon,
+				.site-banner .slick-next .genericon { vertical-align: middle; }
+
+			.site-banner .slick-slider .slick-dots { padding-right: 10.5em; }
+			.site-banner .slick-dots {
+				bottom: 7.75em;
+				margin: 0;
+				list-style: none;
+				text-align: right;
+				z-index: 0;
+			}
+				.site-banner .slick-dots li {
+					display: inline-block;
+					margin-left: .62em;
+				}
+				.site-banner .slick-dots button {
+					text-indent: -999em;
+					width: .62em;
+					height: .62em;
+					padding: 0;
+					background: transparent;
+					border: 1px solid #fff;
+					border-radius: 50%;
+					overflow: hidden;
+					opacity: .5;
+				}
+
+
+
+/* End of file */

@@ -1,0 +1,103 @@
+<?php
+/**
+ * Standard post content
+ *
+ * Post lists display:
+ * - featured image
+ * - title
+ * - excerpt
+ *
+ * Single post page display:
+ * - featured image
+ * - title
+ * - excerpt when excerpt field set and not paged
+ * - content
+ *
+ * @package    Auberge
+ * @copyright  2014 WebMan - Oliver Juhas
+ * @version    1.0
+ */
+
+
+
+$pagination_suffix = wm_paginated_suffix( 'small', 'post' );
+
+?>
+
+<article id="post-<?php the_ID(); ?>" <?php post_class(); wmhook_entry_container_atts(); ?>>
+
+	<?php
+
+	/**
+	 * Post media
+	 */
+	if (
+			has_post_thumbnail()
+			&& ! $pagination_suffix
+			&& apply_filters( 'wmhook-entry-featured-image-display', true )
+		) :
+
+		$image_size = ( is_single() ) ? ( WM_IMAGE_SIZE_SINGULAR ) : ( WM_IMAGE_SIZE_ITEMS );
+		$image_link = ( is_single() ) ? ( wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' ) ) : ( array( get_permalink() ) );
+		$image_link = array_filter( (array) apply_filters( 'wmhook-entry-image-link', $image_link ) );
+
+		?>
+
+		<div class="entry-media">
+
+			<figure class="post-thumbnail"<?php echo wm_schema_org( 'image' ); ?>>
+
+				<?php
+
+				if ( ! empty( $image_link ) ) {
+					echo '<a href="' . esc_url( $image_link[0] ) . '" title="' . the_title_attribute( 'echo=0' ) . '">';
+				}
+
+				the_post_thumbnail( $image_size );
+
+				if ( ! empty( $image_link ) ) {
+					echo '</a>';
+				}
+
+				?>
+
+			</figure>
+
+		</div>
+
+		<?php
+
+	endif;
+
+
+
+	/**
+	 * Post content
+	 */
+
+		echo '<div class="entry-inner">';
+
+			wmhook_entry_top();
+
+			echo '<div class="entry-content"' . wm_schema_org( 'entry_body' ) . '>';
+
+				if (
+						! is_single()
+						|| ( is_single() && has_excerpt() && ! $pagination_suffix )
+					) {
+					the_excerpt();
+				}
+
+				if ( is_single() ) {
+					the_content( apply_filters( 'wmhook_wm_excerpt_continue_reading', '' ) );
+				}
+
+			echo '</div>';
+
+			wmhook_entry_bottom();
+
+		echo '</div>';
+
+	?>
+
+</article>

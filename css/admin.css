@@ -1,0 +1,60 @@
+/**
+ * WP admin modification styles
+ *
+ * @package    Auberge
+ * @copyright  2014 WebMan - Oliver Juhas
+ * @version    1.0
+ */
+
+
+
+	/**
+	 * Posts table
+	 */
+
+		.fixed [class*="column-wm-thumb"] {
+			width: 80px;
+			text-align: center;
+		}
+			.fixed .wm-image-container {
+				display: block;
+				position: relative;
+				width: 64px;
+				height: 32px;
+				padding: 2px;
+				margin: -3px auto 0;
+				background: #fff;
+				border: 1px solid #d9d9d9;
+				border-radius: 3px;
+			}
+				.fixed .wm-image-container.size-jetpack-portfolio-admin-thumb {
+					width: 50px;
+					height: 50px;
+				}
+				.fixed .wm-image-container.has-thumb { height: auto; }
+				.fixed .wm-image-container.no-thumb,
+				.type-jetpack-portfolio .column-thumbnail img {
+					background: #f9f9f9;
+					border-color: #e9e9e9;
+					-webkit-box-shadow: inset 0 1px 5px 0 rgba(0,0,0, .1);
+					        box-shadow: inset 0 1px 5px 0 rgba(0,0,0, .1);
+				}
+					.fixed .wm-image-container a {
+						display: block;
+						outline: 0;
+					}
+					.fixed .wm-image-container img {
+						width: 100%;
+						height: auto;
+						max-width: 100%;
+						max-height: 100%;
+						vertical-align: top;
+					}
+					.fixed .wm-image-container i {
+						font-size: 30px;
+						vertical-align: middle;
+					}
+
+
+
+/* End of file */
