@@ -504,7 +504,7 @@
 					}
 				//Food menu icon for search results
 					if (
-							is_search()
+							( is_search() || is_archive() )
 							&& defined( 'JETPACK__VERSION' )
 							&& class_exists( 'Nova_Restaurant' )
 						) {

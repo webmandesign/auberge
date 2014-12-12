@@ -39,7 +39,7 @@
 	/**
 	 * Register the required plugins for the theme
 	 *
-	 * @link  https://github.com/thomasgriffin/TGM-Plugin-Activation/blob/develop/tgm-plugin-activation/example.php
+	 * @link  https://github.com/thomasgriffin/TGM-Plugin-Activation/blob/master/example.php
 	 */
 	if ( ! function_exists( 'wm_plugins_suggestions' ) ) {
 		function wm_plugins_suggestions() {

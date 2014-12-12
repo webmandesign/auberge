@@ -1352,7 +1352,8 @@
 			text-align: center;
 			border-top: 2px solid;
 		}
-			.search-results .page-title,
+			.archive .page-title,
+			.search .page-title,
 			.error404 .page-title {
 				padding-top: 0;
 				border: 0;
