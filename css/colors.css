@@ -1,0 +1,310 @@
+/**
+ * Theme colors stylesheet
+ *
+ * @package    Auberge
+ * @copyright  2014 WebMan - Oliver Juhas
+ *
+ * @since    1.1
+ * @version  1.1
+ */
+
+
+
+/**
+ * Background
+ */
+
+	/**
+	 * Background color
+	 */
+
+		/* Basic background colors */
+
+			.site,
+			.page-section .posts .hentry { background-color: #fff; }
+
+			button,
+			input,
+			select,
+			textarea { background-color: #f5f7f9; }
+
+			body,
+			hr,
+			code,
+			pre { background-color: #eaecee; }
+
+			.main-navigation li ul { background-color: #3a3c3e; }
+
+			.main-navigation .menu li li:hover > a,
+			.main-navigation .menu li li > a:hover,
+			.main-navigation .menu li li.active-menu-item > a,
+			.widget .tagcloud a:before { background-color: #2a2c2e; }
+
+			.site-header,
+			.site-banner,
+			.site-footer,
+			.front-page-widgets-wrapper { background-color: #1a1c1e; }
+
+		/* Accent background color */
+
+			mark,
+			ins,
+			.highlight,
+			pre:before,
+			.pagination span,
+			.label-sticky,
+			.nav-search-form .form-search,
+			.button,
+			button,
+			input[type="button"],
+			input[type="reset"],
+			input[type="submit"],
+			.menu-group-nav a,
+			.entry-content div.sharedaddy .sd-content ul li a.sd-button:not(.no-text),
+			.post-navigation .nav-previous,
+			.post-navigation .nav-next,
+			.bypostauthor > .comment-body .comment-author:before,
+			.comment-navigation a,
+			.widget_calendar tbody a,
+			.widget .tagcloud a:hover,
+			body #infinite-handle span { background-color: #0aac8e; }
+
+		/* RGBA backgrounds */
+
+			tbody tr:hover td,
+			tbody tr:hover th { background-color: rgba(0,0,0, .05); }
+
+			.gallery-caption { background-color: rgba(0,0,0, .8); }
+
+
+
+	/**
+	 * Other background setup
+	 */
+
+		/* Background gradients */
+
+			.site-banner-media:before {
+				background: transparent;
+				background: -webkit-linear-gradient(       top, rgba(26,28,30, 0) 0%, #1a1c1e 100% );
+				background:         linear-gradient( to bottom, rgba(26,28,30, 0) 0%, #1a1c1e 100% );
+			}
+
+			.post-navigation .has-post-thumbnail:before {
+				background: #0aac8e;
+				background: -webkit-linear-gradient(   right, rgba(10,172,142, 0) 19%, #0aac8e 81% );
+				background:         linear-gradient( to left, rgba(10,172,142, 0) 19%, #0aac8e 81% );
+			}
+				.post-navigation .nav-next.has-post-thumbnail:before {
+					background: #0aac8e;
+					background: -webkit-linear-gradient(     left, rgba(10,172,142, 0) 19%, #0aac8e 81% );
+					background:         linear-gradient( to right, rgba(10,172,142, 0) 19%, #0aac8e 81% );
+				}
+
+		/* Inset shadows */
+
+			.button,
+			button,
+			input[type="button"],
+			input[type="reset"],
+			input[type="submit"] {
+				-webkit-box-shadow: inset 0 0 0 rgba(0,0,0, .2);
+				        box-shadow: inset 0 0 0 rgba(0,0,0, .2);
+			}
+			.button:active,
+			button:active,
+			input[type="button"]:active,
+			input[type="reset"]:active,
+			input[type="submit"]:active {
+				-webkit-box-shadow: inset 0 100px 0 rgba(0,0,0, .2);
+				        box-shadow: inset 0 100px 0 rgba(0,0,0, .2);
+			}
+
+		/* Special background color fix for multiline markers */
+
+			mark,
+			ins,
+			.highlight {
+				-webkit-box-shadow: .38em 0 0 #0aac8e, -.38em 0 0 #0aac8e;
+				        box-shadow: .38em 0 0 #0aac8e, -.38em 0 0 #0aac8e;
+			}
+
+		/* !important overrides */
+
+			.infinite-loader .spinner > div > div { background: #0aac8e !important; }
+
+
+
+/**
+ * Text color
+ */
+
+	/* Basic text colors */
+
+		pre:before,
+		.pagination span,
+		.label-sticky,
+		.button,
+		button,
+		input[type="button"],
+		input[type="reset"],
+		input[type="submit"],
+		.site-header,
+		.main-navigation li ul,
+		.site-banner,
+		.menu-group-nav a,
+		.post-navigation .nav-previous,
+		.post-navigation .nav-next,
+		.bypostauthor > .comment-body .comment-author:before,
+		.comment-navigation a,
+		.widget_calendar tbody a,
+		.widget .tagcloud a:hover,
+		body #infinite-handle span { color: #fff; }
+
+			.entry-content div.sharedaddy .sd-content ul li a.sd-button:not(.no-text) { color: #fff !important; }
+
+		mark,
+		ins,
+		.highlight { color: #fafcfe; }
+
+		.gallery-caption,
+		.widget .tagcloud a:before { color: #caccce; }
+
+		.wp-caption,
+		.site-footer,
+		.front-page-widgets-wrapper { color: #8a8c8e; }
+
+		body,
+		code { color: #6a6c6e; }
+
+		button,
+		input,
+		select,
+		textarea { color: #2a2c2e; }
+
+		h1, h2, h3, h4, h5, h6,
+		.h1, .h2, .h3, .h4, .h5, .h6 { color: #1a1c1e; }
+
+	/* Accent text color */
+
+		a,
+		.accent-color { color: #0aac8e; }
+
+	/* Form fields placeholder text color */
+
+		         ::-webkit-input-placeholder { color: #9a9c9e; }
+		              :-ms-input-placeholder { color: #9a9c9e !important; }
+		                  ::-moz-placeholder { color: #9a9c9e; }
+		:disabled::-webkit-input-placeholder { color: #9a9c9e; }
+		     :disabled:-ms-input-placeholder { color: #9a9c9e !important; }
+		         :disabled::-moz-placeholder { color: #9a9c9e; }
+
+
+
+/**
+ * Border color
+ */
+
+	/* basic border color */
+
+		blockquote:before,
+		blockquote:after,
+		table, td, th,
+		blockquote.alignleft:before,
+		blockquote.alignleft:after,
+		blockquote.alignright:before,
+		blockquote.alignright:after,
+		button,
+		input,
+		select,
+		textarea,
+		.comment-meta,
+		.comment-respond,
+		.comment-list .comment-respond,
+		.page-title,
+		.page-section + .hentry,
+		.post-table-of-contents,
+		.post-table-of-contents.top,
+		.posts .hentry,
+		.items section,
+		.entry-meta,
+		.single .entry-meta,
+		div.sharedaddy,
+		.post-navigation,
+		.home .front-page-widgets-wrapper,
+		.breadcrumbs-container,
+		.site div#jp-relatedposts { border-color: #eaecee; }
+
+	/* accent border color */
+
+		input:focus,
+		select:focus,
+		textarea:focus,
+		.widget .tagcloud a:hover { border-color: #0aac8e; }
+
+	/* navigation border color */
+
+		.main-navigation li li { border-top-color: #4a4c4e; }
+
+	/* sidebar border color */
+
+		.sidebar .widget .tagcloud a { border-color: #caccce; }
+
+	/* inherit border color */
+
+		.widget .tagcloud a:before { border-color: inherit; }
+
+
+
+/**
+ * Text selections
+ */
+
+	::selection {
+		background: #fafcbe;
+		color: #6a6c2e;
+	}
+	::-moz-selection {
+		background: #fafcbe;
+		color: #6a6c2e;
+	}
+
+
+
+/**
+ * Responsive color changes
+ */
+
+	@media only screen and (max-width: 960px) {
+
+		.main-navigation-inner { background-color: #3a3c3e; }
+
+		.menu-toggle,
+		.menu-toggle:hover,
+		.menu-toggle:active,
+		.menu-toggle:focus { background: transparent; }
+		.menu-toggle:before { background: #0aac8e; }
+
+		.main-navigation .menu a:hover,
+		.main-navigation .menu li:hover > a,
+		.main-navigation .menu li li:hover > a,
+		.main-navigation .menu li.active-menu-item > a,
+		.main-navigation .menu li li.active-menu-item > a {
+			background: transparent;
+			color: #fff;
+		}
+
+		.main-navigation .menu li.current-menu-item > a,
+		.main-navigation .menu li li.current-menu-item > a { background-color: #2a2c2e; }
+
+		/**
+		 * Border color
+		 */
+
+			.sidebar { border-color: #eaecee; }
+
+	} /* /(max-width: 960px) */
+
+
+
+/* End of file */

@@ -4,7 +4,9 @@
  *
  * @package    Auberge
  * @copyright  2014 WebMan - Oliver Juhas
- * @version    1.0
+ *
+ * @since    1.0
+ * @version  1.1
  *
  * CONTENT:
  * - 10) Actions and filters
@@ -24,9 +26,9 @@
 	 */
 
 		//Apply customizer options
-			add_filter( 'wmhook_theme_options_skin_array', 'wm_theme_options_skin_array', 10 );
+			add_filter( 'wmhook_theme_options', 'wm_theme_options_skin_array', 10 );
 		//Theme custom styles to be outputed in HTML head
-			add_filter( 'wmhook_wm_custom_styles_output_preprocess', 'wm_custom_css_template', 10 );
+			add_filter( 'wmhook_custom_styles', 'wm_custom_css_template', 10 );
 
 
 
@@ -38,6 +40,9 @@
 
 	/**
 	 * Set $wm_skin_design array
+	 *
+	 * @since    1.0
+	 * @version  1.1
 	 *
 	 * @param  array $wm_skin_design
 	 */
@@ -57,8 +62,9 @@
 						 * Layout
 						 */
 						'layout' => array(
+							'id'                       => 'layout',
 							'type'                     => 'section',
-							'theme-customizer-section' => __( 'Layout', 'wm_domain' )
+							'theme-customizer-section' => __( 'Layout', 'wm_domain' ),
 						),
 
 							'layout' . 5 => array(
@@ -100,8 +106,9 @@
 						 * Colors
 						 */
 						'colors' => array(
+							'id'                       => 'colors',
 							'type'                     => 'section',
-							'theme-customizer-section' => __( 'Colors', 'wm_domain' )
+							'theme-customizer-section' => __( 'Colors', 'wm_domain' ),
 						),
 
 							'colors' . 5 => array(
@@ -181,8 +188,9 @@
 						 * Fonts
 						 */
 						'fonts' => array(
+							'id'                       => 'fonts',
 							'type'                     => 'section',
-							'theme-customizer-section' => __( 'Fonts', 'wm_domain' )
+							'theme-customizer-section' => __( 'Fonts', 'wm_domain' ),
 						),
 
 							'fonts' . 10 => array(
@@ -248,7 +256,7 @@
 							'credits' . 10 => array(
 								'id'      => 'credits-text',
 								'type'    => 'theme-customizer-html',
-								'content' => '<h3>' . __( 'Theme Credits', 'wm_domain' ) . '</h3><p class="description">' . sprintf( __( '%s is free WordPress theme developed by WebMan. You can buy other professional WordPress themes at <strong><a href="%s" target="_blani">WebManDesign.eu</a></strong>. Thank you for using this awesome theme!', 'wm_domain' ), '<strong>' . WM_THEME_NAME . '</strong>', add_query_arg( array( 'utm_source' => WM_THEME_SHORTNAME . '-theme-credits' ), esc_url( WM_DEVELOPER_URL ) ) ) . '</p><p><a href="' . esc_url( trailingslashit( WM_DEVELOPER_URL ) . WM_THEME_SHORTNAME . '-wordpress-theme/donate' ) . '" class="donation-link" target="_blank">Donate</a></p>',
+								'content' => '<h3>' . __( 'Theme Credits', 'wm_domain' ) . '</h3><p class="description">' . sprintf( __( '%s is free WordPress theme developed by WebMan. You can obtain other professional WordPress themes at <strong><a href="%s" target="_blani">WebManDesign.eu</a></strong>. Thank you for using this awesome theme!', 'wm_domain' ), '<strong>' . WM_THEME_NAME . '</strong>', add_query_arg( array( 'utm_source' => WM_THEME_SHORTNAME . '-theme-credits' ), esc_url( WM_DEVELOPER_URL ) ) ) . '</p><p><a href="' . esc_url( trailingslashit( WM_DEVELOPER_URL ) . WM_THEME_SHORTNAME . '-wordpress-theme/#donate' ) . '" class="donation-link" target="_blank">Donate</a></p>',
 							),
 
 					);
@@ -266,6 +274,9 @@
 	 * Use a '[[skin-option-id]]' tags in your custom CSS styles string
 	 * where the specific option value should be used.
 	 *
+	 * @since    1.0
+	 * @version  1.1
+	 *
 	 * @param  string $styles
 	 */
 	if ( ! function_exists( 'wm_custom_css_template' ) ) {
@@ -273,7 +284,8 @@
 			//Preparing output
 				ob_start();
 
-				locate_template( 'css/_custom.css', true );
+				locate_template( 'css/_custom.css',      true );
+				locate_template( 'css/_custom-plus.css', true );
 
 				$styles = ob_get_clean();
 

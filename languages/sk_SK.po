@@ -8,555 +8,596 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Last-Translator: Oliver Juhas <webmandesigneu@gmail.com>\n"
-
-
+"Last-Translator: WebMan - Oliver Juhas <webmandesigneu@gmail.com>\n"
+"PO-Revision-Date: \n"
+"Language-Team: \n"
+"Language: sk_SK\n"
+"X-Generator: Poedit 1.6.7\n"
 
 #. Text in function
 #: inc/setup.php:1
 msgid " - do not use Google Font"
-msgstr ""
+msgstr "- nepoužiť Google Fonty"
 
 #. Text in function
 #: inc/lib/core.php:1
 msgid "\"%s\" table of contents"
-msgstr ""
+msgstr "\"%s\" obsah"
 
 #. Text in function
 #: inc/setup-theme-options.php:1
-msgid "%s is free WordPress theme developed by WebMan. You can obtain other professional WordPress themes at <strong><a href=\"%s\" target=\"_blani\">WebManDesign.eu</a></strong>. Thank you for using this awesome theme!"
+msgid ""
+"%s is free WordPress theme developed by WebMan. You can obtain other "
+"professional WordPress themes at <strong><a href=\"%s\" target=\"_blani"
+"\">WebManDesign.eu</a></strong>. Thank you for using this awesome theme!"
 msgstr ""
+"%s je voľne dostupná WordPress šablóna. Ďalšie profesionálne WordPress "
+"šablóny od autora Auberge sú k dispozícií na <strong><a href=\"%s\" target="
+"\"_blani\">WebManDesign.eu</a></strong>. Ďakujeme, že používate túto úžasnú "
+"šablónu!"
 
 #. Text in function
 #: inc/lib/core.php:1
 msgid "%s logo"
-msgstr ""
+msgstr "%s logo"
 
 #. Text in function
 #: inc/setup.php:1
 msgid "%s site navigation"
-msgstr ""
+msgstr "Navigácia webstránky %s"
 
 #. Text in function
 #: comments.php:88
 msgid "&larr; Older comments"
-msgstr ""
+msgstr "&larr; Staršie komentáre"
 
 #. Text in function
 #: inc/setup.php:1
 msgid "&uarr; Menu sections"
-msgstr ""
+msgstr "&uarr; Skupiny jedál"
 
 #. Text in function
 #: inc/lib/core.php:1
 msgid "(page %s)"
-msgstr ""
+msgstr "(stránka %s)"
 
 #. Text in function
 #: inc/lib/core.php:1
 msgid "<span class=\"comments-title\">Comments: </span>%s"
-msgstr ""
+msgstr "<span class=\"comments-title\">Komentáre: </span>%s"
 
 #. Text in function
 #: inc/setup.php:1
-msgid "<span class=\"meta-nav\">Next</span><span class=\"post-title\">%title</span>"
+msgid ""
+"<span class=\"meta-nav\">Next</span><span class=\"post-title\">%title</span>"
 msgstr ""
+"<span class=\"meta-nav\">Nasledujúce</span><span class=\"post-title\">"
+"%title</span>"
 
 #. Text in function
 #: inc/setup.php:1
-msgid "<span class=\"meta-nav\">Previous</span><span class=\"post-title\">%title</span>"
+msgid ""
+"<span class=\"meta-nav\">Previous</span><span class=\"post-title\">%title</"
+"span>"
 msgstr ""
+"<span class=\"meta-nav\">Predchádzajúce</span><span class=\"post-title\">"
+"%title</span>"
 
 #. Text in function
 #: inc/setup.php:1
-msgid "<span class=\"meta-nav\">Published In</span><span class=\"post-title\">%title</span>"
+msgid ""
+"<span class=\"meta-nav\">Published In</span><span class=\"post-title\">"
+"%title</span>"
 msgstr ""
+"<span class=\"meta-nav\">Publikované v</span><span class=\"post-title\">"
+"%title</span>"
 
 #. Text in function
 #: inc/setup-theme-options.php:1
 msgid "Accent color"
-msgstr ""
+msgstr "Akcentová farba"
 
 #. Text in function
 #: inc/setup-theme-options.php:1
 msgid "Accent text color"
-msgstr ""
+msgstr "Farba textu na akcentovej farbe"
 
 #. Text in function
 #: comments.php:38
 msgid "Add yours &rarr;"
-msgstr ""
+msgstr "Pridajte vlastné &rarr;"
 
 #. Text in function
 #: inc/setup-theme-options.php:1
-msgid "All other font sizes are calculated automatically from this basic font size"
+msgid ""
+"All other font sizes are calculated automatically from this basic font size"
 msgstr ""
+"Všetky ostatné veľkosti písma sú kalkulované automaticky z tejto základnej "
+"hodnoty"
 
 #. Text in function
 #: inc/setup.php:1
 msgid "All posts"
-msgstr ""
+msgstr "Všetky články"
 
 #. Text in echo
 #: archive.php:20
 msgid "Archives"
-msgstr ""
+msgstr "Archívy"
 
 #. Text in function
 #: archive.php:20
 msgid "Author: %s"
-msgstr ""
+msgstr "Autor: %s"
 
 #. Text in function
 #: inc/setup.php:1
 msgid "Back to top &uarr;"
-msgstr ""
+msgstr "Späť nahor &uarr;"
 
 #. Text in function
 #: inc/setup-theme-options.php:1
 msgid "Basic font size"
-msgstr ""
+msgstr "Základná veľkosť písma"
 
 #. Text in function
 #: inc/lib/admin.php:1
 msgid "Blockquote"
-msgstr ""
+msgstr "Citácia"
 
 #. Text in function
 #: loop-blog-condensed.php:33
 msgid "Blog"
-msgstr ""
+msgstr "Blog"
 
 #. Text in function
 #: inc/lib/admin.php:1
 msgid "Button link"
-msgstr ""
+msgstr "Odkaz tlačidla"
 
 #. Text in function
 #: inc/lib/admin.php:1
 msgid "Cite"
-msgstr ""
+msgstr "Citovaný autor"
 
 #. Text in function
 #: inc/setup-theme-options.php:1
 msgid "Color of text over accent color background"
-msgstr ""
+msgstr "Farba textu zobrazeného na pozadí akcentovej farby"
 
 #. Text in function
 #: inc/setup-theme-options.php:1
 msgid "Colors"
-msgstr ""
+msgstr "Farby"
 
 #. Text in echo
 #: comments.php:85
 msgid "Comment navigation"
-msgstr ""
+msgstr "Navigácia v komentároch"
 
 #. Text in echo
 #: comments.php:61
 msgid "Comments are closed. You can not add new comments."
-msgstr ""
+msgstr "Komentáre sú uzatvorené. Nie je možné pridávať ďalšie."
 
 #. Text in function
 #: inc/lib/core.php:1
 msgid "Comments: %s"
-msgstr ""
+msgstr "Komentáre: %s"
 
 #. Text in function
 #: inc/setup-theme-options.php:1
 msgid "Condensed blog posts"
-msgstr ""
+msgstr "Kondenzované blog články"
 
 #. Text in function
 #: inc/setup.php:1
 msgid "Continue reading%s&hellip;"
-msgstr ""
+msgstr "Pokračovať v čítaní%s&hellip;"
 
 #. Text in function
 #: inc/setup-theme-options.php:1
 msgid "Disable section"
-msgstr ""
+msgstr "Vypnúť sekciu"
 
 #. Text in function
-#: inc/lib/core.php:1
-#: inc/setup.php:1
+#: inc/lib/core.php:1 inc/setup.php:1
 msgid "Edit"
-msgstr ""
+msgstr "Upraviť"
 
 #. Text in function
-#: inc/lib/core.php:1
-#: inc/setup.php:1
+#: inc/lib/core.php:1 inc/setup.php:1
 msgid "Edit the \"%s\""
-msgstr ""
+msgstr "Upraviť \"%s\""
 
 #. Text in function
 #: inc/setup-theme-options.php:1
 msgid "First section above page content"
-msgstr ""
+msgstr "Prvá sekcia nad samotným obsahom stránky"
 
 #. Text in function
 #: inc/setup-theme-options.php:1
 msgid "First section below page content"
-msgstr ""
+msgstr "Prvá sekcia pod samotným obsahom stránky"
 
 #. Text in function
 #: inc/setup-theme-options.php:1
-msgid "Font matches recommendations from <a%s>Google Web Fonts Typographic Project</a>."
+msgid ""
+"Font matches recommendations from <a%s>Google Web Fonts Typographic Project</"
+"a>."
 msgstr ""
+"Odporúčané skupiny písma z <a%s>Google Web Fonts Typographic Project</a>."
 
 #. Text in function
 #: inc/setup-theme-options.php:1
 msgid "Font subset"
-msgstr ""
+msgstr "Znaková sada písma"
 
 #. Text in function
 #: inc/setup-theme-options.php:1
 msgid "Fonts"
-msgstr ""
+msgstr "Písmo"
 
 #. Text in function
 #: inc/setup.php:1
 msgid "Fonts selection"
-msgstr ""
+msgstr "Výber typov písma"
 
 #. Text in function
 #: inc/setup-theme-options.php:1
 msgid "Food menu"
-msgstr ""
+msgstr "Jedálny lístok"
 
 #. Text in function
 #: inc/setup.php:1
 msgid "Footer Widgets"
-msgstr ""
+msgstr "Widgety v pätke"
 
 #. Text in function
 #: inc/setup-theme-options.php:1
 msgid "Footer background color"
-msgstr ""
+msgstr "Farba pozadia pätky"
 
 #. Text in function
 #: inc/setup-theme-options.php:1
 msgid "Footer color"
-msgstr ""
+msgstr "Farba pätky"
 
 #. Text in function
 #: inc/setup-theme-options.php:1
 msgid "Footer text color"
-msgstr ""
+msgstr "Farba textu pätky"
 
 #. Text in function
 #: inc/setup.php:1
 msgid "Front Page Widgets"
-msgstr ""
+msgstr "Widgety úvodnej stránky"
 
 #. Text in function
 #: inc/setup-theme-options.php:1
 msgid "Front page layout"
-msgstr ""
+msgstr "Usporiadanie úvodnej stránky"
 
 #. Text in function
 #: inc/setup-theme-options.php:1
 msgid "Front page widgets color"
-msgstr ""
+msgstr "Farba widgetov na úvodnej stránke"
 
 #. Text in function
 #: inc/setup-theme-options.php:1
 msgid "Front widgets background color"
-msgstr ""
+msgstr "Farba pozadia widgetov na úvodnej stránke"
 
 #. Text in function
 #: inc/setup-theme-options.php:1
 msgid "Front widgets text color"
-msgstr ""
+msgstr "Farba textu vo widgetoch na úvodnej stránke"
 
 #. Text in function
 #: inc/setup-theme-options.php:1
 msgid "General text font"
-msgstr ""
+msgstr "Základný typ písma"
 
 #. Text in function
 #: inc/setup-theme-options.php:1
 msgid "Header background color"
-msgstr ""
+msgstr "Farba pozadia záhlavia"
 
 #. Text in function
 #: inc/setup-theme-options.php:1
 msgid "Header color"
-msgstr ""
+msgstr "Farba záhlavia"
 
 #. Text in function
 #: inc/setup-theme-options.php:1
 msgid "Header text color"
-msgstr ""
+msgstr "Farba textu záhlavia"
 
 #. Text in function
 #: inc/setup-theme-options.php:1
 msgid "Headings font"
-msgstr ""
+msgstr "Písmo nadpisov"
 
 #. Text in function
 #: inc/lib/admin.php:1
 msgid "Highlighted (marked) text"
-msgstr ""
+msgstr "Zvýraznený text"
 
 #. Text in function
 #: inc/lib/admin.php:1
 msgid "Image"
-msgstr ""
+msgstr "Obrázok"
 
 #. Text in echo
 #: image.php:84
 msgid "Image file name:"
-msgstr ""
+msgstr "Názov súboru:"
 
 #. Text in echo
 #: image.php:76
 msgid "Image published on:"
-msgstr ""
+msgstr "Publikované:"
 
 #. Text in echo
 #: image.php:80
 msgid "Image size:"
-msgstr ""
+msgstr "Veľkosť obrázka:"
 
 #. Text in echo
 #: 404.php:24
 msgid "It looks like nothing was found at this location. Maybe try a search?"
 msgstr ""
+"Vyzerá to tak, že sa nenašli žiadne záznamy. Možno skúste vyhľadávanie?"
 
 #. Text in echo
 #: content-none.php:32
-msgid "It seems we can not find what you are looking for. Perhaps searching can help."
-msgstr ""
+msgid ""
+"It seems we can not find what you are looking for. Perhaps searching can "
+"help."
+msgstr "Nemôžeme nájsť, čo hľadáte. Možno pomôže vyhľadávanie."
 
 #. Text in function
 #: inc/setup-theme-options.php:1
 msgid "Layout"
-msgstr ""
+msgstr "Rozloženie"
 
 #. Text in function
 #: inc/jetpack/jetpack.php:1
 msgid "Load more&hellip;"
-msgstr ""
+msgstr "Načítať viac&hellip;"
 
 #. Text in function
 #: inc/setup-theme-options.php:1
 msgid "Logo (site title) font"
-msgstr ""
+msgstr "Písmo loga"
 
 #. Text in function
 #: inc/setup.php:1
 msgid "Masonry layout is used to display footer widgets."
 msgstr ""
+"Widgety v pätke budú automaticky rozložené aby sa ušetrilo čo najviac miesta."
 
 #. Text in function
-#: loop-food-menu.php:35
-#: inc/setup.php:1
+#: loop-food-menu.php:35 inc/setup.php:1
 msgid "Menu"
-msgstr ""
+msgstr "Jedálny lístok"
 
 #. Text in function
 #: inc/setup.php:1
 msgid "Menu page"
-msgstr ""
+msgstr "Jedálny lístok"
 
 #. Text in function
 #: comments.php:92
 msgid "Newer comments &rarr;"
-msgstr ""
+msgstr "Novšie komentáre &rarr;"
 
 #. Text in function
 #: loop-blog-condensed.php:33
 msgid "News"
-msgstr ""
+msgstr "Novinky"
 
 #. Text in function
 #: inc/setup-theme-options.php:1
 msgid "Note that for certain header elements the color will be faded out a bit"
 msgstr ""
+"Upozorňujeme, že na niektorých elementoch záhlavia bude farba trochu "
+"vyblednutá."
 
 #. Text in echo
 #: content-none.php:16
 msgid "Nothing Found"
-msgstr ""
+msgstr "Nenašli sa žiadne záznamy"
 
 #. Text in echo
 #: 404.php:20
 msgid "Oops! That page can not be found."
-msgstr ""
+msgstr "Hľadaná stránka nebola nájdená."
 
 #. Text in function
 #: inc/lib/core.php:1
 msgid "Page %s"
-msgstr ""
+msgstr "Stránka %s"
 
 #. Text in function
 #: inc/setup.php:1
 msgid "Page sidebar."
-msgstr ""
+msgstr "Bočný panel."
 
 #. Text in function
 #: inc/lib/core.php:1
 msgid "Part %"
-msgstr ""
+msgstr "Časť %"
 
 #. Text in function
 #: inc/lib/core.php:1
 msgid "Permalink to %s"
-msgstr ""
+msgstr "Odkaz na %s"
 
 #. Text in function
 #: inc/setup.php:1
 msgid "Post navigation"
-msgstr ""
+msgstr "Navigácia v článkoch"
 
 #. Text in echo
 #: inc/customizer/controls/class-WM_Customizer_Multiselect.php:42
 msgid "Press CTRL key for multiple selection."
-msgstr ""
+msgstr "Pridržte klávesu CTRL pre viacnásobnú voľbu"
 
 #. Text in function
 #: inc/setup.php:1
 msgid "Primary Menu"
-msgstr ""
+msgstr "Hlavné menu"
 
 #. Text in function
 #: inc/lib/admin.php:1
 msgid "Pullquote - align left"
-msgstr ""
+msgstr "Vytrhnutý citát vľavo"
 
 #. Text in function
 #: inc/lib/admin.php:1
 msgid "Pullquote - align right"
-msgstr ""
+msgstr "Vytrhnutý citát vpravo"
 
 #. Text in function
 #: inc/lib/admin.php:1
 msgid "Quotes"
-msgstr ""
+msgstr "Citácia"
 
 #. Text in function
 #: content-none.php:22
-msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
+"Pripravený publikovať svoj prvý článok? <a href=\"%1$s\">Začnite tu</a>."
 
 #. Text in function
 #: inc/setup.php:1
 msgid "Recommendation #%d"
-msgstr ""
+msgstr "Odporúčanie #%d"
 
 #. Text in echo
-#: searchform.php:13
-#: inc/setup.php:1
+#: searchform.php:13 inc/setup.php:1
 msgid "Search"
-msgstr ""
+msgstr "Vyhľadať"
 
 #. Text in function
 #: search.php:20
 msgid "Search Results for: %s"
-msgstr ""
+msgstr "Výsledky vyhľadávania: %s"
 
 #. Text in echo
 #: searchform.php:14
 msgid "Search field: type and press enter"
-msgstr ""
+msgstr "Zadajte výraz a stlačte Enter"
 
 #. Text in function
 #: inc/setup-theme-options.php:1
 msgid "Second section above page content"
-msgstr ""
+msgstr "Druhá sekcia nad samotným obsahom stránky"
 
 #. Text in function
 #: inc/setup-theme-options.php:1
 msgid "Second section below page content"
-msgstr ""
+msgstr "Druhá sekcia pod samotným obsahom stránky"
 
 #. Text in function
 #: inc/setup-theme-options.php:1
 msgid "Select if and where to display this page section"
-msgstr ""
+msgstr "Zvoľte či, a kde sa má táto sekcia zobraziť"
 
 #. Text in function
 #: inc/setup-theme-options.php:1
-msgid "Set a Google Font to be used for website logo, headings and general text."
+msgid ""
+"Set a Google Font to be used for website logo, headings and general text."
 msgstr ""
+"Nastavte Google Font pouzitý pre logo, nadpisy a ostatný text webstránky"
 
 #. Text in function
 #: inc/setup.php:1
 msgid "Sidebar"
-msgstr ""
+msgstr "Bočný panel"
 
 #. Text in function
 #: inc/lib/core.php:1
 msgid "Skip to content"
-msgstr ""
+msgstr "Preskočiť na obsah"
 
 #. Text in function
 #: inc/lib/core.php:1
 msgid "Skip to navigation"
-msgstr ""
+msgstr "Preskočiť na navigáciu"
 
 #. Text in function
 #: inc/setup.php:1
 msgid "Social Links Menu"
-msgstr ""
+msgstr "Odkazy sociálnych sietí"
 
 #. Text in echo
 #: content-none.php:26
-msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
 msgstr ""
+"Vášmu vyhľadávaniu nezodpovedajú žiadne záznamy. Skúste znovu pomocou iných "
+"kľúčových slov."
 
 #. Text in function
 #: inc/lib/admin.php:1
 msgid "Text styles"
-msgstr ""
+msgstr "Textové štýly"
 
 #. Text in function
 #: inc/setup-theme-options.php:1
 msgid "Theme Credits"
-msgstr ""
+msgstr "O šablóne"
 
 #. Text in function
 #: inc/setup.php:1
 msgid "Theme by %s."
-msgstr ""
+msgstr "Autor šablóny: %s."
 
 #. Text in function
 #: inc/setup.php:1
 msgid "Theme default"
-msgstr ""
+msgstr "Pôvodné nastavenie"
 
 #. Text in function
 #: inc/setup-theme-options.php:1
 msgid "This color affects links, buttons and other elements of the website"
-msgstr ""
+msgstr "Táto farba ovplyvňuje odkazy, tlačidlá a iné elementy webstránky"
 
 #. Text in function
 #: inc/setup.php:1
-msgid "This content is password protected. To view it please <a%s>enter the password</a>."
+msgid ""
+"This content is password protected. To view it please <a%s>enter the "
+"password</a>."
 msgstr ""
+"Tento obsah je chránený heslom. Na jeho prezeranie <a%s>zadajte heslo/a>."
 
 #. Text in function
 #: inc/setup.php:1
 msgid "This is sticky post"
-msgstr ""
+msgstr "Výrazný článok"
 
 #. Text in function
 #: inc/setup.php:1
-msgid "This widgets area is displayed below the Banner area on the front page (homepage)."
-msgstr ""
+msgid ""
+"This widgets area is displayed below the Banner area on the front page "
+"(homepage)."
+msgstr "Tieto widgety sa zobrazia pod bannerom na úvodnej stránke."
 
 #. Text in echo
 #: sidebar.php:20
 msgid "Toggle sidebar"
-msgstr ""
+msgstr "Zobraziť/Skryť bočný panel"
 
 #. Text in function
 #: inc/lib/admin.php:1
 msgid "Uppercase heading or paragraph"
-msgstr ""
+msgstr "Text veľkým písmom"
 
 #. Text in function
 #: inc/setup.php:1
 msgid "Powered by %s."
-msgstr ""
+msgstr "Používame %s."

@@ -80,3 +80,10 @@ http://www.google.com/fonts/specimen/Fira+Sans, https://github.com/mozilla/Fira
 Copyright (c) 2014 Pexels
 Licensed under the CC0 License - https://creativecommons.org/publicdomain/zero/1.0/, http://www.pexels.com/photo-license/
 http://www.pexels.com/
+
+## PHP scripts copyright
+
+**TGM-Plugin-Activation**
+Copyright (c) 2012, Thomas Griffin
+Licensed under GPL v2 or later
+https://github.com/thomasgriffin/TGM-Plugin-Activation

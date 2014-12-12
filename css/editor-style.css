@@ -3,7 +3,9 @@
  *
  * @package    Auberge
  * @copyright  2014 WebMan - Oliver Juhas
- * @version    1.0
+ *
+ * @since    1.0
+ * @version  1.1
  */
 
 
@@ -249,8 +251,8 @@
 		ul,
 		ol { margin: 0 1.62em 1em 1.38em; }
 
-			ol ol { list-style upper-alpha; }
-			ol ol ol { list-style: lower-roman; }
+			ol ol { list-style: upper-alpha; }
+			ol ol ol { list-style: upper-roman; }
 			ol ol ol ol { list-style: lower-alpha; }
 
 			li > ul,

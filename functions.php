@@ -23,7 +23,9 @@
  * @license    GPL-2.0+
  * @link       http://www.webmandesign.eu
  * @copyright  2014 WebMan - Oliver Juhas
- * @version    1.0
+ *
+ * @since    1.0
+ * @version  1.1
  */
 
 
@@ -46,7 +48,6 @@
 		if ( ! defined( 'WM_WP_COMPATIBILITY' ) )      define( 'WM_WP_COMPATIBILITY',      4.0                                     );
 
 	//Dir constants
-		if ( ! defined( 'WM_LANGUAGES' ) )             define( 'WM_LANGUAGES',             get_template_directory() . '/languages' );
 		if ( ! defined( 'WM_INC_DIR' ) )               define( 'WM_INC_DIR',               trailingslashit( 'inc/' )               );
 
 	//URL constants
@@ -66,15 +67,18 @@
  */
 
 	//Global functions
-		locate_template( WM_INC_DIR . 'core.php',  true );
+		locate_template( WM_INC_DIR . 'lib/core.php', true );
 
 	//Theme setup
 		locate_template( WM_INC_DIR . 'setup.php', true );
 
 	//Custom header
-		locate_template( WM_INC_DIR . 'custom-header.php', true );
+		locate_template( WM_INC_DIR . 'custom-header/custom-header.php', true );
 
 	//Customizer
-		locate_template( WM_INC_DIR . 'customizer.php', true );
+		locate_template( WM_INC_DIR . 'customizer/customizer.php', true );
+
+	//Jetpack setup
+		locate_template( WM_INC_DIR . 'jetpack/jetpack.php', true );
 
 ?>

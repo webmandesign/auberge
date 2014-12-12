@@ -4,7 +4,9 @@
  *
  * @package    Auberge
  * @copyright  2014 WebMan - Oliver Juhas
- * @version    1.0
+ *
+ * @since    1.0
+ * @version  1.1
  */
 
 ?>
@@ -17,10 +19,12 @@
 
 		do_action( 'wmhook_banner_content_top' );
 
-		if (
-				is_front_page()
-				&& wm_has_banner_posts( 1 )
-			) {
+		if ( $banner = apply_filters( 'wmhook_custom_banner', '' ) ) {
+
+			//Display custom banner first
+				echo $banner;
+
+		} elseif ( is_front_page() && wm_has_banner_posts( 1 ) ) {
 
 			//Display featured posts (only on homepage)
 				$featured_posts = wm_get_banner_posts();

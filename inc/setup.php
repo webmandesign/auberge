@@ -4,7 +4,9 @@
  *
  * @package    Auberge
  * @copyright  2014 WebMan - Oliver Juhas
- * @version    1.0
+ *
+ * @since    1.0
+ * @version  1.1
  *
  * CONTENT:
  * -  10) Actions and filters
@@ -58,6 +60,7 @@
 				add_action( 'wmhook_header',               'wm_menu_social',                30   );
 				add_action( 'wmhook_header_bottom',        'wm_header_bottom',              10   );
 			//Content
+				add_action( 'wmhook_content_before',       'wm_breadcrumbs',                10   );
 				add_action( 'wmhook_content_top',          'wm_content_top',                10   );
 				add_action( 'wmhook_entry_container_atts', 'wm_entry_container_atts',       10   );
 				add_action( 'wmhook_entry_top',            'wm_post_title',                 10   );
@@ -77,10 +80,6 @@
 		//Additional page sections links
 			add_action( 'wmhook_loop_food_menu_postslist_after',      'wm_food_menu_more_link', 10 );
 			add_action( 'wmhook_loop_blog_condensed_postslist_after', 'wm_blog_more_link',      10 );
-		//Jetpack
-			add_action( 'after_setup_theme',     'wm_jetpack',                         30  );
-			add_action( 'admin_enqueue_scripts', 'wm_jetpack_styles_admin',            100 );
-			add_action( 'wp',                    'wm_jetpack_remove_food_menu_markup', 10  );
 
 		//Remove actions
 			remove_action( 'wp_head', 'wp_generator'     );
@@ -108,10 +107,6 @@
 			add_filter( 'wmhook_wm_excerpt_continue_reading', 'wm_excerpt_continue_reading', 10 );
 		//Custom CSS fonts
 			add_filter( 'wmhook_wm_custom_styles_value', 'wm_css_font_name', 10, 2 );
-		//Jetpack
-			add_filter( 'sharing_show',                'wm_jetpack_sharing',             10, 2 );
-			add_filter( 'infinite_scroll_js_settings', 'wm_jetpack_is_js_settings',      10    );
-			add_filter( 'wp_insert_post_data',         'wm_jetpack_add_many_food_menus', 10, 2 );
 
 		//Remove filters
 			remove_filter( 'widget_title', 'esc_html' );
@@ -310,6 +305,9 @@
 
 	/**
 	 * Theme setup
+	 *
+	 * @since    1.0
+	 * @version  1.1
 	 */
 	if ( ! function_exists( 'wm_setup' ) ) {
 		function wm_setup() {
@@ -324,8 +322,21 @@
 							add_query_arg( array( 'ver' => WM_THEME_VERSION ), wm_get_stylesheet_directory_uri( 'css/editor-style.css' ) ),
 						) ) );
 
-			//Localization
-				load_theme_textdomain( 'wm_domain', WM_LANGUAGES );
+
+			/**
+			 * Load Localisation files.
+			 *
+			 * Note: the first-loaded translation file overrides any following ones if the same translation is present.
+			 */
+
+				//wp-content/languages/theme-name/it_IT.mo
+					load_theme_textdomain( 'wm_domain', trailingslashit( WP_LANG_DIR ) . 'themes/' . WM_THEME_SHORTNAME );
+
+				//wp-content/themes/child-theme-name/languages/it_IT.mo
+					load_theme_textdomain( 'wm_domain', get_stylesheet_directory() . '/languages' );
+
+				//wp-content/themes/theme-name/languages/it_IT.mo
+					load_theme_textdomain( 'wm_domain', get_template_directory() . '/languages' );
 
 			//Visual editor styles
 				add_editor_style( $visual_editor_css );
@@ -406,6 +417,9 @@
 
 	/**
 	 * Registering theme styles and scripts
+	 *
+	 * @since    1.0
+	 * @version  1.1
 	 */
 	if ( ! function_exists( 'wm_register_assets' ) ) {
 		function wm_register_assets() {
@@ -415,11 +429,12 @@
 			 */
 
 				$register_styles = apply_filters( 'wmhook_wm_register_assets_register_styles', array(
-						'wm-customizer'   => array( get_template_directory_uri() . '/css/customizer.css'              ),
-						'wm-genericons'   => array( wm_get_stylesheet_directory_uri( 'genericons/genericons.css' )    ),
-						'wm-google-fonts' => array( wm_google_fonts_url()                                             ),
-						'wm-stylesheet'   => array( 'src' => get_stylesheet_uri(), 'deps' => array( 'wm-genericons' ) ),
-						'wm-slick'        => array( wm_get_stylesheet_directory_uri( 'css/slick.css' )                ),
+						'wm-customizer'   => array( get_template_directory_uri() . '/css/customizer.css'                                    ),
+						'wm-genericons'   => array( wm_get_stylesheet_directory_uri( 'genericons/genericons.css' )                          ),
+						'wm-google-fonts' => array( wm_google_fonts_url()                                                                   ),
+						'wm-stylesheet'   => array( 'src' => get_stylesheet_uri(), 'deps' => array( 'wm-genericons' )                       ),
+						'wm-colors'       => array( wm_get_stylesheet_directory_uri( 'css/colors.css' ), 'deps' => array( 'wm-stylesheet' ) ),
+						'wm-slick'        => array( wm_get_stylesheet_directory_uri( 'css/slick.css' )                                      ),
 					) );
 
 				foreach ( $register_styles as $handle => $atts ) {
@@ -464,6 +479,9 @@
 
 	/**
 	 * Frontend HTML head assets enqueue
+	 *
+	 * @since    1.0
+	 * @version  1.1
 	 */
 	if ( ! function_exists( 'wm_enqueue_assets' ) ) {
 		function wm_enqueue_assets() {
@@ -473,6 +491,8 @@
 				$enqueue_styles = $enqueue_scripts = array();
 
 				$custom_styles = wm_custom_styles();
+
+				$inline_styles_handle = ( wp_style_is( 'wm-colors', 'registered' ) ) ? ( 'wm-colors' ) : ( 'wm-stylesheet' );
 
 			/**
 			 * Styles
@@ -500,6 +520,11 @@
 				//Main
 					$enqueue_styles[] = 'wm-stylesheet';
 
+				//Colors
+					if ( 'wm-colors' === $inline_styles_handle ) {
+						$enqueue_styles[] = 'wm-colors';
+					}
+
 				$enqueue_styles = apply_filters( 'wmhook_wm_enqueue_assets_enqueue_styles', $enqueue_styles, $is_IE );
 
 				foreach ( $enqueue_styles as $handle ) {
@@ -512,7 +537,7 @@
 
 				//Customizer setup custom styles
 					if ( $custom_styles ) {
-						wp_add_inline_style( 'wm-stylesheet', "\r\n" . $custom_styles . "\r\n" );
+						wp_add_inline_style( $inline_styles_handle, "\r\n" . $custom_styles . "\r\n" );
 					}
 				//Custom styles set in post/page 'custom-css' custom field
 					if (
@@ -521,7 +546,7 @@
 						) {
 						$output = apply_filters( 'wmhook_wm_enqueue_assets_singular_inline_styles', "\r\n\r\n/* Custom singular styles */\r\n" . $output . "\r\n", $is_IE );
 
-						wp_add_inline_style( 'wm-stylesheet', $output . "\r\n" );
+						wp_add_inline_style( $inline_styles_handle, $output . "\r\n" );
 					}
 
 			/**
@@ -1000,6 +1025,24 @@
 
 
 		/**
+		 * Breadcrumbs
+		 *
+		 * @since    1.1
+		 * @version  1.1
+		 */
+		if ( ! function_exists( 'wm_breadcrumbs' ) ) {
+			function wm_breadcrumbs() {
+				if ( function_exists( 'bcn_display' ) && ! is_front_page() ) {
+					echo '<div class="breadcrumbs-container"><nav class="breadcrumbs" itemprop="breadcrumbs">';
+						bcn_display();
+					echo '</nav></div>';
+				}
+			}
+		} // /wm_breadcrumbs
+
+
+
+		/**
 		 * Front page widgets area
 		 */
 		if ( ! function_exists( 'wm_front_page_widgets' ) ) {
@@ -1424,7 +1467,10 @@
 						echo '<div class="site-info" role="contentinfo">';
 							echo apply_filters( 'wmhook_wm_credits_output',
 									'&copy; ' . date( 'Y' ) . ' <a href="' . home_url( '/' ) . '" title="' . get_bloginfo( 'name' ) . '">' . get_bloginfo( 'name' ) . '</a>. '
-									. ' Powered by <a href="https://wordpress.org">' . __( 'WordPress', 'wm_domain' ) . '</a>. '
+									. sprintf(
+											__( 'Powered by %s.', 'wm_domain' ),
+											'<a href="https://wordpress.org">WordPress</a>'
+										)
 									. sprintf(
 											__( 'Theme by %s.', 'wm_domain' ),
 											'<a href="' . esc_url( WM_DEVELOPER_URL ) . '">WebMan Design</a>'
@@ -1474,19 +1520,22 @@
 		 * Website footer custom scripts
 		 *
 		 * Outputs custom scripts set in post/page 'custom-js' custom field.
+		 *
+		 * @since    1.0
+		 * @version  1.1
 		 */
 		if ( ! function_exists( 'wm_footer_custom_scripts' ) ) {
 			function wm_footer_custom_scripts() {
 				//Requirements check
 					if (
 							! is_singular()
-							|| ! $output = get_post_meta( get_the_ID(), 'custom_js', true )
+							|| ! ( $output = get_post_meta( get_the_ID(), 'custom_js', true ) )
 						) {
 						return;
 					}
 
 				//Helper variables
-					$output = "\r\n\r\n<!--Custom singular JS -->\r\n<script type='text/javascript'>\r\n/* <![CDATA[ */\r\n" . wp_unslash( esc_js( $output ) ) . "\r\n/* ]]> */\r\n</script>\r\n";
+					$output = "\r\n\r\n<!--Custom singular JS -->\r\n<script type='text/javascript'>\r\n/* <![CDATA[ */\r\n" . wp_unslash( esc_js( str_replace( array( "\r", "\n", "\t" ), '', $output ) ) ) . "\r\n/* ]]> */\r\n</script>\r\n";
 
 				//Output
 					echo apply_filters( 'wmhook_wm_footer_custom_scripts_output', $output );
@@ -1620,232 +1669,5 @@
 				return $value;
 		}
 	} // /wm_css_font_name
-
-
-
-	/**
-	 * Plugins integration
-	 */
-
-		/**
-		 * Jetpack integration
-		 */
-
-			/**
-			 * Enables Jetpack features
-			 */
-			if ( ! function_exists( 'wm_jetpack' ) ) {
-				function wm_jetpack() {
-					//Site logo
-						add_theme_support( 'site-logo' );
-
-					//Food menu post type
-						add_theme_support( 'nova_menu_item' );
-						add_post_type_support( 'nova_menu_item', array( 'comments' ) );
-
-					//Featured content
-						add_theme_support( 'featured-content', apply_filters( 'wmhook_wm_jetpack_featured_content', array(
-								'featured_content_filter' => 'wm_get_banner_posts',
-								'max_posts'               => 6,
-								'post_types'              => array( 'post' ),
-							) ) );
-
-					//Infinite scroll
-						add_theme_support( 'infinite-scroll', apply_filters( 'wmhook_wm_jetpack_infinite_scroll', array(
-								'container'      => 'posts',
-								'footer'         => false,
-								'posts_per_page' => 6,
-								'render'         => 'wm_jetpack_is_render',
-								'type'           => 'scroll',
-								'wrapper'        => false,
-							) ) );
-				}
-			} // /wm_jetpack
-
-
-
-			/**
-			 * Jetpack sharing buttons
-			 */
-
-				/**
-				 * Jetpack sharing display
-				 *
-				 * @param  bool $show
-				 * @param  obj  $post
-				 */
-				if ( ! function_exists( 'wm_jetpack_sharing' ) ) {
-					function wm_jetpack_sharing( $show, $post ) {
-						//Helper variables
-							global $wp_current_filter;
-
-						//Preparing output
-							if ( in_array( 'the_excerpt', (array) $wp_current_filter ) ) {
-								$show = false;
-							}
-
-						//Output
-							return $show;
-					}
-				} // /wm_jetpack_sharing
-
-
-
-			/**
-			 * Jetpack infinite scroll
-			 */
-
-				/**
-				 * Jetpack infinite scroll JS settings array modifier
-				 *
-				 * @param  array $settings
-				 */
-				if ( ! function_exists( 'wm_jetpack_is_js_settings' ) ) {
-					function wm_jetpack_is_js_settings( $settings ) {
-						//Helper variables
-							$settings['text'] = esc_js( __( 'Load more&hellip;', 'wm_domain' ) );
-
-						//Output
-							return $settings;
-					}
-				} // /wm_jetpack_is_js_settings
-
-
-
-				/**
-				 * Jetpack infinite scroll posts renderer
-				 */
-				if ( ! function_exists( 'wm_jetpack_is_render' ) ) {
-					function wm_jetpack_is_render() {
-						while ( have_posts() ) :
-
-							the_post();
-
-							$content_type = get_post_format();
-
-							if ( 'nova_menu_item' === get_post_type() ) {
-								$content_type = 'food-menu';
-							}
-
-							get_template_part( 'content', $content_type );
-
-						endwhile;
-					}
-				} // /wm_jetpack_is_render
-
-
-
-			/**
-			 * Jetpack Food Menus CPT
-			 */
-
-				/**
-				 * Jetpack modify food menus Add Many Items post content/excerpt
-				 *
-				 * @param  array $data
-				 * @param  array $postarr
-				 */
-				if ( ! function_exists( 'wm_jetpack_add_many_food_menus' ) ) {
-					function wm_jetpack_add_many_food_menus( $data, $postarr ) {
-						//Helper variables
-							global $current_screen;
-
-						//Requirements check
-							if (
-									'nova_menu_item' !== $data['post_type']
-									|| ! isset( $current_screen->id )
-									|| 'nova_menu_item_page_add_many_nova_items' !== $current_screen->id
-								) {
-								return $data;
-							}
-
-							if ( ! empty( $_POST['ajax'] ) ) {
-								check_ajax_referer( 'nova_many_items' );
-							} else {
-								check_admin_referer( 'nova_many_items' );
-							}
-
-						//Preparing output
-							if ( $postarr['post_content'] && empty( $postarr['post_excerpt'] ) ) {
-								$data['post_excerpt'] = $data['post_content'];
-								$data['post_content'] = '';
-							}
-
-						//Output
-							return $data;
-					}
-				} // /wm_jetpack_add_many_food_menus
-
-
-
-				/**
-				 * Jetpack food menus Add Many Items styles
-				 */
-				if ( ! function_exists( 'wm_jetpack_styles_admin' ) ) {
-					function wm_jetpack_styles_admin() {
-						//Helper variables
-							global $current_screen;
-
-						//Enqueue (only on a specific admin page)
-							if (
-									isset( $current_screen->id )
-									&& 'nova_menu_item_page_add_many_nova_items' === $current_screen->id
-								) {
-									wp_add_inline_style( 'nova-font', '.many-items-table input[name="nova_title[]"], .many-items-table textarea { width: 360px; max-width: 100%; } .many-items-table textarea { height: 50px; }' );
-							}
-					}
-				} // /wm_jetpack_styles_admin
-
-
-
-				/**
-				 * Jetpack remove food menus singlular CPT page markup
-				 *
-				 * @link  https://wordpress.org/support/topic/novaphp-custom-post-type-single-post-view#post-6244588
-				 */
-				if ( ! function_exists( 'wm_jetpack_remove_food_menu_markup' ) ) {
-					function wm_jetpack_remove_food_menu_markup() {
-						if ( class_exists( 'Nova_Restaurant' ) && is_singular( 'nova_menu_item' ) ) {
-							remove_filter( 'template_include', array( Nova_Restaurant::init(), 'setup_menu_item_loop_markup__in_filter' ) );
-						}
-					}
-				} // /wm_jetpack_remove_food_menu_markup
-
-
-
-				/**
-				 * Display Menu Sections custom taxonomy anchor links to navigate through food menu
-				 *
-				 * @return  HTML Unordered list of taxonomy anchor links.
-				 *
-				 * @todo  This is being generated with JS for the time while Jetpack doesn't improve manipulation and sorting.
-				 */
-				if ( ! function_exists( 'wm_jetpack_menu_sections_taxonomy' ) ) {
-					function wm_jetpack_menu_sections_taxonomy() {
-						//Helper variables
-							$output = '';
-
-							$taxonomy_name = apply_filters( 'wmhook_wm_jetpack_menu_sections_taxonomy_name', 'nova_menu' );
-							$taxonomy_args = (array) apply_filters( 'wmhook_wm_jetpack_menu_sections_taxonomy_args', array() );
-
-						//Requirements check
-							if (
-									! class_exists( 'Nova_Restaurant' )
-									|| ! taxonomy_exists( $taxonomy_name )
-								) {
-								return;
-							}
-						//Preparing output
-							$terms = get_terms( $taxonomy_name, $taxonomy_args );
-							if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
-								foreach ( $terms as $term ) {
-									$term_link = '#' . strtolower( str_replace( ' ', '_', esc_html( $term->name ) ) );
-									$output .= '<li><a href="' . esc_url( $term_link ) . '">' . $term->name . '</a></li>';
-								}
-							}
-						//Output
-							echo apply_filters( 'wmhook_wm_jetpack_menu_sections_taxonomy_output', '<ul id="menu-group-links" class="taxonomy-links taxonomy-' . $taxonomy_name . '">' . $output . '</ul>' );
-					}
-				} // /wm_jetpack_menu_sections_taxonomy
 
 ?>

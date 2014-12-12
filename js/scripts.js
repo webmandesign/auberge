@@ -3,7 +3,9 @@
  *
  * @package    Auberge
  * @copyright  2014 WebMan - Oliver Juhas
- * @version    1.0
+ *
+ * @since    1.0
+ * @version  1.1
  *
  * CONTENT:
  * -  10) Basics
@@ -79,6 +81,35 @@ jQuery( function() {
 	/**
 	 * 20) Site header
 	 */
+
+		/**
+		 * Sticky header
+		 */
+
+			jQuery( window ).scroll( function() {
+				var $documentScrollTop = jQuery( document ).scrollTop(),
+				    $headerHeight      = jQuery( '#masthead' ).outerHeight();
+
+				if ( $documentScrollTop >= ( 2.62 * $headerHeight ) ) {
+
+					jQuery( 'body' )
+						.removeClass( 'hide-sticky-header' )
+						.addClass( 'sticky-header' );
+
+				} else if ( $documentScrollTop < ( 2.62 * $headerHeight ) && $documentScrollTop > ( 1 * $headerHeight ) ) {
+
+					jQuery( 'body.sticky-header' )
+						.removeClass( 'sticky-header' )
+						.addClass( 'hide-sticky-header' );
+
+				} else {
+
+					jQuery( 'body' )
+						.removeClass( 'sticky-header hide-sticky-header' );
+
+				}
+			} );
+
 
 		/**
 		 * Header search form
@@ -225,6 +256,31 @@ jQuery( function() {
 	/**
 	 * 100) Others
 	 */
+
+		/**
+		 * Smooth scrolling
+		 */
+
+			jQuery( 'body' ).on( 'click', 'a[href^="#"]', function( e ) {
+				var $this         = jQuery( this ),
+				    $anchor       = $this.not( '.add-comment-link, .toggle-mobile-sidebar, .search-toggle, .back-to-top, .skip-link' ).attr( 'href' ),
+				    $scrollObject = jQuery( 'html, body' ),
+				    $scrollSpeed  = ( 960 >= document.body.clientWidth ) ? ( 0 ) : ( 600 );
+
+				if (
+						$anchor
+						&& '#' !== $anchor
+						&& ! $this.hasClass( 'no-smooth-scroll' )
+					) {
+					e.preventDefault();
+
+					$scrollObject.stop().animate( {
+							scrollTop : jQuery( $anchor ).offset().top - jQuery( '#masthead' ).outerHeight() + 'px'
+						}, $scrollSpeed );
+				}
+			} );
+
+
 
 		/**
 		 * Sidebar mobile toggle

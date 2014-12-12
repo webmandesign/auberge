@@ -3,7 +3,9 @@
  *
  * @package    Auberge
  * @copyright  2014 WebMan - Oliver Juhas
- * @version    1.0
+ *
+ * @since    1.0
+ * @version  1.0
  */
 
 
@@ -74,8 +76,8 @@
 	 */
 
 		#accordion-section-credits .accordion-section-title { display: none; }
-		#accordion-section-credits .accordion-section-content { display: block; }
+		#accordion-section-credits .accordion-section-content { display: block !important; }
 
 
 
-/* End of file
+/* End of file */
