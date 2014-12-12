@@ -926,6 +926,15 @@
 
 
 	/**
+	 * Media player
+	 */
+
+		body .mejs-container { margin: 0; }
+		.wpview-content { margin: 0 0 1.62em; }
+
+
+
+	/**
 	 * WP Captions
 	 */
 
