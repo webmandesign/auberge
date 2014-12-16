@@ -45,6 +45,8 @@
 			add_action( 'widgets_init', 'wm_register_widget_areas', 1 );
 		//Pagination fallback
 			add_action( 'wmhook_postslist_after', 'wm_pagination', 10 );
+		//Shortcodes in text widget
+			add_filter( 'widget_text', 'do_shortcode' );
 		//Website sections
 			//DOCTYPE
 				add_action( 'wmhook_html_before',          'wm_doctype',                    10   );
@@ -423,7 +425,6 @@
 	 */
 	if ( ! function_exists( 'wm_register_assets' ) ) {
 		function wm_register_assets() {
-
 			/**
 			 * Styles
 			 */
@@ -466,12 +467,6 @@
 
 					wp_register_script( $handle, $src, $deps, $ver, $in_footer );
 				}
-
-			/**
-			 * Custom actions
-			 */
-
-				do_action( 'wmhook_wm_register_assets' );
 		}
 	} // /wm_register_assets
 
@@ -486,13 +481,12 @@
 	if ( ! function_exists( 'wm_enqueue_assets' ) ) {
 		function wm_enqueue_assets() {
 			//Helper variables
-				global $is_IE;
-
 				$enqueue_styles = $enqueue_scripts = array();
 
 				$custom_styles = wm_custom_styles();
 
 				$inline_styles_handle = ( wp_style_is( 'wm-colors', 'registered' ) ) ? ( 'wm-colors' ) : ( 'wm-stylesheet' );
+				$inline_styles_handle = apply_filters( 'wmhook_wm_enqueue_assets_inline_styles_handle', $inline_styles_handle );
 
 			/**
 			 * Styles
@@ -525,7 +519,7 @@
 						$enqueue_styles[] = 'wm-colors';
 					}
 
-				$enqueue_styles = apply_filters( 'wmhook_wm_enqueue_assets_enqueue_styles', $enqueue_styles, $is_IE );
+				$enqueue_styles = apply_filters( 'wmhook_wm_enqueue_assets_enqueue_styles', $enqueue_styles );
 
 				foreach ( $enqueue_styles as $handle ) {
 					wp_enqueue_style( $handle );
@@ -544,7 +538,7 @@
 							is_singular()
 							&& $output = get_post_meta( get_the_ID(), 'custom_css', true )
 						) {
-						$output = apply_filters( 'wmhook_wm_enqueue_assets_singular_inline_styles', "\r\n\r\n/* Custom singular styles */\r\n" . $output . "\r\n", $is_IE );
+						$output = apply_filters( 'wmhook_wm_enqueue_assets_singular_inline_styles', "\r\n\r\n/* Custom singular styles */\r\n" . $output . "\r\n" );
 
 						wp_add_inline_style( $inline_styles_handle, $output . "\r\n" );
 					}
@@ -580,7 +574,7 @@
 				//Skip link focus fix
 					$enqueue_scripts[] = 'wm-skip-link-focus-fix';
 
-				$enqueue_scripts = apply_filters( 'wmhook_wm_enqueue_assets_enqueue_scripts', $enqueue_scripts, $is_IE );
+				$enqueue_scripts = apply_filters( 'wmhook_wm_enqueue_assets_enqueue_scripts', $enqueue_scripts );
 
 				foreach ( $enqueue_scripts as $handle ) {
 					wp_enqueue_script( $handle );
@@ -602,12 +596,6 @@
 				$scripts_inline = apply_filters( 'wmhook_wm_enqueue_assets_scripts_inline', array( 'text_menu_group_nav' => __( '&uarr; Menu sections', 'wm_domain' ) ) );
 
 				wp_localize_script( 'wm-theme-scripts', '$scriptsInline', $scripts_inline );
-
-			/**
-			 * Custom actions
-			 */
-
-				do_action( 'wmhook_wm_enqueue_assets', $is_IE );
 		}
 	} // /wm_enqueue_assets
 
@@ -723,8 +711,6 @@
 	if ( ! function_exists( 'wm_head' ) ) {
 		function wm_head() {
 			//Helper variables
-				global $is_IE;
-
 				$output = array();
 
 			//Preparing output
@@ -904,6 +890,9 @@
 	/**
 	 * Post/page heading (title)
 	 *
+	 * @since    1.0
+	 * @version  1.1
+	 *
 	 * @param  array $args Heading setup arguments
 	 */
 	if ( ! function_exists( 'wm_post_title' ) ) {
@@ -912,7 +901,10 @@
 				global $post;
 
 				//Requirements check
-					if ( ! ( $title = get_the_title() ) ) {
+					if (
+							! ( $title = get_the_title() )
+							|| apply_filters( 'wm_post_title_disable', false )
+						) {
 						return;
 					}
 
@@ -963,6 +955,7 @@
 							if ( $content ) {
 								$permalink = array( '<a href="' . get_permalink() . '">', '</a>' );
 							}
+							$permalink = apply_filters( 'wmhook_wm_post_title_nova_menu_item_permalink', $permalink );
 
 						$args['title']  = $permalink[0];
 						$args['title'] .= '<span class="food-menu-item-title">' . $title . '</span>';
@@ -1152,11 +1145,14 @@
 
 		/**
 		 * Entry top
+		 *
+		 * @since    1.0
+		 * @version  1.1
 		 */
 		if ( ! function_exists( 'wm_entry_top' ) ) {
 			function wm_entry_top() {
 				//Post meta
-					if ( in_array( get_post_type(), apply_filters( 'wmhook_wm_entry_top_meta', array( 'post', 'nova_menu_item' ) ) ) ) {
+					if ( in_array( get_post_type(), apply_filters( 'wmhook_wm_entry_top_meta_post_types', array( 'post', 'nova_menu_item' ) ) ) ) {
 
 						if ( is_singular( 'nova_menu_item' ) ) {
 
@@ -1432,6 +1428,9 @@
 
 			/**
 			 * Front page food menu more link
+			 *
+			 * @since    1.0
+			 * @version  1.1
 			 */
 			if ( ! function_exists( 'wm_food_menu_more_link' ) ) {
 				function wm_food_menu_more_link() {
@@ -1441,7 +1440,7 @@
 							1 <= $food_menu_page_id
 							&& ! is_page_template( 'page-template/_menu.php' )
 						) {
-						echo '<div class="archive-link"><a href="' . esc_url( get_permalink( $food_menu_page_id ) ) . '" class="button">' . __( 'Menu page', 'wm_domain' ) . '</a></div>';
+						echo '<div class="archive-link"><a href="' . esc_url( get_permalink( $food_menu_page_id ) ) . '" class="button">' . get_the_title( $food_menu_page_id ) . '</a></div>';
 					}
 				}
 			} // /wm_food_menu_more_link
@@ -1471,6 +1470,7 @@
 											__( 'Powered by %s.', 'wm_domain' ),
 											'<a href="https://wordpress.org">WordPress</a>'
 										)
+									. ' '
 									. sprintf(
 											__( 'Theme by %s.', 'wm_domain' ),
 											'<a href="' . esc_url( WM_DEVELOPER_URL ) . '">WebMan Design</a>'

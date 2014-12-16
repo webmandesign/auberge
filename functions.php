@@ -40,23 +40,23 @@
 		$theme_data = wp_get_theme();
 
 	//Basic constants
-		if ( ! defined( 'WM_THEME_NAME' ) )            define( 'WM_THEME_NAME',            $theme_data->Name                       );
-		if ( ! defined( 'WM_THEME_SHORTNAME' ) )       define( 'WM_THEME_SHORTNAME',       get_template()                          );
-		if ( ! defined( 'WM_THEME_VERSION' ) )         define( 'WM_THEME_VERSION',         $theme_data->Version                    );
+		if ( ! defined( 'WM_THEME_NAME' ) )            define( 'WM_THEME_NAME',            $theme_data->Name                          );
+		if ( ! defined( 'WM_THEME_SHORTNAME' ) )       define( 'WM_THEME_SHORTNAME',       str_replace( '-plus', '', get_template() ) );
+		if ( ! defined( 'WM_THEME_VERSION' ) )         define( 'WM_THEME_VERSION',         $theme_data->Version                       );
 
-		if ( ! defined( 'WM_SCRIPTS_VERSION' ) )       define( 'WM_SCRIPTS_VERSION',       esc_attr( trim( WM_THEME_VERSION ) )    );
-		if ( ! defined( 'WM_WP_COMPATIBILITY' ) )      define( 'WM_WP_COMPATIBILITY',      4.0                                     );
+		if ( ! defined( 'WM_SCRIPTS_VERSION' ) )       define( 'WM_SCRIPTS_VERSION',       esc_attr( trim( WM_THEME_VERSION ) )       );
+		if ( ! defined( 'WM_WP_COMPATIBILITY' ) )      define( 'WM_WP_COMPATIBILITY',      4.0                                        );
 
 	//Dir constants
-		if ( ! defined( 'WM_INC_DIR' ) )               define( 'WM_INC_DIR',               trailingslashit( 'inc/' )               );
+		if ( ! defined( 'WM_INC_DIR' ) )               define( 'WM_INC_DIR',               trailingslashit( 'inc/' )                  );
 
 	//URL constants
-		if ( ! defined( 'WM_DEVELOPER_URL' ) )         define( 'WM_DEVELOPER_URL',         $theme_data->get( 'AuthorURI' )         );
+		if ( ! defined( 'WM_DEVELOPER_URL' ) )         define( 'WM_DEVELOPER_URL',         $theme_data->get( 'AuthorURI' )            );
 
 	//Theme design constants
-		if ( ! defined( 'WM_IMAGE_SIZE_ITEMS' ) )      define( 'WM_IMAGE_SIZE_ITEMS',      'thumbnail'                             );
-		if ( ! defined( 'WM_IMAGE_SIZE_ITEMS_MENU' ) ) define( 'WM_IMAGE_SIZE_ITEMS_MENU', 'banner-small'                          );
-		if ( ! defined( 'WM_IMAGE_SIZE_SINGULAR' ) )   define( 'WM_IMAGE_SIZE_SINGULAR',   'large'                                 );
+		if ( ! defined( 'WM_IMAGE_SIZE_ITEMS' ) )      define( 'WM_IMAGE_SIZE_ITEMS',      'thumbnail'                                );
+		if ( ! defined( 'WM_IMAGE_SIZE_ITEMS_MENU' ) ) define( 'WM_IMAGE_SIZE_ITEMS_MENU', 'banner-small'                             );
+		if ( ! defined( 'WM_IMAGE_SIZE_SINGULAR' ) )   define( 'WM_IMAGE_SIZE_SINGULAR',   'large'                                    );
 
 
 

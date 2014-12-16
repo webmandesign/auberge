@@ -24,7 +24,7 @@ msgstr ""
 
 #. Text in function
 #: inc/setup-theme-options.php:1
-msgid "%s is free WordPress theme developed by WebMan. You can obtain other professional WordPress themes at <strong><a href=\"%s\" target=\"_blani\">WebManDesign.eu</a></strong>. Thank you for using this awesome theme!"
+msgid "%s is free WordPress theme developed by WebMan. You can obtain other professional WordPress themes at <strong><a href=\"%s\" target=\"_blank\">WebManDesign.eu</a></strong>. Thank you for using this awesome theme!"
 msgstr ""
 
 #. Text in function
@@ -236,7 +236,7 @@ msgstr ""
 
 #. Text in function
 #: inc/setup-theme-options.php:1
-msgid "Footer color"
+msgid "Footer colors"
 msgstr ""
 
 #. Text in function
@@ -256,7 +256,7 @@ msgstr ""
 
 #. Text in function
 #: inc/setup-theme-options.php:1
-msgid "Front page widgets color"
+msgid "Front page widgets colors"
 msgstr ""
 
 #. Text in function
@@ -281,7 +281,7 @@ msgstr ""
 
 #. Text in function
 #: inc/setup-theme-options.php:1
-msgid "Header color"
+msgid "Header colors"
 msgstr ""
 
 #. Text in function

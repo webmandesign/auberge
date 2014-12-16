@@ -707,7 +707,6 @@
 				h2,
 				.h2,
 				blockquote,
-				.menu-group-header h1,
 				.post-navigation a { font-size: 1.38em; }
 
 				h1,
@@ -929,6 +928,7 @@
 			.wp-caption .wp-caption-text {
 				padding: 1em 0 0;
 				overflow: hidden;
+				opacity: .75;
 			}
 
 
@@ -1077,6 +1077,7 @@
 			line-height: normal;
 			font-size: 1em;
 			font-family: inherit;
+			color: inherit;
 			border: 2px solid;
 			outline: 0;
 			vertical-align: baseline;
@@ -2059,6 +2060,8 @@
 					padding: 1.62rem;
 					margin: 0 1% 2%;
 					border: 2px solid;
+					-webkit-transition: border-color .6s;
+					        transition: border-color .6s;
 				}
 
 					.posts .entry-title {
@@ -2272,12 +2275,12 @@
 						border-top: 2px solid;
 					}
 
-						.entry-content div.sharedaddy h3.sd-title:before { display: none; }
+						.site-content div.sharedaddy h3.sd-title:before { display: none; }
 
 						.entry-content .sd-content ul { margin: 0 !important; }
 
-						.entry-content div.sharedaddy .sd-content ul li a.sd-button { margin: .19em .62em .19em 0; }
-						.entry-content div.sharedaddy .sd-content ul li a.sd-button:not(.no-text) {
+						.site-content div.sharedaddy .sd-content ul li a.sd-button { margin: .19em .62em .19em 0; }
+						.site-content div.sharedaddy .sd-content ul li a.sd-button:not(.no-text) {
 							padding: .62em 1em;
 							line-height: normal;
 							border: 0;
@@ -2288,7 +2291,7 @@
 							-webkit-transition: all .4s;
 							        transition: all .4s;
 						}
-							.entry-content div.sharedaddy .sd-content ul li a.sd-button:not(.no-text):hover { opacity: .75; }
+							.site-content div.sharedaddy .sd-content ul li a.sd-button:not(.no-text):hover { opacity: .75; }
 
 
 

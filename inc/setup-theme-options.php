@@ -26,7 +26,7 @@
 	 */
 
 		//Apply customizer options
-			add_filter( 'wmhook_theme_options', 'wm_theme_options_skin_array', 10 );
+			add_filter( 'wmhook_theme_options', 'wm_theme_options_array', 10 );
 		//Theme custom styles to be outputed in HTML head
 			add_filter( 'wmhook_custom_styles', 'wm_custom_css_template', 10 );
 
@@ -39,15 +39,15 @@
  */
 
 	/**
-	 * Set $wm_skin_design array
+	 * Set theme options array
 	 *
 	 * @since    1.0
 	 * @version  1.1
 	 *
-	 * @param  array $wm_skin_design
+	 * @param  array $options
 	 */
-	if ( ! function_exists( 'wm_theme_options_skin_array' ) ) {
-		function wm_theme_options_skin_array( $wm_skin_design = array() ) {
+	if ( ! function_exists( 'wm_theme_options_array' ) ) {
+		function wm_theme_options_array( $options = array() ) {
 			//Preparing output
 
 				/**
@@ -56,22 +56,22 @@
 
 					$prefix = '';
 
-					$wm_skin_design = array(
+					$options = array(
 
 						/**
 						 * Layout
 						 */
-						'layout' => array(
+						100 . 'layout' => array(
 							'id'                       => 'layout',
 							'type'                     => 'section',
 							'theme-customizer-section' => __( 'Layout', 'wm_domain' ),
 						),
 
-							'layout' . 5 => array(
+							100 . 'layout' . 100 => array(
 								'type'    => 'theme-customizer-html',
 								'content' => '<h3>' . __( 'Front page layout', 'wm_domain' ) . '</h3>',
 							),
-								'layout' . 10 => array(
+								100 . 'layout' . 110 => array(
 									'type'        => 'select',
 									'id'          => $prefix . 'layout' . '-blog-condensed',
 									'label'       => __( 'Condensed blog posts', 'wm_domain' ),
@@ -85,7 +85,7 @@
 											'bottom|20' => __( 'Second section below page content', 'wm_domain' ),
 										),
 								),
-								'layout' . 20 => array(
+								100 . 'layout' . 120 => array(
 									'type'        => 'select',
 									'id'          => $prefix . 'layout' . '-food-menu',
 									'label'       => __( 'Food menu', 'wm_domain' ),
@@ -105,24 +105,24 @@
 						/**
 						 * Colors
 						 */
-						'colors' => array(
+						200 . 'colors' => array(
 							'id'                       => 'colors',
 							'type'                     => 'section',
 							'theme-customizer-section' => __( 'Colors', 'wm_domain' ),
 						),
 
-							'colors' . 5 => array(
+							200 . 'colors' . 100 => array(
 								'type'    => 'theme-customizer-html',
 								'content' => '<h3>' . __( 'Accent color', 'wm_domain' ) . '</h3>',
 							),
-								'colors' . 10 => array(
+								200 . 'colors' . 110 => array(
 									'type'        => 'color',
 									'id'          => $prefix . 'color' . '-accent',
 									'label'       => __( 'Accent color', 'wm_domain' ),
 									'description' => __( 'This color affects links, buttons and other elements of the website', 'wm_domain' ),
 									'default'     => '#0aac8e',
 								),
-								'colors' . 20 => array(
+								200 . 'colors' . 120 => array(
 									'type'        => 'color',
 									'id'          => $prefix . 'color' . '-accent-text',
 									'label'       => __( 'Accent text color', 'wm_domain' ),
@@ -130,17 +130,17 @@
 									'default'     => '#ffffff',
 								),
 
-							'colors' . 25 => array(
+							200 . 'colors' . 200 => array(
 								'type'    => 'theme-customizer-html',
-								'content' => '<h3>' . __( 'Header color', 'wm_domain' ) . '</h3>',
+								'content' => '<h3>' . __( 'Header colors', 'wm_domain' ) . '</h3>',
 							),
-								'colors' . 30 => array(
+								200 . 'colors' . 210 => array(
 									'type'        => 'color',
 									'id'          => $prefix . 'color' . '-header',
 									'label'       => __( 'Header background color', 'wm_domain' ),
 									'default'     => '#1a1c1e',
 								),
-								'colors' . 40 => array(
+								200 . 'colors' . 220 => array(
 									'type'        => 'color',
 									'id'          => $prefix . 'color' . '-header-text',
 									'label'       => __( 'Header text color', 'wm_domain' ),
@@ -148,34 +148,34 @@
 									'default'     => '#ffffff',
 								),
 
-							'colors' . 45 => array(
+							200 . 'colors' . 300 => array(
 								'type'    => 'theme-customizer-html',
-								'content' => '<h3>' . __( 'Footer color', 'wm_domain' ) . '</h3>',
+								'content' => '<h3>' . __( 'Footer colors', 'wm_domain' ) . '</h3>',
 							),
-								'colors' . 50 => array(
+								200 . 'colors' . 310 => array(
 									'type'        => 'color',
 									'id'          => $prefix . 'color' . '-footer',
 									'label'       => __( 'Footer background color', 'wm_domain' ),
 									'default'     => '#1a1c1e',
 								),
-								'colors' . 60 => array(
+								200 . 'colors' . 320 => array(
 									'type'        => 'color',
 									'id'          => $prefix . 'color' . '-footer-text',
 									'label'       => __( 'Footer text color', 'wm_domain' ),
 									'default'     => '#8a8c8e',
 								),
 
-							'colors' . 65 => array(
+							200 . 'colors' . 400 => array(
 								'type'    => 'theme-customizer-html',
-								'content' => '<h3>' . __( 'Front page widgets color', 'wm_domain' ) . '</h3>',
+								'content' => '<h3>' . __( 'Front page widgets colors', 'wm_domain' ) . '</h3>',
 							),
-								'colors' . 70 => array(
+								200 . 'colors' . 410 => array(
 									'type'        => 'color',
 									'id'          => $prefix . 'color' . '-front-widgets',
 									'label'       => __( 'Front widgets background color', 'wm_domain' ),
 									'default'     => '#1a1c1e',
 								),
-								'colors' . 80 => array(
+								200 . 'colors' . 420 => array(
 									'type'        => 'color',
 									'id'          => $prefix . 'color' . '-front-widgets-text',
 									'label'       => __( 'Front widgets text color', 'wm_domain' ),
@@ -187,32 +187,32 @@
 						/**
 						 * Fonts
 						 */
-						'fonts' => array(
+						300 . 'fonts' => array(
 							'id'                       => 'fonts',
 							'type'                     => 'section',
 							'theme-customizer-section' => __( 'Fonts', 'wm_domain' ),
 						),
 
-							'fonts' . 10 => array(
+							300 . 'fonts' . 100 => array(
 								'type'    => 'theme-customizer-html',
 								'content' => '<p class="description">' . __( 'Set a Google Font to be used for website logo, headings and general text.', 'wm_domain' ) . '<br />' . sprintf( __( 'Font matches recommendations from <a%s>Google Web Fonts Typographic Project</a>.', 'wm_domain' ), ' href="http://femmebot.github.io/google-type/" target="_blank"' ) . '</p>',
 							),
 
-								'fonts' . 20 => array(
+								300 . 'fonts' . 110 => array(
 									'type'    => 'select',
 									'id'      => $prefix . 'font' . '-family-logo',
 									'label'   => __( 'Logo (site title) font', 'wm_domain' ),
 									'options' => wm_helper_var( 'google-fonts' ),
 									'default' => 'Ubuntu:400,300',
 								),
-								'fonts' . 30 => array(
+								300 . 'fonts' . 120 => array(
 									'type'    => 'select',
 									'id'      => $prefix . 'font' . '-family-headings',
 									'label'   => __( 'Headings font', 'wm_domain' ),
 									'options' => wm_helper_var( 'google-fonts' ),
 									'default' => 'Ubuntu:400,300',
 								),
-								'fonts' . 40 => array(
+								300 . 'fonts' . 130 => array(
 									'type'    => 'select',
 									'id'      => $prefix . 'font' . '-family-body',
 									'label'   => __( 'General text font', 'wm_domain' ),
@@ -220,7 +220,7 @@
 									'default' => 'Ubuntu:400,300',
 								),
 
-								'fonts' . 50 => array(
+								300 . 'fonts' . 140 => array(
 									'type'    => 'multiselect',
 									'id'      => $prefix . 'font' . '-subset',
 									'label'   => __( 'Font subset', 'wm_domain' ),
@@ -228,7 +228,7 @@
 									'default' => 'latin',
 								),
 
-								'fonts' . 60 => array(
+								300 . 'fonts' . 150 => array(
 									'type'          => 'text',
 									'id'            => $prefix . 'font' . '-size-body',
 									'label'         => __( 'Basic font size', 'wm_domain' ),
@@ -247,24 +247,24 @@
 						/**
 						 * Credits
 						 */
-						'credits' => array(
+						999 . 'credits' => array(
 							'id'                       => 'credits',
 							'type'                     => 'section',
 							'theme-customizer-section' => 'Credits',
 						),
 
-							'credits' . 10 => array(
+							999 . 'credits' . 100 => array(
 								'id'      => 'credits-text',
 								'type'    => 'theme-customizer-html',
-								'content' => '<h3>' . __( 'Theme Credits', 'wm_domain' ) . '</h3><p class="description">' . sprintf( __( '%s is free WordPress theme developed by WebMan. You can obtain other professional WordPress themes at <strong><a href="%s" target="_blani">WebManDesign.eu</a></strong>. Thank you for using this awesome theme!', 'wm_domain' ), '<strong>' . WM_THEME_NAME . '</strong>', add_query_arg( array( 'utm_source' => WM_THEME_SHORTNAME . '-theme-credits' ), esc_url( WM_DEVELOPER_URL ) ) ) . '</p><p><a href="' . esc_url( trailingslashit( WM_DEVELOPER_URL ) . WM_THEME_SHORTNAME . '-wordpress-theme/#donate' ) . '" class="donation-link" target="_blank">Donate</a></p>',
+								'content' => '<h3>' . __( 'Theme Credits', 'wm_domain' ) . '</h3><p class="description">' . sprintf( __( '%s is free WordPress theme developed by WebMan. You can obtain other professional WordPress themes at <strong><a href="%s" target="_blank">WebManDesign.eu</a></strong>. Thank you for using this awesome theme!', 'wm_domain' ), '<strong>' . WM_THEME_NAME . '</strong>', add_query_arg( array( 'utm_source' => WM_THEME_SHORTNAME . '-theme-credits' ), esc_url( WM_DEVELOPER_URL ) ) ) . '</p><p><a href="' . esc_url( trailingslashit( WM_DEVELOPER_URL ) . WM_THEME_SHORTNAME . '-wordpress-theme/#donate' ) . '" class="donation-link" target="_blank">Donate</a></p>',
 							),
 
 					);
 
 			//Output
-				return apply_filters( 'wmhook_wm_theme_options_skin_array_output', $wm_skin_design );
+				return apply_filters( 'wmhook_wm_theme_options_array_output', $options );
 		}
-	} // /wm_theme_options_skin_array
+	} // /wm_theme_options_array
 
 
 

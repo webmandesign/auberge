@@ -3,7 +3,9 @@
  *
  * @package    Auberge
  * @copyright  2014 WebMan - Oliver Juhas
- * @version    1.0
+ *
+ * @since    1.0
+ * @version  1.1
  */
 
 
@@ -39,7 +41,7 @@
 
 		a,
 		.accent-color { color: [[color-accent]]; }
-		.entry-content div.sharedaddy .sd-content ul li a.sd-button:not(.no-text) { color: [[color-accent-text]] !important; }
+		.site-content div.sharedaddy .sd-content ul li a.sd-button:not(.no-text) { color: [[color-accent-text]] !important; }
 
 		.nav-search-form .form-search { background-color: [[color-accent]]; }
 		.infinite-loader .spinner > div > div { background: [[color-accent]] !important; }
@@ -57,7 +59,7 @@
 		input[type="reset"],
 		input[type="submit"],
 		.menu-group-nav a,
-		.entry-content div.sharedaddy .sd-content ul li a.sd-button:not(.no-text),
+		.site-content div.sharedaddy .sd-content ul li a.sd-button:not(.no-text),
 		.post-navigation .nav-previous,
 		.post-navigation .nav-next,
 		.bypostauthor > .comment-body .comment-author:before,

@@ -12,7 +12,7 @@ msgstr ""
 "PO-Revision-Date: \n"
 "Language-Team: \n"
 "Language: sk_SK\n"
-"X-Generator: Poedit 1.6.7\n"
+"X-Generator: Poedit 1.7.1\n"
 
 #. Text in function
 #: inc/setup.php:1
@@ -28,12 +28,12 @@ msgstr "\"%s\" obsah"
 #: inc/setup-theme-options.php:1
 msgid ""
 "%s is free WordPress theme developed by WebMan. You can obtain other "
-"professional WordPress themes at <strong><a href=\"%s\" target=\"_blani"
+"professional WordPress themes at <strong><a href=\"%s\" target=\"_blank"
 "\">WebManDesign.eu</a></strong>. Thank you for using this awesome theme!"
 msgstr ""
 "%s je voľne dostupná WordPress šablóna. Ďalšie profesionálne WordPress "
 "šablóny od autora Auberge sú k dispozícií na <strong><a href=\"%s\" target="
-"\"_blani\">WebManDesign.eu</a></strong>. Ďakujeme, že používate túto úžasnú "
+"\"_blank\">WebManDesign.eu</a></strong>. Ďakujeme, že používate túto úžasnú "
 "šablónu!"
 
 #. Text in function
@@ -260,8 +260,8 @@ msgstr "Farba pozadia pätky"
 
 #. Text in function
 #: inc/setup-theme-options.php:1
-msgid "Footer color"
-msgstr "Farba pätky"
+msgid "Footer colors"
+msgstr "Farby pätky"
 
 #. Text in function
 #: inc/setup-theme-options.php:1
@@ -280,8 +280,8 @@ msgstr "Usporiadanie úvodnej stránky"
 
 #. Text in function
 #: inc/setup-theme-options.php:1
-msgid "Front page widgets color"
-msgstr "Farba widgetov na úvodnej stránke"
+msgid "Front page widgets colors"
+msgstr "Farby widgetov na úvodnej stránke"
 
 #. Text in function
 #: inc/setup-theme-options.php:1
@@ -305,8 +305,8 @@ msgstr "Farba pozadia záhlavia"
 
 #. Text in function
 #: inc/setup-theme-options.php:1
-msgid "Header color"
-msgstr "Farba záhlavia"
+msgid "Header colors"
+msgstr "Farby záhlavia"
 
 #. Text in function
 #: inc/setup-theme-options.php:1

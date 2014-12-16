@@ -66,7 +66,7 @@
 								'name'     => 'Jetpack by WordPress.com',
 								'slug'     => 'jetpack',
 								'required' => false,
-								'version'  => '3.2',
+								'version'  => '3.3',
 							),
 
 				) );

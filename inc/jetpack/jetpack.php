@@ -61,6 +61,15 @@
 				add_theme_support( 'nova_menu_item' );
 				add_post_type_support( 'nova_menu_item', array( 'comments' ) );
 
+				/**
+				 * Edit Food Menu output
+				 *
+				 * @link  https://github.com/Automattic/jetpack/blob/master/modules/custom-post-types/nova.php#L14
+				 */
+				if ( class_exists( 'Nova_Restaurant' ) ) {
+					Nova_Restaurant::init( array( 'menu_title_tag' => 'h2' ) );
+				}
+
 			//Featured content
 				add_theme_support( 'featured-content', apply_filters( 'wmhook_wm_jetpack_featured_content', array(
 						'featured_content_filter' => 'wm_get_banner_posts',

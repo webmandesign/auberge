@@ -18,15 +18,22 @@
 	 * Background color
 	 */
 
-		/* Basic background colors */
-
-			.site,
-			.page-section .posts .hentry { background-color: #fff; }
+		/* RGBA backgrounds */
 
 			button,
 			input,
 			select,
-			textarea { background-color: #f5f7f9; }
+			textarea,
+			tbody tr:hover td,
+			tbody tr:hover th { background-color: rgba(0,0,0, .05); }
+
+			.gallery-caption { background-color: rgba(0,0,0, .8); }
+
+		/* Basic background colors */
+
+			.site,
+			.page-section .posts .hentry,
+			.nav-search-form .search-field { background-color: #fff; }
 
 			body,
 			hr,
@@ -51,6 +58,7 @@
 			ins,
 			.highlight,
 			pre:before,
+			.pagination a,
 			.pagination span,
 			.label-sticky,
 			.nav-search-form .form-search,
@@ -60,7 +68,7 @@
 			input[type="reset"],
 			input[type="submit"],
 			.menu-group-nav a,
-			.entry-content div.sharedaddy .sd-content ul li a.sd-button:not(.no-text),
+			.site-content div.sharedaddy .sd-content ul li a.sd-button:not(.no-text),
 			.post-navigation .nav-previous,
 			.post-navigation .nav-next,
 			.bypostauthor > .comment-body .comment-author:before,
@@ -68,13 +76,6 @@
 			.widget_calendar tbody a,
 			.widget .tagcloud a:hover,
 			body #infinite-handle span { background-color: #0aac8e; }
-
-		/* RGBA backgrounds */
-
-			tbody tr:hover td,
-			tbody tr:hover th { background-color: rgba(0,0,0, .05); }
-
-			.gallery-caption { background-color: rgba(0,0,0, .8); }
 
 
 
@@ -141,7 +142,11 @@
 
 	/* Basic text colors */
 
+		mark,
+		ins,
+		.highlight,
 		pre:before,
+		.pagination a,
 		.pagination span,
 		.label-sticky,
 		.button,
@@ -161,26 +166,17 @@
 		.widget .tagcloud a:hover,
 		body #infinite-handle span { color: #fff; }
 
-			.entry-content div.sharedaddy .sd-content ul li a.sd-button:not(.no-text) { color: #fff !important; }
-
-		mark,
-		ins,
-		.highlight { color: #fafcfe; }
+			.site-content div.sharedaddy .sd-content ul li a.sd-button:not(.no-text) { color: #fff !important; }
 
 		.gallery-caption,
 		.widget .tagcloud a:before { color: #caccce; }
 
-		.wp-caption,
 		.site-footer,
 		.front-page-widgets-wrapper { color: #8a8c8e; }
 
 		body,
-		code { color: #6a6c6e; }
-
-		button,
-		input,
-		select,
-		textarea { color: #2a2c2e; }
+		code,
+		.nav-search-form .search-field { color: #6a6c6e; }
 
 		h1, h2, h3, h4, h5, h6,
 		.h1, .h2, .h3, .h4, .h5, .h6 { color: #1a1c1e; }
@@ -240,15 +236,18 @@
 		input:focus,
 		select:focus,
 		textarea:focus,
+		.posts .hentry:hover,
 		.widget .tagcloud a:hover { border-color: #0aac8e; }
+
+		.label-sticky:before,
+		.label-sticky:after {
+			border-top-color: #0aac8e;
+			border-right-color: #0aac8e;
+		}
 
 	/* navigation border color */
 
 		.main-navigation li li { border-top-color: #4a4c4e; }
-
-	/* sidebar border color */
-
-		.sidebar .widget .tagcloud a { border-color: #caccce; }
 
 	/* inherit border color */
 
@@ -278,6 +277,8 @@
 	@media only screen and (max-width: 960px) {
 
 		.main-navigation-inner { background-color: #3a3c3e; }
+
+		.main-navigation ul a { color: #fff; }
 
 		.menu-toggle,
 		.menu-toggle:hover,

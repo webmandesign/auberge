@@ -7,6 +7,7 @@
 * Added email icon to social links menu
 * Added smooth window scroll on anchor links
 * Added support for breadcrumbs plugin
+* Added support for shortcodes in Text widget
 * Improved code structure and notes
 * Improved theme localization
 * Updated the custom CSS filter hook name
@@ -16,15 +17,26 @@
 * Updated copyright info in readme file
 * Updated minor style issues
 * Updated stylesheet structure (colors grouped together)
+* Updated front page Food menu section button title
 * Updated localization
 * Fixed Jetpack related posts styling
 * Fixed nested ordered lists styling
 * Fixed styling issues
+* Fixed filter hook names
+* Removed unnecessary hooks
 
 #### Files changed:
 
+	content-food-menu.php
+	content-page.php
+	content.php
 	functions.php
+	image.php
 	loop-banner.php
+	loop-blog-condensed.php
+	loop-food-menu.php
+	style.css
+	css/_custom.css
 	css/colors.css
 	css/editor-styles.css
 	inc/setup.php

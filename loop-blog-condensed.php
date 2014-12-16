@@ -4,7 +4,9 @@
  *
  * @package    Auberge
  * @copyright  2014 WebMan - Oliver Juhas
- * @version    1.0
+ *
+ * @since    1.0
+ * @version  1.1
  */
 
 
@@ -33,9 +35,9 @@
 				<h1 class="page-title"><?php
 
 					if ( $page_for_posts_id = absint( get_option( 'page_for_posts' ) ) ) {
-						echo apply_filters( 'wmhook_loop_blog_condensed_title_blog', '<a href="' . esc_url( get_permalink( $page_for_posts_id ) ) . '">' . __( 'News', 'wm_domain' ) . '</a>' );
+						echo apply_filters( 'wmhook_loop_blog_condensed_title_text', '<a href="' . esc_url( get_permalink( $page_for_posts_id ) ) . '">' . __( 'News', 'wm_domain' ) . '</a>' );
 					} else {
-						echo apply_filters( 'wmhook_loop_blog_condensed_title_text', __( 'Blog', 'wm_domain' ) );
+						echo apply_filters( 'wmhook_loop_blog_condensed_title_text', __( 'News', 'wm_domain' ) );
 					}
 
 				?></h1>
@@ -54,7 +56,7 @@
 
 					$blog_posts->the_post();
 
-					get_template_part( 'content', get_post_format() );
+					get_template_part( 'content', apply_filters( 'wmhook_loop_blog_condensed_content_template', '' ) );
 
 				endwhile;
 
