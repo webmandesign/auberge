@@ -77,9 +77,9 @@ http://www.google.com/fonts/specimen/Fira+Sans, https://github.com/mozilla/Fira
 ### Images copyright
 
 **Default header.jpg image and images used in screenshot.jpg**
-Copyright (c) 2014 Pexels
-Licensed under the CC0 License - https://creativecommons.org/publicdomain/zero/1.0/, http://www.pexels.com/photo-license/
-http://www.pexels.com/
+Copyright (c) 2014 Daniel Nanescu, SplitShire.com
+Licensed under the CC0 License - https://creativecommons.org/publicdomain/zero/1.0/, http://splitshire.com/about/
+http://splitshire.com/coffee-pack-zip-8-photos/
 
 ## PHP scripts copyright
 

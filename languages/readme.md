@@ -12,3 +12,7 @@ Any translation files placed here will be deleted when you update the theme.
 ## Contributing your translations back to the theme
 
 If you would like to help out translating the theme, please contribute on our [support forum](http://support.webmandesign.eu/).
+
+## Additional sources
+
+* Amazing tutorial on creating a WordPress theme localization files with Poedit: [http://www.cssigniter.com/ignite/wordpress-poedit-translation-secrets/]

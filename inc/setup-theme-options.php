@@ -64,7 +64,7 @@
 						100 . 'layout' => array(
 							'id'                       => 'layout',
 							'type'                     => 'section',
-							'theme-customizer-section' => __( 'Layout', 'wm_domain' ),
+							'theme-customizer-section' => _x( 'Layout', 'Customizer section title.', 'wm_domain' ),
 						),
 
 							100 . 'layout' . 100 => array(
@@ -108,7 +108,7 @@
 						200 . 'colors' => array(
 							'id'                       => 'colors',
 							'type'                     => 'section',
-							'theme-customizer-section' => __( 'Colors', 'wm_domain' ),
+							'theme-customizer-section' => _x( 'Colors', 'Customizer section title.', 'wm_domain' ),
 						),
 
 							200 . 'colors' . 100 => array(
@@ -190,7 +190,7 @@
 						300 . 'fonts' => array(
 							'id'                       => 'fonts',
 							'type'                     => 'section',
-							'theme-customizer-section' => __( 'Fonts', 'wm_domain' ),
+							'theme-customizer-section' => _x( 'Fonts', 'Customizer section title.', 'wm_domain' ),
 						),
 
 							300 . 'fonts' . 100 => array(

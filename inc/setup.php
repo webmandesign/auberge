@@ -151,6 +151,9 @@
 	/**
 	 * Theme helper variables
 	 *
+	 * @since    1.0
+	 * @version  1.1
+	 *
 	 * @param  string $variable Helper variables array key to return
 	 * @param  string $key      Additional key if the variable is array
 	 */
@@ -165,60 +168,60 @@
 								' ' => __( ' - do not use Google Font', 'wm_domain' ),
 
 							//Default theme font
-								'optgroup' . 0  => sprintf( __( 'Theme default', 'wm_domain' ), 1 ),
+								'optgroup' . 0  => sprintf( _x( 'Theme default', 'Google Font default setup options group title.', 'wm_domain' ), 1 ),
 									'Ubuntu:400,300' => 'Ubuntu',
 								'/optgroup' . 0 => '',
 
 							//Insipration from http://femmebot.github.io/google-type/
-								'optgroup' . 1  => sprintf( __( 'Recommendation #%d', 'wm_domain' ), 1 ),
+								'optgroup' . 1  => sprintf( _x( 'Recommendation #%d', 'Google Font setup recommendation (numbered) group title.', 'wm_domain' ), 1 ),
 									'Playfair Display' => 'Playfair Display',
 									'Fauna One'        => 'Fauna One',
 								'/optgroup' . 1 => '',
 
-								'optgroup' . 2  => sprintf( __( 'Recommendation #%d', 'wm_domain' ), 2 ),
+								'optgroup' . 2  => sprintf( _x( 'Recommendation #%d', 'Google Font setup recommendation (numbered) group title.', 'wm_domain' ), 2 ),
 									'Fugaz One'   => 'Fugaz One',
 									'Oleo Script' => 'Oleo Script',
 									'Monda'       => 'Monda',
 								'/optgroup' . 2 => '',
 
-								'optgroup' . 3  => sprintf( __( 'Recommendation #%d', 'wm_domain' ), 3 ),
+								'optgroup' . 3  => sprintf( _x( 'Recommendation #%d', 'Google Font setup recommendation (numbered) group title.', 'wm_domain' ), 3 ),
 									'Unica One' => 'Unica One',
 									'Vollkorn'  => 'Vollkorn',
 								'/optgroup' . 3 => '',
 
-								'optgroup' . 4  => sprintf( __( 'Recommendation #%d', 'wm_domain' ), 4 ),
+								'optgroup' . 4  => sprintf( _x( 'Recommendation #%d', 'Google Font setup recommendation (numbered) group title.', 'wm_domain' ), 4 ),
 									'Megrim'                  => 'Megrim',
 									'Roboto Slab:400,300,100' => 'Roboto Slab',
 								'/optgroup' . 4 => '',
 
-								'optgroup' . 5  => sprintf( __( 'Recommendation #%d', 'wm_domain' ), 5 ),
+								'optgroup' . 5  => sprintf( _x( 'Recommendation #%d', 'Google Font setup recommendation (numbered) group title.', 'wm_domain' ), 5 ),
 									'Open Sans:400,300' => 'Open Sans',
 									'Gentium Basic'     => 'Gentium Basic',
 								'/optgroup' . 5 => '',
 
-								'optgroup' . 6  => sprintf( __( 'Recommendation #%d', 'wm_domain' ), 6 ),
+								'optgroup' . 6  => sprintf( _x( 'Recommendation #%d', 'Google Font setup recommendation (numbered) group title.', 'wm_domain' ), 6 ),
 									'Ovo'          => 'Ovo',
 									'Muli:300,400' => 'Muli',
 								'/optgroup' . 6 => '',
 
-								'optgroup' . 7  => sprintf( __( 'Recommendation #%d', 'wm_domain' ), 7 ),
+								'optgroup' . 7  => sprintf( _x( 'Recommendation #%d', 'Google Font setup recommendation (numbered) group title.', 'wm_domain' ), 7 ),
 									'Neuton:200,300,400' => 'Neuton',
 								'/optgroup' . 7 => '',
 
-								'optgroup' . 8  => sprintf( __( 'Recommendation #%d', 'wm_domain' ), 8 ),
+								'optgroup' . 8  => sprintf( _x( 'Recommendation #%d', 'Google Font setup recommendation (numbered) group title.', 'wm_domain' ), 8 ),
 									'Quando' => 'Quando',
 									'Judson' => 'Judson',
 									'Montserrat' => 'Montserrat',
 								'/optgroup' . 8 => '',
 
-								'optgroup' . 9  => sprintf( __( 'Recommendation #%d', 'wm_domain' ), 9 ),
+								'optgroup' . 9  => sprintf( _x( 'Recommendation #%d', 'Google Font setup recommendation (numbered) group title.', 'wm_domain' ), 9 ),
 									'Ultra'                => 'Ultra',
 									'Stint Ultra Expanded' => 'Stint Ultra Expanded',
 									'Slabo 13px'           => 'Slabo 13px',
 								'/optgroup' . 9 => '',
 
 							//Google Fonts selection
-								'optgroup' . 10  => sprintf( __( 'Fonts selection', 'wm_domain' ), 10 ),
+								'optgroup' . 10  => sprintf( _x( 'Fonts selection', 'Title for selection of fonts picked from Google Fontss', 'wm_domain' ), 10 ),
 									'Abril Fatface'             => 'Abril Fatface',
 									'Arvo'                      => 'Arvo',
 									'Domine'                    => 'Domine',
@@ -593,7 +596,7 @@
 			 * Scripts - inline
 			 */
 
-				$scripts_inline = apply_filters( 'wmhook_wm_enqueue_assets_scripts_inline', array( 'text_menu_group_nav' => __( '&uarr; Menu sections', 'wm_domain' ) ) );
+				$scripts_inline = apply_filters( 'wmhook_wm_enqueue_assets_scripts_inline', array( 'text_menu_group_nav' => _x( '&uarr; Menu sections', 'Back to food menu sections selectors button title.', 'wm_domain' ) ) );
 
 				wp_localize_script( 'wm-theme-scripts', '$scriptsInline', $scripts_inline );
 		}
@@ -804,6 +807,9 @@
 
 	/**
 	 * Navigation
+	 *
+	 * @since    1.0
+	 * @version  1.1
 	 */
 	if ( ! function_exists( 'wm_navigation' ) ) {
 		function wm_navigation() {
@@ -825,9 +831,9 @@
 					$output .= wm_accessibility_skip_link( 'to_content' );
 					$output .= '<div class="main-navigation-inner">';
 						$output .= wp_nav_menu( $args );
-						$output .= '<div id="nav-search-form" class="nav-search-form"><a href="#" id="search-toggle" class="search-toggle"><span class="screen-reader-text">' . __( 'Search', 'wm_domain' ) . '</span></a>' . get_search_form( false ) . '</div>';
+						$output .= '<div id="nav-search-form" class="nav-search-form"><a href="#" id="search-toggle" class="search-toggle"><span class="screen-reader-text">' . _x( 'Search', 'Display search form button title.', 'wm_domain' ) . '</span></a>' . get_search_form( false ) . '</div>';
 					$output .= '</div>';
-					$output .= '<button id="menu-toggle" class="menu-toggle">' . __( 'Menu', 'wm_domain' ) . '</button>';
+					$output .= '<button id="menu-toggle" class="menu-toggle">' . _x( 'Menu', 'Mobile navigation toggle button title.', 'wm_domain' ) . '</button>';
 				$output .= '</nav>';
 
 			//Output
@@ -933,7 +939,7 @@
 						}
 
 						if ( ( $helper = get_edit_post_link( get_the_ID() ) ) && is_page() ) {
-							$args['title'] .= ' <a href="' . esc_url( $helper ) . '" class="entry-edit" title="' . esc_attr( sprintf( __( 'Edit the "%s"', 'wm_domain' ), the_title_attribute( array( 'echo' => false ) ) ) ) . '"><span>' . __( 'Edit', 'wm_domain' ) . '</span></a>';
+							$args['title'] .= ' <a href="' . esc_url( $helper ) . '" class="entry-edit" title="' . esc_attr( sprintf( __( 'Edit the "%s"', 'wm_domain' ), the_title_attribute( array( 'echo' => false ) ) ) ) . '"><span>' . _x( 'Edit', 'Edit post link.', 'wm_domain' ) . '</span></a>';
 						}
 
 					}
@@ -1328,6 +1334,9 @@
 
 		/**
 		 * Previous and next post links
+		 *
+		 * @since    1.0
+		 * @version  1.1
 		 */
 		if ( ! function_exists( 'wm_post_nav' ) ) {
 			function wm_post_nav() {
@@ -1359,10 +1368,10 @@
 					}
 
 					if ( is_attachment() ) {
-						$output .= get_previous_post_link( '<div class="nav-previous' . $prev_class . '">%link</div>', __( '<span class="meta-nav">Published In</span><span class="post-title">%title</span>', 'wm_domain' ) );
+						$output .= get_previous_post_link( '<div class="nav-previous' . $prev_class . '">%link</div>', __( '<span class="meta-nav">Published In</span> <span class="post-title">%title</span>', 'wm_domain' ) );
 					} else {
-						$output .= get_previous_post_link( '<div class="nav-previous' . $prev_class . '">%link</div>', __( '<span class="meta-nav">Previous</span><span class="post-title">%title</span>', 'wm_domain' ) );
-						$output .= get_next_post_link( '<div class="nav-next' . $next_class . '">%link</div>', __( '<span class="meta-nav">Next</span><span class="post-title">%title</span>', 'wm_domain' ) );
+						$output .= get_previous_post_link( '<div class="nav-previous' . $prev_class . '">%link</div>', __( '<span class="meta-nav">Previous</span> <span class="post-title">%title</span>', 'wm_domain' ) );
+						$output .= get_next_post_link( '<div class="nav-next' . $next_class . '">%link</div>', __( '<span class="meta-nav">Next</span> <span class="post-title">%title</span>', 'wm_domain' ) );
 					}
 
 					if ( $output ) {

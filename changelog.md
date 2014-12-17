@@ -27,6 +27,8 @@
 
 #### Files changed:
 
+	archive.php
+	comments.php
 	content-food-menu.php
 	content-page.php
 	content.php
@@ -35,6 +37,7 @@
 	loop-banner.php
 	loop-blog-condensed.php
 	loop-food-menu.php
+	searchform.php
 	style.css
 	css/_custom.css
 	css/colors.css
@@ -49,6 +52,7 @@
 	inc/customizer/controls/class-WM_Customizer_Select.php
 	inc/customizer/controls/class-WM_Customizer_Textarea.php
 	inc/jetpack/jetpack.php
+	inc/lib/admin.php
 	inc/lib/core.php
 	inc/tgmpa/plugins.php
 	js/scripts.js

@@ -4,7 +4,9 @@
  *
  * @package    Auberge
  * @copyright  2014 WebMan - Oliver Juhas
- * @version    1.0
+ *
+ * @since    1.0
+ * @version  1.1
  */
 
 
@@ -38,12 +40,12 @@ if (
 		<h2 id="comments-title" class="comments-title"><?php
 
 			printf(
-					_nx( '1 comment on &ldquo;%2$s&rdquo;', '%1$s comments on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'wm_domain' ),
+					_nx( '1 comment on &ldquo;%2$s&rdquo;', '%1$s comments on &ldquo;%2$s&rdquo;', get_comments_number(), 'Comments list title.', 'wm_domain' ),
 					number_format_i18n( get_comments_number() ),
 					'<span>' . get_the_title() . '</span>'
 				);
 
-			echo '<a href="#respond" class="add-comment-link">' . __( 'Add yours &rarr;', 'wm_domain' ) . '</a>';
+			echo '<a href="#respond" class="add-comment-link">' . _x( 'Add yours &rarr;', 'Add new comment link text.', 'wm_domain' ) . '</a>';
 
 		?></h2>
 

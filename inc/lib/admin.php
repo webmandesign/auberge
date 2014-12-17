@@ -4,7 +4,9 @@
  *
  * @package    Auberge
  * @copyright  2014 WebMan - Oliver Juhas
- * @version    1.0
+ *
+ * @since    1.0
+ * @version  1.1
  *
  * CONTENT:
  * -  10) Actions and filters
@@ -207,6 +209,9 @@
 		 *
 		 * @link  http://codex.wordpress.org/TinyMCE_Custom_Styles
 		 *
+		 * @since    1.0
+		 * @version  1.1
+		 *
 		 * @param  array $init
 		 */
 		if ( ! function_exists( 'wm_custom_mce_format' ) ) {
@@ -220,7 +225,7 @@
 
 								//Group: Quotes
 									array(
-										'title' => __( 'Quotes', 'wm_domain' ),
+										'title' => _x( 'Quotes', 'Visual editor blockquote formats group title.', 'wm_domain' ),
 										'items' => array(
 
 											array(
@@ -238,7 +243,7 @@
 												'classes' => 'pullquote alignright',
 											),
 											array(
-												'title' => __( 'Cite', 'wm_domain' ),
+												'title' => _x( 'Cite', 'Visual editor format label for HTML CITE tag used to set the blockquote source.', 'wm_domain' ),
 												'block' => 'cite',
 											),
 

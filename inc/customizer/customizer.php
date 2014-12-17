@@ -1000,6 +1000,11 @@
 				//Replace tags in custom CSS strings with actual values
 					$output_cached = (string) get_transient( WM_THEME_SHORTNAME . '-custom-css' );
 
+					//When debugging set
+						if ( isset( $_GET['debug'] ) ) {
+							$output_cached = (string) get_transient( WM_THEME_SHORTNAME . '-custom-css-debug' );
+						}
+
 					if (
 							empty( $output_cached )
 							|| ( $wp_customize && $wp_customize->is_preview() )
@@ -1008,6 +1013,7 @@
 						$output = strtr( $output, $replacements );
 
 						if ( $set_cache ) {
+							set_transient( WM_THEME_SHORTNAME . '-custom-css-debug', apply_filters( 'wmhook_wm_custom_styles_output_cache_debug', $output ) );
 							set_transient( WM_THEME_SHORTNAME . '-custom-css', apply_filters( 'wmhook_wm_custom_styles_output_cache', $output ) );
 						}
 
@@ -1028,10 +1034,14 @@
 
 		/**
 		 * Flush out the transients used in wm_custom_styles
+		 *
+		 * @since    1.0
+		 * @version  1.1
 		 */
 		if ( ! function_exists( 'wm_custom_styles_transient_flusher' ) ) {
 			function wm_custom_styles_transient_flusher() {
 				delete_transient( WM_THEME_SHORTNAME . '-customizer-values' );
+				delete_transient( WM_THEME_SHORTNAME . '-custom-css-debug' );
 				delete_transient( WM_THEME_SHORTNAME . '-custom-css' );
 			}
 		} // /wm_custom_styles_transient_flusher
@@ -1112,18 +1122,12 @@
 	 * disable WordPress debug to regenerate the custom CSS transients
 	 * with minified content.
 	 *
-	 * @since    1.0
-	 * @version  1.1
-	 *
 	 * @param  string $css Code to minify
 	 */
 	if ( ! function_exists( 'wm_minify_css' ) ) {
 		function wm_minify_css( $css ) {
 			//Requirements check
-				if (
-						( defined( 'WP_DEBUG' ) && WP_DEBUG )
-						|| ! is_string( $css )
-					) {
+				if ( ! is_string( $css ) ) {
 					return $css;
 				}
 

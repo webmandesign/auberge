@@ -75,7 +75,7 @@ get_header();
 						<table>
 							<tbody>
 								<tr class="date">
-									<th><?php _e( 'Image published on:', 'wm_domain' ); ?></th>
+									<th><?php _ex( 'Image published on:', 'Attachment page publish time.', 'wm_domain' ); ?></th>
 									<td><?php the_time( get_option( 'date_format' ) ); ?></td>
 								</tr>
 								<tr class="size">

@@ -46,7 +46,7 @@ if ( class_exists( 'Nova_Restaurant' ) ) :
 
 				<h1 class="page-title"><?php
 
-				$title_food_menu = __( 'Menu', 'wm_domain' );
+				$title_food_menu = _x( 'Menu', 'Food menu title.', 'wm_domain' );
 
 				$food_menu_page_id = intval( get_transient( 'wm-page-template-food-menu' ) );
 
