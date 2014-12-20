@@ -6,7 +6,7 @@
  * @copyright  2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.1
+ * @version  1.1.5
  *
  * CONTENT:
  * -  1) Required files
@@ -46,7 +46,7 @@
 			add_action( 'customize_controls_enqueue_scripts', 'wm_customizer_enqueue_assets'         );
 			add_action( 'customize_preview_init',             'wm_customizer_preview_enqueue_assets' );
 		//Save skin
-			add_action( 'customize_save_processing-hook', 'wm_custom_styles_cache', 10 );
+			add_action( 'update_option_theme_mods_' . get_option( 'stylesheet' ), 'wm_custom_styles_cache' );
 		//Flushing transients
 			add_action( 'switch_theme',         'wm_custom_styles_transient_flusher' );
 			add_action( 'wmhook_theme_upgrade', 'wm_custom_styles_transient_flusher' );
@@ -268,6 +268,9 @@
 
 	/**
 	 * Registering sections and options for WP Customizer
+	 *
+	 * @since    1.0
+	 * @version  1.1.5
 	 *
 	 * @param  object $wp_customize WP customizer object.
 	 */
@@ -776,44 +779,6 @@
 						} // /if suitable option array
 
 					} // /foreach
-
-
-
-					/**
-					 * Last hidden setting where you can hook to process data being saved.
-					 *
-					 * @link  Idea from: http://wordpress.stackexchange.com/questions/57540/wp-3-4-what-action-hook-is-called-when-theme-customisation-is-saved
-					 * @link  Suggested: http://wordpress.org/extend/ideas/topic/do-customize_save-action-hook-after-the-settings-are-saved
-					 */
-
-						/**
-						 * Start of "trigger" option
-						 */
-
-							$wp_customize->add_setting(
-									'processing-hook',
-									array(
-										'type'                 => 'theme_mod',
-										'default'              => 'true',
-										'transport'            => 'refresh',
-										'sanitize_callback'    => 'esc_attr',
-										'sanitize_js_callback' => 'esc_attr',
-									)
-								);
-
-							$wp_customize->add_control(
-									'processing-hook',
-									array(
-										'type'     => 'hidden',
-										'label'    => 'PROCESSING HOOK',
-										'section'  => $customizer_section,
-										'priority' => $priority + 99,
-									)
-								);
-
-						/**
-						 * End of "trigger" option
-						 */
 
 				} // /if skin options are non-empty array
 

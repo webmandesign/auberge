@@ -1,5 +1,14 @@
 # Auberge Changelog
 
+## 1.1.5
+
+* Updated customizer to support WP4.1
+
+#### Files changed:
+
+	inc/customizer/customizer.php
+
+
 ## 1.1
 
 * Added fixed header on window scroll
