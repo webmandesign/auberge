@@ -6,7 +6,7 @@
  * @copyright  2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.1
+ * @version  1.2
  *
  * CONTENT:
  * -   1) Required files
@@ -64,8 +64,6 @@
 			add_action( 'save_post',     'wm_all_categories_transient_flusher' );
 		//Home query alteration
 			add_action( 'pre_get_posts', 'wm_home_query_ignore_sticky_posts' );
-		//Archives improvements
-			add_action( 'wp', 'wm_setup_author' );
 
 
 
@@ -171,44 +169,68 @@
 	/**
 	 * SEO website meta title
 	 *
-	 * Not needed since WordPress 4.1, that's why the add_filter()
-	 * is encapsulated in the conditional check.
+	 * Not needed since WordPress 4.1.
 	 *
-	 * @param  string $title
-	 * @param  string $sep
+	 * @todo Remove this when WordPress 4.3 is released.
+	 *
+	 * @since    1.0
+	 * @version  1.2
 	 */
-	if ( ! function_exists( 'wm_title' ) && ! function_exists( '_wp_render_title_tag' ) ) {
+	if ( ! function_exists( '_wp_render_title_tag' ) ) {
 
-		function wm_title( $title, $sep ) {
-			//Requirements check
-				if ( is_feed() ) {
-					return $title;
-				}
-
-			//Helper variables
-				$sep = ' ' . trim( $sep ) . ' ';
-
-			//Preparing output
-				$title .= get_bloginfo( 'name', 'display' );
-
-				//Site description
-					if (
-							( $site_description = get_bloginfo( 'description', 'display' ) )
-							&& ( is_home() || is_front_page() )
-						) {
-						$title .= $sep . $site_description;
+		/**
+		 * SEO website meta title
+		 *
+		 * @param  string $title
+		 * @param  string $sep
+		 */
+		if ( ! function_exists( 'wm_title' ) ) {
+			function wm_title( $title, $sep ) {
+				//Requirements check
+					if ( is_feed() ) {
+						return $title;
 					}
 
-				//Pagination / parts
-					if ( wm_paginated_suffix() && ! is_404() ) {
-						$title .= $sep . wm_paginated_suffix();
-					}
+				//Helper variables
+					$sep = ' ' . trim( $sep ) . ' ';
 
-			//Output
-				return esc_attr( $title );
+				//Preparing output
+					$title .= get_bloginfo( 'name', 'display' );
+
+					//Site description
+						if (
+								( $site_description = get_bloginfo( 'description', 'display' ) )
+								&& ( is_home() || is_front_page() )
+							) {
+							$title .= $sep . $site_description;
+						}
+
+					//Pagination / parts
+						if ( wm_paginated_suffix() && ! is_404() ) {
+							$title .= $sep . wm_paginated_suffix();
+						}
+
+				//Output
+					return esc_attr( $title );
+			}
+
+			add_filter( 'wp_title', 'wm_title', 10, 2 );
+		} // /wm_title
+
+
+
+		/**
+		 * Title shim
+		 *
+		 * @link https://make.wordpress.org/core/2014/10/29/title-tags-in-4-1/
+		 */
+		function _wp_render_title_tag() {
+			?>
+			<title><?php wp_title( '|', true, 'right' ); ?></title>
+			<?php
 		}
 
-		add_filter( 'wp_title', 'wm_title', 10, 2 );
+		add_action( 'wp_head', '_wp_render_title_tag', -99 );
 
 	} // /wm_title
 
@@ -221,6 +243,9 @@
 	 * @uses    schema.org
 	 * @link    http://schema.org/docs/gs.html
 	 * @link    http://leaves-and-love.net/how-to-improve-wordpress-seo-with-schema-org/
+	 *
+	 * @since    1.0
+	 * @version  1.2
 	 *
 	 * @param   string  $element
 	 * @param   boolean $output_meta_tag  Wraps output in a <meta> tag.
@@ -235,7 +260,7 @@
 				}
 
 			//Helper variables
-				$output = apply_filters( 'wmhook_schema_org_output_premature', '', $element, $output_meta_tag );
+				$output = apply_filters( 'wmhook_schema_org_output_pre', '', $element, $output_meta_tag );
 
 				if ( $output ) {
 					return apply_filters( 'wmhook_wm_schema_org_output', ' ' . $output, $element, $output_meta_tag );
@@ -779,13 +804,16 @@
 	/**
 	 * Check WordPress version
 	 *
+	 * @since    1.0
+	 * @version  1.2
+	 *
 	 * @param  float $version
 	 */
 	if ( ! function_exists( 'wm_check_wp_version' ) ) {
 		function wm_check_wp_version( $version = WM_WP_COMPATIBILITY ) {
 			global $wp_version;
 
-			return apply_filters( 'wmhook_wm_check_wp_version_output', version_compare( (float) $wp_version, $version, '>=' ) );
+			return apply_filters( 'wmhook_wm_check_wp_version_output', version_compare( (float) $wp_version, $version, '>=' ), $version, $wp_version );
 		}
 	} // /wm_check_wp_version
 
@@ -809,6 +837,27 @@
 				}
 		}
 	} // /wm_theme_upgrade
+
+
+
+	/**
+	 * CSS escaping
+	 *
+	 * Use this for custom CSS output only!
+	 * Uses `esc_attr()` while keeping quote marks.
+	 *
+	 * @uses  esc_attr()
+	 *
+	 * @since    1.2
+	 * @version  1.2
+	 *
+	 * @param  string $css Code to escape
+	 */
+	if ( ! function_exists( 'wm_esc_css' ) ) {
+		function wm_esc_css( $css ) {
+			return str_replace( array( '&gt;', '&quot;', '&#039;' ), array( '>', '"', '\'' ), esc_attr( (string) $css ) );
+		}
+	} // /wm_esc_css
 
 
 
@@ -1074,6 +1123,9 @@
 		 */
 		if ( ! function_exists( 'wm_all_categories_transient_flusher' ) ) {
 			function wm_all_categories_transient_flusher() {
+				if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+					return;
+				}
 				delete_transient( 'wm-all-categories' );
 			}
 		} // /wm_all_categories_transient_flusher
@@ -1099,25 +1151,105 @@
 
 
 	/**
-	 * Sets the authordata global when viewing an author archive.
+	 * Shim for `the_archive_title()`.
 	 *
-	 * This provides backwards compatibility with
-	 * http://core.trac.wordpress.org/changeset/25574
+	 * Display the archive title based on the queried object.
 	 *
-	 * It removes the need to call the_post() and rewind_posts() in an author
-	 * template to print information about the author.
+	 * @todo Remove this function when WordPress 4.3 is released.
 	 *
-	 * @global WP_Query $wp_query WordPress Query object.
-	 * @return void
+	 * @since    1.2
+	 * @version  1.2
+	 *
+	 * @param string $before Optional. Content to prepend to the title. Default empty.
+	 * @param string $after  Optional. Content to append to the title. Default empty.
 	 */
-	if ( ! function_exists( 'wm_setup_author' ) ) {
-		function wm_setup_author() {
-			global $wp_query;
+	if ( ! function_exists( 'the_archive_title' ) ) {
+		function the_archive_title( $before = '', $after = '' ) {
+			if ( is_category() ) {
+				$title = sprintf( __( 'Category: %s', 'wm_domain' ), single_cat_title( '', false ) );
+			} elseif ( is_tag() ) {
+				$title = sprintf( __( 'Tag: %s', 'wm_domain' ), single_tag_title( '', false ) );
+			} elseif ( is_author() ) {
+				$title = sprintf( __( 'Author: %s', 'wm_domain' ), '<span class="vcard">' . get_the_author() . '</span>' );
+			} elseif ( is_year() ) {
+				$title = sprintf( __( 'Year: %s', 'wm_domain' ), get_the_date( 'Y' ) );
+			} elseif ( is_month() ) {
+				$title = sprintf( __( 'Month: %s', 'wm_domain' ), get_the_date( 'F Y' ) );
+			} elseif ( is_day() ) {
+				$title = sprintf( __( 'Day: %s', 'wm_domain' ), get_the_date() );
+			} elseif ( is_tax( 'post_format' ) ) {
+				if ( is_tax( 'post_format', 'post-format-aside' ) ) {
+					$title = _x( 'Asides', 'post format archive title', 'wm_domain' );
+				} elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) {
+					$title = _x( 'Galleries', 'post format archive title', 'wm_domain' );
+				} elseif ( is_tax( 'post_format', 'post-format-image' ) ) {
+					$title = _x( 'Images', 'post format archive title', 'wm_domain' );
+				} elseif ( is_tax( 'post_format', 'post-format-video' ) ) {
+					$title = _x( 'Videos', 'post format archive title', 'wm_domain' );
+				} elseif ( is_tax( 'post_format', 'post-format-quote' ) ) {
+					$title = _x( 'Quotes', 'post format archive title', 'wm_domain' );
+				} elseif ( is_tax( 'post_format', 'post-format-link' ) ) {
+					$title = _x( 'Links', 'post format archive title', 'wm_domain' );
+				} elseif ( is_tax( 'post_format', 'post-format-status' ) ) {
+					$title = _x( 'Statuses', 'post format archive title', 'wm_domain' );
+				} elseif ( is_tax( 'post_format', 'post-format-audio' ) ) {
+					$title = _x( 'Audio', 'post format archive title', 'wm_domain' );
+				} elseif ( is_tax( 'post_format', 'post-format-chat' ) ) {
+					$title = _x( 'Chats', 'post format archive title', 'wm_domain' );
+				}
+			} elseif ( is_post_type_archive() ) {
+				$title = sprintf( __( 'Archives: %s', 'wm_domain' ), post_type_archive_title( '', false ) );
+			} elseif ( is_tax() ) {
+				$tax = get_taxonomy( get_queried_object()->taxonomy );
+				/* translators: 1: Taxonomy singular name, 2: Current taxonomy term */
+				$title = sprintf( __( '%1$s: %2$s', 'wm_domain' ), $tax->labels->singular_name, single_term_title( '', false ) );
+			} else {
+				$title = __( 'Archives', 'wm_domain' );
+			}
 
-			if ( $wp_query->is_author() && isset( $wp_query->post ) ) {
-				$GLOBALS['authordata'] = get_userdata( $wp_query->post->post_author );
+			/**
+			 * Filter the archive title.
+			 *
+			 * @param string $title Archive title to be displayed.
+			 */
+			$title = apply_filters( 'get_the_archive_title', $title );
+
+			if ( ! empty( $title ) ) {
+				echo $before . $title . $after;
 			}
 		}
-	} // /wm_setup_author
+	} // /the_archive_title
+
+
+
+	/**
+	 * Shim for `the_archive_description()`.
+	 *
+	 * Display category, tag, or term description.
+	 *
+	 * @todo Remove this function when WordPress 4.3 is released.
+	 *
+	 * @since    1.2
+	 * @version  1.2
+	 *
+	 * @param string $before Optional. Content to prepend to the description. Default empty.
+	 * @param string $after  Optional. Content to append to the description. Default empty.
+	 */
+	if ( ! function_exists( 'the_archive_description' ) ) {
+		function the_archive_description( $before = '', $after = '' ) {
+			$description = apply_filters( 'get_the_archive_description', term_description() );
+
+			if ( ! empty( $description ) ) {
+				/**
+				 * Filter the archive description.
+				 *
+				 * @see term_description()
+				 *
+				 * @param string $description Archive description to be displayed.
+				 */
+				echo $before . $description . $after;
+			}
+		}
+	} // /the_archive_description
 
 ?>

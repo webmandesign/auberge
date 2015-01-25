@@ -81,7 +81,7 @@ Copyright (c) 2014 Daniel Nanescu, SplitShire.com
 Licensed under the CC0 License - https://creativecommons.org/publicdomain/zero/1.0/, http://splitshire.com/about/
 http://splitshire.com/coffee-pack-zip-8-photos/
 
-## PHP scripts copyright
+### PHP scripts copyright
 
 **TGM-Plugin-Activation**
 Copyright (c) 2012, Thomas Griffin

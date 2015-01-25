@@ -6,7 +6,7 @@
  * @copyright  2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.1.5
+ * @version  1.2
  *
  * CONTENT:
  * -  1) Required files
@@ -45,7 +45,7 @@
 		//Customizer assets
 			add_action( 'customize_controls_enqueue_scripts', 'wm_customizer_enqueue_assets'         );
 			add_action( 'customize_preview_init',             'wm_customizer_preview_enqueue_assets' );
-		//Save skin
+		//Save Customizer options
 			add_action( 'update_option_theme_mods_' . get_option( 'stylesheet' ), 'wm_custom_styles_cache' );
 		//Flushing transients
 			add_action( 'switch_theme',         'wm_custom_styles_transient_flusher' );
@@ -94,6 +94,9 @@
 
 	/**
 	 * Outputs styles in customizer preview head
+	 *
+	 * @since    1.0
+	 * @version  1.2
 	 */
 	if ( ! function_exists( 'wm_theme_customizer_css' ) ) {
 		function wm_theme_customizer_css() {
@@ -101,8 +104,8 @@
 				$output = wm_custom_styles();
 
 			//Output
-				if ( $output ) {
-					echo apply_filters( 'wmhook_wm_theme_customizer_css_output', '<style type="text/css" id="' . WM_THEME_SHORTNAME . '-customizer-styles">' . "\r\n" . $output . "\r\n" . '</style>' );
+				if ( $output = trim( apply_filters( 'wmhook_wm_theme_customizer_css_output', $output ) ) ) {
+					echo '<style type="text/css" id="' . WM_THEME_SHORTNAME . '-customizer-styles">' . "\r\n" . $output . "\r\n" . '</style>';
 				}
 		}
 	} // /wm_theme_customizer_css
@@ -122,7 +125,7 @@
 	 * 		)
 	 *
 	 * @since    1.0
-	 * @version  1.1
+	 * @version  1.2
 	 */
 	if ( ! function_exists( 'wm_theme_customizer_js' ) ) {
 		function wm_theme_customizer_js() {
@@ -190,8 +193,8 @@
 				}
 
 			//Output
-				if ( trim( $output ) ) {
-					echo apply_filters( 'wmhook_wm_theme_customizer_js_output', '<!-- Theme custom scripts -->' . "\r\n" . '<script type="text/javascript"><!--' . "\r\n" . '( function( $ ) {' . "\r\n\r\n" . $output . "\r\n\r\n" . '} )( jQuery );' . "\r\n" . '//--></script>' );
+				if ( $output = trim( apply_filters( 'wmhook_wm_theme_customizer_js_output', $output ) ) ) {
+					echo '<!-- Theme custom scripts -->' . "\r\n" . '<script type="text/javascript"><!--' . "\r\n" . '( function( $ ) {' . "\r\n\r\n" . $output . "\r\n\r\n" . '} )( jQuery );' . "\r\n" . '//--></script>';
 				}
 		}
 	} // /wm_theme_customizer_js
@@ -203,36 +206,6 @@
 /**
  * 30) Sanitizing functions
  */
-
-	/**
-	 * Sanitize email
-	 *
-	 * @param  mixed $value WP customizer value to sanitize.
-	 */
-	if ( ! function_exists( 'wm_sanitize_email' ) ) {
-		function wm_sanitize_email( $value ) {
-			//Helper variables
-				$value = ( is_email( trim( $value ) ) ) ? ( trim( $value ) ) : ( null );
-
-			//Output
-				return apply_filters( 'wmhook_wm_sanitize_email_output', $value );
-		}
-	} // /wm_sanitize_email
-
-
-
-	/**
-	 * Sanitize integer number
-	 *
-	 * @param  mixed $value WP customizer value to sanitize.
-	 */
-	if ( ! function_exists( 'wm_sanitize_intval' ) ) {
-		function wm_sanitize_intval( $value ) {
-			return apply_filters( 'wmhook_wm_sanitize_intval_output', intval( $value ) );
-		}
-	} // /wm_sanitize_intval
-
-
 
 	/**
 	 * Sanitize texts
@@ -249,6 +222,8 @@
 
 	/**
 	 * No sanitization at all, simply return the value
+	 *
+	 * Useful for when the value may be of mixed type, such as array-or-string.
 	 *
 	 * @param  mixed $value WP customizer value to sanitize.
 	 */
@@ -270,7 +245,7 @@
 	 * Registering sections and options for WP Customizer
 	 *
 	 * @since    1.0
-	 * @version  1.1.5
+	 * @version  1.2
 	 *
 	 * @param  object $wp_customize WP customizer object.
 	 */
@@ -364,29 +339,32 @@
 							 *
 							 * Panels were introduced in WordPress 4.0 and are wrappers for customizer sections.
 							 * Note that the panel will not be displayed unless sections are assigned to it.
-							 * The panel you define in theme options array will be active unless you reset its name.
 							 * Set the panel name in the section declaration with 'theme-customizer-panel' attribute.
+							 * Panel has to be defined for each section to prevent all sections residing within a single panel.
 							 *
 							 * @link  http://make.wordpress.org/core/2014/07/08/customizer-improvements-in-4-0/
 							 */
 							if (
 									wm_check_wp_version( 4 )
 									&& isset( $skin_option['theme-customizer-panel'] )
-									&& $customizer_panel != $skin_option['theme-customizer-panel']
 								) {
 
-								if ( empty( $option_id ) ) {
-									$option_id = sanitize_title( trim( $skin_option['theme-customizer-panel'] ) );
-								}
+								$panel_id = sanitize_title( trim( $skin_option['theme-customizer-panel'] ) );
 
-								$wp_customize->add_panel(
-										$option_id,
-										array(
-											'title'       => $skin_option['theme-customizer-panel'], //panel title
-											'description' => ( isset( $skin_option['theme-customizer-panel-description'] ) ) ? ( $skin_option['theme-customizer-panel-description'] ) : ( '' ), //Displayed at the top of panel
-											'priority'    => $priority,
-										)
-									);
+								if ( $customizer_panel != $panel_id ) {
+
+									$wp_customize->add_panel(
+											$panel_id,
+											array(
+												'title'       => $skin_option['theme-customizer-panel'], //panel title
+												'description' => ( isset( $skin_option['theme-customizer-panel-description'] ) ) ? ( $skin_option['theme-customizer-panel-description'] ) : ( '' ), //Displayed at the top of panel
+												'priority'    => $priority,
+											)
+										);
+
+									$customizer_panel = $panel_id;
+
+								}
 
 							}
 
@@ -423,7 +401,7 @@
 									);
 
 								$customizer_section = $customizer_section['id'];
-								$customizer_panel   = ''; //The panel need to be defined for each section separatelly, otherwise all the sections would reside within a single panel.
+								$customizer_panel   = ''; //Panel has to be defined for each section to prevent all sections residing within a single panel.
 
 							}
 
@@ -443,9 +421,9 @@
 											$option_id,
 											array(
 												'type'                 => 'theme_mod',
-												'default'              => trim( $default, '#' ),
+												'default'              => $default,
 												'transport'            => $transport,
-												'sanitize_callback'    => 'sanitize_hex_color_no_hash',
+												'sanitize_callback'    => 'sanitize_hex_color',
 												'sanitize_js_callback' => 'maybe_hash_hex_color',
 											)
 										);
@@ -1080,12 +1058,8 @@
 	/**
 	 * CSS minifier
 	 *
-	 * The minifier is disabled when WordPress in debug mode.
-	 * @link  http://codex.wordpress.org/Debugging_in_WordPress
-	 *
-	 * Please note that you need to resave Customizer setup once you
-	 * disable WordPress debug to regenerate the custom CSS transients
-	 * with minified content.
+	 * @since    1.0
+	 * @version  1.2
 	 *
 	 * @param  string $css Code to minify
 	 */
@@ -1100,7 +1074,7 @@
 				//Remove CSS comments
 					$css = preg_replace( '!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $css );
 				//Remove tabs, spaces, line breaks, etc.
-					$css = str_replace( array( "\r\n", "\r", "\n", "\t", '  ', '   ' ), '', $css );
+					$css = str_replace( array( "\r\n", "\r", "\n", "\t", '//', '  ', '   ' ), '', $css );
 					$css = str_replace( array( ' { ', ': ', '; }' ), array( '{', ':', '}' ), $css );
 
 			//Output

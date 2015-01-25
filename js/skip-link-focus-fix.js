@@ -1,3 +1,15 @@
+/**
+ * Skip link focus fix
+ *
+ * @package    Auberge
+ * @copyright  2014 WebMan - Oliver Juhas
+ *
+ * @since    1.0
+ * @version  1.2
+ */
+
+
+
 ( function() {
 	var is_webkit = navigator.userAgent.toLowerCase().indexOf( 'webkit' ) > -1,
 	    is_opera  = navigator.userAgent.toLowerCase().indexOf( 'opera' )  > -1,
@@ -8,8 +20,9 @@
 			var element = document.getElementById( location.hash.substring( 1 ) );
 
 			if ( element ) {
-				if ( ! /^(?:a|select|input|button|textarea)$/i.test( element.tagName ) )
+				if ( ! /^(?:a|select|input|button|textarea)$/i.test( element.tagName ) ) {
 					element.tabIndex = -1;
+				}
 
 				element.focus();
 			}

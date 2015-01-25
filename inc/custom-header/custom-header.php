@@ -53,7 +53,7 @@
 	/**
 	 * Getter function
 	 *
-	 * Important:
+	 * IMPORTANT:
 	 * Filter hook name has to match the function name,
 	 * so do not use the 'wmhook_' prefix.
 	 */
@@ -68,7 +68,7 @@
 	/**
 	 * Conditional function
 	 *
-	 * Important:
+	 * IMPORTANT:
 	 * Filter hook name has to match the function name,
 	 * so do not use the 'wmhook_' prefix.
 	 */

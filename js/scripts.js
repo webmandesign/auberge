@@ -5,7 +5,7 @@
  * @copyright  2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.1
+ * @version  1.2
  *
  * CONTENT:
  * -  10) Basics
@@ -20,7 +20,11 @@
 
 
 
-jQuery( function() {
+( function( $ ) {
+
+
+
+	"use strict";
 
 
 
@@ -32,7 +36,7 @@ jQuery( function() {
 		 * Tell CSS that JS is enabled...
 		 */
 
-			jQuery( '.no-js' ).removeClass( 'no-js' );
+			$( '.no-js' ).removeClass( 'no-js' );
 
 
 
@@ -40,7 +44,7 @@ jQuery( function() {
 		 * Clear floats after columns
 		 */
 
-			jQuery( '.column.last' ).after( '<div class="clear" />' );
+			$( '.column.last' ).after( '<div class="clear" />' );
 
 
 
@@ -49,32 +53,12 @@ jQuery( function() {
 		 */
 
 			if ( 960 < document.body.clientWidth ) {
-				jQuery( '.back-to-top' ).on( 'click', function( e ) {
+				$( '.back-to-top' ).on( 'click', function( e ) {
 						e.preventDefault();
 
-						jQuery( 'html, body' ).animate( { scrollTop: 0 }, 400 );
+						$( 'html, body' ).animate( { scrollTop: 0 }, 400 );
 					} );
 			}
-
-
-
-		/**
-		 * YouTube embed fix (prevent video being on top of elements)
-		 */
-
-			jQuery( 'iframe[src*="youtube.com"]' ).each( function( item ) {
-
-				var srcAtt = jQuery( this ).attr( 'src' );
-
-				if ( -1 == srcAtt.indexOf( '?' ) ) {
-					srcAtt += '?wmode=transparent';
-				} else {
-					srcAtt += '&amp;wmode=transparent';
-				}
-
-				jQuery( this ).attr( 'src', srcAtt );
-
-			} );
 
 
 
@@ -86,25 +70,25 @@ jQuery( function() {
 		 * Sticky header
 		 */
 
-			jQuery( window ).scroll( function() {
-				var $documentScrollTop = jQuery( document ).scrollTop(),
-				    $headerHeight      = jQuery( '#masthead' ).outerHeight();
+			$( window ).scroll( function() {
+				var $documentScrollTop = $( document ).scrollTop(),
+				    $headerHeight      = $( '#masthead' ).outerHeight();
 
 				if ( $documentScrollTop >= ( 2.62 * $headerHeight ) ) {
 
-					jQuery( 'body' )
+					$( 'body' )
 						.removeClass( 'hide-sticky-header' )
 						.addClass( 'sticky-header' );
 
 				} else if ( $documentScrollTop < ( 2.62 * $headerHeight ) && $documentScrollTop > ( 1 * $headerHeight ) ) {
 
-					jQuery( 'body.sticky-header' )
+					$( 'body.sticky-header' )
 						.removeClass( 'sticky-header' )
 						.addClass( 'hide-sticky-header' );
 
 				} else {
 
-					jQuery( 'body' )
+					$( 'body' )
 						.removeClass( 'sticky-header hide-sticky-header' );
 
 				}
@@ -115,10 +99,10 @@ jQuery( function() {
 		 * Header search form
 		 */
 
-			jQuery( '#search-toggle' ).on( 'click', function( e ) {
+			$( '#search-toggle' ).on( 'click', function( e ) {
 				e.preventDefault();
 
-				jQuery( this )
+				$( this )
 					.parent()
 						.toggleClass( 'active' )
 						.find( '.search-field' )
@@ -131,21 +115,37 @@ jQuery( function() {
 		 * Mobile navigation
 		 */
 
-			jQuery( '#menu-toggle' ).on( 'click', function( e ) {
+			$( '#site-navigation .main-navigation-inner ul' ).attr( 'aria-expanded', 'false' );
+
+			$( '#menu-toggle' ).on( 'click', function( e ) {
 				e.preventDefault();
 
-				jQuery( this )
+				$( this )
 					.parent( '#site-navigation' )
 						.toggleClass( 'active' )
 						.find( '.main-navigation-inner' )
 							.slideToggle();
+
+				if ( $( this ).parent( '#site-navigation' ).hasClass( 'active' ) ) {
+					$( this )
+						.attr( 'aria-expanded', 'true' )
+						.parent( '#site-navigation' )
+							.find( '.main-navigation-inner ul' )
+								.attr( 'aria-expanded', 'true' );
+				} else {
+					$( this )
+						.attr( 'aria-expanded', 'false' )
+						.parent( '#site-navigation' )
+							.find( '.main-navigation-inner ul' )
+								.attr( 'aria-expanded', 'false' );
+				}
 			} );
 
 
 			//Disable mobile navigation on wider screens
-				jQuery( window ).on( 'resize orientationchange', function( e ) {
+				$( window ).on( 'resize orientationchange', function( e ) {
 					if ( 960 < document.body.clientWidth ) {
-						jQuery( '#site-navigation .main-navigation-inner' ).show();
+						$( '#site-navigation .main-navigation-inner' ).show();
 					}
 				} );
 
@@ -159,12 +159,12 @@ jQuery( function() {
 		 * Banner slider
 		 */
 
-			if ( jQuery().slick ) {
+			if ( $().slick ) {
 
-				jQuery( '#site-banner.enable-slider .site-banner-inner' ).slick( {
+				$( '#site-banner.enable-slider .site-banner-inner' ).slick( {
 						'adaptiveHeight' : true,
 						'autoplay'       : true,
-						'autoplaySpeed'  : ( ! jQuery( '#site-banner' ).data( 'speed' ) ) ? ( 5400 ) : ( jQuery( '#site-banner' ).data( 'speed' ) ),
+						'autoplaySpeed'  : ( ! $( '#site-banner' ).data( 'speed' ) ) ? ( 5400 ) : ( $( '#site-banner' ).data( 'speed' ) ),
 						'cssEase'        : 'ease-in-out',
 						'dots'           : true,
 						'draggable'      : false,
@@ -190,13 +190,13 @@ jQuery( function() {
 		 * Masonry layout
 		 */
 
-			if ( jQuery().masonry ) {
+			if ( $().masonry ) {
 
 				/**
 				 * Posts list
 				 */
 
-					var $postsContainers = jQuery( '.posts' );
+					var $postsContainers = $( '.posts' );
 
 					$postsContainers.imagesLoaded( function() {
 
@@ -212,7 +212,7 @@ jQuery( function() {
 				 * [gallery] shortcode Masonry layout
 				 */
 
-					var $galleryContainers = jQuery( '.gallery' );
+					var $galleryContainers = $( '.gallery' );
 
 					$galleryContainers.imagesLoaded( function() {
 
@@ -235,11 +235,11 @@ jQuery( function() {
 		 */
 
 			if (
-					jQuery().masonry
-					&& 1 < jQuery( '#footer-widgets' ).data( 'columns' ) //Doesn't make sense for 1 column layout
+					$().masonry
+					&& 1 < $( '#footer-widgets' ).data( 'columns' ) //Doesn't make sense for 1 column layout
 				) {
 
-				var $footerWidgets = jQuery( '#footer-widgets-container' );
+				var $footerWidgets = $( '#footer-widgets-container' );
 
 				$footerWidgets.imagesLoaded( function() {
 
@@ -261,10 +261,10 @@ jQuery( function() {
 		 * Smooth scrolling
 		 */
 
-			jQuery( 'body' ).on( 'click', 'a[href^="#"]', function( e ) {
-				var $this         = jQuery( this ),
+			$( 'body' ).on( 'click', 'a[href^="#"]', function( e ) {
+				var $this         = $( this ),
 				    $anchor       = $this.not( '.add-comment-link, .toggle-mobile-sidebar, .search-toggle, .back-to-top, .skip-link' ).attr( 'href' ),
-				    $scrollObject = jQuery( 'html, body' ),
+				    $scrollObject = $( 'html, body' ),
 				    $scrollSpeed  = ( 960 >= document.body.clientWidth ) ? ( 0 ) : ( 600 );
 
 				if (
@@ -275,7 +275,7 @@ jQuery( function() {
 					e.preventDefault();
 
 					$scrollObject.stop().animate( {
-							scrollTop : jQuery( $anchor ).offset().top - jQuery( '#masthead' ).outerHeight() + 'px'
+							scrollTop : $( $anchor ).offset().top - $( '#masthead' ).outerHeight() + 'px'
 						}, $scrollSpeed );
 				}
 			} );
@@ -287,19 +287,19 @@ jQuery( function() {
 		 */
 
 			//Disable sidebar toggle on wider screens
-				jQuery( window ).on( 'resize orientationchange', function( e ) {
+				$( window ).on( 'resize orientationchange', function( e ) {
 					if ( 960 < document.body.clientWidth ) {
-						jQuery( '#toggle-mobile-sidebar' )
+						$( '#toggle-mobile-sidebar' )
 							.siblings( '.widget' )
 								.show();
 					}
 				} );
 
 			//Clicking the toggle sidebar widgets button
-				jQuery( '#toggle-mobile-sidebar' ).on( 'click', function( e ) {
+				$( '#toggle-mobile-sidebar' ).on( 'click', function( e ) {
 					e.preventDefault();
 
-					jQuery( this )
+					$( this )
 						.siblings( '.widget' )
 							.slideToggle();
 				} );
@@ -314,13 +314,13 @@ jQuery( function() {
 		 *        use Jetpack's get_option( 'nova_menu_order' ).
 		 */
 
-			if ( jQuery( '.items-list .menu-group-header' ).length ) {
+			if ( $( '.items-list .menu-group-header' ).length ) {
 
 				var $menuGroups = [];
 
 				//Set menu groups IDS
-					jQuery( '.menu-group-header' ).each( function( index, val ) {
-						var $this      = jQuery( this ),
+					$( '.menu-group-header' ).each( function( index, val ) {
+						var $this      = $( this ),
 						    $thisTitle = $this.find( '> .menu-group-title' ).text(),
 						    $thisID    = $thisTitle.replace( ' ', '_' ).toLowerCase().replace( /(\r\n|\n|\r)/gm, '' );
 
@@ -330,12 +330,12 @@ jQuery( function() {
 					} );
 
 				//Create a navigation
-					jQuery( '<ul id="menu-group-nav" class="menu-group-nav" />' ).prependTo( '.items-list' );
+					$( '<ul id="menu-group-nav" class="menu-group-nav" />' ).prependTo( '.items-list' );
 
 					for ( var $menuGroupID in $menuGroups ) {
 					//@link  http://stackoverflow.com/questions/921789/how-to-loop-through-javascript-object-literal-with-objects-as-members
 						if ( $menuGroups.hasOwnProperty( $menuGroupID ) ) {
-							jQuery( '<li><a href="#' + $menuGroupID.replace( /(\r\n|\n|\r)/gm, '' ) + '">' + $menuGroups[ $menuGroupID ].replace( /(\r\n|\n|\r)/gm, '' ) + '</a></li>' ).appendTo( '#menu-group-nav' );
+							$( '<li><a href="#' + $menuGroupID.replace( /(\r\n|\n|\r)/gm, '' ) + '">' + $menuGroups[ $menuGroupID ].replace( /(\r\n|\n|\r)/gm, '' ) + '</a></li>' ).appendTo( '#menu-group-nav' );
 						}
 					}
 
@@ -347,15 +347,15 @@ jQuery( function() {
 		 * Jetpack Infinite Scroll posts loading
 		 */
 
-			jQuery( document.body ).on( 'post-load', function() {
+			$( document.body ).on( 'post-load', function() {
 
 				/**
 				 * Masonry posts list
 				 */
 
-					if ( jQuery().masonry ) {
+					if ( $().masonry ) {
 
-						var $postsContainers = jQuery( '.posts' );
+						var $postsContainers = $( '.posts' );
 
 						$postsContainers.imagesLoaded( function() {
 
@@ -369,4 +369,4 @@ jQuery( function() {
 
 
 
-} );
+} )( jQuery );

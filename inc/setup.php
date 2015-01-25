@@ -6,7 +6,7 @@
  * @copyright  2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.1
+ * @version  1.2
  *
  * CONTENT:
  * -  10) Actions and filters
@@ -31,6 +31,7 @@
 
 		//Styles and scripts
 			add_action( 'init',               'wm_register_assets',       10   );
+			add_action( 'init',               'wm_visual_editor',         999  );
 			add_action( 'wp_enqueue_scripts', 'wm_enqueue_assets',        100  );
 			add_action( 'wp_enqueue_scripts', 'wm_post_nav_background',   110  );
 			add_action( 'wp_footer',          'wm_footer_custom_scripts', 9998 );
@@ -99,7 +100,7 @@
 			add_filter( 'post_gallery',              'wm_shortcode_gallery_assets', 10, 2 );
 			add_filter( 'use_default_gallery_style', '__return_false'                     );
 		//Navigation improvements
-			add_filter( 'nav_menu_css_class',       'wm_nav_item_classes', 10, 3 );
+			add_filter( 'nav_menu_css_class',       'wm_nav_item_classes', 10, 4 );
 			add_filter( 'walker_nav_menu_start_el', 'wm_nav_item_process', 10, 4 );
 		//Excerpt modifications
 			add_filter( 'the_excerpt',                        'wm_remove_shortcodes',        10 );
@@ -152,7 +153,7 @@
 	 * Theme helper variables
 	 *
 	 * @since    1.0
-	 * @version  1.1
+	 * @version  1.2
 	 *
 	 * @param  string $variable Helper variables array key to return
 	 * @param  string $key      Additional key if the variable is array
@@ -221,7 +222,7 @@
 								'/optgroup' . 9 => '',
 
 							//Google Fonts selection
-								'optgroup' . 10  => sprintf( _x( 'Fonts selection', 'Title for selection of fonts picked from Google Fontss', 'wm_domain' ), 10 ),
+								'optgroup' . 10  => _x( 'Fonts selection', 'Title for selection of fonts picked from Google Fontss', 'wm_domain' ),
 									'Abril Fatface'             => 'Abril Fatface',
 									'Arvo'                      => 'Arvo',
 									'Domine'                    => 'Domine',
@@ -312,7 +313,7 @@
 	 * Theme setup
 	 *
 	 * @since    1.0
-	 * @version  1.1
+	 * @version  1.2
 	 */
 	if ( ! function_exists( 'wm_setup' ) ) {
 		function wm_setup() {
@@ -327,9 +328,8 @@
 							add_query_arg( array( 'ver' => WM_THEME_VERSION ), wm_get_stylesheet_directory_uri( 'css/editor-style.css' ) ),
 						) ) );
 
-
 			/**
-			 * Load Localisation files.
+			 * Localization
 			 *
 			 * Note: the first-loaded translation file overrides any following ones if the same translation is present.
 			 */
@@ -342,6 +342,9 @@
 
 				//wp-content/themes/theme-name/languages/it_IT.mo
 					load_theme_textdomain( 'wm_domain', get_template_directory() . '/languages' );
+
+			//Title tag
+				add_theme_support( 'title-tag' );
 
 			//Visual editor styles
 				add_editor_style( $visual_editor_css );
@@ -398,16 +401,17 @@
 								'large'     => array( absint( $content_width       ), 9999, false ), //Single post featured image
 							) );
 
-						foreach ( $default_image_sizes as $name => $size ) {
-							update_option( $name . '_size_w', $default_image_sizes[ $name ][0] );
-							update_option( $name . '_size_h', $default_image_sizes[ $name ][1] );
-							update_option( $name . '_crop',   $default_image_sizes[ $name ][2] );
+						foreach ( $default_image_sizes as $size => $setup ) {
+							if ( $default_image_sizes[ $size ][0] != get_option( $size . '_size_w' ) ) {
+								update_option( $size . '_size_w', $default_image_sizes[ $size ][0] );
+							}
+							if ( $default_image_sizes[ $size ][1] != get_option( $size . '_size_h' ) ) {
+								update_option( $size . '_size_h', $default_image_sizes[ $size ][1] );
+							}
+							if ( $default_image_sizes[ $size ][2] != get_option( $size . '_crop' ) ) {
+								update_option( $size . '_crop', $default_image_sizes[ $size ][2] );
+							}
 						}
-
-			//WordPress 4.1+
-				if ( function_exists( '_wp_render_title_tag' ) ) {
-					add_theme_support( 'title-tag' );
-				}
 
 		}
 	} // /wm_setup
@@ -479,7 +483,7 @@
 	 * Frontend HTML head assets enqueue
 	 *
 	 * @since    1.0
-	 * @version  1.1
+	 * @version  1.2
 	 */
 	if ( ! function_exists( 'wm_enqueue_assets' ) ) {
 		function wm_enqueue_assets() {
@@ -534,16 +538,24 @@
 
 				//Customizer setup custom styles
 					if ( $custom_styles ) {
-						wp_add_inline_style( $inline_styles_handle, "\r\n" . $custom_styles . "\r\n" );
+						wp_add_inline_style( $inline_styles_handle, "\r\n" . wm_esc_css( $custom_styles ) . "\r\n" );
 					}
+
 				//Custom styles set in post/page 'custom-css' custom field
 					if (
 							is_singular()
 							&& $output = get_post_meta( get_the_ID(), 'custom_css', true )
 						) {
-						$output = apply_filters( 'wmhook_wm_enqueue_assets_singular_inline_styles', "\r\n\r\n/* Custom singular styles */\r\n" . $output . "\r\n" );
+						$output = apply_filters( 'wmhook_wm_enqueue_assets_styles_inline_singular', "\r\n\r\n/* Custom singular styles */\r\n" . $output . "\r\n" );
 
-						wp_add_inline_style( $inline_styles_handle, $output . "\r\n" );
+						wp_add_inline_style( $inline_styles_handle, wm_esc_css( $output ) . "\r\n" );
+					}
+
+				//Beaver Builder support
+					if ( isset( $_GET['fl_builder'] ) ) {
+						$output = apply_filters( 'wmhook_wm_enqueue_assets_styles_inline_beaver_builder', "\r\n.fl-builder-lightbox .fl-lightbox { width: 720px; } .fl-builder-settings-tab { width: 100%; }\r\n" );
+
+						wp_add_inline_style( $inline_styles_handle, wm_esc_css( $output ) . "\r\n" );
 					}
 
 			/**
@@ -556,7 +568,7 @@
 							(
 								is_array( $footer_widgets )
 								&& isset( $footer_widgets['footer'] )
-								&& count( $footer_widgets['footer'] ) > absint( apply_filters( 'wmhook_footer_columns_max_count', 3 ) )
+								&& count( $footer_widgets['footer'] ) > absint( apply_filters( 'wmhook_widgets_columns', 3, 'footer' ) )
 							)
 							|| is_archive()
 							|| is_front_page()
@@ -649,6 +661,9 @@
 
 	/**
 	 * Add featured image as background image to post navs
+	 *
+	 * @since    1.0
+	 * @version  1.2
 	 */
 	if ( ! function_exists( 'wm_post_nav_background' ) ) {
 		function wm_post_nav_background() {
@@ -672,16 +687,16 @@
 			//Preparing output
 				if ( $previous &&  has_post_thumbnail( $previous->ID ) ) {
 					$prevthumb = wp_get_attachment_image_src( get_post_thumbnail_id( $previous->ID ), 'banner-small' );
-					$output .= '.post-navigation .nav-previous { background-image: url(' . esc_url( $prevthumb[0] ) . '); }';
+					$output .= '.post-navigation .nav-previous { background-image: url(\'' . esc_url( $prevthumb[0] ) . '\'); }';
 				}
 
 				if ( $next && has_post_thumbnail( $next->ID ) ) {
 					$nextthumb = wp_get_attachment_image_src( get_post_thumbnail_id( $next->ID ), 'banner-small' );
-					$output .= '.post-navigation .nav-next { background-image: url(' . esc_url( $nextthumb[0] ) . '); }';
+					$output .= '.post-navigation .nav-next { background-image: url(\'' . esc_url( $nextthumb[0] ) . '\'); }';
 				}
 
 			//Output
-				wp_add_inline_style( 'wm-stylesheet', apply_filters( 'wmhook_wm_post_nav_background_output', $output ) . "\r\n" );
+				wp_add_inline_style( 'wm-stylesheet', wm_esc_css( apply_filters( 'wmhook_wm_post_nav_background_output', $output ) ) . "\r\n" );
 		}
 	} // /wm_post_nav_background
 
@@ -695,14 +710,13 @@
 
 	/**
 	 * Website DOCTYPE
+	 *
+	 * @since    1.0
+	 * @version  1.2
 	 */
 	if ( ! function_exists( 'wm_doctype' ) ) {
 		function wm_doctype() {
-			//Helper variables
-				$output = '<!doctype html>';
-
-			//Output
-				echo apply_filters( 'wmhook_wm_doctype_output', $output );
+			echo '<!doctype html>';
 		}
 	} // /wm_doctype
 
@@ -734,6 +748,9 @@
 
 	/**
 	 * Body top
+	 *
+	 * @since    1.0
+	 * @version  1.2
 	 */
 	if ( ! function_exists( 'wm_site_top' ) ) {
 		function wm_site_top() {
@@ -742,7 +759,7 @@
 				$output .= "\t" . '<div class="site-inner">' . "\r\n";
 
 			//Output
-				echo apply_filters( 'wmhook_wm_site_top_output', $output );
+				echo $output;
 		}
 	} // /wm_site_top
 
@@ -750,6 +767,9 @@
 
 		/**
 		 * Body bottom
+		 *
+		 * @since    1.0
+		 * @version  1.2
 		 */
 		if ( ! function_exists( 'wm_site_bottom' ) ) {
 			function wm_site_bottom() {
@@ -758,7 +778,7 @@
 					$output .= "\r\n" . '</div><!-- /#page -->' . "\r\n\r\n";
 
 				//Output
-					echo apply_filters( 'wmhook_wm_site_bottom_output', $output );
+					echo $output;
 			}
 		} // /wm_site_bottom
 
@@ -766,6 +786,9 @@
 
 	/**
 	 * Header top
+	 *
+	 * @since    1.0
+	 * @version  1.2
 	 */
 	if ( ! function_exists( 'wm_header_top' ) ) {
 		function wm_header_top() {
@@ -773,7 +796,7 @@
 				$output = "\r\n\r\n" . '<header id="masthead" class="site-header" role="banner"' . wm_schema_org( 'WPHeader' ) . '>' . "\r\n\r\n";
 
 			//Output
-				echo apply_filters( 'wmhook_wm_header_top_output', $output );
+				echo $output;
 		}
 	} // /wm_header_top
 
@@ -781,6 +804,9 @@
 
 		/**
 		 * Header bottom
+		 *
+		 * @since    1.0
+		 * @version  1.2
 		 */
 		if ( ! function_exists( 'wm_header_bottom' ) ) {
 			function wm_header_bottom() {
@@ -788,7 +814,7 @@
 					$output = "\r\n\r\n" . '</header>' . "\r\n\r\n";
 
 				//Output
-					echo apply_filters( 'wmhook_wm_header_bottom_output', $output );
+					echo $output;
 			}
 		} // /wm_header_bottom
 
@@ -809,7 +835,7 @@
 	 * Navigation
 	 *
 	 * @since    1.0
-	 * @version  1.1
+	 * @version  1.2
 	 */
 	if ( ! function_exists( 'wm_navigation' ) ) {
 		function wm_navigation() {
@@ -833,7 +859,7 @@
 						$output .= wp_nav_menu( $args );
 						$output .= '<div id="nav-search-form" class="nav-search-form"><a href="#" id="search-toggle" class="search-toggle"><span class="screen-reader-text">' . _x( 'Search', 'Display search form button title.', 'wm_domain' ) . '</span></a>' . get_search_form( false ) . '</div>';
 					$output .= '</div>';
-					$output .= '<button id="menu-toggle" class="menu-toggle">' . _x( 'Menu', 'Mobile navigation toggle button title.', 'wm_domain' ) . '</button>';
+					$output .= '<button id="menu-toggle" class="menu-toggle" aria-controls="menu" aria-expanded="false">' . _x( 'Menu', 'Mobile navigation toggle button title.', 'wm_domain' ) . '</button>';
 				$output .= '</nav>';
 
 			//Output
@@ -845,9 +871,17 @@
 
 		/**
 		 * Navigation item classes
+		 *
+		 * @since    1.0
+		 * @version  1.2
+		 *
+		 * @param  array  $classes The CSS classes that are applied to the menu item's `<li>` element.
+		 * @param  object $item    The current menu item.
+		 * @param  array  $args    An array of wp_nav_menu() arguments.
+		 * @param  int    $depth   Depth of menu item. Used for padding. Since WordPress 4.1.
 		 */
 		if ( ! function_exists( 'wm_nav_item_classes' ) ) {
-			function wm_nav_item_classes( $classes, $item, $args ) {
+			function wm_nav_item_classes( $classes, $item, $args, $depth = 0 ) {
 				//Requirements check
 					if ( ! isset( $item->title ) ) {
 						return $classes;
@@ -897,7 +931,7 @@
 	 * Post/page heading (title)
 	 *
 	 * @since    1.0
-	 * @version  1.1
+	 * @version  1.2
 	 *
 	 * @param  array $args Heading setup arguments
 	 */
@@ -909,7 +943,7 @@
 				//Requirements check
 					if (
 							! ( $title = get_the_title() )
-							|| apply_filters( 'wm_post_title_disable', false )
+							|| apply_filters( 'wmhook_wm_post_title_disable', false )
 						) {
 						return;
 					}
@@ -991,6 +1025,9 @@
 
 	/**
 	 * Content top
+	 *
+	 * @since    1.0
+	 * @version  1.2
 	 */
 	if ( ! function_exists( 'wm_content_top' ) ) {
 		function wm_content_top() {
@@ -1000,7 +1037,7 @@
 				$output .= "\r\n\t\t" . '<main id="main" class="site-main clearfix" role="main">' . "\r\n\r\n";
 
 			//Output
-				echo apply_filters( 'wmhook_wm_content_top_output', $output );
+				echo $output;
 		}
 	} // /wm_content_top
 
@@ -1008,6 +1045,9 @@
 
 		/**
 		 * Content bottom
+		 *
+		 * @since    1.0
+		 * @version  1.2
 		 */
 		if ( ! function_exists( 'wm_content_bottom' ) ) {
 			function wm_content_bottom() {
@@ -1017,7 +1057,7 @@
 					$output .= "\r\n"         . '</div><!-- /#content -->' . "\r\n\r\n";
 
 				//Output
-					echo apply_filters( 'wmhook_wm_content_bottom_output', $output );
+					echo $output;
 			}
 		} // /wm_content_bottom
 
@@ -1027,14 +1067,12 @@
 		 * Breadcrumbs
 		 *
 		 * @since    1.1
-		 * @version  1.1
+		 * @version  1.2
 		 */
 		if ( ! function_exists( 'wm_breadcrumbs' ) ) {
 			function wm_breadcrumbs() {
 				if ( function_exists( 'bcn_display' ) && ! is_front_page() ) {
-					echo '<div class="breadcrumbs-container"><nav class="breadcrumbs" itemprop="breadcrumbs">';
-						bcn_display();
-					echo '</nav></div>';
+					echo '<div class="breadcrumbs-container"><nav class="breadcrumbs" itemprop="breadcrumbs">' . bcn_display( true ) . '</nav></div>';
 				}
 			}
 		} // /wm_breadcrumbs
@@ -1085,7 +1123,7 @@
 
 
 			/**
-			 * Display Simple Blog loop
+			 * Display Condensed Blog loop
 			 */
 			if ( ! function_exists( 'wm_loop_blog_condensed' ) ) {
 				function wm_loop_blog_condensed() {
@@ -1335,6 +1373,12 @@
 		/**
 		 * Previous and next post links
 		 *
+		 * Since WordPress 4.1 you can use the_post_navigation() and/or get_the_post_navigation().
+		 * However, you are modifying markup by applying custom classes, so stick with this
+		 * cusotm function for now.
+		 *
+		 * @todo  Transfer to WordPress 4.1+ core functionality.
+		 *
 		 * @since    1.0
 		 * @version  1.1
 		 */
@@ -1497,6 +1541,9 @@
 
 		/**
 		 * Footer top
+		 *
+		 * @since    1.0
+		 * @version  1.2
 		 */
 		if ( ! function_exists( 'wm_footer_top' ) ) {
 			function wm_footer_top() {
@@ -1504,7 +1551,7 @@
 					$output = "\r\n\r\n" . '<footer id="colophon" class="site-footer"' . wm_schema_org( 'WPFooter' ) . '>' . "\r\n\r\n";
 
 				//Output
-					echo apply_filters( 'wmhook_wm_footer_top_output', $output );
+					echo $output;
 			}
 		} // /wm_footer_top
 
@@ -1512,6 +1559,9 @@
 
 		/**
 		 * Footer bottom
+		 *
+		 * @since    1.0
+		 * @version  1.2
 		 */
 		if ( ! function_exists( 'wm_footer_bottom' ) ) {
 			function wm_footer_bottom() {
@@ -1519,7 +1569,7 @@
 					$output = "\r\n\r\n" . '</footer>' . "\r\n\r\n";
 
 				//Output
-					echo apply_filters( 'wmhook_wm_footer_bottom_output', $output );
+					echo $output;
 			}
 		} // /wm_footer_bottom
 
@@ -1598,6 +1648,22 @@
 			return $output;
 		}
 	} // /wm_shortcode_gallery_assets
+
+
+
+	/**
+	 * Include Visual Editor addons
+	 *
+	 * @since    1.2
+	 * @version  1.2
+	 */
+	if ( ! function_exists( 'wm_visual_editor' ) ) {
+		function wm_visual_editor() {
+			if ( is_admin() || isset( $_GET['fl_builder'] ) ) {
+				locate_template( WM_INC_DIR . 'lib/visual-editor.php', true );
+			}
+		}
+	} // /wm_visual_editor
 
 
 

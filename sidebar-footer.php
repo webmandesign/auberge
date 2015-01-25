@@ -4,7 +4,9 @@
  *
  * @package    Auberge
  * @copyright  2014 WebMan - Oliver Juhas
- * @version    1.0
+ *
+ * @since    1.0
+ * @version  1.2
  */
 
 
@@ -23,7 +25,7 @@
 	}
 	$widgets_count = count( $widgets_count );
 
-	$widgets_columns = absint( apply_filters( 'wmhook_widgets_columns_max_count', 3 ) );
+	$widgets_columns = absint( apply_filters( 'wmhook_widgets_columns', 3, $sidebar_id ) );
 
 	if ( $widgets_count < $widgets_columns ) {
 		$widgets_columns = $widgets_count;

@@ -6,7 +6,7 @@
  * @copyright  2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.1
+ * @version  1.2
  *
  * CONTENT:
  * - 10) Actions and filters
@@ -42,7 +42,7 @@
 	 * Set theme options array
 	 *
 	 * @since    1.0
-	 * @version  1.1
+	 * @version  1.2
 	 *
 	 * @param  array $options
 	 */
@@ -65,6 +65,7 @@
 							'id'                       => 'layout',
 							'type'                     => 'section',
 							'theme-customizer-section' => _x( 'Layout', 'Customizer section title.', 'wm_domain' ),
+							'theme-customizer-panel'   => _x( 'Theme', 'Customizer panel title.', 'wm_domain' ),
 						),
 
 							100 . 'layout' . 100 => array(
@@ -109,6 +110,7 @@
 							'id'                       => 'colors',
 							'type'                     => 'section',
 							'theme-customizer-section' => _x( 'Colors', 'Customizer section title.', 'wm_domain' ),
+							'theme-customizer-panel'   => _x( 'Theme', 'Customizer panel title.', 'wm_domain' ),
 						),
 
 							200 . 'colors' . 100 => array(
@@ -191,6 +193,7 @@
 							'id'                       => 'fonts',
 							'type'                     => 'section',
 							'theme-customizer-section' => _x( 'Fonts', 'Customizer section title.', 'wm_domain' ),
+							'theme-customizer-panel'   => _x( 'Theme', 'Customizer panel title.', 'wm_domain' ),
 						),
 
 							300 . 'fonts' . 100 => array(

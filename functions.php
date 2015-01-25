@@ -25,7 +25,7 @@
  * @copyright  2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.1
+ * @version  1.2
  */
 
 
@@ -45,7 +45,7 @@
 		if ( ! defined( 'WM_THEME_VERSION' ) )         define( 'WM_THEME_VERSION',         $theme_data->Version                       );
 
 		if ( ! defined( 'WM_SCRIPTS_VERSION' ) )       define( 'WM_SCRIPTS_VERSION',       esc_attr( trim( WM_THEME_VERSION ) )       );
-		if ( ! defined( 'WM_WP_COMPATIBILITY' ) )      define( 'WM_WP_COMPATIBILITY',      4.0                                        );
+		if ( ! defined( 'WM_WP_COMPATIBILITY' ) )      define( 'WM_WP_COMPATIBILITY',      4.1                                        );
 
 	//Dir constants
 		if ( ! defined( 'WM_INC_DIR' ) )               define( 'WM_INC_DIR',               trailingslashit( 'inc/' )                  );
@@ -80,5 +80,8 @@
 
 	//Jetpack setup
 		locate_template( WM_INC_DIR . 'jetpack/jetpack.php', true );
+
+	//Beaver Builder setup
+		locate_template( WM_INC_DIR . 'beaver-builder/beaver-builder.php', true );
 
 ?>

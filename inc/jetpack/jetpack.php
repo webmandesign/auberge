@@ -6,7 +6,7 @@
  * @copyright  2014 WebMan - Oliver Juhas
  *
  * @since    1.1
- * @version  1.1
+ * @version  1.2
  *
  * CONTENT:
  * -  10) Actions and filters
@@ -51,9 +51,15 @@
 
 	/**
 	 * Enables Jetpack features
+	 *
+	 * @since    1.0
+	 * @version  1.2
 	 */
 	if ( ! function_exists( 'wm_jetpack' ) ) {
 		function wm_jetpack() {
+			//Responsive videos
+				add_theme_support( 'jetpack-responsive-videos' );
+
 			//Site logo
 				add_theme_support( 'site-logo' );
 
@@ -207,6 +213,9 @@
 
 		/**
 		 * Jetpack food menus Add Many Items styles
+		 *
+		 * @since    1.0
+		 * @version  1.2
 		 */
 		if ( ! function_exists( 'wm_jetpack_styles_admin' ) ) {
 			function wm_jetpack_styles_admin() {
@@ -218,7 +227,7 @@
 							isset( $current_screen->id )
 							&& 'nova_menu_item_page_add_many_nova_items' === $current_screen->id
 						) {
-							wp_add_inline_style( 'nova-font', '.many-items-table input[name="nova_title[]"], .many-items-table textarea { width: 360px; max-width: 100%; } .many-items-table textarea { height: 50px; }' );
+							wp_add_inline_style( 'nova-font', wm_esc_css( '.many-items-table input[name="nova_title[]"], .many-items-table textarea { width: 360px; max-width: 100%; } .many-items-table textarea { height: 50px; }' ) );
 					}
 			}
 		} // /wm_jetpack_styles_admin
