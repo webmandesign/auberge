@@ -1,5 +1,17 @@
 # Auberge Changelog
 
+## 1.2.5
+
+* Added: Beaver Builder recommendation into plugins notice
+* Fixed: Masonry blog layout
+
+#### Files changed:
+
+	inc\tgmpa\plugins.php
+	js\customizer-preview.js
+	js\scripts.js
+
+
 ## 1.2
 
 * Added: Support for Beaver Builder page builder plugin

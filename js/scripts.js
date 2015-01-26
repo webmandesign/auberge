@@ -5,7 +5,7 @@
  * @copyright  2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.2
+ * @version  1.2.5
  *
  * CONTENT:
  * -  10) Basics
@@ -20,11 +20,7 @@
 
 
 
-( function( $ ) {
-
-
-
-	"use strict";
+jQuery( function() {
 
 
 
@@ -36,7 +32,7 @@
 		 * Tell CSS that JS is enabled...
 		 */
 
-			$( '.no-js' ).removeClass( 'no-js' );
+			jQuery( '.no-js' ).removeClass( 'no-js' );
 
 
 
@@ -44,7 +40,7 @@
 		 * Clear floats after columns
 		 */
 
-			$( '.column.last' ).after( '<div class="clear" />' );
+			jQuery( '.column.last' ).after( '<div class="clear" />' );
 
 
 
@@ -53,10 +49,10 @@
 		 */
 
 			if ( 960 < document.body.clientWidth ) {
-				$( '.back-to-top' ).on( 'click', function( e ) {
+				jQuery( '.back-to-top' ).on( 'click', function( e ) {
 						e.preventDefault();
 
-						$( 'html, body' ).animate( { scrollTop: 0 }, 400 );
+						jQuery( 'html, body' ).animate( { scrollTop: 0 }, 400 );
 					} );
 			}
 
@@ -70,25 +66,25 @@
 		 * Sticky header
 		 */
 
-			$( window ).scroll( function() {
-				var $documentScrollTop = $( document ).scrollTop(),
-				    $headerHeight      = $( '#masthead' ).outerHeight();
+			jQuery( window ).scroll( function() {
+				var $documentScrollTop = jQuery( document ).scrollTop(),
+				    $headerHeight      = jQuery( '#masthead' ).outerHeight();
 
 				if ( $documentScrollTop >= ( 2.62 * $headerHeight ) ) {
 
-					$( 'body' )
+					jQuery( 'body' )
 						.removeClass( 'hide-sticky-header' )
 						.addClass( 'sticky-header' );
 
 				} else if ( $documentScrollTop < ( 2.62 * $headerHeight ) && $documentScrollTop > ( 1 * $headerHeight ) ) {
 
-					$( 'body.sticky-header' )
+					jQuery( 'body.sticky-header' )
 						.removeClass( 'sticky-header' )
 						.addClass( 'hide-sticky-header' );
 
 				} else {
 
-					$( 'body' )
+					jQuery( 'body' )
 						.removeClass( 'sticky-header hide-sticky-header' );
 
 				}
@@ -99,10 +95,10 @@
 		 * Header search form
 		 */
 
-			$( '#search-toggle' ).on( 'click', function( e ) {
+			jQuery( '#search-toggle' ).on( 'click', function( e ) {
 				e.preventDefault();
 
-				$( this )
+				jQuery( this )
 					.parent()
 						.toggleClass( 'active' )
 						.find( '.search-field' )
@@ -115,25 +111,23 @@
 		 * Mobile navigation
 		 */
 
-			$( '#site-navigation .main-navigation-inner ul' ).attr( 'aria-expanded', 'false' );
-
-			$( '#menu-toggle' ).on( 'click', function( e ) {
+			jQuery( '#menu-toggle' ).on( 'click', function( e ) {
 				e.preventDefault();
 
-				$( this )
+				jQuery( this )
 					.parent( '#site-navigation' )
 						.toggleClass( 'active' )
 						.find( '.main-navigation-inner' )
 							.slideToggle();
 
-				if ( $( this ).parent( '#site-navigation' ).hasClass( 'active' ) ) {
-					$( this )
+				if ( jQuery( this ).parent( '#site-navigation' ).hasClass( 'active' ) ) {
+					jQuery( this )
 						.attr( 'aria-expanded', 'true' )
 						.parent( '#site-navigation' )
 							.find( '.main-navigation-inner ul' )
 								.attr( 'aria-expanded', 'true' );
 				} else {
-					$( this )
+					jQuery( this )
 						.attr( 'aria-expanded', 'false' )
 						.parent( '#site-navigation' )
 							.find( '.main-navigation-inner ul' )
@@ -143,9 +137,9 @@
 
 
 			//Disable mobile navigation on wider screens
-				$( window ).on( 'resize orientationchange', function( e ) {
+				jQuery( window ).on( 'resize orientationchange', function( e ) {
 					if ( 960 < document.body.clientWidth ) {
-						$( '#site-navigation .main-navigation-inner' ).show();
+						jQuery( '#site-navigation .main-navigation-inner' ).show();
 					}
 				} );
 
@@ -159,12 +153,12 @@
 		 * Banner slider
 		 */
 
-			if ( $().slick ) {
+			if ( jQuery().slick ) {
 
-				$( '#site-banner.enable-slider .site-banner-inner' ).slick( {
+				jQuery( '#site-banner.enable-slider .site-banner-inner' ).slick( {
 						'adaptiveHeight' : true,
 						'autoplay'       : true,
-						'autoplaySpeed'  : ( ! $( '#site-banner' ).data( 'speed' ) ) ? ( 5400 ) : ( $( '#site-banner' ).data( 'speed' ) ),
+						'autoplaySpeed'  : ( ! jQuery( '#site-banner' ).data( 'speed' ) ) ? ( 5400 ) : ( jQuery( '#site-banner' ).data( 'speed' ) ),
 						'cssEase'        : 'ease-in-out',
 						'dots'           : true,
 						'draggable'      : false,
@@ -190,13 +184,13 @@
 		 * Masonry layout
 		 */
 
-			if ( $().masonry ) {
+			if ( jQuery().masonry ) {
 
 				/**
 				 * Posts list
 				 */
 
-					var $postsContainers = $( '.posts' );
+					var $postsContainers = jQuery( '.posts' );
 
 					$postsContainers.imagesLoaded( function() {
 
@@ -212,7 +206,7 @@
 				 * [gallery] shortcode Masonry layout
 				 */
 
-					var $galleryContainers = $( '.gallery' );
+					var $galleryContainers = jQuery( '.gallery' );
 
 					$galleryContainers.imagesLoaded( function() {
 
@@ -235,11 +229,11 @@
 		 */
 
 			if (
-					$().masonry
-					&& 1 < $( '#footer-widgets' ).data( 'columns' ) //Doesn't make sense for 1 column layout
+					jQuery().masonry
+					&& 1 < jQuery( '#footer-widgets' ).data( 'columns' ) //Doesn't make sense for 1 column layout
 				) {
 
-				var $footerWidgets = $( '#footer-widgets-container' );
+				var $footerWidgets = jQuery( '#footer-widgets-container' );
 
 				$footerWidgets.imagesLoaded( function() {
 
@@ -261,10 +255,10 @@
 		 * Smooth scrolling
 		 */
 
-			$( 'body' ).on( 'click', 'a[href^="#"]', function( e ) {
-				var $this         = $( this ),
+			jQuery( 'body' ).on( 'click', 'a[href^="#"]', function( e ) {
+				var $this         = jQuery( this ),
 				    $anchor       = $this.not( '.add-comment-link, .toggle-mobile-sidebar, .search-toggle, .back-to-top, .skip-link' ).attr( 'href' ),
-				    $scrollObject = $( 'html, body' ),
+				    $scrollObject = jQuery( 'html, body' ),
 				    $scrollSpeed  = ( 960 >= document.body.clientWidth ) ? ( 0 ) : ( 600 );
 
 				if (
@@ -275,7 +269,7 @@
 					e.preventDefault();
 
 					$scrollObject.stop().animate( {
-							scrollTop : $( $anchor ).offset().top - $( '#masthead' ).outerHeight() + 'px'
+							scrollTop : jQuery( $anchor ).offset().top - jQuery( '#masthead' ).outerHeight() + 'px'
 						}, $scrollSpeed );
 				}
 			} );
@@ -287,19 +281,19 @@
 		 */
 
 			//Disable sidebar toggle on wider screens
-				$( window ).on( 'resize orientationchange', function( e ) {
+				jQuery( window ).on( 'resize orientationchange', function( e ) {
 					if ( 960 < document.body.clientWidth ) {
-						$( '#toggle-mobile-sidebar' )
+						jQuery( '#toggle-mobile-sidebar' )
 							.siblings( '.widget' )
 								.show();
 					}
 				} );
 
 			//Clicking the toggle sidebar widgets button
-				$( '#toggle-mobile-sidebar' ).on( 'click', function( e ) {
+				jQuery( '#toggle-mobile-sidebar' ).on( 'click', function( e ) {
 					e.preventDefault();
 
-					$( this )
+					jQuery( this )
 						.siblings( '.widget' )
 							.slideToggle();
 				} );
@@ -314,13 +308,13 @@
 		 *        use Jetpack's get_option( 'nova_menu_order' ).
 		 */
 
-			if ( $( '.items-list .menu-group-header' ).length ) {
+			if ( jQuery( '.items-list .menu-group-header' ).length ) {
 
 				var $menuGroups = [];
 
 				//Set menu groups IDS
-					$( '.menu-group-header' ).each( function( index, val ) {
-						var $this      = $( this ),
+					jQuery( '.menu-group-header' ).each( function( index, val ) {
+						var $this      = jQuery( this ),
 						    $thisTitle = $this.find( '> .menu-group-title' ).text(),
 						    $thisID    = $thisTitle.replace( ' ', '_' ).toLowerCase().replace( /(\r\n|\n|\r)/gm, '' );
 
@@ -330,12 +324,12 @@
 					} );
 
 				//Create a navigation
-					$( '<ul id="menu-group-nav" class="menu-group-nav" />' ).prependTo( '.items-list' );
+					jQuery( '<ul id="menu-group-nav" class="menu-group-nav" />' ).prependTo( '.items-list' );
 
 					for ( var $menuGroupID in $menuGroups ) {
 					//@link  http://stackoverflow.com/questions/921789/how-to-loop-through-javascript-object-literal-with-objects-as-members
 						if ( $menuGroups.hasOwnProperty( $menuGroupID ) ) {
-							$( '<li><a href="#' + $menuGroupID.replace( /(\r\n|\n|\r)/gm, '' ) + '">' + $menuGroups[ $menuGroupID ].replace( /(\r\n|\n|\r)/gm, '' ) + '</a></li>' ).appendTo( '#menu-group-nav' );
+							jQuery( '<li><a href="#' + $menuGroupID.replace( /(\r\n|\n|\r)/gm, '' ) + '">' + $menuGroups[ $menuGroupID ].replace( /(\r\n|\n|\r)/gm, '' ) + '</a></li>' ).appendTo( '#menu-group-nav' );
 						}
 					}
 
@@ -347,15 +341,15 @@
 		 * Jetpack Infinite Scroll posts loading
 		 */
 
-			$( document.body ).on( 'post-load', function() {
+			jQuery( document.body ).on( 'post-load', function() {
 
 				/**
 				 * Masonry posts list
 				 */
 
-					if ( $().masonry ) {
+					if ( jQuery().masonry ) {
 
-						var $postsContainers = $( '.posts' );
+						var $postsContainers = jQuery( '.posts' );
 
 						$postsContainers.imagesLoaded( function() {
 
@@ -369,4 +363,4 @@
 
 
 
-} )( jQuery );
+} );

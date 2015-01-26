@@ -6,7 +6,7 @@
  * @copyright  2014 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.1
+ * @version  1.2.5
  *
  * CONTENT:
  * - 10) Actions and filters
@@ -55,6 +55,12 @@
 					 */
 
 						//Recommended
+
+							'bb' => array(
+								'name'     => 'Beaver Builder',
+								'slug'     => 'beaver-builder-lite-version',
+								'required' => false,
+							),
 
 							'bn' => array(
 								'name'     => 'Breadcrumb NavXT',
