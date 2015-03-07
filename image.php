@@ -3,10 +3,10 @@
  * Image attachment template
  *
  * @package    Auberge
- * @copyright  2014 WebMan - Oliver Juhas
+ * @copyright  2015 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.1
+ * @version  1.3
  */
 
 
@@ -21,7 +21,7 @@ get_header();
 
 		?>
 
-		<article id="post-<?php the_ID(); ?>" <?php post_class(); wmhook_entry_container_atts(); ?>>
+		<article id="post-<?php the_ID(); ?>" <?php post_class(); echo apply_filters( 'wmhook_entry_container_atts', '' ); ?>>
 
 			<?php
 

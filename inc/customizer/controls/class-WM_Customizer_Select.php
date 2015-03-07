@@ -5,7 +5,7 @@
  * Customizer select field (with optgroups).
  *
  * @package    Auberge
- * @copyright  2014 WebMan - Oliver Juhas
+ * @copyright  2015 WebMan - Oliver Juhas
  *
  * @since    1.0
  * @version  1.1

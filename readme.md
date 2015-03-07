@@ -1,14 +1,18 @@
 # Auberge
 
-* **Theme URI:** http://www.webmandesign.eu/auberge-wordpress-theme/
-* **Author:** WebMan
-* **Author URI:** http://www.webmandesign.eu/
-* **License:** GNU General Public License v2 or later
-* **License URI:** http://www.gnu.org/licenses/gpl-2.0.html
+* **Theme URI:**    http://www.webmandesign.eu/auberge-wordpress-theme/
+* **Author:**       WebMan
+* **Author URI:**   http://www.webmandesign.eu/
+* **License:**      GNU General Public License v2 or later
+* **License URI:**  http://www.gnu.org/licenses/gpl-2.0.html
 
 ## Description
 
-**Auberge** is responsive, retina-ready, modern restaurant and café WordPress theme. Supports Jetpack plugin to create a food menu, Schema.org markup, Theme Hook Alliance action hooks, translation-ready code, header slideshow, customizable colors and layout, and other cool features. The theme is compatible with Chrome, Safari, Opera, Firefox, Internet Explorer 9+ browsers. Thank you for using one of WebMan's themes (more cool WordPress themes can be found at www.webmandesign.eu). Theme demo at [http://themedemos.webmandesign.eu/auberge/]
+**Auberge** is responsive, retina-ready, modern restaurant and café WordPress theme. Supports Beaver Builder page builder plugin, Jetpack plugin to create a food menu, Schema.org markup, Theme Hook Alliance action hooks, translation-ready code, header slideshow, customizable colors and layout, and other cool features.
+
+The theme is compatible with Chrome, Safari, Opera, Firefox, Internet Explorer 9+ browsers.
+
+Thank you for using one of WebMan's themes (more cool WordPress themes can be found at www.webmandesign.eu).
 
 Follow WebMan on Twitter [https://twitter.com/webmandesigneu] and become a fan on Facebook [https://www.facebook.com/webmandesigneu].
 
@@ -37,7 +41,7 @@ User manual available at http://www.webmandesign.eu/manual/auberge/
 ### Theme copyright
 
 **Auberge WordPress Theme**
-Copyright (c) 2014 WebMan [http://www.webmandesign.eu/]
+Copyright (c) 2015 WebMan [http://www.webmandesign.eu/]
 Distributed under the terms of the GNU GPL
 
 **Auberge is based on Underscores**

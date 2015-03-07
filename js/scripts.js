@@ -2,10 +2,10 @@
  * Theme frontend scripts
  *
  * @package    Auberge
- * @copyright  2014 WebMan - Oliver Juhas
+ * @copyright  2015 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.2.5
+ * @version  1.3
  *
  * CONTENT:
  * -  10) Basics
@@ -67,16 +67,17 @@ jQuery( function() {
 		 */
 
 			jQuery( window ).scroll( function() {
+
 				var $documentScrollTop = jQuery( document ).scrollTop(),
 				    $headerHeight      = jQuery( '#masthead' ).outerHeight();
 
-				if ( $documentScrollTop >= ( 2.62 * $headerHeight ) ) {
+				if ( $documentScrollTop >= ( 3 * $headerHeight ) ) {
 
 					jQuery( 'body' )
 						.removeClass( 'hide-sticky-header' )
 						.addClass( 'sticky-header' );
 
-				} else if ( $documentScrollTop < ( 2.62 * $headerHeight ) && $documentScrollTop > ( 1 * $headerHeight ) ) {
+				} else if ( $documentScrollTop < ( 3 * $headerHeight ) && $documentScrollTop > ( 1 * $headerHeight ) ) {
 
 					jQuery( 'body.sticky-header' )
 						.removeClass( 'sticky-header' )
@@ -88,6 +89,7 @@ jQuery( function() {
 						.removeClass( 'sticky-header hide-sticky-header' );
 
 				}
+
 			} );
 
 
@@ -252,38 +254,54 @@ jQuery( function() {
 	 */
 
 		/**
-		 * Smooth scrolling
+		 * On-page anchor smooth scrolling
+		 *
+		 * Disable this when editing page with Beaver Builder to prevent
+		 * jumps when switching modules settings form tabs.
+		 *
+		 * @since    1.0
+		 * @version  1.3
 		 */
 
-			jQuery( 'body' ).on( 'click', 'a[href^="#"]', function( e ) {
-				var $this         = jQuery( this ),
-				    $anchor       = $this.not( '.add-comment-link, .toggle-mobile-sidebar, .search-toggle, .back-to-top, .skip-link' ).attr( 'href' ),
-				    $scrollObject = jQuery( 'html, body' ),
-				    $scrollSpeed  = ( 960 >= document.body.clientWidth ) ? ( 0 ) : ( 600 );
+			if ( ! ( 0 < window.location.href.search( 'fl_builder' ) ) ) {
 
-				if (
-						$anchor
-						&& '#' !== $anchor
-						&& ! $this.hasClass( 'no-smooth-scroll' )
-					) {
-					e.preventDefault();
+				jQuery( 'body' ).on( 'click', 'a[href^="#"]', function( e ) {
 
-					$scrollObject.stop().animate( {
-							scrollTop : jQuery( $anchor ).offset().top - jQuery( '#masthead' ).outerHeight() + 'px'
-						}, $scrollSpeed );
-				}
-			} );
+					var $this         = jQuery( this ),
+					    $anchor       = $this.not( '.add-comment-link, .toggle-mobile-sidebar, .search-toggle, .back-to-top, .skip-link' ).attr( 'href' ),
+					    $scrollObject = jQuery( 'html, body' ),
+					    $scrollSpeed  = ( 960 >= document.body.clientWidth ) ? ( 0 ) : ( 600 );
+
+					if (
+							$anchor
+							&& '#' !== $anchor
+							&& ! $this.hasClass( 'no-smooth-scroll' )
+						) {
+						e.preventDefault();
+
+						$scrollObject.stop().animate( {
+								scrollTop : jQuery( $anchor ).offset().top - jQuery( '#masthead' ).outerHeight() + 'px'
+							}, $scrollSpeed );
+					}
+
+				} );
+
+			} //check if Beaver Builder not active
 
 
 
 		/**
 		 * Sidebar mobile toggle
+		 *
+		 * @since    1.0
+		 * @version  1.3
 		 */
 
 			//Disable sidebar toggle on wider screens
 				jQuery( window ).on( 'resize orientationchange', function( e ) {
 					if ( 960 < document.body.clientWidth ) {
 						jQuery( '#toggle-mobile-sidebar' )
+							.attr( 'aria-expanded', 'true' )
 							.siblings( '.widget' )
 								.show();
 					}
@@ -293,7 +311,17 @@ jQuery( function() {
 				jQuery( '#toggle-mobile-sidebar' ).on( 'click', function( e ) {
 					e.preventDefault();
 
-					jQuery( this )
+					var $this                 = jQuery( this ),
+					    mobileSidebarExpanded = $this.attr( 'aria-expanded' );
+
+					if ( 'false' == mobileSidebarExpanded ) {
+						mobileSidebarExpanded = 'true';
+					} else {
+						mobileSidebarExpanded = 'false';
+					}
+
+					$this
+						.attr( 'aria-expanded', mobileSidebarExpanded )
 						.siblings( '.widget' )
 							.slideToggle();
 				} );
@@ -334,6 +362,28 @@ jQuery( function() {
 					}
 
 			}
+
+
+
+		/**
+		 * Restaurant Reservations plugin support
+		 *
+		 * @link  https://wordpress.org/plugins/restaurant-reservations/
+		 *
+		 * @since  1.3
+		 */
+
+			var $rtbContact = jQuery( '.rtb-booking-form .contact' ).hide();
+
+			jQuery( '#rtb-time' ).on( 'change', function() {
+				var $this = jQuery( this );
+
+				if ( $this.attr( 'value' ) ) {
+					$rtbContact.slideDown();
+				} else {
+					$rtbContact.slideUp();
+				}
+			} );
 
 
 

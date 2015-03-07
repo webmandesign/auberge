@@ -3,8 +3,10 @@
  * Sidebar template
  *
  * @package    Auberge
- * @copyright  2014 WebMan - Oliver Juhas
- * @version    1.0
+ * @copyright  2015 WebMan - Oliver Juhas
+ *
+ * @since    1.0
+ * @version  1.3
  */
 
 
@@ -17,7 +19,7 @@ if ( is_active_sidebar( 'sidebar' ) ) {
 
 	<div id="secondary" class="widget-area sidebar" role="complementary"<?php echo wm_schema_org( 'WPSideBar' ); ?>>
 
-		<a href="#" id="toggle-mobile-sidebar" class="toggle-mobile-sidebar button"><?php _e( 'Toggle sidebar', 'wm_domain' ); ?></a>
+		<a href="#" id="toggle-mobile-sidebar" class="toggle-mobile-sidebar button" aria-controls="secondary" aria-expanded="false"><?php _e( 'Toggle sidebar', 'wm_domain' ); ?></a>
 
 		<?php
 

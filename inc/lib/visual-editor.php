@@ -3,7 +3,7 @@
  * Visual editor addons
  *
  * @package    Auberge
- * @copyright  2014 WebMan - Oliver Juhas
+ * @copyright  2015 WebMan - Oliver Juhas
  *
  * @since    1.2
  * @version  1.2
@@ -81,79 +81,79 @@
 
 
 
-		/**
-		 * Customizing format dropdown items
-		 *
-		 * @link  http://codex.wordpress.org/TinyMCE_Custom_Styles
-		 *
-		 * @param  array $init
-		 */
-		if ( ! function_exists( 'wm_custom_mce_format' ) ) {
-			function wm_custom_mce_format( $init ) {
-				//Preparing output
-					//Merge old & new formats
-						$init['style_formats_merge'] = true;
+	/**
+	 * Customizing format dropdown items
+	 *
+	 * @link  http://codex.wordpress.org/TinyMCE_Custom_Styles
+	 *
+	 * @param  array $init
+	 */
+	if ( ! function_exists( 'wm_custom_mce_format' ) ) {
+		function wm_custom_mce_format( $init ) {
+			//Preparing output
+				//Merge old & new formats
+					$init['style_formats_merge'] = true;
 
-					//Add custom formats
-						$init['style_formats'] = json_encode( apply_filters( 'wmhook_wm_custom_mce_format_style_formats', array(
+				//Add custom formats
+					$init['style_formats'] = json_encode( apply_filters( 'wmhook_wm_custom_mce_format_style_formats', array(
 
-								//Group: Quotes
-									array(
-										'title' => _x( 'Quotes', 'Visual editor blockquote formats group title.', 'wm_domain' ),
-										'items' => array(
+							//Group: Quotes
+								array(
+									'title' => _x( 'Quotes', 'Visual editor blockquote formats group title.', 'wm_domain' ),
+									'items' => array(
 
-											array(
-												'title' => __( 'Blockquote', 'wm_domain' ),
-												'block' => 'blockquote',
-											),
-											array(
-												'title'   => __( 'Pullquote - align left', 'wm_domain' ),
-												'block'   => 'blockquote',
-												'classes' => 'pullquote alignleft',
-											),
-											array(
-												'title'   => __( 'Pullquote - align right', 'wm_domain' ),
-												'block'   => 'blockquote',
-												'classes' => 'pullquote alignright',
-											),
-											array(
-												'title' => _x( 'Cite', 'Visual editor format label for HTML CITE tag used to set the blockquote source.', 'wm_domain' ),
-												'block' => 'cite',
-											),
-
+										array(
+											'title' => __( 'Blockquote', 'wm_domain' ),
+											'block' => 'blockquote',
 										),
-									),
-
-								//Group: Text styles
-									array(
-										'title' => __( 'Text styles', 'wm_domain' ),
-										'items' => array(
-
-											array(
-												'title'    => __( 'Uppercase heading or paragraph', 'wm_domain' ),
-												'selector' => 'h1, h2, h3, h4, h5, h6, p',
-												'classes'  => 'uppercase',
-											),
-
-											array(
-												'title'  => __( 'Highlighted (marked) text', 'wm_domain' ),
-												'inline' => 'mark',
-											),
-
-											array(
-												'title'    => __( 'Button link', 'wm_domain' ),
-												'selector' => 'a',
-												'classes'  => 'button',
-											),
-
+										array(
+											'title'   => __( 'Pullquote - align left', 'wm_domain' ),
+											'block'   => 'blockquote',
+											'classes' => 'pullquote alignleft',
 										),
+										array(
+											'title'   => __( 'Pullquote - align right', 'wm_domain' ),
+											'block'   => 'blockquote',
+											'classes' => 'pullquote alignright',
+										),
+										array(
+											'title' => _x( 'Cite', 'Visual editor format label for HTML CITE tag used to set the blockquote source.', 'wm_domain' ),
+											'block' => 'cite',
+										),
+
 									),
+								),
 
-							) ) );
+							//Group: Text styles
+								array(
+									'title' => __( 'Text styles', 'wm_domain' ),
+									'items' => array(
 
-				//Output
-					return apply_filters( 'wmhook_wm_custom_mce_format_output', $init );
-			}
-		} // /wm_custom_mce_format
+										array(
+											'title'    => __( 'Uppercase heading or paragraph', 'wm_domain' ),
+											'selector' => 'h1, h2, h3, h4, h5, h6, p',
+											'classes'  => 'uppercase',
+										),
+
+										array(
+											'title'  => __( 'Highlighted (marked) text', 'wm_domain' ),
+											'inline' => 'mark',
+										),
+
+										array(
+											'title'    => __( 'Button link', 'wm_domain' ),
+											'selector' => 'a',
+											'classes'  => 'button',
+										),
+
+									),
+								),
+
+						) ) );
+
+			//Output
+				return apply_filters( 'wmhook_wm_custom_mce_format_output', $init );
+		}
+	} // /wm_custom_mce_format
 
 ?>

@@ -3,10 +3,10 @@
  * Plugins suggestions
  *
  * @package    Auberge
- * @copyright  2014 WebMan - Oliver Juhas
+ * @copyright  2015 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.2.5
+ * @version  1.3
  *
  * CONTENT:
  * - 10) Actions and filters
@@ -56,26 +56,32 @@
 
 						//Recommended
 
-							'bb' => array(
-								'name'     => 'Beaver Builder',
-								'slug'     => 'beaver-builder-lite-version',
-								'required' => false,
-							),
-
-							'bn' => array(
-								'name'     => 'Breadcrumb NavXT',
-								'slug'     => 'breadcrumb-navxt',
+							'cei' => array(
+								'name'     => 'Customizer Export/Import &rarr; theme settings backup',
+								'slug'     => 'customizer-export-import',
 								'required' => false,
 							),
 
 							'jp' => array(
-								'name'     => 'Jetpack by WordPress.com',
+								'name'     => 'Jetpack by WordPress.com &rarr; theme features',
 								'slug'     => 'jetpack',
-								'required' => false,
+								'required' => true,
 								'version'  => '3.3',
 							),
 
 				) );
+
+			/**
+			 * Recommend Beaver Builder Lite Version only if Pro version not active
+			 */
+
+				if ( ! class_exists( 'FLBuilder' ) ) {
+					$plugins['bb'] = array(
+							'name'     => 'Beaver Builder &rarr; page builder',
+							'slug'     => 'beaver-builder-lite-version',
+							'required' => false,
+						);
+				}
 
 
 

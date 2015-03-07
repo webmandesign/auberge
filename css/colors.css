@@ -2,10 +2,10 @@
  * Theme colors stylesheet
  *
  * @package    Auberge
- * @copyright  2014 WebMan - Oliver Juhas
+ * @copyright  2015 WebMan - Oliver Juhas
  *
  * @since    1.1
- * @version  1.1
+ * @version  1.3
  */
 
 
@@ -75,7 +75,8 @@
 			.comment-navigation a,
 			.widget_calendar tbody a,
 			.widget .tagcloud a:hover,
-			body #infinite-handle span { background-color: #0aac8e; }
+			body #infinite-handle span,
+			.rtb-message { background-color: #0aac8e; }
 
 
 
@@ -85,6 +86,7 @@
 
 		/* Background gradients */
 
+			.custom-banner:before,
 			.site-banner-media:before {
 				background: transparent;
 				background: -webkit-linear-gradient(       top, rgba(26,28,30, 0) 0%, #1a1c1e 100% );
@@ -151,6 +153,8 @@
 		.label-sticky,
 		.button,
 		button,
+		form button,
+		.fl-node-content button,
 		input[type="button"],
 		input[type="reset"],
 		input[type="submit"],
@@ -164,7 +168,8 @@
 		.comment-navigation a,
 		.widget_calendar tbody a,
 		.widget .tagcloud a:hover,
-		body #infinite-handle span { color: #fff; }
+		body #infinite-handle span,
+		.rtb-message { color: #fff; }
 
 			.site-content div.sharedaddy .sd-content ul li a.sd-button:not(.no-text) { color: #fff !important; }
 
@@ -229,7 +234,10 @@
 		.post-navigation,
 		.home .front-page-widgets-wrapper,
 		.breadcrumbs-container,
-		.site div#jp-relatedposts { border-color: #eaecee; }
+		.site div#jp-relatedposts,
+		.widget ul li,
+		.fl-builder-content,
+		.rtb-message { border-color: #eaecee; }
 
 	/* accent border color */
 
@@ -237,7 +245,8 @@
 		select:focus,
 		textarea:focus,
 		.posts .hentry:hover,
-		.widget .tagcloud a:hover { border-color: #0aac8e; }
+		.widget .tagcloud a:hover,
+		.site .picker__input.picker__input--active { border-color: #0aac8e; }
 
 		.label-sticky:before,
 		.label-sticky:after {
@@ -251,7 +260,8 @@
 
 	/* inherit border color */
 
-		.widget .tagcloud a:before { border-color: inherit; }
+		.widget .tagcloud a:before,
+		.fl-builder-content * { border-color: inherit; }
 
 
 
@@ -308,4 +318,4 @@
 
 
 
-/* End of file */
+/* End of file

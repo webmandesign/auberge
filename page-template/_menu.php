@@ -7,7 +7,7 @@
  * Displays page content followed by food menu items.
  *
  * @package    Auberge
- * @copyright  2014 WebMan - Oliver Juhas
+ * @copyright  2015 WebMan - Oliver Juhas
  * @version    1.0
  */
 

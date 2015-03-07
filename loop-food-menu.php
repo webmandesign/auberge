@@ -3,10 +3,10 @@
  * Front page food menu loop
  *
  * @package    Auberge
- * @copyright  2014 WebMan - Oliver Juhas
+ * @copyright  2015 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.1
+ * @version  1.3
  */
 
 
@@ -46,7 +46,7 @@ if ( class_exists( 'Nova_Restaurant' ) ) :
 
 				<h1 class="page-title"><?php
 
-				$title_food_menu = _x( 'Menu', 'Food menu title.', 'wm_domain' );
+				$title_food_menu = (string) apply_filters( 'wmhook_loop_food_menu_title_text', _x( 'Menu', 'Food menu title.', 'wm_domain' ) );
 
 				$food_menu_page_id = intval( get_transient( 'wm-page-template-food-menu' ) );
 
@@ -54,7 +54,7 @@ if ( class_exists( 'Nova_Restaurant' ) ) :
 					$title_food_menu = '<a href="' . esc_url( get_permalink( $food_menu_page_id ) ) . '">' . $title_food_menu . '</a>';
 				}
 
-				echo apply_filters( 'wmhook_loop_food_menu_title_text', $title_food_menu );
+				echo apply_filters( 'wmhook_loop_food_menu_title_text_html', $title_food_menu );
 
 				?></h1>
 

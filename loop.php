@@ -3,8 +3,10 @@
  * Default WordPress posts loop
  *
  * @package    Auberge
- * @copyright  2014 WebMan - Oliver Juhas
- * @version    1.0
+ * @copyright  2015 WebMan - Oliver Juhas
+ *
+ * @since    1.0
+ * @version  1.3
  */
 
 
@@ -13,7 +15,11 @@ if ( have_posts() ) {
 
 	wmhook_postslist_before();
 
-	echo '<div id="posts" class="posts posts-list clearfix"' . wm_schema_org( 'ItemList' ) . '>';
+	if ( is_archive() && is_tax( 'nova_menu' ) ) {
+		echo '<div id="items" class="items items-list clearfix"' . wm_schema_org( 'ItemList' ) . '>';
+	} else {
+		echo '<div id="posts" class="posts posts-list clearfix"' . wm_schema_org( 'ItemList' ) . '>';
+	}
 
 		wmhook_postslist_top();
 

@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Auberge v1.2\n"
 "Report-Msgid-Bugs-To: http://support.webmandesign.eu\n"
-"POT-Creation-Date: 2015-01-25 22:55+0100\n"
-"PO-Revision-Date: 2015-01-25 22:56+0100\n"
+"POT-Creation-Date: 2015-03-07 18:35+0100\n"
+"PO-Revision-Date: 2015-03-07 18:35+0100\n"
 "Last-Translator: WebMan - Oliver Juhas <webmandesigneu@gmail.com>\n"
 "Language-Team: WebMan - Oliver Juhas <webmandesigneu@gmail.com>\n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.7.3\n"
+"X-Generator: Poedit 1.7.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
@@ -19,11 +19,8 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: .\n"
 
-# Copyright (C) 2014 WebMan - Oliver Juhas
+# Copyright (C) 2015 WebMan - Oliver Juhas
 # This file is distributed under the same license as the WordPress package.
-
-
-
 #: 404.php:20
 msgid "Oops! That page can not be found."
 msgstr ""
@@ -100,7 +97,7 @@ msgstr ""
 msgid "Press CTRL key for multiple selection."
 msgstr ""
 
-#: inc/jetpack/jetpack.php:139
+#: inc/jetpack/jetpack.php:156
 msgid "Load more&hellip;"
 msgstr ""
 
@@ -108,156 +105,175 @@ msgstr ""
 msgid "Image"
 msgstr ""
 
-#: inc/lib/core.php:123
+#: inc/lib/core.php:127
 #, php-format
 msgctxt "Site logo image \"alt\" HTML attribute text."
 msgid "%s logo"
 msgstr ""
 
 #. translators: %s will be replaced with parted post title. Copy it, do not translate.
-#: inc/lib/core.php:409
+#: inc/lib/core.php:416
 #, php-format
 msgctxt "Parted/paginated post table of content title."
 msgid "\"%s\" table of contents"
 msgstr ""
 
-#: inc/lib/core.php:453
+#: inc/lib/core.php:460
 #, php-format
 msgid "Page %s"
 msgstr ""
 
-#: inc/lib/core.php:504
+#: inc/lib/core.php:511
 msgid "Part %"
 msgstr ""
 
-#: inc/lib/core.php:606
+#: inc/lib/core.php:614
 #, php-format
 msgctxt "Number of comments in post meta."
 msgid "Comments: %s"
 msgstr ""
 
-#: inc/lib/core.php:606
+#: inc/lib/core.php:614
 #, php-format
 msgctxt "Number of comments in post meta (keep the HTML tags)."
 msgid "<span class=\"comments-title\">Comments: </span>%s"
 msgstr ""
 
-#: inc/lib/core.php:637 inc/setup.php:968
+#: inc/lib/core.php:645 inc/setup.php:976
 #, php-format
 msgid "Edit the \"%s\""
 msgstr ""
 
-#: inc/lib/core.php:637 inc/setup.php:968
+#: inc/lib/core.php:645 inc/setup.php:976
 msgctxt "Edit post link."
 msgid "Edit"
 msgstr ""
 
-#: inc/lib/core.php:670
+#: inc/lib/core.php:678
 #, php-format
 msgid "Permalink to \"%s\""
 msgstr ""
 
-#: inc/lib/core.php:759
+#: inc/lib/core.php:705
+msgid "Views count"
+msgstr ""
+
+#: inc/lib/core.php:782
 #, php-format
 msgctxt "Paginated content title suffix."
 msgid "(page %s)"
 msgstr ""
 
-#: inc/lib/core.php:968
+#: inc/lib/core.php:991
 msgid "Skip to content"
 msgstr ""
 
-#: inc/lib/core.php:969
+#: inc/lib/core.php:992
 msgid "Skip to navigation"
-msgstr ""
-
-#: inc/lib/core.php:1169
-#, php-format
-msgid "Category: %s"
-msgstr ""
-
-#: inc/lib/core.php:1171
-#, php-format
-msgid "Tag: %s"
-msgstr ""
-
-#: inc/lib/core.php:1173
-#, php-format
-msgid "Author: %s"
-msgstr ""
-
-#: inc/lib/core.php:1175
-#, php-format
-msgid "Year: %s"
 msgstr ""
 
 #: inc/lib/core.php:1177
 #, php-format
-msgid "Month: %s"
+msgid "Category: %s"
 msgstr ""
 
 #: inc/lib/core.php:1179
 #, php-format
+msgid "Tag: %s"
+msgstr ""
+
+#: inc/lib/core.php:1181
+#, php-format
+msgid "Author: %s"
+msgstr ""
+
+#: inc/lib/core.php:1183
+#, php-format
+msgid "Year: %s"
+msgstr ""
+
+#: inc/lib/core.php:1183
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
+#: inc/lib/core.php:1185
+#, php-format
+msgid "Month: %s"
+msgstr ""
+
+#: inc/lib/core.php:1185
+msgctxt "monthly archives date format"
+msgid "F Y"
+msgstr ""
+
+#: inc/lib/core.php:1187
+#, php-format
 msgid "Day: %s"
 msgstr ""
 
-#: inc/lib/core.php:1182
-msgctxt "post format archive title"
-msgid "Asides"
-msgstr ""
-
-#: inc/lib/core.php:1184
-msgctxt "post format archive title"
-msgid "Galleries"
-msgstr ""
-
-#: inc/lib/core.php:1186
-msgctxt "post format archive title"
-msgid "Images"
-msgstr ""
-
-#: inc/lib/core.php:1188
-msgctxt "post format archive title"
-msgid "Videos"
+#: inc/lib/core.php:1187
+msgctxt "daily archives date format"
+msgid "F j, Y"
 msgstr ""
 
 #: inc/lib/core.php:1190
 msgctxt "post format archive title"
-msgid "Quotes"
+msgid "Asides"
 msgstr ""
 
 #: inc/lib/core.php:1192
 msgctxt "post format archive title"
-msgid "Links"
+msgid "Galleries"
 msgstr ""
 
 #: inc/lib/core.php:1194
 msgctxt "post format archive title"
-msgid "Statuses"
+msgid "Images"
 msgstr ""
 
 #: inc/lib/core.php:1196
 msgctxt "post format archive title"
-msgid "Audio"
+msgid "Videos"
 msgstr ""
 
 #: inc/lib/core.php:1198
 msgctxt "post format archive title"
+msgid "Quotes"
+msgstr ""
+
+#: inc/lib/core.php:1200
+msgctxt "post format archive title"
+msgid "Links"
+msgstr ""
+
+#: inc/lib/core.php:1202
+msgctxt "post format archive title"
+msgid "Statuses"
+msgstr ""
+
+#: inc/lib/core.php:1204
+msgctxt "post format archive title"
+msgid "Audio"
+msgstr ""
+
+#: inc/lib/core.php:1206
+msgctxt "post format archive title"
 msgid "Chats"
 msgstr ""
 
-#: inc/lib/core.php:1201
+#: inc/lib/core.php:1209
 #, php-format
 msgid "Archives: %s"
 msgstr ""
 
 #. translators: 1: Taxonomy singular name, 2: Current taxonomy term
-#: inc/lib/core.php:1205
+#: inc/lib/core.php:1213
 #, php-format
 msgid "%1$s: %2$s"
 msgstr ""
 
-#: inc/lib/core.php:1207
+#: inc/lib/core.php:1215
 msgid "Archives"
 msgstr ""
 
@@ -301,161 +317,151 @@ msgstr ""
 msgid "Button link"
 msgstr ""
 
-#: inc/setup-theme-options.php:67
-msgctxt "Customizer section title."
-msgid "Layout"
-msgstr ""
-
-#: inc/setup-theme-options.php:68 inc/setup-theme-options.php:113
-#: inc/setup-theme-options.php:196
-msgctxt "Customizer panel title."
-msgid "Theme"
-msgstr ""
-
-#: inc/setup-theme-options.php:73
-msgid "Front page layout"
-msgstr ""
-
-#: inc/setup-theme-options.php:78
-msgid "Condensed blog posts"
-msgstr ""
-
-#: inc/setup-theme-options.php:79 inc/setup-theme-options.php:93
-msgid "Select if and where to display this page section"
-msgstr ""
-
-#: inc/setup-theme-options.php:82 inc/setup-theme-options.php:96
-msgid "Disable section"
-msgstr ""
-
-#: inc/setup-theme-options.php:83 inc/setup-theme-options.php:97
-msgid "First section above page content"
-msgstr ""
-
-#: inc/setup-theme-options.php:84 inc/setup-theme-options.php:98
-msgid "Second section above page content"
-msgstr ""
-
-#: inc/setup-theme-options.php:85 inc/setup-theme-options.php:99
-msgid "First section below page content"
-msgstr ""
-
-#: inc/setup-theme-options.php:86 inc/setup-theme-options.php:100
-msgid "Second section below page content"
-msgstr ""
-
-#: inc/setup-theme-options.php:92
-msgid "Food menu"
-msgstr ""
-
-#: inc/setup-theme-options.php:112
+#: inc/setup-theme-options.php:65
 msgctxt "Customizer section title."
 msgid "Colors"
 msgstr ""
 
-#: inc/setup-theme-options.php:118 inc/setup-theme-options.php:123
+#: inc/setup-theme-options.php:66 inc/setup-theme-options.php:154
+#: inc/setup-theme-options.php:215
+msgctxt "Customizer panel title."
+msgid "Theme"
+msgstr ""
+
+#: inc/setup-theme-options.php:71 inc/setup-theme-options.php:76
 msgid "Accent color"
 msgstr ""
 
-#: inc/setup-theme-options.php:124
+#: inc/setup-theme-options.php:77
 msgid "This color affects links, buttons and other elements of the website"
 msgstr ""
 
-#: inc/setup-theme-options.php:130
+#: inc/setup-theme-options.php:83
 msgid "Accent text color"
 msgstr ""
 
-#: inc/setup-theme-options.php:131
+#: inc/setup-theme-options.php:84
 msgid "Color of text over accent color background"
 msgstr ""
 
-#: inc/setup-theme-options.php:137
-msgid "Header colors"
+#: inc/setup-theme-options.php:90
+msgid "Header"
 msgstr ""
 
-#: inc/setup-theme-options.php:142
-msgid "Header background color"
+#: inc/setup-theme-options.php:95 inc/setup-theme-options.php:118
+#: inc/setup-theme-options.php:135
+msgid "Background color"
 msgstr ""
 
-#: inc/setup-theme-options.php:148
-msgid "Header text color"
+#: inc/setup-theme-options.php:101 inc/setup-theme-options.php:124
+#: inc/setup-theme-options.php:141
+msgid "Text color"
 msgstr ""
 
-#: inc/setup-theme-options.php:149
+#: inc/setup-theme-options.php:102
 msgid "Note that for certain header elements the color will be faded out a bit"
 msgstr ""
 
-#: inc/setup-theme-options.php:155
-msgid "Footer colors"
+#: inc/setup-theme-options.php:108
+msgid "Content"
 msgstr ""
 
-#: inc/setup-theme-options.php:160
-msgid "Footer background color"
+#: inc/setup-theme-options.php:113
+msgid "Front page widgets"
 msgstr ""
 
-#: inc/setup-theme-options.php:166
-msgid "Footer text color"
+#: inc/setup-theme-options.php:130
+msgid "Footer"
 msgstr ""
 
-#: inc/setup-theme-options.php:172
-msgid "Front page widgets colors"
-msgstr ""
-
-#: inc/setup-theme-options.php:177
-msgid "Front widgets background color"
-msgstr ""
-
-#: inc/setup-theme-options.php:183
-msgid "Front widgets text color"
-msgstr ""
-
-#: inc/setup-theme-options.php:195
+#: inc/setup-theme-options.php:153
 msgctxt "Customizer section title."
 msgid "Fonts"
 msgstr ""
 
-#: inc/setup-theme-options.php:201
+#: inc/setup-theme-options.php:159
 msgid ""
 "Set a Google Font to be used for website logo, headings and general text."
 msgstr ""
 
-#: inc/setup-theme-options.php:201
+#: inc/setup-theme-options.php:159
 #, php-format
 msgid ""
 "Font matches recommendations from <a%s>Google Web Fonts Typographic Project</"
 "a>."
 msgstr ""
 
-#: inc/setup-theme-options.php:207
+#: inc/setup-theme-options.php:165
 msgid "Logo (site title) font"
 msgstr ""
 
-#: inc/setup-theme-options.php:214
+#: inc/setup-theme-options.php:172
 msgid "Headings font"
 msgstr ""
 
-#: inc/setup-theme-options.php:221
+#: inc/setup-theme-options.php:179
 msgid "General text font"
 msgstr ""
 
-#: inc/setup-theme-options.php:229
+#: inc/setup-theme-options.php:187
 msgid "Font subset"
 msgstr ""
 
-#: inc/setup-theme-options.php:237
+#: inc/setup-theme-options.php:195
 msgid "Basic font size"
 msgstr ""
 
-#: inc/setup-theme-options.php:238
+#: inc/setup-theme-options.php:196
 msgid ""
 "All other font sizes are calculated automatically from this basic font size"
 msgstr ""
 
-#: inc/setup-theme-options.php:262
+#: inc/setup-theme-options.php:214
+msgctxt "Customizer section title."
+msgid "Layout"
+msgstr ""
+
+#: inc/setup-theme-options.php:220
+msgid "Front page layout"
+msgstr ""
+
+#: inc/setup-theme-options.php:225
+msgid "Condensed blog posts"
+msgstr ""
+
+#: inc/setup-theme-options.php:226 inc/setup-theme-options.php:240
+msgid "Select if and where to display this page section"
+msgstr ""
+
+#: inc/setup-theme-options.php:229 inc/setup-theme-options.php:243
+msgid "Disable section"
+msgstr ""
+
+#: inc/setup-theme-options.php:230 inc/setup-theme-options.php:244
+msgid "First section above page content"
+msgstr ""
+
+#: inc/setup-theme-options.php:231 inc/setup-theme-options.php:245
+msgid "Second section above page content"
+msgstr ""
+
+#: inc/setup-theme-options.php:232 inc/setup-theme-options.php:246
+msgid "First section below page content"
+msgstr ""
+
+#: inc/setup-theme-options.php:233 inc/setup-theme-options.php:247
+msgid "Second section below page content"
+msgstr ""
+
+#: inc/setup-theme-options.php:239
+msgid "Food menu"
+msgstr ""
+
+#: inc/setup-theme-options.php:265
 msgid "Theme Credits"
 msgstr ""
 
-#: inc/setup-theme-options.php:262
+#: inc/setup-theme-options.php:265
 #, php-format
 msgid ""
 "%s is free WordPress theme developed by WebMan. You can obtain other "
@@ -463,138 +469,138 @@ msgid ""
 "\">WebManDesign.eu</a></strong>. Thank you for using this awesome theme!"
 msgstr ""
 
-#: inc/setup.php:169
+#: inc/setup.php:163
 msgid " - do not use Google Font"
 msgstr ""
 
-#: inc/setup.php:172
+#: inc/setup.php:166
 msgctxt "Google Font default setup options group title."
 msgid "Theme default"
 msgstr ""
 
-#: inc/setup.php:177 inc/setup.php:182 inc/setup.php:188 inc/setup.php:193
-#: inc/setup.php:198 inc/setup.php:203 inc/setup.php:208 inc/setup.php:212
-#: inc/setup.php:218
+#: inc/setup.php:171 inc/setup.php:176 inc/setup.php:182 inc/setup.php:187
+#: inc/setup.php:192 inc/setup.php:197 inc/setup.php:202 inc/setup.php:206
+#: inc/setup.php:212
 #, php-format
 msgctxt "Google Font setup recommendation (numbered) group title."
 msgid "Recommendation #%d"
 msgstr ""
 
-#: inc/setup.php:225
+#: inc/setup.php:219
 msgctxt "Title for selection of fonts picked from Google Fontss"
 msgid "Fonts selection"
 msgstr ""
 
-#: inc/setup.php:275
+#: inc/setup.php:269
 msgid "Sidebar"
 msgstr ""
 
-#: inc/setup.php:276
+#: inc/setup.php:270
 msgid "Page sidebar."
 msgstr ""
 
-#: inc/setup.php:279
+#: inc/setup.php:273
 msgid "Front Page Widgets"
 msgstr ""
 
-#: inc/setup.php:280
+#: inc/setup.php:274
 msgid ""
 "This widgets area is displayed below the Banner area on the front page "
 "(homepage)."
 msgstr ""
 
-#: inc/setup.php:283
+#: inc/setup.php:277
 msgid "Footer Widgets"
 msgstr ""
 
-#: inc/setup.php:284
+#: inc/setup.php:278
 msgid "Masonry layout is used to display footer widgets."
 msgstr ""
 
-#: inc/setup.php:367
+#: inc/setup.php:361
 msgid "Primary Menu"
 msgstr ""
 
-#: inc/setup.php:368
+#: inc/setup.php:362
 msgid "Social Links Menu"
 msgstr ""
 
-#: inc/setup.php:603
+#: inc/setup.php:606
 msgctxt "Back to food menu sections selectors button title."
 msgid "&uarr; Menu sections"
 msgstr ""
 
-#: inc/setup.php:848
+#: inc/setup.php:856
 #, php-format
 msgid "%s site navigation"
 msgstr ""
 
-#: inc/setup.php:852
+#: inc/setup.php:860
 msgctxt "Display search form button title."
 msgid "Search"
 msgstr ""
 
-#: inc/setup.php:854
+#: inc/setup.php:862
 msgctxt "Mobile navigation toggle button title."
 msgid "Menu"
 msgstr ""
 
-#: inc/setup.php:1256
+#: inc/setup.php:1267
 msgid "This is sticky post"
 msgstr ""
 
-#: inc/setup.php:1277
+#: inc/setup.php:1291
 #, php-format
 msgid ""
 "This content is password protected. To view it please <a%s>enter the "
 "password</a>."
 msgstr ""
 
-#: inc/setup.php:1359
+#: inc/setup.php:1376
 #, php-format
 msgid "Continue reading%s&hellip;"
 msgstr ""
 
-#: inc/setup.php:1407
+#: inc/setup.php:1424
 msgid ""
 "<span class=\"meta-nav\">Published In</span> <span class=\"post-title\">"
 "%title</span>"
 msgstr ""
 
-#: inc/setup.php:1409
+#: inc/setup.php:1426
 msgid ""
 "<span class=\"meta-nav\">Previous</span> <span class=\"post-title\">%title</"
 "span>"
 msgstr ""
 
-#: inc/setup.php:1410
+#: inc/setup.php:1427
 msgid ""
 "<span class=\"meta-nav\">Next</span> <span class=\"post-title\">%title</span>"
 msgstr ""
 
-#: inc/setup.php:1414
+#: inc/setup.php:1431
 msgid "Post navigation"
 msgstr ""
 
-#: inc/setup.php:1467
+#: inc/setup.php:1484
 msgid "All posts"
 msgstr ""
 
-#: inc/setup.php:1515
+#: inc/setup.php:1535
 #, php-format
 msgid "Powered by %s."
 msgstr ""
 
-#: inc/setup.php:1520
+#: inc/setup.php:1540
 #, php-format
 msgid "Theme by %s."
 msgstr ""
 
-#: inc/setup.php:1523
+#: inc/setup.php:1543
 msgid "Back to top &uarr;"
 msgstr ""
 
-#: loop-blog-condensed.php:38 loop-blog-condensed.php:40
+#: loop-blog-condensed.php:37
 msgid "News"
 msgstr ""
 
@@ -617,6 +623,6 @@ msgstr ""
 msgid "Search field: type and press enter"
 msgstr ""
 
-#: sidebar.php:20
+#: sidebar.php:22
 msgid "Toggle sidebar"
 msgstr ""

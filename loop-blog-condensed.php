@@ -3,10 +3,10 @@
  * Front page blog posts loop
  *
  * @package    Auberge
- * @copyright  2014 WebMan - Oliver Juhas
+ * @copyright  2015 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.1
+ * @version  1.3
  */
 
 
@@ -34,10 +34,12 @@
 
 				<h1 class="page-title"><?php
 
+					$title_blog_condensed = (string) apply_filters( 'wmhook_loop_blog_condensed_title_text', __( 'News', 'wm_domain' ) );
+
 					if ( $page_for_posts_id = absint( get_option( 'page_for_posts' ) ) ) {
-						echo apply_filters( 'wmhook_loop_blog_condensed_title_text', '<a href="' . esc_url( get_permalink( $page_for_posts_id ) ) . '">' . __( 'News', 'wm_domain' ) . '</a>' );
+						echo apply_filters( 'wmhook_loop_blog_condensed_title_text_html', '<a href="' . esc_url( get_permalink( $page_for_posts_id ) ) . '">' . $title_blog_condensed . '</a>' );
 					} else {
-						echo apply_filters( 'wmhook_loop_blog_condensed_title_text', __( 'News', 'wm_domain' ) );
+						echo apply_filters( 'wmhook_loop_blog_condensed_title_text_html', $title_blog_condensed );
 					}
 
 				?></h1>

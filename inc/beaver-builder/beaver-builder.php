@@ -1,17 +1,21 @@
 <?php
 /**
- * Beaver Builder setup
+ * Plugin integration
+ *
+ * Beaver Builder
+ *
+ * @link  https://www.wpbeaverbuilder.com/
  *
  * @package    Auberge
- * @copyright  2014 WebMan - Oliver Juhas
+ * @copyright  2015 WebMan - Oliver Juhas
  *
  * @since    1.2
- * @version  1.2
+ * @version  1.3
  *
  * CONTENT:
  * -  1) Requirements check
  * - 10) Actions and filters
- * - 20) Jetpack integration
+ * - 20) Plugin integration
  */
 
 
@@ -40,39 +44,69 @@
 	 */
 
 		//Beaver Builder global settings option
-			add_filter( 'option_' . '_fl_builder_settings', 'wm_bb_global_settings' );
+			add_filter( 'fl_builder_settings_form_defaults', 'wm_bb_global_settings', 10, 2 );
+		//Upgrade link
+			add_filter( 'fl_builder_upgrade_url', 'wm_bb_upgrade_url' );
 
 
 
 
 
 /**
- * 20) Beaver Builder integration
+ * 20) Plugin integration
  */
 
 	/**
+	 * Upgrade link URL
+	 *
+	 * @since    1.3
+	 * @version  1.3
+	 *
+	 * @param   $paramname description
+	 */
+	if ( ! function_exists( 'wm_bb_upgrade_url' ) ) {
+		function wm_bb_upgrade_url( $url ) {
+			//Output
+				return $url . '&fla=67';
+		}
+	} // /wm_bb_upgrade_url
+
+
+
+	/**
 	 * Global settings
+	 *
+	 * @since    1.2
+	 * @version  1.3
+	 *
+	 * @param  array  $defaults
+	 * @param  string $form_type
 	 */
 	if ( ! function_exists( 'wm_bb_global_settings' ) ) {
-		function wm_bb_global_settings( $value ) {
+		function wm_bb_global_settings( $defaults, $form_type ) {
 			//Preparing output
-				//"Default Page Heading" section
-					$value['show_default_heading']     = 0;
-					$value['default_heading_selector'] = '.entry-header-disabled';
+				if ( 'global' === $form_type ) {
 
-				//"Rows" section
-					$value['row_padding'] = 0;
+					//"Default Page Heading" section
+						$defaults->show_default_heading     = 0;
+						$defaults->default_heading_selector = '.entry-header';
 
-				//"Modules" section
-					$value['module_margins'] = 0;
+					//"Rows" section
+						$defaults->row_padding       = 0;
+						$defaults->row_width         = $GLOBALS['content_width'];
+						$defaults->row_width_default = 'full';
 
-				//"Responsive Layout" section
-					$value['responsive_enabled']    = 1;
-					$value['medium_breakpoint']     = 960;
-					$value['responsive_breakpoint'] = 680;
+					//"Modules" section
+						$defaults->module_margins = 0;
+
+					//"Responsive Layout" section
+						$defaults->medium_breakpoint     = 960;
+						$defaults->responsive_breakpoint = 680;
+
+				}
 
 			//Output
-				return $value;
+				return $defaults;
 		}
 	} // /wm_bb_global_settings
 

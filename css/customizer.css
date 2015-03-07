@@ -2,10 +2,10 @@
  * Customizer modification styles
  *
  * @package    Auberge
- * @copyright  2014 WebMan - Oliver Juhas
+ * @copyright  2015 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.0
+ * @version  1.3
  */
 
 
@@ -16,12 +16,18 @@
 
 		.no-overflow { overflow: hidden; }
 
-		.customize-control h3 {
+		.customize-control h3,
+		.customize-control h4 {
 			margin: 2em 0 .5em;
 			text-transform: uppercase;
 			font-size: 1em;
 			color: #aaa;
 			border-bottom: 2px solid #d3d3d3;
+		}
+
+		.customize-control h4 {
+			margin: 1em 0 .5em;
+			border: 0;
 		}
 
 		.customize-control hr {

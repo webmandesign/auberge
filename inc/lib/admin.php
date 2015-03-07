@@ -3,10 +3,10 @@
  * WP admin modifications
  *
  * @package    Auberge
- * @copyright  2014 WebMan - Oliver Juhas
+ * @copyright  2015 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.2
+ * @version  1.3
  *
  * CONTENT:
  * - 10) Actions and filters
@@ -51,7 +51,7 @@
 	 * Admin HTML head assets enqueue
 	 *
 	 * @since    1.0
-	 * @version  1.2
+	 * @version  1.3
 	 */
 	if ( ! function_exists( 'wm_assets_admin' ) ) {
 		function wm_assets_admin() {
@@ -75,7 +75,7 @@
 						$custom_styles .= '#post-' . get_option( 'page_on_front' ) . ' { background: #d7eef4; }';
 						$custom_styles .= '#post-' . get_option( 'page_for_posts' ) . ' { background: #d7f4e3; }';
 
-						wp_add_inline_style( 'wm-admin-styles', wm_esc_css( $custom_styles ) );
+						wp_add_inline_style( 'wm-admin-styles', apply_filters( 'wmhook_esc_css', $custom_styles ) );
 
 				}
 		}
@@ -114,6 +114,9 @@
 	/**
 	 * Admin post list columns content
 	 *
+	 * @since    1.0
+	 * @version  1.3
+	 *
 	 * @param  string $column
 	 * @param  absint $post_id
 	 */
@@ -135,7 +138,7 @@
 					if ( get_edit_post_link() ) {
 						edit_post_link( $image );
 					} else {
-						echo '<a href="' . get_permalink() . '">' . $image . '</a>';
+						echo '<a href="' . esc_url( get_permalink() ) . '">' . $image . '</a>';
 					}
 
 					echo '</span>';

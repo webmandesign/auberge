@@ -5,7 +5,7 @@
  * Template Name: Fullwidth page
  *
  * @package    Auberge
- * @copyright  2014 WebMan - Oliver Juhas
+ * @copyright  2015 WebMan - Oliver Juhas
  * @version    1.0
  */
 

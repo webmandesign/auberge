@@ -6,8 +6,10 @@
  * @link https://github.com/zamoose/themehookalliance
  *
  * @package    Auberge
- * @copyright  2014 WebMan - Oliver Juhas
- * @version    1.0
+ * @copyright  2015 WebMan - Oliver Juhas
+ *
+ * @since    1.0
+ * @version  1.3
  */
 
 
@@ -229,11 +231,6 @@
 			do_action( 'wmhook_entry_bottom' );
 			do_action( 'tha_entry_bottom' );
 		} // /wmhook_entry_bottom
-
-
-		function wmhook_entry_container_atts() {
-			do_action( 'wmhook_entry_container_atts' );
-		} // /wmhook_entry_container_atts
 
 
 

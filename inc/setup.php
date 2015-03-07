@@ -3,10 +3,10 @@
  * Theme setup
  *
  * @package    Auberge
- * @copyright  2014 WebMan - Oliver Juhas
+ * @copyright  2015 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.2
+ * @version  1.3
  *
  * CONTENT:
  * -  10) Actions and filters
@@ -40,14 +40,14 @@
 			add_action( 'after_setup_theme', 'wm_food_menu_page_template_id', 20 );
 		//Content width
 			add_action( 'template_redirect', 'wm_content_width' );
+		//Home query alteration
+			add_action( 'pre_get_posts', 'wm_home_query_ignore_sticky_posts' );
 		//Page templates
 			add_action( 'save_post', 'wm_food_menu_page_template_transient_flusher', 10 );
 		//Register widget areas
 			add_action( 'widgets_init', 'wm_register_widget_areas', 1 );
 		//Pagination fallback
 			add_action( 'wmhook_postslist_after', 'wm_pagination', 10 );
-		//Shortcodes in text widget
-			add_filter( 'widget_text', 'do_shortcode' );
 		//Website sections
 			//DOCTYPE
 				add_action( 'wmhook_html_before',          'wm_doctype',                    10   );
@@ -65,7 +65,6 @@
 			//Content
 				add_action( 'wmhook_content_before',       'wm_breadcrumbs',                10   );
 				add_action( 'wmhook_content_top',          'wm_content_top',                10   );
-				add_action( 'wmhook_entry_container_atts', 'wm_entry_container_atts',       10   );
 				add_action( 'wmhook_entry_top',            'wm_post_title',                 10   );
 				add_action( 'wmhook_entry_top',            'wm_entry_top',                  20   );
 				add_action( 'wmhook_entry_bottom',         'wm_entry_bottom',               10   );
@@ -83,10 +82,6 @@
 		//Additional page sections links
 			add_action( 'wmhook_loop_food_menu_postslist_after',      'wm_food_menu_more_link', 10 );
 			add_action( 'wmhook_loop_blog_condensed_postslist_after', 'wm_blog_more_link',      10 );
-
-		//Remove actions
-			remove_action( 'wp_head', 'wp_generator'     );
-			remove_action( 'wp_head', 'wlwmanifest_link' );
 
 
 
@@ -110,9 +105,8 @@
 			add_filter( 'wmhook_wm_excerpt_continue_reading', 'wm_excerpt_continue_reading', 10 );
 		//Custom CSS fonts
 			add_filter( 'wmhook_wm_custom_styles_value', 'wm_css_font_name', 10, 2 );
-
-		//Remove filters
-			remove_filter( 'widget_title', 'esc_html' );
+		//Entry HTML attributes
+			add_filter( 'wmhook_entry_container_atts', 'wm_entry_container_atts', 10 );
 
 
 
@@ -428,7 +422,7 @@
 	 * Registering theme styles and scripts
 	 *
 	 * @since    1.0
-	 * @version  1.1
+	 * @version  1.3
 	 */
 	if ( ! function_exists( 'wm_register_assets' ) ) {
 		function wm_register_assets() {
@@ -439,8 +433,9 @@
 				$register_styles = apply_filters( 'wmhook_wm_register_assets_register_styles', array(
 						'wm-customizer'   => array( get_template_directory_uri() . '/css/customizer.css'                                    ),
 						'wm-genericons'   => array( wm_get_stylesheet_directory_uri( 'genericons/genericons.css' )                          ),
-						'wm-google-fonts' => array( wm_google_fonts_url()                                                                   ),
-						'wm-stylesheet'   => array( 'src' => get_stylesheet_uri(), 'deps' => array( 'wm-genericons' )                       ),
+						'wm-google-fonts' => array( wm_google_fonts_url( array( 'Ubuntu:400,300' ) )                                        ),
+						'wm-starter'      => array( wm_get_stylesheet_directory_uri( 'css/starter.css' )                                    ),
+						'wm-stylesheet'   => array( 'src' => get_stylesheet_uri(), 'deps' => array( 'wm-genericons', 'wm-starter' )         ),
 						'wm-colors'       => array( wm_get_stylesheet_directory_uri( 'css/colors.css' ), 'deps' => array( 'wm-stylesheet' ) ),
 						'wm-slick'        => array( wm_get_stylesheet_directory_uri( 'css/slick.css' )                                      ),
 					) );
@@ -483,7 +478,7 @@
 	 * Frontend HTML head assets enqueue
 	 *
 	 * @since    1.0
-	 * @version  1.2
+	 * @version  1.3
 	 */
 	if ( ! function_exists( 'wm_enqueue_assets' ) ) {
 		function wm_enqueue_assets() {
@@ -500,7 +495,7 @@
 			 */
 
 				//Google Fonts
-					if ( wm_google_fonts_url() ) {
+					if ( wm_google_fonts_url( array( 'Ubuntu:400,300' ) ) ) {
 						$enqueue_styles[] = 'wm-google-fonts';
 					}
 				//Food menu icon for search results
@@ -538,7 +533,7 @@
 
 				//Customizer setup custom styles
 					if ( $custom_styles ) {
-						wp_add_inline_style( $inline_styles_handle, "\r\n" . wm_esc_css( $custom_styles ) . "\r\n" );
+						wp_add_inline_style( $inline_styles_handle, "\r\n" . apply_filters( 'wmhook_esc_css', $custom_styles ) . "\r\n" );
 					}
 
 				//Custom styles set in post/page 'custom-css' custom field
@@ -548,14 +543,14 @@
 						) {
 						$output = apply_filters( 'wmhook_wm_enqueue_assets_styles_inline_singular', "\r\n\r\n/* Custom singular styles */\r\n" . $output . "\r\n" );
 
-						wp_add_inline_style( $inline_styles_handle, wm_esc_css( $output ) . "\r\n" );
+						wp_add_inline_style( $inline_styles_handle, apply_filters( 'wmhook_esc_css', $output ) . "\r\n" );
 					}
 
 				//Beaver Builder support
 					if ( isset( $_GET['fl_builder'] ) ) {
 						$output = apply_filters( 'wmhook_wm_enqueue_assets_styles_inline_beaver_builder', "\r\n.fl-builder-lightbox .fl-lightbox { width: 720px; } .fl-builder-settings-tab { width: 100%; }\r\n" );
 
-						wp_add_inline_style( $inline_styles_handle, wm_esc_css( $output ) . "\r\n" );
+						wp_add_inline_style( $inline_styles_handle, apply_filters( 'wmhook_esc_css', $output ) . "\r\n" );
 					}
 
 			/**
@@ -570,7 +565,7 @@
 								&& isset( $footer_widgets['footer'] )
 								&& count( $footer_widgets['footer'] ) > absint( apply_filters( 'wmhook_widgets_columns', 3, 'footer' ) )
 							)
-							|| is_archive()
+							|| ( is_archive() && ! is_tax( 'nova_menu' ) )
 							|| is_front_page()
 							|| is_home()
 							|| is_search()
@@ -619,6 +614,9 @@
 	/**
 	 * HTML Body classes
 	 *
+	 * @since    1.0
+	 * @version  1.3
+	 *
 	 * @param  array $classes
 	 */
 	if ( ! function_exists( 'wm_body_classes' ) ) {
@@ -627,12 +625,12 @@
 				$body_classes = array();
 
 			//Preparing output
-				//Sintular?
+				//Is not front page?
 					if ( ! is_front_page() ) {
 						$body_classes[0] = 'not-front-page';
 					}
 
-				//Sintular?
+				//Singular?
 					if ( is_singular() ) {
 						$body_classes[10] = 'is-singular';
 					}
@@ -663,7 +661,7 @@
 	 * Add featured image as background image to post navs
 	 *
 	 * @since    1.0
-	 * @version  1.2
+	 * @version  1.3
 	 */
 	if ( ! function_exists( 'wm_post_nav_background' ) ) {
 		function wm_post_nav_background() {
@@ -695,8 +693,10 @@
 					$output .= '.post-navigation .nav-next { background-image: url(\'' . esc_url( $nextthumb[0] ) . '\'); }';
 				}
 
+				$output = apply_filters( 'wmhook_wm_post_nav_background_output', $output );
+
 			//Output
-				wp_add_inline_style( 'wm-stylesheet', wm_esc_css( apply_filters( 'wmhook_wm_post_nav_background_output', $output ) ) . "\r\n" );
+				wp_add_inline_style( 'wm-stylesheet', apply_filters( 'wmhook_esc_css', $output ) . "\r\n" );
 		}
 	} // /wm_post_nav_background
 
@@ -835,7 +835,7 @@
 	 * Navigation
 	 *
 	 * @since    1.0
-	 * @version  1.2
+	 * @version  1.3
 	 */
 	if ( ! function_exists( 'wm_navigation' ) ) {
 		function wm_navigation() {
@@ -859,7 +859,7 @@
 						$output .= wp_nav_menu( $args );
 						$output .= '<div id="nav-search-form" class="nav-search-form"><a href="#" id="search-toggle" class="search-toggle"><span class="screen-reader-text">' . _x( 'Search', 'Display search form button title.', 'wm_domain' ) . '</span></a>' . get_search_form( false ) . '</div>';
 					$output .= '</div>';
-					$output .= '<button id="menu-toggle" class="menu-toggle" aria-controls="menu" aria-expanded="false">' . _x( 'Menu', 'Mobile navigation toggle button title.', 'wm_domain' ) . '</button>';
+					$output .= '<button id="menu-toggle" class="menu-toggle" aria-controls="site-navigation" aria-expanded="false">' . _x( 'Menu', 'Mobile navigation toggle button title.', 'wm_domain' ) . '</button>';
 				$output .= '</nav>';
 
 			//Output
@@ -931,7 +931,7 @@
 	 * Post/page heading (title)
 	 *
 	 * @since    1.0
-	 * @version  1.2
+	 * @version  1.3
 	 *
 	 * @param  array $args Heading setup arguments
 	 */
@@ -953,10 +953,10 @@
 				$args = wp_parse_args( $args, apply_filters( 'wmhook_wm_post_title_defaults', array(
 						'class'           => 'entry-title',
 						'class_container' => 'entry-header',
-						'link'            => get_permalink(),
+						'link'            => esc_url( get_permalink() ),
 						'output'          => '<header class="{class_container}"><{tag} class="{class}"' . wm_schema_org( 'name' ) . '>{title}</{tag}></header>',
 						'tag'             => 'h1',
-						'title'           => '<a href="' . get_permalink() . '" rel="bookmark">' . $title . '</a>',
+						'title'           => '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $title . '</a>',
 					) ) );
 
 			//Preparing output
@@ -993,7 +993,7 @@
 							$content   = trim( strip_tags( get_the_content() ) );
 
 							if ( $content ) {
-								$permalink = array( '<a href="' . get_permalink() . '">', '</a>' );
+								$permalink = array( '<a href="' . esc_url( get_permalink() ) . '">', '</a>' );
 							}
 							$permalink = apply_filters( 'wmhook_wm_post_title_nova_menu_item_permalink', $permalink );
 
@@ -1178,10 +1178,13 @@
 
 		/**
 		 * Entry container attributes
+		 *
+		 * @since    1.0
+		 * @version  1.3
 		 */
 		if ( ! function_exists( 'wm_entry_container_atts' ) ) {
 			function wm_entry_container_atts() {
-				echo wm_schema_org( 'entry' );
+				return wm_schema_org( 'entry' );
 			}
 		} // /wm_entry_container_atts
 
@@ -1275,6 +1278,9 @@
 		 * If the post is password protected, display a message.
 		 * If the post has more tag, display the content appropriately.
 		 *
+		 * @since    1.0
+		 * @version  1.3
+		 *
 		 * @param  string $excerpt
 		 */
 		if ( ! function_exists( 'wm_excerpt' ) ) {
@@ -1282,7 +1288,7 @@
 				//Requirements check
 					if ( post_password_required() ) {
 						if ( ! is_single() ) {
-							return sprintf( __( 'This content is password protected. To view it please <a%s>enter the password</a>.', 'wm_domain' ), ' href="' . get_permalink() . '"' );
+							return sprintf( __( 'This content is password protected. To view it please <a%s>enter the password</a>.', 'wm_domain' ), ' href="' . esc_url( get_permalink() ) . '"' );
 						}
 						return;
 					}
@@ -1360,11 +1366,14 @@
 			/**
 			 * Excerpt "Continue reading" text
 			 *
+			 * @since    1.0
+			 * @version  1.3
+			 *
 			 * @param  string $continue
 			 */
 			if ( ! function_exists( 'wm_excerpt_continue_reading' ) ) {
 				function wm_excerpt_continue_reading( $continue ) {
-					return '<div class="link-more"><a href="' . get_permalink() . '">' . sprintf( __( 'Continue reading%s&hellip;', 'wm_domain' ), '<span class="screen-reader-text"> "' . get_the_title() . '"</span>' ) . '</a></div>';
+					return '<div class="link-more"><a href="' . esc_url( get_permalink() ) . '">' . sprintf( __( 'Continue reading%s&hellip;', 'wm_domain' ), '<span class="screen-reader-text"> "' . get_the_title() . '"</span>' ) . '</a></div>';
 				}
 			} // /wm_excerpt_continue_reading
 
@@ -1507,6 +1516,9 @@
 	 * =====================
 	 * It is completely optional, but if you like this WordPress theme,
 	 * I would appreciate it if you keep the credit link in the footer.
+	 *
+	 * @since    1.0
+	 * @version  1.3
 	 */
 	if ( ! function_exists( 'wm_footer' ) ) {
 		function wm_footer() {
@@ -1526,7 +1538,7 @@
 									. ' '
 									. sprintf(
 											__( 'Theme by %s.', 'wm_domain' ),
-											'<a href="' . esc_url( WM_DEVELOPER_URL ) . '">WebMan Design</a>'
+											'<a href="' . esc_url( WM_THEME_AUTHOR_URI ) . '">WebMan Design</a>'
 										)
 									. ' <a href="#top" id="back-to-top" class="back-to-top">' . __( 'Back to top &uarr;', 'wm_domain' ) . '</a>'
 								);
@@ -1627,6 +1639,24 @@
 			}
 		}
 	} // /wm_register_widget_areas
+
+
+
+	/**
+	 * Ignore sticky posts in main loop
+	 *
+	 * @param  obj $query
+	 */
+	if ( ! function_exists( 'wm_home_query_ignore_sticky_posts' ) ) {
+		function wm_home_query_ignore_sticky_posts( $query ) {
+			if (
+					$query->is_home()
+					&& $query->is_main_query()
+				) {
+				$query->set( 'ignore_sticky_posts', 1 );
+			}
+		}
+	} // /wm_home_query_ignore_sticky_posts
 
 
 

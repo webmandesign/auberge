@@ -1,17 +1,34 @@
 <?php
 /**
- * Jetpack setup
+ * Plugin integration
+ *
+ * Jetpack
+ *
+ * @link  https://wordpress.org/plugins/jetpack/
  *
  * @package    Auberge
- * @copyright  2014 WebMan - Oliver Juhas
+ * @copyright  2015 WebMan - Oliver Juhas
  *
  * @since    1.1
- * @version  1.2
+ * @version  1.3
  *
  * CONTENT:
- * -  10) Actions and filters
- * -  20) Jetpack integration
+ * -  1) Requirements check
+ * - 10) Actions and filters
+ * - 20) Plugin integration
  */
+
+
+
+
+
+/**
+ * 1) Requirements check
+ */
+
+	if ( ! class_exists( 'Jetpack' ) ) {
+		return;
+	}
 
 
 
@@ -46,7 +63,7 @@
 
 
 /**
- * 20) Jetpack integration
+ * 20) Plugin integration
  */
 
 	/**
@@ -215,7 +232,7 @@
 		 * Jetpack food menus Add Many Items styles
 		 *
 		 * @since    1.0
-		 * @version  1.2
+		 * @version  1.3
 		 */
 		if ( ! function_exists( 'wm_jetpack_styles_admin' ) ) {
 			function wm_jetpack_styles_admin() {
@@ -227,7 +244,7 @@
 							isset( $current_screen->id )
 							&& 'nova_menu_item_page_add_many_nova_items' === $current_screen->id
 						) {
-							wp_add_inline_style( 'nova-font', wm_esc_css( '.many-items-table input[name="nova_title[]"], .many-items-table textarea { width: 360px; max-width: 100%; } .many-items-table textarea { height: 50px; }' ) );
+							wp_add_inline_style( 'nova-font', apply_filters( 'wmhook_esc_css', '.many-items-table input[name="nova_title[]"], .many-items-table textarea { width: 360px; max-width: 100%; } .many-items-table textarea { height: 50px; }' ) );
 					}
 			}
 		} // /wm_jetpack_styles_admin

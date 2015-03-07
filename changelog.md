@@ -1,5 +1,71 @@
 # Auberge Changelog
 
+## 1.3.1
+
+* Fixed: Localization
+
+#### Files changed:
+
+	inc/lib/core.php
+	languages/sk_SK.mo
+	languages/sk_SK.po
+	languages/xx_XX.pot
+
+
+
+## 1.3
+
+* Added: Support for Restaurant Reservations plugin
+* Added: Support for NS Featured Posts plugin to populate banner slideshow
+* Added: Post Views Count plugin support
+* Added: Responsive styles for logo images
+* Added: Styles for trackbacks/pingbacks
+* Updated: Improved Beaver Builder page builder support
+* Updated: Optimized code
+* Updated: Updated TGM Plugin Activation script
+* Updated: Updated default `header.jpg` image
+* Updated: Improved Customizer organization and functionality
+* Updated: Styles - using `starter.css` for basic styles
+* Updated: Scripts
+* Updated: Updated copyright year in files
+* Updated: Removed `readme.txt` file in favour for `readme.md`
+* Updated: Localization files
+* Updated: User manual updates
+* Fixed: Minor styles fixes
+* Fixed: Hiding food menu titles on homepage when using Beaver Builder
+* Fixed: Food menu sections taxonomy pages display
+
+#### Files changed:
+
+	content-featured-post.php
+	content-food-menu.php
+	content-page.php
+	content.php
+	functions.php
+	image.php
+	loop-blog-condensed.php
+	loop-food-menu.php
+	loop.php
+	sidebar.php
+	style.css
+	css/_custom.css
+	css/colors.css
+	css/customizer.css
+	css/starter.css
+	inc/setup-theme-options.php
+	inc/setup.php
+	inc/beaver-builder/beaver-builder.php
+	inc/custom-header/custom-header.php
+	inc/customizer/customizer.php
+	inc/jetpack/jetpack.php
+	inc/lib/admin.php
+	inc/lib/core.php
+	inc/lib/hooks.php
+	inc/tgmpa/class-tgm-plugin-activation.php
+	inc/tgmpa/plugins.php
+	js/scripts.js
+
+
 ## 1.2.5
 
 * Added: Beaver Builder recommendation into plugins notice
