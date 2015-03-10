@@ -5,7 +5,7 @@
  * @copyright  2015 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.3
+ * @version  1.3.2
  *
  * CONTENT:
  * -  10) Basics
@@ -334,6 +334,9 @@ jQuery( function() {
 		 * Pure JS solution. Waiting for Jetpack to improve HTML output control.
 		 * @todo  Create with PHP after Jetpack improves modifications. Possibly
 		 *        use Jetpack's get_option( 'nova_menu_order' ).
+		 *
+		 * @since    1.0
+		 * @version  1.3.2
 		 */
 
 			if ( jQuery( '.items-list .menu-group-header' ).length ) {
@@ -344,7 +347,7 @@ jQuery( function() {
 					jQuery( '.menu-group-header' ).each( function( index, val ) {
 						var $this      = jQuery( this ),
 						    $thisTitle = $this.find( '> .menu-group-title' ).text(),
-						    $thisID    = $thisTitle.replace( ' ', '_' ).toLowerCase().replace( /(\r\n|\n|\r)/gm, '' );
+						    $thisID    = escape( $thisTitle.toLowerCase().replace( /\s+/g, '_' ).replace( /[^a-z_]/g, '' ) ) + '_' + Math.floor( ( Math.random() * 100 ) + 1 );
 
 						$menuGroups[ $thisID ] = $thisTitle;
 

@@ -1,5 +1,14 @@
 # Auberge Changelog
 
+## 1.3.2
+
+* Fixed: Food menu on-page sections navigation
+
+#### Files changed:
+
+	js/scripts.js
+
+
 ## 1.3.1
 
 * Fixed: Localization
@@ -10,7 +19,6 @@
 	languages/sk_SK.mo
 	languages/sk_SK.po
 	languages/xx_XX.pot
-
 
 
 ## 1.3
