@@ -1,5 +1,19 @@
 # Auberge Changelog
 
+## 1.3.3
+
+* Updated: Editor stylesheet
+* Updated: Code optimization
+* Fixed: Filter names and passed arguments
+* Fixed: Sticky header appear animation
+
+#### Files changed:
+
+	style.css
+	css/editor-style.css
+	inc/setup.php
+
+
 ## 1.3.2
 
 * Fixed: Food menu on-page sections navigation

@@ -4,7 +4,7 @@
  * Author:       WebMan
  * Author URI:   http://www.webmandesign.eu/
  * Description:  <strong>Auberge</strong> is responsive, retina-ready, modern restaurant and café WordPress theme. Supports Beaver Builder page builder plugin, Jetpack plugin to create a food menu, Schema.org markup, Theme Hook Alliance action hooks, translation-ready code, header slideshow, customizable colors and layout, and other cool features. The theme is compatible with Chrome, Safari, Opera, Firefox, Internet Explorer 9+ browsers. Thank you for using one of WebMan's themes (more cool WordPress themes can be found at www.webmandesign.eu). Theme demo at http://themedemos.webmandesign.eu/auberge/
- * Version:      1.3.2
+ * Version:      1.3.3
  * License:      GNU General Public License v2 or later
  * License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  * Tags:         black, gray, green, silver, white, light, dark, one-column, two-columns, three-columns, four-columns, right-sidebar, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, full-width-template, microformats, sticky-post, theme-options, threaded-comments, translation-ready
@@ -1897,13 +1897,13 @@
 					100% { -webkit-transform: translateY(    0  ); }
 				}
 				@keyframes comeDown {
-					  0% { -webkit-transform: translateY( -100% ); }
-					100% { -webkit-transform: translateY(    0  ); }
+					  0% { transform: translateY( -100% ); }
+					100% { transform: translateY(    0  ); }
 				}
 
 				@-webkit-keyframes goUp {
-					  0% { transform: translateY( 100% ); }
-					100% { transform: translateY(   0  ); }
+					  0% { transform: -webkit-translateY( 100% ); }
+					100% { transform: -webkit-translateY(   0  ); }
 				}
 				@keyframes goUp {
 					  0% { transform: translateY( 100% ); }
@@ -1932,8 +1932,10 @@
 					        animation: goUp .8s;
 				}
 
-					.sticky-header .type-img a { line-height: 3.62rem; }
-						.sticky-header .site-branding img { max-height: 3rem; }
+					.sticky-header .type-img a,
+					.hide-sticky-header .type-img a { line-height: 3.62rem; }
+						.sticky-header .site-branding img,
+						.hide-sticky-header .site-branding img { max-height: 3rem; }
 
 					.sticky-header .site,
 					.hide-sticky-header .site { padding-top: 5rem; }

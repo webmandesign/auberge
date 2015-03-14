@@ -6,7 +6,7 @@
  * @copyright  2015 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.3
+ * @version  1.3.3
  *
  * CONTENT:
  * -  10) Actions and filters
@@ -50,35 +50,35 @@
 			add_action( 'wmhook_postslist_after', 'wm_pagination', 10 );
 		//Website sections
 			//DOCTYPE
-				add_action( 'wmhook_html_before',          'wm_doctype',                    10   );
+				add_action( 'wmhook_html_before',    'wm_doctype',                    10   );
 			//HEAD
-				add_action( 'wp_head',                     'wm_head',                       1    );
+				add_action( 'wp_head',               'wm_head',                       1    );
 			//Body
-				add_action( 'wmhook_body_top',             'wm_site_top',                   10   );
-				add_action( 'wmhook_body_bottom',          'wm_site_bottom',                100  );
+				add_action( 'wmhook_body_top',       'wm_site_top',                   10   );
+				add_action( 'wmhook_body_bottom',    'wm_site_bottom',                100  );
 			//Header
-				add_action( 'wmhook_header_top',           'wm_header_top',                 10   );
-				add_action( 'wmhook_header',               'wm_logo',                       10   );
-				add_action( 'wmhook_header',               'wm_navigation',                 20   );
-				add_action( 'wmhook_header',               'wm_menu_social',                30   );
-				add_action( 'wmhook_header_bottom',        'wm_header_bottom',              10   );
+				add_action( 'wmhook_header_top',     'wm_header_top',                 10   );
+				add_action( 'wmhook_header',         'wm_logo',                       10   );
+				add_action( 'wmhook_header',         'wm_navigation',                 20   );
+				add_action( 'wmhook_header',         'wm_menu_social',                30   );
+				add_action( 'wmhook_header_bottom',  'wm_header_bottom',              10   );
 			//Content
-				add_action( 'wmhook_content_before',       'wm_breadcrumbs',                10   );
-				add_action( 'wmhook_content_top',          'wm_content_top',                10   );
-				add_action( 'wmhook_entry_top',            'wm_post_title',                 10   );
-				add_action( 'wmhook_entry_top',            'wm_entry_top',                  20   );
-				add_action( 'wmhook_entry_bottom',         'wm_entry_bottom',               10   );
-				add_action( 'wmhook_entry_bottom',         'wm_sticky_label',               20   );
-				add_action( 'wmhook_content_bottom',       'wm_content_bottom',             100  );
+				add_action( 'wmhook_content_before', 'wm_breadcrumbs',                10   );
+				add_action( 'wmhook_content_top',    'wm_content_top',                10   );
+				add_action( 'wmhook_entry_top',      'wm_post_title',                 10   );
+				add_action( 'wmhook_entry_top',      'wm_entry_top',                  20   );
+				add_action( 'wmhook_entry_bottom',   'wm_entry_bottom',               10   );
+				add_action( 'wmhook_entry_bottom',   'wm_sticky_label',               20   );
+				add_action( 'wmhook_content_bottom', 'wm_content_bottom',             100  );
 			//Footer
-				add_action( 'wmhook_footer_top',           'wm_footer_top',                 100  );
-				add_action( 'wmhook_footer',               'wm_footer',                     100  );
-				add_action( 'wmhook_footer_bottom',        'wm_footer_bottom',              100  );
+				add_action( 'wmhook_footer_top',     'wm_footer_top',                 100  );
+				add_action( 'wmhook_footer',         'wm_footer',                     100  );
+				add_action( 'wmhook_footer_bottom',  'wm_footer_bottom',              100  );
 			//Front page content
-				add_action( 'after_setup_theme',           'wm_front_page_sections',        100  );
-				add_action( 'wmhook_content_before',       'wm_front_page_widgets',         10   );
-				add_action( 'wmhook_content_top',          'wm_front_page_sections_top',    10   );
-				add_action( 'wmhook_content_bottom',       'wm_front_page_sections_bottom', 10   );
+				add_action( 'after_setup_theme',     'wm_front_page_sections',        100  );
+				add_action( 'wmhook_content_before', 'wm_front_page_widgets',         10   );
+				add_action( 'wmhook_content_top',    'wm_front_page_sections_top',    10   );
+				add_action( 'wmhook_content_bottom', 'wm_front_page_sections_bottom', 10   );
 		//Additional page sections links
 			add_action( 'wmhook_loop_food_menu_postslist_after',      'wm_food_menu_more_link', 10 );
 			add_action( 'wmhook_loop_blog_condensed_postslist_after', 'wm_blog_more_link',      10 );
@@ -147,7 +147,7 @@
 	 * Theme helper variables
 	 *
 	 * @since    1.0
-	 * @version  1.2
+	 * @version  1.3.3
 	 *
 	 * @param  string $variable Helper variables array key to return
 	 * @param  string $key      Additional key if the variable is array
@@ -158,65 +158,66 @@
 				$output = array();
 
 				//Google Fonts
+					$i = 0;
 					$output['google-fonts'] = array(
 							//No Google Font
 								' ' => __( ' - do not use Google Font', 'wm_domain' ),
 
 							//Default theme font
-								'optgroup' . 0  => sprintf( _x( 'Theme default', 'Google Font default setup options group title.', 'wm_domain' ), 1 ),
+								'optgroup' . $i  => _x( 'Theme default', 'Google Font default setup options group title.', 'wm_domain' ),
 									'Ubuntu:400,300' => 'Ubuntu',
-								'/optgroup' . 0 => '',
+								'/optgroup' . $i => '',
 
 							//Insipration from http://femmebot.github.io/google-type/
-								'optgroup' . 1  => sprintf( _x( 'Recommendation #%d', 'Google Font setup recommendation (numbered) group title.', 'wm_domain' ), 1 ),
+								'optgroup' . ++$i  => sprintf( _x( 'Recommendation #%d', 'Google Font setup recommendation (numbered) group title.', 'wm_domain' ), $i ),
 									'Playfair Display' => 'Playfair Display',
 									'Fauna One'        => 'Fauna One',
-								'/optgroup' . 1 => '',
+								'/optgroup' . $i => '',
 
-								'optgroup' . 2  => sprintf( _x( 'Recommendation #%d', 'Google Font setup recommendation (numbered) group title.', 'wm_domain' ), 2 ),
+								'optgroup' . ++$i  => sprintf( _x( 'Recommendation #%d', 'Google Font setup recommendation (numbered) group title.', 'wm_domain' ), $i ),
 									'Fugaz One'   => 'Fugaz One',
 									'Oleo Script' => 'Oleo Script',
 									'Monda'       => 'Monda',
-								'/optgroup' . 2 => '',
+								'/optgroup' . $i => '',
 
-								'optgroup' . 3  => sprintf( _x( 'Recommendation #%d', 'Google Font setup recommendation (numbered) group title.', 'wm_domain' ), 3 ),
+								'optgroup' . ++$i  => sprintf( _x( 'Recommendation #%d', 'Google Font setup recommendation (numbered) group title.', 'wm_domain' ), $i ),
 									'Unica One' => 'Unica One',
 									'Vollkorn'  => 'Vollkorn',
-								'/optgroup' . 3 => '',
+								'/optgroup' . $i => '',
 
-								'optgroup' . 4  => sprintf( _x( 'Recommendation #%d', 'Google Font setup recommendation (numbered) group title.', 'wm_domain' ), 4 ),
+								'optgroup' . ++$i  => sprintf( _x( 'Recommendation #%d', 'Google Font setup recommendation (numbered) group title.', 'wm_domain' ), $i ),
 									'Megrim'                  => 'Megrim',
 									'Roboto Slab:400,300,100' => 'Roboto Slab',
-								'/optgroup' . 4 => '',
+								'/optgroup' . $i => '',
 
-								'optgroup' . 5  => sprintf( _x( 'Recommendation #%d', 'Google Font setup recommendation (numbered) group title.', 'wm_domain' ), 5 ),
+								'optgroup' . ++$i  => sprintf( _x( 'Recommendation #%d', 'Google Font setup recommendation (numbered) group title.', 'wm_domain' ), $i ),
 									'Open Sans:400,300' => 'Open Sans',
 									'Gentium Basic'     => 'Gentium Basic',
-								'/optgroup' . 5 => '',
+								'/optgroup' . $i => '',
 
-								'optgroup' . 6  => sprintf( _x( 'Recommendation #%d', 'Google Font setup recommendation (numbered) group title.', 'wm_domain' ), 6 ),
+								'optgroup' . ++$i  => sprintf( _x( 'Recommendation #%d', 'Google Font setup recommendation (numbered) group title.', 'wm_domain' ), $i ),
 									'Ovo'          => 'Ovo',
 									'Muli:300,400' => 'Muli',
-								'/optgroup' . 6 => '',
+								'/optgroup' . $i => '',
 
-								'optgroup' . 7  => sprintf( _x( 'Recommendation #%d', 'Google Font setup recommendation (numbered) group title.', 'wm_domain' ), 7 ),
+								'optgroup' . ++$i  => sprintf( _x( 'Recommendation #%d', 'Google Font setup recommendation (numbered) group title.', 'wm_domain' ), $i ),
 									'Neuton:200,300,400' => 'Neuton',
-								'/optgroup' . 7 => '',
+								'/optgroup' . $i => '',
 
-								'optgroup' . 8  => sprintf( _x( 'Recommendation #%d', 'Google Font setup recommendation (numbered) group title.', 'wm_domain' ), 8 ),
+								'optgroup' . ++$i  => sprintf( _x( 'Recommendation #%d', 'Google Font setup recommendation (numbered) group title.', 'wm_domain' ), $i ),
 									'Quando' => 'Quando',
 									'Judson' => 'Judson',
 									'Montserrat' => 'Montserrat',
-								'/optgroup' . 8 => '',
+								'/optgroup' . $i => '',
 
-								'optgroup' . 9  => sprintf( _x( 'Recommendation #%d', 'Google Font setup recommendation (numbered) group title.', 'wm_domain' ), 9 ),
+								'optgroup' . ++$i  => sprintf( _x( 'Recommendation #%d', 'Google Font setup recommendation (numbered) group title.', 'wm_domain' ), $i ),
 									'Ultra'                => 'Ultra',
 									'Stint Ultra Expanded' => 'Stint Ultra Expanded',
 									'Slabo 13px'           => 'Slabo 13px',
-								'/optgroup' . 9 => '',
+								'/optgroup' . $i => '',
 
 							//Google Fonts selection
-								'optgroup' . 10  => _x( 'Fonts selection', 'Title for selection of fonts picked from Google Fontss', 'wm_domain' ),
+								'optgroup' . ++$i  => _x( 'Fonts selection', 'Title for selection of fonts picked from Google Fontss', 'wm_domain' ),
 									'Abril Fatface'             => 'Abril Fatface',
 									'Arvo'                      => 'Arvo',
 									'Domine'                    => 'Domine',
@@ -249,7 +250,7 @@
 									'Tenor Sans'                => 'Tenor Sans',
 									'Ubuntu Condensed'          => 'Ubuntu Condensed',
 									'Yanone Kaffeesatz:400,300' => 'Yanone Kaffeesatz',
-								'/optgroup' . 10 => '',
+								'/optgroup' . $i => '',
 						);
 
 				//Google Fonts subsets
@@ -615,7 +616,7 @@
 	 * HTML Body classes
 	 *
 	 * @since    1.0
-	 * @version  1.3
+	 * @version  1.3.3
 	 *
 	 * @param  array $classes
 	 */
@@ -624,30 +625,32 @@
 			//Helper variables
 				$body_classes = array();
 
+				$i = 0;
+
 			//Preparing output
 				//Is not front page?
 					if ( ! is_front_page() ) {
-						$body_classes[0] = 'not-front-page';
+						$body_classes['not-front-page'] = ++$i;
 					}
 
 				//Singular?
 					if ( is_singular() ) {
-						$body_classes[10] = 'is-singular';
+						$body_classes['is-singular'] = ++$i;
 					}
 
 				//Has featured image?
 					if ( is_singular() && has_post_thumbnail() ) {
-						$body_classes[20] = 'has-post-thumbnail';
+						$body_classes['has-post-thumbnail'] = ++$i;
 					}
 
 				//Is posts list?
 					if ( is_archive() || is_search() ) {
-						$body_classes[30] = 'is-posts-list';
+						$body_classes['is-posts-list'] = ++$i;
 					}
 
 			//Output
 				$body_classes = array_filter( (array) apply_filters( 'wmhook_wm_body_classes_output', $body_classes ) );
-				$classes      = array_merge( $classes, $body_classes );
+				$classes      = array_merge( $classes, array_flip( $body_classes ) );
 
 				asort( $classes );
 
@@ -931,7 +934,7 @@
 	 * Post/page heading (title)
 	 *
 	 * @since    1.0
-	 * @version  1.3
+	 * @version  1.3.3
 	 *
 	 * @param  array $args Heading setup arguments
 	 */
@@ -1013,11 +1016,11 @@
 							'{class_container}' => esc_attr( $args['class_container'] ),
 							'{tag}'             => esc_attr( $args['tag'] ),
 							'{title}'           => do_shortcode( $args['title'] ),
-						) );
+						), $args );
 					$output = strtr( $args['output'], $replacements );
 
 			//Output
-				echo apply_filters( 'wmhook_wm_post_title_output', $output );
+				echo apply_filters( 'wmhook_wm_post_title_output', $output, $args );
 		}
 	} // /wm_post_title
 
@@ -1225,11 +1228,14 @@
 
 		/**
 		 * Entry bottom
+		 *
+		 * @since    1.0
+		 * @version  1.3.3
 		 */
 		if ( ! function_exists( 'wm_entry_bottom' ) ) {
 			function wm_entry_bottom() {
 				//Post meta
-					if ( in_array( get_post_type(), apply_filters( 'wmhook_wm_entry_bottom_meta', array( 'post' ) ) ) ) {
+					if ( in_array( get_post_type(), apply_filters( 'wmhook_wm_entry_bottom_meta_post_types', array( 'post' ) ) ) ) {
 						if ( is_single() ) {
 							echo wm_post_meta( apply_filters( 'wmhook_wm_entry_bottom_meta', array(
 									'class' => 'entry-meta entry-meta-bottom',
