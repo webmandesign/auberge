@@ -92,6 +92,9 @@
 	/**
 	 * Register table columns
 	 *
+	 * @since    1.0
+	 * @version  1.0
+	 *
 	 * @param  array $columns
 	 */
 	if ( ! function_exists( 'wm_post_columns_register' ) ) {

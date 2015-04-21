@@ -5,7 +5,7 @@
  * @copyright  2015 WebMan - Oliver Juhas
  *
  * @since    1.3
- * @version  1.3
+ * @version  1.4
  */
 
 
@@ -30,7 +30,7 @@
 	 *
 	 * @copyright  2015 WebMan - Oliver Juhas
 	 * @license    GPL-2.0+, http://www.gnu.org/licenses/gpl-2.0.html
-	 * @version    1.2
+	 * @version    1.4
 	 *
 	 * @link  https://github.com/webmandesign/wp-css-starter
 	 * @link  http://www.webmandesign.eu
@@ -1970,7 +1970,7 @@
 
 				.site div#jp-relatedposts {
 					padding-top: 1.62em;
-					margin: 0 0 1.62em;
+					margin: 1.62em 0 0;
 					border-top: 2px solid;
 				}
 
@@ -2142,12 +2142,11 @@
 				 * Sidebar and widgets
 				 */
 
-					.sidebar {
+					.site .sidebar {
 						float: none;
 						width: 100%;
 						margin: 1.62rem 0 0;
 						padding: 1.62rem 0 0;
-						border-top: 2px solid;
 					}
 
 					/* Widgets */

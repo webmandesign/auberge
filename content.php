@@ -17,7 +17,7 @@
  * @copyright  2015 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.3
+ * @version  1.4
  */
 
 
@@ -39,7 +39,7 @@ $pagination_suffix = wm_paginated_suffix( 'small', 'post' );
 			&& apply_filters( 'wmhook_entry_featured_image_display', true )
 		) :
 
-		$image_size = ( is_single() ) ? ( WM_IMAGE_SIZE_SINGULAR ) : ( WM_IMAGE_SIZE_ITEMS );
+		$image_size = apply_filters( 'wmhook_entry_featured_image_size', 'thumbnail' );
 		$image_link = ( is_single() ) ? ( wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' ) ) : ( array( esc_url( get_permalink() ) ) );
 		$image_link = array_filter( (array) apply_filters( 'wmhook_entry_image_link', $image_link ) );
 

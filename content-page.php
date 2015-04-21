@@ -6,7 +6,7 @@
  * @copyright  2015 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.3
+ * @version  1.4
  */
 
 
@@ -38,7 +38,7 @@ $pagination_suffix = wm_paginated_suffix( 'small', 'post' );
 
 				<a href="<?php echo esc_url( $image_link[0] ); ?>" title="<?php the_title_attribute(); ?>">
 
-					<?php the_post_thumbnail( WM_IMAGE_SIZE_SINGULAR ); ?>
+					<?php the_post_thumbnail( apply_filters( 'wmhook_entry_featured_image_size', 'thumbnail' ) ); ?>
 
 				</a>
 

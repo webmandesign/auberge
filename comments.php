@@ -6,7 +6,7 @@
  * @copyright  2015 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.1
+ * @version  1.4
  */
 
 
@@ -26,7 +26,7 @@ if ( post_password_required() ) {
  * and there are some comments to display
  */
 if (
-		is_singular()
+		( is_single( get_the_ID() ) || is_page( get_the_ID() ) )
 		&& ( comments_open() || have_comments() )
 		&& ! is_attachment()
 	) :

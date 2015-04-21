@@ -5,7 +5,7 @@
  * @copyright  2015 WebMan - Oliver Juhas
  *
  * @since    1.1
- * @version  1.3
+ * @version  1.4
  */
 
 
@@ -42,9 +42,10 @@
 
 			.main-navigation li ul { background-color: #3a3c3e; }
 
-			.main-navigation .menu li li:hover > a,
-			.main-navigation .menu li li > a:hover,
-			.main-navigation .menu li li.active-menu-item > a,
+				.main-navigation .menu li li:hover > a,
+				.main-navigation .menu li li > a:hover,
+				.main-navigation .menu li li.active-menu-item > a { background-color: #4a4c4e; }
+
 			.widget .tagcloud a:before { background-color: #2a2c2e; }
 
 			.site-header,
@@ -306,7 +307,11 @@
 		}
 
 		.main-navigation .menu li.current-menu-item > a,
-		.main-navigation .menu li li.current-menu-item > a { background-color: #2a2c2e; }
+		.main-navigation .menu li li.current-menu-item > a { background-color: #4a4c4e; }
+
+		.main-navigation li,
+		.main-navigation li li,
+		.main-navigation li li:first-child { border-color: #4a4c4e; }
 
 		/**
 		 * Border color

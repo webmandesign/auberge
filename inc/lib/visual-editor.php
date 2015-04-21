@@ -43,6 +43,9 @@
 	 *
 	 * First row.
 	 *
+	 * @since    1.2
+	 * @version  1.2
+	 *
 	 * @param  array $buttons
 	 */
 	if ( ! function_exists( 'wm_add_buttons_row1' ) ) {
@@ -67,6 +70,9 @@
 		 *
 		 * Second row.
 		 *
+		 * @since    1.2
+		 * @version  1.2
+		 *
 		 * @param  array $buttons
 		 */
 		if ( ! function_exists( 'wm_add_buttons_row2' ) ) {
@@ -85,6 +91,9 @@
 	 * Customizing format dropdown items
 	 *
 	 * @link  http://codex.wordpress.org/TinyMCE_Custom_Styles
+	 *
+	 * @since    1.2
+	 * @version  1.2
 	 *
 	 * @param  array $init
 	 */

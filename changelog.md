@@ -1,5 +1,41 @@
 # Auberge Changelog
 
+## 1.4
+
+* Added: Static mobile menu button
+* Updated: Tightened security
+* Updated: Improved code
+* Updated: Improved image sizes setup
+* Updated: Improved Google Fonts setup
+* Updated: Remove obsolete constants and `loop-singular.php` file
+* Updated: Library updated
+* Updated: Scripts: Slick 1.5.0, Starter CSS 1.4
+* Fixed: Comments display on posts list
+* Fixed: Sticky header CSS3 animation
+* Fixed: Beaver Builder front page styles
+
+#### Files changed:
+
+	comments.php
+	content-food-menu.php
+	content-page.php
+	content.php
+	functions.php
+	image.php
+	style.css
+	css/colors.css
+	css/starter.css
+	languages/sk_SK.mo
+	languages/sk_SK.po
+	languages/xx_XX.pot
+	inc/setup-theme-options.php
+	inc/setup.php
+	inc/customizer/customizer.php
+	inc/lib/core.php
+	inc/tgmpa/class-tgm-plugin-activation.php
+	js/scripts-global.js
+
+
 ## 1.3.3
 
 * Updated: Editor stylesheet

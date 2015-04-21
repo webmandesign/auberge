@@ -4,7 +4,7 @@
  * Author:       WebMan
  * Author URI:   http://www.webmandesign.eu/
  * Description:  <strong>Auberge</strong> is responsive, retina-ready, modern restaurant and café WordPress theme. Supports Beaver Builder page builder plugin, Jetpack plugin to create a food menu, Schema.org markup, Theme Hook Alliance action hooks, translation-ready code, header slideshow, customizable colors and layout, and other cool features. The theme is compatible with Chrome, Safari, Opera, Firefox, Internet Explorer 9+ browsers. Thank you for using one of WebMan's themes (more cool WordPress themes can be found at www.webmandesign.eu). Theme demo at http://themedemos.webmandesign.eu/auberge/
- * Version:      1.3.3
+ * Version:      1.4
  * License:      GNU General Public License v2 or later
  * License URI:  http://www.gnu.org/licenses/gpl-2.0.html
  * Tags:         black, gray, green, silver, white, light, dark, one-column, two-columns, three-columns, four-columns, right-sidebar, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, full-width-template, microformats, sticky-post, theme-options, threaded-comments, translation-ready
@@ -1602,6 +1602,9 @@
 		}
 		.fl-builder.home .page-title { border: 0; }
 
+		.fl-builder.home .page-section { margin-top: 3.62rem; }
+		.fl-builder.home .clear + .page-section { margin-top: 0; }
+
 			.fl-builder.is-singular .site-content .page .entry-title {
 				padding: 1.62em;
 				margin: 0;
@@ -1897,17 +1900,29 @@
 					100% { -webkit-transform: translateY(    0  ); }
 				}
 				@keyframes comeDown {
-					  0% { transform: translateY( -100% ); }
-					100% { transform: translateY(    0  ); }
+					  0% {
+					  	-ms-transform: translateY( -100% );
+					  	    transform: translateY( -100% );
+					  }
+					100% {
+						-ms-transform: translateY( 0 );
+						    transform: translateY( 0 );
+					}
 				}
 
 				@-webkit-keyframes goUp {
-					  0% { transform: -webkit-translateY( 100% ); }
-					100% { transform: -webkit-translateY(   0  ); }
+					  0% { -webkit-transform: translateY( 100% ); }
+					100% { -webkit-transform: translateY(   0  ); }
 				}
 				@keyframes goUp {
-					  0% { transform: translateY( 100% ); }
-					100% { transform: translateY(   0  ); }
+					  0% {
+					  	-ms-transform: translateY( 100% );
+					  	    transform: translateY( 100% );
+					  }
+					100% {
+						-ms-transform: translateY( 0 );
+						    transform: translateY( 0 );
+					}
 				}
 
 				.sticky-header .site-header,
@@ -1979,6 +1994,7 @@
 						position: relative;
 						padding: 8em 4% 1em;
 					}
+					.active .main-navigation-inner { display: block; }
 
 					/* Navigation menu */
 
@@ -2056,12 +2072,26 @@
 
 					/* Mobile menu toggle */
 
+						.menu-toggle {
+							position: fixed;
+							left: 1rem;
+							left: calc( 1rem + 2% );
+							top: 0;
+						}
+							.admin-bar .menu-toggle { top: 32px; }
+
+							.active .menu-toggle,
+							.admin-bar .active .menu-toggle {
+								position: absolute;
+								left: auto;
+								top: auto;
+							}
+
 						.menu-toggle,
 						.menu-toggle:hover,
 						.menu-toggle:active,
 						.menu-toggle:focus {
 							display: block;
-							position: absolute;
 							width: 3.24rem;
 							height: 3.24rem;
 							padding: 0;
@@ -2236,6 +2266,12 @@
 				/* Site banner */
 
 					.site-banner h1 { font-size: 1.38rem; }
+
+				/* Navigation */
+
+					/* Mobile menu toggle */
+
+						.menu-toggle { left: 1rem; }
 
 			/**
 			 * Site content

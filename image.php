@@ -6,7 +6,7 @@
  * @copyright  2015 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.3
+ * @version  1.4
  */
 
 
@@ -29,7 +29,7 @@ get_header();
 			 * Post media
 			 */
 
-				$image_size = WM_IMAGE_SIZE_SINGULAR;
+				$image_size = apply_filters( 'wmhook_entry_featured_image_size', 'thumbnail' );
 				$image_link = array_filter( (array) apply_filters( 'wmhook_entry_image_link', wp_get_attachment_image_src( get_the_ID(), 'full' ) ) );
 
 				?>

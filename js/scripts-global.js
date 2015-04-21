@@ -5,7 +5,7 @@
  * @copyright  2015 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.3.2
+ * @version  1.4
  *
  * CONTENT:
  * -  10) Basics
@@ -93,6 +93,7 @@ jQuery( function() {
 			} );
 
 
+
 		/**
 		 * Header search form
 		 */
@@ -111,6 +112,9 @@ jQuery( function() {
 
 		/**
 		 * Mobile navigation
+		 *
+		 * @since    1.0
+		 * @version  1.4
 		 */
 
 			jQuery( '#menu-toggle' ).on( 'click', function( e ) {
@@ -118,22 +122,28 @@ jQuery( function() {
 
 				jQuery( this )
 					.parent( '#site-navigation' )
-						.toggleClass( 'active' )
-						.find( '.main-navigation-inner' )
-							.slideToggle();
+						.toggleClass( 'active' );
 
 				if ( jQuery( this ).parent( '#site-navigation' ).hasClass( 'active' ) ) {
+
 					jQuery( this )
 						.attr( 'aria-expanded', 'true' )
 						.parent( '#site-navigation' )
 							.find( '.main-navigation-inner ul' )
 								.attr( 'aria-expanded', 'true' );
+
+					jQuery( 'html, body' )
+						.stop()
+						.animate( { scrollTop : '0px' }, 0 );
+
 				} else {
+
 					jQuery( this )
 						.attr( 'aria-expanded', 'false' )
 						.parent( '#site-navigation' )
 							.find( '.main-navigation-inner ul' )
 								.attr( 'aria-expanded', 'false' );
+
 				}
 			} );
 

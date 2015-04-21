@@ -6,7 +6,7 @@
  * @copyright  2015 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.3
+ * @version  1.4
  *
  * CONTENT:
  * -  1) Required files
@@ -42,9 +42,6 @@
 
 		//Register customizer
 			add_action( 'customize_register', 'wm_theme_customizer' );
-		//Customizer assets
-			add_action( 'customize_controls_enqueue_scripts', 'wm_customizer_enqueue_assets'         );
-			add_action( 'customize_preview_init',             'wm_customizer_preview_enqueue_assets' );
 		//Save Customizer options
 			add_action( 'customize_save_after', 'wm_custom_styles_cache' );
 		//Flushing transients
@@ -67,30 +64,6 @@
 /**
  * 20) Helpers
  */
-
-	/**
-	 * Customizer controls assets enqueue
-	 */
-	if ( ! function_exists( 'wm_customizer_enqueue_assets' ) ) {
-		function wm_customizer_enqueue_assets() {
-			//Styles
-				wp_enqueue_style( 'wm-customizer' );
-		}
-	} // /wm_customizer_enqueue_assets
-
-
-
-		/**
-		 * Customizer preview assets enqueue
-		 */
-		if ( ! function_exists( 'wm_customizer_preview_enqueue_assets' ) ) {
-			function wm_customizer_preview_enqueue_assets() {
-				//Scripts
-					wp_enqueue_script( 'wm-customizer-preview' );
-			}
-		} // /wm_customizer_preview_enqueue_assets
-
-
 
 	/**
 	 * Outputs customizer JavaScript in footer
@@ -191,6 +164,9 @@
 
 	/**
 	 * Sanitize texts
+	 *
+	 * @since    1.0
+	 * @version  1.0
 	 *
 	 * @param  mixed $value WP customizer value to sanitize.
 	 */
@@ -993,6 +969,9 @@
 	 * Force cache only for the above function
 	 *
 	 * Useful to pass into the action hooks.
+	 *
+	 * @since    1.0
+	 * @version  1.0
 	 */
 	if ( ! function_exists( 'wm_custom_styles_cache' ) ) {
 		function wm_custom_styles_cache() {

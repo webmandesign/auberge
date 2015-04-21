@@ -6,7 +6,7 @@
  * @copyright  2015 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.3
+ * @version  1.4
  *
  * CONTENT:
  * -   1) Required files
@@ -500,6 +500,9 @@
 	/**
 	 * Post/page parts pagination
 	 *
+	 * @since    1.0
+	 * @version  1.0
+	 *
 	 * @param  boolean $echo
 	 */
 	if ( ! function_exists( 'wm_post_parts' ) ) {
@@ -792,6 +795,9 @@
 	/**
 	 * Checks for <!--more--> tag in post content
 	 *
+	 * @since    1.0
+	 * @version  1.0
+	 *
 	 * @param  obj/absint $post
 	 */
 	if ( ! function_exists( 'wm_has_more_tag' ) ) {
@@ -844,6 +850,9 @@
 
 	/**
 	 * Do action on theme version change
+	 *
+	 * @since    1.0
+	 * @version  1.0
 	 */
 	if ( ! function_exists( 'wm_theme_upgrade' ) ) {
 		function wm_theme_upgrade() {
@@ -890,6 +899,9 @@
 	 * This function looks for the file in the child theme first.
 	 * If the file is not located in child theme, output the URL from parent theme.
 	 *
+	 * @since    1.0
+	 * @version  1.0
+	 *
 	 * @param   string $file_relative_path File to look for (insert the relative path within the theme folder)
 	 *
 	 * @return  string Actual URL to the file
@@ -926,6 +938,9 @@
 	 * This function keeps the text between shortcodes,
 	 * unlike WordPress native strip_shortcodes() function.
 	 *
+	 * @since    1.0
+	 * @version  1.0
+	 *
 	 * @param  string $content
 	 */
 	if ( ! function_exists( 'wm_remove_shortcodes' ) ) {
@@ -943,6 +958,9 @@
 	 * Examples:
 	 * "[em][/em]" will output "<em></em>"
 	 * "[br /]" will output "<br />"
+	 *
+	 * @since    1.0
+	 * @version  1.0
 	 *
 	 * @param  string $title
 	 */
@@ -967,6 +985,9 @@
 	/**
 	 * Remove "recent comments" <style> from HTML head
 	 *
+	 * @since    1.0
+	 * @version  1.0
+	 *
 	 * @param  integer $page_id
 	 */
 	if ( ! function_exists( 'wm_remove_recent_comments_style' ) ) {
@@ -981,6 +1002,9 @@
 
 	/**
 	 * Accessibility skip links
+	 *
+	 * @since    1.0
+	 * @version  1.0
 	 *
 	 * @param  string $type
 	 */
@@ -1009,7 +1033,7 @@
 	 * //fonts.googleapis.com/css?family=Alegreya+Sans:300,400|Exo+2:400,700|Allan&subset=latin,latin-ext
 	 *
 	 * @since    1.0
-	 * @version  1.3
+	 * @version  1.4
 	 *
 	 * @param  array $fonts Fallback fonts.
 	 */
@@ -1020,12 +1044,11 @@
 				$family = array();
 				$subset = get_theme_mod( 'font-subset' );
 
-				$fonts_setup = array_filter( array( get_theme_mod( 'font-family-body' ), get_theme_mod( 'font-family-headings' ), get_theme_mod( 'font-family-logo' ) ) );
+				$fonts_setup = array_unique( array_filter( (array) apply_filters( 'wmhook_wm_google_fonts_url_fonts_setup', array() ) ) );
+
 				if ( empty( $fonts_setup ) && ! empty( $fonts ) ) {
 					$fonts_setup = (array) $fonts;
 				}
-
-				$fonts_setup = array_filter( (array) apply_filters( 'wmhook_wm_google_fonts_url_fonts_setup', $fonts_setup ) );
 
 			//Requirements check
 				if ( empty( $fonts_setup ) ) {
@@ -1041,10 +1064,10 @@
 				}
 
 				if ( ! empty( $family ) ) {
-					$output = add_query_arg( array(
+					$output = esc_url( add_query_arg( array(
 							'family' => implode( '|', (array) array_unique( $family ) ),
 							'subset' => implode( ',', (array) $subset ), //Subset can be array if multiselect Customizer input field used
-						), '//fonts.googleapis.com/css' );
+						), '//fonts.googleapis.com/css' ) );
 				}
 
 			//Output
@@ -1059,6 +1082,9 @@
 	 *
 	 * @link   http://pippinsplugins.com/retrieve-attachment-id-from-image-url/
 	 * @link   http://make.wordpress.org/core/2012/12/12/php-warning-missing-argument-2-for-wpdb-prepare/
+	 *
+	 * @since    1.0
+	 * @version  1.0
 	 *
 	 * @param  string $url
 	 */
@@ -1104,6 +1130,9 @@
 
 		/**
 		 * Flush out the transients used in wm_get_image_id_from_url
+		 *
+		 * @since    1.0
+		 * @version  1.0
 		 */
 		if ( ! function_exists( 'wm_image_ids_transient_flusher' ) ) {
 			function wm_image_ids_transient_flusher() {
@@ -1115,6 +1144,9 @@
 
 	/**
 	 * Returns true if a blog has more than 1 category
+	 *
+	 * @since    1.0
+	 * @version  1.0
 	 */
 	if ( ! function_exists( 'wm_is_categorized_blog' ) ) {
 		function wm_is_categorized_blog() {
