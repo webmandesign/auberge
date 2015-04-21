@@ -1,5 +1,15 @@
 # Auberge Changelog
 
+## 1.4.1
+
+* Updated: Localization
+
+#### Files changed:
+
+	languages/sk_SK.mo
+	languages/sk_SK.po
+	languages/xx_XX.pot
+
 ## 1.4
 
 * Added: Static mobile menu button
@@ -25,9 +35,6 @@
 	style.css
 	css/colors.css
 	css/starter.css
-	languages/sk_SK.mo
-	languages/sk_SK.po
-	languages/xx_XX.pot
 	inc/setup-theme-options.php
 	inc/setup.php
 	inc/customizer/customizer.php
