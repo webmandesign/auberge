@@ -6,7 +6,7 @@
  * @copyright  2015 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.4
+ * @version  1.4.2
  *
  * CONTENT:
  * -  10) Actions and filters
@@ -1628,8 +1628,8 @@
 		/**
 		 * Post thumbnail (featured image) display size
 		 *
-		 * @since    1.4
-		 * @version  1.4
+		 * @since    1.4.2
+		 * @version  1.4.2
 		 *
 		 * @param  string $image_size
 		 */
@@ -1638,7 +1638,7 @@
 				//Preparing output
 					if (
 							is_single( get_the_ID() )
-							|| ( is_page() && ! is_page_template( 'page-template/_menu.php' ) )
+							|| ( is_page() && ! ( is_page_template( 'page-template/_menu.php' ) || is_front_page() ) )
 							|| is_attachment()
 						) {
 

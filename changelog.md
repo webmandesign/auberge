@@ -1,5 +1,14 @@
 # Auberge Changelog
 
+## 1.4.2
+
+* Fixed: Condense posts thumbnail size issue introduced in version 1.4.1
+
+#### Files changed:
+
+	inc/setup.php
+
+
 ## 1.4.1
 
 * Updated: Localization
