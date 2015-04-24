@@ -1,5 +1,18 @@
 # Auberge Changelog
 
+## 1.4.3
+
+* Updated: TGM Plugin Activation 2.4.1
+* Updated: Beaver Builder compatibility
+* Updated: Starter CSS
+
+#### Files changed:
+
+	css/starter.css
+	inc/beaver-builder/beaver-builder.php
+	inc/tgmpa/class-tgm-plugin-activation.php
+
+
 ## 1.4.2
 
 * Fixed: Condense posts thumbnail size issue introduced in version 1.4.1

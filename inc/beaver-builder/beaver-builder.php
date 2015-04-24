@@ -10,7 +10,7 @@
  * @copyright  2015 WebMan - Oliver Juhas
  *
  * @since    1.2
- * @version  1.3
+ * @version  1.4.3
  *
  * CONTENT:
  * -  1) Requirements check
@@ -60,14 +60,14 @@
 	 * Upgrade link URL
 	 *
 	 * @since    1.3
-	 * @version  1.3
+	 * @version  1.4.3
 	 *
 	 * @param   $paramname description
 	 */
 	if ( ! function_exists( 'wm_bb_upgrade_url' ) ) {
 		function wm_bb_upgrade_url( $url ) {
 			//Output
-				return $url . '&fla=67';
+				return esc_url( add_query_arg( 'fla', '67', $url ) );
 		}
 	} // /wm_bb_upgrade_url
 
