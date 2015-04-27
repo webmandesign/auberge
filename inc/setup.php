@@ -6,7 +6,7 @@
  * @copyright  2015 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.4.2
+ * @version  1.4.4
  *
  * CONTENT:
  * -  10) Actions and filters
@@ -739,7 +739,7 @@
 	 * Frontend HTML head assets enqueue
 	 *
 	 * @since    1.0
-	 * @version  1.3
+	 * @version  1.4.4
 	 */
 	if ( ! function_exists( 'wm_enqueue_assets' ) ) {
 		function wm_enqueue_assets() {
@@ -872,7 +872,7 @@
 
 				$scripts_inline = apply_filters( 'wmhook_wm_enqueue_assets_scripts_inline', array( 'text_menu_group_nav' => _x( '&uarr; Menu sections', 'Back to food menu sections selectors button title.', 'wm_domain' ) ) );
 
-				wp_localize_script( 'wm-theme-scripts', '$scriptsInline', $scripts_inline );
+				wp_localize_script( 'wm-scripts-global', '$scriptsInline', $scripts_inline );
 		}
 	} // /wm_enqueue_assets
 

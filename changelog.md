@@ -1,5 +1,14 @@
 # Auberge Changelog
 
+## 1.4.4
+
+* Fixed: Food menu sections on-page navigation not displaying after 1.4 theme update
+
+#### Files changed:
+
+	inc/setup.php
+
+
 ## 1.4.3
 
 * Updated: TGM Plugin Activation 2.4.1
