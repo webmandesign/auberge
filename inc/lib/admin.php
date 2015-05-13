@@ -6,7 +6,7 @@
  * @copyright  2015 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.3
+ * @version  1.4.5
  *
  * CONTENT:
  * - 10) Actions and filters
@@ -51,7 +51,7 @@
 	 * Admin HTML head assets enqueue
 	 *
 	 * @since    1.0
-	 * @version  1.3
+	 * @version  1.4.5
 	 */
 	if ( ! function_exists( 'wm_assets_admin' ) ) {
 		function wm_assets_admin() {
@@ -67,7 +67,7 @@
 								'wm-admin-styles',
 								wm_get_stylesheet_directory_uri( 'css/admin.css' ),
 								false,
-								WM_SCRIPTS_VERSION,
+								esc_attr( trim( wp_get_theme()->get( 'Version' ) ) ),
 								'screen'
 							);
 

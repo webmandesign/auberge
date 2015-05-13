@@ -6,7 +6,7 @@
  * @copyright  2015 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.3
+ * @version  1.4.5
  */
 
 ?>
@@ -30,7 +30,7 @@
 			if ( has_post_thumbnail() ) {
 
 				//Post featured image
-					the_post_thumbnail( 'banner' );
+					the_post_thumbnail( 'auberge_banner' );
 
 			} else {
 

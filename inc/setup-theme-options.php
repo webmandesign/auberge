@@ -6,7 +6,7 @@
  * @copyright  2015 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.4
+ * @version  1.4.5
  *
  * CONTENT:
  * - 10) Actions and filters
@@ -42,7 +42,7 @@
 	 * Set theme options array
 	 *
 	 * @since    1.0
-	 * @version  1.4
+	 * @version  1.4.5
 	 *
 	 * @param  array $options
 	 */
@@ -264,9 +264,9 @@
 								'type'    => 'theme-customizer-html',
 								'content' => '<h3>' . __( 'Theme Credits', 'wm_domain' ) . '</h3><p class="description">' . sprintf(
 										__( '%s is free WordPress theme developed by WebMan. You can obtain other professional WordPress themes at <strong><a href="%s" target="_blank">WebManDesign.eu</a></strong>. Thank you for using this awesome theme!', 'wm_domain' ),
-										'<strong>' . WM_THEME_NAME . '</strong>',
-										esc_url( add_query_arg( array( 'utm_source' => WM_THEME_SHORTNAME . '-theme-credits' ), esc_url( WM_THEME_AUTHOR_URI ) ) )
-									) . '</p><p><a href="' . esc_url( trailingslashit( WM_THEME_AUTHOR_URI ) . WM_THEME_SHORTNAME . '-wordpress-theme/#donate' ) . '" class="donation-link" target="_blank">Donate</a></p>',
+										'<strong>' . wp_get_theme()->get( 'Name' ) . '</strong>',
+										esc_url( add_query_arg( array( 'utm_source' => WM_THEME_SHORTNAME . '-theme-credits' ), esc_url( wp_get_theme()->get( 'AuthorURI' ) ) ) )
+									) . '</p><p><a href="' . esc_url( trailingslashit( wp_get_theme()->get( 'AuthorURI' ) ) . WM_THEME_SHORTNAME . '-wordpress-theme/#donate' ) . '" class="donation-link" target="_blank">Donate</a></p>',
 							),
 
 					);

@@ -1,5 +1,27 @@
 # Auberge Changelog
 
+## 1.4.5
+
+* **Update**: TGM Plugin Activation 2.4.2
+* **Update**: Removing `example.html` Genericons file
+* **Update**: Prefixed custom theme image sizes
+* **Update**: Using new prefixed image sizes
+* **Update**: Enqueuing `comment-reply.js` the right way
+* **Update**: Saving image size setup into theme mod, not individual options
+* **Update**: Removing obsolete constants
+
+#### Files changed:
+
+	content-featured-post.php
+	functions.php
+	genericons/example.html
+	inc/setup.php
+	inc/setup-theme-options.php
+	inc/lib/admin.php
+	inc/lib/core.php
+	inc/tgmpa/class-tgm-plugin-activation.php
+
+
 ## 1.4.4
 
 * Fixed: Food menu sections on-page navigation not displaying after 1.4 theme update

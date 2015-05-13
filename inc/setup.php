@@ -30,10 +30,11 @@
 	 */
 
 		//Styles and scripts
-			add_action( 'init',               'wm_register_assets',       10   );
-			add_action( 'wp_enqueue_scripts', 'wm_enqueue_assets',        100  );
-			add_action( 'wp_enqueue_scripts', 'wm_post_nav_background',   110  );
-			add_action( 'wp_footer',          'wm_footer_custom_scripts', 9998 );
+			add_action( 'init',                'wm_register_assets',       10   );
+			add_action( 'wp_enqueue_scripts',  'wm_enqueue_assets',        100  );
+			add_action( 'wp_enqueue_scripts',  'wm_post_nav_background',   110  );
+			add_action( 'wp_footer',           'wm_footer_custom_scripts', 9998 );
+			add_action( 'comment_form_before', 'wm_comment_reply_js_enqueue'    );
 		//Customizer assets
 			add_action( 'customize_controls_enqueue_scripts', 'wm_customizer_enqueue_assets'             );
 			add_action( 'customize_preview_init',             'wm_customizer_preview_enqueue_assets', 10 );
@@ -321,7 +322,7 @@
 	 * Theme setup
 	 *
 	 * @since    1.0
-	 * @version  1.4
+	 * @version  1.4.5
 	 */
 	if ( ! function_exists( 'wm_setup' ) ) {
 		function wm_setup() {
@@ -332,8 +333,8 @@
 				//WordPress visual editor CSS stylesheets
 					$visual_editor_css = array_filter( (array) apply_filters( 'wmhook_wm_setup_visual_editor_css', array(
 							str_replace( ',', '%2C', wm_google_fonts_url() ),
-							esc_url( add_query_arg( array( 'ver' => WM_THEME_VERSION ), wm_get_stylesheet_directory_uri( 'genericons/genericons.css' ) ) ),
-							esc_url( add_query_arg( array( 'ver' => WM_THEME_VERSION ), wm_get_stylesheet_directory_uri( 'css/editor-style.css' ) ) ),
+							esc_url( add_query_arg( array( 'ver' => wp_get_theme()->get( 'Version' ) ), wm_get_stylesheet_directory_uri( 'genericons/genericons.css' ) ) ),
+							esc_url( add_query_arg( array( 'ver' => wp_get_theme()->get( 'Version' ) ), wm_get_stylesheet_directory_uri( 'css/editor-style.css' ) ) ),
 						) ) );
 
 			/**
@@ -370,7 +371,6 @@
 					) );
 
 			//Custom menus
-				add_theme_support( 'menus' );
 				register_nav_menus( apply_filters( 'wmhook_wm_setup_menus', array(
 						'primary' => __( 'Primary Menu', 'wm_domain' ),
 						'social'  => __( 'Social Links Menu', 'wm_domain' ),
@@ -408,7 +408,7 @@
 
 							if (
 									in_array( $size, array( 'thumbnail', 'medium', 'large' ) )
-									&& ! get_option( 'wm-' . WM_THEME_SHORTNAME . '-image-size-' . $size )
+									&& ! get_theme_mod( '__image_size-' . $size )
 								) {
 
 								/**
@@ -426,7 +426,7 @@
 									update_option( $size . '_crop', $image_sizes[ $size ][2] );
 								}
 
-								update_option( 'wm-' . WM_THEME_SHORTNAME . '-image-size-' . $size, true );
+								set_theme_mod( '__image_size-' . $size, true );
 
 							} else {
 
@@ -447,7 +447,7 @@
 	 * Set images: default image sizes
 	 *
 	 * @since    1.4
-	 * @version  1.4
+	 * @version  1.4.5
 	 *
 	 * @param  array $image_sizes
 	 */
@@ -483,13 +483,13 @@
 								false,
 								__( 'In single post page.', 'wm_domain' )
 							),
-						'banner' => array(
+						'auberge_banner' => array(
 								1640,
 								686, //@link http://en.wikipedia.org/wiki/Anamorphic_format
 								true,
 								__( 'In front page banner.', 'wm_domain' )
 							),
-						'banner-small' => array(
+						'auberge_banner_small' => array(
 								absint( $content_width ),
 								absint( $content_width / 2.39 ), //@link http://en.wikipedia.org/wiki/Anamorphic_format
 								true,
@@ -685,10 +685,14 @@
 	 * Registering theme styles and scripts
 	 *
 	 * @since    1.0
-	 * @version  1.4
+	 * @version  1.4.5
 	 */
 	if ( ! function_exists( 'wm_register_assets' ) ) {
 		function wm_register_assets() {
+
+			//Helper variables
+				$version = esc_attr( trim( wp_get_theme()->get( 'Version' ) ) );
+
 			/**
 			 * Styles
 			 */
@@ -703,10 +707,10 @@
 					) );
 
 				foreach ( $register_styles as $handle => $atts ) {
-					$src   = ( isset( $atts['src'] )   ) ? ( $atts['src']   ) : ( $atts[0]           );
-					$deps  = ( isset( $atts['deps'] )  ) ? ( $atts['deps']  ) : ( false              );
-					$ver   = ( isset( $atts['ver'] )   ) ? ( $atts['ver']   ) : ( WM_SCRIPTS_VERSION );
-					$media = ( isset( $atts['media'] ) ) ? ( $atts['media'] ) : ( 'all'              );
+					$src   = ( isset( $atts['src'] )   ) ? ( $atts['src']   ) : ( $atts[0] );
+					$deps  = ( isset( $atts['deps'] )  ) ? ( $atts['deps']  ) : ( false    );
+					$ver   = ( isset( $atts['ver'] )   ) ? ( $atts['ver']   ) : ( $version );
+					$media = ( isset( $atts['media'] ) ) ? ( $atts['media'] ) : ( 'all'    );
 
 					wp_register_style( $handle, $src, $deps, $ver, $media );
 				}
@@ -723,10 +727,10 @@
 					) );
 
 				foreach ( $register_scripts as $handle => $atts ) {
-					$src       = ( isset( $atts['src'] )       ) ? ( $atts['src']       ) : ( $atts[0]           );
-					$deps      = ( isset( $atts['deps'] )      ) ? ( $atts['deps']      ) : ( false              );
-					$ver       = ( isset( $atts['ver'] )       ) ? ( $atts['ver']       ) : ( WM_SCRIPTS_VERSION );
-					$in_footer = ( isset( $atts['in_footer'] ) ) ? ( $atts['in_footer'] ) : ( true               );
+					$src       = ( isset( $atts['src'] )       ) ? ( $atts['src']       ) : ( $atts[0] );
+					$deps      = ( isset( $atts['deps'] )      ) ? ( $atts['deps']      ) : ( false    );
+					$ver       = ( isset( $atts['ver'] )       ) ? ( $atts['ver']       ) : ( $version );
+					$in_footer = ( isset( $atts['in_footer'] ) ) ? ( $atts['in_footer'] ) : ( true     );
 
 					wp_register_script( $handle, $src, $deps, $ver, $in_footer );
 				}
@@ -739,7 +743,7 @@
 	 * Frontend HTML head assets enqueue
 	 *
 	 * @since    1.0
-	 * @version  1.4.4
+	 * @version  1.4.5
 	 */
 	if ( ! function_exists( 'wm_enqueue_assets' ) ) {
 		function wm_enqueue_assets() {
@@ -857,15 +861,6 @@
 					wp_enqueue_script( $handle );
 				}
 
-				//Put comments reply scripts into footer
-					if (
-							is_singular()
-							&& comments_open()
-							&& get_option( 'thread_comments' )
-						) {
-						wp_enqueue_script( 'comment-reply', false, false, false, true );
-					}
-
 			/**
 			 * Scripts - inline
 			 */
@@ -879,10 +874,26 @@
 
 
 	/**
+	 * Enqueue comment-reply.js the right way
+	 *
+	 * @since    1.4.5
+	 * @version  1.4.5
+	 */
+	if ( ! function_exists( 'wm_comment_reply_js_enqueue' ) ) {
+		function wm_comment_reply_js_enqueue() {
+			if ( get_option( 'thread_comments' ) ) {
+				wp_enqueue_script( 'comment-reply' );
+			}
+		}
+	} // /wm_comment_reply_js_enqueue
+
+
+
+	/**
 	 * Customizer controls assets enqueue
 	 *
 	 * @since    1.4
-	 * @version  1.4
+	 * @version  1.4.5
 	 */
 	if ( ! function_exists( 'wm_customizer_enqueue_assets' ) ) {
 		function wm_customizer_enqueue_assets() {
@@ -891,7 +902,7 @@
 						'wm-customizer',
 						get_template_directory_uri() . '/css/customizer.css',
 						false,
-						WM_SCRIPTS_VERSION,
+						esc_attr( trim( wp_get_theme()->get( 'Version' ) ) ),
 						'all'
 					);
 		}
@@ -903,7 +914,7 @@
 		 * Customizer preview assets enqueue
 		 *
 		 * @since    1.4
-		 * @version  1.4
+		 * @version  1.4.5
 		 */
 		if ( ! function_exists( 'wm_customizer_preview_enqueue_assets' ) ) {
 			function wm_customizer_preview_enqueue_assets() {
@@ -912,7 +923,7 @@
 							'wm-customizer-preview',
 							wm_get_stylesheet_directory_uri( 'js/customizer-preview.js' ),
 							array( 'customize-preview' ),
-							WM_SCRIPTS_VERSION,
+							esc_attr( trim( wp_get_theme()->get( 'Version' ) ) ),
 							true
 						);
 			}
@@ -1019,7 +1030,7 @@
 	 * Add featured image as background image to post navs
 	 *
 	 * @since    1.0
-	 * @version  1.3
+	 * @version  1.4.5
 	 */
 	if ( ! function_exists( 'wm_post_nav_background' ) ) {
 		function wm_post_nav_background() {
@@ -1042,12 +1053,12 @@
 
 			//Preparing output
 				if ( $previous &&  has_post_thumbnail( $previous->ID ) ) {
-					$prevthumb = wp_get_attachment_image_src( get_post_thumbnail_id( $previous->ID ), 'banner-small' );
+					$prevthumb = wp_get_attachment_image_src( get_post_thumbnail_id( $previous->ID ), 'auberge_banner_small' );
 					$output .= '.post-navigation .nav-previous { background-image: url(\'' . esc_url( $prevthumb[0] ) . '\'); }';
 				}
 
 				if ( $next && has_post_thumbnail( $next->ID ) ) {
-					$nextthumb = wp_get_attachment_image_src( get_post_thumbnail_id( $next->ID ), 'banner-small' );
+					$nextthumb = wp_get_attachment_image_src( get_post_thumbnail_id( $next->ID ), 'auberge_banner_small' );
 					$output .= '.post-navigation .nav-next { background-image: url(\'' . esc_url( $nextthumb[0] ) . '\'); }';
 				}
 
@@ -1629,7 +1640,7 @@
 		 * Post thumbnail (featured image) display size
 		 *
 		 * @since    1.4.2
-		 * @version  1.4.2
+		 * @version  1.4.5
 		 *
 		 * @param  string $image_size
 		 */
@@ -1646,7 +1657,7 @@
 
 					} else {
 
-						$image_size = ( 'nova_menu_item' == get_post_type( get_the_ID() ) ) ? ( 'banner-small' ) : ( 'thumbnail' );
+						$image_size = ( 'nova_menu_item' == get_post_type( get_the_ID() ) ) ? ( 'auberge_banner_small' ) : ( 'thumbnail' );
 
 					}
 
@@ -1928,7 +1939,7 @@
 	 * I would appreciate it if you keep the credit link in the footer.
 	 *
 	 * @since    1.0
-	 * @version  1.3
+	 * @version  1.4.5
 	 */
 	if ( ! function_exists( 'wm_footer' ) ) {
 		function wm_footer() {
@@ -1948,7 +1959,7 @@
 									. ' '
 									. sprintf(
 											__( 'Theme by %s.', 'wm_domain' ),
-											'<a href="' . esc_url( WM_THEME_AUTHOR_URI ) . '">WebMan Design</a>'
+											'<a href="' . esc_url( wp_get_theme()->get( 'AuthorURI' ) ) . '">WebMan Design</a>'
 										)
 									. ' <a href="#top" id="back-to-top" class="back-to-top">' . __( 'Back to top &uarr;', 'wm_domain' ) . '</a>'
 								);

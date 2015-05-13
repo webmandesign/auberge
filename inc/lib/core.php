@@ -6,7 +6,7 @@
  * @copyright  2015 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.4
+ * @version  1.4.5
  *
  * CONTENT:
  * -   1) Required files
@@ -852,7 +852,7 @@
 	 * Do action on theme version change
 	 *
 	 * @since    1.0
-	 * @version  1.0
+	 * @version  1.4.5
 	 */
 	if ( ! function_exists( 'wm_theme_upgrade' ) ) {
 		function wm_theme_upgrade() {
@@ -862,10 +862,10 @@
 			//Processing
 				if (
 						empty( $current_theme_version )
-						|| WM_THEME_VERSION != $current_theme_version
+						|| wp_get_theme()->get( 'Version' ) != $current_theme_version
 					) {
 					do_action( 'wmhook_theme_upgrade' );
-					set_transient( WM_THEME_SHORTNAME . '-version', WM_THEME_VERSION );
+					set_transient( WM_THEME_SHORTNAME . '-version', wp_get_theme()->get( 'Version' ) );
 				}
 		}
 	} // /wm_theme_upgrade
