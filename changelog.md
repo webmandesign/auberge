@@ -1,5 +1,14 @@
 # Auberge Changelog
 
+## 1.4.6
+
+* **Fix**: `wmhook_entry_image_link` is not applied correctly on page content
+
+#### Files changed:
+
+	content-page.php
+
+
 ## 1.4.5
 
 * **Update**: TGM Plugin Activation 2.4.2
