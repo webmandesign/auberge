@@ -6,7 +6,7 @@
  * @copyright  2015 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.4.4
+ * @version  1.4.5
  *
  * CONTENT:
  * -  10) Actions and filters

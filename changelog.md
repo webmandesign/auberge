@@ -1,5 +1,19 @@
 # Auberge Changelog
 
+## 1.4.7
+
+* **Update**: Removed `utm_source` from theme credits URL
+* **Update**: Localization
+* **Fix**: Made "Donate" word translatable
+
+#### Files changed:
+
+	inc/setup-theme-options.php
+	languages/sk_SK.mo
+	languages/sk_SK.po
+	languages/xx_XX.pot
+
+
 ## 1.4.6
 
 * **Fix**: `wmhook_entry_image_link` is not applied correctly on page content
@@ -71,6 +85,7 @@
 	languages/sk_SK.mo
 	languages/sk_SK.po
 	languages/xx_XX.pot
+
 
 ## 1.4
 
