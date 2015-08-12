@@ -6,7 +6,7 @@
  * @copyright  2015 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.4
+ * @version  1.4.8
  *
  * CONTENT:
  * -  1) Required files
@@ -216,7 +216,7 @@
 	 * Registering sections and options for WP Customizer
 	 *
 	 * @since    1.0
-	 * @version  1.3
+	 * @version  1.4.8
 	 *
 	 * @param  object $wp_customize WP customizer object.
 	 */
@@ -267,7 +267,6 @@
 						'select',
 						'text',
 						'textarea',
-						'theme-customizer-html', //synonym for 'html'
 					) );
 
 				//To make sure our customizer sections start after WordPress default ones
@@ -290,7 +289,7 @@
 								&& isset( $theme_option['type'] )
 								&& (
 										in_array( $theme_option['type'], $allowed_option_types )
-										|| isset( $theme_option['theme-customizer-section'] )
+										|| isset( $theme_option['create_section'] )
 									)
 							) {
 
@@ -316,33 +315,29 @@
 							/**
 							 * Panels
 							 *
-							 * Panels were introduced in WordPress 4.0 and are wrappers for customizer sections.
-							 * Note that the panel will not be displayed unless sections are assigned to it.
-							 * Set the panel name in the section declaration with 'theme-customizer-panel' attribute.
-							 * Panel has to be defined for each section to prevent all sections residing within a single panel.
+							 * Panels are wrappers for customizer sections.
+							 * Note that the panel will not display unless sections are assigned to it.
+							 * Set the panel name in the section declaration with `in_panel`.
+							 * Panel has to be defined for each section to prevent all sections within a single panel.
 							 *
 							 * @link  http://make.wordpress.org/core/2014/07/08/customizer-improvements-in-4-0/
 							 */
-							if (
-									wm_check_wp_version( 4 )
-									&& isset( $theme_option['theme-customizer-panel'] )
-								) {
+							if ( isset( $theme_option['in_panel'] ) ) {
 
-								$panel_id = sanitize_title( trim( $theme_option['theme-customizer-panel'] ) );
+								$panel_id = sanitize_title( trim( $theme_option['in_panel'] ) );
 
-								if ( $customizer_panel != $panel_id ) {
+								if ( $customizer_panel !== $panel_id ) {
 
 									$wp_customize->add_panel(
 											$panel_id,
 											array(
-												'title'       => $theme_option['theme-customizer-panel'], //panel title
-												'description' => ( isset( $theme_option['theme-customizer-panel-description'] ) ) ? ( $theme_option['theme-customizer-panel-description'] ) : ( '' ), //Displayed at the top of panel
+												'title'       => $theme_option['in_panel'], // Panel title
+												'description' => ( isset( $theme_option['in_panel-description'] ) ) ? ( $theme_option['in_panel-description'] ) : ( '' ), // Hidden at the top of the panel
 												'priority'    => $priority,
 											)
 										);
 
 									$customizer_panel = $panel_id;
-
 								}
 
 							}
@@ -352,25 +347,24 @@
 							/**
 							 * Sections
 							 */
-							if (
-									isset( $theme_option['theme-customizer-section'] )
-									&& trim( $theme_option['theme-customizer-section'] )
-								) {
+							if ( isset( $theme_option['create_section'] ) && trim( $theme_option['create_section'] ) ) {
 
 								if ( empty( $option_id ) ) {
-									$option_id = sanitize_title( trim( $theme_option['theme-customizer-section'] ) );
+									$option_id = sanitize_title( trim( $theme_option['create_section'] ) );
 								}
 
 								$customizer_section = array(
 										'id'    => $option_id,
 										'setup' => array(
-												'title'       => $theme_option['theme-customizer-section'], //section title
-												'description' => ( isset( $theme_option['theme-customizer-section-description'] ) ) ? ( $theme_option['theme-customizer-section-description'] ) : ( '' ), //Displayed at the top of section
+												'title'       => $theme_option['create_section'], // Section title
+												'description' => ( isset( $theme_option['create_section-description'] ) ) ? ( $theme_option['create_section-description'] ) : ( '' ), // Displayed at the top of section
 												'priority'    => $priority,
 											)
 									);
 
-								if ( wm_check_wp_version( 4 ) ) {
+								if ( ! isset( $theme_option['in_panel'] ) ) {
+									$customizer_panel = '';
+								} else {
 									$customizer_section['setup']['panel'] = $customizer_panel;
 								}
 
@@ -380,7 +374,6 @@
 									);
 
 								$customizer_section = $customizer_section['id'];
-								$customizer_panel   = ''; //Panel has to be defined for each section to prevent all sections residing within a single panel.
 
 							}
 
@@ -452,7 +445,6 @@
 								 * HTML
 								 */
 								case 'html':
-								case 'theme-customizer-html':
 
 									if ( empty( $option_id ) ) {
 										$option_id = 'custom-title-' . $priority;

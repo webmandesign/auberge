@@ -1,5 +1,39 @@
 # Auberge Changelog
 
+## 1.4.8
+
+* **Add**: WordPress 4.3 support
+* **Add**: Touch enabled navigation, accessible with Tab key
+* **Add**: French localization by WP-Traduction (wp-traduction.com)
+* **Update**: Updated scripts: TGM Plugin Activation 2.5.2, Slick 1.5.8
+* **Update**: Improved featured image size setup for pages
+* **Update**: Licensed under GPLv3
+* **Update**: Admin interface
+* **Update**: Improved food menu sections navigation for better controlability via custom code
+* **Update**: Support for Custom Fields for Restaurant Reservations plugin
+* **Update**: Documentation (user manual)
+* **Fix**: Google Fonts URL function subset issue
+* **Fix**: Fixed issue with masonry footer layout when using Jetpack's infinite scroll
+
+#### Files changed:
+
+	license.txt
+	readme.md
+	style.css
+	css/admin.css
+	css/customizer.css
+	inc/setup-theme-options.php
+	inc/setup.php
+	inc/customizer/customizer.php
+	inc/lib/admin.php
+	inc/lib/core.php
+	inc/tgmpa/class-tgm-plugin-activation.php
+	js/scripts-global.js
+	js/scripts-navigation.js
+	languages/fr_FR.mo
+	languages/fr_FR.po
+
+
 ## 1.4.7
 
 * **Update**: Removed `utm_source` from theme credits URL

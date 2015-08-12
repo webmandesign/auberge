@@ -5,7 +5,7 @@
  * @copyright  2015 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.4
+ * @version  1.4.8
  *
  * CONTENT:
  * -  10) Basics
@@ -110,53 +110,6 @@ jQuery( function() {
 
 
 
-		/**
-		 * Mobile navigation
-		 *
-		 * @since    1.0
-		 * @version  1.4
-		 */
-
-			jQuery( '#menu-toggle' ).on( 'click', function( e ) {
-				e.preventDefault();
-
-				jQuery( this )
-					.parent( '#site-navigation' )
-						.toggleClass( 'active' );
-
-				if ( jQuery( this ).parent( '#site-navigation' ).hasClass( 'active' ) ) {
-
-					jQuery( this )
-						.attr( 'aria-expanded', 'true' )
-						.parent( '#site-navigation' )
-							.find( '.main-navigation-inner ul' )
-								.attr( 'aria-expanded', 'true' );
-
-					jQuery( 'html, body' )
-						.stop()
-						.animate( { scrollTop : '0px' }, 0 );
-
-				} else {
-
-					jQuery( this )
-						.attr( 'aria-expanded', 'false' )
-						.parent( '#site-navigation' )
-							.find( '.main-navigation-inner ul' )
-								.attr( 'aria-expanded', 'false' );
-
-				}
-			} );
-
-
-			//Disable mobile navigation on wider screens
-				jQuery( window ).on( 'resize orientationchange', function( e ) {
-					if ( 960 < document.body.clientWidth ) {
-						jQuery( '#site-navigation .main-navigation-inner' ).show();
-					}
-				} );
-
-
-
 	/**
 	 * 30) Banner
 	 */
@@ -167,7 +120,14 @@ jQuery( function() {
 
 			if ( jQuery().slick ) {
 
-				jQuery( '#site-banner.enable-slider .site-banner-inner' ).slick( {
+				jQuery( '#site-banner.enable-slider .site-banner-inner' )
+					.on( 'init', function( event, slick ) {
+
+						jQuery( '.slider-nav-next' )
+							.before( jQuery( '.slider-nav-prev' ) );
+
+					} )
+					.slick( {
 						'adaptiveHeight' : true,
 						'autoplay'       : true,
 						'autoplaySpeed'  : ( ! jQuery( '#site-banner' ).data( 'speed' ) ) ? ( 5400 ) : ( jQuery( '#site-banner' ).data( 'speed' ) ),
@@ -346,32 +306,47 @@ jQuery( function() {
 		 *        use Jetpack's get_option( 'nova_menu_order' ).
 		 *
 		 * @since    1.0
-		 * @version  1.3.2
+		 * @version  1.4.8
 		 */
 
 			if ( jQuery( '.items-list .menu-group-header' ).length ) {
 
 				var $menuGroups = [];
 
-				//Set menu groups IDS
-					jQuery( '.menu-group-header' ).each( function( index, val ) {
-						var $this      = jQuery( this ),
-						    $thisTitle = $this.find( '> .menu-group-title' ).text(),
-						    $thisID    = escape( $thisTitle.toLowerCase().replace( /\s+/g, '_' ).replace( /[^a-z_]/g, '' ) ) + '_' + Math.floor( ( Math.random() * 100 ) + 1 );
+				// Set menu groups IDS
 
-						$menuGroups[ $thisID ] = $thisTitle;
+					jQuery( '.menu-group-header' )
+						.each( function( index, val ) {
 
-						$this.attr( 'id', $thisID ).append( '<a href="#menu-group-nav" class="menu-group-nav-link">' + $scriptsInline.text_menu_group_nav + '</a>' );
-					} );
+							var $this      = jQuery( this ),
+							    $thisTitle = $this.find( '> .menu-group-title' ).text(),
+							    $thisID    = escape( $thisTitle.toLowerCase().trim().replace( /\s+/g, '_' ).replace( /[^a-z_]/g, '' ) ) + '_' + Math.floor( ( Math.random() * 100 ) + 1 );
 
-				//Create a navigation
-					jQuery( '<ul id="menu-group-nav" class="menu-group-nav" />' ).prependTo( '.items-list' );
+							$menuGroups[ $thisID ] = $thisTitle;
+
+							$this
+								.attr( 'id', $thisID )
+								.append( '<a href="#menu-group-nav" class="menu-group-nav-link">' + $scriptsInline.text_menu_group_nav + '</a>' )
+								.parent()
+									.addClass( $thisID );
+
+						} );
+
+				// Create a navigation
+
+					jQuery( '<ul id="menu-group-nav" class="menu-group-nav" />' )
+						.prependTo( '.items-list' );
 
 					for ( var $menuGroupID in $menuGroups ) {
 					//@link  http://stackoverflow.com/questions/921789/how-to-loop-through-javascript-object-literal-with-objects-as-members
+
 						if ( $menuGroups.hasOwnProperty( $menuGroupID ) ) {
-							jQuery( '<li><a href="#' + $menuGroupID.replace( /(\r\n|\n|\r)/gm, '' ) + '">' + $menuGroups[ $menuGroupID ].replace( /(\r\n|\n|\r)/gm, '' ) + '</a></li>' ).appendTo( '#menu-group-nav' );
+
+							jQuery( '<li class="goto-' + $menuGroupID.replace( /(\r\n|\n|\r)/gm, '' ) + '"><a href="#' + $menuGroupID.replace( /(\r\n|\n|\r)/gm, '' ) + '">' + $menuGroups[ $menuGroupID ].replace( /(\r\n|\n|\r)/gm, '' ) + '</a></li>' )
+								.appendTo( '#menu-group-nav' );
+
 						}
+
 					}
 
 			}
@@ -402,23 +377,37 @@ jQuery( function() {
 
 		/**
 		 * Jetpack Infinite Scroll posts loading
+		 *
+		 * @link  http://wptheming.com/2013/04/jetpack-infinite-scroll-masonry/
+		 *
+		 * @since    1.0
+		 * @version  1.4.8
 		 */
 
 			jQuery( document.body ).on( 'post-load', function() {
 
 				/**
-				 * Masonry posts list
+				 * Masonry posts and footer widgets
 				 */
 
 					if ( jQuery().masonry ) {
 
 						var $postsContainers = jQuery( '.posts' );
 
-						$postsContainers.imagesLoaded( function() {
+						$postsContainers
+							.imagesLoaded( function() {
 
-							$postsContainers.masonry( 'reload' );
+								$postsContainers
+									.masonry( 'reload' );
 
-						} );
+							} );
+
+						setInterval( function() {
+
+							jQuery( '#footer-widgets-container' )
+								.masonry( 'reload' );
+
+						}, 100 );
 
 					} // /masonry
 

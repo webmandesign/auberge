@@ -6,7 +6,7 @@
  * @copyright  2015 WebMan - Oliver Juhas
  *
  * @since    1.0
- * @version  1.4.5
+ * @version  1.4.8
  *
  * CONTENT:
  * -  10) Actions and filters
@@ -685,7 +685,7 @@
 	 * Registering theme styles and scripts
 	 *
 	 * @since    1.0
-	 * @version  1.4.5
+	 * @version  1.4.8
 	 */
 	if ( ! function_exists( 'wm_register_assets' ) ) {
 		function wm_register_assets() {
@@ -722,7 +722,8 @@
 				$register_scripts = apply_filters( 'wmhook_wm_register_assets_register_scripts', array(
 						'wm-imagesloaded'        => array( wm_get_stylesheet_directory_uri( 'js/imagesloaded.pkgd.min.js' ) ),
 						'wm-slick'               => array( 'src' => wm_get_stylesheet_directory_uri( 'js/slick.min.js' ), 'deps' => array( 'jquery' ) ),
-						'wm-scripts-global'      => array( 'src' => wm_get_stylesheet_directory_uri( 'js/scripts-global.js' ), 'deps' => array( 'jquery', 'wm-imagesloaded' ) ),
+						'wm-scripts-global'      => array( 'src' => wm_get_stylesheet_directory_uri( 'js/scripts-global.js' ), 'deps' => array( 'jquery', 'wm-imagesloaded', 'wm-scripts-navigation' ) ),
+						'wm-scripts-navigation'  => array( wm_get_stylesheet_directory_uri( 'js/scripts-navigation.js' ) ),
 						'wm-skip-link-focus-fix' => array( wm_get_stylesheet_directory_uri( 'js/skip-link-focus-fix.js' ) ),
 					) );
 
@@ -1283,20 +1284,48 @@
 
 		/**
 		 * Navigation item improvements
+		 *
+		 * @since    1.0
+		 * @version  1.4.8
 		 */
 		if ( ! function_exists( 'wm_nav_item_process' ) ) {
 			function wm_nav_item_process( $item_output, $item, $depth, $args ) {
-				//Preparing output
-					//Display item description
-						if (
-								'primary' == $args->theme_location
-								&& trim( $item->description )
-							) {
-							$item_output = str_replace( $args->link_after . '</a>', '<span class="menu-item-description">' . trim( $item->description ) . '</span>' . $args->link_after . '</a>', $item_output );
-						}
 
-				//Output
+				// Processing
+
+					if ( 'primary' == $args->theme_location ) {
+
+						// Description
+
+							if ( trim( $item->description ) ) {
+
+								$item_output = str_replace(
+										$args->link_after . '</a>',
+										'<span class="menu-item-description">' . trim( $item->description ) . '</span>' . $args->link_after . '</a>',
+										$item_output
+									);
+
+							}
+
+						// Submenu expander button
+
+							if ( in_array( 'menu-item-has-children', (array) $item->classes ) ) {
+
+								$item_output = str_replace(
+										$args->link_after . '</a>',
+										$args->link_after . ' <span class="expander"></span></a>',
+										$item_output
+									);
+
+							}
+
+					}
+
+
+				// Output
+
 					return $item_output;
+
 			}
 		} // /wm_nav_item_process
 
@@ -1640,7 +1669,7 @@
 		 * Post thumbnail (featured image) display size
 		 *
 		 * @since    1.4.2
-		 * @version  1.4.5
+		 * @version  1.4.8
 		 *
 		 * @param  string $image_size
 		 */
@@ -1649,7 +1678,13 @@
 				//Preparing output
 					if (
 							is_single( get_the_ID() )
-							|| ( is_page() && ! ( is_page_template( 'page-template/_menu.php' ) || is_front_page() ) )
+							|| (
+									is_page( get_the_ID() )
+									&& ! (
+										is_page_template( 'page-template/_menu.php' )
+										|| is_front_page()
+									)
+								)
 							|| is_attachment()
 						) {
 

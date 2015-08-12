@@ -4,9 +4,9 @@
  * Author:       WebMan
  * Author URI:   http://www.webmandesign.eu/
  * Description:  <strong>Auberge</strong> is responsive, retina-ready, modern restaurant and café WordPress theme. Supports Beaver Builder page builder plugin, Jetpack plugin to create a food menu, Schema.org markup, Theme Hook Alliance action hooks, translation-ready code, header slideshow, customizable colors and layout, and other cool features. The theme is compatible with Chrome, Safari, Opera, Firefox, Internet Explorer 9+ browsers. Thank you for using one of WebMan's themes (more cool WordPress themes can be found at www.webmandesign.eu). Theme demo at http://themedemos.webmandesign.eu/auberge/
- * Version:      1.4.7
- * License:      GNU General Public License v2 or later
- * License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ * Version:      1.4.8
+ * License:      GNU General Public License v3
+ * License URI:  http://www.gnu.org/licenses/gpl-3.0.html
  * Tags:         black, gray, green, silver, white, light, dark, one-column, two-columns, three-columns, four-columns, right-sidebar, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, full-width-template, microformats, sticky-post, theme-options, threaded-comments, translation-ready
  * Text Domain:  wm_domain
  *
@@ -557,18 +557,37 @@
 					}
 						.main-navigation .menu > ul > li > a .menu-item-description { display: none; }
 
-			/* Arrows for menu item with submenu */
+			/* Submenu expander button */
 
-				.main-navigation .menu-item-has-children > a:after {
-					content: '\f510';
+				.main-navigation .expander {
 					display: inline-block;
-					position: relative;
-					height: 8px;
-					top: 0;
-					margin: 0 -.38em 0 .62em;
-					font-size: 10px;
-					opacity: .5;
+					position: absolute;
+					width: 16px;
+					height: 16px;
+					right: 0;
+					top: 50%;
+					padding: 0;
+					margin-left: 2px;
+					line-height: 12px;
+					text-align: center;
+					font-size: 14px;
+					font-weight: 400;
+					border: 1px solid;
+					border-radius: 50%;
+					-webkit-transform: translateY(-50%);
+					    -ms-transform: translateY(-50%);
+					        transform: translateY(-50%);
 				}
+
+				.main-navigation li li .expander { right: 1em; }
+
+					.main-navigation .expander::before { content: '+'; }
+
+					.main-navigation li:hover > a .expander::before,
+					.main-navigation li[aria-expanded="true"] > a .expander::before { content: '-'; }
+
+				.main-navigation li.menu-item-has-children > a { padding-right: 1.62em; }
+				.main-navigation li li.menu-item-has-children > a { padding-right: 2.62em; }
 
 
 
@@ -594,7 +613,8 @@
 					-webkit-transition: all .4s ease-in-out;
 					        transition: all .4s ease-in-out;
 				}
-				.main-navigation li:hover > ul {
+				.main-navigation li:hover > ul,
+				.main-navigation li[aria-expanded="true"] > ul {
 					visibility: visible;
 					top: 100%;
 					opacity: 1;
@@ -621,21 +641,6 @@
 							color: inherit;
 						}
 
-				/* Arrows for menu item with submenu */
-
-					.main-navigation li .menu-item-has-children > a:after {
-						content: '\f510';
-						position: absolute;
-						top: 50%;
-						right: 10px;
-						margin: 0;
-						line-height: 1;
-						-webkit-transform: translateY( -50% );
-						    -ms-transform: translateY( -50% );
-						        transform: translateY( -50% );
-					}
-						.main-navigation li .menu-item-has-children > a { padding-right: 2em; }
-
 
 
 				/**
@@ -652,7 +657,8 @@
 						-webkit-transition: opacity .4s, left .4s ease-in-out;
 						        transition: opacity .4s, left .4s ease-in-out;
 					}
-						.main-navigation li li:hover > ul {
+						.main-navigation li li:hover > ul,
+						.main-navigation li li[aria-expanded="true"] > ul {
 							left: 100%;
 							right: auto;
 							top: -.38em;
@@ -1843,6 +1849,9 @@
 				.rtb-booking-form .contact legend:before { content: '\f304'; }
 				.rtb-booking-form .add-message a:before { content: '\f410'; }
 
+				.site .rtb-booking-form input[type="checkbox"],
+				.site .rtb-booking-form input[type="radio"] { vertical-align: baseline; }
+
 			.rtb-message {
 				padding: 1.62em 1.62em 0;
 				border: 2px solid;
@@ -2024,6 +2033,8 @@
 						}
 						.main-navigation li li > a { padding-left: 1.62em; }
 						.main-navigation li li li > a { padding-left: 2.62em; }
+
+						.main-navigation .expander { display: none; }
 
 						/* Submenu */
 
