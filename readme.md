@@ -8,7 +8,7 @@
 
 ## Description
 
-**Auberge** is responsive, retina-ready, modern restaurant and café WordPress theme. Supports Beaver Builder page builder plugin, Jetpack plugin to create a food menu, Schema.org markup, Theme Hook Alliance action hooks, translation-ready code, header slideshow, customizable colors and layout, and other cool features.
+**Auberge** is responsive, retina-ready, modern restaurant & café & recipes blog WordPress theme. Supports Beaver Builder page builder plugin, Jetpack plugin to create a food menu with additional help of WebMan Amplifier plugin for recipes, Schema.org markup (the theme is compatible with Google Recipe View), Theme Hook Alliance action hooks, translation-ready code, header slideshow, customizable colors and layout, and other cool features.
 
 The theme is compatible with Chrome, Safari, Opera, Firefox, Internet Explorer 9+ browsers.
 

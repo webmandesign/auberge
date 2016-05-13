@@ -3,30 +3,24 @@
  * Page template
  *
  * @package    Auberge
- * @copyright  2015 WebMan - Oliver Juhas
- * @version    1.0
+ * @copyright  WebMan Design, Oliver Juhas
+ *
+ * @since    1.0
+ * @version  2.0
  */
+
+
 
 
 
 get_header();
 
-	wmhook_entry_before();
+	while ( have_posts() ) : the_post();
 
-	if ( have_posts() ) {
+		get_template_part( 'template-parts/content', 'page' );
 
-		the_post();
-
-		get_template_part( 'content', 'page' );
-
-		wp_reset_query();
-
-	}
-
-	wmhook_entry_after();
+	endwhile;
 
 	get_sidebar();
 
 get_footer();
-
-?>

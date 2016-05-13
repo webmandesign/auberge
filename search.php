@@ -3,9 +3,13 @@
  * Search results template
  *
  * @package    Auberge
- * @copyright  2015 WebMan - Oliver Juhas
- * @version    1.0
+ * @copyright  WebMan Design, Oliver Juhas
+ *
+ * @since    1.0
+ * @version  2.0
  */
+
+
 
 
 
@@ -13,20 +17,29 @@ get_header();
 
 	?>
 
-	<section id="search-results" class="search-results">
+	<section id="search-results-listing" class="search-results-listing content-container">
+
+		<?php if ( have_posts() ) : ?>
 
 		<header class="page-header">
 
-			<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'wm_domain' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+			<h1 class="page-title"><?php
+
+				printf(
+					esc_html__( 'Search Results for: %s', 'auberge' ),
+					'<span>' . get_search_query() . '</span>'
+				);
+
+			?></h1>
 
 		</header>
 
-		<?php get_template_part( 'loop', 'search' ); ?>
+		<?php endif; ?>
+
+		<?php get_template_part( 'template-parts/loop', 'search' ); ?>
 
 	</section>
 
 	<?php
 
 get_footer();
-
-?>

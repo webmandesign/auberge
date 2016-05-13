@@ -7,49 +7,27 @@
  * Displays page content followed by food menu items.
  *
  * @package    Auberge
- * @copyright  2015 WebMan - Oliver Juhas
- * @version    1.0
+ * @copyright  WebMan Design, Oliver Juhas
+ *
+ * @since    1.0
+ * @version  2.0
  */
+
+/* translators: Custom page template name. */
+__( 'Food menu', 'auberge' );
+
+
 
 
 
 get_header();
 
+	while ( have_posts() ) : the_post();
 
-
-	/**
-	 * Page content
-	 */
-
-		wp_reset_query();
-
-		wmhook_entry_before();
-
-		if (
-				have_posts()
-				&& $page_content = get_the_content()
-			) {
-
-			the_post();
-
-			get_template_part( 'content', 'page' );
-
-			wp_reset_query();
-
+		if ( get_the_content() ) {
+			get_template_part( 'template-parts/content', 'page' );
 		}
 
-		wmhook_entry_after();
-
-
-
-	/**
-	 * Food Menu
-	 */
-
-	get_template_part( 'loop', 'food-menu' );
-
-
+	endwhile;
 
 get_footer();
-
-?>

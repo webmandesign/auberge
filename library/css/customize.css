@@ -1,0 +1,107 @@
+/**
+ * Customizer modification styles
+ *
+ * @package    Auberge
+ * @copyright  WebMan Design, Oliver Juhas
+ *
+ * @since    1.0
+ * @version  2.0
+ */
+
+
+
+	/**
+	 * Basic custom styles
+	 */
+
+		#accordion-panel-theme .no-overflow {
+			overflow: hidden;
+		}
+
+		#accordion-panel-theme .donation-link,
+		#accordion-panel-theme .donation-link:hover,
+		#accordion-panel-theme .donation-link:active {
+			display: block;
+			width: 100%;
+			padding: 1em 0;
+			text-transform: uppercase;
+			text-align: center;
+			font-weight: bold;
+			font-size: .81em;
+			background: #0aac8e;
+			color: #fafcfe;
+		}
+
+		#accordion-panel-theme .donation-link:hover {
+			letter-spacing: 1px;
+		}
+
+		#accordion-panel-theme .customize-section-description-container + .customize-control h3:first-child {
+			margin-top: 0;
+			border: 0;
+		}
+
+		#accordion-panel-theme .customize-control h3,
+		#accordion-panel-theme .customize-control h4 {
+			padding: 1em 20px;
+			margin: 2em -20px .5em;
+			text-transform: uppercase;
+			font-size: 1em;
+			letter-spacing: 1px;
+			color: #555;
+			border-top: 2px solid #bbb;
+		}
+
+		#accordion-panel-theme .customize-control h4 {
+			padding: 1em 0;
+			margin: 1em 0 .5em;
+			border-top-style: dotted;
+		}
+
+		#accordion-panel-theme .customize-control:first-child h3:first-child,
+		#accordion-panel-theme .customize-section-description-container + .customize-control h3:first-child {
+			margin-top: 0;
+			border: 0;
+		}
+
+		#accordion-panel-theme .customize-control hr {
+			margin: 1em 0;
+			background: transparent;
+			border: 0;
+			border-top: 2px dashed #bbb;
+		}
+
+
+
+	/**
+	 * Controls
+	 */
+
+		#accordion-panel-theme .customize-control select,
+		#accordion-panel-theme .customize-control textarea {
+			width: 100%;
+		}
+
+		#accordion-panel-theme .customize-control select[multiple] {
+			height: 8em;
+		}
+
+		#accordion-panel-theme .customize-control textarea {
+			min-height: 12em;
+			resize: vertical;
+		}
+
+		#accordion-panel-theme .customize-control-hidden {
+			display: none !important;
+		}
+
+
+
+	/**
+	 * Credits
+	 */
+
+		#accordion-panel-theme .customize-info .customize-panel-description {
+			display: block;
+		}
+

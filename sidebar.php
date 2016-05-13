@@ -3,40 +3,52 @@
  * Sidebar template
  *
  * @package    Auberge
- * @copyright  2015 WebMan - Oliver Juhas
+ * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0
- * @version  1.3
+ * @version  2.0
  */
 
 
 
-if ( is_active_sidebar( 'sidebar' ) ) {
 
-	wmhook_sidebars_before();
+
+/**
+ * Requirements check
+ */
+
+	if ( ! is_active_sidebar( 'sidebar' ) ) {
+		return;
+	}
+
+
+
+/**
+ * Output
+ */
+
+	do_action( 'tha_sidebars_before' );
 
 	?>
 
-	<div id="secondary" class="widget-area sidebar" role="complementary"<?php echo wm_schema_org( 'WPSideBar' ); ?>>
+	<aside id="secondary" class="widget-area sidebar" role="complementary" aria-labelledby="sidebar-label"<?php echo wm_schema_org( 'WPSideBar' ); ?>>
 
-		<a href="#" id="toggle-mobile-sidebar" class="toggle-mobile-sidebar button" aria-controls="secondary" aria-expanded="false"><?php _e( 'Toggle sidebar', 'wm_domain' ); ?></a>
+		<h2 class="screen-reader-text" id="sidebar-label"><?php echo esc_attr_x( 'Sidebar', 'Sidebar aria label', 'auberge' ); ?></h2>
+
+		<a href="#" id="toggle-mobile-sidebar" class="toggle-mobile-sidebar button" aria-controls="secondary" aria-expanded="false"><?php esc_html_e( 'Toggle sidebar', 'auberge' ); ?></a>
 
 		<?php
 
-		wmhook_sidebar_top();
+		do_action( 'tha_sidebar_top' );
 
 		dynamic_sidebar( 'sidebar' );
 
-		wmhook_sidebar_bottom();
+		do_action( 'tha_sidebar_bottom' );
 
 		?>
 
-	</div>
+	</aside>
 
 	<?php
 
-	wmhook_sidebars_after();
-
-}
-
-?>
+	do_action( 'tha_sidebars_after' );

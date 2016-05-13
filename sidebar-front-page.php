@@ -3,30 +3,22 @@
  * Front page widgets area template
  *
  * @package    Auberge
- * @copyright  2015 WebMan - Oliver Juhas
- * @version    1.0
+ * @copyright  WebMan Design, Oliver Juhas
+ *
+ * @since    1.0
+ * @version  2.0
  */
+
+
 
 
 
 /**
- * Helper variables
+ * Requirements check
  */
 
-	$sidebar_id = 'front-page';
-
-	$widgets_count = wp_get_sidebars_widgets();
-	if ( is_array( $widgets_count ) && isset( $widgets_count[ $sidebar_id ] ) ) {
-		$widgets_count = $widgets_count[ $sidebar_id ];
-	} else {
-		$widgets_count = array();
-	}
-	$widgets_count = count( $widgets_count );
-
-	$widgets_columns = 3;
-
-	if ( $widgets_count < $widgets_columns ) {
-		$widgets_columns = $widgets_count;
+	if ( ! is_active_sidebar( 'front-page' ) ) {
+		return;
 	}
 
 
@@ -35,20 +27,20 @@
  * Output
  */
 
-	if ( is_active_sidebar( $sidebar_id ) ) {
+	?>
 
-		echo '<div class="front-page-widgets-wrapper clearfix">';
-			echo '<div id="front-page-widgets" class="front-page-widgets columns-' . $widgets_columns . '" data-columns="' . $widgets_columns . '">';
+	<div class="front-page-widgets-wrapper clearfix">
 
-				echo "\r\n\r\n" . '<div id="front-page-widgets-container" class="widget-area front-page-widgets-container widgets-count-' . $widgets_count . '" data-widgets-count="' . $widgets_count . '">' . "\r\n";
+		<div id="front-page-widgets" class="front-page-widgets">
 
-					dynamic_sidebar( $sidebar_id );
+			<aside id="front-page-widgets-container" class="widget-area front-page-widgets-container" role="complementary" aria-labelledby="sidebar-front-page-label">
 
-				echo "\r\n" . '</div>' . "\r\n\r\n";
+				<h2 class="screen-reader-text" id="sidebar-front-page-label"><?php echo esc_attr_x( 'Front page sidebar', 'Sidebar aria label', 'auberge' ); ?></h2>
 
-			echo '</div>';
-		echo '</div>';
+				<?php dynamic_sidebar( 'front-page' ); ?>
 
-	}
+			</aside>
 
-?>
+		</div>
+
+	</div>

@@ -3,124 +3,144 @@
  * Comments list template
  *
  * @package    Auberge
- * @copyright  2015 WebMan - Oliver Juhas
+ * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0
- * @version  1.4
+ * @version  2.0
  */
+
+
 
 
 
 /**
- * If the current post is protected by a password and the visitor has not yet
- * entered the password we will return early without loading the comments.
+ * Return early without loading comments if:
+ * - the current post is protected by a password and the visitor has not yet entered the password
+ * - the page is a front page
+ * - we are not on single post page
+ * - comments are closed or we have have no comments to display (even if the comments are closed now, there could be some old ones)
+ * - post type doesn't support comments
  */
-if ( post_password_required() ) {
+if (
+		post_password_required()
+		|| ( is_page() && is_front_page() )
+		|| ! ( is_page( get_the_ID() ) || is_single( get_the_ID() ) )
+		|| ! ( comments_open() || have_comments() )
+		|| ! post_type_supports( get_post_type(), 'comments' )
+	) {
 	return;
 }
 
 
 
-/**
- * Display comments container only if comments open
- * and there are some comments to display
- */
-if (
-		( is_single( get_the_ID() ) || is_page( get_the_ID() ) )
-		&& ( comments_open() || have_comments() )
-		&& ! is_attachment()
-	) :
 
-	wmhook_comments_before();
 
-	?>
+do_action( 'tha_comments_before' );
 
-	<div id="comments" class="comments-area">
+?>
 
-		<h2 id="comments-title" class="comments-title"><?php
+<div id="comments" class="comments-area">
 
-			printf(
-					_nx( '1 comment on &ldquo;%2$s&rdquo;', '%1$s comments on &ldquo;%2$s&rdquo;', get_comments_number(), 'Comments list title.', 'wm_domain' ),
-					number_format_i18n( get_comments_number() ),
-					'<span>' . get_the_title() . '</span>'
-				);
-
-			echo '<a href="#respond" class="add-comment-link">' . _x( 'Add yours &rarr;', 'Add new comment link text.', 'wm_domain' ) . '</a>';
-
-		?></h2>
-
+	<h2 id="comments-title" class="comments-title">
 		<?php
 
-		/**
-		 * Comments list
-		 */
-		if ( have_comments() ) :
+		printf(
+			esc_html( _nx( '1 comment on &ldquo;%2$s&rdquo;', '%1$s comments on &ldquo;%2$s&rdquo;', get_comments_number(), 'Comments list title.', 'auberge' ) ),
+			number_format_i18n( get_comments_number() ),
+			'<span>' . get_the_title() . '</span>'
+		);
 
-			if ( ! comments_open() ) {
+		?>
 
-				?>
-
-				<h3 class="comments-closed"><?php _e( 'Comments are closed. You can not add new comments.', 'wm_domain' ); ?></h3>
-
-				<?php
-
-			} // /! comments_open()
-
-			//Actual comments list
-				?>
-
-				<ol class="comment-list">
-
-					<?php wp_list_comments( array( 'avatar_size' => 240, 'style' => 'ol', 'short_ping' => true ) ); ?>
-
-				</ol>
-
-				<?php
-
-			//Paginated comments
-				if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) {
-
-					?>
-
-					<nav id="comment-nav-below" class="comment-navigation" role="navigation">
-
-						<h3 class="screen-reader-text"><?php _e( 'Comment navigation', 'wm_domain' ); ?></h3>
-
-						<div class="nav-previous">
-							<?php previous_comments_link( __( '&larr; Older comments', 'wm_domain' ) ); ?>
-						</div>
-
-						<div class="nav-next">
-							<?php next_comments_link( __( 'Newer comments &rarr;', 'wm_domain' ) ); ?>
-						</div>
-
-					</nav>
-
-					<?php
-
-				} // /get_comment_pages_count() > 1 && get_option( 'page_comments' )
-
-		endif; // /have_comments()
-
-
-
-		/**
-		 * Comments form only if comments open
-		 */
-		if ( comments_open() ) {
-
-			comment_form();
-
-		}
-
-	?>
-
-	</div><!-- #comments -->
+		<a href="#respond" class="add-comment-link"><?php echo esc_html_x( 'Add yours &rarr;', 'Add new comment link text.', 'auberge' ); ?></a>
+	</h2>
 
 	<?php
 
-	wmhook_comments_after();
+	/**
+	 * Comments list
+	 */
+	if ( have_comments() ) :
 
-endif;
+		if (
+				! comments_open()
+				&& '0' != get_comments_number()
+			) {
 
-?>
+			?>
+
+			<h3 class="comments-closed"><?php esc_html_e( 'Comments are closed. You can not add new comments.', 'auberge' ); ?></h3>
+
+			<?php
+
+		}
+
+		// Actual comments list
+
+			?>
+
+			<ol class="comment-list">
+
+				<?php
+
+				wp_list_comments( array(
+						'type'        => 'comment', // Do not display trackbacks and pingbacks
+						'avatar_size' => 240,
+						'style'       => 'ol',
+						'short_ping'  => true
+					) );
+
+				?>
+
+			</ol>
+
+			<?php
+
+		// Paginated comments
+
+			if (
+					1 < get_comment_pages_count()
+					&& get_option( 'page_comments' )
+				) {
+
+				// There are comments to navigate through and multipaged comments are enabled in WordPress settings
+
+				?>
+
+				<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation" aria-labelledby="comment-nav-below-label">
+
+					<h2 class="screen-reader-text" id="comment-nav-below-label"><?php esc_html_e( 'Comment navigation', 'auberge' ); ?></h2>
+
+					<div class="nav-links">
+
+						<div class="nav-previous"><?php previous_comments_link( esc_html__( '&larr; Older comments', 'auberge' ) ); ?></div>
+						<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer comments &rarr;', 'auberge' ) ); ?></div>
+
+					</div>
+
+				</nav>
+
+				<?php
+
+			}
+
+	endif; // /have_comments()
+
+
+
+	/**
+	 * Comments form only if comments open
+	 */
+	if ( comments_open() ) {
+
+		comment_form();
+
+	}
+
+	?>
+
+</div><!-- #comments -->
+
+<?php
+
+do_action( 'tha_comments_after' );

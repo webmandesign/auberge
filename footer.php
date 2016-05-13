@@ -3,49 +3,51 @@
  * Website footer template
  *
  * @package    Auberge
- * @copyright  2015 WebMan - Oliver Juhas
- * @version    1.0
+ * @copyright  WebMan Design, Oliver Juhas
+ *
+ * @since    1.0
+ * @version  2.0
  */
 
 
 
+
+
+/**
+ * Content
+ */
+
+	do_action( 'tha_content_bottom' );
+
+	do_action( 'tha_content_after' );
+
+
+
+/**
+ * Footer
+ */
+
 	if ( ! apply_filters( 'wmhook_disable_footer', false ) ) {
 
-		/**
-		 * Content
-		 */
+		do_action( 'tha_footer_before' );
 
-			wmhook_content_bottom();
+		do_action( 'tha_footer_top' );
 
-			wmhook_content_after();
+		do_action( 'tha_footer_bottom' );
 
+		do_action( 'tha_footer_after' );
 
-
-		/**
-		 * Footer
-		 */
-
-			wmhook_footer_before();
-
-			wmhook_footer_top();
-
-			wmhook_footer();
-
-			wmhook_footer_bottom();
-
-			wmhook_footer_after();
-
-	} // /wmhook_disable_footer
+	}
 
 
 
-	/**
-	 * Body and WordPress footer
-	 */
+/**
+ * Body and WordPress footer
+ */
 
-		wmhook_body_bottom();
+	do_action( 'tha_body_bottom' );
 
-		wp_footer();
+	wp_footer();
 
 ?>
 

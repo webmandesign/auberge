@@ -3,11 +3,13 @@
  * Website header template
  *
  * @package    Auberge
- * @copyright  2015 WebMan - Oliver Juhas
+ * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0
- * @version  1.2
+ * @version  2.0
  */
+
+
 
 
 
@@ -15,7 +17,7 @@
  * HTML
  */
 
-	wmhook_html_before();
+	do_action( 'tha_html_before' );
 
 ?>
 
@@ -25,13 +27,13 @@
 
 <?php
 
-	/**
-	 * HTML head
-	 */
+/**
+ * HTML head
+ */
 
-	wmhook_head_top();
+	do_action( 'tha_head_top' );
 
-	wmhook_head_bottom();
+	do_action( 'tha_head_bottom' );
 
 	wp_head();
 
@@ -40,44 +42,40 @@
 </head>
 
 
-<body id="top" <?php body_class(); ?>>
+<body id="top" <?php body_class(); echo wm_schema_org( 'WebPage' ); ?>>
 
 <?php
 
-	/**
-	 * Body
-	 */
+/**
+ * Body
+ */
 
-		wmhook_body_top();
+	do_action( 'tha_body_top' );
 
 
+
+/**
+ * Header
+ */
 
 	if ( ! apply_filters( 'wmhook_disable_header', false ) ) {
 
-		/**
-		 * Header
-		 */
+		do_action( 'tha_header_before' );
 
-			wmhook_header_before();
+		do_action( 'tha_header_top' );
 
-			wmhook_header_top();
+		do_action( 'tha_header_bottom' );
 
-			wmhook_header();
-
-			wmhook_header_bottom();
-
-			wmhook_header_after();
-
-
-
-		/**
-		 * Content
-		 */
-
-			wmhook_content_before();
-
-			wmhook_content_top();
+		do_action( 'tha_header_after' );
 
 	} // /wmhook_disable_header
 
-?>
+
+
+/**
+ * Content
+ */
+
+	do_action( 'tha_content_before' );
+
+	do_action( 'tha_content_top' );

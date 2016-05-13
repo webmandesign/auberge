@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<!--
+
+Development:
+============
+
+Documentation uses the `theme_name`, `theme_slug`, `version_since` and `version` from development notes (`development.md` file) to be replaced.
+
+For on-line documentation rename the file to `index.php` and enable GZIP compression by including the `ob_start( 'ob_gzhandler' );` PHP before the HTML doctype declaration.
+
+@since    2.0
+@version  2.0
+
+-->
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="WebMan Design, www.webmandesign.eu">
+
+	<title>Auberge WordPress Theme User Manual</title>
+
+	<!--
+
+	CSS
+
+	-->
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+	<!-- Custom styles -->
+	<link rel="stylesheet" href="css/custom.css">
+	<!-- Fonts -->
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+</head>
+
+<body data-spy="scroll">
+
+<!--
+
+Navbar
+
+-->
+<nav class="navbar navbar-inverse navbar-fixed-top">
+	<div class="container-fluid">
+
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+			</button>
+			<a class="navbar-brand" href="#">Auberge</a>
+		</div>
+
+		<div id="navbar" class="navbar-collapse collapse">
+			<ul class="nav navbar-nav navbar-right">
+				<li><a href="https://vimeo.com/webmandesigneu/videos">Instructional videos</a></li>
+				<li><a href="http://www.webmandesign.eu">Premium WordPress themes</a></li>
+				<li><a href="https://profiles.wordpress.org/webmandesign#content-themes">Free WordPress themes</a></li>
+				<li><a href="https://support.webmandesign.eu/">Support Forums</a></li>
+			</ul>
+		</div>
+
+	</div>
+</nav>
+
+<div class="container-fluid"><div class="row">
+
+
+
+
+
+<!--
+
+Sidebar
+
+-->
+<div class="col-sm-3 col-md-2 sidebar">
+	<ul class="nav nav-sidebar">
+		<li><a href="#wordpress">WordPress</a></li>
+		<li><a href="#installation">Theme Installation</a></li>
+		<li><a href="#update">Theme Update</a></li>
+		<li><a href="#plugins">Plugins</a></li>
+		<li><a href="#demo-content">Demo Content</a></li>
+		<li><a href="#pages">Pages</a></li>
+		<li><a href="#posts">Posts</a></li>
+		<li><a href="#food-menu">Food Menu</a></li>
+		<li><a href="#recipes">Recipes</a></li>
+		<li><a href="#banner">Banner</a></li>
+		<li><a href="#navigation">Navigation Menu</a></li>
+		<li><a href="#social-links">Social Links</a></li>
+		<li><a href="#widgets">Sidebars &amp; Widgets</a></li>
+		<li><a href="#customizer">Customizer</a></li>
+		<li><a href="#seo" title="Search Engine Optimization">SEO</a></li>
+		<li><a href="#localization">Localization</a></li>
+		<li><a href="#child-theme">Theme Modifications</a></li>
+		<li><a href="#tips" title="Please choose from dropdown"><abbr title="Frequently Asked Questions">FAQ</abbr> &amp; Tips</a></li>
+		<li><a href="#credits">Credits</a></li>
+	</ul>
+</div>
+
+
+
+
+
+<!--
+
+Content Container
+
+-->
+<section class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+
+	<!--
+
+	Intro
+
+	-->
+	<header class="main-header"><div class="container-fluid">
+
+			<div class="main-title">
+				<h1 title="Auberge WordPress Theme by WebMan"><strong>Auberge</strong> WordPress Theme</h1>
+				<h2><span>User Manual</span></h2>
+			</div>
+
+			<p class="lead">
+				<strong>Thank you for using the Auberge restaurant & café & recipe blog WordPress theme by <a href="http://www.webmandesign.eu" target="_blank">WebMan Design</a>!</strong>
+			</p>
+
+			<p>This user manual will teach you how to set up and use the <strong>Auberge</strong> WordPress theme. In case you have any questions<br />that are beyond the scope of the user manual, please join <a href="https://support.webmandesign.eu/" target="_blank"><strong>WebMan Design Support Forums</strong></a>. Enjoy your <strong>Auberge</strong> theme!</p>
+
+			<hr>
+
+			<p>
+				Please note that this user manual covers both the free and <a href="https://creativemarket.com/webmandesign/136756-Auberge-Plus-WordPress-Theme" target="_blank">premium theme version</a>.<br>The features marked with <a href="https://creativemarket.com/webmandesign/136756-Auberge-Plus-WordPress-Theme" target="_blank" class="badge badge-plus">PLUS</a> are available <strong>in <a href="https://creativemarket.com/webmandesign/136756-Auberge-Plus-WordPress-Theme" target="_blank">premium theme version</a> only</strong>.
+			</p>
+
+	</div></header><!-- /Intro Heading -->
+
+
+
+	<!--
+
+	Content
+
+	-->
+	<div class="main-content"><div class="container-fluid">
+
+		<!--
+
+		WordPress
+
+		-->
+		<h2 id="wordpress">Installing, Securing <strong>WordPress</strong> and First Steps</h2>
+			<div class="section indented row">
+
+				<div class="col-sm-12 col-md-4">
+
+					<h3>Installing WordPress</h3>
+
+					<p>If you need help installing WordPress, follow the instructions in <a href="http://codex.wordpress.org/Installing_WordPress" target="_blank">WordPress Codex</a>.</p>
+
+				</div>
+
+				<div class="col-sm-12 col-md-4">
+
+					<h3>Securing WordPress</h3>
+
+					<p>You can improve your WordPress installation security taking these steps:</p>
+					<ul>
+						<li>Set the <span class="label label-info">Authentication Unique Keys and Salts</span> in <code>wp-config.php</code> file.</li>
+						<li>Set the <span class="label label-info">$table_prefix</span> variable in <code>wp-config.php</code> file (do not use the default value of "wp_").</li>
+						<li>Do not use <code>admin</code> as user name and set strong passwords.</li>
+						<li>After installation is done, remove <code>wp-admin/install.php</code> file.</li>
+						<li>Keep backups of the database and WordPress files.</li>
+						<li>Keep your WordPress installation, plugins and themes up to date.</li>
+						<li>You can further strengthen the security of your site by using a specialized plugins and services.</li>
+					</ul>
+
+				</div>
+
+				<div class="col-sm-12 col-md-4">
+
+					<h3>First Steps With WordPress</h3>
+
+					<p>Additional resources for WordPress beginners:</p>
+					<ul>
+						<li><a title="Getting Started with WordPress" href="http://codex.wordpress.org/Getting_Started_with_WordPress" target="_blank">Getting Started with WordPress</a></li>
+						<li>Selection of Video courses:
+						<ul>
+							<li><a href="http://videos.wpbeginner.com/" target="_blank">WordPress Beginner Videos - Free WordPress Video Tutorials</a></li>
+							<li><a href="http://leveluptuts.com/tutorials/wordpress-basics" target="_blank">WordPress Basics</a></li>
+							<li><a href="https://www.udemy.com/getting-started-with-wordpress-a-beginners-guide/" target="_blank">Getting Started With WordPress - A Beginners Guide</a></li>
+						</ul>
+					</ul>
+
+				</div>
+
+			</div>
+
+
+
+		<!--
+
+		Theme Installation
+
+		-->
+		<h2 id="installation">Theme Installation</h2>
+			<div class="section indented">
+
+				<h3>How to Install the Theme?</h3>
+
+				<div class="row">
+
+					<div class="col-sm-12 col-md-6">
+
+						<h4><strong>Theme purchased on a marketplace</strong> <a href="https://creativemarket.com/webmandesign/136756-Auberge-Plus-WordPress-Theme" target="_blank" class="badge badge-plus">PLUS</a></h4>
+
+						<ol>
+							<li>(Re)download the theme package ZIP folder from the marketplace where you've purchased the theme from.</li>
+							<li>Log into your WordPress admin.</li>
+							<li>In WordPress admin navigate to <strong><em>Appearance &raquo; Themes</em></strong> and click the <strong>[Add New]</strong> button next to "Themes" page title.</li>
+							<li>On "Add Themes" screen click the <strong>[Upload Theme]</strong> button next to page title.</li>
+							<li>On the next screen choose the theme ZIP package file you've downloaded in step 1 above and click the <strong>[Install Now]</strong> button.</li>
+							<li>After the theme is installed, activate it by clicking the <strong>"Activate"</strong> link.</li>
+						</ol>
+
+					</div>
+
+					<div class="col-sm-12 col-md-6">
+
+						<h4><strong>Free theme available via <a href="https://profiles.wordpress.org/webmandesign#content-themes" target="_blank">WordPress.org repository</a></strong></h4>
+
+						<ol>
+							<li>Log into your WordPress admin.</li>
+							<li>In WordPress admin navigate to <strong><em>Appearance &raquo; Themes</em></strong> and click the <strong>[Add New]</strong> button next to "Themes" page title.</li>
+							<li>On "Add Themes" screen use a search field to search for "Auberge".</li>
+							<li>Once you've found the theme in the search results list, click the <strong>[Install]</strong> button when hovering over the theme.</li>
+							<li>After the theme is installed, activate it by clicking the <strong>"Activate"</strong> link.</li>
+						</ol>
+
+					</div>
+
+				</div>
+
+				<div class="alert alert-info">
+					<h4>Important:</h4>
+					<p>It is strongly recommended to follow or subscribe to WebMan on <a href="http://www.facebook.com/webmandesigneu/" target="blank">Facebook</a> or <a href="http://www.twitter.com/webmandesigneu/" target="blank">Twitter</a> to get the most recent theme update notices as fast as possible.</p>
+					<p><em>You should always keep your WordPress, themes and plugins up to date!</em></p>
+				</div>
+
+			</div>
+
+
+
+		<!--
+
+		Theme Update
+
+		-->
+		<h2 id="update">Theme Update</h2>
+			<div class="section indented">
+
+				<h3>How to Update the Theme?</h3>
+
+					<p>You will be notified in the WordPress dashboard or via an email alert each time a new updated theme version is released. To install this updated theme version please follow the steps below.</p>
+
+					<div class="alert alert-warning">
+						<h4>IMPORTANT:</h4>
+						If there is a specific procedure required for the theme update, this will be clearly stated on the WebMan's <a href="http://www.facebook.com/webmandesigneu/" target="blank">Facebook</a> and <a href="http://www.twitter.com/webmandesigneu/" target="blank">Twitter</a> pages.
+					</div>
+
+					<div class="alert alert-danger">
+						<h4>Back Up!</h4>
+						<p>It is strongly recommended to back up your theme settings before you update the theme. This is only a precaution procedure and a good practice.</p>
+						<p>For backing up the theme (<a href="#customizer">customizer</a>) settings, please use the <a href="https://wordpress.org/plugins/customizer-export-import/" target="_blank"><strong>Customizer Export/Import</strong> plugin</a>.</p>
+					</div>
+
+					<h4 class="mt"><strong>Automatic Theme Update</strong></h4>
+
+						<ul>
+							<li>
+								<p><strong>Have you obtained the theme from <a href="https://wordpress.org/themes/author/webmandesign/" target="_blank">WordPress.org themes repository</a>?</strong></p>
+								<p>The WordPress itself will notify you about a new theme update. Only thing you need to do now is to proceed with update procedure suggested in your WordPress dashboard.</p>
+							</li>
+							<li>
+								<p><strong>Have you obtained the theme from <a href="http://themeforest.net/user/webmandesign/portfolio" target="_blank">ThemeForest</a>?</strong></p>
+								<p>You can obtain automatic theme updates with help of <a href="http://envato.github.io/wp-envato-market/" target="_blank"><strong>Envato Market</strong></a> or <a href="https://github.com/envato/envato-wordpress-toolkit" target="_blank"><strong>Envato WordPress Toolkit</strong></a> plugin.</p>
+							</li>
+						</ul>
+
+						<div class="alert alert-warning">
+							<strong>If none of these apply to you</strong>, you need to update the theme manually (see below).
+						</div>
+
+
+					<h4 class="mt"><strong>Manual Theme Update</strong> <a href="https://creativemarket.com/webmandesign/136756-Auberge-Plus-WordPress-Theme" target="_blank" class="badge badge-plus">PLUS</a></h4>
+
+						<div class="alert alert-info">
+							First you need to <strong>download the theme ZIP package from your marketplace.</strong>
+						</div>
+
+						<ul>
+							<li>
+								<p><strong>Updating via WordPress dashboard</strong></p>
+								<p>A simple way of doing a manual theme update would be deleting and reinstalling the theme directly via WordPress dashboard. You can <a href="http://wptheming.com/2016/02/how-to-overwrite-a-theme/" target="_blank"><strong>read an article</strong></a> or <a href="https://www.youtube.com/watch?v=W3ntxBYZhg4" target="_blank"><strong>watch a video</strong></a> on how to do this.</p>
+							</li>
+							<li>
+								<p><strong>Updating via FTP</strong></p>
+								<p>This is a more advanced manual theme update procedure and you will need an FTP client (such as <a href="https://filezilla-project.org/" target="_blank">FileZilla</a>) to connect to your server:</p>
+								<ol>
+									<li>(Re)download the theme package ZIP folder from the marketplace where you've purchased the theme from and unpack the theme installation ZIP file on your computer.</li>
+									<li>Now you will need an FTP client to connect to your server.</li>
+									<li>On your server navigate to <code>YOUR_WORDPRESS_INSTALLATION_FOLDER/wp-content/themes/</code> folder.</li>
+									<li>Delete the existing <code>auberge</code> folder (or create a backup just in case).</li>
+									<li>Copy the unpacked theme <code>auberge</code> folder from your computer (from step 1. above) to the <code>YOUR_WORDPRESS_INSTALLATION_FOLDER/wp-content/themes/</code> on your server.</li>
+									<li>Log into your WordPress admin area and check the version of the theme in <strong><em>Appearance &raquo; Themes</em></strong>. Your theme should be updated now.</li>
+								</ol>
+							</li>
+						</ul>
+
+			</div>
+
+
+
+		<!--
+
+		Plugins
+
+		-->
+		<h2 id="plugins">Installing Plugins</h2>
+			<div class="section indented">
+
+				<div class="row">
+
+					<div class="col-sm-12 col-md-6">
+
+						<h3>Why Do I Need Plugins?</h3>
+
+						<p>Do you ask why do you need to use plugins when you expected the theme to have all the functionality in it?</p>
+						<p>According to WordPress guidelines, the <strong>themes are meant for presentational purposes only</strong>, while <strong>plugins provide website functionality</strong>.</p>
+						<p>The reason is simple. When you decide to update your website look in the future, you simply change the theme without loosing your website content and additional functionality such as shortcodes, e-shop or forum functionality among others.</p>
+						<p><strong>This theme follows this basic WordPress philosophy and you can sleep assured your website is as future-proof as possible!</strong></p>
+						<p>While you get beautiful look for your website with this theme, it also supports and integrates seamlessly with various plugins. For more info please read on.</p>
+
+					</div>
+
+					<div class="col-sm-12 col-md-6">
+
+						<h3>Installing Recommended Plugins</h3>
+
+						<p>The theme uses the <a href="https://github.com/thomasgriffin/TGM-Plugin-Activation" target="_blank">TGM Plugin Activation</a> script that prompts you to install recommended plugins after you activate the theme.</p>
+						<p>The suggested recommended plugins are essential to provide the core functionality the theme relies on and/or to ease out the process of editing your website pages. You can still use the theme without these plugins, however, its functionality and your user experience would be limited.</p>
+						<p>Other plugins than the recommended ones should work with the theme with no issues, though some <em>might</em> require additional tweaks to integrate them 100% with the theme (this is usually the case of more robust plugins such as e-shop or directory plugins).</p>
+						<p>Please understand that there are thousands of plugins available for WordPress and it is not possible for any theme developer to test the theme with all of them. <strong>Auberge</strong> was tested with most of the popular plugins. You can install any custom plugin <a href="https://codex.wordpress.org/Managing_Plugins" target="_blank">following the WordPress instructions</a> (or following the plugin documentation).</p>
+						<p>In case of any plugin incompatibility or error, please, <strong>contact the plugin support first</strong> before contacting <a href="https://support.webmandesign.eu/">WebMan Design Support Forums</a>.</p>
+
+					</div>
+
+				</div>
+
+				<h3 id="plugins-recommended">Required and Recommended Plugins</h3>
+
+					<p>Bellow you'll find a list of plugins that were successfully tested with the theme and works with it without any conflicts:</p>
+
+					<div class="section indented plugins">
+
+						<h4 id="jetpack">
+							<strong>Jetpack</strong><br />
+							<small>(<a href="https://wordpress.org/plugins/jetpack/" target="_blank">https://wordpress.org/plugins/jetpack/</a>)</small>
+						</h4>
+
+							<p class="uppercase">This plugin was built by <a href="http://automattic.com/" target="_blank">Automattic</a> (the company behind the WordPress) and contains a lot of very useful tools for your website.</p>
+							<p>It provides the <strong>Food Menu</strong> custom post type and functionality for the theme, that modifies and improves this functionality even further. You will be prompted to install the plugin after the theme activation.</p>
+							<p>To choose among some of the other features included in this plugin: <strong>tiled galleries</strong>, image lightbox zooming effect, contact form, <strong>custom CSS</strong>, extra widgets, infinite scroll, better search, <strong>social networks sharing buttons</strong>, <strong>related posts display</strong>, <abbr title="Content Delivery Network">CDN</abbr>, site verification and others.</p>
+							<p>For more info on the plugin usage and functionality please visit the <a href="http://jetpack.me/" target="_blank"><strong>Jetpack.me</strong></a> website.</p>
+
+							<div class="alert alert-warning">
+								<h4>This plugin is required for <a href="#demo-content">demo content import</a></h4>
+								Please install this plugin before importing the theme's demo content XML file. Otherwise the content included in theme's demo content XML file might not get imported in whole.
+							</div>
+
+						<h4 id="webman-amplifier">
+							<strong>WebMan Amplifier</strong> <a href="https://creativemarket.com/webmandesign/136756-Auberge-Plus-WordPress-Theme" target="_blank" class="badge badge-plus">PLUS</a><br />
+							<small>(<a href="https://wordpress.org/plugins/webman-amplifier/" target="_blank">https://wordpress.org/plugins/webman-amplifier/</a>)</small>
+						</h4>
+
+							<p class="uppercase">This plugin extends the theme's functionality with recipes functionality and adds a custom "Ingredients" taxonomy.</p>
+							<p>This is essential plugin to provide <strong>Recipes</strong> functionality for the theme and you will be prompted to install it after the theme activation.</p>
+
+							<div class="alert alert-warning">
+								<h4>This plugin is required for <a href="#demo-content">demo content import</a></h4>
+								Please install this plugin before importing the theme's demo content XML file. Otherwise the content included in theme's demo content XML file might not get imported in whole.
+							</div>
+
+						<h4 id="beaver-builder">
+							<strong>Beaver Builder</strong><br />
+							<small>(<a href="https://www.wpbeaverbuilder.com?fla=67" target="_blank">https://www.wpbeaverbuilder.com <span class="badge">Pro</span></a>, <a href="https://wordpress.org/plugins/beaver-builder-lite-version/" target="_blank">https://wordpress.org/plugins/beaver-builder-lite-version/ <span class="badge">Free</span></a>)</small>
+						</h4>
+
+							<p class="uppercase">If you need a page builder plugin to create your pages with ease with a <strong>front-end drag and drop editor</strong>, I highly recommend using the Beaver Builder plugin. The plugin is available both in free Lite version and payed Pro version. The theme is 100% compatible with this plugin.</p>
+							<p>For more info on the plugin please see <a href="https://www.wpbeaverbuilder.com?fla=67" target="_blank">Beaver Builder website</a> where you can also find the instructional videos for this page builder plugin.</p>
+
+							<div class="alert alert-warning">
+								<h4>This plugin is required for <a href="#demo-content">demo content import</a></h4>
+								<p>Please install this plugin before importing the theme's demo content XML file. Otherwise the content included in theme's demo content XML will not be displayed correctly.</p>
+								<p><small><strong>The theme demo content was build using free Beaver Builder Lite Version.</strong></small></p>
+							</div>
+
+						<h4 id="advanced-custom-fields">
+							<strong>Advanced Custom Fields</strong><br />
+							<small>(<a href="https://wordpress.org/plugins/advanced-custom-fields/" target="_blank">https://wordpress.org/plugins/advanced-custom-fields/</a>)</small>
+						</h4>
+
+							<p class="uppercase">Use this plugin to create <a href="#custom-fields">advanced page/post options metaboxes</a>.</p>
+							<p>The theme integrates with this plugin seamlessly and after the plugin activation there will be additional page/post options available to set (actually, providing a better user interface to set <a href="#custom-fields">custom fields predefined in the theme</a>).</p>
+
+						<h4 id="breadcrumbs-navxt">
+							<strong>Breadcrumbs NavXT</strong><br />
+							<small>(<a href="https://wordpress.org/plugins/breadcrumb-navxt/" target="_blank">https://wordpress.org/plugins/breadcrumb-navxt/</a>)</small>
+						</h4>
+
+							<p class="uppercase">With this plugin you can create a perfect <a href="http://en.wikipedia.org/wiki/Breadcrumb_%28navigation%29" target="_blank">breadcrumbs navigation</a>.</p>
+							<p>Read the instructions on <a href="#breadcrumbs">custom plugin setup below</a>.</p>
+
+						<h4 id="restaurant-reservations">
+							<strong>Restaurant Reservations</strong><br />
+							<small>(<a href="https://wordpress.org/plugins/restaurant-reservations/" target="_blank">https://wordpress.org/plugins/restaurant-reservations/</a>)</small>
+						</h4>
+
+							<p class="uppercase">Accept restaurant reservations and table bookings online. Quickly confirm or reject bookings, send email notifications, set booking times and more.</p>
+
+						<h4 id="ns-featured-posts">
+							<strong>NS Featured Posts</strong><br />
+							<small>(<a href="https://wordpress.org/plugins/ns-featured-posts/" target="_blank">https://wordpress.org/plugins/ns-featured-posts/</a>)</small>
+						</h4>
+
+							<p class="uppercase">Marking your posts as featured ones creates a banner slideshow on your front page.</p>
+
+					</div>
+
+				<h3>Other Great Plugins Worth Checking Out</h3>
+
+					<p>You can <a href="https://themedemos.webmandesign.eu/auberge/theme-features/plugins/" target="_blank">use any plugin with this theme</a>. Here are some tested, used and recommended plugins by the <a href="http://www.webmandesign.eu">theme author</a>:</p>
+
+					<dl class="list indented">
+
+						<dt><strong><a href="https://wordpress.org/plugins/404page/" target="_blank"><strong>404page</strong></a></strong></dt>
+						<dd>An easy and very flexible solution for custom error 404 page design.</dd>
+
+						<dt><strong><a href="https://wordpress.org/plugins/caldera-forms/" target="_blank"><strong>Caldera Forms</strong></a></strong></dt>
+						<dd>A <strong>great</strong> form builder plugin for WordPress! Highly recommended!</dd>
+
+						<dt><strong><a href="https://wordpress.org/plugins/cpt-editor/" target="_blank"><strong>Custom Post Type Editor</strong></a></strong></dt>
+						<dd>Allows you to rename any post type.</dd>
+
+						<dt><strong><a href="https://wordpress.org/plugins/customizer-export-import/" target="_blank"><strong>Customizer Export/Import</strong></a></strong></dt>
+						<dd>Perfect plugin for backing up your theme's Customizer settings.</dd>
+
+						<dt><strong><a href="https://wordpress.org/plugins/disable-comments/" target="_blank"><strong>Disable Comments</strong></a></strong></dt>
+						<dd>Disables comments site-wide per post type.</dd>
+
+						<dt><strong><a href="https://wordpress.org/plugins/wp-front-end-editor/" target="_blank"><strong>Front-end Editor</strong></a></strong></dt>
+						<dd>Edit your posts on the front-end of your site.</dd>
+
+						<dt><strong><a href="https://wordpress.org/plugins/imsanity/" target="_blank"><strong>Imsanity</strong></a></strong></dt>
+						<dd>Automatically resizes huge image uploads.</dd>
+
+						<dt><strong><a href="https://wordpress.org/plugins/intuitive-custom-post-order/" target="_blank"><strong>Intuitive Custom Post Order</strong></a></strong></dt>
+						<dd>For easy posts ordering.</dd>
+
+						<dt><strong><a href="https://wordpress.org/plugins/google-maps-builder/" target="_blank"><strong>Maps Builder - Google Maps Plugin</strong></a></strong></dt>
+						<dd>Let's you build a custom Google Maps to be used in your posts and pages.</dd>
+
+						<dt><strong><a href="https://wordpress.org/plugins/my-eyes-are-up-here/" target="_blank"><strong>My Eyes Are Up Here</strong></a></strong></dt>
+						<dd>Helps you control how WordPress generates thumbnails.</dd>
+
+						<dt><strong><a href="https://wordpress.org/plugins/polylang/" target="_blank"><strong>Polylang</strong></a></strong></dt>
+						<dd>Making your WordPress website multilingual. A great free alternative to <a href="https://wpml.org/" target="_blank">paid WPML plugin</a>.</dd>
+
+						<dt><strong><a href="https://wordpress.org/plugins/rename-taxonomies/" target="_blank"><strong>Rename Taxonomies</strong></a></strong></dt>
+						<dd>Allows you to rename any taxonomy.</dd>
+
+						<dt><strong><a href="https://wordpress.org/plugins/smart-slider-3/" target="_blank"><strong>Smart Slider 3</strong></a></strong></dt>
+						<dd>Great free advanced, layered slider plugin.</dd>
+
+						<dt><strong><a href="https://wordpress.org/plugins/theme-check/" target="_blank"><strong>Theme Check</strong></a></strong></dt>
+						<dd>Checks your themes against the latest WordPress theme review standards.</dd>
+
+						<dt><strong><a href="https://wordpress.org/plugins/woosidebars/" target="_blank"><strong>WooSidebars</strong></a></strong></dt>
+						<dd>For creating unlimited widget areas (sidebars) and using them anywhere on the website.</dd>
+
+						<dt><strong><a href="https://wordpress.org/plugins/wp-featherlight/" target="_blank"><strong>WP Featherlight</strong></a></strong></dt>
+						<dd>The best free image lightbox (zooming) plugin that just works!</dd>
+
+					</dl>
+
+			</div>
+
+
+
+		<!--
+
+		Demo Content
+
+		-->
+		<h2 id="demo-content">Installing Demo Content <a href="https://github.com/webmandesign/demo-content/tree/master/auberge" title="Right click and choose the 'Save link as...'" class="btn btn-success alignright">Download the theme demo content XML file</a></h2>
+			<div class="section indented">
+
+				<h3>How to Install Theme Demo Content?</h3>
+
+				<p>For detailed instructions regarding each demo content file installation and download, please visit the <strong><a href="https://github.com/webmandesign/demo-content/tree/master/auberge" target="_blank">theme demo files repository</a></strong> at Github.</p>
+
+				<div class="alert alert-info">
+					<h4>Demo Images and Other Media Quality</h4>
+					<p>Please understand that <strong>demo images, audio and video files are low quality</strong> due to copyright protection and you should replace them with your own, <a href="#credits">properly copyrighted images</a>.</p>
+				</div>
+
+				<div class="alert alert-warning">
+					<h4>Demo Content Import Issues</h4>
+					<p>Please note that there <em>might</em> occur some connection issues when downloading demo attachments (media files) from demo content servers during the demo content import process.</p>
+					<p>These, however, are just demo attachments (images, videos, audio files) and you are perfectly fine (actually, you should) replacing them with your own assets.</p>
+					<p>Other demo content (posts, pages and custom posts content) will be imported without any issues.</p>
+				</div>
+
+			</div>
+
+
+
+		<!--
+
+		Pages
+
+		-->
+		<h2 id="pages">Pages</h2>
+			<div class="section indented row">
+
+				<div class="col-sm-12 col-md-6">
+
+					<h3>Setting Up Front and Blog Page</h3>
+
+						<ol>
+							<li>
+								In WordPress admin navigate to <strong><em>Settings &raquo; Reading</em></strong>.
+							</li>
+							<li>
+								For <em>"Front page displays"</em> option set <em>"A static page (select below)"</em>.
+							</li>
+							<li>
+								Select the front page from dropdown list. This page will become your home page.<br />
+								Select the posts page from dropdown list. This page will become your blog page.
+							</li>
+						</ol>
+
+						<div class="alert alert-info">
+							<strong>TIP:</strong> You can also do this in <a href="#customizer">Customizer</a> where you get live preview of your settings.
+						</div>
+
+					<h3>Front page</h3>
+
+						<p>If you set up a static front page, a specially styled <strong>condensed posts</strong> section and a <strong>food menu</strong> section will be displayed on the page.</p>
+						<p>You can set a position or disable these sections in <strong>"Layout" section</strong> of the <a href="#customizer">theme customizer</a>.</p>
+
+					<h3>Page Builder</h3>
+
+						<p>The theme is fully compatible with the best front-end page builder plugin for WordPress, the <a href="#beaver-builder">Beaver Builder</a>, which will help you create a complex page layouts with ease!</p>
+
+				</div>
+
+				<div class="col-sm-12 col-md-6">
+
+					<h3>Page Templates</h3>
+
+						<p>The theme contains these useful page templates you can use out of the box:</p>
+
+						<dl>
+							<dt>
+								<strong>Fullwidth page</strong>
+								<a href="https://themedemos.webmandesign.eu/auberge/" target="_blank" class="alignright btn btn-default">Demo</a>
+							</dt>
+							<dd>
+								<p>By default, all the pages display with a sidebar. However, if you would like to display a page full width, with no sidebar, use this page template. It is useful template for page builder pages.</p>
+
+								<div class="alert alert-warning">
+									<strong>Important:</strong> When page builder is enabled on this page template, no page title is displayed. Please provide the H1 heading in the page builder then.
+								</div>
+							</dd>
+
+							<dt>
+								<strong>Food menu</strong>
+								<a href="https://themedemos.webmandesign.eu/auberge/menu/" target="_blank" class="alignright btn btn-default">Demo</a>
+							</dt>
+							<dd>
+								<p>Use this page template to display a whole food menu of your restaurant, or just a specific section (with its subsections). Please note that you need to have <a href="#jetpack">Jetpack plugin</a> installed and activated to use Food Menu functionality.</p>
+								<p>Also, please note that each food menu section title will get linked to the corresponding archive page. You can disable this linking in <strong>"Food Menu" section</strong> of the <a href="#customizer">theme customizer</a>.</p>
+
+								<div class="alert alert-warning">
+									<strong>Important:</strong> When page builder is enabled on this page template, no page title is displayed. Please provide the H1 heading in the page builder then.
+								</div>
+							</dd>
+						</dl>
+
+				</div>
+
+			</div>
+
+
+
+		<!--
+
+		Posts
+
+		-->
+		<h2 id="posts">Posts</h2>
+			<div class="section indented">
+
+				<div class="row">
+
+					<div class="col-sm-12 col-md-6">
+
+						<h3>Post Excerpt</h3>
+
+						<p>Post excerpt will be displayed in posts list. If no excerpt set, a portion of post content will take its place in posts list (if set, until <a href="http://codex.wordpress.org/Customizing_the_Read_More" target="_blank"><code>&lt;!--more--></code> tag</a>).</p>
+						<p>Post excerpt will also be displayed at the top of the post content on single post page (unless you disable it in <strong>"Others" section</strong> of the <a href="#customizer">theme customizer</a>).</p>
+						<p>Please note that you will probably have to enable post excerpt field in <a href="http://www.wpbeginner.com/glossary/screen-options/" target="_blank"><strong>"Screen Options"</strong></a> (in upper right corner of the screen) first as this is disabled in WordPress by default.</p>
+						<p>If you set the <a href="http://codex.wordpress.org/Customizing_the_Read_More" target="_blank">"Read more" tag</a> inside the post content and you also set a post excerpt, first the post excerpt followed with post content (until "Read More" tag) will be displayed in posts list.</p>
+
+						<div class="alert alert-info">
+							<h4>Tip: Changing excerpt size</h4>
+							<p>The default <strong>automatic</strong> excerpt size in the theme is set up to 18 words (unlike <a href="https://codex.wordpress.org/Excerpt#Excerpt.2C_automatic_excerpt.2C_and_teaser" target="_blank">55 words that WordPress uses by default</a>). If you would like to change this, use this code in your <a href="#child-theme">child theme's <code>functions.php</code> file</a>:</p>
+							<pre class="mt-s">
+function child_theme_excerpt_length( $length ) {
+  return 18; // Theme default: 18
+}
+add_filter( 'excerpt_length', 'child_theme_excerpt_length', 20 );</pre>
+						</div>
+
+					</div>
+
+					<div class="col-sm-12 col-md-6">
+
+						<h3>Table of Contents on Parted Post</h3>
+
+							<p>If you are setting up a multipage post (using a "Page break" button in visual editor, or <code>&lt;!–nextpage–></code> tag in "Text" tab of visual editor), the automatic table of contents will be generated for the post/page for you.</p>
+							<p>All you need to do is to set up a post parts titles at the top of each post part (so, immediately after <code>&lt;!–nextpage–></code> tag) with <strong>H2 heading</strong>.</p>
+
+					</div>
+
+				</div>
+
+				<h3 id="posts-formats">Setting Up a Post Format <a href="https://creativemarket.com/webmandesign/136756-Auberge-Plus-WordPress-Theme" target="_blank" class="badge badge-plus">PLUS</a></h3>
+
+				<p>On the post edit screen choose one of the predefined post formats in <strong>Format</strong> metabox on the right. The theme supports these post formats:</p>
+
+				<div class="section indented row">
+
+					<div class="col-sm-12 col-md-6">
+
+						<h3 id="posts-standard">
+							Standard post <small>What is it?</small>
+							<a href="https://themedemos.webmandesign.eu/auberge/category/standard/" target="_blank" class="alignright btn btn-default">Demo</a>
+						</h3>
+
+							<p>This is basic standard blog post layout.</p>
+
+						<h3 id="posts-audio">
+							Audio post <small>What is it?</small>
+							<a href="https://themedemos.webmandesign.eu/auberge/type/audio/" target="_blank" class="alignright btn btn-default">Demo</a>
+						</h3>
+
+							<p>Displays audio player to play your audio files. Could be used for Podcasting.</p>
+							<p>To set the audio, use an <code>[audio]</code> (or <code>[playlist]</code>) shortcode in the content. The first <code>[audio]</code> (<code>[playlist]</code>) shortcode will be used in post media area in posts list display, including the post featured image.</p>
+							<p>If no <code>[audio]</code> or <code>[playlist]</code> shortcode used, but <a href="http://codex.wordpress.org/Embeds#Okay.2C_So_What_Sites_Can_I_Embed_From.3F" target="_blank">oembed media URL</a> found, this media will be displayed instead of the featured image in posts lists display.</p>
+
+						<h3 id="posts-gallery">
+							Gallery post <small>What is it?</small>
+							<a href="https://themedemos.webmandesign.eu/auberge/type/gallery/" target="_blank" class="alignright btn btn-default">Demo</a>
+						</h3>
+
+							<p>Just add a <code>[gallery]</code> shortcode anywhere in the content. The first <code>[gallery]</code> shortcode images (3 of them) are used as a preview in posts list display.</p>
+
+						<h3 id="posts-image">
+							Image post <small>What is it?</small>
+							<a href="https://themedemos.webmandesign.eu/qtron/type/image/" target="_blank" class="alignright btn btn-default">Demo</a>
+						</h3>
+
+							<p>On single post page it acts like standard post, in posts list it displays an image followed by "Excerpt" field content or post title if no "Excerpt" field content set.</p>
+
+					</div>
+
+					<div class="col-sm-12 col-md-6">
+
+						<h3 id="posts-link">
+							Link post <small>What is it?</small>
+							<a href="https://themedemos.webmandesign.eu/auberge/type/link/" target="_blank" class="alignright btn btn-default">Demo</a>
+						</h3>
+
+							<p>Enhances any links in the post content. No post title is displayed.</p>
+
+						<h3 id="posts-quote">
+							Quote post <small>What is it?</small>
+							<a href="https://themedemos.webmandesign.eu/auberge/type/quote/" target="_blank" class="alignright btn btn-default">Demo</a>
+						</h3>
+
+							<p>Displays the post content as blockquote (any blockquotes in the content will be removed and replaced with single wrapping blockquote).</p>
+							<p>Use <code>&lt;cite&gt;</code> to set the quote source, or set the <code>quote_source</code> custom field, or the post title will be used as quote source. No post title and featured image is displayed.</p>
+
+						<h3 id="posts-status">
+							Status post <small>What is it?</small>
+							<a href="https://themedemos.webmandesign.eu/auberge/type/status/" target="_blank" class="alignright btn btn-default">Demo</a>
+						</h3>
+
+							<p>A short status update, similar to a Twitter status update. The whole post content is displayed without excerpt and post title. If no featured image set, the post author avatar is used.</p>
+
+						<h3 id="posts-video">
+							Video post <small>What is it?</small>
+							<a href="https://themedemos.webmandesign.eu/auberge/type/video/" target="_blank" class="alignright btn btn-default">Demo</a>
+						</h3>
+
+							<p>Displays a video player to play your video files. Could be used for video blogging.</p>
+							<p>To set a video, use a <code>[video]</code> (or <code>[playlist]</code>) shortcode in the content. The first <code>[video]</code> (<code>[playlist]</code>) shortcode will be used in post media area in posts list display.</p>
+							<p>If no <code>[video]</code> or <code>[playlist]</code> shortcode used, but <a href="http://codex.wordpress.org/Embeds#Okay.2C_So_What_Sites_Can_I_Embed_From.3F" target="_blank">oembed media URL</a> found, this media will be displayed instead of the featured image in posts list display.</p>
+							<p>Supports also <code>[wpvideo]</code> shortcode when using <a href="#jetpack"><strong>Jetpack</strong> plugin</a>.</p>
+
+					</div>
+
+				</div>
+
+			</div>
+
+
+
+		<!--
+
+		Food Menu
+
+		-->
+		<h2 id="food-menu">Food Menus</h2>
+			<div class="section indented">
+
+				<h3>What Are They and How to Use Them?</h3>
+
+				<div class="alert alert-info">
+					This custom post type is provided via <a href="#jetpack"><strong>Jetpack</strong></a> plugin.
+				</div>
+
+				<p class="uppercase">Food Menus custom posts are used to display food menu of your restaurant website.</p>
+
+				<p>If the food menu item contains any content, the link will direct visitors to view the food menu item page. If you don't set the post content for the food menu item, the link will display full size of the food menu item featured image.</p>
+				<p>Food menu will be displayed without featured images on your website front page and in full, with featured images, on a "Food menu" page template.</p>
+				<p>You can use <strong>nested food menu sections</strong> with this theme (such as create a main section of Drinks and then create a child sections of Cocktails, Beverages,...). However, on your website front page, the food menu will be generated from your main food menu sections. If you would like to display each main section with list of subsections, use a "Food menu" page template and <a href="#custom-fields">specify the food menu section displayed on the page</a>, or link the food menu section archive page(s) in <a href="#navigation">your website navigation</a>.</p>
+
+			</div>
+
+
+
+		<!--
+
+		Recipes
+
+		-->
+		<h2 id="recipes">Recipes <a href="https://creativemarket.com/webmandesign/136756-Auberge-Plus-WordPress-Theme" target="_blank" class="badge badge-plus">PLUS</a></h2>
+			<div class="section indented">
+
+				<h3>What Are They and How to Use Them?</h3>
+
+				<div class="alert alert-info">
+					This functionality is provided via <a href="#webman-amplifier"><strong>WebMan Amplifier</strong></a> plugin.
+				</div>
+
+				<p class="uppercase">This is not actually a <a href="http://codex.wordpress.org/Post_Types" target="_blank">Custom Post Type</a> but rather an extension for the standard posts and the Food Menu posts.</p>
+
+				<p>If you want to display a recipe on a post or Food Menu item page, just set the recipe setup boxes on post edit page in WordPress dashboard. The <strong>required</strong> field to set for the recipe to display is <strong>"Instrucions"</strong> - if this field is not set up, recipe won't display on the post page.</p>
+				<p>Each recipe setup field is self explanatory or contains a description to help you understand what it does and how it displays.</p>
+				<p><strong>Ingredients</strong> are being stored as WordPress taxonomy (similar to tags), so, for example, you can even display them in a tag cloud on your website. When you start typing the ingredient name, the stored ingredient names will be suggested to you, otherwise, if the system doesn't recognize the new ingredient name, it will store it for future reference.</p>
+
+			</div>
+
+
+
+		<!--
+
+		Banner
+
+		-->
+		<h2 id="banner">Banner</h2>
+			<div class="section indented">
+
+				<h3>What is It and How to Use It?</h3>
+
+				<div class="row">
+
+					<div class="col-sm-12 col-md-6">
+
+						<p class="uppercase">On front page of your website the theme displays a banner area with an image and text or with a slideshow of images with a title.</p>
+
+						<h4 class="mt"><strong>Static banner</strong></h4>
+
+							<p>By default it displays <a href="#customizer">Header Images</a> (<strong><em>Appearance » Header</em></strong>) and your website tagline (<strong><em>Settings » General »</em></strong> <em>"Tagline"</em>).</p>
+							<p>If you <a href="#pages-home">set a Static Front Page</a> you can override the site tagline text by setting <code>banner_text</code> <a href="#custom-fields">custom field</a> for your front page.</p>
+
+						<h4 class="mt"><strong>Slideshow</strong></h4>
+
+							<p>You can display a slideshow of the featured posts in banner area. To set up a featured posts you need to activate the <a href="#ns-featured-posts">NS Featured Posts plugin</a> and mark some of your posts as featured ones. Post featured image will be displayed in the slideshow alongside the post title (or a <code>banner_text</code> <a href="#custom-fields">custom field</a> that you set for the post).</p>
+
+						<h4 class="mt"><strong>Custom slider</strong> <a href="https://creativemarket.com/webmandesign/136756-Auberge-Plus-WordPress-Theme" target="_blank" class="badge badge-plus">PLUS</a></h4>
+
+							<p>Use <a href="#widgets"><strong>Custom Banner</strong> widgets area</a> to replace the default theme banner with any content you want. You can insert your custom slider shortcode or widget here.</p>
+
+					</div>
+
+					<div class="col-sm-12 col-md-6">
+
+						<div class="alert alert-info mt0">
+							<h4>TIP:</h4>
+							<p>If you want to remove the bottom banner gradient use this <a href="#css"><strong>custom CSS</strong></a>:</p>
+							<pre>/* This will get rid of the gradient on Custom Banner only: */
+.custom-banner:before { display: none; }
+
+/* This will get rid of the gradient on default banner only: */
+.site-banner-media:before { display: none; }
+
+/* This will get rid of the gradient on all banners: */
+.custom-banner:before,
+.site-banner-media:before { display: none; }</pre>
+						</div>
+
+					</div>
+
+				</div>
+
+			</div>
+
+
+
+		<!--
+
+		Navigation
+
+		-->
+		<h2 id="navigation">Navigational Menus</h2>
+			<div class="section indented row">
+
+				<div class="row">
+
+					<div class="col-sm-12 col-md-6">
+
+						<h3>Using Navigational Menus</h3>
+
+							<p><strong>Auberge</strong> supports WordPress Menus, so you can easily create custom navigational menus directly in <strong><em>Appearance &raquo; Menus</em></strong>.</p>
+							<p>Custom menus may contain links to pages, categories, custom links or other content types (use the <strong>[Screen Options]</strong> button in upper right corner of the screen to decide which content types to show on the menu edit screen).</p>
+							<p>You can specify a different navigation label for a menu item as well as other attributes. The theme supports menu item description text (for submenu items only). To display menus on website you need to assign them to a menu locations or use the <strong>Custom Menus</strong> widget.</p>
+
+							<p>The theme allows you to create as many menus as you want. However these menus can be placed into predefined locations only. The theme defines these menu locations:</p>
+							<dl>
+								<dt><strong>Primary Menu</strong></dt>
+								<dd>
+									The main navigation area in the header of the website, can be nested and hierarchically organized.
+								</dd>
+
+								<dt><strong>Social Links Menu</strong></dt>
+								<dd>
+									Please read the "Social Links" user manual section below for more info.
+								</dd>
+							</dl>
+
+					</div>
+
+					<div class="col-sm-12 col-md-6">
+
+						<h3 id="menu">Creating a Menu</h3>
+
+							<p>Please follow the <a href="http://codex.wordpress.org/WordPress_Menu_User_Guide" target="_blank">instructions in WordPress codex on how to create menus</a>.</p>
+							<p>Helpful tutorial: <a href="#wordpress">WordPress video tutorials</a>.</p>
+
+					</div>
+
+				</div>
+
+			</div>
+
+
+
+		<!--
+
+		Social Links
+
+		-->
+		<h2 id="social-links">Social Links</h2>
+			<div class="section indented">
+
+				<h3 id="social">Adding Social Network Links and Icons</h3>
+
+					<p>Social icons linked to your social network profiles can be displayed in the header and footer of your website. But beforehand you must <a href="#menu">create and set up a social links menu</a>:</p>
+					<ol>
+						<li>Go to <strong><em>Appearance &raquo; Menus</em></strong> in the WordPress admin.</li>
+						<li>Click <em>create a new menu</em> link.</li>
+						<li>Give the menu a name, such as "Social Menu".</li>
+						<li>Click <strong>[Create Menu]</strong> button.</li>
+						<li>Click the <em>Links</em> header on the left side of the page.</li>
+						<li>Type a link (such as <code>https://www.facebook.com/webmandesigneu</code>) to one of your social profiles in the <em>URL</em> field.</li>
+						<li>Give the link a title by typing the name of the service into the <em>Link Text</em> field.</li>
+						<li>Click <strong>[Add to Menu]</strong>.</li>
+						<li>Repeat the above steps to add additional social profiles.</li>
+						<li>In the <em>Menu Settings</em> section at the bottom, check the "Social Links Menu" box for <em>Theme locations</em>.</li>
+						<li>Click <strong>[Save Menu]</strong> button.</li>
+					</ol>
+					<p>Adding your social links as a custom menu allows you to sort your profiles and add as many as you want.</p>
+
+					<div class="alert alert-info">
+						The theme currently supports icons for following services: <em>website</em>, <em>email</em>, <em>Codepen</em>, <em>Digg</em>, <em>Dribbble</em>, <em>Dropbox</em>, <em>Facebook</em>, <em>Flickr</em>, <em>Foursquare</em>, <em>Github</em>, <em>Google Plus</em>, <em>Instagram</em>, <em>LinkedIn</em>, <em>Pinterest</em>, <em>Pocket</em>, <em>Polldaddy</em>, <em>Reddit</em>, <em>RSS</em>, <em>Skype</em>, <em>Spotify</em>, <em>StumbleUpon</em>, <em>Tumblr</em>, <em>Twitch</em>, <em>Twitter</em>, <em>Vimeo</em>, <em>WordPress</em>, <em>YouTube</em>. If none of these social services is recognized, <a href="http://genericons.com/#website" target="_blank">the fallback icon</a> is displayed.
+					</div>
+
+			</div>
+
+
+
+		<!--
+
+		Widget Areas
+
+		-->
+		<h2 id="widgets">Widget Areas</h2>
+			<div class="section indented">
+
+				<h3>Widget Areas Contained in the Theme</h3>
+
+					<p>The theme predefines these widget areas:</p>
+
+					<dl>
+						<dt><strong>Sidebar</strong></dt>
+						<dd>This widget area is displayed on all pages and posts. If you don't want to display a sidebar on a page, please use a "Fullwidth page" page template.</dd>
+
+						<dt><strong>Custom Banner</strong> <a href="https://creativemarket.com/webmandesign/136756-Auberge-Plus-WordPress-Theme" target="_blank" class="badge badge-plus">PLUS</a></dt>
+						<dd>Use this widget area to display a custom banner or slider on the front page.</dd>
+
+						<dt><strong>Front Page Widgets</strong></dt>
+						<dd>These widgets are displayed below the banner area on front page.</dd>
+
+						<dt><strong>Footer Widgets</strong></dt>
+						<dd>Display widgets in footer area of the website. Widgets will be aligned into columns automatically depending on the number of widgets in the widget area. If you set more than 3 widgets in this widget area, they will be spread into 3 columns, and masonry layout will apply.</dd>
+					</dl>
+
+					<div class="alert alert-info">
+						You can create a custom widget areas (sidebars) and use them anywhere on the website with a help of <a href="https://wordpress.org/plugins/woosidebars/" target="_blank"><strong>WooSidebars</strong></a> plugin.
+					</div>
+
+			</div>
+
+
+
+		<!--
+
+		Customizer
+
+		-->
+		<h2 id="customizer">Customizer</h2>
+			<div class="section indented">
+
+				<h3>What is Customizer and How to Use It</h3>
+
+					<p>The theme seamlessly integrates its options into the <strong>WordPress Customizer</strong>.</p>
+					<p>You can access it navigating to <strong><em>Appearance &raquo; Customize</em></strong>. All the changes you set in Customizer will be immediately displayed in the theme preview. However, these changes will not be saved until you press the <strong>[Save &amp; Publish]</strong> button.</p>
+					<p>You can set up your site's title, tagline and logo, header images, manage <a href="#navigation">navigational menu locations</a> and <a href="#widgets">widget areas</a>, set up a <a href="#pages">front and blog page</a>, theme colors, layout, predefined texts and typography.</p>
+					<p>All the custom theme options can be found under <strong><em>Appearance &raquo; Customize &raquo; Theme</em></strong> section.</p>
+
+					<div class="alert alert-info">
+						<a href="https://creativemarket.com/webmandesign/136756-Auberge-Plus-WordPress-Theme" target="_blank" class="badge badge-plus">PLUS</a> With <a href="https://creativemarket.com/webmandesign/136756-Auberge-Plus-WordPress-Theme" target="_blank">premium version of the theme</a> you get more options to control the theme's appearance and functionality.
+					</div>
+
+					<div class="alert alert-danger">
+						<h4>Why are my changes not being applied on the website?</h4>
+						<p>There might be several different causes of such issue:</p>
+						<ul>
+							<li>Try flushing your browser's cache first (repeatedly press <strong>CTRL + R</strong> keys or use <a href="http://www.refreshyourcache.com/" target="_blank">instructions specific for your browser</a>).</li>
+							<li>If you are using a caching plugin and/or <abbr title="Content Deliver Network">CDN</abbr>, flush the cache.</li>
+							<li>If none of the above helps, please <a href="https://support.webmandesign.eu/">contact WebMan Design Support Forums</a>.</li>
+						</ul>
+					</div>
+
+			</div>
+
+
+
+		<!--
+
+		SEO
+
+		-->
+		<h2 id="seo">Search Engine Optimization and Traffic Tracking</h2>
+			<div class="section indented row">
+
+				<div class="col-sm-12 col-md-6">
+
+					<h3>Search Engine Optimization</h3>
+
+					<p>The theme is coded with best <abbr title="Search Engine Optimization">SEO</abbr> practices in mind, meaning it is ready to be displayed on top of search results in search engines such as Google.</p>
+					<p>It also integrates <strong>Schema.org microformats</strong> automatically.</p>
+					<p>Please note though, that this is just basic SEO optimization and you will have to push it further to make the real deal with SEO. For such cases I recommend <a href="http://wordpress.org/extend/plugins/wordpress-seo/" target="_blank">Yoast SEO</a> plugin.</p>
+
+					<div class="alert alert-info">
+						<a href="https://creativemarket.com/webmandesign/136756-Auberge-Plus-WordPress-Theme" target="_blank" class="badge badge-plus">PLUS</a> The <a href="https://creativemarket.com/webmandesign/136756-Auberge-Plus-WordPress-Theme" target="_blank">premium version of the theme</a> supports Google Recipe View for the recipes.
+					</div>
+
+				</div>
+
+				<div class="col-sm-12 col-md-6">
+
+					<h3>Traffic Tracking</h3>
+
+					<p>I recommend using <a href="http://wordpress.org/plugins/google-analytics-for-wordpress/" target="_blank">Google Analytics by MonsterInsights</a> plugin as it offers advanced customization of tracking of you website.</p>
+
+				</div>
+
+			</div>
+
+
+
+		<!--
+
+		Localization
+
+		-->
+		<h2 id="localization">Localization</h2>
+			<div class="section indented">
+
+				<h3>How to Translate the Theme?</h3>
+
+				<div class="alert alert-danger">
+					<strong>REMINDER:</strong> Any translation files placed in the <code>auberge/languages</code> folder will be deleted when you update the theme.
+				</div>
+
+				<div class="alert alert-info">
+					<h4>Translating a theme on WordPress.org</h4>
+					If you have obtained the theme from <a href="https://wordpress.org/themes/author/webmandesign/" target="_blank">WordPress.org themes repository</a>, please translate the theme by clicking the <a href="https://translate.wordpress.org/projects/wp-themes/auberge" target="_blank"><strong>Translate Auberge</strong> link</a> in <a href="https://wordpress.org/themes/auberge/" target="_blank">theme page</a> sidebar.
+				</div>
+
+				<ol>
+					<li>Make a copy of the original <code>auberge/languages/auberge.pot</code> file.</li>
+					<li>You need to rename the copied file now. The naming convention is based on the language code (e.g. "en" for English) followed with underscore and the country code (e.g. "GB" for Great Britain). Also, rename the file extension to "po". So, the British English file would be named as <code>en_GB.po</code>.</li>
+					<li>Use <a href="http://www.poedit.net/" target="_blank"><strong>Poedit</strong></a> to translate the file and export (save) translation also in "mo" translation file format.</li>
+					<li>Upload translated <code>en_GB.mo</code> file into your WordPress language directory, such as <code>/wp-content/languages/themes/auberge/en_GB.mo</code>. Alternatively you can put translations in your child theme: <code>/wp-content/themes/your-child-theme/languages/en_GB.mo</code>.</li>
+				</ol>
+
+				<div class="alert alert-info">
+					<h4>Contributing your translations back to the theme</h4>
+					If you would like to help out translating the theme, please contribute on <a href="https://support.webmandesign.eu/">WebMan Design Support Forums</a>.
+				</div>
+
+			</div>
+
+
+
+		<!--
+
+		Theme Modifications
+
+		-->
+		<h2 id="child-theme">Theme Modifications <small>and Child Themes</small> <a href="https://github.com/webmandesign/child-theme" class="btn btn-success alignright">Download the sample child theme</a></h2>
+			<div class="section indented">
+
+				<h3>When and How to Use a Child Theme?</h3>
+
+				<p>If you need to make any styling or functional changes to the theme, please use the WordPress native <strong>child theme</strong> functionality. This way you can continue updating the parent (original) <strong>Auberge</strong> theme without any worry of your changes being overwritten as all your custom styles and functionality are kept in a child theme. You can read more about <a href="http://codex.wordpress.org/Child_Themes" target="_blank">child themes on WordPress Codex pages</a>.</p>
+				<p>You can put all your custom CSS styles into <code>YOUR_WORDPRESS_INSTALLATION/wp-content/themes/YOUR_CHILD_THEME/style.css</code> file. (You can alternatively use a plugin, such as Jetpack, to insert a custom CSS.)</p>
+				<p>If you also want to change the functionality of the original <strong>Auberge</strong> theme, do so in <code>YOUR_WORDPRESS_INSTALLATION/wp-content/themes/YOUR_CHILD_THEME/functions.php</code> file. You can freely modify any theme's function here as they are all pluggable. Plus, you can use any <a href="http://codex.wordpress.org/Plugin_API/Filter_Reference" target="_blank">filter</a> and <a href="http://codex.wordpress.org/Plugin_API/Action_Reference" target="_blank">action</a> hooks available in the theme source code.</p>
+
+				<h4 class="mt-m">Resources:</h4>
+				<ul>
+					<li><a href="https://github.com/webmandesign/child-theme" target="_blank"><strong>Download the sample child theme</strong></a></li>
+					<li><a href="http://codex.wordpress.org/Child_Themes" target="_blank">WordPress Codex on child themes</a></li>
+					<li><a href="http://www.woothemes.com/2015/07/why-child-themes-matter/" target="_blank">Why child themes are so important</a></li>
+					<li><a href="http://wpsites.net/wordpress-themes/how-to-make-your-own-child-theme-for-wordpress-beginners-guide/" target="_blank">How To Make A Child Theme for WordPress (Includes Video & Downloads)</a></li>
+					<li><a href="https://wordpress.org/plugins/child-theme-configurator/" target="_blank"><strong>Child Theme Configurator</strong> plugin</a></li>
+				</ul>
+
+				<div class="alert alert-danger">
+					<strong>Please note that <a href="https://support.webmandesign.eu/" target="_blank">we do not provide support for custom theme modifications</a>, though.</strong> You are responsible for all the changes you apply to the theme on your website. If you are not comfortable coding, please, consider hiring someone who could help.
+				</div>
+
+			</div>
+
+
+
+		<!--
+
+		FAQ & Tips
+
+		-->
+		<h2 id="tips"><abbr title="Frequently Asked Questions">FAQ</abbr> and Tips and Tricks <small>Frequently Asked Questions and Additional tips for the theme</small></h2>
+			<div class="section indented">
+
+				<h3 id="faq">List of Frequently Asked Questions:</h3>
+
+					<ol>
+						<li><a href="#admin"><em>How to customize WordPress admin?</em></a></li>
+						<li><a href="#breadcrumbs"><em>How to set up breadcrumbs?</em></a></li>
+						<li><a href="#tables"><em>How to create tables easily?</em></a></li>
+						<li><a href="#image-sizes"><em>My images are blurry/small/of bad quality, what can I do?</em></a></li>
+						<li><a href="#formats"><em>How to use the <strong>Formats</strong> button in post editor?</em></a></li>
+						<li><a href="#custom-fields"><em>What are custom fields and how to use them?</em></a></li>
+						<li><a href="#css"><em>How to edit the CSS or add your own?</em></a></li>
+						<li><a href="#hooks"><em>How to use action and filter hooks?</em></a></li>
+					</ol>
+
+				<h3 id="admin">
+					How to customize WordPress admin?
+					<a href="#faq" class="btn alignright">Back to FAQ list &uarr;</a>
+					<span class="badge alignleft"></span>
+				</h3>
+
+					<p>If you are building a website for a client using WordPress (and Auberge theme), you might want to adapt the WordPress admin area a bit to remove unnecessary things and maybe even rename some post types. In this case we provide some useful resources you would want to check out:</p>
+
+					<ul>
+						<li><a href="https://webdesign.tutsplus.com/courses/wordpress-admin-customization" target="_blank"><strong>WordPress Admin Customization</strong></a> video course</li>
+						<li>Use <a href="https://wordpress.org/plugins/cpt-editor/" target="_blank"><strong>Custom Post Type Editor</strong></a> plugin to rename any post type</li>
+						<li>Use <a href="https://wordpress.org/plugins/rename-taxonomies/" target="_blank"><strong>Rename Taxonomies</strong></a> plugin to rename any taxonomy</li>
+						<li>For easier pages/post advanced settings use <a href="https://wordpress.org/plugins/advanced-custom-fields/" target="_blank"><strong>Advanced Custom Fields</strong></a> plugin. Once you activate this plugin, the theme will automatically creates a metaboxes for all the <a href="#custom-fields">custom fields</a> it uses for you.</li>
+					</ul>
+
+				<h3 id="breadcrumbs">
+					How to set up breadcrumbs?
+					<a href="#faq" class="btn alignright">Back to FAQ list &uarr;</a>
+					<span class="badge alignleft"></span>
+				</h3>
+
+					<p>The theme supports <a href="https://wordpress.org/plugins/breadcrumb-navxt/" target="_blank"><strong>Breadcrumb NavXT</strong></a> plugin that allows very flexible set up and display of breadcrumbs navigation on your website. After you install and activate the plugin, the theme displays the breadcrumbs navigation above and below the page content.</p>
+					<p>If you would like to display the breadcrumbs navigation the same way it is displayed on the theme demo website, please use these settings (feel free to set up all the other breadcrumbs settings to your need):</p>
+					<dl>
+						<dt>
+							<strong><em>Settings &raquo; Breadcrumb NavXT &raquo; General &raquo;</em></strong> <em>"Breadcrumbs Separator"</em>
+						</dt>
+						<dd>
+							Set to <code>&lt;span class="sep"> / &lt;/span></code>.
+						</dd>
+
+						<dt>
+							<strong><em>Settings &raquo; Breadcrumb NavXT &raquo; General &raquo;</em></strong> <em>"Home Template"</em><br>
+							<strong><em>Settings &raquo; Breadcrumb NavXT &raquo; General &raquo;</em></strong> <em>"Home Template (Unlinked)"</em>
+						</dt>
+						<dd>
+							Prepend the existing text with <code class="wrap">&lt;strong class="breadcrumbs-title">You are here: &lt;/strong>&hellip;</code>.
+						</dd>
+					</dl>
+
+				<h3 id="tables">
+					How to create tables easily?
+					<a href="#faq" class="btn alignright">Back to FAQ list &uarr;</a>
+					<span class="badge alignleft"></span>
+				</h3>
+
+					<p>There are times you need to display tabular data in your posts and/or pages. This is not an easy task in WordPress if you are not familiar with HTML coding as there is no out-of-the-box tool to create HTML tables in post editor. But, there is an easy fix for the issue: try using a great <a href="https://wordpress.org/plugins/tablepress/" target="_blank"><strong>TablePress</strong></a> plugin.
+
+				<h3 id="image-sizes">
+					My images are blurry/small/of bad quality, what can I do?
+					<a href="#faq" class="btn alignright">Back to FAQ list &uarr;</a>
+					<span class="badge alignleft"></span>
+				</h3>
+
+					<p>The theme uses 5 different image sizes:</p>
+					<ul>
+						<li>
+							<strong>Thumbnail</strong> <code>420 &times; 280</code> (cropped)<br />
+							This image size is used in posts lists.
+						</li>
+						<li>
+							<strong>Medium</strong> <code>632 &times; (variable height)</code> (scaled)<br />
+						</li>
+						<li>
+							<strong>Large</strong> <code>1020 &times; (variable height)</code> (scaled)<br />
+							This image size is set to fill the theme's content area.
+						</li>
+						<li>
+							<strong>Banner</strong> (<code>auberge_banner</code>) <code>1640 &times; 686</code><br />
+							This image size is used for images displayed in the banner area.
+						</li>
+						<li>
+							<strong>Small Banner</strong> (<code>auberge_banner_small</code>) <code>1020 &times; 426</code><br />
+							Smaller version of the Banner image size used for food menu featured images, for example.
+						</li>
+					</ul>
+					<p>WordPress will rescale and crop the images to selected formats automatically during the image upload process. If you already have some images on your website, these need to be rescaled when using the theme. Please use a plugin such as <a href="https://wordpress.org/plugins/force-regenerate-thumbnails/" target="_blank"><strong>Force Regenerate Thumbnails</strong></a> to do the rescaling for you.</p>
+
+					<div class="alert alert-warning">
+						<h4>Image file size</h4>
+						<p>It is recommended to use the <a href="https://wordpress.org/plugins/imsanity/" target="_blank"><strong>Imsanity</strong></a> plugin to keep the sane size of the uploaded images on your server automatically.</p>
+						<p>Set the plugin to your (boxed) website container width (you can tweak this in theme customizer) and lower the image quality to value of 70 (or to your preference).</p>
+					</div>
+
+					<div class="alert alert-info">
+						<h4>"Lightbox" image zooming</h4>
+						<p>If you would like to use a lightbox effect (image zooming), try using great <a href="https://wordpress.org/plugins/wp-featherlight/" target="_blank"><strong>WP Featherlight</strong></a> plugin.</p>
+					</div>
+
+					<div class="alert alert-info">
+						<h4>High DPI (Retina) screen images</h4>
+						<p>To keep your images high DPI (Retina) screen ready, consider using <a href="https://wordpress.org/plugins/wp-retina-2x/" target="_blank"><strong>WP Retina 2x</strong></a> plugin.</p>
+					</div>
+
+					<div class="alert alert-info">
+						<h4>Speed</h4>
+						<p>To speed up your website loading time consider using a CDN on your images, such as <a href="https://jetpack.me/support/photon/" target="_blank"><strong>Jetpack's Photon</strong></a> or <a href="https://www.cloudflare.com/" target="_blank"><strong>CloudFlare</strong> (or any other CDN)</a>.</p>
+					</div>
+
+				<h3 id="formats">
+					How to use the <strong>Formats</strong> button in post editor?
+					<a href="#faq" class="btn alignright">Back to FAQ list &uarr;</a>
+					<span class="badge alignleft"></span>
+				</h3>
+
+					<div class="row">
+
+						<div class="col-sm-12 col-md-6">
+
+							<p>The theme adds a new <strong>Formats</strong> button to the visual editor of WordPress posts/pages. Please use this button to create a special elements, such as pullquotes, cite source, inline code, super/sub-scripts, uppercase text, highlighted (marked) text.</p>
+
+							<div class="alert alert-info">
+								For all the formats please select a text in post/page content first. The format will be applied on this selected text then.
+							</div>
+
+							<div class="alert alert-success">
+								<h4>Text styles &raquo; Dropcap text</h4>
+								Apply the "Dropcap Text" format on the paragraph of text, not the single character.
+							</div>
+
+						</div>
+
+						<div class="col-sm-12 col-md-6 text-center">
+
+							<img src="https://www.dropbox.com/s/qelf3z3u19g62ee/format-button.png?dl=1" alt="Visual editor Format button" title="Visual editor Format button" class="frame" />
+							<br><em><small>Illustration image only</small></em>
+
+						</div>
+
+					</div>
+
+				<h3 id="custom-fields">
+					What are custom fields and how to use them?
+					<a href="#faq" class="btn alignright">Back to FAQ list &uarr;</a>
+					<span class="badge alignleft"></span>
+				</h3>
+
+					<div class="row">
+
+						<div class="col-sm-12 col-md-6">
+
+							<p>To allow more control over pages and posts appearance, the theme uses some predefined <a href="https://codex.wordpress.org/Custom_Fields" target="_blank">custom fields</a>. Here is the list of the fields explained:</p>
+							<dl>
+								<dt><code>food_menu_section</code></dt>
+								<dd>
+									Set this field on "Food menu" page template only to a value of a food menu section ID. Once set, the specific food menu section is displayed on the page instead of the whole menu.
+								</dd>
+
+								<dt><code>banner_text</code></dt>
+								<dd>
+									Set this on featured posts or on your front page (if you are using static banner instead of slideshow). This text will override the default text displayed in your website front page banner.
+								</dd>
+
+								<dt><code>quote_source</code> <a href="https://creativemarket.com/webmandesign/136756-Auberge-Plus-WordPress-Theme" target="_blank" class="badge badge-plus">PLUS</a></dt>
+								<dd>
+									Set this on Quote post formats only to customizer quote source.
+								</dd>
+							</dl>
+
+						</div>
+
+						<div class="col-sm-12 col-md-6">
+
+							<div class="alert alert-success mt0">
+								<h4>TIP:</h4>
+								<p>For easier setup of custom fields please install and activate the <a href="https://wordpress.org/plugins/advanced-custom-fields/" target="_blank"><strong>Advanced Custom Fields</strong></a> plugin. Once you activate this plugin, the theme will automatically creates a metaboxes for all the custom fields it uses for the specific post types.</p>
+								<img src="http://easycaptures.com/fs/uploaded/1003/5800459780.png" alt="Advanced Custom Fields metaboxes on Pages" title="Advanced Custom Fields metaboxes on Pages" class="mt-s frame" />
+								<br><em><small>Illustration image only</small></em>
+							</div>
+
+						</div>
+
+					</div>
+
+				<h3 id="css">
+					How to edit the CSS or add your own?
+					<a href="#faq" class="btn alignright">Back to FAQ list &uarr;</a>
+					<span class="badge alignleft"></span>
+				</h3>
+
+					<p>If you need to apply a custom CSS to override theme styles, please use a <a href="#child-theme" target="_blank">child theme</a> or custom CSS plugin (such as <em><a href="https://jetpack.me/support/custom-css/" target="_blank">Jetpack's Custom CSS</a></em> or <em>Reaktiv CSS Builder</em> or <em>Theme Junkie Custom CSS</em>).</p>
+
+				<h3 id="hooks">
+					How to use action and filter hooks? <small>Theme development and modifications</small>
+					<a href="#faq" class="btn alignright">Back to FAQ list &uarr;</a>
+					<span class="badge alignleft"></span>
+				</h3>
+
+					<div class="alert alert-danger">
+						This topic is dedicated to WordPress developers who would like to modify the theme and alter or expand its functionality.<br>
+						<strong>Please note that <a href="https://support.webmandesign.eu/" target="_blank">we do not provide support for custom theme modifications</a>, though.</strong>
+					</div>
+
+					<p>The theme is <a href="https://wordpress.org/plugins/theme-check/" target="_blank">coded according to WordPress coding standards</a> and is full of action and filter hooks. You can easily hook onto these to alter functions outputs or alter parameters and variables, to add your own meta data, theme or design options, layouts and much more!</p>
+					<p>Please check the theme's source code for which hook to use, or contact <a target="_blank" href="https://support.webmandesign.eu/">WebMan Design Support Forums</a> for more details and tips.</p>
+					<p>Auberge itself uses the <a href="https://github.com/zamoose/themehookalliance" target="_blank">Theme Hook Alliance</a> hooks too. This is useful to entirely rebuild the theme structure or add your own sections anywhere in the theme.</p>
+					<p>You can also watch an <a href="https://www.youtube.com/watch?v=AQrXcsc4CIw" target="_blank">instructional video on how to use WordPress hooks</a>.</p>
+
+			</div>
+
+
+
+		<!--
+
+		Credits
+
+		-->
+		<h2 id="credits">Sources and Credits</h2>
+			<div class="section indented row">
+
+				<div class="col-sm-12 col-md-4">
+
+					<h3>Scripts</h3>
+
+					<ul class="columns" title="Sources and credits">
+						<!-- PHP -->
+						<li><a href="https://github.com/webmandesign/webman-theme-framework" target="_blank">WebMan WordPress Theme Framework</a></li>
+						<li><a href="http://underscores.me/" target="_blank">Underscores</a></li>
+						<li><a href="https://github.com/thomasgriffin/TGM-Plugin-Activation" target="_blank">TGM-Plugin-Activation</a></li>
+						<li><a href="https://github.com/webmandesign/wp-post-formats" target="_blank">Post formats media</a></li>
+
+						<!-- JS -->
+						<li><a href="http://jquery.com/" target="_blank">jQuery</a></li>
+						<li><a href="http://desandro.github.io/imagesloaded/" target="_blank">ImagesLoaded</a></li>
+						<li><a href="http://masonry.desandro.com/" target="_blank">Masonry</a></li>
+						<li><a href="http://kenwheeler.github.io/slick/" target="_blank">Slick slider</a></li>
+
+						<!-- CSS -->
+						<li><a href="https://github.com/webmandesign/wp-css-starter" target="_blank">WordPress CSS starter stylesheet</a></li>
+						<li><a href="https://github.com/necolas/normalize.css" target="_blank">normalize.css</a></li>
+						<li><a href="http://getbootstrap.com/" target="_blank">Bootstrap</a></li>
+					</ul>
+
+				</div>
+
+				<div class="col-sm-12 col-md-4">
+
+					<h3>Fonts</h3>
+
+					<ul class="columns" title="Sources and credits">
+						<li><a href="https://www.google.com/fonts/specimen/Ubuntu" target="_blank">Ubuntu font</a></li>
+						<li><a href="http://genericons.com/" target="_blank">Genericons</a></li>
+					</ul>
+
+				</div>
+
+				<div class="col-sm-12 col-md-4">
+
+					<h3>Images</h3>
+
+					<ul class="columns" title="Sources and credits">
+						<li><a href="https://foodiesfeed.com" target="_blank">FoodiesFeed</a></li>
+						<li><a href="http://www.splitshire.com" target="_blank">SplitShire</a></li>
+						<li><a href="http://www.pexels.com" target="_blank">Pexels</a></li>
+						<li><a href="http://pixabay.com" target="_blank">Pixabay</a></li>
+						<li><a href="http://unsplash.com" target="_blank">Unsplash</a></li>
+					</ul>
+
+				</div>
+
+
+			</div>
+
+	</div></div><!-- /Content -->
+
+
+
+	<!--
+
+	Footer
+
+	-->
+	<footer class="footer"><div class="container-fluid">
+
+		<p>Once again, thank you for using the Auberge WordPress theme. If you have any questions that are beyond the scope of this user manual, please join <a target="_blank" href="https://support.webmandesign.eu/">WebMan Design Support Forums</a>. I will do my best to assist you.</p>
+		<p>If you like the theme, please rate it on the marketplace where you've purchased the theme from. Thank you!</p>
+		<p>&copy; <a href="http://www.webmandesign.eu">WebMan Design</a> | <a href="#">Back to top &uarr;</a></p>
+
+	</div></footer><!-- /Footer -->
+
+</section>
+
+
+
+
+
+</div></div>
+
+
+
+
+
+<!--
+
+JavaScript
+
+-->
+
+	<!-- Bootstrap core JavaScript
+	================================================== -->
+	<!-- Placed at the end of the document so the pages load faster -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+
+</body>
+
+<!-- This User Manual was created by (C) WebMan Design, Oliver Juhas, www.webmandesign.eu -->
+
+</html>

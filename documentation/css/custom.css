@@ -1,0 +1,435 @@
+/**
+ * Documentation stylesheet
+ *
+ * Base modification from:
+ * @link  http://getbootstrap.com/examples/dashboard/
+ *
+ * @package    {%= theme_name %}
+ * @copyright  WebMan Design, Oliver Juhas
+ *
+ * @since    {%= version_since %}
+ * @version  {%= version %}
+ */
+
+
+
+
+
+/**
+ * Base
+ */
+
+	/**
+	 * Base structure
+	 */
+
+		/* Move down content because we have a fixed navbar that is 50px tall */
+
+			body {
+				padding-top: 50px;
+			}
+
+
+
+	/**
+	 * Global add-ons
+	 */
+
+		.sub-header {
+			padding-bottom: 10px;
+			border-bottom: 1px solid #eee;
+		}
+
+
+
+	/**
+	 * Top navigation
+	 * Hide default border to remove 1px line.
+	 */
+
+		.navbar-fixed-top {
+			border: 0;
+		}
+
+
+
+	/**
+	 * Sidebar
+	 */
+
+		/* Hide for mobile, show later */
+
+			.sidebar {
+				display: none;
+			}
+			@media (min-width: 768px) {
+				.sidebar {
+					position: fixed;
+					top: 51px;
+					bottom: 0;
+					left: 0;
+					z-index: 1000;
+					display: block;
+					padding: 20px;
+					overflow-x: hidden;
+					overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+					background-color: #f5f5f5;
+					border-right: 1px solid #eee;
+				}
+			}
+
+		/* Sidebar navigation */
+
+			.nav-sidebar {
+				margin-right: -21px; /* 20px padding + 1px border */
+				margin-bottom: 20px;
+				margin-left: -20px;
+			}
+			.nav-sidebar > li > a {
+				padding-right: 20px;
+				padding-left: 20px;
+			}
+			.nav-sidebar > .active > a,
+			.nav-sidebar > .active > a:hover,
+			.nav-sidebar > .active > a:focus {
+				color: #fff;
+				background-color: #428bca;
+			}
+
+
+
+	/**
+	 * Main content
+	 */
+
+		.main {
+			padding: 20px;
+		}
+		@media (min-width: 768px) {
+			.main {
+				padding-right: 40px;
+				padding-left: 40px;
+			}
+		}
+		.main .page-header {
+			margin-top: 0;
+		}
+
+
+
+	/**
+	 * Placeholder dashboard ideas
+	 */
+
+		.placeholders {
+			margin-bottom: 30px;
+			text-align: center;
+		}
+		.placeholders h4 {
+			margin-bottom: 0;
+		}
+		.placeholder {
+			margin-bottom: 20px;
+		}
+		.placeholder img {
+			display: inline-block;
+			border-radius: 50%;
+		}
+
+
+
+
+
+/**
+ * Custom styles
+ */
+
+	html {
+		font-family: 'Ubuntu', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+	}
+
+	body {
+		line-height: 1.62;
+		font-family: inherit;
+		font-size: 16px;
+		color: #6a6c6e;
+	}
+
+	.navbar-inverse {
+		background: #0a0c0e;
+	}
+
+		.navbar .navbar-brand {
+			color: #fff;
+			margin-right: 2em;
+			letter-spacing: 1px;
+			text-shadow: none;
+			text-transform: uppercase;
+		}
+
+		.navbar-right {
+			font-size: .9em;
+		}
+
+	.sidebar {
+		top: 50px;
+		font-size: .9em;
+		font-weight: 700;
+		background-color: #1a1c1e;
+		color: #7a7c7e;
+		border: 0;
+	}
+
+		.sidebar .nav {
+			border-top: 1px solid #3a3c3e;
+		}
+
+			.sidebar .nav > li {
+				border-bottom: 1px solid #3a3c3e;
+			}
+
+				.sidebar .nav > li > a {
+					padding-top: .38em;
+					padding-bottom: .38em;
+					color: inherit;
+				}
+
+					.sidebar .nav > li.active > a {
+						font-weight: 600;
+					}
+
+					.sidebar .nav > li.active > a,
+					.sidebar .nav > li > a:focus,
+					.sidebar .nav > li > a:hover {
+						background-color: #3a3c3e;
+						color: #eaecee;
+					}
+
+	.main-header {
+		padding: 40px 40px 18%;
+		margin: -20px -40px -3.62em;
+		font-weight: 300;
+		background: #0aac8e;
+		color: #fff;
+	}
+
+		.main-header h1 {
+			margin-bottom: 1.62em;
+			font-size: 3.62em;
+		}
+
+		.main-header h2 {
+			text-transform: uppercase;
+		}
+
+		.main-header a {
+			color: inherit;
+		}
+
+		.main-header hr {
+			margin: 4% 0;
+			opacity: .5;
+		}
+
+	.main-content .container-fluid > h2 {
+		padding-top: 3.62em;
+		margin-top: 3.62em;
+		margin-bottom: .62em;
+		color: #1a1c1e;
+		border-top: 2px solid #eaecee;
+	}
+
+		.main-content .container-fluid > h2:first-child {
+			border: 0;
+		}
+
+		.main-content h3,
+		.plugins > h4 {
+			padding-bottom: 1em;
+			margin-top: 3.62em;
+			margin-bottom: 1em;
+			font-size: 1.62em;
+			border-bottom: 2px solid #eaecee;
+		}
+
+		p + ul,
+		p + ol {
+			margin-top: 1em;
+		}
+
+		dl {
+			padding: 1.62em;
+			margin: 1.62em 0 0;
+			border: 2px solid #eaecee;
+			border-radius: .19em;
+		}
+
+			dl.list {
+				padding: 0;
+				border: 0;
+			}
+
+			dt {
+				margin: .62em 0;
+				font-weight: 400;
+			}
+
+				dt code {
+					font-size: 1.19em;
+				}
+
+				dd + dt {
+					margin-top: 1.62em;
+				}
+
+			dd {
+				margin-left: 2.62em;
+			}
+
+				.list dd {
+					margin-left: 1.62em;
+				}
+
+				dd .alert {
+					margin: .62em 0 0;
+				}
+
+		.uppercase {
+			text-transform: uppercase;
+		}
+
+		.text-center {
+			text-align: center;
+		}
+
+		.mt0 {
+			margin-top: 0 !important;
+		}
+
+		.mt {
+			margin-top: 3.62em;
+		}
+
+		.mt-s {
+			margin-top: 1.62em;
+		}
+
+		.mt-m {
+			margin-top: 2.62em;
+		}
+
+		.alignleft {
+			float: left;
+			margin-right: 1.62em;
+			margin-bottom: .62em;
+		}
+
+		.alignright {
+			float: right;
+			margin-left: 1.62em;
+			margin-bottom: .62em;
+		}
+
+		.indented {
+			margin-left: 4%;
+		}
+
+		.alert {
+			margin: 1.62em 0;
+		}
+
+			.alert h4 {
+				text-transform: uppercase;
+				font-size: 1em;
+				font-weight: 700;
+			}
+
+		.badge {
+			font-weight: 300;
+			vertical-align: top;
+		}
+
+			.badge-plus {
+				background: #C24442 !important;
+				color: #fff !important;
+				border: 1px solid;
+			}
+
+			small .badge {
+				vertical-align: baseline;
+			}
+
+		code {
+			white-space: nowrap;
+		}
+
+			code.wrap {
+				white-space: normal;
+			}
+
+		img {
+			max-width: 100%;
+		}
+
+			figure,
+			.frame {
+				padding: 1em;
+				margin: .62em 0 1.62em;
+				background: #fafcfe;
+				border: 2px solid #caccce;
+				border-radius: .19em;
+			}
+
+			.frame:first-child {
+				margin-top: 0;
+			}
+
+			figure img {
+				border: 1px solid #caccce;
+			}
+
+			figcaption {
+				padding: 0 19%;
+				margin-top: 1em;
+				font-size: .81em;
+				text-transform: uppercase;
+				text-align: center;
+			}
+
+		/* FAQ counter */
+
+			#tips {
+				counter-reset: faq;
+			}
+
+				#faq ~ h3 {
+					font-weight: 700;
+				}
+
+					#tips + .section h3 .badge {
+						display: inline-block;
+						margin-right: 1em;
+					}
+
+						#tips + .section h3 .badge::before {
+							counter-increment: faq;
+							content: counter(faq);
+						}
+
+	.footer {
+		padding: 3.62em 40px;
+		margin: 3.62em -40px -20px;
+		font-size: .9em;
+		background-color: #0a0c0e;
+		color: #7a7c7e;
+	}
+
+		.footer a {
+			color: #caccce;
+		}
+
+
+
+
+
+/* END OF FILE */

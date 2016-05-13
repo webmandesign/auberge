@@ -1,0 +1,1801 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Auberge\n"
+"Report-Msgid-Bugs-To: http://support.webmandesign.eu\n"
+"POT-Creation-Date: 2016-05-13 16:16+0200\n"
+"PO-Revision-Date: 2015-04-21 20:43+0100\n"
+"Last-Translator: WebMan - Oliver Juhas <webmandesigneu@gmail.com>\n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:24
+msgid "Oops! That page can not be found."
+msgstr ""
+
+#: 404.php:30
+msgid ""
+"It looks like nothing was found at this location. Maybe try the search below?"
+msgstr ""
+
+#: comments.php:48
+#, php-format
+msgctxt "Comments list title."
+msgid "1 comment on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s comments on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: comments.php:55
+msgctxt "Add new comment link text."
+msgid "Add yours &rarr;"
+msgstr ""
+
+#: comments.php:72
+msgid "Comments are closed. You can not add new comments."
+msgstr ""
+
+#: comments.php:112
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:116
+msgid "&larr; Older comments"
+msgstr ""
+
+#: comments.php:117
+msgid "Newer comments &rarr;"
+msgstr ""
+
+#: footer-credits.php:50
+#, php-format
+msgctxt "%s: WordPress, linked to a website."
+msgid "Powered by %s"
+msgstr ""
+
+#: footer-credits.php:51
+msgid "http://wordpress.org/"
+msgstr ""
+
+#: footer-credits.php:59
+#, php-format
+msgctxt "1: theme name, 2: theme developer name."
+msgid "Theme: %1$s by %2$s"
+msgstr ""
+
+#: footer-credits.php:66 template-parts/menu-social.php:40
+msgid "Back to top &uarr;"
+msgstr ""
+
+#: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:57
+msgid "Food menu page template options"
+msgstr ""
+
+#: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:62
+msgid "Food menu section"
+msgstr ""
+
+#: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:65
+msgid ""
+"Set this if you want to display a specific food menu section on the page."
+msgstr ""
+
+#: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:109
+msgid "Quote post format options"
+msgstr ""
+
+#: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:114
+msgid "Quote source"
+msgstr ""
+
+#: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:117
+msgid ""
+"In case you have not provided the quote source in using the \"cite\" HTML "
+"tag in post content, you can set it here."
+msgstr ""
+
+#: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:119
+msgid "John Doe"
+msgstr ""
+
+#: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:160
+msgid "Front page options"
+msgstr ""
+
+#: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:165
+#: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:216
+msgid "Banner text"
+msgstr ""
+
+#: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:168
+#: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:219
+msgid ""
+"This text will override the default text displayed in your website front "
+"page banner."
+msgstr ""
+
+#: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:211
+msgid "Featured post options"
+msgstr ""
+
+#: includes/plugins/jetpack/class-nova-restaurant.php:166
+msgid "edit"
+msgstr ""
+
+#: includes/plugins/jetpack/class-nova-restaurant.php:170
+msgid "Uncategorized"
+msgstr ""
+
+#: includes/plugins/jetpack/class-nova-restaurant.php:179
+msgid "Move menu section up"
+msgstr ""
+
+#: includes/plugins/jetpack/class-nova-restaurant.php:179
+msgid "UP"
+msgstr ""
+
+#: includes/plugins/jetpack/class-nova-restaurant.php:180
+msgid "Move menu section down"
+msgstr ""
+
+#: includes/plugins/jetpack/class-nova-restaurant.php:180
+msgid "DOWN"
+msgstr ""
+
+#: includes/plugins/jetpack/jetpack.php:242
+msgid "Load more&hellip;"
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:95
+msgctxt "Taxonomy label: name"
+msgid "Ingredients"
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:96
+msgctxt "Taxonomy label: singular_name"
+msgid "Ingredient"
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:97
+msgctxt "Taxonomy label: all_items"
+msgid "All Ingredients"
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:98
+msgctxt "Taxonomy label: edit_item"
+msgid "Edit Ingredient"
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:99
+msgctxt "Taxonomy label: view_item"
+msgid "View Ingredient"
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:100
+msgctxt "Taxonomy label: update_item"
+msgid "Update Ingredient"
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:101
+msgctxt "Taxonomy label: add_new_item"
+msgid "Add New Ingredient"
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:102
+msgctxt "Taxonomy label: new_item_name"
+msgid "New Ingredient Title"
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:103
+msgctxt "Taxonomy label: search_items"
+msgid "Search Ingredients"
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:104
+msgctxt "Taxonomy label: popular_items"
+msgid "Popular Ingredients"
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:105
+msgctxt "Taxonomy label: separate_items_with_commas"
+msgid "Separate ingredients with commas"
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:106
+msgctxt "Taxonomy label: add_or_remove_items"
+msgid "Add or remove ingredients"
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:107
+msgctxt "Taxonomy label: choose_from_most_used"
+msgid "Choose from the most used ingredients"
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:108
+msgctxt "Taxonomy label: not_found"
+msgid "No ingredients found"
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:161
+msgid "- Recipe (post) author -"
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:162
+msgid "- Enter custom name -"
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:177
+msgctxt "Food recipe metabox secion title."
+msgid "Recipe"
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:182
+#: includes/plugins/webman-amplifier/webman-amplifier.php:347
+msgid "Do not forget to write a recipe instructions - those are required!"
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:188
+msgid "Recipe title"
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:189
+msgid "If set, this title will override the post title."
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:195
+msgctxt "Recipe cook name selector label."
+msgid "Cook"
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:196
+msgid "Select a cook, author of this recipe."
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:203
+msgctxt "Recipe cook custom name input field label."
+msgid "Cook name"
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:204
+msgid "Enter a cook name here."
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:218
+msgctxt "Recipe difficulty level selector label."
+msgid "Difficulty"
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:219
+msgid "Recipe difficulty level."
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:222
+msgctxt "Recipe difficulty level option title."
+msgid "Beginner"
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:223
+msgctxt "Recipe difficulty level option title."
+msgid "Intermediate"
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:224
+msgctxt "Recipe difficulty level option title."
+msgid "Advanced"
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:231
+msgctxt ""
+"The quantity produced by the recipe (for example, number of people served, "
+"number of servings, etc)."
+msgid "Yield"
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:232
+msgid ""
+"The quantity produced by the recipe (for example, number of people served, "
+"number of servings, etc)."
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:238
+msgid "Prep time"
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:239
+msgid "Recipe preparation time in minutes."
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:249
+msgid "Cook time"
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:250
+msgid "Recipe cooking time in minutes."
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:260
+msgid "Nutrition info text"
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:261
+msgid "This text will be displayed above the nutrition facts table"
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:267
+#: includes/setup-plus/setup-plus.php:808
+msgid "Nutrition facts"
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:268
+msgid ""
+"Enter a value with a unit of the nutrition fact. For example \"10g\", or "
+"\"10%\"."
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:273
+msgid "Nutrition fact title"
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:279
+#: includes/plugins/webman-amplifier/webman-amplifier.php:280
+msgid "Value"
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:294
+msgctxt "Food recipe metabox secion title."
+msgid "Ingredients"
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:300
+msgid "Ingredients required for the recipe"
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:306
+#: includes/plugins/webman-amplifier/webman-amplifier.php:308
+msgid "Ingredient"
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:307
+#: includes/plugins/webman-amplifier/webman-amplifier.php:308
+msgid ""
+"Start typing the ingredient name. If the ingredient already exists, it will "
+"be suggested to you. Otherwise new ingredient will be created."
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:313
+#: includes/plugins/webman-amplifier/webman-amplifier.php:315
+msgid "Additional info"
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:314
+#: includes/plugins/webman-amplifier/webman-amplifier.php:315
+msgid ""
+"This info will be displayed after the ingredient name. You can use this for "
+"the amount info, for example."
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:322
+msgid "Add any number of ingredients by clicking the \"+\" button."
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:322
+msgid ""
+"Once you start typing an ingredient name, it will be auto-suggested to you "
+"if the ingredient already exists."
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:322
+msgid "Otherwise a new ingredient will be created."
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:334
+msgctxt "Food recipe metabox secion title."
+msgid "Instructions"
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:340
+msgid "Recipe preparation instructions"
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:341
+msgid ""
+"Recipe instructions text. Put your instructions into ordered list. You can "
+"also insert media, such as images, video or audio."
+msgstr ""
+
+#: includes/plugins/webman-amplifier/webman-amplifier.php:377
+msgctxt "Metabox title."
+msgid "Recipe setup"
+msgstr ""
+
+#: includes/setup-plus/setup-plus.php:456
+msgid "Skip to recipe"
+msgstr ""
+
+#. translators: Keep the first letter lowercase as the text is appended to recipe title.
+#: includes/setup-plus/setup-plus.php:552
+#, php-format
+msgid "recipe by %s"
+msgstr ""
+
+#: includes/setup-plus/setup-plus.php:601
+msgid "Difficulty:"
+msgstr ""
+
+#: includes/setup-plus/setup-plus.php:606
+msgid "Yield:"
+msgstr ""
+
+#: includes/setup-plus/setup-plus.php:611
+msgid "Prep time:"
+msgstr ""
+
+#: includes/setup-plus/setup-plus.php:616
+msgid "Cook time:"
+msgstr ""
+
+#: includes/setup-plus/setup-plus.php:679
+msgid "Ingredients"
+msgstr ""
+
+#: includes/setup-plus/setup-plus.php:750
+msgid "Instructions"
+msgstr ""
+
+#: includes/setup-plus/setup-plus.php:849
+msgid "Print the recipe!"
+msgstr ""
+
+#: includes/setup-plus/setup-plus.php:1006
+msgid "Navigation"
+msgstr ""
+
+#: includes/setup-plus/setup-plus.php:1012
+#: includes/setup-plus/setup-plus.php:1057
+#: includes/theme-options/theme-options.php:103
+#: includes/theme-options/theme-options.php:143
+#: includes/theme-options/theme-options.php:180
+msgid "Background color"
+msgstr ""
+
+#: includes/setup-plus/setup-plus.php:1025
+#: includes/setup-plus/setup-plus.php:1070
+#: includes/theme-options/theme-options.php:116
+#: includes/theme-options/theme-options.php:159
+#: includes/theme-options/theme-options.php:193
+msgid "Text color"
+msgstr ""
+
+#: includes/setup-plus/setup-plus.php:1038
+msgid "Border color"
+msgstr ""
+
+#: includes/setup-plus/setup-plus.php:1083
+msgid "Headings color"
+msgstr ""
+
+#: includes/setup-plus/setup-plus.php:1096
+msgid "Borders color"
+msgstr ""
+
+#: includes/setup-plus/setup-plus.php:1115
+msgctxt "Customizer section title."
+msgid "Texts"
+msgstr ""
+
+#: includes/setup-plus/setup-plus.php:1116
+#: includes/setup-plus/setup-plus.php:1154
+#: includes/theme-options/theme-options.php:47
+#: includes/theme-options/theme-options.php:75
+#: includes/theme-options/theme-options.php:97
+#: includes/theme-options/theme-options.php:132
+#: includes/theme-options/theme-options.php:174
+#: includes/theme-options/theme-options.php:212
+#: includes/theme-options/theme-options.php:256
+#: includes/theme-options/theme-options.php:319
+msgctxt "Customizer panel title."
+msgid "Theme"
+msgstr ""
+
+#: includes/setup-plus/setup-plus.php:1122
+msgid "Front page Posts section title"
+msgstr ""
+
+#: includes/setup-plus/setup-plus.php:1123
+msgctxt "Front page blog posts section title."
+msgid "News"
+msgstr ""
+
+#: includes/setup-plus/setup-plus.php:1131
+msgid "Front page Food menu section title"
+msgstr ""
+
+#: includes/setup-plus/setup-plus.php:1132
+msgctxt "Front page food menu section title."
+msgid "Menu"
+msgstr ""
+
+#: includes/setup-plus/setup-plus.php:1140
+msgid "Footer credits text"
+msgstr ""
+
+#: includes/setup-plus/setup-plus.php:1141
+msgid "When left empty, the default theme credits text is displayed."
+msgstr ""
+
+#: includes/setup-plus/setup-plus.php:1153
+msgctxt "Customizer section title."
+msgid "Food Menu"
+msgstr ""
+
+#: includes/setup-plus/setup-plus.php:1160
+msgid "Disable food menu"
+msgstr ""
+
+#: includes/setup-plus/setup-plus.php:1161
+msgid ""
+"In case you want to use the theme as recipe blog only, you have the option "
+"to disable the Food Menu post type."
+msgstr ""
+
+#: includes/setup-plus/setup-plus.php:1167
+msgid "Disable food section archive linking"
+msgstr ""
+
+#: includes/setup-plus/setup-plus.php:1168
+msgid ""
+"By default, all food menu section titles are linked to corresponding archive "
+"page."
+msgstr ""
+
+#: includes/setup-plus/setup-plus.php:1168
+msgid "You can override this behavior here."
+msgstr ""
+
+#: includes/setup-plus/setup-plus.php:1222
+#: template-parts/loop-blog-condensed.php:43
+msgid "News"
+msgstr ""
+
+#: includes/setup-plus/setup-plus.php:1242 template-parts/loop-food-menu.php:58
+msgctxt "Food menu title."
+msgid "Menu"
+msgstr ""
+
+#: includes/setup-plus/setup-plus.php:1351
+msgctxt "Initial, empty dropdown option title."
+msgid "- Nutrition fact -"
+msgstr ""
+
+#: includes/setup-plus/setup-plus.php:1352
+msgctxt "According to http://schema.org/NutritionInformation."
+msgid "Calories"
+msgstr ""
+
+#: includes/setup-plus/setup-plus.php:1353
+msgctxt "According to http://schema.org/NutritionInformation."
+msgid "Protein"
+msgstr ""
+
+#: includes/setup-plus/setup-plus.php:1354
+msgctxt "According to http://schema.org/NutritionInformation."
+msgid "Fiber"
+msgstr ""
+
+#: includes/setup-plus/setup-plus.php:1355
+msgctxt "According to http://schema.org/NutritionInformation."
+msgid "Carbohydrates"
+msgstr ""
+
+#: includes/setup-plus/setup-plus.php:1356
+msgctxt "According to http://schema.org/NutritionInformation."
+msgid "- Sugars"
+msgstr ""
+
+#: includes/setup-plus/setup-plus.php:1357
+msgctxt "According to http://schema.org/NutritionInformation."
+msgid "Fat"
+msgstr ""
+
+#: includes/setup-plus/setup-plus.php:1358
+msgctxt "According to http://schema.org/NutritionInformation."
+msgid "- Saturated fat"
+msgstr ""
+
+#: includes/setup-plus/setup-plus.php:1359
+msgctxt "According to http://schema.org/NutritionInformation."
+msgid "- Unsaturated fat"
+msgstr ""
+
+#: includes/setup-plus/setup-plus.php:1360
+msgctxt "According to http://schema.org/NutritionInformation."
+msgid "- Trans fat"
+msgstr ""
+
+#: includes/setup-plus/setup-plus.php:1361
+msgctxt "According to http://schema.org/NutritionInformation."
+msgid "Cholesterol"
+msgstr ""
+
+#: includes/setup-plus/setup-plus.php:1362
+msgctxt "According to http://schema.org/NutritionInformation."
+msgid "Sodium"
+msgstr ""
+
+#: includes/setup-plus/setup-plus.php:1368
+msgid "Custom Banner"
+msgstr ""
+
+#: includes/setup-plus/setup-plus.php:1369
+msgid ""
+"This widget area will replace the banner area on front page. You can insert "
+"your custom banner (slider) shortcode into a text widget to display it."
+msgstr ""
+
+#: includes/setup-plus/setup-plus.php:1566
+#, php-format
+msgctxt "Recipe preparation duration."
+msgid "1 hour"
+msgid_plural "%d hours"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/setup-plus/setup-plus.php:1569
+#, php-format
+msgctxt "Recipe preparation duration."
+msgid "1 minute"
+msgid_plural "%d minutes"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/setup/setup.php:111
+msgid " - do not use Google Font"
+msgstr ""
+
+#: includes/setup/setup.php:115
+msgctxt "Google Font default setup options group title."
+msgid "Theme default"
+msgstr ""
+
+#: includes/setup/setup.php:121 includes/setup/setup.php:126
+#: includes/setup/setup.php:132 includes/setup/setup.php:137
+#: includes/setup/setup.php:142 includes/setup/setup.php:147
+#: includes/setup/setup.php:152 includes/setup/setup.php:156
+#: includes/setup/setup.php:162
+#, php-format
+msgctxt "Google Font setup recommendation (numbered) group title."
+msgid "Recommendation #%d"
+msgstr ""
+
+#: includes/setup/setup.php:170
+msgctxt "Title for selection of fonts picked from Google Fontss"
+msgid "Fonts selection"
+msgstr ""
+
+#: includes/setup/setup.php:222
+msgid "Sidebar"
+msgstr ""
+
+#: includes/setup/setup.php:223
+msgid "Page sidebar."
+msgstr ""
+
+#: includes/setup/setup.php:226
+msgid "Front Page Widgets"
+msgstr ""
+
+#: includes/setup/setup.php:227
+msgid ""
+"This widgets area is displayed below the Banner area on the front page "
+"(homepage)."
+msgstr ""
+
+#: includes/setup/setup.php:230
+msgid "Footer Widgets"
+msgstr ""
+
+#: includes/setup/setup.php:231
+msgid "Masonry layout is used to display footer widgets."
+msgstr ""
+
+#: includes/setup/setup.php:309 template-parts/menu-primary.php:20
+msgid "Primary Menu"
+msgstr ""
+
+#: includes/setup/setup.php:310
+msgid "Social Links Menu"
+msgstr ""
+
+#: includes/setup/setup.php:475
+msgid "Thank you for upgrading your theme."
+msgstr ""
+
+#: includes/setup/setup.php:476
+msgid "We have noticed you are using a child theme."
+msgstr ""
+
+#: includes/setup/setup.php:478
+msgid ""
+"Please note that there has been a lot of changes in this new theme version "
+"and you should check the code in your child theme for compatibility!"
+msgstr ""
+
+#: includes/setup/setup.php:481
+msgid "Read theme changelog &raquo;"
+msgstr ""
+
+#: includes/setup/setup.php:537
+msgid "In posts list."
+msgstr ""
+
+#: includes/setup/setup.php:548
+msgid "In single post page."
+msgstr ""
+
+#: includes/setup/setup.php:554
+msgid "In front page banner."
+msgstr ""
+
+#: includes/setup/setup.php:560
+msgid "In food menu list."
+msgstr ""
+
+#: includes/setup/setup.php:697
+msgctxt "WordPress predefined image size name."
+msgid "Thumbnail size"
+msgstr ""
+
+#: includes/setup/setup.php:698
+msgctxt "WordPress predefined image size name."
+msgid "Medium size"
+msgstr ""
+
+#: includes/setup/setup.php:699
+msgctxt "WordPress predefined image size name."
+msgid "Large size"
+msgstr ""
+
+#: includes/setup/setup.php:732
+msgid "Recommended image sizes"
+msgstr ""
+
+#: includes/setup/setup.php:733
+msgid ""
+"For the theme to work correctly, please, set these recommended image sizes:"
+msgstr ""
+
+#: includes/setup/setup.php:739
+msgid "Size name"
+msgstr ""
+
+#: includes/setup/setup.php:740
+msgid "Size parameters"
+msgstr ""
+
+#: includes/setup/setup.php:741
+msgid "Theme usage"
+msgstr ""
+
+#: includes/setup/setup.php:749
+msgid "cropped"
+msgstr ""
+
+#: includes/setup/setup.php:749
+msgid "scaled"
+msgstr ""
+
+#: includes/setup/setup.php:757
+msgid ""
+"Additional image size added by the theme. Can not be changed on this page."
+msgstr ""
+
+#: includes/setup/setup.php:762
+#, php-format
+msgctxt "1: image width, 2: image height, 3: cropped or scaled?"
+msgid "%1$d &times; %2$d, %3$s"
+msgstr ""
+
+#: includes/setup/setup.php:958
+msgid "Button link"
+msgstr ""
+
+#: includes/setup/setup.php:1200
+msgctxt "Back to food menu sections selectors button title."
+msgid "&uarr; Menu sections"
+msgstr ""
+
+#: includes/setup/setup.php:2021
+msgid "Breadcrumbs navigation"
+msgstr ""
+
+#: includes/setup/setup.php:2506
+msgid "Previous post"
+msgstr ""
+
+#: includes/setup/setup.php:2507
+msgid "Next post"
+msgstr ""
+
+#: includes/setup/setup.php:2551
+msgid "This is sticky post"
+msgstr ""
+
+#: includes/setup/setup.php:2580
+msgid "This content is password protected."
+msgstr ""
+
+#: includes/setup/setup.php:2580
+msgid "Enter the password to view it."
+msgstr ""
+
+#: includes/setup/setup.php:2699
+#, php-format
+msgid "Continue reading%s&hellip;"
+msgstr ""
+
+#: includes/setup/setup.php:2702
+#, php-format
+msgctxt "%s: Name of current post."
+msgid "Continue reading%s&hellip;"
+msgstr ""
+
+#: includes/setup/setup.php:2773
+msgctxt "Pagination text (visible): previous."
+msgid "&laquo;"
+msgstr ""
+
+#: includes/setup/setup.php:2774
+msgctxt "Pagination text (hidden): previous."
+msgid "Previous page"
+msgstr ""
+
+#: includes/setup/setup.php:2775
+msgctxt "Pagination text (hidden): next."
+msgid "Next page"
+msgstr ""
+
+#: includes/setup/setup.php:2776
+msgctxt "Pagination text (visible): next."
+msgid "&raquo;"
+msgstr ""
+
+#: includes/setup/setup.php:2784
+msgid "Posts Navigation"
+msgstr ""
+
+#: includes/setup/setup.php:2814
+msgid "All posts"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:353
+msgid "Install Required Plugins"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:354
+msgid "Install Plugins"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:355
+#, php-format
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:356
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:358
+#, php-format
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:363
+#, php-format
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:368
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to install the %1$s "
+"plugin."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to install the %1$s "
+"plugins."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:373
+#, php-format
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:378
+#, php-format
+msgid "There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:383
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to update the %1$s plugin."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to update the %1$s "
+"plugins."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:388
+#, php-format
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:393
+#, php-format
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:398
+#, php-format
+msgid ""
+"Sorry, but you do not have the correct permissions to activate the %1$s "
+"plugin."
+msgid_plural ""
+"Sorry, but you do not have the correct permissions to activate the %1$s "
+"plugins."
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:403
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:408
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:413
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:417
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:418
+msgid "Return to the dashboard"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:419
+#: includes/tgmpa/class-tgm-plugin-activation.php:3041
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:420
+#: includes/tgmpa/class-tgm-plugin-activation.php:2844
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:421
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:422
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:423
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:424
+msgid "Dismiss this notice"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:425
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:540
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:541
+msgid "Update Required"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:840
+#: includes/tgmpa/class-tgm-plugin-activation.php:3450
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:947
+msgid ""
+"The remote plugin package does not contain a folder with the desired slug "
+"and renaming did not work."
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:947
+#: includes/tgmpa/class-tgm-plugin-activation.php:950
+msgid ""
+"Please contact the plugin provider and ask them to package their plugin "
+"according to the WordPress guidelines."
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:950
+msgid ""
+"The remote plugin package consists of more than one file, but the files are "
+"not packaged in a folder."
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:1128
+#: includes/tgmpa/class-tgm-plugin-activation.php:2840
+msgctxt "plugin A *and* plugin B"
+msgid "and"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:1893
+#, php-format
+msgctxt "%s = version number"
+msgid "TGMPA v%s"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2179
+msgid "Required"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2182
+msgid "Recommended"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2198
+msgid "WordPress Repository"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2201
+msgid "External Source"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2204
+msgid "Pre-Packaged"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2221
+msgid "Not Installed"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2225
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2227
+msgid "Active"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2233
+msgid "Required Update not Available"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2236
+msgid "Requires Update"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2239
+msgid "Update recommended"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2247
+#, php-format
+msgctxt "%1$s = install status, %2$s = update status"
+msgid "%1$s, %2$s"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2292
+#, php-format
+msgctxt "plugins"
+msgid "All <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2295
+#, php-format
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2298
+#, php-format
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2301
+#, php-format
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2383
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2391
+msgid "Installed version:"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2399
+msgid "Minimum required version:"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2411
+msgid "Available version:"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2434
+#, php-format
+msgid ""
+"No plugins to install, update or activate. <a href=\"%1$s\">Return to the "
+"Dashboard</a>"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2448
+msgid "Plugin"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2449
+msgid "Source"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2450
+msgid "Type"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2454
+msgid "Version"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2455
+msgid "Status"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2503
+#, php-format
+msgctxt "%2$s = plugin name in screen reader markup"
+msgid "Install %2$s"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2507
+#, php-format
+msgctxt "%2$s = plugin name in screen reader markup"
+msgid "Update %2$s"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2512
+#, php-format
+msgctxt "%2$s = plugin name in screen reader markup"
+msgid "Activate %2$s"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2582
+msgid "Upgrade message from the plugin author:"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2615
+msgid "Install"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2621
+msgid "Update"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2624
+msgid "Activate"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2655
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2657
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2693
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2695
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2800
+msgid "No plugins were selected to be activated. No action taken."
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:2826
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:3040
+msgid "Plugin activation failed."
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:3374
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:3376
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:3377
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:3381
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:3382
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:3382
+#: includes/tgmpa/class-tgm-plugin-activation.php:3388
+msgid "Show Details"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:3382
+#: includes/tgmpa/class-tgm-plugin-activation.php:3388
+msgid "Hide Details"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:3383
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:3384
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:3387
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:3388
+#, php-format
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:3389
+msgid "All installations have been completed."
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:3390
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: includes/tgmpa/plugins.php:45
+msgid "Jetpack by WordPress.com (adds theme features)"
+msgstr ""
+
+#: includes/tgmpa/plugins.php:52
+msgid "Advanced Custom Fields (adds theme features)"
+msgstr ""
+
+#: includes/tgmpa/plugins.php:59
+msgid "WebMan Amplifier (adds theme features)"
+msgstr ""
+
+#: includes/tgmpa/plugins.php:73
+msgid "Beaver Builder (easy page builder)"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:48
+msgid "Theme Credits"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:51
+#, php-format
+msgctxt "1: linked theme name, 2: theme author name."
+msgid "%1$s is a WordPress theme developed by %2$s."
+msgstr ""
+
+#: includes/theme-options/theme-options.php:58
+#, php-format
+msgctxt "%s: theme author link."
+msgid "You can obtain other professional WordPress themes at %s."
+msgstr ""
+
+#: includes/theme-options/theme-options.php:63
+msgid "Thank you for using this awesome theme!"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:74
+#: includes/theme-options/theme-options.php:96
+#: includes/theme-options/theme-options.php:131
+#: includes/theme-options/theme-options.php:173
+#, php-format
+msgctxt "%s = section name. Customizer section title."
+msgid "Colors: %s"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:74
+msgctxt "Customizer color section title"
+msgid "Accents"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:81
+msgid "Accent color"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:82
+msgid "This color affects links, buttons and other elements of the website"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:88
+msgid "Accent text color"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:89
+msgid "Color of text over accent color background"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:96
+msgctxt "Customizer color section title"
+msgid "Header"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:117
+msgid "Note that for certain header elements the color will be faded out a bit"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:131
+msgctxt "Customizer color section title"
+msgid "Content"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:137
+msgid "Front page widgets"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:173
+msgctxt "Customizer color section title"
+msgid "Footer"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:211
+msgctxt "Customizer section title."
+msgid "Layout"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:217
+msgid "Front page layout"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:222
+msgid "Condensed blog posts"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:223
+#: includes/theme-options/theme-options.php:237
+msgid "Select if and where to display this page section"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:226
+#: includes/theme-options/theme-options.php:240
+msgid "Disable section"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:227
+#: includes/theme-options/theme-options.php:241
+msgid "First section above page content"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:228
+#: includes/theme-options/theme-options.php:242
+msgid "Second section above page content"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:229
+#: includes/theme-options/theme-options.php:243
+msgid "First section below page content"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:230
+#: includes/theme-options/theme-options.php:244
+msgid "Second section below page content"
+msgstr ""
+
+#. translators: Custom page template name.
+#: includes/theme-options/theme-options.php:236 page-template/_menu.php:17
+msgid "Food menu"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:255
+msgctxt "Customizer section title."
+msgid "Typography"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:261
+msgid ""
+"Set a Google Font to be used for website logo, headings and general text."
+msgstr ""
+
+#: includes/theme-options/theme-options.php:261
+#, php-format
+msgctxt "%s: linked source website name."
+msgid "Font matches recommendations from %s."
+msgstr ""
+
+#: includes/theme-options/theme-options.php:267
+msgid "Logo (site title) font"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:274
+msgid "Headings font"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:281
+msgid "General text font"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:289
+msgid "Font subset"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:297
+msgid "Basic font size"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:298
+msgid ""
+"All other font sizes are calculated automatically from this basic font size"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:318
+msgctxt "Customizer section title."
+msgid "Others"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:325
+msgid "Disable excerpt on single post page"
+msgstr ""
+
+#: library/controls/class-WM_Customizer_HTML.php:32
+msgid "Please set the `content` parameter for the HTML control."
+msgstr ""
+
+#: library/controls/class-WM_Customizer_Multiselect.php:43
+msgid "Press CTRL key for multiple selection."
+msgstr ""
+
+#: library/core.php:146
+#, php-format
+msgctxt "Site logo image \"alt\" HTML attribute text."
+msgid "%s logo"
+msgstr ""
+
+#: library/core.php:248
+#, php-format
+msgctxt "%s: post title."
+msgid "\"%s\" table of contents"
+msgstr ""
+
+#: library/core.php:286
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: library/core.php:422
+msgctxt "Post meta info description: author name."
+msgid "Written by:"
+msgstr ""
+
+#: library/core.php:438
+msgctxt "Post meta info description: categories list."
+msgid "Categorized in:"
+msgstr ""
+
+#: library/core.php:459
+msgctxt "Post meta info description: comments count."
+msgid "Comments:"
+msgstr ""
+
+#: library/core.php:460
+#, php-format
+msgctxt "%s: number of comments."
+msgid "Comments: %s"
+msgstr ""
+
+#: library/core.php:460
+msgctxt "Title for number of comments in post meta."
+msgid "Comments:"
+msgstr ""
+
+#: library/core.php:473
+msgctxt "Post meta info description: publish date."
+msgid "Posted on:"
+msgstr ""
+
+#: library/core.php:498
+#, php-format
+msgid "Edit the \"%s\""
+msgstr ""
+
+#: library/core.php:498
+msgctxt "Edit post link."
+msgid "Edit"
+msgstr ""
+
+#: library/core.php:545
+msgctxt "Post meta info description: post bookmark link."
+msgid "Bookmark link:"
+msgstr ""
+
+#: library/core.php:546
+#, php-format
+msgid "Permalink to \"%s\""
+msgstr ""
+
+#: library/core.php:560
+msgctxt "Post meta info description: tags list."
+msgid "Tagged as:"
+msgstr ""
+
+#: library/core.php:574
+msgid "Views count"
+msgstr ""
+
+#: library/core.php:669
+#, php-format
+msgctxt "Paginated content title suffix, %s: page number."
+msgid "(page %s)"
+msgstr ""
+
+#: library/core.php:934
+msgid "Skip to content"
+msgstr ""
+
+#: library/customize.php:407
+msgctxt "Customizer section title."
+msgid "Background"
+msgstr ""
+
+#: library/customize.php:412
+msgctxt "Customizer section title."
+msgid "Header"
+msgstr ""
+
+#: library/visual-editor.php:122
+msgid "Text styles"
+msgstr ""
+
+#: library/visual-editor.php:126
+msgid "Dropcap text"
+msgstr ""
+
+#: library/visual-editor.php:132
+msgid "Uppercase heading or paragraph"
+msgstr ""
+
+#: library/visual-editor.php:138
+msgid "Highlighted (marked) text"
+msgstr ""
+
+#: library/visual-editor.php:144
+msgid "Small text"
+msgstr ""
+
+#: library/visual-editor.php:149
+msgid "Superscript"
+msgstr ""
+
+#: library/visual-editor.php:155
+msgid "Subscript"
+msgstr ""
+
+#: library/visual-editor.php:161 library/visual-editor.php:167
+#: library/visual-editor.php:173
+#, php-format
+msgctxt "%d = HTML heading size number."
+msgid "Heading %d text style"
+msgstr ""
+
+#: library/visual-editor.php:184
+msgid "Text sizes"
+msgstr ""
+
+#: library/visual-editor.php:188 library/visual-editor.php:194
+#: library/visual-editor.php:200 library/visual-editor.php:206
+#, php-format
+msgctxt "%d: Display text size number."
+msgid "Display %d"
+msgstr ""
+
+#: library/visual-editor.php:217
+msgctxt "Visual editor blockquote formats group title."
+msgid "Quotes"
+msgstr ""
+
+#: library/visual-editor.php:221
+msgid "Blockquote"
+msgstr ""
+
+#: library/visual-editor.php:227
+msgid "Pullquote - align left"
+msgstr ""
+
+#: library/visual-editor.php:234
+msgid "Pullquote - align right"
+msgstr ""
+
+#: library/visual-editor.php:241
+msgctxt ""
+"Visual editor format label for HTML CITE tag used to set the blockquote "
+"source."
+msgid "Cite"
+msgstr ""
+
+#. translators: Custom page template name.
+#: page-template/_fullwidth.php:15
+msgid "Fullwidth page"
+msgstr ""
+
+#: search.php:29
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: searchform.php:21
+msgctxt "Search field label."
+msgid "Search"
+msgstr ""
+
+#: searchform.php:24
+msgid "Search field: type and press enter"
+msgstr ""
+
+#: sidebar-footer.php:38
+msgctxt "Sidebar aria label"
+msgid "Footer sidebar"
+msgstr ""
+
+#: sidebar-front-page.php:38
+msgctxt "Sidebar aria label"
+msgid "Front page sidebar"
+msgstr ""
+
+#: sidebar.php:36
+msgctxt "Sidebar aria label"
+msgid "Sidebar"
+msgstr ""
+
+#: sidebar.php:38
+msgid "Toggle sidebar"
+msgstr ""
+
+#: template-parts/content-attachment-image.php:34
+msgctxt "Attachment page image info table caption."
+msgid "Image info"
+msgstr ""
+
+#: template-parts/content-attachment-image.php:39
+msgctxt "Attachment page publish time."
+msgid "Image published on:"
+msgstr ""
+
+#: template-parts/content-attachment-image.php:46
+msgid "Image size:"
+msgstr ""
+
+#: template-parts/content-attachment-image.php:53
+msgid "Image file name:"
+msgstr ""
+
+#: template-parts/content-none.php:22
+msgid "Nothing Found"
+msgstr ""
+
+#: template-parts/content-none.php:34
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content-none.php:44
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: template-parts/content-none.php:50
+msgid ""
+"It seems we can not find what you are looking for. Perhaps searching can "
+"help."
+msgstr ""
+
+#: template-parts/content-status.php:29
+#, php-format
+msgctxt ""
+"Status post format text on mouse hover (1: author name, 2: status publish "
+"date)."
+msgid "Status: %1$s on %2$s"
+msgstr ""
+
+#: template-parts/loop-banner.php:26
+msgid "Site banner"
+msgstr ""
+
+#: template-parts/menu-primary-search.php:30
+msgctxt "Display search form button title."
+msgid "Search"
+msgstr ""
+
+#: template-parts/menu-primary.php:43
+msgctxt "Mobile navigation toggle button title."
+msgid "Menu"
+msgstr ""
+
+#: template-parts/menu-social.php:28
+msgid "Social Menu"
+msgstr ""
+
+#: template-parts/menu-social.php:40
+msgid "Back to top"
+msgstr ""

@@ -1,10 +1,51 @@
 # Auberge Changelog
 
+## 2.0
+
+* **Add**: Nested Food Menu sections support
+* **Add**: Option to display a specific Food Menu section on Food Menu page template
+* **Add**: Support for HTML in Food Menu section description
+* **Add**: Sticky food menu sections navigation
+* **Add**: Advanced Custom Fields plugin support
+* **Add**: Documentation in theme folder
+* **Add**: New theme options in customizer
+* **Add**: WordPress 4.5 logo support
+* **Add**: WordPress 4.5 customizer selective refresh support
+* **Update**: Much more accessible headings structure (with a single H1 tag per page)
+* **Update**: Optimized files and improved file organization
+* **Update**: Library v2.0
+* **Update**: Improved and optimized styles and scripts
+* **Update**: Improved support for child themes
+* **Update**: Responsive breakpoints
+* **Update**: Enabled table of contents for pages
+* **Update**: Documentation design and content
+* **Update**: Removed edit links from front-end
+* **Update**: Improved support for Polylang and WPML plugin
+* **Update**: Improved support for Beaver Builder page builder plugin
+* **Update**: Scripts: ImagesLoaded 4.1.0, Slick slider 1.5.9
+* **Update**: Improved files loading
+* **Update**: Improved theme customizer experience and options organization
+* **Update**: Simplified implementation of Theme Hook Alliance hooks, added missing hooks
+* **Update**: Social icons display (added "Back to top" button)
+* **Update**: Improved icon font loading
+* **Update**: Removed PHP constants
+* **Update**: Localization
+* **Fix**: Language selector styling issue on Internet Explorer browsers
+* **Fix**: Minor style issues
+* **Fix**: Header and navigation styles
+* **Fix**: Schema.org microformats
+* **Fix**: Google Recipe view
+
+#### Files changed:
+
+	*.*
+	All the files have been changed and reorganized.
+
+
 ## 1.4.8
 
 * **Add**: WordPress 4.3 support
 * **Add**: Touch enabled navigation, accessible with Tab key
-* **Add**: French localization by WP-Traduction (wp-traduction.com)
 * **Update**: Updated scripts: TGM Plugin Activation 2.5.2, Slick 1.5.8
 * **Update**: Improved featured image size setup for pages
 * **Update**: Licensed under GPLv3
@@ -30,8 +71,6 @@
 	inc/tgmpa/class-tgm-plugin-activation.php
 	js/scripts-global.js
 	js/scripts-navigation.js
-	languages/fr_FR.mo
-	languages/fr_FR.po
 
 
 ## 1.4.7
@@ -119,7 +158,6 @@
 	languages/sk_SK.mo
 	languages/sk_SK.po
 	languages/xx_XX.pot
-
 
 ## 1.4
 
@@ -249,9 +287,9 @@
 
 #### Files changed:
 
-	inc\tgmpa\plugins.php
-	js\customizer-preview.js
-	js\scripts.js
+	inc/tgmpa/plugins.php
+	js/customizer-preview.js
+	js/scripts.js
 
 
 ## 1.2

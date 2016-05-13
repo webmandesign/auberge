@@ -1,0 +1,499 @@
+/**
+ * Theme custom styles
+ *
+ * Notes:
+ *   * = Doesn't change via Customizer.
+ *   Plus = Can be set and gets overrode in Plus theme version.
+ *
+ * For more info on how to create these styles please see `readme.md` file.
+ *
+ * @package    Auberge
+ * @copyright  WebMan Design, Oliver Juhas
+ *
+ * @since    2.0
+ * @version  2.0
+ */
+
+
+
+
+
+/**
+ * Site basic
+ */
+
+	body {
+		color: #6a6c6e; /* Plus */
+		/*[*/
+		background-color: #eaecee;
+		/*]*/
+		/*//
+		background-color: [[background_color]];
+		//*/
+	}
+
+	.site,
+	.page-section .posts .hentry {
+		background-color: #fff; /* Plus */
+	}
+
+	h1, h2, h3, h4, h5, h6,
+	.h1, .h2, .h3, .h4, .h5, .h6 {
+		color: #1a1c1e; /* Plus */
+	}
+
+	a,
+	.accent-color {
+		/*[*/
+		color: #0aac8e;
+		/*]*/
+		/*//
+		color: [[color_accent]];
+		//*/
+	}
+
+	hr,
+	code,
+	pre {
+		background-color: #eaecee; /* Plus */
+		color: #6a6c6e; /* Plus */
+	}
+
+	button,
+	input,
+	select,
+	textarea,
+	tbody tr:hover td,
+	tbody tr:hover th {
+		background-color: rgba(0,0,0, .05); /* * */
+	}
+
+		.button,
+		button,
+		input[type="button"],
+		input[type="reset"],
+		input[type="submit"] {
+			-webkit-box-shadow: inset 0 0 0 rgba(0,0,0, .2); /* * */
+			box-shadow: inset 0 0 0 rgba(0,0,0, .2); /* * */
+		}
+
+		.button:active,
+		button:active,
+		input[type="button"]:active,
+		input[type="reset"]:active,
+		input[type="submit"]:active {
+			-webkit-box-shadow: inset 0 100px 0 rgba(0,0,0, .2); /* * */
+			box-shadow: inset 0 100px 0 rgba(0,0,0, .2); /* * */
+		}
+
+	mark,
+	ins,
+	.highlight,
+	pre:before,
+	.pagination a,
+	.pagination span,
+	.label-sticky,
+	.button,
+	button,
+	form button,
+	.fl-node-content button,
+	input[type="button"],
+	input[type="reset"],
+	input[type="submit"],
+	.menu-group-nav a,
+	.post-navigation .nav-previous,
+	.post-navigation .nav-next,
+	.bypostauthor > .comment-body .comment-author:before,
+	.comment-navigation a,
+	.widget_calendar tbody a,
+	.widget .tagcloud a:hover,
+	body #infinite-handle span,
+	.rtb-message,
+	.site-content div.sharedaddy .sd-content ul li a.sd-button:not(.no-text) {
+		/*[*/
+		background-color: #0aac8e;
+		color: #fff;
+		/*]*/
+		/*//
+		background-color: [[color_accent]];
+		color: [[color_accent_text]];
+		//*/
+	}
+
+		mark,
+		ins,
+		.highlight {
+			/*[*/
+			-webkit-box-shadow: .38em 0 0 #0aac8e, -.38em 0 0 #0aac8e;
+			box-shadow: .38em 0 0 #0aac8e, -.38em 0 0 #0aac8e;
+			/*]*/
+			/*//
+			-webkit-box-shadow: .38em 0 0 [[color_accent]], -.38em 0 0 [[color_accent]];
+			box-shadow: .38em 0 0 [[color_accent]], -.38em 0 0 [[color_accent]];
+			//*/
+		}
+
+	.gallery-caption,
+	.widget .tagcloud a:before {
+		background-color: #2a2c2e; /* * */
+		color: #caccce; /* * */
+	}
+
+		.gallery-caption {
+			background-color: rgba(0,0,0, .8); /* * */
+		}
+
+	::-webkit-input-placeholder {
+		color: inherit; /* * */
+		opacity: .66; /* * */
+	}
+	:-ms-input-placeholder {
+		color: inherit !important; /* * */
+		opacity: .66; /* * */
+	}
+	::-moz-placeholder {
+		color: inherit; /* * */
+		opacity: .66; /* * */
+	}
+	:disabled::-webkit-input-placeholder {
+		color: inherit; /* * */
+		opacity: .66; /* * */
+	}
+	:disabled:-ms-input-placeholder {
+		color: inherit !important; /* * */
+		opacity: .66; /* * */
+	}
+	:disabled::-moz-placeholder {
+		color: inherit; /* * */
+		opacity: .66; /* * */
+	}
+
+	::selection {
+		background: #fafcbe; /* * */
+		color: #6a6c2e; /* * */
+	}
+	::-moz-selection {
+		background: #fafcbe; /* * */
+		color: #6a6c2e; /* * */
+	}
+
+
+
+/**
+ * Site header
+ */
+
+	.site-header {
+		/*[*/
+		background-color: #1a1c1e;
+		color: #fff;
+		/*]*/
+		/*//
+		background-color: [[color_header]];
+		color: [[color_header_text]];
+		//*/
+	}
+
+
+
+	/**
+	 * Header search form
+	 */
+
+		.nav-search-form .search-field {
+			background-color: #fff; /* * */
+			color: #6a6c6e; /* * */
+		}
+
+		.nav-search-form .form-search {
+			/*[*/
+			background-color: #0aac8e;
+			/*]*/
+			/*//
+			background-color: [[color_accent]];
+			//*/
+		}
+
+
+
+/**
+ * Site banner
+ */
+
+	.site-banner {
+		/*[*/
+		background-color: #1a1c1e;
+		color: #fff;
+		/*]*/
+		/*//
+		background-color: [[color_front_widgets]];
+		color: [[color_accent_text]];
+		//*/
+	}
+
+	.custom-banner:before,
+	.site-banner-media:before {
+		background: transparent;
+		/*[*/
+		background: linear-gradient( transparent, #1a1c1e );
+		/*]*/
+		/*//
+		background: linear-gradient( transparent, [[color_front_widgets]] );
+		//*/
+	}
+
+
+
+	/**
+	 * Front page widgets
+	 */
+
+		.front-page-widgets-wrapper {
+			/*[*/
+			background-color: #1a1c1e;
+			color: #8a8c8e;
+			/*]*/
+			/*//
+			background-color: [[color_front_widgets]];
+			color: [[color_front_widgets_text]];
+			//*/
+		}
+
+
+
+/**
+ * Site footer
+ */
+
+	.site-footer {
+		/*[*/
+		color: #8a8c8e;
+		background-color: #1a1c1e;
+		/*]*/
+		/*//
+		background-color: [[color_footer]];
+		color: [[color_footer_text]];
+		//*/
+	}
+
+
+
+/**
+ * Navigation
+ */
+
+	.main-navigation li ul {
+		background-color: #3a3c3e; /* Plus */
+		color: #fff; /* Plus */
+	}
+
+	.main-navigation li li {
+		border-top-color: #4a4c4e; /* Plus */
+	}
+
+	.main-navigation .menu li li:hover > a,
+	.main-navigation .menu li li > a:hover,
+	.main-navigation .menu li li.active-menu-item > a {
+		background-color: #4a4c4e; /* Plus */
+	}
+
+	.post-navigation .nav-previous:before {
+		/*[*/
+		background: #0aac8e;
+		background: linear-gradient( to left, transparent 19%, #0aac8e 81% );
+		/*]*/
+		/*//
+		background: [[color_accent]];
+		background: linear-gradient( to left, transparent 19%, [[color_accent]] 81% );
+		//*/
+	}
+
+		.post-navigation .nav-next:before {
+			/*[*/
+			background: #0aac8e;
+			background: linear-gradient( to right, transparent 19%, #0aac8e 81% );
+			/*]*/
+			/*//
+			background: [[color_accent]];
+			background: linear-gradient( to right, transparent 19%, [[color_accent]] 81% );
+			//*/
+		}
+
+	@media only screen and (max-width: 55em) {
+
+		.main-navigation-inner {
+			background-color: #3a3c3e; /* Plus */
+		}
+
+		.main-navigation ul a {
+			color: #fff; /* Plus */
+		}
+
+		.menu-toggle,
+		.menu-toggle:hover,
+		.menu-toggle:active,
+		.menu-toggle:focus {
+			background: transparent; /* * */
+		}
+
+		.menu-toggle:before {
+			/*[*/
+			background: #0aac8e;
+			/*]*/
+			/*//
+			background: [[color_accent]];
+			//*/
+		}
+
+		.main-navigation .menu a:hover,
+		.main-navigation .menu li:hover > a,
+		.main-navigation .menu li li:hover > a,
+		.main-navigation .menu li.active-menu-item > a,
+		.main-navigation .menu li li.active-menu-item > a {
+			background: transparent; /* * */
+			color: #fff; /* Plus */
+		}
+
+		.main-navigation .menu li.current-menu-item > a,
+		.main-navigation .menu li li.current-menu-item > a {
+			background-color: #4a4c4e; /* Plus */
+		}
+
+		.main-navigation li,
+		.main-navigation li li,
+		.main-navigation li li:first-child {
+			border-color: #4a4c4e; /* Plus */
+		}
+
+	}
+
+
+
+/**
+ * Plugins
+ */
+
+	/**
+	 * Jetpack
+	 */
+
+		.infinite-loader .spinner > div > div {
+			/*[*/
+			background-color: #0aac8e !important;
+			/*]*/
+			/*//
+			background-color: [[color_accent]] !important;
+			//*/
+		}
+
+		.site-content div.sharedaddy .sd-content ul li a.sd-button:not(.no-text) {
+			/*[*/
+			color: #fff !important;
+			/*]*/
+			/*//
+			color: [[color_accent_text]] !important;
+			//*/
+		}
+
+
+
+/**
+ * Borders
+ */
+
+	blockquote:before,
+	blockquote:after,
+	table, td, th,
+	blockquote.alignleft:before,
+	blockquote.alignleft:after,
+	blockquote.alignright:before,
+	blockquote.alignright:after,
+	button,
+	input,
+	select,
+	textarea,
+	.comment-meta,
+	.comment-respond,
+	.comment-list .comment-respond,
+	.page-title,
+	.page-section,
+	.site-main + .page-section,
+	.site-main + .page-section + .page-section,
+	.post-table-of-contents,
+	.post-table-of-contents.top,
+	.posts .hentry,
+	.items section,
+	.entry-meta,
+	.single .entry-meta,
+	div.sharedaddy,
+	.post-navigation,
+	.home .front-page-widgets-wrapper,
+	.breadcrumbs-container,
+	.site div#jp-relatedposts,
+	.widget ul li,
+	.fl-builder-content,
+	.rtb-message {
+		border-color: #eaecee; /* Plus */
+	}
+
+	input:focus,
+	select:focus,
+	textarea:focus,
+	.posts .hentry:hover,
+	.widget .tagcloud a:hover,
+	.site .picker__input.picker__input--active {
+		/*[*/
+		border-color: #0aac8e;
+		/*]*/
+		/*//
+		border-color: [[color_accent]];
+		//*/
+	}
+
+	.label-sticky:before,
+	.label-sticky:after {
+		/*[*/
+		border-top-color: #0aac8e;
+		border-right-color: #0aac8e;
+		/*]*/
+		/*//
+		border-top-color: [[color_accent]];
+		border-right-color: [[color_accent]];
+		//*/
+	}
+
+	.widget .tagcloud a:before,
+	.fl-builder-content * {
+		border-color: inherit; /* * */
+	}
+
+	@media only screen and (max-width: 55em) {
+
+		.sidebar {
+			border-color: #eaecee; /* Plus */
+		}
+
+	}
+
+
+
+/**
+ * Fonts
+ */
+/*//
+
+	html {
+		font-family: [[font_family_body]]'Helvetica Neue', Helvetica, Arial, sans-serif;
+		font-size: [[font_size_body]]px;
+	}
+
+	h1, h2, h3, h4, h5, h6,
+	.h1, .h2, .h3, .h4, .h5, .h6 {
+		font-family: [[font_family_headings]]'Helvetica Neue', Helvetica, Arial, sans-serif;
+	}
+
+	.site-title {
+		font-family: [[font_family_logo]]'Helvetica Neue', Helvetica, Arial, sans-serif;
+	}
+
+//*/

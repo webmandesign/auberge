@@ -5,37 +5,21 @@
  * Auberge WordPress Theme, Copyright 2015 WebMan [http://www.webmandesign.eu/]
  * Auberge is distributed under the terms of the GNU GPL
  *
+ * Requires at least:  4.3
+ *
  * @package    Auberge
- * @author     WebMan
- * @license    GPL-2.0+
- * @link       http://www.webmandesign.eu
- * @copyright  2015 WebMan - Oliver Juhas
+ * @copyright  WebMan Design, Oliver Juhas
+ * @license    GPL-3.0, http://www.gnu.org/licenses/gpl-3.0.html
  *
  * @since    1.0
- * @version  1.4.5
+ * @version  2.0
  *
  * @link  http://www.webmandesign.eu
  *
- * CONTENT:
- * - 0) Constants
- * - 1) Required files
+ * Contents:
+ *
+ * 1) Required files
  */
-
-
-
-
-
-/**
- * 0) Constants
- */
-
-	//Basic constants
-		if ( ! defined( 'WM_THEME_SHORTNAME' ) ) define( 'WM_THEME_SHORTNAME',  str_replace( array( '-lite', '-plus' ), '', get_template() ) );
-
-		if ( ! defined( 'WM_WP_COMPATIBILITY' ) ) define( 'WM_WP_COMPATIBILITY', 4.1 );
-
-	//Dir constants
-		if ( ! defined( 'WM_INC_DIR' ) ) define( 'WM_INC_DIR', trailingslashit( 'inc' ) );
 
 
 
@@ -45,22 +29,10 @@
  * 1) Required files
  */
 
-	//Global functions
-		locate_template( WM_INC_DIR . 'lib/core.php', true );
+	// Global functions
 
-	//Theme setup
-		locate_template( WM_INC_DIR . 'setup.php', true );
+		require_once( get_template_directory() . '/library/core.php' );
 
-	//Custom header
-		locate_template( WM_INC_DIR . 'custom-header/custom-header.php', true );
+	// Theme setup
 
-	//Customizer
-		locate_template( WM_INC_DIR . 'customizer/customizer.php', true );
-
-	//Jetpack setup
-		locate_template( WM_INC_DIR . 'jetpack/jetpack.php', true );
-
-	//Beaver Builder setup
-		locate_template( WM_INC_DIR . 'beaver-builder/beaver-builder.php', true );
-
-?>
+		require_once( get_template_directory() . '/includes/setup/setup.php' );

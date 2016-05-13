@@ -1,0 +1,259 @@
+/**
+ * WordPress visual editor styles
+ *
+ * @package    Auberge
+ * @copyright  WebMan Design, Oliver Juhas
+ *
+ * @since    1.0
+ * @version  2.0
+ */
+
+
+
+
+
+/**
+ * Contents:
+ *
+ *   0. Includes
+ *   1. Font icons basics
+ *   2. Typography
+ *   3. Forms
+ *   4. Site content
+ * 100. Visual Editor specific styles
+ */
+
+
+
+
+
+/**
+ * 0. Includes
+ */
+
+	@import url( 'starter.css' );
+
+	@import url( 'custom.css' );
+
+
+
+
+
+/**
+ * 1. Font icons basics
+ */
+
+	pre:before {
+		font-family: 'Genericons';
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		text-decoration: inherit;
+		text-transform: none;
+		-moz-osx-font-smoothing: grayscale;
+		 -webkit-font-smoothing: antialiased;
+		speak: none;
+	}
+
+	.genericon.vertical-align-middle:before   { vertical-align: middle;   }
+	.genericon.vertical-align-baseline:before { vertical-align: baseline; }
+	.genericon.vertical-align-bottom:before   { vertical-align: bottom;   }
+
+
+
+
+
+/**
+ * 2. Typography
+ */
+
+	/**
+	 * Base
+	 */
+
+		body { font-family: 'Ubuntu', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+
+
+
+
+
+/**
+ * 3. Forms
+ */
+
+		/* Buttons */
+
+			.button,
+			button,
+			input[type="button"],
+			input[type="reset"],
+			input[type="submit"] {
+				padding: 1em;
+				border: 0;
+			}
+				.button:hover,
+				button:hover,
+				input[type="button"]:hover,
+				input[type="reset"]:hover,
+				input[type="submit"]:hover,
+				.button:focus,
+				button:focus,
+				input[type="button"]:focus,
+				input[type="reset"]:focus,
+				input[type="submit"]:focus,
+				.button:active,
+				button:active,
+				input[type="button"]:active,
+				input[type="reset"]:active,
+				input[type="submit"]:active { opacity: .75; }
+
+				.button:active,
+				button:active,
+				input[type="button"]:active,
+				input[type="reset"]:active,
+				input[type="submit"]:active { opacity: .9; }
+
+
+
+
+
+/**
+ * 4. Site content
+ */
+
+	/**
+	 * Main content area
+	 */
+
+		/**
+		 * Media
+		 */
+
+			/* Images */
+
+				a img {
+					-webkit-transition: all .4s ease-in-out;
+					        transition: all .4s ease-in-out;
+				}
+					a img:hover {
+						-webkit-box-shadow: 0 1rem .62rem -.62rem rgba(0,0,0, .25);
+						        box-shadow: 0 1rem .62rem -.62rem rgba(0,0,0, .25);
+					}
+
+
+
+		/**
+		 * Content columns
+		 */
+
+			.column {
+				float: left;
+				margin: 0 6% 0 0;
+			}
+			.column.last { margin-right: 0; }
+
+				.column-12 { width: 47%;    }
+				.column-13 { width: 29.33%; }
+				.column-23 { width: 64.66%; }
+				.column-14 { width: 21%;    }
+				.column-34 { width: 73%;    }
+
+
+		/**
+		 * Dropcaps
+		 */
+
+			.dropcap-text::first-letter {
+				float: left;
+				display: block;
+				padding: 0 0.19em;
+				padding-left: 0;
+				line-height: 1;
+				font-size: 2.6244em;
+			}
+
+			@media only screen and (min-width: 80em) {
+				.dropcap-text::first-letter { font-size: 4.25153em; }
+			}
+
+
+
+
+
+/**
+ * 100. Visual Editor specific styles
+ */
+
+	body {
+		width: 100%;
+		max-width: 632px !important;
+		background: #fff;
+		color: #6a6c6e;
+	}
+	#tinymce {
+		padding: 20px;
+		border-right: 2px dashed #eaecee;
+	}
+	body.wp-autoresize { padding: 20px !important; }
+
+
+
+	/**
+	 * Media player
+	 */
+
+		body .mejs-container,
+		body .wp-playlist { margin: 0 !important; }
+		.wpview-content { margin: 0 0 1.62em; }
+
+
+
+	/**
+	 * WP Captions
+	 */
+
+		.wp-caption-dd { margin-top: 1em; }
+
+
+
+	/**
+	 * Tables
+	 */
+
+		.mce-item-table,
+		.mce-item-table td,
+		.mce-item-table th,
+		.mce-item-table caption,
+		thead + tbody tr:first-child td,
+		thead + tbody tr:first-child th {
+			border-width: 1px;
+			border-style: solid;
+			border-color: #eaecee;
+		}
+
+
+
+	/**
+	 * Pullquotes
+	 */
+
+			blockquote.alignleft { margin-left: 0; }
+			blockquote.alignright { margin-right: 0; }
+
+
+	/**
+	 * Responsive media
+	 */
+
+		img,
+		embed,
+		iframe,
+		object,
+		video {
+			max-width: 100%;
+			/*height: auto;*/
+		}
+		embed,
+		iframe,
+		object,
+		video { width: 100% !important; }
