@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0
- * @version  2.0
+ * @version  2.0.1
  *
  * Contents:
  *
@@ -786,7 +786,7 @@
 		 * Food menu item image link
 		 *
 		 * @since    2.0
-		 * @version  2.0
+		 * @version  2.0.1
 		 *
 		 * @param  array $image_link
 		 */
@@ -796,6 +796,7 @@
 				// Helper variables
 
 					$post_id = get_the_ID();
+					$content = trim( strip_tags( get_the_content() ) );
 
 
 				// Processing
@@ -803,7 +804,7 @@
 					if (
 							'nova_menu_item' == get_post_type( $post_id )
 							&& ! is_single( $post_id )
-							&& empty( trim( strip_tags( get_the_content() ) ) )
+							&& empty( $content )
 						) {
 
 						$image_link = wp_get_attachment_image_src( get_post_thumbnail_id( $post_id ), 'full' );

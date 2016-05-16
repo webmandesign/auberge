@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0
- * @version  2.0
+ * @version  2.0.1
  *
  * Contents:
  *
@@ -48,13 +48,6 @@
 								'version'  => '4.0.2',
 							),
 
-							'advanced-custom-fields' => array(
-								'name'     => esc_html__( 'Advanced Custom Fields (adds theme features)', 'auberge' ),
-								'slug'     => 'advanced-custom-fields',
-								'required' => false,
-								'version'  => '4.4.7',
-							),
-
 				) );
 
 			/**
@@ -67,6 +60,20 @@
 						'slug'     => 'beaver-builder-lite-version',
 						'required' => false,
 						'version'  => '1.7.8',
+					);
+
+			}
+
+			/**
+			 * Recommend Advanced Custom Fields only if Pro version not active
+			 */
+			if ( ! class_exists( 'register_field_group' ) ) {
+
+				$plugins['advanced-custom-fields'] = array(
+						'name'     => esc_html__( 'Advanced Custom Fields (adds theme features)', 'auberge' ),
+						'slug'     => 'advanced-custom-fields',
+						'required' => false,
+						'version'  => '4.4.7',
 					);
 
 			}

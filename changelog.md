@@ -1,5 +1,19 @@
 # Auberge Changelog
 
+## 2.0.1
+
+* **Update**: Making the theme compatible with older versions of PHP
+* **Fix**: Advanced Custom Fields plugin recommendation
+
+#### Files changed:
+
+	functions.php
+	style.css
+	includes/plugins/jetpack/jetpack.php
+	includes/setup/setup.php
+	includes/tgmpa/plugins.php
+
+
 ## 2.0
 
 * **Add**: Nested Food Menu sections support

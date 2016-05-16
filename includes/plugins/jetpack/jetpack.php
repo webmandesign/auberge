@@ -10,7 +10,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.1
- * @version  2.0
+ * @version  2.0.1
  *
  * Contents:
  *
@@ -391,7 +391,7 @@
 		 * Jetpack food menus taxonomy body class
 		 *
 		 * @since    2.0
-		 * @version  2.0
+		 * @version  2.0.1
 		 *
 		 * @param  array $classes
 		 */
@@ -416,9 +416,10 @@
 
 					if ( is_tax( $taxonomy ) ) {
 
-						$term = get_term_by( 'slug', get_query_var( 'term' ), $taxonomy );
+						$term     = get_term_by( 'slug', get_query_var( 'term' ), $taxonomy );
+						$children = get_term_children( (int) $term->term_id, $taxonomy );
 
-						if ( empty( get_term_children( (int) $term->term_id, $taxonomy ) ) ) {
+						if ( empty( $children ) ) {
 							$classes[] = 'no-tax-children';
 						} else {
 							$classes[] = 'has-tax-children';
@@ -551,7 +552,7 @@
 		 * Display only parent food menu sections: Food Menu page template
 		 *
 		 * @since    2.0
-		 * @version  2.0
+		 * @version  2.0.1
 		 */
 		if ( ! function_exists( 'wm_jetpack_food_menu_loop_section_display_menu_page' ) ) {
 			function wm_jetpack_food_menu_loop_section_display_menu_page() {
@@ -565,7 +566,7 @@
 
 				// Processing
 
-					if ( empty( get_post_meta( get_the_ID(), 'food_menu_section', true ) ) ) {
+					if ( ! get_post_meta( get_the_ID(), 'food_menu_section', true ) ) {
 						add_filter( 'jetpack_food_section_parent_only', '__return_true' );
 					}
 
