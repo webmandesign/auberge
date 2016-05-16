@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0
- * @version  2.0.1
+ * @version  2.0.2
  *
  * Contents:
  *
@@ -67,7 +67,7 @@
 			/**
 			 * Recommend Advanced Custom Fields only if Pro version not active
 			 */
-			if ( ! class_exists( 'register_field_group' ) ) {
+			if ( ! function_exists( 'register_field_group' ) ) {
 
 				$plugins['advanced-custom-fields'] = array(
 						'name'     => esc_html__( 'Advanced Custom Fields (adds theme features)', 'auberge' ),

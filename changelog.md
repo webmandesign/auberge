@@ -1,5 +1,16 @@
 # Auberge Changelog
 
+## 2.0.2
+
+* **Fix**: Advanced Custom Fields plugin recommendation
+
+#### Files changed:
+
+	functions.php
+	style.css
+	includes/tgmpa/plugins.php
+
+
 ## 2.0.1
 
 * **Update**: Making the theme compatible with older versions of PHP
