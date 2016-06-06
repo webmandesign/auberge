@@ -12,7 +12,7 @@
  * @license    GPL-3.0, http://www.gnu.org/licenses/gpl-3.0.html
  *
  * @since    1.0
- * @version  2.0.2
+ * @version  2.0.3
  *
  * @link  http://www.webmandesign.eu
  *

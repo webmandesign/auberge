@@ -1,5 +1,15 @@
 # Auberge Changelog
 
+## 2.0.3
+
+* **Update**: Theme tags
+
+#### Files changed:
+
+	functions.php
+	style.css
+
+
 ## 2.0.2
 
 * **Fix**: Advanced Custom Fields plugin recommendation
