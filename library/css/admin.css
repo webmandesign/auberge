@@ -52,6 +52,6 @@ select[multiple] { height: 80px !important; }
 
 .widget-content textarea { max-width: 100%; }
 
-#wpadminbar #wp-admin-bar-theme_options_links > .ab-item::before { content: '\f111'; }
+#wp-admin-bar-theme_options_links > .ab-item::before { content: '\f111'; }
 
-#wpadminbar #wp-admin-bar-update_notifier > .ab-item::before { content: '\f107'; }
+#wp-admin-bar-update_notifier > .ab-item::before { content: '\f107'; }
