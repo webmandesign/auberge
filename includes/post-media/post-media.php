@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    2.0
- * @version  2.0
+ * @version  2.1
  */
 
 
@@ -21,7 +21,7 @@
 	 * Post thumbnail (featured image) display size
 	 *
 	 * @since    1.4.2
-	 * @version  1.4.8
+	 * @version  2.1
 	 *
 	 * @param  string $image_size
 	 */
@@ -32,13 +32,7 @@
 
 				if (
 						is_single( get_the_ID() )
-						|| (
-								is_page( get_the_ID() )
-								&& ! (
-									is_page_template( 'page-template/_menu.php' )
-									|| is_front_page()
-								)
-							)
+						|| is_page( get_the_ID() )
 						|| is_attachment()
 					) {
 

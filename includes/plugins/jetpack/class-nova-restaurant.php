@@ -37,7 +37,7 @@
 	 * Jetpack Food Menu modifications class
 	 *
 	 * @since    2.0
-	 * @version  2.0
+	 * @version  2.1
 	 *
 	 * Contents:
 	 *
@@ -338,9 +338,18 @@
 			 * Allowing HTML tags in taxonomy description.
 			 *
 			 * @since    2.0
-			 * @version  2.0
+			 * @version  2.1
 			 */
 			public function menu_item_loop_header() {
+
+				// Helper variables
+
+					$term_link = '';
+
+					if ( apply_filters( 'jetpack_food_section_archive_link', true ) ) {
+						$term_link = get_term_link( $this->menu_item_loop_current_term, 'nova_menu' );
+					}
+
 
 				// Output
 
@@ -348,13 +357,13 @@
 
 						$this->menu_item_loop_open_element( 'menu_title' );
 
-							if ( apply_filters( 'jetpack_food_section_archive_link', true ) ) {
-								echo '<a href="' . get_term_link( $this->menu_item_loop_current_term ) . '">';
+							if ( $term_link && ! is_wp_error( $term_link ) ) {
+								echo '<a href="' . get_term_link( $this->menu_item_loop_current_term, 'nova_menu' ) . '">';
 							}
 
 							echo esc_html( $this->menu_item_loop_current_term->name );
 
-							if ( apply_filters( 'jetpack_food_section_archive_link', true ) ) {
+							if ( $term_link && ! is_wp_error( $term_link ) ) {
 								echo '</a>';
 							}
 
@@ -378,7 +387,7 @@
 			 * Outputs a Menu Item Markup element opening tag
 			 *
 			 * @since    2.0
-			 * @version  2.0
+			 * @version  2.1
 			 *
 			 * @param string $field - Menu Item Markup settings field
 			 */
@@ -395,9 +404,9 @@
 
 					if (
 							'menu_header' == $field
-							&& $this->menu_item_loop_current_term->name
+							&& $this->menu_item_loop_current_term->slug
 						) {
-						$id = ' id="' . sanitize_title( $this->menu_item_loop_current_term->name . '-' . rand( 10, 99 ) ) . '"';
+						$id = ' id="' . sanitize_title( $this->menu_item_loop_current_term->slug . '-' . rand( 10, 99 ) ) . '"';
 					}
 
 

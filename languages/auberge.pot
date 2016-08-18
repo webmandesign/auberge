@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Auberge\n"
 "Report-Msgid-Bugs-To: http://support.webmandesign.eu\n"
-"POT-Creation-Date: 2016-05-13 16:16+0200\n"
+"POT-Creation-Date: 2016-08-18 13:35+0200\n"
 "PO-Revision-Date: 2015-04-21 20:43+0100\n"
 "Last-Translator: WebMan - Oliver Juhas <webmandesigneu@gmail.com>\n"
 "Language-Team: \n"
@@ -11,7 +11,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7\n"
+"X-Generator: Poedit 1.8.8\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
@@ -155,6 +155,54 @@ msgstr ""
 
 #: includes/plugins/jetpack/jetpack.php:242
 msgid "Load more&hellip;"
+msgstr ""
+
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:109
+msgid "Theme demo content"
+msgstr ""
+
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:141
+msgid "Media files quality"
+msgstr ""
+
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:145
+msgid ""
+"Please note that imported media files (such as images, video and audio "
+"files) are of low quality to prevent copyright infringement."
+msgstr ""
+
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:146
+msgid ""
+"Please read \"Credits\" section of theme documentation for reference where "
+"the demo media files were obtained from."
+msgstr ""
+
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:147
+msgid "Get media for your website &raquo;"
+msgstr ""
+
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:155
+msgid "Install required plugins!"
+msgstr ""
+
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:159
+msgid ""
+"Please read the information about the theme demo required plugins first."
+msgstr ""
+
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:160
+msgid ""
+"If you do not install and activate demo required plugins, some of the "
+"content will not be imported."
+msgstr ""
+
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:161
+msgid ""
+"Read the information before you run the theme demo content import process."
+msgstr ""
+
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:162
+msgid "View the list of required plugins &raquo;"
 msgstr ""
 
 #: includes/plugins/webman-amplifier/webman-amplifier.php:95
@@ -333,7 +381,7 @@ msgid "This text will be displayed above the nutrition facts table"
 msgstr ""
 
 #: includes/plugins/webman-amplifier/webman-amplifier.php:267
-#: includes/setup-plus/setup-plus.php:808
+#: includes/setup-plus/setup-plus.php:818
 msgid "Nutrition facts"
 msgstr ""
 
@@ -449,53 +497,53 @@ msgstr ""
 msgid "Ingredients"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:750
+#: includes/setup-plus/setup-plus.php:760
 msgid "Instructions"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:849
+#: includes/setup-plus/setup-plus.php:859
 msgid "Print the recipe!"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1006
+#: includes/setup-plus/setup-plus.php:1016
 msgid "Navigation"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1012
-#: includes/setup-plus/setup-plus.php:1057
+#: includes/setup-plus/setup-plus.php:1022
+#: includes/setup-plus/setup-plus.php:1067
 #: includes/theme-options/theme-options.php:103
 #: includes/theme-options/theme-options.php:143
 #: includes/theme-options/theme-options.php:180
 msgid "Background color"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1025
-#: includes/setup-plus/setup-plus.php:1070
+#: includes/setup-plus/setup-plus.php:1035
+#: includes/setup-plus/setup-plus.php:1080
 #: includes/theme-options/theme-options.php:116
 #: includes/theme-options/theme-options.php:159
 #: includes/theme-options/theme-options.php:193
 msgid "Text color"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1038
+#: includes/setup-plus/setup-plus.php:1048
 msgid "Border color"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1083
+#: includes/setup-plus/setup-plus.php:1093
 msgid "Headings color"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1096
+#: includes/setup-plus/setup-plus.php:1106
 msgid "Borders color"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1115
+#: includes/setup-plus/setup-plus.php:1125
 msgctxt "Customizer section title."
 msgid "Texts"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1116
-#: includes/setup-plus/setup-plus.php:1154
+#: includes/setup-plus/setup-plus.php:1126
+#: includes/setup-plus/setup-plus.php:1165
 #: includes/theme-options/theme-options.php:47
 #: includes/theme-options/theme-options.php:75
 #: includes/theme-options/theme-options.php:97
@@ -508,142 +556,142 @@ msgctxt "Customizer panel title."
 msgid "Theme"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1122
+#: includes/setup-plus/setup-plus.php:1132
 msgid "Front page Posts section title"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1123
+#: includes/setup-plus/setup-plus.php:1133
 msgctxt "Front page blog posts section title."
 msgid "News"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1131
+#: includes/setup-plus/setup-plus.php:1141
 msgid "Front page Food menu section title"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1132
+#: includes/setup-plus/setup-plus.php:1142
 msgctxt "Front page food menu section title."
 msgid "Menu"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1140
+#: includes/setup-plus/setup-plus.php:1150
 msgid "Footer credits text"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1141
+#: includes/setup-plus/setup-plus.php:1151
 msgid "When left empty, the default theme credits text is displayed."
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1153
+#: includes/setup-plus/setup-plus.php:1164
 msgctxt "Customizer section title."
 msgid "Food Menu"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1160
+#: includes/setup-plus/setup-plus.php:1171
 msgid "Disable food menu"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1161
+#: includes/setup-plus/setup-plus.php:1172
 msgid ""
 "In case you want to use the theme as recipe blog only, you have the option "
 "to disable the Food Menu post type."
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1167
+#: includes/setup-plus/setup-plus.php:1178
 msgid "Disable food section archive linking"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1168
+#: includes/setup-plus/setup-plus.php:1179
 msgid ""
 "By default, all food menu section titles are linked to corresponding archive "
 "page."
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1168
+#: includes/setup-plus/setup-plus.php:1179
 msgid "You can override this behavior here."
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1222
+#: includes/setup-plus/setup-plus.php:1233
 #: template-parts/loop-blog-condensed.php:43
 msgid "News"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1242 template-parts/loop-food-menu.php:58
+#: includes/setup-plus/setup-plus.php:1253 template-parts/loop-food-menu.php:58
 msgctxt "Food menu title."
 msgid "Menu"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1351
+#: includes/setup-plus/setup-plus.php:1362
 msgctxt "Initial, empty dropdown option title."
 msgid "- Nutrition fact -"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1352
+#: includes/setup-plus/setup-plus.php:1363
 msgctxt "According to http://schema.org/NutritionInformation."
 msgid "Calories"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1353
+#: includes/setup-plus/setup-plus.php:1364
 msgctxt "According to http://schema.org/NutritionInformation."
 msgid "Protein"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1354
+#: includes/setup-plus/setup-plus.php:1365
 msgctxt "According to http://schema.org/NutritionInformation."
 msgid "Fiber"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1355
+#: includes/setup-plus/setup-plus.php:1366
 msgctxt "According to http://schema.org/NutritionInformation."
 msgid "Carbohydrates"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1356
+#: includes/setup-plus/setup-plus.php:1367
 msgctxt "According to http://schema.org/NutritionInformation."
 msgid "- Sugars"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1357
+#: includes/setup-plus/setup-plus.php:1368
 msgctxt "According to http://schema.org/NutritionInformation."
 msgid "Fat"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1358
+#: includes/setup-plus/setup-plus.php:1369
 msgctxt "According to http://schema.org/NutritionInformation."
 msgid "- Saturated fat"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1359
+#: includes/setup-plus/setup-plus.php:1370
 msgctxt "According to http://schema.org/NutritionInformation."
 msgid "- Unsaturated fat"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1360
+#: includes/setup-plus/setup-plus.php:1371
 msgctxt "According to http://schema.org/NutritionInformation."
 msgid "- Trans fat"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1361
+#: includes/setup-plus/setup-plus.php:1372
 msgctxt "According to http://schema.org/NutritionInformation."
 msgid "Cholesterol"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1362
+#: includes/setup-plus/setup-plus.php:1373
 msgctxt "According to http://schema.org/NutritionInformation."
 msgid "Sodium"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1368
+#: includes/setup-plus/setup-plus.php:1379
 msgid "Custom Banner"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1369
+#: includes/setup-plus/setup-plus.php:1380
 msgid ""
 "This widget area will replace the banner area on front page. You can insert "
 "your custom banner (slider) shortcode into a text widget to display it."
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1566
+#: includes/setup-plus/setup-plus.php:1577
 #, php-format
 msgctxt "Recipe preparation duration."
 msgid "1 hour"
@@ -651,13 +699,17 @@ msgid_plural "%d hours"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/setup-plus/setup-plus.php:1569
+#: includes/setup-plus/setup-plus.php:1580
 #, php-format
 msgctxt "Recipe preparation duration."
 msgid "1 minute"
 msgid_plural "%d minutes"
 msgstr[0] ""
 msgstr[1] ""
+
+#: includes/setup-plus/setup-plus.php:1652
+msgid "WebMan Amplifier (adding theme features)"
+msgstr ""
 
 #: includes/setup/setup.php:111
 msgid " - do not use Google Font"
@@ -735,192 +787,191 @@ msgstr ""
 msgid "Read theme changelog &raquo;"
 msgstr ""
 
-#: includes/setup/setup.php:537
+#: includes/setup/setup.php:545
 msgid "In posts list."
 msgstr ""
 
-#: includes/setup/setup.php:548
+#: includes/setup/setup.php:556
 msgid "In single post page."
 msgstr ""
 
-#: includes/setup/setup.php:554
+#: includes/setup/setup.php:562
 msgid "In front page banner."
 msgstr ""
 
-#: includes/setup/setup.php:560
+#: includes/setup/setup.php:568
 msgid "In food menu list."
 msgstr ""
 
-#: includes/setup/setup.php:697
+#: includes/setup/setup.php:705
 msgctxt "WordPress predefined image size name."
 msgid "Thumbnail size"
 msgstr ""
 
-#: includes/setup/setup.php:698
+#: includes/setup/setup.php:706
 msgctxt "WordPress predefined image size name."
 msgid "Medium size"
 msgstr ""
 
-#: includes/setup/setup.php:699
+#: includes/setup/setup.php:707
 msgctxt "WordPress predefined image size name."
 msgid "Large size"
 msgstr ""
 
-#: includes/setup/setup.php:732
+#: includes/setup/setup.php:740
 msgid "Recommended image sizes"
 msgstr ""
 
-#: includes/setup/setup.php:733
+#: includes/setup/setup.php:741
 msgid ""
 "For the theme to work correctly, please, set these recommended image sizes:"
 msgstr ""
 
-#: includes/setup/setup.php:739
+#: includes/setup/setup.php:747
 msgid "Size name"
 msgstr ""
 
-#: includes/setup/setup.php:740
+#: includes/setup/setup.php:748
 msgid "Size parameters"
 msgstr ""
 
-#: includes/setup/setup.php:741
+#: includes/setup/setup.php:749
 msgid "Theme usage"
 msgstr ""
 
-#: includes/setup/setup.php:749
+#: includes/setup/setup.php:757
 msgid "cropped"
 msgstr ""
 
-#: includes/setup/setup.php:749
+#: includes/setup/setup.php:757
 msgid "scaled"
 msgstr ""
 
-#: includes/setup/setup.php:757
+#: includes/setup/setup.php:765
 msgid ""
 "Additional image size added by the theme. Can not be changed on this page."
 msgstr ""
 
-#: includes/setup/setup.php:762
+#: includes/setup/setup.php:770
 #, php-format
 msgctxt "1: image width, 2: image height, 3: cropped or scaled?"
 msgid "%1$d &times; %2$d, %3$s"
 msgstr ""
 
-#: includes/setup/setup.php:958
+#: includes/setup/setup.php:967
 msgid "Button link"
 msgstr ""
 
-#: includes/setup/setup.php:1200
+#: includes/setup/setup.php:1209
 msgctxt "Back to food menu sections selectors button title."
 msgid "&uarr; Menu sections"
 msgstr ""
 
-#: includes/setup/setup.php:2021
+#: includes/setup/setup.php:2030
 msgid "Breadcrumbs navigation"
 msgstr ""
 
-#: includes/setup/setup.php:2506
+#: includes/setup/setup.php:2518
 msgid "Previous post"
 msgstr ""
 
-#: includes/setup/setup.php:2507
+#: includes/setup/setup.php:2519
 msgid "Next post"
 msgstr ""
 
-#: includes/setup/setup.php:2551
+#: includes/setup/setup.php:2563
 msgid "This is sticky post"
 msgstr ""
 
-#: includes/setup/setup.php:2580
+#: includes/setup/setup.php:2592
 msgid "This content is password protected."
 msgstr ""
 
-#: includes/setup/setup.php:2580
+#: includes/setup/setup.php:2592
 msgid "Enter the password to view it."
 msgstr ""
 
-#: includes/setup/setup.php:2699
+#: includes/setup/setup.php:2711
 #, php-format
 msgid "Continue reading%s&hellip;"
 msgstr ""
 
-#: includes/setup/setup.php:2702
+#: includes/setup/setup.php:2714
 #, php-format
 msgctxt "%s: Name of current post."
 msgid "Continue reading%s&hellip;"
 msgstr ""
 
-#: includes/setup/setup.php:2773
+#: includes/setup/setup.php:2785
 msgctxt "Pagination text (visible): previous."
 msgid "&laquo;"
 msgstr ""
 
-#: includes/setup/setup.php:2774
+#: includes/setup/setup.php:2786
 msgctxt "Pagination text (hidden): previous."
 msgid "Previous page"
 msgstr ""
 
-#: includes/setup/setup.php:2775
+#: includes/setup/setup.php:2787
 msgctxt "Pagination text (hidden): next."
 msgid "Next page"
 msgstr ""
 
-#: includes/setup/setup.php:2776
+#: includes/setup/setup.php:2788
 msgctxt "Pagination text (visible): next."
 msgid "&raquo;"
 msgstr ""
 
-#: includes/setup/setup.php:2784
+#: includes/setup/setup.php:2796
 msgid "Posts Navigation"
 msgstr ""
 
-#: includes/setup/setup.php:2814
+#: includes/setup/setup.php:2826
 msgid "All posts"
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:353
+#: includes/tgmpa/class-tgm-plugin-activation.php:346
 msgid "Install Required Plugins"
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:354
+#: includes/tgmpa/class-tgm-plugin-activation.php:347
 msgid "Install Plugins"
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:355
+#. translators: %s: plugin name.
+#: includes/tgmpa/class-tgm-plugin-activation.php:349
 #, php-format
 msgid "Installing Plugin: %s"
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:356
+#. translators: %s: plugin name.
+#: includes/tgmpa/class-tgm-plugin-activation.php:351
+#, php-format
+msgid "Updating Plugin: %s"
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:352
 msgid "Something went wrong with the plugin API."
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:358
+#. translators: 1: plugin name(s).
+#: includes/tgmpa/class-tgm-plugin-activation.php:355
 #, php-format
 msgid "This theme requires the following plugin: %1$s."
 msgid_plural "This theme requires the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:363
+#. translators: 1: plugin name(s).
+#: includes/tgmpa/class-tgm-plugin-activation.php:361
 #, php-format
 msgid "This theme recommends the following plugin: %1$s."
 msgid_plural "This theme recommends the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:368
-#, php-format
-msgid ""
-"Sorry, but you do not have the correct permissions to install the %1$s "
-"plugin."
-msgid_plural ""
-"Sorry, but you do not have the correct permissions to install the %1$s "
-"plugins."
-msgstr[0] ""
-msgstr[1] ""
-
-#: includes/tgmpa/class-tgm-plugin-activation.php:373
+#. translators: 1: plugin name(s).
+#: includes/tgmpa/class-tgm-plugin-activation.php:367
 #, php-format
 msgid ""
 "The following plugin needs to be updated to its latest version to ensure "
@@ -931,206 +982,197 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:378
+#. translators: 1: plugin name(s).
+#: includes/tgmpa/class-tgm-plugin-activation.php:373
 #, php-format
 msgid "There is an update available for: %1$s."
 msgid_plural "There are updates available for the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:383
-#, php-format
-msgid ""
-"Sorry, but you do not have the correct permissions to update the %1$s plugin."
-msgid_plural ""
-"Sorry, but you do not have the correct permissions to update the %1$s "
-"plugins."
-msgstr[0] ""
-msgstr[1] ""
-
-#: includes/tgmpa/class-tgm-plugin-activation.php:388
+#. translators: 1: plugin name(s).
+#: includes/tgmpa/class-tgm-plugin-activation.php:379
 #, php-format
 msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:393
+#. translators: 1: plugin name(s).
+#: includes/tgmpa/class-tgm-plugin-activation.php:385
 #, php-format
 msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:398
-#, php-format
-msgid ""
-"Sorry, but you do not have the correct permissions to activate the %1$s "
-"plugin."
-msgid_plural ""
-"Sorry, but you do not have the correct permissions to activate the %1$s "
-"plugins."
-msgstr[0] ""
-msgstr[1] ""
-
-#: includes/tgmpa/class-tgm-plugin-activation.php:403
+#: includes/tgmpa/class-tgm-plugin-activation.php:390
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:408
+#: includes/tgmpa/class-tgm-plugin-activation.php:395
 msgid "Begin updating plugin"
 msgid_plural "Begin updating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:413
+#: includes/tgmpa/class-tgm-plugin-activation.php:400
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:417
+#: includes/tgmpa/class-tgm-plugin-activation.php:404
 msgid "Return to Required Plugins Installer"
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:418
-msgid "Return to the dashboard"
+#: includes/tgmpa/class-tgm-plugin-activation.php:405
+#: includes/tgmpa/class-tgm-plugin-activation.php:846
+#: includes/tgmpa/class-tgm-plugin-activation.php:2552
+#: includes/tgmpa/class-tgm-plugin-activation.php:3599
+msgid "Return to the Dashboard"
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:419
-#: includes/tgmpa/class-tgm-plugin-activation.php:3041
+#: includes/tgmpa/class-tgm-plugin-activation.php:406
+#: includes/tgmpa/class-tgm-plugin-activation.php:3178
 msgid "Plugin activated successfully."
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:420
-#: includes/tgmpa/class-tgm-plugin-activation.php:2844
+#: includes/tgmpa/class-tgm-plugin-activation.php:407
+#: includes/tgmpa/class-tgm-plugin-activation.php:2971
 msgid "The following plugin was activated successfully:"
 msgid_plural "The following plugins were activated successfully:"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:421
+#. translators: 1: plugin name.
+#: includes/tgmpa/class-tgm-plugin-activation.php:409
 #, php-format
 msgid "No action taken. Plugin %1$s was already active."
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:422
+#. translators: 1: plugin name.
+#: includes/tgmpa/class-tgm-plugin-activation.php:411
 #, php-format
 msgid ""
 "Plugin not activated. A higher version of %s is needed for this theme. "
 "Please update the plugin."
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:423
+#. translators: 1: dashboard link.
+#: includes/tgmpa/class-tgm-plugin-activation.php:413
 #, php-format
 msgid "All plugins installed and activated successfully. %1$s"
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:424
+#: includes/tgmpa/class-tgm-plugin-activation.php:414
 msgid "Dismiss this notice"
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:425
+#: includes/tgmpa/class-tgm-plugin-activation.php:415
+msgid ""
+"There are one or more required or recommended plugins to install, update or "
+"activate."
+msgstr ""
+
+#: includes/tgmpa/class-tgm-plugin-activation.php:416
 msgid "Please contact the administrator of this site for help."
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:540
+#: includes/tgmpa/class-tgm-plugin-activation.php:541
 msgid "This plugin needs to be updated to be compatible with your theme."
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:541
+#: includes/tgmpa/class-tgm-plugin-activation.php:542
 msgid "Update Required"
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:840
-#: includes/tgmpa/class-tgm-plugin-activation.php:3450
-msgid "Return to the Dashboard"
-msgstr ""
-
-#: includes/tgmpa/class-tgm-plugin-activation.php:947
+#: includes/tgmpa/class-tgm-plugin-activation.php:953
 msgid ""
 "The remote plugin package does not contain a folder with the desired slug "
 "and renaming did not work."
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:947
-#: includes/tgmpa/class-tgm-plugin-activation.php:950
+#: includes/tgmpa/class-tgm-plugin-activation.php:953
+#: includes/tgmpa/class-tgm-plugin-activation.php:956
 msgid ""
 "Please contact the plugin provider and ask them to package their plugin "
 "according to the WordPress guidelines."
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:950
+#: includes/tgmpa/class-tgm-plugin-activation.php:956
 msgid ""
 "The remote plugin package consists of more than one file, but the files are "
 "not packaged in a folder."
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:1128
-#: includes/tgmpa/class-tgm-plugin-activation.php:2840
+#: includes/tgmpa/class-tgm-plugin-activation.php:1140
+#: includes/tgmpa/class-tgm-plugin-activation.php:2967
 msgctxt "plugin A *and* plugin B"
 msgid "and"
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:1893
+#. translators: %s: version number
+#: includes/tgmpa/class-tgm-plugin-activation.php:2001
 #, php-format
-msgctxt "%s = version number"
 msgid "TGMPA v%s"
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:2179
+#: includes/tgmpa/class-tgm-plugin-activation.php:2292
 msgid "Required"
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:2182
+#: includes/tgmpa/class-tgm-plugin-activation.php:2295
 msgid "Recommended"
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:2198
+#: includes/tgmpa/class-tgm-plugin-activation.php:2311
 msgid "WordPress Repository"
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:2201
+#: includes/tgmpa/class-tgm-plugin-activation.php:2314
 msgid "External Source"
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:2204
+#: includes/tgmpa/class-tgm-plugin-activation.php:2317
 msgid "Pre-Packaged"
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:2221
+#: includes/tgmpa/class-tgm-plugin-activation.php:2334
 msgid "Not Installed"
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:2225
+#: includes/tgmpa/class-tgm-plugin-activation.php:2338
 msgid "Installed But Not Activated"
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:2227
+#: includes/tgmpa/class-tgm-plugin-activation.php:2340
 msgid "Active"
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:2233
+#: includes/tgmpa/class-tgm-plugin-activation.php:2346
 msgid "Required Update not Available"
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:2236
+#: includes/tgmpa/class-tgm-plugin-activation.php:2349
 msgid "Requires Update"
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:2239
+#: includes/tgmpa/class-tgm-plugin-activation.php:2352
 msgid "Update recommended"
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:2247
+#. translators: 1: install status, 2: update status
+#: includes/tgmpa/class-tgm-plugin-activation.php:2361
 #, php-format
-msgctxt "%1$s = install status, %2$s = update status"
+msgctxt "Install/Update Status"
 msgid "%1$s, %2$s"
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:2292
+#. translators: 1: number of plugins.
+#: includes/tgmpa/class-tgm-plugin-activation.php:2407
 #, php-format
 msgctxt "plugins"
 msgid "All <span class=\"count\">(%s)</span>"
@@ -1138,194 +1180,201 @@ msgid_plural "All <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:2295
+#. translators: 1: number of plugins.
+#: includes/tgmpa/class-tgm-plugin-activation.php:2411
 #, php-format
 msgid "To Install <span class=\"count\">(%s)</span>"
 msgid_plural "To Install <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:2298
+#. translators: 1: number of plugins.
+#: includes/tgmpa/class-tgm-plugin-activation.php:2415
 #, php-format
 msgid "Update Available <span class=\"count\">(%s)</span>"
 msgid_plural "Update Available <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:2301
+#. translators: 1: number of plugins.
+#: includes/tgmpa/class-tgm-plugin-activation.php:2419
 #, php-format
 msgid "To Activate <span class=\"count\">(%s)</span>"
 msgid_plural "To Activate <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:2383
+#: includes/tgmpa/class-tgm-plugin-activation.php:2501
 msgctxt "as in: \"version nr unknown\""
 msgid "unknown"
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:2391
+#: includes/tgmpa/class-tgm-plugin-activation.php:2509
 msgid "Installed version:"
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:2399
+#: includes/tgmpa/class-tgm-plugin-activation.php:2517
 msgid "Minimum required version:"
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:2411
+#: includes/tgmpa/class-tgm-plugin-activation.php:2529
 msgid "Available version:"
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:2434
-#, php-format
-msgid ""
-"No plugins to install, update or activate. <a href=\"%1$s\">Return to the "
-"Dashboard</a>"
+#: includes/tgmpa/class-tgm-plugin-activation.php:2552
+msgid "No plugins to install, update or activate."
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:2448
+#: includes/tgmpa/class-tgm-plugin-activation.php:2566
 msgid "Plugin"
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:2449
+#: includes/tgmpa/class-tgm-plugin-activation.php:2567
 msgid "Source"
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:2450
+#: includes/tgmpa/class-tgm-plugin-activation.php:2568
 msgid "Type"
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:2454
+#: includes/tgmpa/class-tgm-plugin-activation.php:2572
 msgid "Version"
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:2455
+#: includes/tgmpa/class-tgm-plugin-activation.php:2573
 msgid "Status"
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:2503
+#. translators: %2$s: plugin name in screen reader markup
+#: includes/tgmpa/class-tgm-plugin-activation.php:2622
 #, php-format
-msgctxt "%2$s = plugin name in screen reader markup"
 msgid "Install %2$s"
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:2507
+#. translators: %2$s: plugin name in screen reader markup
+#: includes/tgmpa/class-tgm-plugin-activation.php:2627
 #, php-format
-msgctxt "%2$s = plugin name in screen reader markup"
 msgid "Update %2$s"
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:2512
+#. translators: %2$s: plugin name in screen reader markup
+#: includes/tgmpa/class-tgm-plugin-activation.php:2633
 #, php-format
-msgctxt "%2$s = plugin name in screen reader markup"
 msgid "Activate %2$s"
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:2582
+#: includes/tgmpa/class-tgm-plugin-activation.php:2703
 msgid "Upgrade message from the plugin author:"
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:2615
+#: includes/tgmpa/class-tgm-plugin-activation.php:2736
 msgid "Install"
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:2621
+#: includes/tgmpa/class-tgm-plugin-activation.php:2742
 msgid "Update"
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:2624
+#: includes/tgmpa/class-tgm-plugin-activation.php:2745
 msgid "Activate"
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:2655
+#: includes/tgmpa/class-tgm-plugin-activation.php:2776
 msgid "No plugins were selected to be installed. No action taken."
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:2657
+#: includes/tgmpa/class-tgm-plugin-activation.php:2778
 msgid "No plugins were selected to be updated. No action taken."
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:2693
+#: includes/tgmpa/class-tgm-plugin-activation.php:2819
 msgid "No plugins are available to be installed at this time."
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:2695
+#: includes/tgmpa/class-tgm-plugin-activation.php:2821
 msgid "No plugins are available to be updated at this time."
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:2800
+#: includes/tgmpa/class-tgm-plugin-activation.php:2927
 msgid "No plugins were selected to be activated. No action taken."
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:2826
+#: includes/tgmpa/class-tgm-plugin-activation.php:2953
 msgid "No plugins are available to be activated at this time."
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:3040
+#: includes/tgmpa/class-tgm-plugin-activation.php:3177
 msgid "Plugin activation failed."
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:3374
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: includes/tgmpa/class-tgm-plugin-activation.php:3517
 #, php-format
 msgid "Updating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:3376
+#. translators: 1: plugin name, 2: error message.
+#: includes/tgmpa/class-tgm-plugin-activation.php:3520
 #, php-format
 msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:3377
+#. translators: 1: plugin name.
+#: includes/tgmpa/class-tgm-plugin-activation.php:3522
 #, php-format
 msgid "The installation of %1$s failed."
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:3381
+#: includes/tgmpa/class-tgm-plugin-activation.php:3526
 msgid ""
 "The installation and activation process is starting. This process may take a "
 "while on some hosts, so please be patient."
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:3382
+#. translators: 1: plugin name.
+#: includes/tgmpa/class-tgm-plugin-activation.php:3528
 #, php-format
 msgid "%1$s installed and activated successfully."
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:3382
-#: includes/tgmpa/class-tgm-plugin-activation.php:3388
+#: includes/tgmpa/class-tgm-plugin-activation.php:3528
+#: includes/tgmpa/class-tgm-plugin-activation.php:3536
 msgid "Show Details"
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:3382
-#: includes/tgmpa/class-tgm-plugin-activation.php:3388
+#: includes/tgmpa/class-tgm-plugin-activation.php:3528
+#: includes/tgmpa/class-tgm-plugin-activation.php:3536
 msgid "Hide Details"
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:3383
+#: includes/tgmpa/class-tgm-plugin-activation.php:3529
 msgid "All installations and activations have been completed."
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:3384
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: includes/tgmpa/class-tgm-plugin-activation.php:3531
 #, php-format
 msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:3387
+#: includes/tgmpa/class-tgm-plugin-activation.php:3534
 msgid ""
 "The installation process is starting. This process may take a while on some "
 "hosts, so please be patient."
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:3388
+#. translators: 1: plugin name.
+#: includes/tgmpa/class-tgm-plugin-activation.php:3536
 #, php-format
 msgid "%1$s installed successfully."
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:3389
+#: includes/tgmpa/class-tgm-plugin-activation.php:3537
 msgid "All installations have been completed."
 msgstr ""
 
-#: includes/tgmpa/class-tgm-plugin-activation.php:3390
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+#: includes/tgmpa/class-tgm-plugin-activation.php:3539
 #, php-format
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
@@ -1334,16 +1383,16 @@ msgstr ""
 msgid "Jetpack by WordPress.com (adds theme features)"
 msgstr ""
 
-#: includes/tgmpa/plugins.php:52
-msgid "Advanced Custom Fields (adds theme features)"
-msgstr ""
-
-#: includes/tgmpa/plugins.php:59
-msgid "WebMan Amplifier (adds theme features)"
-msgstr ""
-
-#: includes/tgmpa/plugins.php:73
+#: includes/tgmpa/plugins.php:51
 msgid "Beaver Builder (easy page builder)"
+msgstr ""
+
+#: includes/tgmpa/plugins.php:58
+msgid "Advanced Custom Fields (easy page setup)"
+msgstr ""
+
+#: includes/tgmpa/plugins.php:65
+msgid "One Click Demo Import (for installing theme demo content)"
 msgstr ""
 
 #: includes/theme-options/theme-options.php:48
@@ -1514,7 +1563,152 @@ msgid "Others"
 msgstr ""
 
 #: includes/theme-options/theme-options.php:325
+msgid "Show \"Welcome\" page"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:326
+msgid "Under \"Appearance\" WordPress dashboard menu"
+msgstr ""
+
+#: includes/theme-options/theme-options.php:334
 msgid "Disable excerpt on single post page"
+msgstr ""
+
+#: includes/welcome/class-welcome.php:103
+#, php-format
+msgctxt "1: theme name, 2: theme version number."
+msgid "Welcome to %1$s %2$s"
+msgstr ""
+
+#: includes/welcome/class-welcome.php:115
+#, php-format
+msgctxt "1: theme name, 2: theme developer link."
+msgid "Thank you for using %1$s WordPress theme by %2$s!"
+msgstr ""
+
+#: includes/welcome/class-welcome.php:122
+msgid "Please take time to read the steps below to set up your website."
+msgstr ""
+
+#: includes/welcome/class-welcome.php:129
+msgid "Theme Documentation"
+msgstr ""
+
+#: includes/welcome/class-welcome.php:131
+msgid "Support Forum"
+msgstr ""
+
+#: includes/welcome/class-welcome.php:143
+msgid "Quickstart Guide"
+msgstr ""
+
+#: includes/welcome/class-welcome.php:151
+msgid "WebMan Amplifier"
+msgstr ""
+
+#: includes/welcome/class-welcome.php:154
+#, php-format
+msgctxt "%s: plugin name."
+msgid ""
+"To use the recipes functionality please install and activate the %s plugin."
+msgstr ""
+
+#: includes/welcome/class-welcome.php:158
+#, php-format
+msgctxt "%s: linked theme name."
+msgid ""
+"Please note that this functionality is only available in paid version of the "
+"theme, the %s theme!"
+msgstr ""
+
+#: includes/welcome/class-welcome.php:164
+#, php-format
+msgctxt "%s: plugin name."
+msgid "Install %s &raquo;"
+msgstr ""
+
+#: includes/welcome/class-welcome.php:174
+msgid "The WordPress settings"
+msgstr ""
+
+#: includes/welcome/class-welcome.php:177
+msgid ""
+"Do not forget to set up your WordPress in \"Settings\" section of the "
+"WordPress dashboard."
+msgstr ""
+
+#: includes/welcome/class-welcome.php:178
+msgid "Please go through all the subsections and options."
+msgstr ""
+
+#: includes/welcome/class-welcome.php:179
+msgid "This step is required for all WordPress websites."
+msgstr ""
+
+#: includes/welcome/class-welcome.php:182
+msgid "Set Up WordPress &raquo;"
+msgstr ""
+
+#: includes/welcome/class-welcome.php:190
+msgid "Customize the theme"
+msgstr ""
+
+#: includes/welcome/class-welcome.php:193
+msgid "You can customize the theme using live-preview editor."
+msgstr ""
+
+#: includes/welcome/class-welcome.php:194
+msgid "Customization changes will go live only after you save them!"
+msgstr ""
+
+#: includes/welcome/class-welcome.php:197
+msgid "Customize the Theme &raquo;"
+msgstr ""
+
+#: includes/welcome/class-welcome.php:207
+msgid "Installing the theme demo content"
+msgstr ""
+
+#: includes/welcome/class-welcome.php:210
+msgid ""
+"You can install the theme demo content including pages, posts, custom post "
+"types, layouts, menus and widgets directly from your WordPress dashboard by "
+"clicking the button bellow."
+msgstr ""
+
+#: includes/welcome/class-welcome.php:214
+msgid ""
+"Alternatively (such as when the automated installation fails) you can follow "
+"theme documentation instructions for manual demo content installation."
+msgstr ""
+
+#: includes/welcome/class-welcome.php:215
+msgid "Read the instructions &raquo;"
+msgstr ""
+
+#: includes/welcome/class-welcome.php:220
+msgid "Install and run \"One Click Demo Import\" plugin"
+msgstr ""
+
+#: includes/welcome/class-welcome.php:224
+msgid "Install theme demo content"
+msgstr ""
+
+#: includes/welcome/class-welcome.php:228
+msgid ""
+"Or head over to Appearance &raquo; Import Demo Data to start the import "
+"process."
+msgstr ""
+
+#: includes/welcome/class-welcome.php:239
+msgid ""
+"You can disable this page in Appearance &raquo; Customize &raquo; Theme "
+"&raquo; Others."
+msgstr ""
+
+#: includes/welcome/class-welcome.php:267
+#: includes/welcome/class-welcome.php:269
+msgid "Welcome"
 msgstr ""
 
 #: library/controls/class-WM_Customizer_HTML.php:32

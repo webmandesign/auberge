@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0
- * @version  2.0.1
+ * @version  2.1
  *
  * Contents:
  *
@@ -493,6 +493,14 @@
 	} // /wm_theme_v2_upgrade_notice
 
 	add_action( 'wmhook_theme_upgrade', 'wm_theme_v2_upgrade_notice', 10, 2 );
+
+
+
+	/**
+	 * Welcome page
+	 */
+
+		require_once( get_template_directory() . '/includes/welcome/welcome.php' );
 
 
 
@@ -2312,14 +2320,17 @@
 				 * Display Food Menu loop on page template
 				 *
 				 * @since    2.0
-				 * @version  2.0
+				 * @version  2.1
 				 */
 				if ( ! function_exists( 'wm_loop_food_menu_page_template' ) ) {
 					function wm_loop_food_menu_page_template() {
 
 						// Requirements check
 
-							if ( ! is_page_template( 'page-template/_menu.php' ) ) {
+							if (
+									! is_page_template( 'page-template/_menu.php' )
+									|| is_front_page()
+								) {
 								return;
 							}
 
@@ -3376,6 +3387,14 @@
 
 		if ( class_exists( 'Jetpack' ) ) {
 			require_once( get_template_directory() . '/includes/plugins/jetpack/jetpack.php' );
+		}
+
+
+
+	// One Click Demo Import
+
+		if ( class_exists( 'PT_One_Click_Demo_Import' ) && is_admin() ) {
+			require_once( get_template_directory() . '/includes/plugins/one-click-demo-import/class-one-click-demo-import.php' );
 		}
 
 	// Smart Slider 3 setup

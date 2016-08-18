@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0
- * @version  2.0
+ * @version  2.1
  *
  * Contents:
  *
@@ -25,7 +25,7 @@
 	 * Set theme options array
 	 *
 	 * @since    1.0
-	 * @version  2.0
+	 * @version  2.1
 	 *
 	 * @param  array $options
 	 */
@@ -320,6 +320,15 @@
 						),
 
 							950 . 'others' . 100 => array(
+								'type'        => 'checkbox',
+								'id'          => 'others_welcome_page',
+								'label'       => esc_html__( 'Show "Welcome" page', 'auberge' ),
+								'description' => esc_html__( 'Under "Appearance" WordPress dashboard menu', 'auberge' ),
+								'default'     => true,
+								'preview_js'  => false, // This is to prevent customizer preview reload
+							),
+
+							950 . 'others' . 110 => array(
 								'type'  => 'checkbox',
 								'id'    => 'others-single-post-excerpt-disable',
 								'label' => esc_html__( 'Disable excerpt on single post page', 'auberge' ),
