@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    2.1
- * @version  2.1
+ * @version  2.1.1
  *
  * Contents:
  *
@@ -84,7 +84,7 @@ class Auberge_Welcome {
 		 * Render the screen content
 		 *
 		 * @since    2.1
-		 * @version  2.1
+		 * @version  2.1.1
 		 */
 		public static function render() {
 
@@ -215,7 +215,7 @@ class Auberge_Welcome {
 									<a href="<?php echo esc_url( 'http://www.webmandesign.eu/manual/auberge/#demo-content' ); ?>" target="_blank"><?php esc_html_e( 'Read the instructions &raquo;', 'auberge' ); ?></a>
 								</p>
 
-								<?php if ( ! class_exists( 'PT_One_Click_Demo_Import' ) ) : ?>
+								<?php if ( ! ( class_exists( 'OCDI_Plugin' ) || class_exists( 'PT_One_Click_Demo_Import' ) ) ) : ?>
 
 									<a href="<?php echo esc_url( admin_url( 'themes.php?page=tgmpa-install-plugins' ) ); ?>" class="button button-hero"><strong><?php esc_html_e( 'Install and run "One Click Demo Import" plugin', 'auberge' ); ?></strong></a>
 

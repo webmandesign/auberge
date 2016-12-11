@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0
- * @version  2.1
+ * @version  2.1.1
  *
  * Contents:
  *
@@ -1345,7 +1345,7 @@
 	 * Post classes
 	 *
 	 * @since    1.4
-	 * @version  1.4
+	 * @version  2.1.1
 	 *
 	 * @param  array $classes
 	 */
@@ -1353,6 +1353,10 @@
 		function wm_post_classes( $classes ) {
 
 			// Processing
+
+				// A generic class for easy styling
+
+					$classes[] = 'entry';
 
 				// Sticky post
 
@@ -3389,11 +3393,9 @@
 			require_once( get_template_directory() . '/includes/plugins/jetpack/jetpack.php' );
 		}
 
-
-
 	// One Click Demo Import
 
-		if ( class_exists( 'PT_One_Click_Demo_Import' ) && is_admin() ) {
+		if ( ( class_exists( 'OCDI_Plugin' ) || class_exists( 'PT_One_Click_Demo_Import' ) ) && is_admin() ) {
 			require_once( get_template_directory() . '/includes/plugins/one-click-demo-import/class-one-click-demo-import.php' );
 		}
 

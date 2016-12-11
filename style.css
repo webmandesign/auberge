@@ -4,7 +4,7 @@
  * Author:       WebMan Design
  * Author URI:   http://www.webmandesign.eu/
  * Description:  <strong>Auberge</strong> is responsive, retina-ready, modern restaurant & café & recipes blog WordPress theme. Supports Beaver Builder page builder plugin, Jetpack plugin to create nested food menus, WebMan Amplifier plugin for recipes, Schema.org markup with Google recipe view, Theme Hook Alliance action hooks, translation-ready code, header slideshow, customizable colors and layout, and other cool features. The theme is compatible with Chrome, Safari, Opera, Firefox, Edge, Internet Explorer 9+ browsers. Theme demo at http://themedemos.webmandesign.eu/auberge/
- * Version:      2.1
+ * Version:      2.1.1
  * License:      GNU General Public License v3
  * License URI:  http://www.gnu.org/licenses/gpl-3.0.html
  * Tags:         one-column, two-columns, three-columns, four-columns, right-sidebar, grid-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, full-width-template, microformats, sticky-post, theme-options, threaded-comments, translation-ready, post-formats, footer-widgets, blog, food-and-drink
@@ -804,6 +804,11 @@
 				vertical-align: middle;
 			}
 
+			.site-branding a img:hover {
+				-webkit-box-shadow: none;
+				        box-shadow: none;
+			}
+
 
 
 	/**
@@ -1223,13 +1228,13 @@
 			position: relative;
 		}
 
-			.no-js .site-banner.enable-slider .hentry,
-			.enable-slider .site-banner-inner:not(.slick-slider) .hentry {
+			.no-js .site-banner.enable-slider .entry,
+			.enable-slider .site-banner-inner:not(.slick-slider) .entry {
 				display: none;
 			}
 
-			.no-js .site-banner.enable-slider .hentry:first-child,
-			.enable-slider .site-banner-inner:not(.slick-slider) .hentry:first-child {
+			.no-js .site-banner.enable-slider .entry:first-child,
+			.enable-slider .site-banner-inner:not(.slick-slider) .entry:first-child {
 				display: block;
 			}
 
@@ -1290,7 +1295,7 @@
 	 * Main content area
 	 */
 
-		.is-singular .site-main > .hentry {
+		.is-singular .site-main > .entry {
 			position: relative;
 			float: left;
 			width: 62%;
@@ -1450,13 +1455,13 @@
 
 			/* Posts list in page section */
 
-				.page-section .posts .hentry {
+				.page-section .posts .entry {
 					z-index: 0;
 					-webkit-transition: padding .4s, height .4s, -webkit-transform .4s, -webkit-box-shadow .4s;
 					        transition: padding .4s, height .4s, transform .4s, box-shadow .4s;
 				}
 
-				.page-section .posts .hentry:hover {
+				.page-section .posts .entry:hover {
 					padding: 1.62rem;
 					z-index: 9;
 					-webkit-box-shadow: 0 .38rem 1.62rem rgba(0,0,0, .2);
@@ -1481,7 +1486,7 @@
 						        transition: all .4s;
 					}
 
-					.page-section .posts .hentry:hover .entry-media + .entry-inner {
+					.page-section .posts .entry:hover .entry-media + .entry-inner {
 						max-height: 400px;
 						padding-left: 0;
 						padding-right: 0;
@@ -1529,7 +1534,7 @@
 				margin: 0 -1%;
 			}
 
-				.posts .hentry {
+				.posts .entry {
 					float: left;
 					position: relative;
 					width: 31.333%;
@@ -1636,13 +1641,13 @@
 							outline: 0;
 						}
 
-					.items .hentry {
+					.items .entry {
 						float: left;
 						width: 46%;
 						margin: 0 6% 2% 0;
 					}
 
-					.items .hentry:nth-child(2n+1) {
+					.items .entry:nth-child(2n+1) {
 						margin-right: 0;
 					}
 
@@ -1933,7 +1938,7 @@
 			 * Food menu page
 			 */
 
-				.page-template-page-template_menu-php .hentry + .page-section {
+				.page-template-page-template_menu-php .entry + .page-section {
 					margin-top: 0;
 				}
 
@@ -1943,9 +1948,9 @@
 			 * Fullwidth page
 			 */
 
-				.is-singular .site-main > .attachment.hentry,
-				.page-template-page-template_fullwidth-php .site-main > .hentry,
-				.page-template-page-template_menu-php .site-main > .hentry {
+				.is-singular .site-main > .attachment.entry,
+				.page-template-page-template_fullwidth-php .site-main > .entry,
+				.page-template-page-template_menu-php .site-main > .entry {
 					float: none;
 					width: 100%;
 				}
@@ -2027,14 +2032,18 @@
  * 10. Sidebar and widgets
  */
 
-	.sidebar {
-		width: 38%;
-		padding-left: 8%;
-	}
+	@media only screen and (min-width: 55em) {
+
+		.sidebar {
+			width: 38%;
+			padding-left: 8%;
+		}
 
 		.toggle-mobile-sidebar {
 			display: none;
 		}
+
+	}
 
 		/**
 		 * Front page widgets area
@@ -2375,7 +2384,7 @@
 				padding: 0;
 			}
 
-			.single-fl-builder-template .site-main > .hentry {
+			.single-fl-builder-template .site-main > .entry {
 				float: none;
 				width: 100%;
 			}
@@ -2582,18 +2591,18 @@
 				font-size: 1.38em;
 			}
 
-				.hentry .rtb-booking-form .date,
-				.hentry .rtb-booking-form .time {
+				.entry .rtb-booking-form .date,
+				.entry .rtb-booking-form .time {
 					float: left;
 					width: 48%;
 					margin-bottom: 1em;
 				}
 
-				.hentry .rtb-booking-form .party {
+				.entry .rtb-booking-form .party {
 					clear: both;
 				}
 
-				.hentry .rtb-booking-form .time {
+				.entry .rtb-booking-form .time {
 					float: right;
 				}
 
@@ -2996,7 +3005,7 @@
 			 * Site content
 			 */
 
-				.is-singular .site-main > .hentry {
+				.is-singular .site-main > .entry {
 					float: none;
 					width: 100%;
 				}
@@ -3005,12 +3014,12 @@
 
 					/* Posts list in page section */
 
-						.page-section .posts .hentry {
+						.page-section .posts .entry {
 							-webkit-transition: none;
 							        transition: none;
 						}
 
-						.page-section .posts .hentry:hover {
+						.page-section .posts .entry:hover {
 							-webkit-box-shadow: none;
 							        box-shadow: none;
 						}
@@ -3057,7 +3066,7 @@
 
 				/* Posts list */
 
-					.posts .hentry {
+					.posts .entry {
 						width: 48%;
 					}
 
@@ -3172,7 +3181,7 @@
 						width: 100%;
 					}
 
-						.items .hentry {
+						.items .entry {
 							float: none;
 							width: 100%;
 							margin: 0 0 2% 0;
@@ -3180,7 +3189,7 @@
 
 				/* Posts list */
 
-					.posts .hentry {
+					.posts .entry {
 						float: none;
 						width: 96%;
 						margin-bottom: 8%;

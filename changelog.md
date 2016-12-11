@@ -1,5 +1,26 @@
 # Auberge Changelog
 
+## 2.1.1
+
+* **Update**: Not using `.hentry` class to style posts, introducing a custom `.entry` class
+* **Update**: One Click Demo Import plugin version 2.0 compatibility
+* **Fix**: Removed shadow on hovered logo image
+* **Fix**: Food Menu items order on Food Menu Section archive pages
+* **Fix**: Sidebar responsive styles
+
+#### Files changed:
+
+	changelog.md
+	style.css
+	assets/css/custom.css
+	assets/css/starter.css
+	assets/js/scripts-global.js
+	includes/plugins/jetpack/jetpack.php
+	includes/plugins/one-click-demo-import/class-one-click-demo-import.php
+	includes/setup/setup.php
+	includes/welcome/class-welcome.php
+
+
 ## 2.1
 
 * **Add**: "Welcome" admin page (under Apperance > Welcome)

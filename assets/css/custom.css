@@ -11,7 +11,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    2.0
- * @version  2.0
+ * @version  2.1.1
  */
 
 
@@ -33,7 +33,7 @@
 	}
 
 	.site,
-	.page-section .posts .hentry {
+	.page-section .posts .entry {
 		background-color: #fff; /* Plus */
 	}
 
@@ -421,7 +421,7 @@
 	.site-main + .page-section + .page-section,
 	.post-table-of-contents,
 	.post-table-of-contents.top,
-	.posts .hentry,
+	.posts .entry,
 	.items section,
 	.entry-meta,
 	.single .entry-meta,
@@ -439,7 +439,7 @@
 	input:focus,
 	select:focus,
 	textarea:focus,
-	.posts .hentry:hover,
+	.posts .entry:hover,
 	.widget .tagcloud a:hover,
 	.site .picker__input.picker__input--active {
 		/*[*/

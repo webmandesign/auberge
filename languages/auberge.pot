@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Auberge\n"
 "Report-Msgid-Bugs-To: http://support.webmandesign.eu\n"
-"POT-Creation-Date: 2016-08-18 13:35+0200\n"
+"POT-Creation-Date: 2016-12-11 16:08+0100\n"
 "PO-Revision-Date: 2015-04-21 20:43+0100\n"
 "Last-Translator: WebMan - Oliver Juhas <webmandesigneu@gmail.com>\n"
 "Language-Team: \n"
@@ -11,7 +11,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.8\n"
+"X-Generator: Poedit 1.8.11\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
@@ -157,51 +157,51 @@ msgstr ""
 msgid "Load more&hellip;"
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:109
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:105
 msgid "Theme demo content"
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:141
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:137
 msgid "Media files quality"
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:145
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:141
 msgid ""
 "Please note that imported media files (such as images, video and audio "
 "files) are of low quality to prevent copyright infringement."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:146
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:142
 msgid ""
 "Please read \"Credits\" section of theme documentation for reference where "
 "the demo media files were obtained from."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:147
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:143
 msgid "Get media for your website &raquo;"
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:155
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:151
 msgid "Install required plugins!"
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:159
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:155
 msgid ""
 "Please read the information about the theme demo required plugins first."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:160
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:156
 msgid ""
 "If you do not install and activate demo required plugins, some of the "
 "content will not be imported."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:161
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:157
 msgid ""
 "Read the information before you run the theme demo content import process."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:162
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:158
 msgid "View the list of required plugins &raquo;"
 msgstr ""
 
@@ -381,7 +381,7 @@ msgid "This text will be displayed above the nutrition facts table"
 msgstr ""
 
 #: includes/plugins/webman-amplifier/webman-amplifier.php:267
-#: includes/setup-plus/setup-plus.php:818
+#: includes/setup-plus/setup-plus.php:817
 msgid "Nutrition facts"
 msgstr ""
 
@@ -467,83 +467,83 @@ msgctxt "Metabox title."
 msgid "Recipe setup"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:456
+#: includes/setup-plus/setup-plus.php:455
 msgid "Skip to recipe"
 msgstr ""
 
 #. translators: Keep the first letter lowercase as the text is appended to recipe title.
-#: includes/setup-plus/setup-plus.php:552
+#: includes/setup-plus/setup-plus.php:551
 #, php-format
 msgid "recipe by %s"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:601
+#: includes/setup-plus/setup-plus.php:600
 msgid "Difficulty:"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:606
+#: includes/setup-plus/setup-plus.php:605
 msgid "Yield:"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:611
+#: includes/setup-plus/setup-plus.php:610
 msgid "Prep time:"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:616
+#: includes/setup-plus/setup-plus.php:615
 msgid "Cook time:"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:679
+#: includes/setup-plus/setup-plus.php:678
 msgid "Ingredients"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:760
+#: includes/setup-plus/setup-plus.php:759
 msgid "Instructions"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:859
+#: includes/setup-plus/setup-plus.php:858
 msgid "Print the recipe!"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1016
+#: includes/setup-plus/setup-plus.php:1015
 msgid "Navigation"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1022
-#: includes/setup-plus/setup-plus.php:1067
+#: includes/setup-plus/setup-plus.php:1021
+#: includes/setup-plus/setup-plus.php:1066
 #: includes/theme-options/theme-options.php:103
 #: includes/theme-options/theme-options.php:143
 #: includes/theme-options/theme-options.php:180
 msgid "Background color"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1035
-#: includes/setup-plus/setup-plus.php:1080
+#: includes/setup-plus/setup-plus.php:1034
+#: includes/setup-plus/setup-plus.php:1079
 #: includes/theme-options/theme-options.php:116
 #: includes/theme-options/theme-options.php:159
 #: includes/theme-options/theme-options.php:193
 msgid "Text color"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1048
+#: includes/setup-plus/setup-plus.php:1047
 msgid "Border color"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1093
+#: includes/setup-plus/setup-plus.php:1092
 msgid "Headings color"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1106
+#: includes/setup-plus/setup-plus.php:1105
 msgid "Borders color"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1125
+#: includes/setup-plus/setup-plus.php:1124
 msgctxt "Customizer section title."
 msgid "Texts"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1126
-#: includes/setup-plus/setup-plus.php:1165
+#: includes/setup-plus/setup-plus.php:1125
+#: includes/setup-plus/setup-plus.php:1164
 #: includes/theme-options/theme-options.php:47
 #: includes/theme-options/theme-options.php:75
 #: includes/theme-options/theme-options.php:97
@@ -556,142 +556,142 @@ msgctxt "Customizer panel title."
 msgid "Theme"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1132
+#: includes/setup-plus/setup-plus.php:1131
 msgid "Front page Posts section title"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1133
+#: includes/setup-plus/setup-plus.php:1132
 msgctxt "Front page blog posts section title."
 msgid "News"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1141
+#: includes/setup-plus/setup-plus.php:1140
 msgid "Front page Food menu section title"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1142
+#: includes/setup-plus/setup-plus.php:1141
 msgctxt "Front page food menu section title."
 msgid "Menu"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1150
+#: includes/setup-plus/setup-plus.php:1149
 msgid "Footer credits text"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1151
+#: includes/setup-plus/setup-plus.php:1150
 msgid "When left empty, the default theme credits text is displayed."
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1164
+#: includes/setup-plus/setup-plus.php:1163
 msgctxt "Customizer section title."
 msgid "Food Menu"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1171
+#: includes/setup-plus/setup-plus.php:1170
 msgid "Disable food menu"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1172
+#: includes/setup-plus/setup-plus.php:1171
 msgid ""
 "In case you want to use the theme as recipe blog only, you have the option "
 "to disable the Food Menu post type."
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1178
+#: includes/setup-plus/setup-plus.php:1177
 msgid "Disable food section archive linking"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1179
+#: includes/setup-plus/setup-plus.php:1178
 msgid ""
 "By default, all food menu section titles are linked to corresponding archive "
 "page."
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1179
+#: includes/setup-plus/setup-plus.php:1178
 msgid "You can override this behavior here."
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1233
+#: includes/setup-plus/setup-plus.php:1232
 #: template-parts/loop-blog-condensed.php:43
 msgid "News"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1253 template-parts/loop-food-menu.php:58
+#: includes/setup-plus/setup-plus.php:1252 template-parts/loop-food-menu.php:58
 msgctxt "Food menu title."
 msgid "Menu"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1362
+#: includes/setup-plus/setup-plus.php:1361
 msgctxt "Initial, empty dropdown option title."
 msgid "- Nutrition fact -"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1363
+#: includes/setup-plus/setup-plus.php:1362
 msgctxt "According to http://schema.org/NutritionInformation."
 msgid "Calories"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1364
+#: includes/setup-plus/setup-plus.php:1363
 msgctxt "According to http://schema.org/NutritionInformation."
 msgid "Protein"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1365
+#: includes/setup-plus/setup-plus.php:1364
 msgctxt "According to http://schema.org/NutritionInformation."
 msgid "Fiber"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1366
+#: includes/setup-plus/setup-plus.php:1365
 msgctxt "According to http://schema.org/NutritionInformation."
 msgid "Carbohydrates"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1367
+#: includes/setup-plus/setup-plus.php:1366
 msgctxt "According to http://schema.org/NutritionInformation."
 msgid "- Sugars"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1368
+#: includes/setup-plus/setup-plus.php:1367
 msgctxt "According to http://schema.org/NutritionInformation."
 msgid "Fat"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1369
+#: includes/setup-plus/setup-plus.php:1368
 msgctxt "According to http://schema.org/NutritionInformation."
 msgid "- Saturated fat"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1370
+#: includes/setup-plus/setup-plus.php:1369
 msgctxt "According to http://schema.org/NutritionInformation."
 msgid "- Unsaturated fat"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1371
+#: includes/setup-plus/setup-plus.php:1370
 msgctxt "According to http://schema.org/NutritionInformation."
 msgid "- Trans fat"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1372
+#: includes/setup-plus/setup-plus.php:1371
 msgctxt "According to http://schema.org/NutritionInformation."
 msgid "Cholesterol"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1373
+#: includes/setup-plus/setup-plus.php:1372
 msgctxt "According to http://schema.org/NutritionInformation."
 msgid "Sodium"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1379
+#: includes/setup-plus/setup-plus.php:1378
 msgid "Custom Banner"
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1380
+#: includes/setup-plus/setup-plus.php:1379
 msgid ""
 "This widget area will replace the banner area on front page. You can insert "
 "your custom banner (slider) shortcode into a text widget to display it."
 msgstr ""
 
-#: includes/setup-plus/setup-plus.php:1577
+#: includes/setup-plus/setup-plus.php:1576
 #, php-format
 msgctxt "Recipe preparation duration."
 msgid "1 hour"
@@ -699,7 +699,7 @@ msgid_plural "%d hours"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/setup-plus/setup-plus.php:1580
+#: includes/setup-plus/setup-plus.php:1579
 #, php-format
 msgctxt "Recipe preparation duration."
 msgid "1 minute"
@@ -707,7 +707,7 @@ msgid_plural "%d minutes"
 msgstr[0] ""
 msgstr[1] ""
 
-#: includes/setup-plus/setup-plus.php:1652
+#: includes/setup-plus/setup-plus.php:1651
 msgid "WebMan Amplifier (adding theme features)"
 msgstr ""
 
@@ -867,66 +867,66 @@ msgctxt "Back to food menu sections selectors button title."
 msgid "&uarr; Menu sections"
 msgstr ""
 
-#: includes/setup/setup.php:2030
+#: includes/setup/setup.php:2034
 msgid "Breadcrumbs navigation"
 msgstr ""
 
-#: includes/setup/setup.php:2518
+#: includes/setup/setup.php:2522
 msgid "Previous post"
 msgstr ""
 
-#: includes/setup/setup.php:2519
+#: includes/setup/setup.php:2523
 msgid "Next post"
 msgstr ""
 
-#: includes/setup/setup.php:2563
+#: includes/setup/setup.php:2567
 msgid "This is sticky post"
 msgstr ""
 
-#: includes/setup/setup.php:2592
+#: includes/setup/setup.php:2596
 msgid "This content is password protected."
 msgstr ""
 
-#: includes/setup/setup.php:2592
+#: includes/setup/setup.php:2596
 msgid "Enter the password to view it."
 msgstr ""
 
-#: includes/setup/setup.php:2711
+#: includes/setup/setup.php:2715
 #, php-format
 msgid "Continue reading%s&hellip;"
 msgstr ""
 
-#: includes/setup/setup.php:2714
+#: includes/setup/setup.php:2718
 #, php-format
 msgctxt "%s: Name of current post."
 msgid "Continue reading%s&hellip;"
 msgstr ""
 
-#: includes/setup/setup.php:2785
+#: includes/setup/setup.php:2789
 msgctxt "Pagination text (visible): previous."
 msgid "&laquo;"
 msgstr ""
 
-#: includes/setup/setup.php:2786
+#: includes/setup/setup.php:2790
 msgctxt "Pagination text (hidden): previous."
 msgid "Previous page"
 msgstr ""
 
-#: includes/setup/setup.php:2787
+#: includes/setup/setup.php:2791
 msgctxt "Pagination text (hidden): next."
 msgid "Next page"
 msgstr ""
 
-#: includes/setup/setup.php:2788
+#: includes/setup/setup.php:2792
 msgctxt "Pagination text (visible): next."
 msgid "&raquo;"
 msgstr ""
 
-#: includes/setup/setup.php:2796
+#: includes/setup/setup.php:2800
 msgid "Posts Navigation"
 msgstr ""
 
-#: includes/setup/setup.php:2826
+#: includes/setup/setup.php:2830
 msgid "All posts"
 msgstr ""
 

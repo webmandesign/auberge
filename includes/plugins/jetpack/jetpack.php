@@ -10,7 +10,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.1
- * @version  2.0.1
+ * @version  2.1.1
  *
  * Contents:
  *
@@ -472,7 +472,7 @@
 		 * Query args: Food menu section archive
 		 *
 		 * @since    2.0
-		 * @version  2.0
+		 * @version  2.1.1
 		 *
 		 * @param  obj $query
 		 */
@@ -490,6 +490,8 @@
 
 					if ( $query->is_main_query() ) {
 						$query->set( 'nopaging', true );
+						$query->set( 'orderby', 'menu_order' );
+						$query->set( 'order', 'ASC' );
 					}
 
 			}

@@ -6,14 +6,15 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    2.1
- * @version  2.1
+ * @version  2.1.1
  *
  * Contents:
  *
- *  0) Init
- * 10) Files
- * 20) Texts
- * 30) Setup
+ *   0) Init
+ *  10) Files
+ *  20) Texts
+ *  30) Setup
+ * 100) Helpers
  */
 class Auberge_One_Click_Demo_Import {
 
@@ -33,16 +34,9 @@ class Auberge_One_Click_Demo_Import {
 		 * Constructor
 		 *
 		 * @since    2.1
-		 * @version  2.1
+		 * @version  2.1.1
 		 */
 		private function __construct() {
-
-			// Requirements check
-
-				if ( ! class_exists( 'PT_One_Click_Demo_Import' ) || ! is_admin() ) {
-					return;
-				}
-
 
 			// Processing
 
@@ -50,9 +44,11 @@ class Auberge_One_Click_Demo_Import {
 
 					// Actions
 
+						add_action( 'admin_enqueue_scripts', __CLASS__ . '::styles', 99 );
+
 						add_action( 'pt-ocdi/after_import', __CLASS__ . '::after' );
 
-						add_action( 'pt-ocdi/before_widgets_import ', __CLASS__ . '::before_widgets_import ' );
+						add_action( 'pt-ocdi/before_widgets_import', __CLASS__ . '::before_widgets_import' );
 
 					// Filters
 
@@ -236,7 +232,7 @@ class Auberge_One_Click_Demo_Import {
 		 * Setup navigation menu locations
 		 *
 		 * @since    2.1
-		 * @version  2.1
+		 * @version  2.1.1
 		 */
 		public static function menu_locations() {
 
@@ -251,9 +247,6 @@ class Auberge_One_Click_Demo_Import {
 
 				set_theme_mod( 'nav_menu_locations', array(
 						'primary' => ( isset( $menu['primary']->term_id ) ) ? ( $menu['primary']->term_id ) : ( null ),
-					) );
-
-				set_theme_mod( 'nav_menu_locations', array(
 						'social' => ( isset( $menu['social']->term_id ) ) ? ( $menu['social']->term_id ) : ( null ),
 					) );
 
@@ -265,15 +258,42 @@ class Auberge_One_Click_Demo_Import {
 		 * Remove all widgets from sidebars first
 		 *
 		 * @since    2.1
-		 * @version  2.1
+		 * @version  2.1.1
 		 */
 		public static function before_widgets_import() {
 
 			// Processing
 
-				update_option( 'sidebars_widgets', array() );
+				delete_option( 'sidebars_widgets' );
 
 		} // /before_widgets_import
+
+
+
+
+
+	/**
+	 * 100) Helpers
+	 */
+
+		/**
+		 * OCDI plugin admin page styles
+		 *
+		 * @since    2.1.1
+		 * @version  2.1.1
+		 */
+		public static function styles() {
+
+			// Processing
+
+				// OCDI 2.0 styling fix
+
+					wp_add_inline_style(
+							'ocdi-main-css',
+							'.ocdi.about-wrap { max-width: 66em; }'
+						);
+
+		} // /styles
 
 
 
