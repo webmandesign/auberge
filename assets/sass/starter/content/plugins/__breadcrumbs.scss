@@ -1,0 +1,31 @@
+/* FILE: starter/plugins/__breadcrumbs.scss */
+
+//
+// Breadcrumbs
+//
+
+
+
+
+
+.breadcrumbs {
+
+	&-title {
+		margin-#{$right}: $golden_major +em; // {{RTL}}
+
+		@include responsive( map_get( $breakpoint, 'm' ) ) {
+			margin-#{$right}: $golden +em; // {{RTL}}
+		}
+
+	}
+
+	.sep {
+		opacity: .66;
+
+		@include responsive( map_get( $breakpoint, 'm' ) ) {
+			margin: 0 ( $golden_major +em );
+		}
+
+	}
+
+}

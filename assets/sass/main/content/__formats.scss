@@ -1,0 +1,20 @@
+/* FILE: main/content/__formats.scss */
+
+//
+// Post formats
+//
+
+
+
+
+
+.format-link .entry-content,
+.format-status .entry-content,
+.posts .format-image .entry-summary {
+	font-size: nth( map_get( $h_tags_setup, 'h2, .h2' ), 1 ) +em;
+}
+
+.format-status .entry-content,
+.posts .format-image .entry-summary {
+	@extend %line_height_golden_minor;
+}

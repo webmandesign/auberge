@@ -1,0 +1,244 @@
+/////////////////////
+//
+// Mixins
+//
+/////////////////////
+
+
+
+
+
+//
+// Vendor Imports
+//
+
+	//
+	// @link  http://instyle-css.salsitasoft.com/
+	// @link  https://css-tricks.com/instyle-current-selector-sass/
+	//
+	@import 'vendor/instyle';
+
+
+
+//
+// Responsive media query
+//
+// Avoid using rem unit in media queries as WebKit seems to ignore them or behave
+// strangely (uses 16px base font size no matter what font-size is set up on html).
+// @link  http://stackoverflow.com/questions/12201003/media-queries-with-rem-units-in-chrome
+//
+// @link  https://css-tricks.com/snippets/css/media-queries-for-standard-devices/
+//
+// @param  string $width     Breakpoint width in px
+// @param  string $property  What CSS property to use (if you set `max-$` the $width will be lowered by 1px)
+// @param  string $unit      Unit to use with the query (em by default, px breakpoint value will be converted)
+//
+@mixin responsive( $width: map_get( $breakpoint, 's' ), $property: 'min-width', $unit: 'em' ) {
+
+	@if 'max' == str-slice( $property, 1, 3 ) {
+		$width: $width - 1;
+	}
+
+	@if 'px' == $unit {
+		$width: $width * 1px;
+	} @else {
+		$width: $width / 16 +em;
+	}
+
+	@media only screen and ( #{$property}: #{$width} ) {
+		@content
+	}
+
+} // /responsive
+
+
+
+//
+// Responsive media query: min and max
+//
+// Avoid using rem unit in media queries as WebKit seems to ignore them or behave
+// strangely (uses 16px base font size no matter what font-size is set up on html).
+// @link  http://stackoverflow.com/questions/12201003/media-queries-with-rem-units-in-chrome
+//
+// @param  string $min           Value for $property_min in px
+// @param  string $max           Value for $property_max in px (will be lowered by 1px if $property_max = `max-$`)
+// @param  string $property_min  What CSS property to use for min
+// @param  string $property_max  What CSS property to use for max
+// @param  string $unit          Unit to use with the query (em by default, px breakpoint value will be converted)
+//
+@mixin responsive_minmax( $min: map_get( $breakpoint, 's' ), $max: map_get( $breakpoint, 'm' ), $property_min: 'min-width', $property_max: 'max-width', $unit: 'em' ) {
+
+	@if 'max' == str-slice( $property_min, 1, 3 ) {
+		$min: $min - 1;
+	}
+
+	@if 'max' == str-slice( $property_max, 1, 3 ) {
+		$max: $max - 1;
+	}
+
+	@if 'px' == $unit {
+		$min: $min * 1px;
+		$max: $max * 1px;
+	} @else {
+		$min: $min / 16 +em;
+		$max: $max / 16 +em;
+	}
+
+	@media only screen and ( #{$property_min}: #{$min}) and (#{$property_max}: #{$max} ) {
+		@content
+	}
+
+} // /responsive
+
+
+
+//
+// Output heading tags styles
+//
+// @param  num  $multiplier    Alter heading maps values
+// @param  bool $global_styles Whether to output the heading tags global styles (these don't according the $multiplier)
+//
+@mixin h_tags( $multiplier: 1, $global_styles: false ) {
+
+	@each $selector, $settings in $h_tags_setup {
+
+		$size          : nth( $settings, 1 );
+		$line_height   : nth( $settings, 2 );
+		$margin_top    : nth( $settings, 3 );
+		$margin_bottom : nth( $settings, 4 );
+
+		$size: $size * $multiplier;
+
+		@if 1 > $size {
+			$size: 1;
+		}
+
+		#{$selector} {
+			font-size: $size +em;
+			line-height: $line_height;
+
+			@if 1 < $size {
+
+				margin-top: $margin_top +em;
+				margin-bottom: $margin_bottom +em;
+
+			} @else {
+
+				margin-top: $golden_major +em;
+				margin-bottom: $golden_major +em;
+
+			}
+
+		}
+
+	}
+
+	@if $global_styles {
+
+		#{$h_tags} {
+			@extend %break_words;
+			@extend %line_height_golden_minor;
+			padding: 0;
+			text-rendering: optimizeLegibility; // https://developer.mozilla.org/en-US/docs/CSS/text-rendering
+
+			&:first-child,
+			.screen-reader-text + & {
+				margin-top: 0;
+			}
+
+			a {
+				text-decoration: none;
+				color: inherit;
+			}
+
+		}
+
+	}
+
+} // /h_tags
+
+
+
+//
+// Context
+//
+// @link  https://www.youtube.com/watch?v=o4ok4gsiQSw
+//
+// @param  string $replace
+// @param  string $withs
+//
+@mixin context( $replace, $withs... ) {
+
+	@each $with in $withs {
+
+		@at-root #{ selector_replace( #{&}, $replace, $with ) } {
+			@content;
+		}
+
+	}
+
+} // /context
+
+
+
+//
+// Selectors for container with specific number of children
+//
+// @link  http://lea.verou.me/2011/01/styling-children-based-on-their-number-with-css3/
+//
+// @param  string $selector A child selector.
+// @param  int    $count    Number of children in container.
+// @param  int    $min      Optional starting number of children in container.
+//
+// IMPORTANT (for LibSass)!
+// ========================
+//
+// To compile correctly with LibSass, we have to move the `@include children()` part
+// out of SASS selectors nesting structure and include the whole selectors path again
+// in the `children()` mixin.
+//
+// Otherwise those selectors would be prepended with the nested hierarchy (so, will be duplicated).
+//
+// Even `@at-root` won't help in this case (plus it's being used in the `children()` mixin).
+//
+// On the other hand, we have to use LibSass to prevent more complicated issues with line breaks
+// in nested selectors...
+//
+@mixin children( $selector, $count: 2, $min: 1 ) {
+
+	$selectors: ();
+
+	@for $i from $min through $count {
+
+		$selectors: append( $selectors, '#{$selector}:nth-child(#{$i}):nth-last-child(#{ $count + 1 - $i })', comma );
+
+	}
+
+	@at-root #{$selectors} {
+		@content;
+	}
+
+} // /children
+
+
+
+//
+// LTR/RTL property value
+//
+// @param  string $property
+// @param  string $value_ltr
+// @param  string $value_rtl
+//
+@mixin rtl_property( $property, $value_ltr, $value_rtl ) { // {{RTL}}
+
+	@if rtl == $language_direction {
+
+		#{ $property }: $value_rtl;
+
+	} @else {
+
+		#{ $property }: $value_ltr;
+
+	}
+
+} // /rtl_property

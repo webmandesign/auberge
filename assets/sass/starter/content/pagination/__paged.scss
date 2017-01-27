@@ -1,0 +1,61 @@
+/* FILE: starter/pagination/__paged.scss */
+
+//
+// Basic pagination styles
+//
+
+
+
+
+
+.pagination {
+	clear: both;
+
+	a,
+	span {
+		display: none;
+		width: power( $golden, 2 ) +em;
+		padding: ( $golden_major +em ) 0;
+		margin: $golden_minor / 2 +em;
+		margin-#{$left}: 0; // {{RTL}}
+		text-align: center;
+		text-decoration: none;
+		vertical-align: top;
+	}
+
+	a {
+		opacity: .66;
+	}
+
+	> span,
+	a:active,
+	a:hover,
+	.current {
+		opacity: 1;
+	}
+
+	.prev,
+	.next {
+		display: inline-block;
+		opacity: 1;
+	}
+
+	> span.dots,
+	.extend {
+		width: auto;
+	}
+
+	.current {
+		@extend %font_weight_700;
+	}
+
+	@include responsive( map_get( $breakpoint, 'm' ) ) {
+
+		a,
+		span {
+			display: inline-block;
+		}
+
+	}
+
+}

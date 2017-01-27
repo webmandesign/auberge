@@ -1,0 +1,170 @@
+/* FILE: main/base/_base.scss */
+
+//
+// Basic global styles
+// Style helpers
+//
+
+
+
+
+
+// Elements
+
+	abbr {
+		@extend %font_weight_600;
+	}
+
+	hr {
+		margin: 3.62em 0;
+	}
+
+	pre {
+		padding: 4% 8% 4% 4%;
+		border-radius: .38em;
+
+		&::before {
+			@extend %genericon;
+			content: '\f462';
+			position: absolute;
+			height: 100%;
+			right: 0;
+			top: 0;
+			padding: 0 .19em;
+			font-size: 1.38em;
+			line-height: 1.62;
+			z-index: 5;
+		}
+
+	}
+
+	caption {
+		text-align: left;
+	}
+
+	table {
+		border: 1px solid;
+		border-radius: .38em;
+
+		.site & {
+			border-collapse: separate;
+		}
+
+	}
+
+	td,
+	th {
+		border: 0;
+		border-bottom: 1px solid;
+		border-left: 1px solid;
+
+		&:first-child {
+			border-left: 0;
+		}
+
+		caption + thead tr:first-child &,
+		colgroup + thead tr:first-child &,
+		thead:first-child tr:first-child & {
+			border-top: 0;
+		}
+
+		tbody tr:last-child & {
+			border-bottom: 0;
+		}
+
+		thead + tbody tr:first-child & {
+			border-top-width: .19em;
+		}
+
+	}
+
+	blockquote {
+		@extend %font_style_italic;
+		text-align: center;
+		font-size: nth( map_get( $h_tags_setup, 'h2, .h2' ), 1 ) +em;
+
+		&::after,
+		&::before {
+			content: '';
+			display: block;
+			position: absolute;
+			width: 38%;
+			height: 100%;
+			#{$left}: 31%; // {{RTL}}
+			top: 0;
+			pointer-events: none;
+			border-top: 1px solid;
+			border-bottom: 1px solid;
+		}
+
+		&::after {
+			width: 2%;
+			#{$left}: 49%; // {{RTL}}
+			border-top: 0.19em solid;
+			border-bottom: 0.19em solid;
+		}
+
+
+		&.alignleft,
+		&.alignright {
+			text-align: $left; // {{RTL}}
+
+			&::after,
+			&::before {
+				width: 1px;
+				height: 62%;
+				#{$left}: auto; // {{RTL}}
+				#{$right}: auto; // {{RTL}}
+				top: 19%;
+				border: 0;
+			}
+
+			&.alignright::after {
+				height: 6%;
+				top: 47%;
+				border: 0;
+			}
+
+		}
+
+		&.alignleft {
+
+			&::after,
+			&::before {
+				#{$right}: 0; // {{RTL}}
+				border-#{$right}: 1px solid; // {{RTL}}
+			}
+
+			&::after {
+				border-#{$right}: 0.19em solid; // {{RTL}}
+			}
+
+		}
+
+		&.alignright {
+
+			&::after,
+			&::before {
+				#{$left}: 0; // {{RTL}}
+				border-#{$right}: 1px solid; // {{RTL}}
+			}
+
+			&::after {
+				border-#{$left}: 0.19em solid; // {{RTL}}
+			}
+
+		}
+
+		.format-quote & {
+			text-align: inherit;
+		}
+
+	}
+
+
+
+// Imports
+
+	@import '_layout';
+
+	@import '_classes';

@@ -1,0 +1,50 @@
+/* FILE: starter/comments/__list.scss */
+
+//
+// Comments list
+//
+
+
+
+
+
+.comment-list {
+	padding: 0;
+	margin: 0 0 ( $golden +em );
+
+	.comments-closed + & {
+		margin-top: $golden +em;
+	}
+
+	> li,
+	.children > li {
+		@extend .overflow-hidden;
+		position: relative;
+		min-height: 100 *$px;
+		padding: ( $golden +em ) 0 0;
+		padding-#{$left}: 50 *$px; // {{RTL}}
+		margin: 0;
+		background: none;
+
+		@include responsive( map_get( $breakpoint, 'm' ) ) {
+			padding-#{$left}: 80 *$px; // {{RTL}}
+		}
+
+	}
+
+	.children {
+		clear: both;
+		margin: 0;
+		margin-#{$left}: -40 *$px; // {{RTL}}
+
+		@include responsive( map_get( $breakpoint, 'm' ) ) {
+			margin-#{$left}: -60 *$px; // {{RTL}}
+		}
+
+	}
+
+}
+
+.comment-body {
+	padding: $golden +em;
+}

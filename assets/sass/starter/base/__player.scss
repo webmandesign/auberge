@@ -1,0 +1,142 @@
+/* FILE: starter/base/__player.scss */
+
+//
+// WordPress media player (MediaELement) custom styles
+//
+
+
+
+
+
+.site { // Wrapping within `.site` class to override WordPress default styles.
+
+	.mejs-container {
+		min-height: 50px;
+		margin: ( $golden +em ) 0;
+
+		.mejs-controls {
+			height: 50px;
+			padding: 0 20px;
+			background: $color_mejs_bg;
+
+			div {
+				margin-top: 10px;
+			}
+
+			button {
+				box-shadow: none;
+			}
+
+			.mejs-time-rail {
+				height: 100%;
+				padding: 0;
+				margin: 0;
+
+				.mejs-time-total {
+					height: 100%;
+					margin-top: 0;
+					margin-bottom: 0;
+					background: darken( $color_mejs_bg, 4% );
+				}
+
+				.mejs-time-loaded {
+					height: 4px;
+					margin-top: 23px;
+					background: lighten( $color_mejs_bg, 2% );
+					background: repeating-linear-gradient( 90deg, transparent, transparent 2px, lighten( $color_mejs_bg, 2% ) 2px, lighten( $color_mejs_bg, 2% ) 4px );
+					border-radius: 0;
+				}
+
+				.mejs-time-current {
+					height: 100%;
+					background: lighten( $color_mejs_bg, 4 * 4% );
+				}
+
+			}
+
+		}
+
+		video {
+			height: auto;
+		}
+
+	}
+
+	.wp-audio-playlist .mejs-container {
+		height: 50px !important;
+	}
+
+	.mejs-video {
+		width: 100% !important;
+	}
+
+	.mejs-overlay-button {
+		margin: -50px 0 0 !important;
+		margin-#{$left}: -50px !important; // {{RTL}}
+	}
+
+	.wp-playlist {
+		padding: $golden +em;
+		margin: ( $golden +em ) 0;
+		background-color: invert( $color_mejs_bg );
+		border-width: 0;
+
+		.mejs-container {
+			width: 100% !important;
+		}
+
+		.wp-playlist-playing {
+			background: none;
+		}
+
+		&-tracks {
+			margin-top: 1em;
+		}
+
+		&-item {
+			padding: ( $golden_major +em ) 0;
+			border-color: darken( invert( $color_mejs_bg ), 6% );
+		}
+
+		&-item-length {
+			margin-top: $golden_major +em;
+		}
+
+		&-current-item {
+			margin-bottom: 1em;
+		}
+
+	}
+
+}
+
+.wp-video,
+.wp-video-playlist {
+
+	.mejs-controls {
+		visibility: hidden;
+	}
+
+	&:hover {
+
+		.mejs-controls {
+			visibility: visible;
+		}
+
+	}
+
+	.mejs-layer {
+		width: 100% !important;
+		height: 100% !important;
+	}
+
+}
+
+.entry-media {
+
+	.mejs-container,
+	.wp-playlist {
+		margin: 0;
+	}
+
+}

@@ -1,0 +1,94 @@
+/* FILE: main/base/__classes.scss */
+
+//
+// CSS classes
+//
+
+
+
+
+
+// Generic utility
+
+	.no-wrap {
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+			white-space: nowrap;
+		}
+	}
+
+	.text-#{$left} {
+		text-align: $left !important; // {{RTL}}
+	}
+
+	.text-center {
+		text-align: center !important;
+	}
+
+	.text-#{$right} {
+		@include responsive( map_get( $breakpoint, 'm' ) ) {
+			text-align: $right !important; // {{RTL}}
+		}
+	}
+
+	.mt0 {
+		margin-top: 0 !important;
+	}
+
+	.mb0 {
+		margin-bottom: 0 !important;
+	}
+
+	.zindex-10 {
+		position: relative;
+		z-index: 10;
+	}
+
+
+
+// Dropcaps
+
+	.dropcap-text {
+
+		&::first-letter {
+			float: $left; // {{RTL}}
+			display: block;
+			padding: 0 ( $golden_minor / 2 +em );
+			padding-#{$left}: 0; // {{RTL}}
+			line-height: 1;
+			font-size: power( $golden, 2 ) +em;
+
+			@include responsive( map_get( $breakpoint, 'xl' ) ) {
+				font-size: power( $golden, 3 ) +em;
+			}
+
+		}
+
+	}
+
+
+
+// Content columns
+
+	.column {
+		float: left;
+		margin: 0 6% 0 0;
+	}
+
+		@media only screen and (max-width: 42em) {
+					.column {
+						float: none;
+						width: 100%;
+						margin-bottom: 1.62em;
+					}
+		}
+
+	.column.last {
+		margin-right: 0;
+	}
+
+		.column-12 { width: 47%;    }
+		.column-13 { width: 29.33%; }
+		.column-23 { width: 64.66%; }
+		.column-14 { width: 21%;    }
+		.column-34 { width: 73%;    }
+

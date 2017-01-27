@@ -1,0 +1,48 @@
+/* FILE: main/sidebar/_sidebar.scss */
+
+//
+// Sidebar
+//
+
+
+
+
+
+// Theme sidebar styles
+
+	.sidebar {
+		@extend %font_size_small;
+	}
+
+	@media only screen and (min-width: 55em) {
+
+		.sidebar {
+			width: 38%;
+			padding-left: 8%;
+		}
+
+		.toggle-mobile-sidebar {
+			display: none;
+		}
+
+	}
+
+		@media only screen and (max-width: 55em) {
+
+				.toggle-mobile-sidebar {
+					display: block;
+					width: 100%;
+					text-align: center;
+				}
+			}
+
+
+
+// Imports
+
+	@import '_widgets';
+
+	@import '_front-page';
+
+	@import '_footer';
+

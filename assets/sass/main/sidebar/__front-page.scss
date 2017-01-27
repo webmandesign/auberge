@@ -1,0 +1,35 @@
+/* FILE: main/sidebar/__front-page.scss */
+
+//
+// Front page widgets area
+//
+
+
+
+	.front-page-widgets {
+		@extend %content_width;
+
+		&-wrapper {
+			padding: 6% 0;
+		}
+
+	}
+
+
+			.home .front-page-widgets-wrapper {
+				padding: 3.62rem 0 0;
+				border-bottom: 2px solid;
+			}
+
+				.home .front-page-widgets-container {
+					padding: 0;
+				}
+
+				.front-page-widgets .widget-title {
+					color: inherit;
+				}
+
+				.front-page-widgets .widget li,
+				.front-page-widgets .widget table {
+					border-color: inherit;
+				}

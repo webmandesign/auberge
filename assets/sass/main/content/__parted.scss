@@ -1,0 +1,24 @@
+/* FILE: main/content/__parted.scss */
+
+//
+// Posts parts (post table of contents)
+//
+
+
+
+
+
+.post-table-of-contents a:before {
+	@extend %genericon;
+	content: '\f404';
+	margin-right: .38em;
+	vertical-align: middle;
+}
+
+.post-table-of-contents .passed a:before {
+	content: '\f418';
+}
+
+.post-table-of-contents .current a:before {
+	content: '\f403';
+}

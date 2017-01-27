@@ -1,0 +1,29 @@
+/* FILE: starter/wp/__caption.scss */
+
+//
+// Image captions
+//
+
+
+
+
+
+.wp-caption {
+	@extend .overflow-hidden;
+	position: relative;
+	display: inline-block;
+	max-width: 100%;
+	padding: 0;
+	margin: 0 auto ( $golden +em );
+	text-align: center;
+	text-transform: uppercase;
+	background: transparent;
+
+	.wp-caption-text {
+		@extend .overflow-hidden;
+		@extend %font_size_small;
+		@extend %line_height_golden_minor;
+		padding: 1em 0 0;
+	}
+
+}

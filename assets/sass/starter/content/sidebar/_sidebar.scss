@@ -1,0 +1,30 @@
+/* FILE: starter/sidebar/_sidebar.scss */
+
+//
+// Basic sidebar and global widgets styles
+//
+
+
+
+
+
+// Sidebar
+
+	.sidebar {
+		@extend %line_height_golden;
+		margin: ( $golden +rem ) 0 0;
+		padding: ( $golden +rem ) 0 0;
+
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+			float: $right; // {{RTL}}
+			margin-top: 0;
+			padding-top: 0;
+		}
+
+	}
+
+
+
+// Imports
+
+	@import '_widgets';

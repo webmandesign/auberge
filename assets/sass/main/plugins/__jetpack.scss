@@ -1,0 +1,65 @@
+/* FILE: main/plugins/__jetpack.scss */
+
+//
+// Jetpack
+//
+
+
+
+
+
+/* JetPack plugin support */
+
+	.site-content div.sharedaddy .sd-content ul li a.sd-button:not(.no-text):hover {
+		opacity: .75;
+	}
+
+
+		/* Contact form */
+
+			.site .contact-form textarea,
+			.site .contact-form input[type=email],
+			.site .contact-form input[type=text] {
+				width: 100%;
+				max-width: 100%;
+			}
+
+		/* Related posts */
+
+			.site div#jp-relatedposts {
+				margin-bottom: 1.62em;
+				font-size: 1rem;
+			}
+
+			#jp-relatedposts .jp-relatedposts-headline em {
+				font-weight: 700;
+				font-style: normal;
+			}
+
+			#jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post-title {
+				text-transform: none;
+				font-weight: 700;
+				letter-spacing: 0;
+			}
+
+			.site #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-title a {
+				font-weight: inherit;
+			}
+
+		/* Sharing */
+
+			div.sharedaddy {
+				font-size: 1rem;
+				margin-bottom: 1.62em;
+			}
+
+			div.sharedaddy .sd-title,
+			div.sharedaddy h3.sd-title {
+				font-size: 1em;
+				font-weight: 700;
+			}
+
+
+// Imports
+
+	@import '_jetpack-food-menu';

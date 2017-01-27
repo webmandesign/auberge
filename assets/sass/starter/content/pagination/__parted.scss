@@ -1,0 +1,66 @@
+/* FILE: starter/pagination/__parted.scss */
+
+//
+// Posts parts (post table of contents)
+//
+
+
+
+
+
+.post-table-of-contents {
+	padding: ( $golden +em ) 0 0;
+	margin: ( $golden +em ) 0;
+	border-top-width: 2px;
+	border-top-style: solid;
+
+	&.top {
+		display: none;
+	}
+
+	&.bottom {
+		clear: both;
+	}
+
+	ol {
+		margin: 0;
+		list-style: none;
+	}
+
+	li {
+		padding: ( $golden_minor / 2 +em ) 0;
+	}
+
+	a {
+		display: block;
+		line-height: 1 + $golden_minor;
+	}
+
+	.current,
+	.passed {
+
+		a {
+			color: inherit;
+		}
+
+	}
+
+	@include responsive( map_get( $breakpoint, 'm' ) ) {
+
+		&.top {
+			float: $left; // {{RTL}}
+			display: block;
+			max-width: percentage( $golden_minor );
+			padding: 0 1em 1em;
+			padding-#{$left}: 0; // {{RTL}}
+			margin: 0 ( $golden +em ) 1em;
+			margin-#{$left}: 0; // {{RTL}}
+			border-width: 0;
+			border-style: solid;
+			border-#{$right}-width: 2px; // {{RTL}}
+			border-bottom-width: 2px;
+		}
+
+	}
+
+}

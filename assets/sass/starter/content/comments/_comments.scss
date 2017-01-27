@@ -1,0 +1,53 @@
+/* FILE: starter/comments/_comments.scss */
+
+//
+// Comments styles
+//
+
+
+
+
+
+// Basic styles
+
+	.comments-area {
+		position: relative;
+	}
+
+	.comments-title {
+		@extend %font_size_golden_minor;
+
+		.add-comment-link {
+			@extend %font_size_small;
+			@extend %font_weight_400;
+			display: block;
+			margin: 1em 0;
+
+			@include responsive( map_get( $breakpoint, 'l' ) ) {
+				float: $right; // {{RTL}}
+				margin: 0;
+			}
+
+		}
+
+	}
+
+	.recentcomments {
+
+		a {
+			@extend %font_style_italic;
+		}
+
+	}
+
+
+
+// Imports
+
+	@import '_list';
+
+	@import '_meta';
+
+	@import '_content';
+
+	@import '_pagination';

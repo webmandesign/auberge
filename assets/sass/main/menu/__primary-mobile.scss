@@ -1,0 +1,76 @@
+/* FILE: main/menu/_primary-mobile.scss */
+
+//
+// Primary menu mobile styles
+//
+
+
+
+
+
+// Mobile menu toggle button
+
+	.menu-toggle {
+		display: none;
+
+		&::before {
+			@extend %genericon;
+		}
+
+	}
+
+		@media only screen and (max-width: 55em) {
+						.menu-toggle {
+							position: fixed;
+							left: 1rem;
+							left: calc( 1rem + 2% );
+							top: 0;
+						}
+
+							.admin-bar .menu-toggle {
+								top: 32px;
+							}
+
+							.active .menu-toggle,
+							.admin-bar .active .menu-toggle {
+								position: absolute;
+								left: auto;
+								top: auto;
+							}
+
+						.menu-toggle,
+						.menu-toggle:hover,
+						.menu-toggle:active,
+						.menu-toggle:focus {
+							display: block;
+							width: 3.24rem;
+							height: 3.24rem;
+							padding: 0;
+							line-height: 3.24rem;
+							text-indent: -999em;
+							font-size: 1.62rem;
+							border: 0;
+							opacity: 1;
+						}
+
+						.menu-toggle:before {
+							content: '\f419';
+							position: absolute;
+							width: 100%;
+							height: 100%;
+							left: 0;
+							top: 0;
+							text-align: center;
+							text-indent: 0;
+						}
+
+							.active .menu-toggle:before {
+								content: '\f406';
+							}
+		}
+
+		@media only screen and (max-width: 42em) {
+						.menu-toggle {
+							left: 1rem;
+						}
+		}

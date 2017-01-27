@@ -1,0 +1,207 @@
+/* FILE: main/content/__page.scss */
+
+//
+// Page styles
+//
+
+
+
+
+
+// Special pages
+
+	// Error 404 and "Not found" page
+
+		.error-404,
+		.not-found {
+			text-align: center;
+			font-size: 1.62em;
+		}
+				.error-404 .page-title,
+				.not-found .page-title {
+					font-size: 2.24em;
+				}
+
+			.error-404 h1,
+			.not-found h1 {
+				padding-bottom: .62em;
+			}
+
+			.error-404 p,
+			.not-found p,
+			.error-404 a,
+			.not-found a {
+				color: inherit;
+			}
+
+			.error-404 form,
+			.not-found form {
+				display: inline-block;
+				width: 62%;
+				text-align: center;
+			}
+
+		@media only screen and (max-width: 55em) {
+					.error-404 form,
+					.not-found form {
+						width: 86%;
+						max-width: 86%;
+					}
+		}
+
+
+
+// Page templates
+
+	// Food menu page
+
+		.page-template-page-template_menu-php .entry + .page-section {
+			margin-top: 0;
+		}
+
+
+
+	// Fullwidth page
+
+		.is-singular .site-main > .attachment.entry,
+		.page-template-page-template_fullwidth-php .site-main > .entry,
+		.page-template-page-template_menu-php .site-main > .entry {
+			float: none;
+			width: 100%;
+		}
+
+		.home.page-template-page-template_fullwidth-php .site-content .page .entry-title {
+			text-align: center;
+		}
+
+
+
+// Page sections
+
+	.page-section {
+		border-bottom: 2px solid;
+	}
+
+		.site-main + .page-section,
+		.site-main + .page-section + .page-section {
+			border-top: 2px solid;
+			border-bottom: 0;
+		}
+
+		.site-main + .page-section {
+			margin-top: 6%;
+		}
+
+		.page-template-_menu .page-section {
+			margin-top: 0;
+			border: 0;
+		}
+
+	/* Page section basic elements */
+
+		.page-section .page-title {
+			border-top: 0;
+		}
+
+		.page-section:first-child .page-title {
+			padding-top: 0;
+		}
+
+			.archive-link {
+				clear: both;
+				padding: 0 0 6%;
+				text-align: center;
+			}
+
+				.archive-link a {
+					display: inline-block;
+				}
+
+	/* Posts list in page section */
+
+		.page-section .posts .entry {
+			z-index: 0;
+			-webkit-transition: padding .4s, height .4s, -webkit-transform .4s, -webkit-box-shadow .4s;
+			        transition: padding .4s, height .4s, transform .4s, box-shadow .4s;
+		}
+		@media only screen and (max-width: 55em) {
+
+						.page-section .posts .entry {
+							-webkit-transition: none;
+							        transition: none;
+						}
+		}
+
+		.page-section .posts .entry:hover {
+			padding: 1.62rem;
+			z-index: 9;
+			-webkit-box-shadow: 0 .38rem 1.62rem rgba(0,0,0, .2);
+			        box-shadow: 0 .38rem 1.62rem rgba(0,0,0, .2);
+		}
+		@media only screen and (max-width: 55em) {
+						.page-section .posts .entry:hover {
+							-webkit-box-shadow: none;
+							        box-shadow: none;
+						}
+		}
+
+		.page-section .posts .has-post-thumbnail { padding: 0; }
+
+		@media only screen and (max-width: 55em) {
+						.page-section .posts .has-post-thumbnail {
+							padding: 1.62rem;
+						}
+		}
+
+		.page-section .posts .has-post-thumbnail:hover {
+			-webkit-transform: translateY( -1.62rem );
+			    -ms-transform: translateY( -1.62rem );
+			        transform: translateY( -1.62rem );
+		}
+
+		@media only screen and (max-width: 55em) {
+						.page-section .posts .has-post-thumbnail:hover {
+							-webkit-transform: none;
+							    -ms-transform: none;
+							        transform: none;
+						}
+		}
+
+			.page-section .posts .entry-media + .entry-inner {
+				max-height: 0;
+				padding-left: 1.62rem;
+				padding-right: 1.62rem;
+				margin-top: 0;
+				opacity: 0;
+				overflow: hidden;
+				-webkit-transition: all .4s;
+				        transition: all .4s;
+			}
+
+		@media only screen and (max-width: 55em) {
+							.page-section .posts .entry-media + .entry-inner {
+								max-height: 400px;
+								padding-left: 0;
+								padding-right: 0;
+								margin-top: 1.62rem;
+								opacity: 1;
+							}
+		}
+
+			.page-section .posts .entry:hover .entry-media + .entry-inner {
+				max-height: 400px;
+				padding-left: 0;
+				padding-right: 0;
+				margin-top: 1.62rem;
+				opacity: 1;
+			}
+
+	/* Page content after page section */
+
+		.page-section + .site-main {
+			margin-top: 6%;
+		}
+
+			.page-section + .site-main .entry-media {
+				margin-bottom: 6%;
+			}

@@ -1,0 +1,36 @@
+/* FILE: starter/wp/__embed.scss */
+
+//
+// WordPress embeds
+//
+
+
+
+
+
+// Tweets
+
+	.twitter-tweet-rendered {
+		width: 100% !important;
+		margin: ( $golden +em ) 0 !important;
+	}
+
+
+
+// Videos
+
+	.wp-video {
+		width: 100% !important;
+		height: auto !important;
+
+		.mejs-container,
+		&-playlist .mejs-container {
+			@extend %video_container;
+
+			.mejs-inner {
+				@extend %video_object;
+			}
+
+		}
+
+	}

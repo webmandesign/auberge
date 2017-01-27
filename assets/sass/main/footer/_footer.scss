@@ -1,0 +1,30 @@
+/* FILE: main/footer/_footer.scss */
+
+//
+// Site footer and info
+//
+// For footer widgets see `sidebar` section.
+//
+
+
+
+
+
+// Footer
+
+	.site-footer {
+		@extend %font_size_smaller;
+		padding: 6% 0;
+
+		&-area {
+			@extend %content_width;
+		}
+
+	}
+
+
+
+// Imports
+
+	@import '_site-info';
+

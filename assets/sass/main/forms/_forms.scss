@@ -1,0 +1,48 @@
+/* FILE: main/forms/_forms.scss */
+
+//
+// Forms
+//
+
+
+
+
+
+// Placeholders
+
+	::placeholder {
+		font-weight: 400;
+		font-style: italic;
+		opacity: .75;
+	}
+
+
+
+// Global styles
+
+	input,
+	select,
+	textarea {
+		@extend %font_size_1rem;
+
+		&:focus {
+			border-color: currentColor;
+			box-shadow: 0 0 0 1px;
+		}
+
+	}
+
+	select {
+		padding: calc( #{ $golden_major +em } - 2px ); // Compensating for border width
+	}
+
+
+
+// Imports
+
+	@import '_buttons';
+
+	@import '_form-search';
+
+	@import '_form-comment';
+

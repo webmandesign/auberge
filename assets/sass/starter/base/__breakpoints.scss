@@ -1,0 +1,43 @@
+/* FILE: starter/base/__breakpoints.scss */
+
+//
+// Responsive breakpoints that can be passed into JavaScript
+//
+
+
+
+
+
+//
+// These values will not show up in content, but can be
+// queried by JavaScript to know which breakpoint is active.
+// Add or remove as many breakpoints as you like.
+//
+// @link  https://www.lullabot.com/articles/importing-css-breakpoints-into-javascript
+//
+//
+// xxs = too small
+// xs  = mobile portrait
+// s   = starting mobile landscape
+// m   = starting tablet portrait
+// l   = starting tablet landscape
+// xl  = starting laptop
+// xxl = starting desktop
+//
+
+body {
+
+	&:before { // Using :before instead of ::before for compatibility
+		display: none; // Prevent from displaying
+
+		@each $device, $width in $breakpoint {
+
+			@include responsive( $width ) {
+				content: 'device_#{$device}';
+			}
+
+		}
+
+	}
+
+}

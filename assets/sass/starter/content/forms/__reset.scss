@@ -1,0 +1,77 @@
+/* FILE: starter/form/__reset.scss */
+
+//
+// Forms reset
+//
+
+
+
+
+
+form {
+	margin: 0 0 ( $golden +em );
+}
+
+fieldset {
+	padding: 0;
+	margin: 0;
+	border-width: 0;
+}
+
+input,
+select,
+textarea {
+	@extend %font_size_1rem;
+}
+
+button,
+input,
+select,
+textarea {
+	max-width: 100%;
+	padding: $golden_major +em;
+	line-height: normal;
+	font-size: 1em;
+	font-family: inherit;
+	color: inherit;
+	border-width: 2px;
+	border-style: solid;
+	outline: 0;
+	vertical-align: baseline;
+}
+
+select {
+	padding: calc( #{ $golden_major +em } - 4px ); // Compensating for border width
+}
+
+option {
+	// Fixing select options colors
+	background: #fafcfe !important;
+	color: #6a6c6e !important;
+}
+
+textarea,
+select[multiple],
+select[size] {
+	height: auto;
+	line-height: $golden;
+}
+
+textarea,
+input:not([type]),
+input[type="email"],
+input[type="password"],
+input[type="search"],
+input[type="tel"] ,
+input[type="text"],
+input[type="url"] {
+	-webkit-appearance: none;
+}
+
+input[type="search"] {
+	box-sizing: border-box;
+}
+
+:invalid {
+	box-shadow: none;
+}

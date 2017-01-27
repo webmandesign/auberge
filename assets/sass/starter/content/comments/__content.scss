@@ -1,0 +1,32 @@
+/* FILE: starter/comments/__content.scss */
+
+//
+// Comment content
+//
+
+
+
+
+
+.comment-content {
+	@extend .clearfix;
+
+	a {
+		@extend %break_words;
+	}
+
+	p,
+	blockquote,
+	table {
+		margin-bottom: 1em;
+	}
+
+}
+
+.comment {
+
+	.reply {
+		@extend %font_size_small;
+	}
+
+}

@@ -1,0 +1,45 @@
+/* FILE: main/typography/_typography.scss */
+
+//
+// Theme typography
+//
+
+
+
+
+
+// Font families
+
+	%font_body {
+		font-family: #{ map_get( $font_family, 'body' ) };
+	}
+
+	%font_headings {
+		font-family: #{ map_get( $font_family, 'headings' ) };
+	}
+
+	%font_logo {
+		font-family: #{ map_get( $font_family, 'logo' ) };
+		text-rendering: auto;
+	}
+
+	%font_inherit {
+		font-family: inherit;
+	}
+
+	html {
+		@extend %font_body;
+	}
+
+
+
+// Font weights
+
+	body {
+		@extend %font_weight_300;
+	}
+
+	b,
+	strong {
+		@extend %font_weight_700;
+	}

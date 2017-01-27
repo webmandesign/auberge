@@ -1,0 +1,28 @@
+/* FILE: main/footer/__site-info.scss */
+
+//
+// Site info (credits)
+//
+
+
+
+
+
+		.site-info-container {
+			overflow: hidden;
+		}
+
+			.site-info {
+				float: left;
+			}
+
+		@media only screen and (max-width: 42em) {
+					.site-info {
+						float: none;
+					}
+		}
+
+				.site-info a {
+					@extend %font_weight_700;
+					color: inherit;
+				}

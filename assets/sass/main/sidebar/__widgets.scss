@@ -1,0 +1,51 @@
+/* FILE: main/sidebar/__widgets.scss */
+
+//
+// Widgets
+//
+
+
+
+
+
+// Basic global widget styles
+
+		.widget input,
+		.widget select,
+		.widget textarea {
+			width: 100%;
+		}
+
+			.widget ul li {
+				-webkit-transition: all .2s ease-in-out;
+				        transition: all .2s ease-in-out;
+			}
+
+				.widget ul li:hover {
+					-webkit-transform: translateX( .62em );
+					    -ms-transform: translateX( .62em );
+					        transform: translateX( .62em );
+				}
+
+			.sidebar .widget {
+				margin: 3.62rem 0 0;
+			}
+
+				.sidebar .toggle-mobile-sidebar + .widget,
+				.sidebar .widget:first-child {
+					margin: 0;
+				}
+
+		@media only screen and (max-width: 55em) {
+					.sidebar .widget,
+					.sidebar .toggle-mobile-sidebar + .widget {
+						margin-top: 2.62rem;
+						display: none;
+					}
+		}
+
+
+
+// Imports
+
+	@import '_widget-icons';

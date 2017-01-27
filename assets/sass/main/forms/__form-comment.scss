@@ -1,0 +1,21 @@
+/* FILE: main/forms/_form-comment.scss */
+
+//
+// Comment form styles
+//
+
+
+
+
+
+.comment-form label {
+	@extend %font_weight_700;
+}
+
+#cancel-comment-reply-link:before {
+	@extend %genericon;
+	content: '\f405';
+	margin-right: .19em;
+	font-size: 1.38em;
+	vertical-align: middle;
+}

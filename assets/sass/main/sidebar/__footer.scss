@@ -1,0 +1,71 @@
+/* FILE: main/sidebar/__footer.scss */
+
+//
+// Footer widgets area
+//
+
+
+
+
+
+		.footer-widgets,
+		.front-page-widgets-container {
+			padding-bottom: 4%;
+			margin: 0 -2%;
+		}
+
+			.footer-widgets .widget,
+			.front-page-widgets-container .widget {
+				float: left;
+				width: 29.333%; /* 3 columns by default */
+				margin: 0 2% 3.62rem;
+			}
+
+		@media only screen and (max-width: 55em) {
+
+					.footer-widgets .widget {
+						width: 46% !important;
+					}
+
+						.columns-1 .widget {
+							width: 96% !important;
+						}
+		}
+
+		@media only screen and (max-width: 42em) {
+					.footer-widgets .widget,
+					.front-page-widgets-container .widget {
+						width: 96% !important;
+					}
+		}
+
+				/**
+				 * IMPORTANT:
+				 * The first child in widget area is alway an area title!
+				 */
+
+				/* 1 column */
+
+					.footer-widgets .widget:nth-child(2):nth-last-child(1),
+					.front-page-widgets-container .widget:nth-child(2):nth-last-child(1) {
+						float: none;
+						width: 96%;
+					}
+
+				/* 2 columns */
+
+					.footer-widgets .widget:nth-child(2):nth-last-child(2),
+					.footer-widgets .widget:nth-child(3):nth-last-child(1),
+					.front-page-widgets-container .widget:nth-child(2):nth-last-child(2),
+					.front-page-widgets-container .widget:nth-child(3):nth-last-child(1) {
+						width: 46%;
+					}
+
+				.footer-widgets .widget-title {
+					color: inherit;
+				}
+
+				.footer-widgets .widget li,
+				.footer-widgets .widget table {
+					border-color: inherit;
+				}

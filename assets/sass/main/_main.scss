@@ -1,0 +1,33 @@
+/* FILE: main/_main.scss */
+
+//
+// Main theme styles
+//
+
+
+
+
+
+// Imports
+
+	@import 'icons/icons';
+
+	@import 'base/base';
+
+	@import 'typography/typography';
+
+	@import 'forms/forms';
+
+	@import 'headings/headings';
+
+	@import 'header/header';
+
+	@import 'menu/menu';
+
+	@import 'content/content';
+
+	@import 'footer/footer';
+
+	@import 'sidebar/sidebar';
+
+	@import 'plugins/plugins';

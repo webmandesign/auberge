@@ -1,0 +1,53 @@
+/* FILE: main/headings/__entry-header.scss */
+
+//
+// Entry header title
+//
+
+
+
+
+
+// Entry header
+
+	.entry-title,
+	.page-title {
+		padding: 0;
+		margin: 0 0 6%;
+		text-transform: uppercase;
+		-ms-word-wrap: break-word;
+		    word-wrap: break-word;
+	}
+
+	.post .entry-title {
+		@extend %font_weight_700;
+	}
+
+	.page-title {
+		padding: 3.62rem 0;
+		margin: 0;
+		text-align: center;
+		border-top: 2px solid;
+	}
+		.archive .page-title,
+		.search .page-title,
+		.error404 .page-title {
+			padding-top: 0;
+			border: 0;
+		}
+
+	.tax-nova_menu.no-tax-children .page-header {
+		clip: rect(1px, 1px, 1px, 1px);
+		position: absolute !important;
+		height: 1px;
+		width: 1px;
+		overflow: hidden;
+	}
+
+	.single-post .entry-header {
+		margin-bottom: 1.62em;
+	}
+
+	.single-post .main-heading.entry-header {
+		margin-bottom: 0;
+	}

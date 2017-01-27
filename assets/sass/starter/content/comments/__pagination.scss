@@ -1,0 +1,56 @@
+/* FILE: starter/comments/__pagination.scss */
+
+//
+// Comments pagination
+//
+
+
+
+
+
+.comment-navigation {
+	@extend .overflow-hidden;
+	display: block;
+	position: relative;
+	clear: both;
+	padding: ( $golden +em ) 0;
+
+	div {
+		padding: 1em 0 0;
+		text-align: center;
+
+		@include responsive( map_get( $breakpoint, 'm' ) ) {
+			width: auto;
+			padding: 0;
+			margin: 0;
+		}
+
+	}
+
+	a {
+		display: block;
+		padding: ( $golden_major +em ) 1em;
+		line-height: normal;
+		cursor: pointer;
+		transition: opacity .3s;
+
+		&:hover {
+			text-decoration: none;
+			opacity: .75;
+		}
+
+	}
+
+	@include responsive( map_get( $breakpoint, 'm' ) ) {
+
+		.nav-previous {
+			float: $left; // {{RTL}}
+		}
+
+		.nav-next {
+			float: $right; // {{RTL}}
+		}
+
+	}
+
+}

@@ -1,0 +1,27 @@
+/* FILE: starter/base/__clearing.scss */
+
+//
+// Floating clearing
+//
+
+
+
+
+
+// @link  http://blog.teamtreehouse.com/a-better-clearfix-with-sass
+
+.clearfix {
+
+	&::after {
+		content: '';
+		clear: both;
+		display: table;
+		table-layout: fixed;
+	}
+
+}
+
+.clear {
+	@extend .clearfix;
+	clear: both;
+}

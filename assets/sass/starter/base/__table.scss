@@ -1,0 +1,36 @@
+/* FILE: starter/base/__table.scss */
+
+//
+// General table styles
+//
+
+
+
+
+
+table {
+	@extend %line_height_golden_minor;
+	width: 100%;
+	margin: 0 0 $golden*1em;
+	border-width: 2px;
+	border-style: solid;
+}
+
+caption {
+	padding: 1em 0;
+}
+
+th,
+td {
+	padding: ( $golden_major +em ) 1em;
+	border-width: 1px;
+	border-style: solid;
+	vertical-align: top;
+}
+
+th,
+tfoot td {
+	@extend %font_weight_700;
+	text-align: $left; // {{RTL}}
+	border-width: 2px;
+}

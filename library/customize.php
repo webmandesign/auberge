@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0
- * @version  2.0
+ * @version  2.2.0
  *
  * Contents:
  *
@@ -332,7 +332,7 @@
 	 * Customizer renderer
 	 *
 	 * @since    1.0
-	 * @version  2.0
+	 * @version  2.2.0
 	 *
 	 * @param  object $wp_customize WP customizer object.
 	 */

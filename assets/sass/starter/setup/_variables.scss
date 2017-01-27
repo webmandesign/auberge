@@ -1,0 +1,154 @@
+/////////////////////
+//
+// Setup variables
+//
+/////////////////////
+
+
+
+
+
+// To override these variables, you can redefine them in your SASS files.
+// All the `!default` variables can be redefined easily.
+// Import your variables file BEFORE the actual `starter` import.
+
+
+
+
+
+//
+// Globals
+//
+
+	// RTL support
+	//
+	// There are `{{RTL}}` notes left in the code where change is applicable.
+
+		$language_direction: ltr !default;
+
+		@if rtl == $language_direction {
+			$left: right;
+			$right: left;
+		} @else {
+			$left: left;
+			$right: right;
+		}
+
+	// Golden ratio
+
+		// (Rounding to nearest hundredth to prevent calculation issues between browsers.)
+
+		$golden:       1.62 !default;
+		$golden_major: 0.62 !default;
+		$golden_minor: 0.38 !default;
+
+	// Responsive breakpoints (in px)
+
+		$breakpoint: (
+
+			's'     :  448, // =  28em // Starting mobile landscape
+			'm'     :  672, // =  42em // Starting tablet portrait
+			'l'     :  880, // =  55em // Starting tablet landscape
+			'xl'    : 1280, // =  80em // Starting laptop
+			'xxl'   : 1600, // = 100em // Starting desktop
+			'xxxl'  : 1920, // = 120em // Starting desktop full HD
+			'xxxxl' : 2560, // = 160em // Starting desktop WQHD
+
+		) !default;
+
+	// Typography
+
+		$font_size: 16 !default;
+
+	// Headings
+
+		$h_tags_1: 'h1, .h1' !default;
+		$h_tags_2: 'h2, .h2' !default;
+		$h_tags_3: 'h3, .h3' !default;
+		$h_tags_4: 'h4, .h4' !default;
+		$h_tags_5: 'h5, .h5' !default;
+		$h_tags_6: 'h6, .h6' !default;
+
+		$h_tags: $h_tags_1, $h_tags_2, $h_tags_3, $h_tags_4, $h_tags_5, $h_tags_6;
+
+		$h_tags_setup: (
+
+			// $selector : (
+			//   $size
+			//   $line_height
+			//   $margin_top    [ ( span_4_or_3_lines - $size * $line_height - $margin_bottom ) / $size ]
+			//   $margin_bottom [ $margin_bottom / $size / $line_height ]
+			// )
+
+			$h_tags_1 : (
+					power( 1 + $golden_minor, 4 ),
+					1 + $golden_minor / 2,
+					( 4 * $golden - power( 1 + $golden_minor, 4 ) * ( 1 + $golden_minor / 2 ) - $golden ) / power( 1 + $golden_minor, 4 ),
+					$golden / power( 1 + $golden_minor, 4 ) / ( 1 + $golden_minor / 2 )
+				),
+
+			$h_tags_2 : (
+					power( ( 1 + $golden_minor ), 3 ),
+					1 + $golden_minor / 2,
+					( 4 * $golden - power( ( 1 + $golden_minor ), 3 ) * ( 1 + $golden_minor / 2 ) - $golden ) / power( ( 1 + $golden_minor ), 3 ),
+					$golden / power( ( 1 + $golden_minor ), 3 ) / ( 1 + $golden_minor / 2 )
+				),
+
+			$h_tags_3 : (
+					power( ( 1 + $golden_minor ), 2 ),
+					1 + $golden_minor,
+					( 4 * $golden - power( ( 1 + $golden_minor ), 2 ) * ( 1 + $golden_minor ) - $golden ) / power( ( 1 + $golden_minor ), 2 ),
+					$golden / power( ( 1 + $golden_minor ), 2 ) / ( 1 + $golden_minor )
+				),
+
+			$h_tags_4 : (
+					$golden,
+					1 + $golden_minor,
+					( 3 * $golden - $golden * ( 1 + $golden_minor ) - $golden ) / $golden,
+					$golden / $golden / ( 1 + $golden_minor )
+				),
+
+			$h_tags_5 : (
+					1 + $golden_minor,
+					$golden,
+					( 3 * $golden - ( 1 + $golden_minor ) * $golden - $golden ) / ( 1 + $golden_minor ),
+					$golden / ( 1 + $golden_minor ) / $golden
+				),
+
+			$h_tags_6 : (
+					1 + $golden_minor,
+					$golden,
+					( 3 * $golden - ( 1 + $golden_minor ) * $golden - $golden ) / ( 1 + $golden_minor ),
+					$golden / ( 1 + $golden_minor ) / $golden
+				)
+
+		) !default;
+
+	// Supported post formats
+
+		$supported_post_formats: (
+
+			'image',
+			'link',
+			'quote',
+			'status'
+
+		) !default;
+
+
+
+//
+// Colors
+//
+
+	// Colors: MediaElement player
+
+		$color_mejs_bg: #2a2c2e !default;
+
+
+
+//
+// Helpers
+//
+
+	$px: 1 / $font_size * 1rem; // Use this only when not setting the theme base font size via Customizer

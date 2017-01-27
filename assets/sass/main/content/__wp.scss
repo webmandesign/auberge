@@ -1,0 +1,47 @@
+/* FILE: main/content/__wp.scss */
+
+//
+// WordPress default styles
+//
+
+
+
+
+
+// Sticky post
+
+	.label-sticky {
+		position: absolute;
+		display: block;
+		width: 32px;
+		height: 32px;
+		right: 0;
+		top: 0;
+		line-height: 28px;
+		text-align: center;
+		z-index: 10;
+	}
+
+		.label-sticky .genericon {
+			margin-left: -.38em;
+			font-size: 18px;
+			vertical-align: bottom;
+		}
+
+		.label-sticky:before,
+		.label-sticky:after {
+			content: '';
+			position: absolute;
+			display: block;
+			border: 16px solid transparent;
+		}
+
+			.label-sticky:before {
+				right: 100%;
+				top: 0;
+			}
+
+			.label-sticky:after {
+				right: 0;
+				top: 100%;
+			}

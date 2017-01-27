@@ -1,0 +1,130 @@
+/* FILE: starter/formats/_formats.scss */
+
+//
+// Post formats
+//
+
+
+
+
+
+%no_margin {
+	margin: 0;
+}
+
+
+
+// Image
+
+	@if ( null != index( $supported_post_formats, 'image' ) ) {
+
+		.format-image {
+
+			.posts & {
+
+				.entry-summary {
+					@extend %font_size_golden_minor;
+					@extend %no_margin;
+				}
+
+				.link-more {
+					display: none;
+				}
+
+			}
+
+		}
+
+	}
+
+
+
+// Link
+
+	@if ( null != index( $supported_post_formats, 'link' ) ) {
+
+		.format-link {
+
+			.entry-content {
+				@extend %font_size_golden_minor;
+				@extend %line_height_golden_minor;
+
+				a {
+					@extend %font_weight_700;
+				}
+
+			}
+
+			.posts & {
+
+				p {
+					@extend %no_margin;
+				}
+
+			}
+
+		}
+
+	}
+
+
+
+// Quote
+
+	@if ( null != index( $supported_post_formats, 'quote' ) ) {
+
+		.format-quote {
+
+			blockquote {
+				padding: 0;
+				margin-top: 0;
+
+				&::after,
+				&::before {
+					display: none;
+				}
+
+			}
+
+			.entry-content {
+
+				a {
+					@extend %font_weight_700;
+				}
+
+			}
+
+		}
+
+	}
+
+
+
+// Status
+
+	@if ( null != index( $supported_post_formats, 'status' ) ) {
+
+		.format-status {
+			cursor: help;
+
+			.entry-content {
+				@extend %font_size_golden_minor;
+				@extend %line_height_golden;
+
+				a {
+					@extend %font_weight_700;
+				}
+
+			}
+
+			.posts & {
+
+				p {
+					@extend %no_margin;
+				}
+
+			}
+
+		}
+
+	}

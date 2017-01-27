@@ -1,0 +1,33 @@
+/* FILE: main/menu/_primary-sub-sub.scss */
+
+//
+// Sub-sub-menus
+//
+
+
+
+
+
+.main-navigation li li ul {
+	visibility: hidden;
+	left: 119%;
+	right: auto;
+	padding-top: .38em;
+	border-radius: .38em;
+	-webkit-transition: opacity .4s, left .4s ease-in-out;
+	        transition: opacity .4s, left .4s ease-in-out;
+}
+
+	.main-navigation li li:hover > ul,
+	.main-navigation li li.focus > ul {
+		left: 100%;
+		right: auto;
+		top: -.38em;
+	}
+
+		@media only screen and (max-width: 55em) {
+
+						.main-navigation li li li > a {
+							padding-left: 2.62em;
+						}
+					}

@@ -1,0 +1,113 @@
+/* FILE: starter/forms/_forms.scss */
+
+//
+// Basic form styles
+//
+
+
+
+
+
+// Imports
+
+	@import '_reset';
+
+
+
+// Basic form styles
+
+	label {
+		display: inline-block;
+		padding-bottom: $golden_minor / 2 +em;
+
+		&[for] {
+			cursor: pointer;
+		}
+
+		+ input[type="checkbox"] {
+			margin-#{$left}: $golden_minor +em; // {{RTL}}
+		}
+
+	}
+
+	select,
+	input:not([type]),
+	input[type="color"],
+	input[type="date"],
+	input[type="datetime"],
+	input[type="datetime-local"],
+	input[type="email"],
+	input[type="month"],
+	input[type="number"],
+	input[type="password"],
+	input[type="search"],
+	input[type="tel"],
+	input[type="text"],
+	input[type="time"],
+	input[type="url"],
+	input[type="week"],
+	input[type="range"] {
+		width: 17em;
+	}
+
+	textarea {
+		@extend %break_words;
+		vertical-align: top;
+		overflow-y: auto;
+		resize: vertical;
+	}
+
+	input[type="checkbox"],
+	input[type="radio"] {
+		position: relative;
+		width: 1em;
+		height: 1em;
+		bottom: $golden_minor / 2 * -1em;
+		margin-#{$right}: $golden_minor +em; // {{RTL}}
+		vertical-align: baseline;
+	}
+
+	select {
+		@extend %break_words_disable;
+		position: relative;
+		height: auto;
+		padding-#{$right}: 21px;
+		line-height: $golden;
+
+		// Inspiration from Foundation @link  http://foundation.zurb.com/sites/docs/forms.html#select-menus
+		//
+		// Dropdown selector image source at `helpers` folder of GitHub repository
+		// and processed with https://www.base64-image.de/
+
+			-webkit-appearance: none;
+				 -moz-appearance: none;
+			background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADYAAAASCAYAAAAQeC39AAAACXBIWXMAABuvAAAbrwFeGpEcAAAAGXRFWHRTb2Z0d2FyZQB3d3cuaW5rc2NhcGUub3Jnm+48GgAAADNJREFUeNrt1MENADAIAzFGZ/N0B4T41JYyQD5Xxb96aY6dSNIbcwxUURVVEVRRFVVx6AEDTK7MSHGk9QAAAABJRU5ErkJggg=='); // Don't use SVG here: it's not IE ready and will be stripped out with `wmhook_THEMESLUG_esc_css` filter
+			background-size: 21px 9px;
+			background-position: $right center; // {{RTL}}
+			background-repeat: no-repeat;
+
+			&:disabled {
+				cursor: default;
+				opacity: .66;
+			}
+
+			&::-ms-expand {
+				display: none;
+			}
+
+	}
+
+	input[disabled] {
+		cursor: default;
+		opacity: .66;
+	}
+
+
+
+// Imports
+
+	@import '_comments';
+
+	@import '_search';
+
+	@import '_post-password';

@@ -1,0 +1,75 @@
+/* FILE: main/plugins/__restaurant-reservations.scss */
+
+//
+// Restaurant Reservations
+//
+
+
+
+
+		.picker {
+			outline: 0;
+		}
+
+			.site .rtb-booking-form button,
+			.site .rtb-booking-form input,
+			.site .rtb-booking-form textarea,
+			.site .rtb-booking-form select {
+				width: 100%;
+				max-width: 100%;
+			}
+
+			.site .rtb-booking-form legend {
+				padding: 0;
+				text-transform: uppercase;
+				font-size: 1.38em;
+			}
+
+				.entry .rtb-booking-form .date,
+				.entry .rtb-booking-form .time {
+					float: left;
+					width: 48%;
+					margin-bottom: 1em;
+				}
+
+				.entry .rtb-booking-form .party {
+					clear: both;
+				}
+
+				.entry .rtb-booking-form .time {
+					float: right;
+				}
+
+					.sidebar .rtb-booking-form .date,
+					.sidebar .rtb-booking-form .time {
+						float: none;
+						width: 100%;
+						margin-bottom: 0;
+					}
+
+				.rtb-booking-form legend:before,
+				.rtb-booking-form .add-message a:before {
+					@extend %genericon;
+					content: '\f307';
+					margin-right: .09em;
+					font-size: 1.62em;
+					vertical-align: middle;
+				}
+
+				.rtb-booking-form .contact legend:before {
+					content: '\f304';
+				}
+
+				.rtb-booking-form .add-message a:before {
+					content: '\f410';
+				}
+
+				.site .rtb-booking-form input[type="checkbox"],
+				.site .rtb-booking-form input[type="radio"] {
+					vertical-align: baseline;
+				}
+
+			.rtb-message {
+				padding: 1.62em 1.62em 0;
+				border: 2px solid;
+			}

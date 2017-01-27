@@ -1,0 +1,22 @@
+/* FILE: main/content/__pagination.scss */
+
+//
+// Pagination
+//
+
+
+
+
+
+.pagination {
+	@extend %font_weight_300;
+	margin-top: $golden +rem;
+	text-align: center;
+
+	> span.dots,
+	.extend {
+		background: transparent;
+		color: inherit;
+	}
+
+}

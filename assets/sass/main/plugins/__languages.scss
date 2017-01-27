@@ -1,0 +1,113 @@
+/* FILE: main/plugins/__languages.scss */
+
+//
+// Polylang & WPML
+//
+
+
+
+
+
+		/* Language switcher - supports flag display only */
+
+			ul li.lang-item,
+			ul li.menu-item-language {
+				position: relative;
+				margin-left: .62em;
+				margin-right: .62em;
+			}
+
+				.lang-item:before,
+				.menu-item-language:before {
+					content: '';
+					display: block;
+					position: absolute;
+					width: 30px;
+					height: 30px;
+					right: 50%;
+					bottom: 50%;
+					border: 1px solid;
+					border-radius: 50%;
+					opacity: .5;
+					z-index: -1;
+					-webkit-transform: translateX( 50% ) translateY( 50% );
+					    -ms-transform: translateX( 50% ) translateY( 50% );
+					        transform: translateX( 50% ) translateY( 50% );
+				}
+
+				ul li.lang-item a,
+				ul li.menu-item-language a {
+					display: inline-block;
+					width: 18px;
+					padding-left: 0;
+					padding-right: 0;
+					white-space: nowrap;
+					overflow: hidden;
+					vertical-align: top;
+				}
+
+					ul li.lang-item a {
+						width: 16px;
+					}
+
+					.menu-item-language img.iclflag {
+						margin-right: 0;
+					}
+
+			/* In main navigation menu */
+
+				.menu .lang-item:last-child,
+				.menu .menu-item-language:last-child {
+					margin-right: 2em;
+				}
+
+				.menu .lang-item + li:not(.lang-item),
+				.menu .menu-item-language + li:not(.menu-item-language),
+				.menu li:not(.lang-item) + .lang-item,
+				.menu li:not(.menu-item-language) + .menu-item-language {
+					margin-left: 2em;
+				}
+
+			/* In social links menu */
+
+				.social-links .lang-item .screen-reader-text,
+				.social-links .menu-item-language .screen-reader-text {
+					clip: auto;
+					position: relative !important;
+					height: auto;
+					width: auto;
+					overflow: hidden;
+				}
+
+					.social-links .lang-item .screen-reader-text:hover,
+					.social-links .lang-item .screen-reader-text:active,
+					.social-links .lang-item .screen-reader-text:focus,
+					.social-links .menu-item-language .screen-reader-text:hover,
+					.social-links .menu-item-language .screen-reader-text:active,
+					.social-links .menu-item-language .screen-reader-text:focus {
+						background-color: inherit;
+						border-radius: 0;
+						box-shadow: none;
+						color: inherit;
+						display: inline;
+						font-size: inherit;
+						font-weight: inherit;
+						left: 0;
+						padding: 0;
+						top: 0;
+					}
+
+					.social-links .lang-item + li:not(.lang-item),
+					.social-links .menu-item-language + li:not(.menu-item-language) {
+						margin-left: 1em;
+					}
+
+					.social-links li:not(.lang-item) + .lang-item,
+					.social-links li:not(.menu-item-language) + .menu-item-language {
+						margin-left: 2em;
+					}
+
+					.social-links .lang-item a:before,
+					.social-links .menu-item-language a:before {
+						display: none;
+					}

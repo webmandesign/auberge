@@ -1,0 +1,154 @@
+//
+// Welcome page styles
+//
+// @package    Auberge
+// @copyright  WebMan Design, Oliver Juhas
+//
+// @since    2.2.0
+// @version  2.2.0
+//
+
+
+
+
+
+.mt0 {
+	margin-top: 0 !important;
+}
+
+#setting-error-tgmpa {
+
+	// Do not display plugin installation message here
+
+		display: none;
+}
+
+.wm-actions {
+	margin-top: 2em;
+}
+
+.welcome-wrap {
+
+	h1 {
+		margin-left: 0;
+		margin-right: 0;
+		font-weight: 300;
+
+		strong {
+			font-weight: 800;
+		}
+
+		small {
+			font-size: .5em;
+		}
+
+	}
+
+	h2 {
+		text-align: inherit;
+	}
+
+	hr {
+		height: 0;
+		margin: 2em 0;
+		border: 0;
+		border-top: 1px solid #caccce;
+	}
+
+	.feature-section {
+		padding: 0;
+		border: 0;
+
+		&.col h4 {
+			margin: 1em 0;
+		}
+
+	}
+
+	.dropcap {
+		display: inline-block;
+		padding: .75em;
+		margin: 0 .5em .25em;
+		margin-#{$left}: 0;
+		font-size: 24px;
+		font-weight: 700;
+		background: #23282d;
+		color: #fff;
+	}
+
+
+
+	// Header
+
+		.welcome-text {
+			margin-left: 0;
+			margin-right: 0;
+
+			a {
+				color: #6a6c6e;
+			}
+
+		}
+
+		.twitter-share-button {
+			vertical-align: middle;
+			margin-#{$left}: 3px;
+		}
+
+
+
+	// Important notes
+
+		.wm-notes {
+			padding: 2.62em;
+			margin: 40px 0 1.62em;
+			line-height: 1.4em;
+			font-size: .8em;
+			font-style: italic;
+			background: #fafcfe;
+			border: 1px solid #ccc;
+
+			&.special {
+				font-size: 1.28em;
+				font-style: normal;
+				background: #fff;
+				color: #000;
+
+				p {
+					font-size: 1em;
+				}
+
+				small {
+					font-size: .62em;
+				}
+
+				.button {
+					margin-top: 1.62em;
+				}
+
+			}
+
+		}
+
+
+
+	// Footer
+
+		.congrats {
+			padding: 1em 0 0;
+
+			p {
+				font-size: 1.15em;
+			}
+
+		}
+
+
+
+	// Allow displaying notices on welcome screen
+
+		.notice {
+			display: block !important;
+		}
+
+}

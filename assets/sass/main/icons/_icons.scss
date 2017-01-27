@@ -1,0 +1,46 @@
+/* FILE: main/icons/_icons.scss */
+
+//
+// Icons
+//
+
+
+
+
+
+// Main Genericon extender
+
+	%genericon {
+		font-family: 'Genericons';
+		font-style: normal;
+		font-weight: normal;
+		font-variant: normal;
+		text-decoration: inherit;
+		text-transform: none;
+		speak: none;
+	}
+
+
+
+// Icons styles
+
+	.genericon {
+
+		&::before {
+			@extend %font_smoothing;
+			line-height: 1;
+		}
+
+		&.vertical-align-middle::before {
+			@extend %vertical_align_middle;
+		}
+
+		&.vertical-align-baseline::before {
+			@extend %vertical_align_baseline;
+		}
+
+		&.vertical-align-bottom::before {
+			@extend %vertical_align_bottom;
+		}
+
+	}

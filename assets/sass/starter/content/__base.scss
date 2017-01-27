@@ -1,0 +1,24 @@
+/* FILE: starter/content/_base.scss */
+
+//
+// Content base styles
+//
+
+
+
+
+
+.site-header,
+.site-content,
+.site-footer,
+.entry-content {
+	@extend .clearfix;
+}
+
+.entry-summary {
+	margin: 0 0 ( $golden +em );
+}
+
+.link-more {
+	@extend %font_weight_700;
+}

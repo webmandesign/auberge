@@ -1,0 +1,116 @@
+/* FILE: starter/wp/__gallery.scss */
+
+//
+// Gallery
+//
+
+
+
+
+
+.gallery {
+	@extend .clearfix;
+	@extend .overflow-hidden;
+	clear: both;
+	margin: 0 0 ( $golden +em );
+
+	a {
+		display: block;
+		width: 100%;
+	}
+
+	img {
+		width: 100%;
+	}
+
+	// Item
+
+		$columns: 2; // default gallery layout on small devices
+		$gutter: 2;  // %
+
+		&-item {
+			@extend .overflow-hidden;
+			float: $left; // {{RTL}}
+			position: relative;
+			width: percentage( ( 100 / $columns - $gutter ) / 100 );
+			padding: 0;
+			margin: 0 percentage( $gutter / 2 / 100 ) percentage( $gutter / 100 );
+
+			.gallery-columns-1 & {
+				float: none;
+				width: 100%;
+			}
+
+			@include responsive( map_get( $breakpoint, 'm' ) ) {
+				$columns: 3; // default gallery layout on medium devices
+				width: percentage( ( 100 / $columns - $gutter ) / 100 );
+
+				.gallery-columns-2 & {
+					$columns: 2;
+					width: percentage( ( 100 / $columns - $gutter ) / 100 );
+				}
+
+			}
+
+			@include responsive( map_get( $breakpoint, 'l' ) ) {
+
+				@for $i from 3 through 9 {
+
+					.gallery-columns-#{$i} & {
+						$columns: $i; // on large devices do not force any default gallery layout, use actual gallery columns setup
+						width: percentage( ( 100 / $columns - $gutter ) / 100 );
+					}
+
+				}
+
+			}
+
+		}
+
+	// Icon (image wrapper inside the .gallery-item)
+
+		&-icon {
+			@extend .overflow-hidden;
+			display: block;
+		}
+
+	// Caption
+
+		&-caption {
+			@extend %font_size_small;
+			@extend %font_style_italic;
+			@extend %line_height_golden_minor;
+			@extend .overflow-hidden;
+			display: block;
+			position: absolute;
+			width: 100%;
+			max-height: 50%;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			padding: ( $golden_major +em ) 1em;
+			opacity: 0;
+			transition: opacity .3s;
+
+			.gallery-item:hover & {
+				opacity: 1;
+			}
+
+			@include responsive( map_get( $breakpoint, 'm' ) ) {
+				$items: ();
+
+				@for $i from 5 through 9 {
+
+					$items: append( $items, '.gallery-columns-#{$i} &', comma );
+
+				}
+
+				#{$items} {
+					display: none;
+				}
+
+			}
+
+		}
+
+}

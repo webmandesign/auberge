@@ -1,0 +1,26 @@
+/* FILE: welcome-rtl.scss */
+
+//
+// Welcome page RTL styles
+//
+// @package    Auberge
+// @copyright  WebMan Design, Oliver Juhas
+//
+// @since    2.2.0
+// @version  2.2.0
+//
+
+
+
+
+
+// Setup language direction
+
+	$left: right;
+	$right: left;
+
+
+
+// Imports
+
+	@import "welcome/welcome";

@@ -1,0 +1,105 @@
+/* FILE: main/header/__banner.scss */
+
+//
+// Site banner on front page
+//
+
+
+
+
+
+.site-banner {
+	clear: both;
+	position: relative;
+}
+
+	.no-js .site-banner.enable-slider .entry,
+	.enable-slider .site-banner-inner:not(.slick-slider) .entry {
+		display: none;
+	}
+
+	.no-js .site-banner.enable-slider .entry:first-child,
+	.enable-slider .site-banner-inner:not(.slick-slider) .entry:first-child {
+		display: block;
+	}
+
+	.site-banner-header {
+		position: absolute;
+		width: 100%;
+		bottom: 19%;
+	}
+		@media only screen and (max-width: 55em) {
+
+					.site-banner-header {
+						bottom: 1rem;
+					}
+		}
+
+	.site-banner a,
+	.site-banner a:hover {
+		text-decoration: none;
+	}
+
+	.site-banner-title {
+		font-size: 3.62rem;
+	}
+
+	.site-banner .post .entry-title {
+		@extend %font_weight_400;
+	}
+
+	.site-banner-title,
+	.site-banner .slider-nav,
+	.site-banner .slick-dots {
+		width: 88%;
+		max-width: 1020px;
+		padding: 0 19rem 0 0;
+		margin: 0 auto;
+		text-transform: none;
+		letter-spacing: 2px;
+		color: inherit;
+	}
+		@media only screen and (max-width: 55em) {
+
+					.site-banner-title {
+						padding-right: 5rem;
+						font-size: 2.38rem;
+					}
+
+					.site-banner .slick-prev,
+					.site-banner .slick-next {
+						width: 2em;
+						height: 2em;
+						bottom: 1rem;
+					}
+
+					.site-banner .slick-prev {
+						right: 2.62em;
+					}
+
+					.slick-dots {
+						display: none !important;
+					}
+		}
+
+		@media only screen and (max-width: 42em) {
+					.site-banner-title {
+						font-size: 1.38rem;
+					}
+		}
+
+	.site-banner-media {
+		position: relative;
+		z-index: 0;
+	}
+
+		.site-banner-media:before {
+			content: '';
+			position: absolute;
+			display: block;
+			width: 100%;
+			height: 38%;
+			left: 0;
+			bottom: 0;
+			z-index: 1;
+		}

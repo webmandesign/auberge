@@ -1,0 +1,52 @@
+/* FILE: editor-style-rtl.scss */
+
+//
+// Visual Editor RTL stylesheet
+//
+// @package    Auberge
+// @copyright  WebMan Design, Oliver Juhas
+//
+// @since    2.2.0
+// @version  2.2.0
+//
+
+
+
+
+
+// Setup language direction
+
+	$left: right;
+	$right: left;
+
+
+
+
+
+// These will be ignored when editor stylesheet is generated
+
+	/*[*/
+	@import url( 'main-rtl.css' );
+	/*]*/
+
+	/*[*/
+	@import url( 'custom-styles-editor.css' );
+	/*]*/
+
+
+
+// RTL style overrides
+
+	body {
+		direction: rtl;
+		unicode-bidi: embed;
+	}
+
+	.mce-content-body {
+
+		&::after {
+			left: 0;
+			right: auto;
+		}
+
+	}

@@ -1,0 +1,251 @@
+/* FILE: starter/base/_base.scss */
+
+//
+// Basic, generic styles
+//
+
+
+
+
+
+// HTML elements
+
+	@if rtl == $language_direction {
+
+		body {
+			direction: rtl;
+			unicode-bidi: embed;
+		}
+
+	}
+
+	a {
+		@extend %break_words;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+
+		&:focus {
+			outline: thin dashed;
+		}
+
+		&:visited {}
+
+	}
+
+	hr {
+		clear: both;
+		height: 2px;
+		margin: ( power( 1 + $golden_minor, 2 ) +rem ) 0;
+		border-width: 0;
+	}
+
+	abbr[title],
+	acronym[title] {
+		cursor: help;
+		text-decoration: none;
+	}
+
+	blockquote {
+		@extend %font_size_golden_minor;
+		@extend %font_weight_300;
+		@extend %line_height_golden_minor;
+		clear: both;
+		position: relative;
+		padding: 1em 0;
+		margin: ( $golden +em ) 0;
+
+		p {
+			margin-bottom: 1em;
+		}
+
+		p:last-child {
+			margin: 0;
+		}
+
+		blockquote {
+			@extend %font_size_1em;
+		}
+
+	}
+
+	cite {
+		@extend %font_style_normal;
+		border-width: 0;
+
+		&::before {
+			content: '\2014\2002';
+		}
+
+		blockquote & {
+			@extend %font_size_small;
+			@extend %font_weight_400;
+			display: block;
+			margin-top: $golden_major +em;
+		}
+
+	}
+
+	q {
+
+		&::before {
+			@include rtl_property( content, '\201C', '\201D' ); // {{RTL}}
+		}
+
+		&::after {
+			@include rtl_property( content, '\201D', '\201C' ); // {{RTL}}
+		}
+
+	}
+
+	mark,
+	ins,
+	.highlight {
+		padding: ( $golden_minor / 2 +em ) 0;
+		margin: 0 ( $golden_minor +em );
+		box-decoration-break: clone;
+	}
+
+	s,
+	del {
+		text-decoration: line-through;
+		color: inherit;
+		opacity: .66;
+	}
+
+	img,
+	iframe {
+		vertical-align: middle;
+	}
+
+	img[width],
+	img[height] {
+		height: auto;
+	}
+
+	iframe {
+		border-width: 0;
+		outline: 0;
+
+		&:focus {
+			outline: thin dotted;
+		}
+
+	}
+
+	code {
+		@extend %font_size_small;
+		position: relative;
+		display: inline-block;
+		padding: 0 ( $golden_major +em );
+		margin: 0 ( $golden_minor / 2 +em );
+
+		mark &,
+		ins &,
+		.highlight &,
+		.form-allowed-tags &,
+		.taxonomy-description & {
+			display: inline;
+			padding: 0 ( $golden_minor +em );
+			background: none;
+			color: inherit;
+		}
+
+	}
+
+	pre {
+		@extend %font_size_small;
+		position: relative;
+		max-width: 100%;
+		padding: 1em;
+		margin-bottom: $golden +em;
+		overflow: auto;
+		tab-size: 2;
+	}
+
+	small,
+	.small {
+		@extend %font_size_small;
+	}
+
+	ul, ol {
+		margin-top: 0;
+		margin-bottom: 1em;
+		margin-#{$left}: $golden_minor + 1em; // {{RTL}}
+		margin-#{$right}: 0; // {{RTL}}
+
+		li > & {
+			margin-bottom: 0;
+		}
+
+	}
+
+	ol {
+
+		ol {
+			list-style: upper-alpha;
+
+			ol {
+				list-style: upper-roman;
+
+				ol {
+					list-style: lower-alpha;
+				}
+
+			}
+
+		}
+
+	}
+
+	dl {
+		margin-bottom: $golden +em;
+	}
+
+	dt {
+		@extend %font_weight_700;
+		margin-top: $golden_major +em;
+	}
+
+	dd {
+		margin-#{$left}: $golden +em; // {{RTL}}
+	}
+
+
+
+// Helpers
+
+	%break_words {
+		// From @link  https://css-tricks.com/snippets/css/prevent-long-urls-from-breaking-out-of-container/
+
+		// These are technically the same, but use both
+
+			overflow-wrap: break-word;
+			word-wrap: break-word;
+
+		// Adds a hyphen where the word breaks, if supported (No Blink)
+
+			// hyphens: auto;
+	}
+
+		%break_words_disable {
+			overflow-wrap: normal;
+			word-wrap: normal;
+			hyphens: manual;
+		}
+
+
+
+// Imports
+
+	@import '_table';
+
+	@import '_classes';
+
+	@import '_clearing';
+
+	@import '_player';
+
+	@import '_breakpoints';

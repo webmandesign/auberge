@@ -1,0 +1,60 @@
+/* FILE: starter/comments/__meta.scss */
+
+//
+// Comment meta and author info
+//
+
+
+
+
+
+.comment-meta {
+	@extend .overflow-hidden;
+	clear: both;
+	padding-bottom: $golden_major +em;
+	margin-bottom: 1em;
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
+
+	.avatar {
+		position: absolute;
+		width: 60 *$px;
+		#{$left}: 0; // {{RTL}}
+		top: $golden +em;
+		border-radius: 50%;
+
+		@include responsive( map_get( $breakpoint, 'm' ) ) {
+			width: 90 *$px;
+		}
+
+	}
+
+}
+
+.comment-author {
+
+	@include responsive( map_get( $breakpoint, 'm' ) ) {
+		float: $left; // {{RTL}}
+	}
+
+}
+
+.comment-metadata {
+	@extend %font_size_small;
+	opacity: .66;
+
+	@include responsive( map_get( $breakpoint, 'm' ) ) {
+		float: $right; // {{RTL}}
+	}
+
+	.edit-link {
+		padding-#{$left}: $golden +em; // {{RTL}}
+		font-variant: small-caps;
+	}
+
+}
+
+.bypostauthor {
+	// The class is still required for Theme Check to pass,
+	// so, compensate for this in your theme's `style.css` file.
+}

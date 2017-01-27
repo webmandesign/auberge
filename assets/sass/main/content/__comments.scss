@@ -1,0 +1,83 @@
+/* FILE: main/content/__comments.scss */
+
+//
+// Comments
+//
+
+
+
+
+
+	.comments-area {
+		padding: 6% 0;
+		margin: 0;
+	}
+
+
+.comments-title {
+	font-size: nth( map_get( $h_tags_setup, 'h3, .h3' ), 1 ) +em;
+}
+
+
+	/**
+	 * Author details
+	 */
+
+		/* Name */
+
+			.bypostauthor > .comment-body .comment-author:before {
+				@extend %genericon;
+				content: '\f304';
+				position: absolute;
+				display: block;
+				width: 30px;
+				height: 30px;
+				left: 30px;
+				top: 75px;
+				margin-top: 1.62em;
+				line-height: 28px;
+				text-align: center;
+				font-size: 1.17em;
+				border-radius: 50%;
+				z-index: 1;
+			}
+
+		@media only screen and (max-width: 42em) {
+					.bypostauthor > .comment-body .comment-author:before {
+						left: 15px;
+						top: 45px;
+					}
+		}
+
+
+
+	/**
+	 * Comment content
+	 */
+
+		.comment-edit-link:before,
+		.comment-reply-link:before {
+			@extend %genericon;
+			content: '\f467';
+			margin-right: .19em;
+			font-size: 1.38em;
+			vertical-align: middle;
+		}
+
+			.comment-edit-link:before {
+				content: '\f411';
+			}
+
+
+
+	/**
+	 * Comments pagination
+	 */
+
+		.comment-navigation {
+			padding: 8% 0;
+		}
+
+				.comments-title .add-comment-link {
+					display: none;
+				}

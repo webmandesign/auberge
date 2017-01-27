@@ -1,0 +1,15 @@
+/* FILE: main/headings/__widget-title.scss */
+
+//
+// Widget title
+//
+
+
+
+
+
+.widget-title {
+	@extend %font_size_small_rem;
+	margin: 0 0 1.62em;
+	letter-spacing: .1em;
+}

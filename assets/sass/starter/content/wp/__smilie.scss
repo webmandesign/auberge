@@ -1,0 +1,23 @@
+/* FILE: starter/wp/__smilie.scss */
+
+//
+// Smilies
+//
+
+
+
+
+
+img.wp-smiley {
+
+	.page-content &,
+	.entry-content &,
+	.comment-content & {
+		display: inline;
+		width: auto;
+		max-height: 1em;
+		margin: 0;
+		border-width: 0;
+	}
+
+}

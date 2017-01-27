@@ -1,0 +1,120 @@
+/////////////////////
+//
+// Functions
+//
+/////////////////////
+
+
+
+
+
+//
+// Power math function
+//
+// Usage for standard gloden ratio values:
+// 2.62 = power( $golden, 2 )
+// 3.62 = power( ( 1 + $golden_minor ), 4 )
+// 4.25 = power( $golden, 3 )
+// 5.00 = power( ( 1 + $golden_minor ), 5 )
+//
+// @link  https://github.com/adambom/Sass-Math/blob/master/math.scss
+//
+// @param  num $base
+// @param  int $exp
+//
+// @return  num Base raised to the power of exponent
+//
+@function power( $base, $exp: 1 ) {
+
+	// Helper variables
+
+		$output: 1;
+
+
+	// Processing
+
+		@if 0 <= $exp {
+
+			@for $i from 1 through $exp {
+
+				$output: $output * $base;
+
+			}
+
+		} @else {
+
+			@for $i from $exp to 0 {
+
+				$output: $output / $base;
+
+			}
+
+		}
+
+
+	// Output
+
+		@return $output;
+
+} // /power
+
+
+
+//
+// Convert px value to rem or em
+//
+// @link  https://webdesign.tutsplus.com/courses/become-a-css-superhero-with-stylus/lessons/create-a-px-to-rem-or-em-converter-function
+//
+// @param  int $value Value of px to convert
+// @param  int $base  If set, the output is in em relative to this base value
+//
+@function px( $value, $base: 0 ) {
+
+	// Output
+
+		@if 0 < $base {
+
+			@return $value / $base +em
+
+		} @else {
+
+			@return $value / $font_size +rem
+
+		}
+
+} // /px
+
+
+
+//
+// Repeat CSS selectors several times
+//
+// @example
+//   .foo {
+//     @at-root #{ repeat_selector( &, 2 ) } {
+//       ...
+//     }
+//   }
+//
+// @param  int $selector The CSS selector to repeat
+// @param  int $multiply How many times to repeat the selector?
+//
+@function repeat_selector( $selector, $multiply: 1 ) {
+
+	// Helper variables
+
+		$output: '';
+
+
+	// Processing
+
+		@for $i from 1 through $multiply {
+			$output: $output + $selector;
+		}
+
+
+	// Output
+
+		@return $output;
+
+} // /repeat_selector

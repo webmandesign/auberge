@@ -1,0 +1,221 @@
+/* FILE: starter/typography/_typography.scss */
+
+//
+// Basic typographic styles
+//
+
+
+
+
+
+// Base
+
+	html {
+		@extend %line_height_golden;
+		font-size: 100%;
+		font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+		@include responsive( map_get( $breakpoint, 's' ) ) {
+			font-size: percentage( $font_size / 16 );
+		}
+
+	}
+
+	pre,
+	code,
+	kbd,
+	tt,
+	var {
+		font-family: 'Lucida Console', Monaco, 'Courier New', monospace;
+		font-size: 1em;
+		font-style: normal;
+		font-weight: 400;
+		text-transform: none;
+		text-decoration: none;
+	}
+
+	pre,
+	pre code {
+		@extend %break_words_disable;
+		white-space: pre-wrap; // http://css-tricks.com/almanac/properties/w/whitespace
+		line-height: 1.5;
+	}
+
+	p,
+	address {
+		@extend %break_words;
+		padding: 0;
+		margin: 0 0 ( $golden +em );
+	}
+
+	.uppercase {
+		text-transform: uppercase;
+	}
+
+	%font_smoothing {
+		-moz-osx-font-smoothing: grayscale;
+		 -webkit-font-smoothing: antialiased;
+	}
+
+
+
+// Size
+
+	// rem
+
+		%font_size_1rem {
+			font-size: 1rem;
+		}
+
+		%font_size_tiny_rem {
+			font-size: 1rem * $golden_major; // .62
+		}
+
+		%font_size_small_rem {
+			font-size: 1rem - $golden_minor / 2; // .81
+		}
+
+		%font_size_smaller_rem {
+			font-size: 1rem - $golden_minor / 4; // .905
+		}
+
+		%font_size_higher_rem {
+			font-size: 1rem + $golden_minor / 2; // 1.19
+		}
+
+		%font_size_golden_minor_rem {
+			font-size: 1rem + $golden_minor; // 1.38
+		}
+
+		%font_size_golden_rem {
+			font-size: 1rem * $golden; // 1.62
+		}
+
+	// em
+
+		%font_size_1em {
+			font-size: 1em;
+		}
+
+		%font_size_tiny {
+			font-size: 1em * $golden_major; // .62
+		}
+
+		%font_size_small {
+			font-size: 1em - $golden_minor / 2; // .81
+		}
+
+		%font_size_smaller {
+			font-size: 1em - $golden_minor / 4; // .905
+		}
+
+		%font_size_higher {
+			font-size: 1em + $golden_minor / 2; // 1.19
+		}
+
+		%font_size_golden_minor {
+			font-size: 1em + $golden_minor; // 1.38
+		}
+
+		%font_size_golden {
+			font-size: 1em * $golden; // 1.62
+		}
+
+
+
+		.font-size-xs { // extra small
+			@extend %font_size_tiny;
+		}
+
+		.font-size-s { // small
+			@extend %font_size_small;
+		}
+
+		.font-size-sm { // small
+			@extend %font_size_smaller;
+		}
+
+		.font-size-l { // large
+			@extend %font_size_golden_minor;
+		}
+
+		.font-size-xl { // extra large
+			@extend %font_size_golden;
+		}
+
+
+
+// Weight
+
+	// 400 = normal
+	// 700 = bold
+	//
+	// @link  https://developer.mozilla.org/en/docs/Web/CSS/font-weight
+
+	@for $i from 1 through 9 {
+
+		$weight: $i * 100;
+
+		%font_weight_#{$weight} {
+			font-weight: $weight;
+		}
+
+
+
+		.weight-#{$weight} {
+			@extend %font_weight_#{$weight};
+		}
+
+	}
+
+
+
+// Style
+
+	%font_style_italic {
+		font-style: italic;
+	}
+
+	%font_style_normal {
+		font-style: normal;
+	}
+
+
+
+	.font-style-italic {
+		@extend %font_style_italic;
+	}
+
+	.font-style-normal {
+		@extend %font_style_normal;
+	}
+
+
+
+// Line height
+
+	%line_height_1 {
+		line-height: 1;
+	}
+
+	%line_height_golden_minor {
+		line-height: 1 + $golden_minor; // 1.38
+	}
+
+	%line_height_golden {
+		line-height: $golden; // 1.62
+	}
+
+
+
+	.line-height-xs { // extra small
+		@extend %line_height_1;
+	}
+
+	.line-height-s { // small
+		@extend %line_height_golden_minor;
+	}
+
+	.line-height-m { // medium
+		@extend %line_height_golden;
+	}

@@ -1,0 +1,76 @@
+/* FILE: starter/form/__comments.scss */
+
+//
+// Comments form
+//
+
+
+
+
+
+.comment-respond {
+	padding: ( $golden +em ) 0 0;
+	border-top-width: 2px;
+	border-top-style: solid;
+
+	.comment-list & {
+		margin: ( $golden +em ) 0;
+		border-bottom-width: 2px;
+		border-bottom-style: solid;
+	}
+
+}
+
+.comment-reply-title {
+	margin-bottom: $golden_major +em;
+}
+
+#cancel-comment-reply-link {
+	@extend %font_size_small;
+	@extend %font_weight_400;
+	float: $right; // {{RTL}}
+}
+
+.comment-form {
+
+	p {
+		margin-bottom: 1em;
+	}
+
+	label {
+		@extend %font_size_small;
+		@extend %font_weight_700;
+		display: block;
+	}
+
+}
+
+.comment-form-author input,
+.comment-form-email input,
+.comment-form-url input,
+.comment-form-comment textarea {
+	width: 100%;
+}
+
+.comment-form-url {
+	clear: both;
+}
+
+.form-allowed-tags {
+	@extend %line_height_golden;
+}
+
+@include responsive() {
+
+	.comment-form-author,
+	.comment-form-email {
+		float: $left; // {{RTL}}
+		width: 48%;
+		margin-#{$left}: 4%; // {{RTL}}
+	}
+
+	.comment-form-author {
+		margin-#{$left}: 0; // {{RTL}}
+	}
+
+}

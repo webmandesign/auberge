@@ -1,8 +1,8 @@
 # Auberge
 
-* **Theme URI:**    http://www.webmandesign.eu/auberge-wordpress-theme/
+* **Theme URI:**    https://www.webmandesign.eu/portfolio/auberge-wordpress-theme/
 * **Author:**       WebMan
-* **Author URI:**   http://www.webmandesign.eu/
+* **Author URI:**   https://www.webmandesign.eu/
 * **License:**      GNU General Public License v3
 * **License URI:**  http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -10,19 +10,19 @@
 
 **Auberge** is responsive, retina-ready, modern restaurant & café & recipes blog WordPress theme. Supports Beaver Builder page builder plugin, Jetpack plugin to create a food menu with additional help of WebMan Amplifier plugin for recipes, Schema.org markup (the theme is compatible with Google Recipe View), Theme Hook Alliance action hooks, translation-ready code, header slideshow, customizable colors and layout, and other cool features.
 
-The theme is compatible with Chrome, Safari, Opera, Firefox, Internet Explorer 9+ browsers.
+The theme is compatible with Chrome, Safari, Opera, Firefox, Internet Explorer 10+ browsers.
 
 Thank you for using one of WebMan's themes (more cool WordPress themes can be found at www.webmandesign.eu).
 
 Follow WebMan on Twitter [https://twitter.com/webmandesigneu] and become a fan on Facebook [https://www.facebook.com/webmandesigneu].
 
-Full theme demo website at [http://themedemos.webmandesign.eu/auberge/].
+Full theme demo website at [https://themedemos.webmandesign.eu/auberge/].
 
-Theme user manual with demo data at [http://www.webmandesign.eu/manual/auberge/].
+Theme user manual with demo data at [https://www.webmandesign.eu/manual/auberge/].
 
 ## Demo
 
-http://themedemos.webmandesign.eu/auberge/
+https://themedemos.webmandesign.eu/auberge/
 
 ## Browser Compatibility
 
@@ -57,11 +57,6 @@ Licensed under the MIT license
 git.io/normalize
 
 ### JavaScript copyright
-
-**imagesLoaded**
-Copyright (c) 2014 Tomas Sardyha (@Darsain) and David DeSandro (@desandro)
-Licensed under the MIT license
-https://github.com/desandro/imagesloaded
 
 **slick**
 Copyright (c) 2014 Ken Wheeler

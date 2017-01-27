@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0
- * @version  2.1.1
+ * @version  2.2.0
  *
  * Contents:
  *
@@ -263,7 +263,7 @@
 	 * Theme setup
 	 *
 	 * @since    1.0
-	 * @version  2.0
+	 * @version  2.2.0
 	 */
 	if ( ! function_exists( 'wm_setup' ) ) {
 		function wm_setup() {
@@ -274,10 +274,12 @@
 
 				// WordPress visual editor CSS stylesheets
 
+					$rtl_suffix = ( is_rtl() ) ? ( '-rtl' ) : ( '' );
+
 					$visual_editor_css = array_filter( (array) apply_filters( 'wmhook_wm_setup_visual_editor_css', array(
 							str_replace( ',', '%2C', wm_google_fonts_url() ),
 							esc_url_raw( add_query_arg( array( 'ver' => wp_get_theme( get_template() )->get( 'Version' ) ), wm_get_stylesheet_directory_uri( 'assets/fonts/genericons/genericons.css' ) ) ),
-							esc_url_raw( add_query_arg( array( 'ver' => wp_get_theme( get_template() )->get( 'Version' ) ), wm_get_stylesheet_directory_uri( 'assets/css/editor-style.css' ) ) ),
+							esc_url_raw( add_query_arg( array( 'ver' => wp_get_theme( get_template() )->get( 'Version' ) ), wm_get_stylesheet_directory_uri( 'assets/css/editor-style' . $rtl_suffix . '.css' ) ) ),
 						) ) );
 
 						add_editor_style( $visual_editor_css );
@@ -302,6 +304,10 @@
 					// wp-content/themes/theme-name/languages/it_IT.mo
 
 						load_theme_textdomain( 'auberge', get_template_directory() . '/languages' );
+
+				// Declare support for child theme stylesheet automatic enqueuing
+
+					add_theme_support( 'child-theme-stylesheet' );
 
 				// Custom menus
 
@@ -994,7 +1000,7 @@
 	 * Registering theme styles and scripts
 	 *
 	 * @since    1.0
-	 * @version  2.0
+	 * @version  2.2.0
 	 */
 	if ( ! function_exists( 'wm_register_assets' ) ) {
 		function wm_register_assets() {
@@ -1012,9 +1018,9 @@
 							'genericons'      => array( wm_get_stylesheet_directory_uri( 'assets/fonts/genericons/genericons.css' ) ),
 							'slick'           => array( wm_get_stylesheet_directory_uri( 'assets/css/slick.css' ) ),
 							'wm-google-fonts' => array( wm_google_fonts_url() ),
-							'wm-starter'      => array( wm_get_stylesheet_directory_uri( 'assets/css/starter.css' ) ),
-							'wm-stylesheet'   => array( 'src' => get_template_directory_uri() . '/style.css', 'deps' => array( 'genericons', 'wm-starter' ) ),
-							'wm-custom'       => array( wm_get_stylesheet_directory_uri( 'assets/css/custom.css' ), 'deps' => array( 'wm-stylesheet' ) ),
+							'wm-main'         => array( wm_get_stylesheet_directory_uri( 'assets/css/main.css' ) ),
+							'wm-stylesheet'   => array( get_stylesheet_uri() ),
+							'wm-custom'       => array( wm_get_stylesheet_directory_uri( 'assets/css/custom.css' ), 'deps' => array( 'wm-main' ) ),
 						) );
 
 					foreach ( $register_styles as $handle => $atts ) {
@@ -1029,7 +1035,6 @@
 				// Scripts
 
 					$register_scripts = apply_filters( 'wmhook_wm_register_assets_register_scripts', array(
-							'imagesloaded'           => array( wm_get_stylesheet_directory_uri( 'assets/js/vendor/imagesloaded.pkgd.min.js' ) ),
 							'slick'                  => array( 'src' => wm_get_stylesheet_directory_uri( 'assets/js/vendor/slick.min.js' ), 'deps' => array( 'jquery' ) ),
 							'wm-scripts-global'      => array( 'src' => wm_get_stylesheet_directory_uri( 'assets/js/scripts-global.js' ), 'deps' => array( 'jquery', 'imagesloaded', 'wm-scripts-navigation' ) ),
 							'wm-scripts-navigation'  => array( wm_get_stylesheet_directory_uri( 'assets/js/scripts-navigation.js' ) ),
@@ -1056,7 +1061,7 @@
 	 * Frontend HTML head assets enqueue
 	 *
 	 * @since    1.0
-	 * @version  2.0
+	 * @version  2.2.0
 	 */
 	if ( ! function_exists( 'wm_enqueue_assets' ) ) {
 		function wm_enqueue_assets() {
@@ -1067,7 +1072,7 @@
 
 				$custom_styles = wm_custom_styles();
 
-				$inline_styles_handle = apply_filters( 'wmhook_wm_enqueue_assets_inline_styles_handle', 'wm-stylesheet' );
+				$inline_styles_handle = apply_filters( 'wmhook_wm_enqueue_assets_inline_styles_handle', 'wm-main' );
 
 
 			// Processing
@@ -1101,6 +1106,8 @@
 
 					// Main
 
+						$enqueue_styles[] = 'genericons';
+						$enqueue_styles[] = 'wm-main';
 						$enqueue_styles[] = 'wm-stylesheet';
 
 					// Colors
@@ -1114,6 +1121,11 @@
 					foreach ( $enqueue_styles as $handle ) {
 						wp_enqueue_style( $handle );
 					}
+
+				// RTL setup
+
+					wp_style_add_data( 'slick', 'rtl', 'replace' );
+					wp_style_add_data( 'wm-main', 'rtl', 'replace' );
 
 				// Styles - inline
 
@@ -2703,7 +2715,7 @@
 			 * Excerpt "Continue reading" text
 			 *
 			 * @since    1.0
-			 * @version  2.0
+			 * @version  2.2.0
 			 *
 			 * @param  string $continue
 			 */
@@ -2711,8 +2723,6 @@
 				function wm_excerpt_continue_reading( $continue ) {
 
 					// Output
-
-						return '<div class="link-more"><a href="' . esc_url( get_permalink() ) . '">' . sprintf( esc_html__( 'Continue reading%s&hellip;', 'auberge' ), '<span class="screen-reader-text"> "' . get_the_title() . '"</span>' ) . '</a></div>';
 
 						return '<div class="link-more"><a href="' . esc_url( get_permalink( get_the_ID() ) ) . '" class="more-link">' . sprintf(
 								esc_html_x( 'Continue reading%s&hellip;', '%s: Name of current post.', 'auberge' ),
