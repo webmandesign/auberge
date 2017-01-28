@@ -8,36 +8,31 @@
 
 
 
-.posts .entry-meta {
-	@extend %font_size_smaller;
-	margin-top: 0;
-}
-
-.items .entry-meta,
-.entry-meta-description,
-.posts .entry-meta-element.author {
-	clip: rect(1px, 1px, 1px, 1px);
-	position: absolute !important;
-	height: 1px;
-	width: 1px;
-	padding: 0;
-	margin: 0;
-	line-height: 1px;
-	overflow: hidden;
-}
-
-.single .entry-meta {
-	padding: 1em 0;
-	margin-top: 0;
-	border-bottom: 2px solid;
-}
-
-.single .entry-meta-top {
-	margin-bottom: 1.62em;
-}
-
-
 .entry-meta {
+
+	.posts & {
+		@extend %font_size_smaller;
+		margin-top: 0;
+	}
+
+	.single & {
+		padding: 1em 0;
+		margin-top: 0;
+		border-bottom-width: 2px;
+		border-bottom-style: solid;
+
+		&-top {
+			margin-bottom: 1.62em;
+		}
+
+	}
+
+	&-description,
+	.posts &-element.author {
+		@extend %screen_reader_hiding;
+	}
+
+
 
 	// Meta element icon
 

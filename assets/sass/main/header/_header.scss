@@ -12,22 +12,22 @@
 
 	.site-header {
 		position: relative;
-		padding: 0 4%;
-		line-height: 5rem;
+		padding: 1.62rem 1rem;
+		padding-#{$left}: 5.24rem; // {{RTL}}
+		line-height: 2;
 		z-index: 999;
-	}
 
-		.site-header-inner {
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+			padding: 0 4%;
+			line-height: 5rem;
+		}
+
+		&-inner {
 			max-width: 1920px;
 			margin: 0 auto;
 		}
 
-		@media only screen and (max-width: 55em) {
-				.site-header {
-					padding: 1.62rem 1rem 1.62rem 5.24rem;
-					line-height: 2;
-				}
-			}
+	}
 
 
 

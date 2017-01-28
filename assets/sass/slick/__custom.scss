@@ -1,0 +1,133 @@
+/* FILE: main/slick/__custom.scss */
+
+//
+// Custom Slick slider styles
+//
+
+
+
+
+
+.site-banner {
+
+	.slick-slider .slider-nav,
+	.slick-slider .slick-dots {
+		position: relative;
+		height: 0;
+		padding: 0;
+	}
+
+	.slider-nav {
+		z-index: 1;
+	}
+
+	.slider-nav,
+	.slick-dots {
+		width: 88%;
+		max-width: 1020px;
+		padding: 0 19rem;
+		padding-#{$left}: 0; // {{RTL}}
+		margin: 0 auto;
+		text-transform: none;
+		letter-spacing: 2px;
+		color: inherit;
+	}
+
+	.slick-prev,
+	.slick-next {
+		display: inline-block;
+		position: absolute;
+		width: 2em;
+		height: 2em;
+		bottom: 1rem;
+		padding: 0;
+		margin: 0;
+		text-align: center;
+		font-size: 1em;
+		background-color: transparent;
+		color: #fff;
+		border: 1px solid #fff;
+		border-radius: 50%;
+		opacity: .5;
+		transition: opacity .4s ease-in-out;
+
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+			width: 4.25em;
+			height: 4.25em;
+			bottom: 5.25em;
+		}
+
+		.genericon {
+			font-size: 1.62em;
+			vertical-align: middle;
+
+			&::before {
+				@include rtl_property( content, '\f430', '\f429' ); // {{RTL}}
+			}
+
+		}
+
+		&.slick-disabled {
+			opacity: .25;
+		}
+
+	}
+
+		.slick-prev {
+			#{$right}: 2.62em; // {{RTL}}
+
+			@include responsive( map_get( $breakpoint, 'l' ) ) {
+				#{$right}: 5.25em; // {{RTL}}
+			}
+
+		}
+
+		.slick-next {
+			#{$right}: 0; // {{RTL}}
+
+			.genericon::before {
+				@include rtl_property( content, '\f429', '\f430' ); // {{RTL}}
+			}
+
+		}
+
+		.slick-prev:hover,
+		.slick-next:hover,
+		.slick-dots .slick-active button {
+			opacity: 1;
+		}
+
+	.slick-dots {
+		bottom: 7.75em;
+		list-style: none;
+		text-align: $right; // {{RTL}}
+		z-index: 0;
+
+		@include responsive( map_get( $breakpoint, 'l' ), 'max-width' ) {
+			display: none !important;
+		}
+
+		li {
+			display: inline-block;
+			margin-#{$left}: .62em; // {{RTL}}
+		}
+
+		button {
+			text-indent: -999em;
+			width: .62em;
+			height: .62em;
+			padding: 0;
+			background: transparent;
+			border: 1px solid #fff;
+			border-radius: 50%;
+			overflow: hidden;
+			opacity: .5;
+		}
+
+	}
+
+		.slick-slider .slick-dots {
+			padding-#{$right}: 10.5em; // {{RTL}}
+		}
+
+}

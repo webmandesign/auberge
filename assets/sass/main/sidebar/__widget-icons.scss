@@ -16,40 +16,64 @@
 // Recent Posts
 // ZillaLikes
 
-			.widget_archive li:before,
-			.widget_categories li:before,
-			.widget_nav_menu li:before,
-			.widget_pages li:before {
-				@extend %genericon;
-				content: '\f307';
-				margin-right: .38em;
-				vertical-align: middle;
-			}
+	.widget_archive,
+	.widget_categories,
+	.widget_nav_menu,
+	.widget_pages {
 
-				.widget_categories li:before {
-					content: '\f301';
-				}
+		li::before {
+			@extend %genericon;
+			content: '\f307';
+			margin-#{$right}: .38em; // {{RTL}}
+			vertical-align: middle;
+		}
 
-				.widget_nav_menu li:before,
-				.widget_pages li:before {
-					content: '\f443';
-				}
+	}
 
-				.widget_recent_comments li:before,
-				.widget_recent_entries li:before,
-				.widget_zilla_likes_widget li:before {
-					@extend %genericon;
-					content: '\f300';
-					position: absolute;
-					left: 0;
-					top: .38em;
-					margin: 0;
-				}
+	.widget_categories {
 
-				.widget_recent_entries li:before {
-					content: '\f411';
-				}
+		li::before {
+			content: '\f301';
+		}
 
-				.widget_zilla_likes_widget li:before {
-					content: '\f461';
-				}
+	}
+
+	.widget_nav_menu,
+	.widget_pages {
+
+		li::before {
+			content: '\f443';
+		}
+
+	}
+
+	.widget_recent_comments,
+	.widget_recent_entries,
+	.widget_zilla_likes_widget {
+
+		li::before {
+			@extend %genericon;
+			content: '\f300';
+			position: absolute;
+			#{$left}: 0; // {{RTL}}
+			top: .38em;
+			margin: 0;
+		}
+
+	}
+
+	.widget_recent_entries {
+
+		li::before {
+			content: '\f411';
+		}
+
+	}
+
+	.widget_zilla_likes_widget {
+
+		li::before {
+			content: '\f461';
+		}
+
+	}

@@ -1270,20 +1270,6 @@
 							wp_add_inline_style( $inline_styles_handle, apply_filters( 'wmhook_esc_css', $output ) . "\r\n" );
 						}
 
-				// Styles - child theme
-
-					if ( is_child_theme() ) {
-
-						wp_enqueue_style(
-							'wm-stylesheet-child',
-							get_stylesheet_uri(),
-							array( 'wm-stylesheet' ),
-							esc_attr( trim( wp_get_theme()->get( 'Version' ) ) ),
-							'all'
-						);
-
-					}
-
 				// Scripts
 
 					// Masonry script (in footer and in archives)

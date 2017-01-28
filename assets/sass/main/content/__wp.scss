@@ -15,33 +15,46 @@
 		display: block;
 		width: 32px;
 		height: 32px;
-		right: 0;
+		#{$right}: 0; // {{RTL}}
 		top: 0;
 		line-height: 28px;
 		text-align: center;
 		z-index: 10;
-	}
 
-		.label-sticky .genericon {
-			margin-left: -.38em;
+		.genericon {
+			margin-#{$left}: -.38em; // {{RTL}}
 			font-size: 18px;
 			vertical-align: bottom;
+
+			[dir="rtl"] & {
+				transform: scaleX( -1 );
+			}
+
 		}
 
-		.label-sticky:before,
-		.label-sticky:after {
+		&::before,
+		&::after {
 			content: '';
 			position: absolute;
 			display: block;
-			border: 16px solid transparent;
+			border-width: 16px;
+			border-style: solid;
+
+			.site & {
+				border-bottom-color: transparent;
+				border-#{$left}-color: transparent;
+			}
+
 		}
 
-			.label-sticky:before {
-				right: 100%;
-				top: 0;
-			}
+		&::before {
+			#{$right}: 100%; // {{RTL}}
+			top: 0;
+		}
 
-			.label-sticky:after {
-				right: 0;
-				top: 100%;
-			}
+		&::after {
+			#{$right}: 0; // {{RTL}}
+			top: 100%;
+		}
+
+	}

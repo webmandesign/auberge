@@ -8,62 +8,73 @@
 
 
 
-.main-navigation .expander {
-	display: inline-block;
-	position: absolute;
-	width: 16px;
-	height: 16px;
-	right: 0;
-	top: 50%;
-	padding: 0;
-	margin-left: 2px;
-	border: 1px solid;
-	opacity: .5;
-	-webkit-transform: translateY(-50%);
-	    -ms-transform: translateY(-50%);
-	        transform: translateY(-50%);
-}
-		@media only screen and (max-width: 55em) {
+.expander {
 
-						.main-navigation .expander {
-							display: none;
-						}
+	.main-navigation & {
+		display: none;
+
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+			display: inline-block;
+			position: absolute;
+			width: 16px;
+			height: 16px;
+			#{$right}: 0; // {{RTL}}
+			top: 50%;
+			padding: 0;
+			margin-#{$left}: 2px; // {{RTL}}
+			border: 1px solid currentColor;
+			opacity: .5;
+			transform: translateY(-50%);
 		}
 
-	.main-navigation .expander:after,
-	.main-navigation .expander:before {
-		content: '';
-		position: absolute;
-		left: 50%;
-		top: 50%;
-		border: 1px solid;
-	}
-
-		.main-navigation .expander:before {
-			width: 8px;
-			height: 2px;
-			margin: -1px -4px;
+		&::after,
+		&::before {
+			content: '';
+			position: absolute;
+			#{$left}: 50%; // {{RTL}}
+			top: 50%;
+			border-width: 1px;
+			border-style: solid;
 		}
 
-		.main-navigation .expander:after{
+		&::after{
 			width: 2px;
 			height: 8px;
 			margin: -4px -1px;
 		}
 
-.main-navigation li li .expander {
-	right: 1em;
-}
+		&::before {
+			width: 8px;
+			height: 2px;
+			margin: -1px -4px;
+		}
 
-	.main-navigation li:hover > a .expander:after,
-	.main-navigation li.focus > a .expander:after {
-		display: none;
 	}
 
+
+
+	.main-navigation li li & {
+		#{$right}: 1em; // {{RTL}}
+	}
+
+
+	.main-navigation li:hover > a &,
+	.main-navigation li.focus > a & {
+
+		&::after {
+			display: none;
+		}
+
+	}
+
+}
+
+
+
 .main-navigation li.menu-item-has-children > a {
-	padding-right: 1.62em;
+	padding-#{$right}: 1.62em; // {{RTL}}
 }
 
 .main-navigation li li.menu-item-has-children > a {
-	padding-right: 3em;
+	padding-#{$right}: 3em; // {{RTL}}
 }

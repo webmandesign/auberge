@@ -9,137 +9,128 @@
 
 
 .main-navigation {
-	float: left;
+	float: $left; // {{RTL}}
 	position: relative;
 	display: inline-block;
-	margin-left: 4%;
-}
-		@media only screen and (max-width: 55em) {
-					.main-navigation {
-						position: absolute;
-						width: 92%;
-						width: calc(100% - 2rem);
-						left: 1rem;
-						top: 0;
-						padding: 0;
-						margin: 0;
-						opacity: 1;
-						z-index: 9;
-					}
+	margin-#{$left}: 4%; // {{RTL}}
 
-					.main-navigation-inner {
-						display: none;
-						position: relative;
-						padding: 8em 4% 1em;
-					}
+	@include responsive( map_get( $breakpoint, 'l' ), 'max-width' ) {
+		position: absolute;
+		width: 92%;
+		width: calc( 100% - 2rem );
+		#{$left}: 1rem; // {{RTL}}
+		top: 0;
+		padding: 0;
+		margin: 0;
+		opacity: 1;
+		z-index: 9;
 
-					.active .main-navigation-inner {
-						display: block;
-					}
+		&-inner {
+			display: none;
+			position: relative;
+			padding: 8em 4% 1em;
+
+			.active & {
+				display: block;
+			}
+
 		}
 
-	.main-navigation a:hover,
-	.main-navigation a:active {
-		color: inherit;
 	}
 
-	.main-navigation .menu {
+	a {
+
+		&:hover,
+		&:active {
+			color: inherit;
+		}
+
+	}
+
+	.menu {
 		@extend %font_size_smaller;
-		float: left;
-	}
 
-		@media only screen and (max-width: 55em) {
-
-						.main-navigation .menu {
-							float: none;
-						}
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+			float: $left; // {{RTL}}
 		}
 
-	.main-navigation ul {
+	}
+
+	ul {
 		padding: 0;
 		margin: 0;
 		text-transform: uppercase;
 		list-style: none;
+
+		a {
+			display: inline-block;
+			max-width: 100%; // Fix for FF and IE
+			padding: 0;
+			text-decoration: none;
+			color: inherit;
+			transition: all .4s ease-in-out;
+
+			@include responsive( map_get( $breakpoint, 'l' ) ) {
+				opacity: .8;
+			}
+
+		}
+
 	}
 
-		.main-navigation li {
-			float: left;
+	li {
+		display: block;
+		margin: -1px 0 0;
+		line-height: 1.62;
+		border-top-width: 1px;
+		border-top-style: solid;
+
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+			float: $left; // {{RTL}}
 			position: relative;
 			padding: 0;
-			margin: 0 2em 0 0;
+			margin: 0 1em;
+			margin-#{$left}: 0; // {{RTL}}
+			line-height: inherit;
 			white-space: nowrap;
+			border-top-width: 0;
+			border-bottom-width: 0;
 		}
 
-		@media only screen and (max-width: 80em) {
-
-			.main-navigation li {
-				margin-right: 1em;
-			}
-
+		@include responsive( map_get( $breakpoint, 'xl' ) ) {
+			margin-#{$right}: 2em; // {{RTL}}
 		}
 
-		@media only screen and (max-width: 55em) {
+		> a {
 
-						.main-navigation li {
-							overflow: hidden;
-							float: none;
-							display: block;
-							margin: -1px 0 0;
-							line-height: 1.62;
-							white-space: normal;
-							border-top: 1px solid #4a4c4e;
-							border-bottom: 1px solid #4a4c4e;
-						}
-		}
-
-			.main-navigation ul a {
-				display: inline-block;
-				max-width: 100%; /* fix for FF and IE */
-				padding: 0;
-				text-decoration: none;
-				color: inherit;
-				opacity: .8;
-				-webkit-transition: all .4s ease-in-out;
-				        transition: all .4s ease-in-out;
-			}
-
-		@media only screen and (max-width: 55em) {
-
-						.main-navigation ul a {
-							opacity: 1;
-						}
-
-						.main-navigation li > a {
-							display: block;
-							min-width: 0;
-							padding: .62em;
-						}
-		}
-
-			.menu-item-description {
-				@extend %font_size_small;
+			@include responsive( map_get( $breakpoint, 'l' ), 'max-width' ) {
 				display: block;
-				text-transform: uppercase;
-				opacity: .5;
+				min-width: 0;
+				padding: .62em;
 			}
 
-				.main-navigation .menu > ul > li > a .menu-item-description {
-					display: none;
-				}
+		}
+
+	}
+
+}
 
 
-/**
- * Active menu item
- */
+
+// Active menu item
 
  	.active-menu-item > a {
  		@extend %font_weight_700;
  	}
 
-	.main-navigation .menu a:hover,
-	.main-navigation .menu li:hover > a,
-	.main-navigation .menu li.active-menu-item > a {
-		opacity: 1;
+	.main-navigation .menu {
+
+		a:hover,
+		li:hover > a,
+		li.active-menu-item > a {
+			opacity: 1;
+		}
+
 	}
 
 
@@ -147,8 +138,6 @@
 // Imports
 
 	@import '_primary-mobile';
-
-	@import '_primary-top-level';
 
 	@import '_primary-sub';
 

@@ -16,11 +16,18 @@
 
 // Setup language direction
 
-	$left: right;
-	$right: left;
+	$language_direction: rtl;
 
 
 
 // Imports
+
+	@import 'setup';
+
+	@import 'starter/tools/functions';
+
+	@import 'starter/setup/variables';
+
+	@import 'starter/tools/mixins';
 
 	@import 'slick/slick';

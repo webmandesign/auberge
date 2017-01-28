@@ -10,99 +10,101 @@
 
 .nav-search-form {
 	@extend %font_size_smaller;
-	float: right;
+	position: absolute;
+	width: 92%;
+	height: 2.62em;
+	#{$left}: 4%; // {{RTL}}
+	top: 1em;
 	padding: 0;
 	vertical-align: top;
+
+	@include responsive( map_get( $breakpoint, 'l' ) ) {
+		float: $right; // {{RTL}}
+		position: static;
+		width: auto;
+		height: auto;
+		#{$left}: auto; // {{RTL}}
+		top: auto;
+	}
+
+
+
+	.form-search {
+		width: 100%;
+		max-width: 100%;
+		padding: 1rem;
+		text-align: center;
+		line-height: 1;
+		overflow: hidden;
+		box-shadow: 0 5px 20px 0 rgba( #000, .2 );
+		transition: all .2s ease-in-out;
+
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+			position: absolute;
+			#{$right}: 0; // {{RTL}}
+			top: -100%;
+			opacity: 0;
+			z-index: -1;
+		}
+
+	}
+
+
+
+	.search-field {
+
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+			font-size: 1.62em;
+		}
+
+		&,
+		&:focus {
+			padding: 4% 2%;
+			vertical-align: top;
+		}
+
+	}
+
 }
 
-		@media only screen and (max-width: 55em) {
-						.nav-search-form {
-							float: none;
-							position: absolute;
-							width: 92%;
-							height: 2.62em;
-							left: 4%;
-							top: 1em;
-						}
-			}
 
-	.search-toggle {
+
+.nav-search-form.active .form-search,
+.no-js .nav-search-form:hover .form-search {
+
+	@include responsive( map_get( $breakpoint, 'l' ) ) {
+		top: 100%;
+		opacity: 1;
+	}
+
+}
+
+
+
+.search-toggle {
+	display: none;
+
+	@include responsive( map_get( $breakpoint, 'l' ) ) {
 		display: inline-block;
 		position: relative;
 		font-size: 1.62rem;
 		color: inherit;
 		vertical-align: top;
 	}
-		@media only screen and (max-width: 55em) {
-						.search-toggle {
-							display: none;
-						}
-		}
 
-		.search-toggle:before {
-			@extend %genericon;
-			content: '\f400';
-			vertical-align: top;
-		}
+	&:hover {
+		text-decoration: none;
+	}
 
-		.nav-search-form.active .search-toggle:before {
+	&::before {
+		@extend %genericon;
+		content: '\f400';
+		vertical-align: top;
+
+		.nav-search-form.active & {
 			content: '\f406';
 		}
 
-		.search-toggle:hover {
-			text-decoration: none;
-		}
-
-	.nav-search-form .form-search {
-		position: absolute;
-		width: 100%;
-		max-width: 100%;
-		top: -100%;
-		right: 0;
-		padding: 1rem;
-		text-align: center;
-		line-height: 1;
-		opacity: 0;
-		z-index: -1;
-		overflow: hidden;
-		-webkit-box-shadow: 0 5px 20px 0 rgba(0,0,0, .2);
-		        box-shadow: 0 5px 20px 0 rgba(0,0,0, .2);
-		-webkit-transition: all .2s ease-in-out;
-		        transition: all .2s ease-in-out;
 	}
 
-		.nav-search-form.active .form-search,
-		.no-js .nav-search-form:hover .form-search {
-			top: 100%;
-			opacity: 1;
-		}
-
-		@media only screen and (max-width: 55em) {
-
-						.nav-search-form .form-search,
-						.nav-search-form.active .form-search,
-						.no-js .nav-search-form:hover .form-search {
-							position: relative;
-							top: auto;
-							right: auto;
-							opacity: 1;
-							z-index: 0;
-						}
-		}
-
-		.nav-search-form .search-field {
-			@extend %font_size_golden;
-		}
-
-		.nav-search-form .search-field,
-		.nav-search-form .search-field:focus {
-			padding: 4% 2%;
-			vertical-align: top;
-		}
-
-		@media only screen and (max-width: 55em) {
-
-						.nav-search-form .search-field {
-							font-size: 1em;
-						}
-		}
+}

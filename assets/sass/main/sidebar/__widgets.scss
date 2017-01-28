@@ -10,39 +10,47 @@
 
 // Basic global widget styles
 
-		.widget input,
-		.widget select,
-		.widget textarea {
+	.widget {
+
+		input,
+		select,
+		textarea {
 			width: 100%;
 		}
 
-			.widget ul li {
-				-webkit-transition: all .2s ease-in-out;
-				        transition: all .2s ease-in-out;
+		ul li {
+			transition: all .2s ease-in-out;
+
+			&:hover {
+				@include rtl_property( transform, translateX( .62em ), translateX( -.62em ) ); // {{RTL}}
 			}
 
-				.widget ul li:hover {
-					-webkit-transform: translateX( .62em );
-					    -ms-transform: translateX( .62em );
-					        transform: translateX( .62em );
-				}
-
-			.sidebar .widget {
-				margin: 3.62rem 0 0;
-			}
-
-				.sidebar .toggle-mobile-sidebar + .widget,
-				.sidebar .widget:first-child {
-					margin: 0;
-				}
-
-		@media only screen and (max-width: 55em) {
-					.sidebar .widget,
-					.sidebar .toggle-mobile-sidebar + .widget {
-						margin-top: 2.62rem;
-						display: none;
-					}
 		}
+
+		.sidebar & {
+			display: none;
+			margin: 2.62rem 0;
+
+			@include responsive( map_get( $breakpoint, 'l' ) ) {
+				display: block;
+				margin-top: 3.62rem;
+			}
+
+			&:first-child {
+				margin: 0;
+			}
+
+		}
+
+		.sidebar .toggle-mobile-sidebar + & {
+
+			@include responsive( map_get( $breakpoint, 'l' ) ) {
+				margin: 0;
+			}
+
+		}
+
+	}
 
 
 

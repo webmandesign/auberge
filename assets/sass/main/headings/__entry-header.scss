@@ -10,13 +10,24 @@
 
 // Entry header
 
+	.single-post .entry-header {
+		margin-bottom: 1.62em;
+	}
+
+	.single-post .main-heading.entry-header {
+		margin-bottom: 0;
+	}
+
+
+
+// Entry title
+
 	.entry-title,
 	.page-title {
 		padding: 0;
 		margin: 0 0 6%;
 		text-transform: uppercase;
-		-ms-word-wrap: break-word;
-		    word-wrap: break-word;
+		word-wrap: break-word;
 	}
 
 	.post .entry-title {
@@ -27,27 +38,14 @@
 		padding: 3.62rem 0;
 		margin: 0;
 		text-align: center;
-		border-top: 2px solid;
-	}
-		.archive .page-title,
-		.search .page-title,
-		.error404 .page-title {
+		border-top-width: 2px;
+		border-top-style: solid;
+
+		.archive &,
+		.search &,
+		.error404 & {
 			padding-top: 0;
-			border: 0;
+			border-width: 0;
 		}
 
-	.tax-nova_menu.no-tax-children .page-header {
-		clip: rect(1px, 1px, 1px, 1px);
-		position: absolute !important;
-		height: 1px;
-		width: 1px;
-		overflow: hidden;
-	}
-
-	.single-post .entry-header {
-		margin-bottom: 1.62em;
-	}
-
-	.single-post .main-heading.entry-header {
-		margin-bottom: 0;
 	}

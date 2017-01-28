@@ -1,0 +1,31 @@
+/* FILE: custom/__banner.scss */
+
+//
+// Banner colors
+//
+
+
+
+
+
+.site-banner {
+	/*[*/
+	background-color: map_get( $colors, 'front_widgets' );
+	color: map_get( $colors, 'accent_text' );
+	/*]*/
+	/*//
+	background-color: [[color_front_widgets]];
+	color: [[color_accent_text]];
+	//*/
+}
+
+.custom-banner:before,
+.site-banner-media:before {
+	background: transparent;
+	/*[*/
+	background: linear-gradient( transparent, map_get( $colors, 'front_widgets' ) );
+	/*]*/
+	/*//
+	background: linear-gradient( transparent, [[color_front_widgets]] );
+	//*/
+}

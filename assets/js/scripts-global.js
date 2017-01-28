@@ -5,7 +5,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0
- * @version  2.1.1
+ * @version  2.2.0
  *
  * Contents:
  *
@@ -181,8 +181,9 @@ jQuery( function() {
 						'slide'          : 'article',
 						'speed'          : 600,
 						'swipeToSlide'   : true,
-						'prevArrow'      : '<div class="slider-nav slider-nav-prev"><button type="button" class="slick-prev"><span class="genericon genericon-previous"></span></button></div>',
-						'nextArrow'      : '<div class="slider-nav slider-nav-next"><button type="button" class="slick-next"><span class="genericon genericon-next"></span></button></div>'
+						'prevArrow'      : '<div class="slider-nav slider-nav-prev"><button type="button" class="slick-prev"><span class="genericon"></span></button></div>',
+						'nextArrow'      : '<div class="slider-nav slider-nav-next"><button type="button" class="slick-next"><span class="genericon"></span></button></div>',
+						'rtl'            : ( 'rtl' != jQuery( 'html' ).attr( 'dir' ) ) ? ( false ) : ( true )
 					} );
 
 			} // /slick

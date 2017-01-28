@@ -10,69 +10,30 @@
 
 // Basic headings styles
 
-	h1,
-	h2,
-	h3,
-	h4,
-	h5,
-	h6,
-	.h1,
-	.h2,
-	.h3,
-	.h4,
-	.h5,
-	.h6 {
+	h1, h2, h3, h4, h5, h6,
+	.h1, .h2, .h3, .h4, .h5, .h6 {
 		@extend %font_weight_400;
 		clear: both;
 		padding: 0;
-		margin: 6% 0 4%;
 		overflow-wrap: break-word;
 		word-wrap: break-word;
-		-webkit-hyphens: auto;
-		-moz-hyphens: auto;
-		-ms-hyphens: auto;
 		hyphens: auto;
-		text-rendering: optimizeLegibility; /* https://developer.mozilla.org/en-US/docs/CSS/text-rendering */
+		text-rendering: optimizeLegibility; // https://developer.mozilla.org/en-US/docs/CSS/text-rendering
 		text-transform: uppercase;
-	}
 
-	h1:first-child,
-	h2:first-child,
-	h3:first-child,
-	h4:first-child,
-	h5:first-child,
-	h6:first-child,
-	.h1:first-child,
-	.h2:first-child,
-	.h3:first-child,
-	.h4:first-child,
-	.h5:first-child,
-	.h6:first-child {
-		margin-top: 0;
-	}
+		&:first-child {
+			margin-top: 0;
+		}
 
-		h1 a,
-		h2 a,
-		h3 a,
-		h4 a,
-		h5 a,
-		h6 a,
-		.h1 a,
-		.h2 a,
-		.h3 a,
-		.h4 a,
-		.h5 a,
-		.h6 a {
+		a {
 			text-decoration: none;
 			color: inherit;
 		}
 
-	h1,
-	h2,
-	h3,
-	.h1,
-	.h2,
-	.h3 {
+	}
+
+	h1, h2, h3,
+	.h1, .h2, .h3 {
 		letter-spacing: .1em;
 	}
 

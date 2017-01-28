@@ -10,11 +10,17 @@
 
 // Excerpt
 
-	.single .entry-summary,
-	.entry-summary.has-more-tag {
-		@extend %font_weight_400;
-		text-transform: uppercase;
+	.entry-summary {
+
+		.single &,
+		&.has-more-tag {
+			@extend %font_weight_400;
+			text-transform: uppercase;
+		}
+
 	}
+
+
 
 	.link-more {
 		@extend %font_weight_400;
@@ -26,13 +32,10 @@
 
 	.is-singular .site-main > .entry {
 		position: relative;
-		float: left;
-		width: 62%;
-	}
 
-		@media only screen and (max-width: 55em) {
-				.is-singular .site-main > .entry {
-					float: none;
-					width: 100%;
-				}
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+			float: $left; // {{RTL}}
+			width: 62%;
 		}
+
+	}

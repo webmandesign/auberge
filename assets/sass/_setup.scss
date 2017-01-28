@@ -40,94 +40,46 @@
 	// //* = Doesn't change via Customizer.
 	//
 
-		$color_mejs_bg: #333; //*
-
 		$colors: (
 
 			// Accent color
 
-				'accent':      #9d693f,
+				'accent':      #0aac8e,
 				'accent_text': #fff,
 
 			// Body
 
-				'body_background': #a37852, // Accent color, 5% lighter and 10% less saturated
+				'body_background': #eaecee,
 
 			// Site header
 
-				'header_background': #232323,
-				'header_text':       #e3e3e3,
+				'header':      #1a1c1e,
+				'header_text': #fff,
 
-				// Header bottom widgets
+			// Navigation
 
-					'header_widgets_background': #373737,
-					'header_widgets_text':       #a3a3a3,
-
-			// Intro
-
-				'intro_background': #9d693f,
-				'intro_text':       #fff,
-
-				// Intro filter is controlled with inline styles
-
-				'intro_overlay':         #1c1c1c,
-				'opacity_intro_overlay': .9,
-
-				// Intro widgets
-
-					'intro_widgets_background': #232323,
-					'intro_widgets_text':       #a3a3a3,
-					'intro_widgets_headings':   #e3e3e3,
+				'navigation':        #3a3c3e,
+				'navigation_text':   #fff,
+				'navigation_border': #4a4c4e,
 
 			// Site content
 
-				'content_background': #fcfcfc,
-				'content_text':       #737373,
-				'content_headings':   #131313,
+				'content':          #fff,
+				'content_text':     #6a6c6e,
+				'content_headings': #1a1c1e,
+				'content_border':   #eaecee,
+
+			// Sidebars
+
+				'front_widgets':      #1a1c1e,
+				'front_widgets_text': #8a8c8e,
 
 			// Site footer
 
-				'footer_background':  #232323,
-				'footer_text':        #a3a3a3,
-				'footer_headings':    #e3e3e3,
-
-				// Footer secondary widgets
-
-					'footer_secondary_background': #9d693f, // Accent color
-					'footer_secondary_text':       #fff,
-					'footer_secondary_headings':   #fff,
-
-				// Site info (credits)
-
-					'site_info_background':  #fcfcfc,
-					'site_info_text':        #737373,
-
-			// Predefined colors
-
-				'error_background': rgba( #e00, .85 ),   //*
-				'error_text':       #fff,                //*
-
-				'info_background': rgba( #05e, .85 ),    //*
-				'info_text':       #fff,                 //*
-
-				'success_background': rgba( #072, .85 ), //*
-				'success_text':       #fff,              //*
-
-				'warning_background': rgba( #fd0, .85 ), //*
-				'warning_text':       #310,              //*
+				'footer':      #1a1c1e,
+				'footer_text': #8a8c8e,
 
 		);
-
-
-
-	//
-	// Decorations
-	//
-
-		// Animation speeds
-
-			$small_animation_speed: .3; // Seconds
-			$large_animation_speed: .5; // Seconds
 
 
 
@@ -223,6 +175,51 @@
 // Icons
 //
 /////////////////////
+
+	//
+	// Social links
+	//
+
+		$social_icons: (
+
+			// class: char href
+
+			'website':  '\f475' 'http',
+			'email':    '\f410' 'mailto:',
+			'rss':      '\f413' '/feed/',
+
+			'codepen':  '\f216' 'codepen.io',
+			'digg':     '\f221' 'digg.com',
+			'dribbble': '\f201' 'dribbble.com',
+			'dropbox':  '\f225' 'dropbox.com',
+			'facebook': '\f204' 'facebook.com',
+
+			'flickr':     '\f211' 'flickr.com',
+			'foursquare': '\f226' 'foursquare.com',
+			'github':     '\f200' 'github.com',
+			'instagram':  '\f215' 'instagram.com',
+			'linkedin':   '\f207' 'linkedin.com',
+
+			'pinterest':   '\f209' 'pinterest.com',
+			'google-plus': '\f218' 'plus.google.com',
+			'pocket':      '\f224' 'getpocket.com',
+			'polldaddy':   '\f217' 'polldaddy.com',
+			'reddit':      '\f222' 'reddit.com',
+
+			'skype':       '\f220' 'skype:',
+			'spotify':     '\f515' 'spotify.com',
+			'stumbleupon': '\f223' 'stumbleupon.com',
+			'tumblr':      '\f214' 'tumblr.com',
+			'twitch':      '\f516' 'twitch.tv',
+
+			'twitter':   '\f202' 'twitter.com',
+			'vimeo':     '\f212' 'vimeo.com',
+			'wordpress': '\f205' 'wordpress.',
+			'youtube':   '\f213' 'youtube.com',
+
+		);
+
+
 
 	//
 	// Entry meta

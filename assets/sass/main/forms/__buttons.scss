@@ -8,7 +8,6 @@
 
 
 
-
 .button,
 button,
 input[type="button"],
@@ -16,40 +15,29 @@ input[type="reset"],
 input[type="submit"] {
 	padding: 1em;
 	white-space: nowrap;
-	border: 0;
+	border-width: 0;
 	cursor: pointer;
-	-webkit-transition: all .3s;
-	        transition: all .3s;
-}
+	transition: all .3s;
 
-	.button:hover,
-	.button:focus,
-	.button:active {
-		text-decoration: none;
-	}
-
-	.button:hover,
-	button:hover,
-	input[type="button"]:hover,
-	input[type="reset"]:hover,
-	input[type="submit"]:hover,
-	.button:focus,
-	button:focus,
-	input[type="button"]:focus,
-	input[type="reset"]:focus,
-	input[type="submit"]:focus,
-	.button:active,
-	button:active,
-	input[type="button"]:active,
-	input[type="reset"]:active,
-	input[type="submit"]:active {
+	&:hover,
+	&:focus {
 		opacity: .75;
 	}
 
-	.button:active,
-	button:active,
-	input[type="button"]:active,
-	input[type="reset"]:active,
-	input[type="submit"]:active {
+	&:active {
 		opacity: .9;
 	}
+
+}
+
+
+
+.button {
+
+	&:hover,
+	&:focus,
+	&:active {
+		text-decoration: none;
+	}
+
+}

@@ -11,26 +11,18 @@
 // Site container
 
 	body {
-		padding-left: 4%;
-		padding-right: 4%;
+
+		@include responsive( map_get( $breakpoint, 'm' ) ) {
+			padding-left: 2%;
+			padding-right: 2%;
+		}
+
+		@include responsive( map_get( $breakpoint, 'xl' ) ) {
+			padding-left: 4%;
+			padding-right: 4%;
+		}
+
 	}
-
-		@media only screen and (max-width: 80em) {
-
-			body {
-				padding-left: 2%;
-				padding-right: 2%;
-			}
-
-		}
-
-		@media only screen and (max-width: 42em) {
-
-			body {
-				padding-left: 0;
-				padding-right: 0;
-			}
-		}
 
 	.site {
 		width: 100%;

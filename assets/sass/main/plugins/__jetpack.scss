@@ -8,56 +8,75 @@
 
 
 
-/* JetPack plugin support */
+// Contact form
 
-	.site-content div.sharedaddy .sd-content ul li a.sd-button:not(.no-text):hover {
-		opacity: .75;
+	.site .contact-form {
+
+		textarea,
+		input[type=email],
+		input[type=text] {
+			width: 100%;
+			max-width: 100%;
+		}
+
 	}
 
 
-		/* Contact form */
 
-			.site .contact-form textarea,
-			.site .contact-form input[type=email],
-			.site .contact-form input[type=text] {
-				width: 100%;
-				max-width: 100%;
-			}
+// Related posts
 
-		/* Related posts */
+	.site div#jp-relatedposts {
+		margin-bottom: 1.62em;
+		font-size: 1rem;
+	}
 
-			.site div#jp-relatedposts {
-				margin-bottom: 1.62em;
-				font-size: 1rem;
-			}
+	#jp-relatedposts {
 
-			#jp-relatedposts .jp-relatedposts-headline em {
-				font-weight: 700;
-				font-style: normal;
-			}
+		.jp-relatedposts-headline em {
+			font-weight: 700;
+			font-style: normal;
+		}
 
-			#jp-relatedposts .jp-relatedposts-items-visual .jp-relatedposts-post-title {
-				text-transform: none;
-				font-weight: 700;
-				letter-spacing: 0;
-			}
+		.jp-relatedposts-items-visual .jp-relatedposts-post-title {
+			text-transform: none;
+			font-weight: 700;
+			letter-spacing: 0;
+		}
 
-			.site #jp-relatedposts .jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-title a {
+		.jp-relatedposts-items .jp-relatedposts-post .jp-relatedposts-post-title a {
+
+			.site & {
 				font-weight: inherit;
 			}
 
-		/* Sharing */
+		}
 
-			div.sharedaddy {
-				font-size: 1rem;
-				margin-bottom: 1.62em;
+	}
+
+
+
+// Sharing
+
+	div.sharedaddy {
+		font-size: 1rem;
+		margin-bottom: 1.62em;
+
+		.sd-title,
+		h3.sd-title {
+			font-size: 1em;
+			font-weight: 700;
+		}
+
+		.sd-content ul li a.sd-button:not(.no-text):hover {
+
+			.site-content & {
+				opacity: .75;
 			}
 
-			div.sharedaddy .sd-title,
-			div.sharedaddy h3.sd-title {
-				font-size: 1em;
-				font-weight: 700;
-			}
+		}
+
+	}
+
 
 
 // Imports

@@ -1,0 +1,20 @@
+/* FILE: custom/__footer.scss */
+
+//
+// Site footer colors
+//
+
+
+
+
+
+.site-footer {
+	/*[*/
+	background-color: map_get( $colors, 'footer' );
+	color: map_get( $colors, 'footer_text' );
+	/*]*/
+	/*//
+	background-color: [[color_footer]];
+	color: [[color_footer_text]];
+	//*/
+}

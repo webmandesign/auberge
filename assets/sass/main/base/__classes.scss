@@ -70,25 +70,33 @@
 // Content columns
 
 	.column {
-		float: left;
-		margin: 0 6% 0 0;
-	}
+		width: 100%;
+		margin: 0 0 1.62em;
 
-		@media only screen and (max-width: 42em) {
-					.column {
-						float: none;
-						width: 100%;
-						margin-bottom: 1.62em;
-					}
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+			float: $left; // {{RTL}}
+			margin: 0 6%;
+			margin-#{$left}: 0; // {{RTL}}
 		}
 
-	.column.last {
-		margin-right: 0;
+		&.last {
+			margin-#{$right}: 0; // {{RTL}}
+		}
+
+		&-12 {
+			width: 47%;
+		}
+		&-13 {
+			width: 29.33%;
+		}
+		&-23 {
+			width: 64.66%;
+		}
+		&-14 {
+			width: 21%;
+		}
+		&-34 {
+			width: 73%;
+		}
+
 	}
-
-		.column-12 { width: 47%;    }
-		.column-13 { width: 29.33%; }
-		.column-23 { width: 64.66%; }
-		.column-14 { width: 21%;    }
-		.column-34 { width: 73%;    }
-

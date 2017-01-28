@@ -10,10 +10,12 @@
 .breadcrumbs {
 	@extend %content_width;
 	@extend %font_size_small_rem;
-}
 
-		.breadcrumbs-container {
-			padding: 1rem 0;
-			border-top: 0;
-			border-bottom: 2px solid;
-		}
+	&-container {
+		padding: 1rem 0;
+		border-top-width: 0;
+		border-bottom-width: 2px;
+		border-bottom-style: solid;
+	}
+
+}

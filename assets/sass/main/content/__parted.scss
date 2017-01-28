@@ -11,7 +11,7 @@
 .post-table-of-contents a:before {
 	@extend %genericon;
 	content: '\f404';
-	margin-right: .38em;
+	margin-#{$right}: .38em; // {{RTL}}
 	vertical-align: middle;
 }
 

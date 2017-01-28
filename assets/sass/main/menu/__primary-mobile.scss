@@ -1,76 +1,69 @@
 /* FILE: main/menu/_primary-mobile.scss */
 
 //
-// Primary menu mobile styles
+// Mobile menu toggle button styles
 //
 
 
 
 
 
-// Mobile menu toggle button
+.menu-toggle {
+	position: fixed;
+	display: block;
+	#{$left}: 1rem; // {{RTL}}
+	top: 0;
 
-	.menu-toggle {
-		display: none;
+	@include responsive( map_get( $breakpoint, 'm' ) ) {
+		#{$left}: calc( 1rem + 2% ); // {{RTL}}
+	}
 
-		&::before {
-			@extend %genericon;
+	&,
+	&:hover,
+	&:active,
+	&:focus {
+		width: 3.24rem;
+		height: 3.24rem;
+		padding: 0;
+		line-height: 3.24rem;
+		text-indent: -999em;
+		font-size: 1.62rem;
+		border-width: 0;
+		opacity: 1;
+	}
+
+	&::before {
+		@extend %genericon;
+		content: '\f419';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		#{$left}: 0; // {{RTL}}
+		top: 0;
+		text-align: center;
+		text-indent: 0;
+
+		.active & {
+			content: '\f406';
 		}
 
 	}
 
-		@media only screen and (max-width: 55em) {
-						.menu-toggle {
-							position: fixed;
-							left: 1rem;
-							left: calc( 1rem + 2% );
-							top: 0;
-						}
+	.admin-bar & {
+		top: 32px;
+	}
 
-							.admin-bar .menu-toggle {
-								top: 32px;
-							}
+	.active &,
+	.admin-bar .active & {
+		position: absolute;
+		#{$left}: auto; // {{RTL}}
+		top: auto;
+	}
 
-							.active .menu-toggle,
-							.admin-bar .active .menu-toggle {
-								position: absolute;
-								left: auto;
-								top: auto;
-							}
 
-						.menu-toggle,
-						.menu-toggle:hover,
-						.menu-toggle:active,
-						.menu-toggle:focus {
-							display: block;
-							width: 3.24rem;
-							height: 3.24rem;
-							padding: 0;
-							line-height: 3.24rem;
-							text-indent: -999em;
-							font-size: 1.62rem;
-							border: 0;
-							opacity: 1;
-						}
 
-						.menu-toggle:before {
-							content: '\f419';
-							position: absolute;
-							width: 100%;
-							height: 100%;
-							left: 0;
-							top: 0;
-							text-align: center;
-							text-indent: 0;
-						}
+	@include responsive( map_get( $breakpoint, 'l' ) ) {
+		display: none;
+	}
 
-							.active .menu-toggle:before {
-								content: '\f406';
-							}
-		}
-
-		@media only screen and (max-width: 42em) {
-						.menu-toggle {
-							left: 1rem;
-						}
-		}
+}

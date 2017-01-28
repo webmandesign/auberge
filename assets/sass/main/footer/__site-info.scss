@@ -8,21 +8,21 @@
 
 
 
-		.site-info-container {
-			overflow: hidden;
-		}
+.site-info {
 
-			.site-info {
-				float: left;
-			}
+	@include responsive( map_get( $breakpoint, 'l' ) ) {
+		float: $left; // {{RTL}}
+	}
 
-		@media only screen and (max-width: 42em) {
-					.site-info {
-						float: none;
-					}
-		}
+	a {
+		@extend %font_weight_700;
+		color: inherit;
+	}
 
-				.site-info a {
-					@extend %font_weight_700;
-					color: inherit;
-				}
+
+
+	&-container {
+		overflow: hidden;
+	}
+
+}

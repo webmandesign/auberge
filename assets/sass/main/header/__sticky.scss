@@ -1,90 +1,106 @@
 /* FILE: main/header/__sticky.scss */
 
 //
-// Sticky header displayed when scrolling up
-//
-// Yes, we could simplify the styles using header position absolute
-// where appropriate, but that would create glitches on page scroll
-// as CSS position can not be smoothly transitioned.
+// Sticky header
 //
 
 
 
 
 
-		@media only screen and (min-width: 80em) {
+@include responsive( map_get( $breakpoint, 'xl' ) ) {
 
-			/**
-			 * Site header
-			 */
+	.site-header {
 
-				@keyframes comeDown {
+		.sticky-header &,
+		.hide-sticky-header & {
+			position: fixed;
+			width: 100%;
+			#{$left}: 0; // {{RTL}}
+			line-height: 3.62rem;
+			backface-visibility: hidden; // Fixes Webkit element jumping when JS slider used on page
+		}
 
-					0% {
-						-ms-transform: translateY( -100% );
-						    transform: translateY( -100% );
-					}
+	}
 
-					100% {
-						-ms-transform: translateY( 0 );
-						    transform: translateY( 0 );
-					}
+	.sticky-header {
 
-				}
+		&.admin-bar {
 
-				@keyframes goUp {
+			.site-header,
+			.hide-site-header {
+				top: 32px;
+			}
 
-					0% {
-						-ms-transform: translateY( 100% );
-						    transform: translateY( 100% );
-					}
+		}
 
-					100% {
-						-ms-transform: translateY( 0 );
-						    transform: translateY( 0 );
-					}
+		.site-header {
+			top: 0;
+			animation: comeDown .8s;
+		}
 
-				}
+		.type-img a {
+			line-height: 3.62rem;
+		}
 
-				.sticky-header .site-header,
-				.hide-sticky-header .site-header {
-					position: fixed;
-					width: 100%;
-					left: 0;
-					line-height: 3.62rem;
-					-webkit-backface-visibility: hidden; /* Fixes Webkit element jumping when JS slider used on page */
-				}
+		.site-branding img {
+			max-height: 3rem;
+		}
 
-				.admin-bar.sticky-header .site-header,
-				.admin-bar.sticky-header .hide-site-header {
-					top: 32px;
-				}
+	}
 
-				.sticky-header .site-header {
-					top: 0;
-					-webkit-animation: comeDown .8s;
-					        animation: comeDown .8s;
-				}
+	.hide-sticky-header {
 
-				.hide-sticky-header .site-header {
-					top: -3.62rem;
-					-webkit-animation: goUp .8s;
-					        animation: goUp .8s;
-				}
+		.site-header {
+			top: -3.62rem;
+			animation: goUp .8s;
+		}
 
-					.sticky-header .type-img a,
-					.hide-sticky-header .type-img a {
-						line-height: 3.62rem;
-					}
+		.type-img a {
+			line-height: 3.62rem;
+		}
 
-						.sticky-header .site-branding img,
-						.hide-sticky-header .site-branding img {
-							max-height: 3rem;
-						}
+		.site-branding img {
+			max-height: 3rem;
+		}
 
-					.sticky-header .site,
-					.hide-sticky-header .site {
-						padding-top: 5rem;
-					}
+	}
 
-		} /* /(min-width: 80em) */
+	.site {
+
+		.sticky-header &,
+		.hide-sticky-header & {
+			padding-top: 5rem;
+		}
+
+	}
+
+}
+
+
+
+// Animations
+
+	@keyframes comeDown {
+
+		0% {
+			transform: translateY( -100% );
+		}
+
+		100% {
+			transform: translateY( 0 );
+		}
+
+	}
+
+	@keyframes goUp {
+
+		0% {
+			transform: translateY( 100% );
+		}
+
+		100% {
+			transform: translateY( 0 );
+		}
+
+	}

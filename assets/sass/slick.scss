@@ -14,13 +14,14 @@
 
 
 
-// Setup language direction
-
-	$left: left;
-	$right: right;
-
-
-
 // Imports
+
+	@import 'setup';
+
+	@import 'starter/tools/functions';
+
+	@import 'starter/setup/variables';
+
+	@import 'starter/tools/mixins';
 
 	@import 'slick/slick';

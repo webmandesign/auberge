@@ -6,30 +6,29 @@
 
 
 
-	.front-page-widgets {
-		@extend %content_width;
 
-		&-wrapper {
-			padding: 6% 0;
+
+.front-page-widgets {
+	@extend %content_width;
+
+	&-wrapper {
+		padding: 6% 0;
+
+		.home & {
+			padding: 3.62rem 0 0;
+			border-bottom-width: 2px;
+			border-bottom-style: solid;
 		}
 
 	}
 
+	&-container {
+		@extend %horizontal_widgets;
 
-			.home .front-page-widgets-wrapper {
-				padding: 3.62rem 0 0;
-				border-bottom: 2px solid;
-			}
+		.home & {
+			padding: 0;
+		}
 
-				.home .front-page-widgets-container {
-					padding: 0;
-				}
+	}
 
-				.front-page-widgets .widget-title {
-					color: inherit;
-				}
-
-				.front-page-widgets .widget li,
-				.front-page-widgets .widget table {
-					border-color: inherit;
-				}
+}

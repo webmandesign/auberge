@@ -1,0 +1,20 @@
+/* FILE: custom/__sidebar.scss */
+
+//
+// Sidebars and widgets colors
+//
+
+
+
+
+
+.front-page-widgets-wrapper {
+	/*[*/
+	background-color: map_get( $colors, 'front_widgets' );
+	color: map_get( $colors, 'front_widgets_text' );
+	/*]*/
+	/*//
+	background-color: [[color_front_widgets]];
+	color: [[color_front_widgets_text]];
+	//*/
+}

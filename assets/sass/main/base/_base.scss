@@ -2,7 +2,6 @@
 
 //
 // Basic global styles
-// Style helpers
 //
 
 
@@ -20,7 +19,8 @@
 	}
 
 	pre {
-		padding: 4% 8% 4% 4%;
+		padding: 4% 8%;
+		padding-#{$left}: 4%; // {{RTL}}
 		border-radius: .38em;
 
 		&::before {
@@ -28,7 +28,7 @@
 			content: '\f462';
 			position: absolute;
 			height: 100%;
-			right: 0;
+			#{$right}: 0; // {{RTL}}
 			top: 0;
 			padding: 0 .19em;
 			font-size: 1.38em;
@@ -39,11 +39,12 @@
 	}
 
 	caption {
-		text-align: left;
+		text-align: inherit;
 	}
 
 	table {
-		border: 1px solid;
+		border-width: 1px;
+		border-style: solid;
 		border-radius: .38em;
 
 		.site & {
@@ -54,22 +55,24 @@
 
 	td,
 	th {
-		border: 0;
-		border-bottom: 1px solid;
-		border-left: 1px solid;
+		border-width: 0;
+		border-bottom-width: 1px;
+		border-bottom-style: solid;
+		border-left-width: 1px;
+		border-left-style: solid;
 
 		&:first-child {
-			border-left: 0;
+			border-left-width: 0;
 		}
 
 		caption + thead tr:first-child &,
 		colgroup + thead tr:first-child &,
 		thead:first-child tr:first-child & {
-			border-top: 0;
+			border-top-width: 0;
 		}
 
 		tbody tr:last-child & {
-			border-bottom: 0;
+			border-bottom-width: 0;
 		}
 
 		thead + tbody tr:first-child & {
@@ -93,15 +96,19 @@
 			#{$left}: 31%; // {{RTL}}
 			top: 0;
 			pointer-events: none;
-			border-top: 1px solid;
-			border-bottom: 1px solid;
+			border-top-width: 1px;
+			border-top-style: solid;
+			border-bottom-width: 1px;
+			border-bottom-style: solid;
 		}
 
 		&::after {
 			width: 2%;
 			#{$left}: 49%; // {{RTL}}
-			border-top: 0.19em solid;
-			border-bottom: 0.19em solid;
+			border-top-width: .19em;
+			border-top-style: solid;
+			border-bottom-width: .19em;
+			border-bottom-style: solid;
 		}
 
 
@@ -116,13 +123,13 @@
 				#{$left}: auto; // {{RTL}}
 				#{$right}: auto; // {{RTL}}
 				top: 19%;
-				border: 0;
+				border-width: 0;
 			}
 
 			&.alignright::after {
 				height: 6%;
 				top: 47%;
-				border: 0;
+				border-width: 0;
 			}
 
 		}
@@ -132,11 +139,13 @@
 			&::after,
 			&::before {
 				#{$right}: 0; // {{RTL}}
-				border-#{$right}: 1px solid; // {{RTL}}
+				border-#{$right}-width: 1px; // {{RTL}}
+				border-#{$right}-style: solid; // {{RTL}}
 			}
 
 			&::after {
-				border-#{$right}: 0.19em solid; // {{RTL}}
+				border-#{$right}-width: .19em; // {{RTL}}
+				border-#{$right}-style: solid; // {{RTL}}
 			}
 
 		}
@@ -146,11 +155,13 @@
 			&::after,
 			&::before {
 				#{$left}: 0; // {{RTL}}
-				border-#{$right}: 1px solid; // {{RTL}}
+				border-#{$right}-width: 1px; // {{RTL}}
+				border-#{$right}-style: solid; // {{RTL}}
 			}
 
 			&::after {
-				border-#{$left}: 0.19em solid; // {{RTL}}
+				border-#{$left}-width: .19em; // {{RTL}}
+				border-#{$left}-style: solid; // {{RTL}}
 			}
 
 		}

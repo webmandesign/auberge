@@ -12,29 +12,74 @@
 
 	.sidebar {
 		@extend %font_size_small;
-	}
+		margin: 1.62rem 0;
 
-	@media only screen and (min-width: 55em) {
-
-		.sidebar {
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
 			width: 38%;
-			padding-left: 8%;
+			padding-#{$left}: 8%; // {{RTL}}
+			margin: 0;
 		}
 
-		.toggle-mobile-sidebar {
+	}
+
+	.toggle-mobile-sidebar {
+		display: block;
+		width: 100%;
+		text-align: center;
+
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
 			display: none;
 		}
 
 	}
 
-		@media only screen and (max-width: 55em) {
 
-				.toggle-mobile-sidebar {
-					display: block;
-					width: 100%;
-					text-align: center;
-				}
+
+// Extenders
+
+	%horizontal_widgets {
+		padding-bottom: 4%;
+		margin: 0 -2%;
+
+		.widget {
+			width: 96%;
+			margin: 0 2% 3.62rem;
+
+			@include responsive( map_get( $breakpoint, 'm' ) ) {
+				float: $left; // {{RTL}}
+				width: 46%;
 			}
+
+			@include responsive( map_get( $breakpoint, 'l' ) ) {
+				width: 29.333%; // 3 columns by default
+			}
+
+			// 1 column
+
+				&:nth-child(2):nth-last-child(1) {
+					float: none;
+					width: 96%;
+				}
+
+			// 2 columns
+
+				&:nth-child(2):nth-last-child(2),
+				&:nth-child(3):nth-last-child(1) {
+					width: 46%;
+				}
+
+			&-title {
+				color: inherit;
+			}
+
+			li,
+			table {
+				border-color: inherit;
+			}
+
+		}
+
+	}
 
 
 
