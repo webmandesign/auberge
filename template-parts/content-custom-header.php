@@ -6,8 +6,19 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0
- * @version  2.0
+ * @version  2.2.0
  */
+
+
+
+
+
+// Requirements check
+
+	if ( ! $image_url = get_header_image() ) {
+		return;
+	}
+
 
 ?>
 
@@ -18,8 +29,6 @@
 		<figure class="site-banner-thumbnail">
 
 			<?php
-
-			$image_url = ( get_header_image() ) ? ( get_header_image() ) : ( wm_get_stylesheet_directory_uri( 'images/header.jpg' ) );
 
 			echo '<img src="' . esc_url( $image_url ) . '" width="' . esc_attr( get_custom_header()->width ) . '" height="' . esc_attr( get_custom_header()->height ) . '" alt="" />';
 

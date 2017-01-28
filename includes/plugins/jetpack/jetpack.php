@@ -10,7 +10,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.1
- * @version  2.1.1
+ * @version  2.2.0
  *
  * Contents:
  *
@@ -42,7 +42,7 @@
 	 * Enables Jetpack features
 	 *
 	 * @since    1.0
-	 * @version  2.0
+	 * @version  2.2.0
 	 */
 	if ( ! function_exists( 'wm_jetpack' ) ) {
 		function wm_jetpack() {
@@ -76,25 +76,29 @@
 							'post_types'              => array( 'post' ),
 						) ) );
 
-				// Food menu post type
+				// Food menu support
 
-					add_theme_support( 'nova_menu_item' );
+					if ( ! get_theme_mod( 'disable-food-menu', false ) ) {
 
-					add_post_type_support( 'nova_menu_item', array( 'comments' ) );
+						add_theme_support( 'nova_menu_item' );
 
-					// Remove original Food Menu class as we replace it with enhanced one
+						add_post_type_support( 'nova_menu_item', array( 'comments' ) );
 
-						remove_action( 'init', array( 'Nova_Restaurant', 'init' ) );
+						// Food Menu output
 
-					// Food Menu output
+							if ( class_exists( 'WM_Nova_Restaurant' ) ) {
 
-						if ( class_exists( 'WM_Nova_Restaurant' ) ) {
+								// Remove original Food Menu class as we replace it with enhanced one
 
-							WM_Nova_Restaurant::init( array(
-									'menu_title_tag' => 'h2',
-								) );
+									remove_action( 'init', array( 'Nova_Restaurant', 'init' ) );
 
-						}
+								WM_Nova_Restaurant::init( array(
+										'menu_title_tag' => 'h2',
+									) );
+
+							}
+
+					}
 
 		}
 	} // /wm_jetpack
@@ -286,6 +290,7 @@
 	/**
 	 * Jetpack Food Menus CPT
 	 */
+	if ( ! get_theme_mod( 'disable-food-menu', false ) ) {
 
 		/**
 		 * Food Menu class modifications
@@ -598,3 +603,54 @@
 		} // /wm_jetpack_food_menu_loop_section_display_front_page
 
 		add_action( 'wmhook_loop_food_menu_postslist_before', 'wm_jetpack_food_menu_loop_section_display_front_page' );
+
+
+
+		/**
+		 * Disable food menu section archive links
+		 *
+		 * @since    2.2.0
+		 * @version  2.2.0
+		 *
+		 * @param  bool $enabled
+		 */
+		if ( ! function_exists( 'wm_food_menu_section_archive_link' ) ) {
+			function wm_food_menu_section_archive_link( $enabled ) {
+
+				// Output
+
+					return ! get_theme_mod( 'food-menu-section-archive-link-disable', false );
+
+			}
+		} // /wm_food_menu_section_archive_link
+
+		add_filter( 'jetpack_food_section_archive_link', 'wm_food_menu_section_archive_link' );
+
+	} else {
+
+		/**
+		 * Remove obsolete page templates when Food Menu is disabled
+		 *
+		 * @since    2.2.0
+		 * @version  2.2.0
+		 *
+		 * @param  array $page_templates
+		 */
+		if ( ! function_exists( 'wm_page_templates_remove_menu' ) ) {
+			function wm_page_templates_remove_menu( $page_templates ) {
+
+			// Processing
+
+				unset( $page_templates['page-template/_menu.php'] );
+
+
+			// Output
+
+				return $page_templates;
+
+			}
+		} // /wm_page_templates_remove_menu
+
+		add_filter( 'theme_page_templates', 'wm_page_templates_remove_menu' );
+
+	} // /disable-food-menu?

@@ -336,6 +336,31 @@
 
 
 
+					// Food Menu
+
+						960 . 'food_menu' => array(
+							'id'             => 'food-menu',
+							'type'           => 'section',
+							'create_section' => esc_html_x( 'Food Menu', 'Customizer section title.', 'auberge' ),
+							'in_panel'       => esc_html_x( 'Theme', 'Customizer panel title.', 'auberge' ),
+						),
+
+							960 . 'food_menu' . 100 => array(
+								'type'        => 'checkbox',
+								'id'          => 'disable-food-menu',
+								'label'       => esc_html__( 'Disable food menu', 'auberge' ),
+								'description' => esc_html__( 'In case you want to use the theme for a business website or a recipe blog (only available with Auberge Plus), you can disable the Food Menu functionality here.', 'auberge' ),
+							),
+
+							960 . 'food_menu' . 110 => array(
+								'type'        => 'checkbox',
+								'id'          => 'food-menu-section-archive-link-disable',
+								'label'       => esc_html__( 'Disable food section archive linking', 'auberge' ),
+								'description' => esc_html__( 'By default, all food menu section titles are linked to corresponding archive page.', 'auberge' ) . ' ' . esc_html__( 'You can override this behavior here.', 'auberge' ),
+							),
+
+
+
 				);
 
 

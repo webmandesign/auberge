@@ -41,7 +41,7 @@
 	 * Customizer controls assets enqueue
 	 *
 	 * @since    2.0
-	 * @version  2.0
+	 * @version  2.2.0
 	 */
 	if ( ! function_exists( 'wm_theme_customizer_assets' ) ) {
 		function wm_theme_customizer_assets() {
@@ -55,6 +55,8 @@
 						esc_attr( trim( wp_get_theme( get_template() )->get( 'Version' ) ) ),
 						'all'
 					);
+
+				wp_style_add_data( 'wm-customizer', 'rtl', 'replace' );
 
 		}
 	} // /wm_theme_customizer_assets
@@ -362,6 +364,7 @@
 						'number',
 						'radio',
 						'range',
+						'section',
 						'select',
 						'text',
 						'textarea',
@@ -369,7 +372,7 @@
 
 				// To make sure our customizer sections start after WordPress default ones
 
-					$priority = apply_filters( 'wmhook_wm_theme_customizer_priority', 900 );
+					$priority = apply_filters( 'wmhook_wm_theme_customizer_priority', 200 );
 
 				// Default section name in case not set (should be overwritten anyway)
 
@@ -435,10 +438,7 @@
 							if (
 									is_array( $theme_option )
 									&& isset( $theme_option['type'] )
-									&& (
-											in_array( $theme_option['type'], $allowed_option_types )
-											|| isset( $theme_option['create_section'] )
-										)
+									&& in_array( $theme_option['type'], $allowed_option_types )
 								) {
 
 								// Helper variables
@@ -459,6 +459,8 @@
 
 									$transport = ( isset( $theme_option['preview_js'] ) ) ? ( 'postMessage' ) : ( 'refresh' );
 
+
+
 								/**
 								 * Panels
 								 *
@@ -471,15 +473,18 @@
 								 */
 								if ( isset( $theme_option['in_panel'] ) ) {
 
+									$panel_type = 'theme-options';
+
 									if ( is_array( $theme_option['in_panel'] ) ) {
 
-										$panel_title = $theme_option['in_panel'][0];
-										$panel_id    = trim( $theme_option['in_panel'][1] );
+										$panel_title = isset( $theme_option['in_panel']['title'] ) ? ( $theme_option['in_panel']['title'] ) : ( '&mdash;' );
+										$panel_id    = isset( $theme_option['in_panel']['id'] ) ? ( $theme_option['in_panel']['id'] ) : ( $panel_type );
+										$panel_type  = isset( $theme_option['in_panel']['type'] ) ? ( $theme_option['in_panel']['type'] ) : ( $panel_type );
 
 									} else {
 
 										$panel_title = $theme_option['in_panel'];
-										$panel_id    = 'theme';
+										$panel_id    = $panel_type;
 
 									}
 
@@ -490,9 +495,10 @@
 										$wp_customize->add_panel(
 												$panel_id,
 												array(
-													'title'       => $theme_option['in_panel'],
+													'title'       => esc_html( $panel_title ),
 													'description' => ( isset( $theme_option['in_panel-description'] ) ) ? ( $theme_option['in_panel-description'] ) : ( '' ), // Hidden at the top of the panel
 													'priority'    => $priority,
+													'type'        => $panel_type, // Sets also the panel class
 												)
 											);
 
@@ -519,6 +525,7 @@
 													'title'       => $theme_option['create_section'], // Section title
 													'description' => ( isset( $theme_option['create_section-description'] ) ) ? ( $theme_option['create_section-description'] ) : ( '' ), // Displayed at the top of section
 													'priority'    => $priority,
+													'type'        => 'theme-options', // Sets also the section class
 												)
 										);
 

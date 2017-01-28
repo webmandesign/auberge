@@ -1,10 +1,10 @@
 /**
- * Customizer modification styles
+ * Customizer RTL styles
  *
  * @package    Auberge
  * @copyright  WebMan Design, Oliver Juhas
  *
- * @since    1.0
+ * @since    2.2.0
  * @version  2.2.0
  */
 
@@ -117,7 +117,7 @@
 
 .control-section-theme-options .matrix {
 	padding: 2px 0 3px;
-	padding-left: 2px;
+	padding-right: 2px;
 	margin-bottom: .5em;
 	border: 2px solid #bbb;
 	overflow: hidden;
@@ -128,13 +128,13 @@
 }
 
 .control-section-theme-options .matrix label {
-	float: left;
+	float: right;
 	display: block;
 	width: 33.33%;
 	padding: .5em 0 .5em;
-	padding-left: 4px;
+	padding-right: 4px;
 	margin: 0 -1px -1px;
-	margin-left: 0;
+	margin-right: 0;
 	text-align: center;
 	border: 1px dotted #bbb;
 	box-sizing: border-box;
@@ -157,7 +157,7 @@
 }
 
 .control-section-theme-options .image-radio label {
-	float: left;
+	float: right;
 	display: inline-block;
 	margin: 4px;
 	text-align: center;
@@ -195,7 +195,7 @@
 	width: 100%;
 	height: 2px;
 	margin: 10px 0;
-	text-align: left;
+	text-align: right;
 	background: #fff;
 	border: 2px solid #bbb;
 	border-radius: 10px;

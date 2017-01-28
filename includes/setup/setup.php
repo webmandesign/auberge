@@ -366,13 +366,37 @@
 					 * @link  https://codex.wordpress.org/Function_Reference/add_theme_support#Custom_Header
 					 */
 					add_theme_support( 'custom-header', apply_filters( 'wmhook_wm_setup_custom_header_args', array(
-							'default-image' => wm_get_stylesheet_directory_uri( 'assets/images/header.jpg' ),
-							'header-text'   => false,
-							'width'         => ( isset( $image_sizes['auberge_banner'] ) ) ? ( $image_sizes['auberge_banner'][0] ) : ( 1920 ),
-							'height'        => ( isset( $image_sizes['auberge_banner'] ) ) ? ( $image_sizes['auberge_banner'][1] ) : ( 1080 ),
-							'flex-height'   => false,
-							'flex-width'    => false,
+							'random-default' => true,
+							'header-text'    => false,
+							'width'          => ( isset( $image_sizes['auberge_banner'] ) ) ? ( $image_sizes['auberge_banner'][0] ) : ( 1920 ),
+							'height'         => ( isset( $image_sizes['auberge_banner'] ) ) ? ( $image_sizes['auberge_banner'][1] ) : ( 1080 ),
+							'flex-height'    => true,
+							'flex-width'     => true,
 						) ) );
+
+					// Default custom headers packed with the theme (thumbnail size: 275x155 px)
+
+						register_default_headers( array(
+
+								'header-1' => array(
+									'url'           => '%s/assets/images/header/header-1.jpg',
+									'thumbnail_url' => '%s/assets/images/header/thumbnail/header-1.jpg',
+									'description'   => esc_html_x( 'Coffee machine', 'Header image description.', 'auberge' ),
+								),
+
+								'header-2' => array(
+									'url'           => '%s/assets/images/header/header-2.jpg',
+									'thumbnail_url' => '%s/assets/images/header/thumbnail/header-2.jpg',
+									'description'   => esc_html_x( 'Restaurant interior from above', 'Header image description.', 'auberge' ),
+								),
+
+								'header-3' => array(
+									'url'           => '%s/assets/images/header/header-3.jpg',
+									'thumbnail_url' => '%s/assets/images/header/thumbnail/header-3.jpg',
+									'description'   => esc_html_x( 'Pouring coffee', 'Header image description.', 'auberge' ),
+								),
+
+							) );
 
 				// Custom background
 
@@ -507,6 +531,92 @@
 	 */
 
 		require_once( get_template_directory() . '/includes/welcome/welcome.php' );
+
+
+
+		/**
+		 * Initiate "Welcome" admin notice
+		 *
+		 * @since    2.2.0
+		 * @version  2.2.0
+		 */
+		if ( ! function_exists( 'wm_activation_admin_notice' ) ) {
+			function wm_activation_admin_notice() {
+
+				// Processing
+
+					global $pagenow;
+
+					if (
+						is_admin()
+						&& 'themes.php' == $pagenow
+						&& isset( $_GET['activated'] )
+					) {
+
+						add_action( 'admin_notices', 'wm_welcome_admin_notice', 99 );
+
+					}
+
+			}
+		} // /wm_activation_admin_notice
+
+		add_action( 'load-themes.php', 'wm_activation_admin_notice' );
+
+
+
+		/**
+		 * Display "Welcome" admin notice
+		 *
+		 * @since    2.2.0
+		 * @version  2.2.0
+		 */
+		if ( ! function_exists( 'wm_welcome_admin_notice' ) ) {
+			function wm_welcome_admin_notice() {
+
+				// Helper variables
+
+					$theme_slug = get_template();
+					$theme_name = wp_get_theme( $theme_slug )->get( 'Name' );
+
+
+				// Output
+
+					?>
+
+					<div class="updated notice is-dismissible">
+						<p>
+							<strong>
+								<?php
+
+									printf(
+										esc_html_x( 'Thank you for installing the %s theme!', '%s: Theme name.', 'auberge' ),
+										$theme_name
+									);
+
+								?>
+								<a href="<?php echo esc_url( admin_url( 'themes.php?page=' . $theme_slug . '-welcome' ) ); ?>">
+									<?php esc_html_e( 'Please read the information about the theme.', 'auberge' ); ?>
+								</a>
+							</strong>
+						</p>
+						<p>
+							<a href="<?php echo esc_url( admin_url( 'themes.php?page=' . $theme_slug . '-welcome' ) ); ?>" class="button button-primary">
+								<?php
+
+									printf(
+										esc_html_x( 'Get started with %s', '%s: Theme name.', 'auberge' ),
+										$theme_name
+									);
+
+								?>
+							</a>
+						</p>
+					</div>
+
+					<?php
+
+			}
+		} // /wm_welcome_admin_notice
 
 
 
