@@ -136,7 +136,7 @@ class Auberge_Welcome {
 		 * Add screen to WordPress admin menu
 		 *
 		 * @since    2.1
-		 * @version  2.1
+		 * @version  2.2.0
 		 */
 		public static function admin_menu() {
 
@@ -150,7 +150,7 @@ class Auberge_Welcome {
 						// $capability
 						'switch_themes',
 						// $menu_slug
-						'auberge-welcome',
+						get_template() . '-welcome',
 						// $function
 						__CLASS__ . '::render'
 					);
@@ -177,7 +177,7 @@ class Auberge_Welcome {
 
 			// Requirements check
 
-				if ( $hook_suffix !== get_plugin_page_hookname( 'auberge-welcome', 'themes.php' ) ) {
+				if ( $hook_suffix !== get_plugin_page_hookname( get_template() . '-welcome', 'themes.php' ) ) {
 					return;
 				}
 
@@ -187,7 +187,7 @@ class Auberge_Welcome {
 				// Styles
 
 					wp_enqueue_style(
-							'auberge-welcome',
+							get_template() . '-welcome',
 							wm_get_stylesheet_directory_uri( 'assets/css/welcome.css' ),
 							false,
 							esc_attr( trim( wp_get_theme( get_template() )->get( 'Version' ) ) ),
@@ -196,7 +196,7 @@ class Auberge_Welcome {
 
 				// RTL setup
 
-					wp_style_add_data( 'auberge-welcome', 'rtl', 'replace' );
+					wp_style_add_data( get_template() . '-welcome', 'rtl', 'replace' );
 
 		} // /assets
 

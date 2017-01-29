@@ -183,7 +183,7 @@
 						'swipeToSlide'   : true,
 						'prevArrow'      : '<div class="slider-nav slider-nav-prev"><button type="button" class="slick-prev"><span class="genericon"></span></button></div>',
 						'nextArrow'      : '<div class="slider-nav slider-nav-next"><button type="button" class="slick-next"><span class="genericon"></span></button></div>',
-						'rtl'            : ( 'rtl' != $( 'html' ).attr( 'dir' ) ) ? ( false ) : ( true )
+						'rtl'            : ( 'rtl' !== $( 'html' ).attr( 'dir' ) ) ? ( false ) : ( true )
 					} );
 
 			} // /slick
@@ -218,7 +218,8 @@
 								$postsContainers
 									.masonry( {
 										itemSelector    : '.entry',
-										percentPosition : true
+										percentPosition : true,
+										isRtl           : ( 'rtl' !== $( 'html' ).attr( 'dir' ) ) ? ( false ) : ( true )
 									} );
 
 						} );
@@ -239,7 +240,8 @@
 								$galleryContainers
 									.masonry( {
 										itemSelector    : '.gallery-item',
-										percentPosition : true
+										percentPosition : true,
+										isRtl           : ( 'rtl' !== $( 'html' ).attr( 'dir' ) ) ? ( false ) : ( true )
 									} );
 
 						} );
@@ -277,7 +279,8 @@
 							$footerWidgets
 								.masonry( {
 									itemSelector    : '.widget',
-									percentPosition : true
+									percentPosition : true,
+									isRtl           : ( 'rtl' !== $( 'html' ).attr( 'dir' ) ) ? ( false ) : ( true )
 								} );
 
 					} );
