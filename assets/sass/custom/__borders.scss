@@ -8,44 +8,25 @@
 
 
 
-blockquote:before,
-blockquote:after,
-table, td, th,
-blockquote.alignleft:before,
-blockquote.alignleft:after,
-blockquote.alignright:before,
-blockquote.alignright:after,
-button,
-input,
-select,
-textarea,
-.comment-meta,
-.comment-respond,
-.comment-list .comment-respond,
-.page-title,
-.page-section,
-.site-main + .page-section,
-.site-main + .page-section + .page-section,
-.post-table-of-contents,
-.post-table-of-contents.top,
-.posts .entry,
-.items section,
-.entry-meta,
-.single .entry-meta,
-div.sharedaddy,
-.post-navigation,
-.home .front-page-widgets-wrapper,
-.breadcrumbs-container,
-.site div#jp-relatedposts,
-.widget ul li,
-.fl-builder-content,
-.rtb-message {
-	border-color: map_get( $colors, 'content_border' ); /* Plus */
+*,
+*::after,
+*::before {
+	border-color: inherit; //*
 }
+
+
+
+.site {
+	border-color: map_get( $colors, 'content_border' ); // Plus
+}
+
+
 
 input:focus,
 select:focus,
 textarea:focus,
+.label-sticky::before,
+.label-sticky::after,
 .posts .entry:hover,
 .widget .tagcloud a:hover,
 .site .picker__input.picker__input--active {
@@ -55,39 +36,4 @@ textarea:focus,
 	/*//
 	border-color: [[color_accent]];
 	//*/
-}
-
-.label-sticky::before,
-.label-sticky::after {
-	/*[*/
-	border-color: map_get( $colors, 'accent' );
-	/*]*/
-	/*//
-	border-color: [[color_accent]];
-	//*/
-}
-
-.widget .tagcloud a:before,
-.fl-builder-content * {
-	border-color: inherit; //*
-}
-
-@media only screen and (max-width: 55em) {
-
-	.sidebar {
-		border-color: map_get( $colors, 'content_border' ); /* Plus */
-	}
-
-}
-
-
-
-
-
-
-
-*,
-*::after,
-*::before {
-	border-color: inherit; //*
 }

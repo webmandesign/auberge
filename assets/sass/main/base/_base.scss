@@ -103,8 +103,9 @@
 		}
 
 		&::after {
-			width: 2%;
-			#{$left}: 49%; // {{RTL}}
+			width: 1rem;
+			#{$left}: 50%; // {{RTL}}
+			margin-#{$left}: -.5rem;
 			border-top-width: .19em;
 			border-top-style: solid;
 			border-bottom-width: .19em;
@@ -126,10 +127,11 @@
 				border-width: 0;
 			}
 
-			&.alignright::after {
-				height: 6%;
-				top: 47%;
-				border-width: 0;
+			&::after {
+				height: 1rem;
+				top: 50%;
+				margin-#{$left}: 0;
+				transform: translateY( -50% );
 			}
 
 		}
@@ -155,8 +157,8 @@
 			&::after,
 			&::before {
 				#{$left}: 0; // {{RTL}}
-				border-#{$right}-width: 1px; // {{RTL}}
-				border-#{$right}-style: solid; // {{RTL}}
+				border-#{$left}-width: 1px; // {{RTL}}
+				border-#{$left}-style: solid; // {{RTL}}
 			}
 
 			&::after {

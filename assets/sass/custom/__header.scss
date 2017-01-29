@@ -19,16 +19,22 @@
 	//*/
 }
 
-.nav-search-form .search-field {
-	background-color: #fff; //*
-	color: #6a6c6e; //*
-}
 
-.nav-search-form .form-search {
-	/*[*/
-	background-color: map_get( $colors, 'accent' );
-	/*]*/
-	/*//
-	background-color: [[color_accent]];
-	//*/
+
+.nav-search-form {
+
+	.form-search {
+		/*[*/
+		background-color: map_get( $colors, 'accent' );
+		/*]*/
+		/*//
+		background-color: [[color_accent]];
+		//*/
+	}
+
+	.search-field {
+		background-color: #fff; //*
+		color: #6a6c6e; //*
+	}
+
 }

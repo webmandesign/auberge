@@ -1,0 +1,116 @@
+/* FILE: custom/__accent.scss */
+
+//
+// Accent colors
+//
+
+
+
+
+
+a,
+.accent-color {
+	/*[*/
+	color: map_get( $colors, 'accent' );
+	/*]*/
+	/*//
+	color: [[color_accent]];
+	//*/
+}
+
+
+
+mark,
+ins,
+.highlight,
+pre::before,
+.pagination a,
+.pagination span,
+.label-sticky,
+.button,
+button,
+form button,
+.fl-node-content button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+.menu-group-nav a,
+.post-navigation .nav-previous,
+.post-navigation .nav-next,
+.bypostauthor > .comment-body .comment-author::before,
+.comment-navigation a,
+.widget_calendar tbody a,
+.widget .tagcloud a:hover,
+body #infinite-handle span,
+.rtb-message,
+.site-content div.sharedaddy .sd-content ul li a.sd-button:not(.no-text) {
+	/*[*/
+	background-color: map_get( $colors, 'accent' );
+	color: map_get( $colors, 'accent_text' );
+	/*]*/
+	/*//
+	background-color: [[color_accent]];
+	color: [[color_accent_text]];
+	//*/
+}
+
+	mark,
+	ins,
+	.highlight {
+		/*[*/
+		box-shadow:  .38em 0 0 map_get( $colors, 'accent' ),
+		            -.38em 0 0 map_get( $colors, 'accent' );
+		/*]*/
+		/*//
+		box-shadow:  .38em 0 0 [[color_accent]],
+		            -.38em 0 0 [[color_accent]];
+		//*/
+	}
+
+
+
+.post-navigation {
+
+	.nav-previous::before {
+		/*[*/
+		background: map_get( $colors, 'accent' );
+		background: linear-gradient( to left, transparent 19%, map_get( $colors, 'accent' ) 81% );
+		/*]*/
+		/*//
+		background: [[color_accent]];
+		background: linear-gradient( to left, transparent 19%, [[color_accent]] 81% );
+		//*/
+
+		[dir="rtl"] & {
+			/*[*/
+			background: linear-gradient( to right, transparent 19%, map_get( $colors, 'accent' ) 81% );
+			/*]*/
+			/*//
+			background: linear-gradient( to right, transparent 19%, [[color_accent]] 81% );
+			//*/
+		}
+
+	}
+
+	.nav-next::before {
+		/*[*/
+		background: map_get( $colors, 'accent' );
+		background: linear-gradient( to right, transparent 19%, map_get( $colors, 'accent' ) 81% );
+		/*]*/
+		/*//
+		background: [[color_accent]];
+		background: linear-gradient( to right, transparent 19%, [[color_accent]] 81% );
+		//*/
+
+		[dir="rtl"] & {
+			/*[*/
+			background: linear-gradient( to left, transparent 19%, map_get( $colors, 'accent' ) 81% );
+			/*]*/
+			/*//
+			background: linear-gradient( to left, transparent 19%, [[color_accent]] 81% );
+			//*/
+		}
+
+	}
+
+}

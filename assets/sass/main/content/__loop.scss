@@ -10,63 +10,55 @@
 
 .posts {
 	margin: 0 -1%;
-}
 
-	.posts .entry {
-		float: left;
+	.entry {
 		position: relative;
-		width: 31.333%;
+		width: 96%;
 		padding: 1.62rem;
-		margin: 0 1% 2%;
-		border: 2px solid;
-		-webkit-transition: border-color .6s;
-		        transition: border-color .6s;
-	}
+		margin: 0 1% 8%;
+		border-width: 2px;
+		border-style: solid;
+		transition: border-color .6s;
 
-		@media only screen and (max-width: 55em) {
-
-					.posts .entry {
-						width: 48%;
-					}
+		@include responsive( map_get( $breakpoint, 'm' ) ) {
+			float: $left; // {{RTL}}
+			width: 48%;
+			margin-bottom: 2%;
 		}
 
-		@media only screen and (max-width: 42em) {
-					.posts .entry {
-						float: none;
-						width: 96%;
-						margin-bottom: 8%;
-					}
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+			width: 31.333%;
 		}
 
-		.posts .entry-title {
+		&-title {
 			margin-bottom: 1rem;
 			letter-spacing: 0;
 			font-size: nth( map_get( $h_tags_setup, 'h3, .h3' ), 1 ) +em;
 		}
 
-		.posts .entry-content {
+		&-content {
 			padding: 0;
-		}
 
-			.posts .entry-media + .entry-content {
-				margin-top: 1.62rem;
-			}
-
-			.posts .entry-content p {
+			p {
 				margin-bottom: 1rem;
 			}
 
-			.link-more {
-				margin-bottom: 1.62em;
-			}
+		}
+
+		&-media + .entry-content {
+			margin-top: 1.62rem;
+		}
+
+	}
+
+}
 
 
 
 // Search results list
 
-	.posts .type-page:before,
-	.posts .type-nova_menu_item:before,
-	.search-results-listing .type-post:before {
+	.posts .type-page::before,
+	.search-results-listing .type-post::before {
 		@extend %genericon;
 		display: inline-block;
 		width: 2rem;
@@ -75,21 +67,17 @@
 		line-height: 2rem;
 		text-align: center;
 		font-size: 1.38rem;
-		border: 1px solid;
+		border-width: 1px;
+		border-style: solid;
 		border-radius: 50%;
 	}
 
-		.search-results-listing .type-post:before {
+		.search-results-listing .type-post::before {
 			content: '\f411';
 		}
 
-		.posts .type-page:before {
+		.posts .type-page::before {
 			content: '\f443';
-		}
-
-		.posts .type-nova_menu_item:before {
-			content: '\e603';
-			font-family: 'nova-font';
 		}
 
 
@@ -101,4 +89,13 @@
 		padding: 0 19%;
 		margin-bottom: 10%;
 		text-align: center;
+	}
+
+
+
+// More link
+
+	.link-more {
+		@extend %font_weight_400;
+		margin-bottom: 1.62em;
 	}

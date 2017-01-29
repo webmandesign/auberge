@@ -8,87 +8,80 @@
 
 
 
-.main-navigation li ul {
-	background-color: map_get( $colors, 'navigation' ); /* Plus */
-	color: map_get( $colors, 'navigation_text' ); /* Plus */
-}
-
 .main-navigation {
-	border: map_get( $colors, 'navigation_border' ); /* Plus */
+	border-color: map_get( $colors, 'navigation_border' ); // Plus
+
+	li ul {
+		background-color: map_get( $colors, 'navigation' ); // Plus
+		color: map_get( $colors, 'navigation_text' ); // Plus
+	}
+
+	.menu li li {
+
+		&:hover > a,
+		& > a:hover,
+		&.active-menu-item > a {
+			background-color: map_get( $colors, 'navigation_border' ); // Plus
+		}
+
+	}
+
 }
 
-.main-navigation .menu li li:hover > a,
-.main-navigation .menu li li > a:hover,
-.main-navigation .menu li li.active-menu-item > a {
-	background-color: map_get( $colors, 'navigation_border' ); /* Plus */
-}
 
-.post-navigation .nav-previous:before {
-	/*[*/
-	background: map_get( $colors, 'accent' );
-	background: linear-gradient( to left, transparent 19%, map_get( $colors, 'accent' ) 81% );
-	/*]*/
-	/*//
-	background: [[color_accent]];
-	background: linear-gradient( to left, transparent 19%, [[color_accent]] 81% );
-	//*/
-}
 
-	.post-navigation .nav-next:before {
-		/*[*/
-		background: map_get( $colors, 'accent' );
-		background: linear-gradient( to right, transparent 19%, map_get( $colors, 'accent' ) 81% );
-		/*]*/
-		/*//
-		background: [[color_accent]];
-		background: linear-gradient( to right, transparent 19%, [[color_accent]] 81% );
-		//*/
+@include responsive( map_get( $breakpoint, 'l' ), 'max-width' ) {
+
+	.main-navigation {
+
+		&-inner {
+			background-color: map_get( $colors, 'navigation' ); // Plus
+		}
+
+		ul a {
+			color: map_get( $colors, 'navigation_text' ); // Plus
+		}
+
+		.menu {
+
+			a:hover,
+			li:hover > a,
+			li li:hover > a,
+			li.active-menu-item > a,
+			li li.active-menu-item > a {
+				background: transparent; //*
+				color: map_get( $colors, 'navigation_text' ); // Plus
+			}
+
+			li.current-menu-item > a,
+			li li.current-menu-item > a {
+				background-color: map_get( $colors, 'navigation_border' ); // Plus
+			}
+
+		}
+
 	}
 
-@media only screen and (max-width: 55em) {
 
-	.main-navigation-inner {
-		background-color: map_get( $colors, 'navigation' ); /* Plus */
-	}
 
-	.main-navigation ul a {
-		color: map_get( $colors, 'navigation_text' ); /* Plus */
-	}
+	.menu-toggle {
 
-	.menu-toggle,
-	.menu-toggle:hover,
-	.menu-toggle:active,
-	.menu-toggle:focus {
-		background: transparent; //*
-	}
+		&,
+		&:hover,
+		&:active,
+		&:focus {
+			background: transparent; //*
+		}
 
-	.menu-toggle:before {
-		/*[*/
-		background: map_get( $colors, 'accent' );
-		/*]*/
-		/*//
-		background: [[color_accent]];
-		//*/
-	}
+		&::before {
+			/*[*/
+			background: map_get( $colors, 'accent' );
+			/*]*/
+			/*//
+			background: [[color_accent]];
+			//*/
+		}
 
-	.main-navigation .menu a:hover,
-	.main-navigation .menu li:hover > a,
-	.main-navigation .menu li li:hover > a,
-	.main-navigation .menu li.active-menu-item > a,
-	.main-navigation .menu li li.active-menu-item > a {
-		background: transparent; //*
-		color: map_get( $colors, 'navigation_text' ); /* Plus */
-	}
-
-	.main-navigation .menu li.current-menu-item > a,
-	.main-navigation .menu li li.current-menu-item > a {
-		background-color: map_get( $colors, 'navigation_border' ); /* Plus */
-	}
-
-	.main-navigation li,
-	.main-navigation li li,
-	.main-navigation li li:first-child {
-		border-color: map_get( $colors, 'navigation_border' ); /* Plus */
 	}
 
 }

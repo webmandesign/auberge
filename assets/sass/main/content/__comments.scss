@@ -8,76 +8,72 @@
 
 
 
-	.comments-area {
+.comment {
+
+	&s-area {
 		padding: 6% 0;
 		margin: 0;
 	}
 
+	&s-title {
+		font-size: nth( map_get( $h_tags_setup, 'h3, .h3' ), 1 ) +em;
 
-.comments-title {
-	font-size: nth( map_get( $h_tags_setup, 'h3, .h3' ), 1 ) +em;
+		.add-comment-link {
+			display: none;
+		}
+
+	}
+
+	&-navigation {
+		padding: 8% 0;
+	}
+
 }
 
 
-	/**
-	 * Author details
-	 */
 
-		/* Name */
+// Author details
 
-			.bypostauthor > .comment-body .comment-author:before {
-				@extend %genericon;
-				content: '\f304';
-				position: absolute;
-				display: block;
-				width: 30px;
-				height: 30px;
-				left: 30px;
-				top: 75px;
-				margin-top: 1.62em;
-				line-height: 28px;
-				text-align: center;
-				font-size: 1.17em;
-				border-radius: 50%;
-				z-index: 1;
-			}
+	.bypostauthor > .comment-body .comment-author::before {
+		@extend %genericon;
+		content: '\f304';
+		position: absolute;
+		display: block;
+		width: 30px;
+		height: 30px;
+		#{$left}: 15px; // {{RTL}}
+		top: 45px;
+		margin-top: 1.62em;
+		line-height: 28px;
+		text-align: center;
+		font-size: 1.17em;
+		border-radius: 50%;
+		z-index: 1;
 
-		@media only screen and (max-width: 42em) {
-					.bypostauthor > .comment-body .comment-author:before {
-						left: 15px;
-						top: 45px;
-					}
+		@include responsive( map_get( $breakpoint, 'm' ) ) {
+			#{$left}: 30px; // {{RTL}}
+			top: 75px;
 		}
 
+	}
 
 
-	/**
-	 * Comment content
-	 */
 
-		.comment-edit-link:before,
-		.comment-reply-link:before {
+// Comment edit and reply links
+
+	.comment-edit-link,
+	.comment-reply-link {
+
+		&::before {
 			@extend %genericon;
 			content: '\f467';
-			margin-right: .19em;
+			margin-#{$right}: .19em; // {{RTL}}
 			font-size: 1.38em;
 			vertical-align: middle;
 		}
 
-			.comment-edit-link:before {
-				content: '\f411';
-			}
+	}
 
-
-
-	/**
-	 * Comments pagination
-	 */
-
-		.comment-navigation {
-			padding: 8% 0;
-		}
-
-				.comments-title .add-comment-link {
-					display: none;
-				}
+	.comment-edit-link::before {
+		content: '\f411';
+	}

@@ -11,79 +11,88 @@
 .post-navigation {
 	padding-top: 2px;
 	margin: 0;
-	border-bottom: 2px solid;
-}
+	border-bottom-width: 2px;
+	border-bottom-style: solid;
 
-	.post-navigation .nav-previous,
-	.post-navigation .nav-next {
+	.nav-previous,
+	.nav-next {
 		position: relative;
 		background-position: 50% 50%;
 		background-size: cover;
 		z-index: 1;
-	}
 
-	.post-navigation .nav-next {
-		text-align: right;
-	}
-
-		.post-navigation .nav-previous:before,
-		.post-navigation .nav-next:before {
+		&::before {
 			content: '';
 			display: block;
 			position: absolute;
-			left: 0;
+			#{$left}: 0; // {{RTL}}
 			top: 0;
 			width: 100%;
 			height: 100%;
 			opacity: .85;
 			z-index: -1;
-			-webkit-transition: all .4s;
-			        transition: all .4s;
+			transition: all .4s;
 		}
 
-			.post-navigation .nav-previous:hover:before,
-			.post-navigation .nav-next:hover:before {
-				opacity: 1;
-			}
-
-		.post-navigation a {
-			@extend %line_height_golden_minor;
-			display: block;
-			position: relative;
-			padding: 10% 38% 4% 8%;
-			margin-bottom: 2px;
-			font-size: nth( map_get( $h_tags_setup, 'h2, .h2' ), 1 ) +em;
-			color: inherit;
-			z-index: 1;
+		&:hover::before {
+			opacity: 1;
 		}
 
-			.post-navigation .nav-next a {
-				padding-left: 38%;
-				padding-right: 8%;
-			}
+	}
 
-			.post-navigation a:hover {
-				text-decoration: none;
-			}
+	.nav-next {
+		text-align: $right; // {{RTL}}
 
-			.post-navigation .label {
-				@extend %font_weight_300;
-				display: block;
-				margin-bottom: .62em;
-				text-transform: uppercase;
-				font-size: .5em;
-			}
-			.post-navigation .label::after,
-			.post-navigation .label::before {
-				@extend %genericon;
-			}
+		a {
+			padding-#{$left}: 38%; // {{RTL}}
+			padding-#{$right}: 8%; // {{RTL}}
+		}
 
-				.post-navigation .nav-next .label:after {
-					content: '\f429';
-					margin-left: .62em;
-				}
+		.label::after {
+			@include rtl_property( content, '\f429', '\f430' ); // {{RTL}}
+			margin-#{$left}: .62em; // {{RTL}}
+		}
 
-				.post-navigation .nav-previous .label:before {
-					content: '\f430';
-					margin-right: .62em;
-				}
+	}
+
+	.nav-previous {
+
+		.label:before {
+			@include rtl_property( content, '\f430', '\f429' ); // {{RTL}}
+			margin-#{$right}: .62em; // {{RTL}}
+		}
+
+	}
+
+	a {
+		@extend %line_height_golden_minor;
+		display: block;
+		position: relative;
+		padding: 10% 38% 4%;
+		padding-#{$left}: 8%; // {{RTL}}
+		margin-bottom: 2px;
+		font-size: nth( map_get( $h_tags_setup, 'h2, .h2' ), 1 ) +em;
+		color: inherit;
+		z-index: 1;
+
+		&:hover {
+			text-decoration: none;
+		}
+
+	}
+
+	.label {
+		@extend %font_weight_300;
+		display: block;
+		margin-bottom: .62em;
+		text-transform: uppercase;
+		font-size: .5em;
+
+		&::after,
+		&::before {
+			@extend %genericon;
+		}
+
+	}
+
+}

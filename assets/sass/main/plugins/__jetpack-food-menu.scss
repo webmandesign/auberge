@@ -253,6 +253,28 @@
 
 
 
+.type-nova_menu_item {
+
+	.posts &::before {
+		@extend %genericon;
+		font-family: 'nova-font';
+		content: '\e603';
+		display: inline-block;
+		width: 2rem;
+		height: 2rem;
+		margin-bottom: 1rem;
+		line-height: 2rem;
+		text-align: center;
+		font-size: 1.38rem;
+		border-width: 1px;
+		border-style: solid;
+		border-radius: 50%;
+	}
+
+}
+
+
+
 .tax-nova_menu.no-tax-children .page-header {
 	@extend %screen_reader_hiding;
 }
