@@ -15,6 +15,7 @@
 	.site-footer {
 		@extend %font_size_smaller;
 		padding: 6% 0;
+		border-color: currentColor;
 
 		&-area {
 			@extend %content_width;

@@ -1,5 +1,60 @@
 # Auberge Changelog
 
+## 2.2.0
+
+* **Add**: RTL language support
+* **Add**: Multiple default custom header images
+* **Add**: Theme activation welcome message
+* **Add**: Option to disable Food Menu functionality
+* **Update**: Using SASS for stylesheets
+* **Update**: Improving styles, minimizing files
+* **Update**: Introducing mobile first approach
+* **Update**: Ditching Internet Explorer 9 support
+* **Update**: Scripts: Slick 1.6.0, Normalize 5.0.0
+* **Update**: Improved support for child themes
+* **Update**: Removing imagesLoaded script in favor of WordPress native one
+* **Update**: Improved custom header functionality
+* **Update**: Theme info and tags
+* **Update**: "Welcome" admin page
+* **Update**: Theme options
+* **Update**: Documentation
+* **Update**: Removed on-page anchor smooth scrolling JavaScript
+* **Update**: Using "$" instead of "jQuery"
+* **Update**: Screenshot
+* **Update**: Localization
+* **Fix**: Fixing "Continue reading" link function duplicate output
+
+### Files changed:
+
+	changelog.md
+	style.css
+	assets/css/*.*
+	assets/images/*.*
+	assets/js/customize-preview.js
+	assets/js/scripts-global.js
+	assets/js/scripts-navigation.js
+	assets/js/vendor/*.*
+	assets/sass/*.*
+	documentation/*.*
+	includes/plugins/jetpack/jetpack.php
+	includes/setup/setup.php
+	includes/theme-options/theme-options.php
+	includes/welcome/class-welcome.php
+	languages/sk_SK.mo
+	languages/sk_SK.po
+	languages/auberge.pot
+	library/customize.php
+	library/css/customize-rtl.css
+	library/css/customize.css
+	template-parts/component-welcome-demo.php
+	template-parts/component-welcome-footer.php
+	template-parts/component-welcome-header.php
+	template-parts/component-welcome-quickstart.php
+	template-parts/content-custom-header.php
+	template-parts/content-featured-post.php
+	template-parts/loop-banner.php
+
+
 ## 2.1.1
 
 * **Update**: Not using `.hentry` class to style posts, introducing a custom `.entry` class
@@ -8,7 +63,7 @@
 * **Fix**: Food Menu items order on Food Menu Section archive pages
 * **Fix**: Sidebar responsive styles
 
-#### Files changed:
+### Files changed:
 
 	changelog.md
 	style.css
@@ -38,7 +93,7 @@
 * **Fix**: Preventing potential issues with `get_term_link()`
 * **Fix**: Theme Check issues
 
-#### Files changed:
+### Files changed:
 
 	changelog.md
 	functions.php
@@ -64,7 +119,7 @@
 
 * **Update**: Theme tags
 
-#### Files changed:
+### Files changed:
 
 	functions.php
 	style.css
@@ -74,7 +129,7 @@
 
 * **Fix**: Advanced Custom Fields plugin recommendation
 
-#### Files changed:
+### Files changed:
 
 	functions.php
 	style.css
@@ -86,7 +141,7 @@
 * **Update**: Making the theme compatible with older versions of PHP
 * **Fix**: Advanced Custom Fields plugin recommendation
 
-#### Files changed:
+### Files changed:
 
 	functions.php
 	style.css
@@ -131,7 +186,7 @@
 * **Fix**: Schema.org microformats
 * **Fix**: Google Recipe view
 
-#### Files changed:
+### Files changed:
 
 	*.*
 	All the files have been changed and reorganized.
@@ -151,7 +206,7 @@
 * **Fix**: Google Fonts URL function subset issue
 * **Fix**: Fixed issue with masonry footer layout when using Jetpack's infinite scroll
 
-#### Files changed:
+### Files changed:
 
 	license.txt
 	readme.md
@@ -174,7 +229,7 @@
 * **Update**: Localization
 * **Fix**: Made "Donate" word translatable
 
-#### Files changed:
+### Files changed:
 
 	inc/setup-theme-options.php
 	languages/sk_SK.mo
@@ -186,7 +241,7 @@
 
 * **Fix**: `wmhook_entry_image_link` is not applied correctly on page content
 
-#### Files changed:
+### Files changed:
 
 	content-page.php
 
@@ -201,7 +256,7 @@
 * **Update**: Saving image size setup into theme mod, not individual options
 * **Update**: Removing obsolete constants
 
-#### Files changed:
+### Files changed:
 
 	content-featured-post.php
 	functions.php
@@ -217,7 +272,7 @@
 
 * **Fix**: Food menu sections on-page navigation not displaying after 1.4 theme update
 
-#### Files changed:
+### Files changed:
 
 	inc/setup.php
 
@@ -228,7 +283,7 @@
 * **Update**: Beaver Builder compatibility
 * **Update**: Starter CSS
 
-#### Files changed:
+### Files changed:
 
 	css/starter.css
 	inc/beaver-builder/beaver-builder.php
@@ -239,7 +294,7 @@
 
 * **Fix**: Condense posts thumbnail size issue introduced in version 1.4.1
 
-#### Files changed:
+### Files changed:
 
 	inc/setup.php
 
@@ -248,7 +303,7 @@
 
 * **Update**: Localization
 
-#### Files changed:
+### Files changed:
 
 	languages/sk_SK.mo
 	languages/sk_SK.po
@@ -268,7 +323,7 @@
 * **Fix**: Sticky header CSS3 animation
 * **Fix**: Beaver Builder front page styles
 
-#### Files changed:
+### Files changed:
 
 	comments.php
 	content-food-menu.php
@@ -294,7 +349,7 @@
 * **Fix**: Filter names and passed arguments
 * **Fix**: Sticky header appear animation
 
-#### Files changed:
+### Files changed:
 
 	style.css
 	css/editor-style.css
@@ -305,7 +360,7 @@
 
 * **Fix**: Food menu on-page sections navigation
 
-#### Files changed:
+### Files changed:
 
 	js/scripts.js
 
@@ -314,7 +369,7 @@
 
 * **Fix**: Localization
 
-#### Files changed:
+### Files changed:
 
 	inc/lib/core.php
 	languages/sk_SK.mo
@@ -344,7 +399,7 @@
 * **Fix**: Hiding food menu titles on homepage when using Beaver Builder
 * **Fix**: Food menu sections taxonomy pages display
 
-#### Files changed:
+### Files changed:
 
 	content-featured-post.php
 	content-food-menu.php
@@ -380,7 +435,7 @@
 * **Add**: Beaver Builder recommendation into plugins notice
 * **Fix**: Masonry blog layout
 
-#### Files changed:
+### Files changed:
 
 	inc/tgmpa/plugins.php
 	js/customizer-preview.js
@@ -411,7 +466,7 @@
 * **Fix**: Postlist article hover custom border color not applied
 * **Fix**: Added link to access posts with no title
 
-#### Files changed:
+### Files changed:
 
 	archive.php
 	functions.php
@@ -437,7 +492,7 @@
 
 * **Update**: Customizer to support WP4.1
 
-#### Files changed:
+### Files changed:
 
 	inc/customizer/customizer.php
 
@@ -467,7 +522,7 @@
 * **Fix**: Styling issues
 * **Fix**: Filter hook names
 
-#### Files changed:
+### Files changed:
 
 	archive.php
 	comments.php

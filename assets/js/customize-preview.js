@@ -5,14 +5,14 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0
- * @version  2.0
+ * @version  2.2.0
  */
 
 
 
 
 
-jQuery( function() {
+( function( $ ) {
 
 
 
@@ -29,7 +29,7 @@ jQuery( function() {
 				value
 					.bind( function( to ) {
 
-						jQuery( '.site-title span' )
+						$( '.site-title span' )
 							.text( to );
 
 					} );
@@ -43,7 +43,7 @@ jQuery( function() {
 				value
 					.bind( function( to ) {
 
-						jQuery( '.site-description, .site-banner-header .highlight' )
+						$( '.site-description, .site-banner-header .highlight' )
 							.text( to );
 
 					} );
@@ -54,4 +54,4 @@ jQuery( function() {
 
 
 
-} );
+} )( jQuery );

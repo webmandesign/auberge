@@ -8,14 +8,6 @@
 
 
 
-*,
-*::after,
-*::before {
-	border-color: inherit; //*
-}
-
-
-
 .site {
 	border-color: map_get( $colors, 'content_border' ); // Plus
 }

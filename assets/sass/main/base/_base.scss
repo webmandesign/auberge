@@ -10,6 +10,12 @@
 
 // Elements
 
+	*,
+	*::after,
+	*::before {
+		border-color: inherit;
+	}
+
 	abbr {
 		@extend %font_weight_600;
 	}

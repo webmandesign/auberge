@@ -1,0 +1,136 @@
+/* FILE: custom/__editor-style.scss */
+
+//
+// TinyMCE editor styles overrides and fixes
+//
+// This is not customizable via theme options.
+//
+
+
+
+
+
+// Imports
+
+	@import '_base';
+
+	@import '_accent';
+
+
+
+
+
+// Overrides and fixes for editor
+
+	// Core
+
+		body {
+			width: 100%;
+			max-width: ( $content_width + 40 ) * .62 +px;
+			max-width: ( $content_width + 40 ) * .62 * $px;
+			font-size: 16px;
+
+
+			&.page-template-_fullwidth,
+			&.page-template-_menu {
+				max-width: ( $content_width + 40 ) +px;
+				max-width: ( $content_width + 40 ) * $px;
+			}
+
+			&.mce-content-body {
+				padding: 20px !important;
+			}
+
+			*,
+			*::after,
+			*::before {
+				border-color: inherit;
+			}
+
+		}
+
+		.mce-content-body {
+			position: relative;
+			font-family: #{ map_get( $font_family, 'body' ) };
+			background-color: map_get( $colors, 'content' );
+			color: map_get( $colors, 'content_text' );
+
+			&::after {
+				content: '';
+				position: absolute;
+				display: block;
+				width: 1px;
+				height: 100%;
+				right: 0;
+				top: 0;
+				border-right-width: 1px;
+				border-right-style: dashed;
+			}
+
+		}
+
+
+
+	// Media player
+
+		.mejs-container,
+		.wp-playlist {
+
+			body & {
+				margin: 0 !important;
+			}
+
+		}
+
+		.wpview-content {
+			margin: 0 0 1.62em;
+		}
+
+
+
+	// Tables
+
+		.mce-item-table,
+		.mce-item-table td,
+		.mce-item-table th,
+		.mce-item-table caption {
+			border-width: 1px;
+			border-style: solid;
+		}
+
+
+
+	// Pullquotes
+
+		blockquote.alignleft {
+			margin-left: 0;
+		}
+
+		blockquote.alignright {
+			margin-right: 0;
+		}
+
+
+
+	// Responsive media
+
+		img,
+		embed,
+		iframe,
+		object,
+		video {
+			max-width: 100%;
+		}
+
+		embed,
+		iframe,
+		object {
+			max-height: 320px;
+		}
+
+		embed,
+		iframe,
+		object,
+		video {
+			width: 100% !important;
+		}

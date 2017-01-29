@@ -19,8 +19,8 @@
 	//*/
 }
 
-.custom-banner:before,
-.site-banner-media:before {
+.custom-banner::before,
+.site-banner-media::before {
 	background: transparent;
 	/*[*/
 	background: linear-gradient( transparent, map_get( $colors, 'front_widgets' ) );

@@ -46,7 +46,8 @@
 		font-size: 1em;
 		background-color: transparent;
 		color: #fff;
-		border: 1px solid #fff;
+		border-width: 1px;
+		border-style: solid;
 		border-radius: 50%;
 		opacity: .5;
 		transition: opacity .4s ease-in-out;
@@ -118,7 +119,8 @@
 			height: .62em;
 			padding: 0;
 			background: transparent;
-			border: 1px solid #fff;
+			border-width: 1px;
+			border-style: solid;
 			border-radius: 50%;
 			overflow: hidden;
 			opacity: .5;

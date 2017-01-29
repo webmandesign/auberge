@@ -8,7 +8,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.4.8
- * @version  2.0
+ * @version  2.2.0
  *
  * Contents:
  *
@@ -20,7 +20,7 @@
 
 
 
-jQuery( function() {
+( function( $ ) {
 
 
 
@@ -30,9 +30,9 @@ jQuery( function() {
 	 * Cache
 	 */
 
-		var $aubergeSiteNavigation   = jQuery( document.getElementById( 'site-navigation' ) ),
-		    $aubergeSiteMenuPrimary  = jQuery( document.getElementById( 'menu-primary' ) ),
-		    $aubergeMenuToggleButton = jQuery( document.getElementById( 'menu-toggle' ) );
+		var $aubergeSiteNavigation   = $( document.getElementById( 'site-navigation' ) ),
+		    $aubergeSiteMenuPrimary  = $( document.getElementById( 'menu-primary' ) ),
+		    $aubergeMenuToggleButton = $( document.getElementById( 'menu-toggle' ) );
 
 
 
@@ -69,7 +69,7 @@ jQuery( function() {
 
 					// Processing
 
-						jQuery( e.currentTarget )
+						$( e.currentTarget )
 							.addClass( 'focus' );
 
 				} );
@@ -79,7 +79,7 @@ jQuery( function() {
 
 					// Processing
 
-						jQuery( e.currentTarget )
+						$( e.currentTarget )
 							.removeClass( 'focus' );
 
 				} );
@@ -95,7 +95,7 @@ jQuery( function() {
 
 					// Helper variables
 
-						var $this = jQuery( this ).parent().parent(); // Get the LI element
+						var $this = $( this ).parent().parent(); // Get the LI element
 
 
 					// Processing
@@ -120,7 +120,7 @@ jQuery( function() {
 
 					// Helper variables
 
-						var $this = jQuery( this );
+						var $this = $( this );
 
 
 					// Processing
@@ -287,7 +287,7 @@ jQuery( function() {
 								$aubergeMenuToggleButton
 									.attr( 'aria-expanded', 'true' );
 
-								jQuery( 'html, body' )
+								$( 'html, body' )
 									.stop()
 									.animate( { scrollTop : '0px' }, 0 );
 
@@ -317,7 +317,7 @@ jQuery( function() {
 
 			// Disable mobile navigation on wider screens
 
-				jQuery( window )
+				$( window )
 					.on( 'resize orientationchange', function( e ) {
 
 						// Processing
@@ -349,4 +349,4 @@ jQuery( function() {
 
 
 
-} );
+} )( jQuery );
