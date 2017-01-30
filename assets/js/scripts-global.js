@@ -32,6 +32,14 @@
 	 */
 
 		/**
+		 * RTL check
+		 */
+
+			var $wmIsRtl = ( 'rtl' === $( 'html' ).attr( 'dir' ) );
+
+
+
+		/**
 		 * Tell CSS that JS is enabled...
 		 */
 
@@ -183,7 +191,7 @@
 						'swipeToSlide'   : true,
 						'prevArrow'      : '<div class="slider-nav slider-nav-prev"><button type="button" class="slick-prev"><span class="genericon"></span></button></div>',
 						'nextArrow'      : '<div class="slider-nav slider-nav-next"><button type="button" class="slick-next"><span class="genericon"></span></button></div>',
-						'rtl'            : ( 'rtl' !== $( 'html' ).attr( 'dir' ) ) ? ( false ) : ( true )
+						'rtl'            : $wmIsRtl
 					} );
 
 			} // /slick
@@ -219,7 +227,7 @@
 									.masonry( {
 										itemSelector    : '.entry',
 										percentPosition : true,
-										isRtl           : ( 'rtl' !== $( 'html' ).attr( 'dir' ) ) ? ( false ) : ( true )
+										isOriginLeft    : ! $wmIsRtl
 									} );
 
 						} );
@@ -241,7 +249,7 @@
 									.masonry( {
 										itemSelector    : '.gallery-item',
 										percentPosition : true,
-										isRtl           : ( 'rtl' !== $( 'html' ).attr( 'dir' ) ) ? ( false ) : ( true )
+										isOriginLeft    : ! $wmIsRtl
 									} );
 
 						} );
@@ -280,7 +288,7 @@
 								.masonry( {
 									itemSelector    : '.widget',
 									percentPosition : true,
-									isRtl           : ( 'rtl' !== $( 'html' ).attr( 'dir' ) ) ? ( false ) : ( true )
+									isOriginLeft    : ! $wmIsRtl
 								} );
 
 					} );
