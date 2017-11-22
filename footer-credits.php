@@ -9,7 +9,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    2.0
- * @version  2.0
+ * @version  2.3.0
  */
 
 
@@ -47,18 +47,9 @@
 				<?php
 
 				printf(
-					esc_html_x( 'Powered by %s', '%s: WordPress, linked to a website.', 'auberge' ),
-					'<a href="' . esc_url( __( 'http://wordpress.org/', 'auberge' ) ) . '">WordPress</a>'
-				);
-
-				?>
-				<span class="sep"> | </span>
-				<?php
-
-				printf(
-					esc_html_x( 'Theme: %1$s by %2$s', '1: theme name, 2: theme developer name.', 'auberge' ),
+					esc_html_x( 'Using %1$s %2$s theme.', '1: theme name, 2: linked "WordPress" word.', 'auberge' ),
 					'<a href="' . esc_url( wp_get_theme( get_template() )->get( 'ThemeURI' ) ) . '"><strong>' . wp_get_theme( get_template() )->get( 'Name' ) . '</strong></a>',
-					'<a href="http://www.webmandesign.eu">WebMan Design</a>'
+					'<a href="' . esc_url( __( 'https://wordpress.org/', 'auberge' ) ) . '">WordPress</a>'
 				);
 
 				?>

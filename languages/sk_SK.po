@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Auberge Plus 1.4\n"
 "Report-Msgid-Bugs-To: http://support.webmandesign.eu\n"
-"POT-Creation-Date: 2017-01-28 15:00+0100\n"
-"PO-Revision-Date: 2017-01-28 15:03+0100\n"
+"POT-Creation-Date: 2017-11-22 15:19+0100\n"
+"PO-Revision-Date: 2017-11-22 15:20+0100\n"
 "Last-Translator: Oliver Juhas, WebMan Design\n"
 "Language-Team: WebMan - Oliver Juhas <webmandesigneu@gmail.com>\n"
 "Language: sk_SK\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 2.0.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
@@ -60,21 +60,15 @@ msgstr "Novšie komentáre &rarr;"
 
 #: footer-credits.php:50
 #, php-format
-msgctxt "%s: WordPress, linked to a website."
-msgid "Powered by %s"
-msgstr "Používame %s"
+msgctxt "1: theme name, 2: linked \"WordPress\" word."
+msgid "Using %1$s %2$s theme."
+msgstr "Používame %2$s tému %1$s."
 
-#: footer-credits.php:51
-msgid "http://wordpress.org/"
-msgstr "http://wordpress.org/"
+#: footer-credits.php:52
+msgid "https://wordpress.org/"
+msgstr "https://sk.wordpress.org/"
 
-#: footer-credits.php:59
-#, php-format
-msgctxt "1: theme name, 2: theme developer name."
-msgid "Theme: %1$s by %2$s"
-msgstr "Téma: %1$s od %2$s"
-
-#: footer-credits.php:66 template-parts/menu-social.php:40
+#: footer-credits.php:57 template-parts/menu-social.php:40
 msgid "Back to top &uarr;"
 msgstr "Späť nahor &uarr;"
 
@@ -163,15 +157,15 @@ msgstr "Dole"
 msgid "Load more&hellip;"
 msgstr "Načítať ďalšie&hellip;"
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:105
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:107
 msgid "Theme demo content"
 msgstr "Demo obsah témy"
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:137
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:139
 msgid "Media files quality"
 msgstr "Kvalita súborov médií"
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:141
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:143
 msgid ""
 "Please note that imported media files (such as images, video and audio "
 "files) are of low quality to prevent copyright infringement."
@@ -179,7 +173,7 @@ msgstr ""
 "Upozorňujeme, že importované súbory médií (napríklad obrázky, video a audio "
 "súbory) majú nízku kvalitu, aby sa zabránilo porušovaniu autorských práv."
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:142
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:144
 msgid ""
 "Please read \"Credits\" section of theme documentation for reference where "
 "the demo media files were obtained from."
@@ -187,21 +181,21 @@ msgstr ""
 "Zoznam zdrojov multimediálnych súborov nájdete v sekcii \"Credits\" v "
 "dokumentácii témy."
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:143
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:145
 msgid "Get media for your website &raquo;"
 msgstr "Získať médiá pre vaše webové stránky &raquo;"
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:151
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:153
 msgid "Install required plugins!"
 msgstr "Inštalovať vyžadované moduly!"
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:155
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:157
 msgid ""
 "Please read the information about the theme demo required plugins first."
 msgstr ""
 "Najskôr si prečítajte informácie o moduloch vyžadovaných pre demo obsah témy."
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:156
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:158
 msgid ""
 "If you do not install and activate demo required plugins, some of the "
 "content will not be imported."
@@ -209,13 +203,13 @@ msgstr ""
 "Ak moduly vyžadované pre demo obsah témy nebudú nainštalované a aktivované, "
 "časti demo obsahu nebudú importované."
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:157
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:159
 msgid ""
 "Read the information before you run the theme demo content import process."
 msgstr ""
 "Preštudujte si informácie predtým, než spustíte proces importu demo obsahu."
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:158
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:160
 msgid "View the list of required plugins &raquo;"
 msgstr "Zobraziť zoznam požadovaných modulov &raquo;"
 
@@ -410,66 +404,66 @@ msgstr "%1$d &times; %2$d, %3$s"
 msgid "Button link"
 msgstr "Tlačidlo z odkazu"
 
-#: includes/setup/setup.php:1331
+#: includes/setup/setup.php:1317
 msgctxt "Back to food menu sections selectors button title."
 msgid "&uarr; Menu sections"
 msgstr "&uarr; Skupiny jedál"
 
-#: includes/setup/setup.php:2156
+#: includes/setup/setup.php:2142
 msgid "Breadcrumbs navigation"
 msgstr "Omrvinková navigácia"
 
-#: includes/setup/setup.php:2644
+#: includes/setup/setup.php:2630
 msgid "Previous post"
 msgstr "Predchádzajúca stránka"
 
-#: includes/setup/setup.php:2645
+#: includes/setup/setup.php:2631
 msgid "Next post"
 msgstr "Nasledujúca stránka"
 
-#: includes/setup/setup.php:2689
+#: includes/setup/setup.php:2675
 msgid "This is sticky post"
 msgstr "Odporúčaný článok"
 
-#: includes/setup/setup.php:2718
+#: includes/setup/setup.php:2704
 msgid "This content is password protected."
 msgstr "Tento obsah je chránený heslom."
 
-#: includes/setup/setup.php:2718
+#: includes/setup/setup.php:2704
 msgid "Enter the password to view it."
 msgstr "Zadajte heslo pre jeho zobrazenie."
 
-#: includes/setup/setup.php:2838
+#: includes/setup/setup.php:2824
 #, php-format
 msgctxt "%s: Name of current post."
 msgid "Continue reading%s&hellip;"
 msgstr "Prečítať%s&hellip;"
 
-#: includes/setup/setup.php:2909
+#: includes/setup/setup.php:2895
 msgctxt "Pagination text (visible): previous."
 msgid "&laquo;"
 msgstr "&laquo;"
 
-#: includes/setup/setup.php:2910
+#: includes/setup/setup.php:2896
 msgctxt "Pagination text (hidden): previous."
 msgid "Previous page"
 msgstr "Predchádzajúca stránka"
 
-#: includes/setup/setup.php:2911
+#: includes/setup/setup.php:2897
 msgctxt "Pagination text (hidden): next."
 msgid "Next page"
 msgstr "Nasledujúca stránka"
 
-#: includes/setup/setup.php:2912
+#: includes/setup/setup.php:2898
 msgctxt "Pagination text (visible): next."
 msgid "&raquo;"
 msgstr "&raquo;"
 
-#: includes/setup/setup.php:2920
+#: includes/setup/setup.php:2906
 msgid "Posts Navigation"
 msgstr "Navigácia príspevkov"
 
-#: includes/setup/setup.php:2950
+#: includes/setup/setup.php:2936
 msgid "All posts"
 msgstr "Všetky články"
 

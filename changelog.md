@@ -1,5 +1,22 @@
 # Auberge Changelog
 
+## 2.3.0
+
+* **Update**: Improved One Click Demo Import plugin compatibility
+* **Update**: Default footer credits text
+* **Update**: Minor style improvements
+* **Update**: Localization
+
+### Files changed:
+
+	changelog.md
+	footer-credits.php
+	style.css
+	assets/sass/main.scss
+	includes/plugins/one-click-demo-import/class-one-click-demo-import.php
+	languages/*.*
+
+
 ## 2.2.1
 
 * **Update**: Improved WordPress 4.9 compatibility

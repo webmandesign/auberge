@@ -76,7 +76,7 @@
 			width: 100%;
 			height: 38%;
 			#{$left}: 0; // {{RTL}}
-			bottom: 0;
+			bottom: -1px;
 			z-index: 1;
 		}
 

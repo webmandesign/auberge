@@ -1010,7 +1010,7 @@ h1, h2, h3, .h1, .h2, .h3 { letter-spacing: .1em; }
 
 .site-banner-media { position: relative; z-index: 0; }
 
-.site-banner-media::before { content: ''; position: absolute; display: block; width: 100%; height: 38%; right: 0; bottom: 0; z-index: 1; }
+.site-banner-media::before { content: ''; position: absolute; display: block; width: 100%; height: 38%; right: 0; bottom: -1px; z-index: 1; }
 
 .no-js .site-banner.enable-slider .entry, .enable-slider .site-banner-inner:not(.slick-slider) .entry { display: none; }
 
@@ -1560,7 +1560,7 @@ div.sharedaddy .sd-title, div.sharedaddy h3.sd-title { font-size: 1em; font-weig
 
 .home .items .entry-media { display: none; }
 
-.menu-group-header { padding-top: 3.62rem; margin-top: -3.62rem; margin-bottom: 2.62em; }
+.menu-group-header { padding-top: 12rem; margin-top: -12rem; margin-bottom: 2.62em; }
 
 @media only screen and (min-width: 42em) { .menu-group-header { width: 62%; margin-right: 0; } }
 

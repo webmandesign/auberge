@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    2.1
- * @version  2.2.1
+ * @version  2.3.0
  *
  * Contents:
  *
@@ -34,7 +34,7 @@ class Auberge_One_Click_Demo_Import {
 		 * Constructor
 		 *
 		 * @since    2.1
-		 * @version  2.1.1
+		 * @version  2.3.0
 		 */
 		private function __construct() {
 
@@ -55,6 +55,8 @@ class Auberge_One_Click_Demo_Import {
 						add_filter( 'pt-ocdi/import_files', __CLASS__ . '::files' );
 
 						add_filter( 'pt-ocdi/plugin_intro_text', __CLASS__ . '::info' );
+
+						add_filter( 'pt-ocdi/disable_pt_branding', '__return_true' );
 
 		} // /__construct
 

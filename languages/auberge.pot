@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Auberge\n"
 "Report-Msgid-Bugs-To: http://support.webmandesign.eu\n"
-"POT-Creation-Date: 2017-01-28 15:00+0100\n"
+"POT-Creation-Date: 2017-11-22 15:19+0100\n"
 "PO-Revision-Date: 2015-04-21 20:43+0100\n"
 "Last-Translator: WebMan - Oliver Juhas <webmandesigneu@gmail.com>\n"
 "Language-Team: \n"
@@ -11,7 +11,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.11\n"
+"X-Generator: Poedit 2.0.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
@@ -60,21 +60,15 @@ msgstr ""
 
 #: footer-credits.php:50
 #, php-format
-msgctxt "%s: WordPress, linked to a website."
-msgid "Powered by %s"
+msgctxt "1: theme name, 2: linked \"WordPress\" word."
+msgid "Using %1$s %2$s theme."
 msgstr ""
 
-#: footer-credits.php:51
-msgid "http://wordpress.org/"
+#: footer-credits.php:52
+msgid "https://wordpress.org/"
 msgstr ""
 
-#: footer-credits.php:59
-#, php-format
-msgctxt "1: theme name, 2: theme developer name."
-msgid "Theme: %1$s by %2$s"
-msgstr ""
-
-#: footer-credits.php:66 template-parts/menu-social.php:40
+#: footer-credits.php:57 template-parts/menu-social.php:40
 msgid "Back to top &uarr;"
 msgstr ""
 
@@ -157,51 +151,51 @@ msgstr ""
 msgid "Load more&hellip;"
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:105
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:107
 msgid "Theme demo content"
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:137
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:139
 msgid "Media files quality"
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:141
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:143
 msgid ""
 "Please note that imported media files (such as images, video and audio "
 "files) are of low quality to prevent copyright infringement."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:142
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:144
 msgid ""
 "Please read \"Credits\" section of theme documentation for reference where "
 "the demo media files were obtained from."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:143
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:145
 msgid "Get media for your website &raquo;"
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:151
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:153
 msgid "Install required plugins!"
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:155
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:157
 msgid ""
 "Please read the information about the theme demo required plugins first."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:156
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:158
 msgid ""
 "If you do not install and activate demo required plugins, some of the "
 "content will not be imported."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:157
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:159
 msgid ""
 "Read the information before you run the theme demo content import process."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:158
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:160
 msgid "View the list of required plugins &raquo;"
 msgstr ""
 
@@ -387,66 +381,66 @@ msgstr ""
 msgid "Button link"
 msgstr ""
 
-#: includes/setup/setup.php:1331
+#: includes/setup/setup.php:1317
 msgctxt "Back to food menu sections selectors button title."
 msgid "&uarr; Menu sections"
 msgstr ""
 
-#: includes/setup/setup.php:2156
+#: includes/setup/setup.php:2142
 msgid "Breadcrumbs navigation"
 msgstr ""
 
-#: includes/setup/setup.php:2644
+#: includes/setup/setup.php:2630
 msgid "Previous post"
 msgstr ""
 
-#: includes/setup/setup.php:2645
+#: includes/setup/setup.php:2631
 msgid "Next post"
 msgstr ""
 
-#: includes/setup/setup.php:2689
+#: includes/setup/setup.php:2675
 msgid "This is sticky post"
 msgstr ""
 
-#: includes/setup/setup.php:2718
+#: includes/setup/setup.php:2704
 msgid "This content is password protected."
 msgstr ""
 
-#: includes/setup/setup.php:2718
+#: includes/setup/setup.php:2704
 msgid "Enter the password to view it."
 msgstr ""
 
-#: includes/setup/setup.php:2838
+#: includes/setup/setup.php:2824
 #, php-format
 msgctxt "%s: Name of current post."
 msgid "Continue reading%s&hellip;"
 msgstr ""
 
-#: includes/setup/setup.php:2909
+#: includes/setup/setup.php:2895
 msgctxt "Pagination text (visible): previous."
 msgid "&laquo;"
 msgstr ""
 
-#: includes/setup/setup.php:2910
+#: includes/setup/setup.php:2896
 msgctxt "Pagination text (hidden): previous."
 msgid "Previous page"
 msgstr ""
 
-#: includes/setup/setup.php:2911
+#: includes/setup/setup.php:2897
 msgctxt "Pagination text (hidden): next."
 msgid "Next page"
 msgstr ""
 
-#: includes/setup/setup.php:2912
+#: includes/setup/setup.php:2898
 msgctxt "Pagination text (visible): next."
 msgid "&raquo;"
 msgstr ""
 
-#: includes/setup/setup.php:2920
+#: includes/setup/setup.php:2906
 msgid "Posts Navigation"
 msgstr ""
 
-#: includes/setup/setup.php:2950
+#: includes/setup/setup.php:2936
 msgid "All posts"
 msgstr ""
 

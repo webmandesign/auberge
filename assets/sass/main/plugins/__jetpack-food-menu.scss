@@ -87,8 +87,8 @@
 .menu-group {
 
 	&-header {
-		padding-top: 3.62rem;
-		margin-top: -3.62rem;
+		padding-top: 12rem;
+		margin-top: -12rem;
 		margin-bottom: 2.62em;
 
 		@include responsive( map_get( $breakpoint, 'm' ) ) {
