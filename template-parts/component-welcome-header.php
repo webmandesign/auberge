@@ -8,7 +8,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    2.2.0
- * @version  2.2.0
+ * @version  2.2.1
  */
 
 
@@ -45,9 +45,9 @@
 
 <p class="wm-actions">
 
-	<a href="https://www.webmandesign.eu/manual/auberge/" class="button button-primary button-hero" target="_blank"><?php esc_html_e( 'Theme Documentation', 'auberge' ); ?></a>
+	<a href="https://webmandesign.github.io/docs/auberge/" class="button button-primary button-hero" target="_blank"><?php esc_html_e( 'Theme Documentation', 'auberge' ); ?></a>
 
-	<a href="https://www.webmandesign.eu/projects-references/#links-support" class="button button-hero" target="_blank"><?php esc_html_e( 'Support Center', 'auberge' ); ?></a>
+	<a href="https://www.webmandesign.eu/reference/#links-support" class="button button-hero" target="_blank"><?php esc_html_e( 'Support Center', 'auberge' ); ?></a>
 
 </p>
 

@@ -8,7 +8,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    2.2.0
- * @version  2.2.0
+ * @version  2.2.1
  */
 
 
@@ -27,7 +27,7 @@
 
 	<p>
 		<?php esc_html_e( 'Alternatively (such as when the automated installation fails) you can follow theme documentation instructions for manual demo content installation.', 'auberge' ); ?>
-		<a href="https://www.webmandesign.eu/manual/auberge/#demo-content" target="_blank"><?php esc_html_e( 'Read the instructions &raquo;', 'auberge' ); ?></a>
+		<a href="https://webmandesign.github.io/docs/auberge/#demo-content" target="_blank"><?php esc_html_e( 'Read the instructions &raquo;', 'auberge' ); ?></a>
 	</p>
 
 	<?php if ( ! ( class_exists( 'OCDI_Plugin' ) || class_exists( 'PT_One_Click_Demo_Import' ) ) ) : ?>

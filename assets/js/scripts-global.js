@@ -5,7 +5,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0
- * @version  2.2.0
+ * @version  2.2.1
  *
  * Contents:
  *
@@ -231,6 +231,13 @@
 									} );
 
 						} );
+
+					setTimeout( function() {
+
+						$postsContainers
+							.masonry( 'reload' );
+
+					}, 600 );
 
 
 
@@ -511,6 +518,9 @@
 											.masonry( 'reload' );
 
 										setTimeout( function() {
+
+											$postsContainers
+												.masonry( 'reload' );
 
 											$( '#footer-widgets-container' )
 												.masonry( 'reload' );

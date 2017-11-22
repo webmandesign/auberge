@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    2.1
- * @version  2.1.1
+ * @version  2.2.1
  *
  * Contents:
  *
@@ -123,7 +123,7 @@ class Auberge_One_Click_Demo_Import {
 		 * Info texts
 		 *
 		 * @since    2.1
-		 * @version  2.1
+		 * @version  2.2.1
 		 *
 		 * @param  string $text  Default intro text.
 		 */
@@ -140,7 +140,7 @@ class Auberge_One_Click_Demo_Import {
 					$text .= '<p>';
 					$text .= esc_html__( 'Please note that imported media files (such as images, video and audio files) are of low quality to prevent copyright infringement.', 'auberge' );
 					$text .= ' ' . esc_html__( 'Please read "Credits" section of theme documentation for reference where the demo media files were obtained from.', 'auberge' );
-					$text .= ' <a href="https://www.webmandesign.eu/manual/auberge/#credits" target="_blank">' . esc_html__( 'Get media for your website &raquo;', 'auberge' ) . '</a>';
+					$text .= ' <a href="https://webmandesign.github.io/docs/auberge/#credits" target="_blank">' . esc_html__( 'Get media for your website &raquo;', 'auberge' ) . '</a>';
 					$text .= '</p>';
 
 				$text .= '</div>';

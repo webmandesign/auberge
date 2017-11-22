@@ -24,12 +24,12 @@ The theme was tested and is compatible with Chrome, Safari, Opera, Firefox, Inte
 
 ## Documentation
 
-User manual available at http://www.webmandesign.eu/manual/auberge/
+User manual available at https://webmandesign.github.io/docs/auberge/
 
 
 ## Support
 
-In case of additional questions please visit theme [support center](https://www.webmandesign.eu/projects-references/#links-support).
+In case of additional questions please visit theme [support center](https://www.webmandesign.eu/reference/#links-support).
 
 
 ## Changelog

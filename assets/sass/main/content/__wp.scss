@@ -66,3 +66,16 @@
 		}
 
 	}
+
+
+
+// Media player
+
+	.mejs-container {
+		margin-bottom: 1.62em;
+
+		&::last-child {
+			margin-bottom: 0;
+		}
+
+	}

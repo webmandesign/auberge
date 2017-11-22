@@ -1,5 +1,23 @@
 # Auberge Changelog
 
+## 2.2.1
+
+* **Update**: Improved WordPress 4.9 compatibility
+* **Update**: Updated documentation URL
+* **Update**: Improved masonry blog layout
+
+### Files changed:
+
+	changelog.md
+	style.css
+	assets/js/scripts-global.js
+	assets/sass/main.scss
+	assets/sass/starter/_starter.scss
+	includes/plugins/one-click-demo-import/class-one-click-demo-import.php
+	template-parts/component-welcome-demo.php
+	template-parts/component-welcome-header.php
+
+
 ## 2.2.0
 
 * **Add**: RTL language support
