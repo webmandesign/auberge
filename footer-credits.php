@@ -9,7 +9,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    2.0
- * @version  2.3.0
+ * @version  2.4.0
  */
 
 
@@ -20,7 +20,7 @@
  * Helper variables
  */
 
-	$custom_credits = (string) apply_filters( 'wmhook_wm_credits_output', '' );
+	$custom_credits = trim( (string) apply_filters( 'wmhook_wm_credits_output', '' ) );
 
 
 
@@ -51,6 +51,10 @@
 					'<a href="' . esc_url( wp_get_theme( get_template() )->get( 'ThemeURI' ) ) . '"><strong>' . wp_get_theme( get_template() )->get( 'Name' ) . '</strong></a>',
 					'<a href="' . esc_url( __( 'https://wordpress.org/', 'auberge' ) ) . '">WordPress</a>'
 				);
+
+				if ( function_exists( 'the_privacy_policy_link' ) ) {
+					the_privacy_policy_link( '<span class="sep"> | </span>' );
+				}
 
 				?>
 				<span class="sep"> | </span>

@@ -5,7 +5,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0
- * @version  2.2.1
+ * @version  2.4.0
  *
  * Contents:
  *
@@ -182,7 +182,6 @@
 						'autoplaySpeed'  : ( ! $( '#site-banner' ).data( 'speed' ) ) ? ( 5400 ) : ( $( '#site-banner' ).data( 'speed' ) ),
 						'cssEase'        : 'ease-in-out',
 						'dots'           : true,
-						'draggable'      : false,
 						'easing'         : 'easeInOutBack',
 						'fade'           : true,
 						'pauseOnHover'   : true,

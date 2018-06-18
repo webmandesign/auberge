@@ -1,5 +1,23 @@
 # Auberge Changelog
 
+## 2.4.0
+
+* **Update**: WordPress 4.9.6 compatibility (GDPR)
+* **Update**: Scripts: Slick.js 1.8.0
+* **Fix**: Tag Cloud widget styles
+* **Fix**: Mobile devices widget width in horizontal sidebars with 2 widgets
+
+### Files changed:
+
+	changelog.md
+	footer-credits.php
+	style.css
+	assets/js/scripts-global.js
+	assets/js/vendor/*.*
+	assets/sass/main.scss
+	includes/setup/setup.php
+
+
 ## 2.3.0
 
 * **Update**: Improved One Click Demo Import plugin compatibility

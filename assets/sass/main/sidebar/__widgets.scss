@@ -52,6 +52,20 @@
 
 	}
 
+	.widget .tagcloud a {
+
+		&:hover,
+		&:focus,
+		&:active {
+
+			&::before {
+				display: none;
+			}
+
+		}
+
+	}
+
 
 
 // Imports

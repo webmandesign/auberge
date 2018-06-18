@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0
- * @version  2.2.0
+ * @version  2.4.0
  *
  * Contents:
  *
@@ -1377,7 +1377,7 @@
 	 * HTML Body classes
 	 *
 	 * @since    1.0
-	 * @version  2.0
+	 * @version  2.4.0
 	 *
 	 * @param  array $classes
 	 */
@@ -1405,6 +1405,12 @@
 
 					if ( is_singular() ) {
 						$body_classes['is-singular'] = ++$i;
+					}
+
+				// Privacy Policy page
+
+					if ( (int) get_option( 'wp_page_for_privacy_policy' ) === get_the_ID() ) {
+						$classes[] = 'page-privacy-policy';
 					}
 
 				// Has featured image?

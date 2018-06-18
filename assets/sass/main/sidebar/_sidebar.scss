@@ -52,6 +52,14 @@
 
 			@include responsive( map_get( $breakpoint, 'l' ) ) {
 				width: 29.333%; // 3 columns by default
+
+				// 2 columns
+
+					&:nth-child(2):nth-last-child(2),
+					&:nth-child(3):nth-last-child(1) {
+						width: 46%;
+					}
+
 			}
 
 			// 1 column
@@ -59,13 +67,6 @@
 				&:nth-child(2):nth-last-child(1) {
 					float: none;
 					width: 96%;
-				}
-
-			// 2 columns
-
-				&:nth-child(2):nth-last-child(2),
-				&:nth-child(3):nth-last-child(1) {
-					width: 46%;
 				}
 
 			&-title {

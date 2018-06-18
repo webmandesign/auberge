@@ -472,6 +472,8 @@ input[disabled] { cursor: default; opacity: .66; }
 
 .comment-form label { display: block; }
 
+.comment-form [type="checkbox"] + label, .comment-form [type="radio"] + label { display: inline-block; }
+
 .comment-form-author input, .comment-form-email input, .comment-form-url input, .comment-form-comment textarea { width: 100%; }
 
 .comment-form-url { clear: both; }
@@ -1430,11 +1432,10 @@ a img:hover { box-shadow: 0 1rem 0.62rem -0.62rem rgba(0, 0, 0, 0.25); }
 
 @media only screen and (min-width: 42em) { .front-page-widgets-container .widget, .footer-widgets-container .widget { float: left; width: 46%; } }
 
-@media only screen and (min-width: 55em) { .front-page-widgets-container .widget, .footer-widgets-container .widget { width: 29.333%; } }
+@media only screen and (min-width: 55em) { .front-page-widgets-container .widget, .footer-widgets-container .widget { width: 29.333%; }
+  .front-page-widgets-container .widget:nth-child(2):nth-last-child(2), .footer-widgets-container .widget:nth-child(2):nth-last-child(2), .front-page-widgets-container .widget:nth-child(3):nth-last-child(1), .footer-widgets-container .widget:nth-child(3):nth-last-child(1) { width: 46%; } }
 
 .front-page-widgets-container .widget:nth-child(2):nth-last-child(1), .footer-widgets-container .widget:nth-child(2):nth-last-child(1) { float: none; width: 96%; }
-
-.front-page-widgets-container .widget:nth-child(2):nth-last-child(2), .footer-widgets-container .widget:nth-child(2):nth-last-child(2), .front-page-widgets-container .widget:nth-child(3):nth-last-child(1), .footer-widgets-container .widget:nth-child(3):nth-last-child(1) { width: 46%; }
 
 .front-page-widgets-container .widget-title, .footer-widgets-container .widget-title { color: inherit; }
 
@@ -1454,6 +1455,8 @@ a img:hover { box-shadow: 0 1rem 0.62rem -0.62rem rgba(0, 0, 0, 0.25); }
 .sidebar .widget:first-child { margin: 0; }
 
 @media only screen and (min-width: 55em) { .sidebar .toggle-mobile-sidebar + .widget { margin: 0; } }
+
+.widget .tagcloud a:hover::before, .widget .tagcloud a:focus::before, .widget .tagcloud a:active::before { display: none; }
 
 /* FILE: main/sidebar/__widget-icons.scss */
 .widget_archive li::before, .widget_categories li::before, .widget_nav_menu li::before, .widget_pages li::before { content: '\f307'; margin-right: .38em; vertical-align: middle; }
