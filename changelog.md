@@ -1,5 +1,37 @@
 # Auberge Changelog
 
+## 2.5.0
+
+* **Add**: Functionality to use image logo together with site title text
+* **Add**: Yelp social icon
+* **Update**: Using SVG for social icons
+* **Update**: Food Menu item title/price styles
+* **Update**: Icons updated to Genericons Neue
+* **Update**: Removing documentation folder in favor of online docs
+* **Update**: Localization
+* **Fix**: NS Theme Check plugin test warnings
+* **Fix**: Privacy policy page body class
+* **Fix**: Highlight/mark styles
+
+### Files changed:
+
+	changelog.md
+	comments.php
+	style.css
+	assets/fonts/genericons-neue/genericons-neue.css
+	assets/js/customize-preview.js
+	assets/sass/main.scss
+	assets/sass/starter/_starter.scss
+	includes/setup/setup.php
+	includes/svg/class-svg.php
+	includes/tgmpa/class-tgm-plugin-activation.php
+	languages/*.*
+	library/core.php
+	library/customize.php
+	template-parts/menu-social.php
+	template-parts/site-branding.php
+
+
 ## 2.4.0
 
 * **Update**: WordPress 4.9.6 compatibility (GDPR)

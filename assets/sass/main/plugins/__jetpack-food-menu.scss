@@ -215,20 +215,24 @@
 			overflow: hidden;
 		}
 
+		.entry-title {
+
+			&,
+			& > a {
+				display: flex;
+				justify-content: space-between;
+				width: 100%;
+			}
+
+		}
+
 	}
 
-
-
 	&-title {
-		float: $left; // {{RTL}}
-		max-width: 80%;
 		letter-spacing: 0;
 	}
 
-
-
 	&-price {
-		float: $right;
 		margin-#{$left}: 1em;
 		letter-spacing: 0;
 	}

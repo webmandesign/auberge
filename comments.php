@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0
- * @version  2.0
+ * @version  2.5.0
  */
 
 
@@ -45,7 +45,7 @@ do_action( 'tha_comments_before' );
 		<?php
 
 		printf(
-			esc_html( _nx( '1 comment on &ldquo;%2$s&rdquo;', '%1$s comments on &ldquo;%2$s&rdquo;', get_comments_number(), 'Comments list title.', 'auberge' ) ),
+			esc_html( _nx( '%1$d comment on &ldquo;%2$s&rdquo;', '%1$d comments on &ldquo;%2$s&rdquo;', get_comments_number(), 'Comments list title.', 'auberge' ) ),
 			number_format_i18n( get_comments_number() ),
 			'<span>' . get_the_title() . '</span>'
 		);

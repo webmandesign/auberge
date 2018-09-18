@@ -11,7 +11,7 @@
 // Main Genericon extender
 
 	%genericon {
-		font-family: 'Genericons';
+		font-family: 'Genericons-Neue';
 		font-style: normal;
 		font-weight: normal;
 		font-variant: normal;
@@ -24,23 +24,31 @@
 
 // Icons styles
 
-	.genericon {
+	.svgicon {
+		display: inline-block;
+		position: relative;
+		width: 1em;
+		height: 1em;
+		top: -0.0625em;
+		fill: currentColor;
+		vertical-align: middle;
+	}
 
-		&::before {
-			@extend %font_smoothing;
-			line-height: 1;
-		}
+	.svg-fallback {
+		display: none;
+	}
 
-		&.vertical-align-middle::before {
-			@extend %vertical_align_middle;
-		}
 
-		&.vertical-align-baseline::before {
-			@extend %vertical_align_baseline;
-		}
 
-		&.vertical-align-bottom::before {
-			@extend %vertical_align_bottom;
-		}
+// Genericons Neue CSS
+// @link  https://github.com/Automattic/genericons-neue/blob/master/icon-font/Genericons-Neue.css
 
+	.genericons-neue::before {
+		@extend %genericon;
+		display: inline-block;
+		line-height: 1;
+		text-rendering: auto;
+		-moz-osx-font-smoothing: grayscale;
+		 -webkit-font-smoothing: antialiased;
+		vertical-align: middle;
 	}

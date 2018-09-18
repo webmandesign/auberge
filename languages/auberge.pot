@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Auberge\n"
 "Report-Msgid-Bugs-To: http://support.webmandesign.eu\n"
-"POT-Creation-Date: 2017-11-22 15:19+0100\n"
+"POT-Creation-Date: 2018-09-18 16:26+0200\n"
 "PO-Revision-Date: 2015-04-21 20:43+0100\n"
 "Last-Translator: WebMan - Oliver Juhas <webmandesigneu@gmail.com>\n"
 "Language-Team: \n"
@@ -11,7 +11,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.4\n"
+"X-Generator: Poedit 2.1.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
@@ -32,8 +32,8 @@ msgstr ""
 #: comments.php:48
 #, php-format
 msgctxt "Comments list title."
-msgid "1 comment on &ldquo;%2$s&rdquo;"
-msgid_plural "%1$s comments on &ldquo;%2$s&rdquo;"
+msgid "%1$d comment on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$d comments on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
@@ -68,7 +68,7 @@ msgstr ""
 msgid "https://wordpress.org/"
 msgstr ""
 
-#: footer-credits.php:57 template-parts/menu-social.php:40
+#: footer-credits.php:61 template-parts/menu-social.php:27
 msgid "Back to top &uarr;"
 msgstr ""
 
@@ -199,248 +199,248 @@ msgstr ""
 msgid "View the list of required plugins &raquo;"
 msgstr ""
 
-#: includes/setup/setup.php:111
+#: includes/setup/setup.php:115
 msgid " - do not use Google Font"
 msgstr ""
 
-#: includes/setup/setup.php:115
+#: includes/setup/setup.php:119
 msgctxt "Google Font default setup options group title."
 msgid "Theme default"
 msgstr ""
 
-#: includes/setup/setup.php:121 includes/setup/setup.php:126
-#: includes/setup/setup.php:132 includes/setup/setup.php:137
-#: includes/setup/setup.php:142 includes/setup/setup.php:147
-#: includes/setup/setup.php:152 includes/setup/setup.php:156
-#: includes/setup/setup.php:162
+#: includes/setup/setup.php:125 includes/setup/setup.php:130
+#: includes/setup/setup.php:136 includes/setup/setup.php:141
+#: includes/setup/setup.php:146 includes/setup/setup.php:151
+#: includes/setup/setup.php:156 includes/setup/setup.php:160
+#: includes/setup/setup.php:166
 #, php-format
 msgctxt "Google Font setup recommendation (numbered) group title."
 msgid "Recommendation #%d"
 msgstr ""
 
-#: includes/setup/setup.php:170
+#: includes/setup/setup.php:174
 msgctxt "Title for selection of fonts picked from Google Fontss"
 msgid "Fonts selection"
 msgstr ""
 
-#: includes/setup/setup.php:222
+#: includes/setup/setup.php:226
 msgid "Sidebar"
 msgstr ""
 
-#: includes/setup/setup.php:223
+#: includes/setup/setup.php:227
 msgid "Page sidebar."
 msgstr ""
 
-#: includes/setup/setup.php:226
+#: includes/setup/setup.php:230
 msgid "Front Page Widgets"
 msgstr ""
 
-#: includes/setup/setup.php:227
+#: includes/setup/setup.php:231
 msgid ""
 "This widgets area is displayed below the Banner area on the front page "
 "(homepage)."
 msgstr ""
 
-#: includes/setup/setup.php:230
+#: includes/setup/setup.php:234
 msgid "Footer Widgets"
 msgstr ""
 
-#: includes/setup/setup.php:231
+#: includes/setup/setup.php:235
 msgid "Masonry layout is used to display footer widgets."
 msgstr ""
 
-#: includes/setup/setup.php:315 template-parts/menu-primary.php:20
+#: includes/setup/setup.php:319 template-parts/menu-primary.php:20
 msgid "Primary Menu"
 msgstr ""
 
-#: includes/setup/setup.php:316
+#: includes/setup/setup.php:320
 msgid "Social Links Menu"
 msgstr ""
 
-#: includes/setup/setup.php:384
+#: includes/setup/setup.php:389
 msgctxt "Header image description."
 msgid "Coffee machine"
 msgstr ""
 
-#: includes/setup/setup.php:390
+#: includes/setup/setup.php:395
 msgctxt "Header image description."
 msgid "Restaurant interior from above"
 msgstr ""
 
-#: includes/setup/setup.php:396
+#: includes/setup/setup.php:401
 msgctxt "Header image description."
 msgid "Pouring coffee"
 msgstr ""
 
-#: includes/setup/setup.php:505
+#: includes/setup/setup.php:510
 msgid "Thank you for upgrading your theme."
 msgstr ""
 
-#: includes/setup/setup.php:506
+#: includes/setup/setup.php:511
 msgid "We have noticed you are using a child theme."
 msgstr ""
 
-#: includes/setup/setup.php:508
+#: includes/setup/setup.php:513
 msgid ""
 "Please note that there has been a lot of changes in this new theme version "
 "and you should check the code in your child theme for compatibility!"
 msgstr ""
 
-#: includes/setup/setup.php:511
+#: includes/setup/setup.php:516
 msgid "Read theme changelog &raquo;"
 msgstr ""
 
-#: includes/setup/setup.php:592
+#: includes/setup/setup.php:597
 #, php-format
 msgctxt "%s: Theme name."
 msgid "Thank you for installing the %s theme!"
 msgstr ""
 
-#: includes/setup/setup.php:598
+#: includes/setup/setup.php:603
 msgid "Please read the information about the theme."
 msgstr ""
 
-#: includes/setup/setup.php:607
+#: includes/setup/setup.php:612
 #, php-format
 msgctxt "%s: Theme name."
 msgid "Get started with %s"
 msgstr ""
 
-#: includes/setup/setup.php:661
+#: includes/setup/setup.php:666
 msgid "In posts list."
 msgstr ""
 
-#: includes/setup/setup.php:672
+#: includes/setup/setup.php:677
 msgid "In single post page."
 msgstr ""
 
-#: includes/setup/setup.php:678
+#: includes/setup/setup.php:683
 msgid "In front page banner."
 msgstr ""
 
-#: includes/setup/setup.php:684
+#: includes/setup/setup.php:689
 msgid "In food menu list."
 msgstr ""
 
-#: includes/setup/setup.php:821
+#: includes/setup/setup.php:826
 msgctxt "WordPress predefined image size name."
 msgid "Thumbnail size"
 msgstr ""
 
-#: includes/setup/setup.php:822
+#: includes/setup/setup.php:827
 msgctxt "WordPress predefined image size name."
 msgid "Medium size"
 msgstr ""
 
-#: includes/setup/setup.php:823
+#: includes/setup/setup.php:828
 msgctxt "WordPress predefined image size name."
 msgid "Large size"
 msgstr ""
 
-#: includes/setup/setup.php:856
+#: includes/setup/setup.php:861
 msgid "Recommended image sizes"
 msgstr ""
 
-#: includes/setup/setup.php:857
+#: includes/setup/setup.php:862
 msgid ""
 "For the theme to work correctly, please, set these recommended image sizes:"
 msgstr ""
 
-#: includes/setup/setup.php:863
+#: includes/setup/setup.php:868
 msgid "Size name"
 msgstr ""
 
-#: includes/setup/setup.php:864
+#: includes/setup/setup.php:869
 msgid "Size parameters"
 msgstr ""
 
-#: includes/setup/setup.php:865
+#: includes/setup/setup.php:870
 msgid "Theme usage"
 msgstr ""
 
-#: includes/setup/setup.php:873
+#: includes/setup/setup.php:878
 msgid "cropped"
 msgstr ""
 
-#: includes/setup/setup.php:873
+#: includes/setup/setup.php:878
 msgid "scaled"
 msgstr ""
 
-#: includes/setup/setup.php:881
+#: includes/setup/setup.php:886
 msgid ""
 "Additional image size added by the theme. Can not be changed on this page."
 msgstr ""
 
-#: includes/setup/setup.php:886
+#: includes/setup/setup.php:891
 #, php-format
 msgctxt "1: image width, 2: image height, 3: cropped or scaled?"
 msgid "%1$d &times; %2$d, %3$s"
 msgstr ""
 
-#: includes/setup/setup.php:1083
+#: includes/setup/setup.php:1088
 msgid "Button link"
 msgstr ""
 
-#: includes/setup/setup.php:1317
+#: includes/setup/setup.php:1322
 msgctxt "Back to food menu sections selectors button title."
 msgid "&uarr; Menu sections"
 msgstr ""
 
-#: includes/setup/setup.php:2142
+#: includes/setup/setup.php:2350
 msgid "Breadcrumbs navigation"
 msgstr ""
 
-#: includes/setup/setup.php:2630
+#: includes/setup/setup.php:2838
 msgid "Previous post"
 msgstr ""
 
-#: includes/setup/setup.php:2631
+#: includes/setup/setup.php:2839
 msgid "Next post"
 msgstr ""
 
-#: includes/setup/setup.php:2675
+#: includes/setup/setup.php:2883
 msgid "This is sticky post"
 msgstr ""
 
-#: includes/setup/setup.php:2704
+#: includes/setup/setup.php:2912
 msgid "This content is password protected."
 msgstr ""
 
-#: includes/setup/setup.php:2704
+#: includes/setup/setup.php:2912
 msgid "Enter the password to view it."
 msgstr ""
 
-#: includes/setup/setup.php:2824
+#: includes/setup/setup.php:3026
 #, php-format
 msgctxt "%s: Name of current post."
 msgid "Continue reading%s&hellip;"
 msgstr ""
 
-#: includes/setup/setup.php:2895
+#: includes/setup/setup.php:3097
 msgctxt "Pagination text (visible): previous."
 msgid "&laquo;"
 msgstr ""
 
-#: includes/setup/setup.php:2896
+#: includes/setup/setup.php:3098
 msgctxt "Pagination text (hidden): previous."
 msgid "Previous page"
 msgstr ""
 
-#: includes/setup/setup.php:2897
+#: includes/setup/setup.php:3099
 msgctxt "Pagination text (hidden): next."
 msgid "Next page"
 msgstr ""
 
-#: includes/setup/setup.php:2898
+#: includes/setup/setup.php:3100
 msgctxt "Pagination text (visible): next."
 msgid "&raquo;"
 msgstr ""
 
-#: includes/setup/setup.php:2906
+#: includes/setup/setup.php:3108
 msgid "Posts Navigation"
 msgstr ""
 
-#: includes/setup/setup.php:2936
+#: includes/setup/setup.php:3138
 msgid "All posts"
 msgstr ""
 
@@ -1160,99 +1160,93 @@ msgstr ""
 msgid "Press CTRL key for multiple selection."
 msgstr ""
 
-#: library/core.php:146
-#, php-format
-msgctxt "Site logo image \"alt\" HTML attribute text."
-msgid "%s logo"
-msgstr ""
-
-#: library/core.php:248
+#: library/core.php:150
 #, php-format
 msgctxt "%s: post title."
 msgid "\"%s\" table of contents"
 msgstr ""
 
-#: library/core.php:286
+#: library/core.php:188
 #, php-format
 msgid "Page %s"
 msgstr ""
 
-#: library/core.php:422
+#: library/core.php:324
 msgctxt "Post meta info description: author name."
 msgid "Written by:"
 msgstr ""
 
-#: library/core.php:438
+#: library/core.php:340
 msgctxt "Post meta info description: categories list."
 msgid "Categorized in:"
 msgstr ""
 
-#: library/core.php:459
+#: library/core.php:361
 msgctxt "Post meta info description: comments count."
 msgid "Comments:"
 msgstr ""
 
-#: library/core.php:460
+#: library/core.php:362
 #, php-format
 msgctxt "%s: number of comments."
 msgid "Comments: %s"
 msgstr ""
 
-#: library/core.php:460
+#: library/core.php:362
 msgctxt "Title for number of comments in post meta."
 msgid "Comments:"
 msgstr ""
 
-#: library/core.php:473
+#: library/core.php:375
 msgctxt "Post meta info description: publish date."
 msgid "Posted on:"
 msgstr ""
 
-#: library/core.php:498
+#: library/core.php:400
 #, php-format
 msgid "Edit the \"%s\""
 msgstr ""
 
-#: library/core.php:498
+#: library/core.php:400
 msgctxt "Edit post link."
 msgid "Edit"
 msgstr ""
 
-#: library/core.php:545
+#: library/core.php:447
 msgctxt "Post meta info description: post bookmark link."
 msgid "Bookmark link:"
 msgstr ""
 
-#: library/core.php:546
+#: library/core.php:448
 #, php-format
 msgid "Permalink to \"%s\""
 msgstr ""
 
-#: library/core.php:560
+#: library/core.php:462
 msgctxt "Post meta info description: tags list."
 msgid "Tagged as:"
 msgstr ""
 
-#: library/core.php:574
+#: library/core.php:476
 msgid "Views count"
 msgstr ""
 
-#: library/core.php:669
+#: library/core.php:563
 #, php-format
 msgctxt "Paginated content title suffix, %s: page number."
 msgid "(page %s)"
 msgstr ""
 
-#: library/core.php:934
+#: library/core.php:837
 msgid "Skip to content"
 msgstr ""
 
-#: library/customize.php:410
+#: library/customize.php:414
 msgctxt "Customizer section title."
 msgid "Background"
 msgstr ""
 
-#: library/customize.php:415
+#: library/customize.php:419
 msgctxt "Customizer section title."
 msgid "Header"
 msgstr ""
@@ -1541,10 +1535,10 @@ msgctxt "Mobile navigation toggle button title."
 msgid "Menu"
 msgstr ""
 
-#: template-parts/menu-social.php:28
-msgid "Social Menu"
+#: template-parts/menu-social.php:26
+msgid "Back to top"
 msgstr ""
 
-#: template-parts/menu-social.php:40
-msgid "Back to top"
+#: template-parts/menu-social.php:47
+msgid "Social Menu"
 msgstr ""

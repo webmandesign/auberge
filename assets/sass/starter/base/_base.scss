@@ -104,8 +104,12 @@
 	ins,
 	.highlight {
 		padding: ( $golden_minor / 2 +em ) 0;
-		margin: 0 ( $golden_minor +em );
-		box-decoration-break: clone;
+
+		@supports ( box-decoration-break: clone ) {
+			margin: 0 ( $golden_minor +em );
+			box-decoration-break: clone;
+		}
+
 	}
 
 	s,

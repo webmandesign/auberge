@@ -24,40 +24,52 @@
 		margin-top: .38em;
 		line-height: inherit;
 
-		li {
-			float: none;
-			display: inline;
-		}
-
-		a {
-			padding: 0 .38em;
-			padding-#{$left}: 0; // {{RTL}}
-		}
-
 		@include responsive( map_get( $breakpoint, 'm' ) ) {
 			margin-top: 0;
 		}
 
 	}
 
-	ul {
+	.widget_nav_menu & {
+		float: none;
+	}
+
+	.social-links-items {
 		margin: 0;
 		list-style: none;
-		overflow: hidden;
 	}
 
 	li {
-		float: $left; // {{RTL}}
+		text-align: center;
+		display: inline-block;
+
+		.widget_nav_menu & {
+			font-size: 1.38em;
+			border: 0;
+
+			&::before {
+				display: none;
+			}
+
+			&:hover {
+				transform: none;
+			}
+
+		}
+
 	}
 
 	a {
-		padding-#{$left}: .38em; // {{RTL}}
+		display: block;
+		margin: 1px; // For focus outline to be visible in whole.
+		text-decoration: none;
 		color: inherit;
 		opacity: .5;
-		transition: all .4s;
+		transition: opacity .4s;
 
 		@include responsive( map_get( $breakpoint, 'xl' ) ) {
-			padding-#{$left}: .62em; // {{RTL}}
+			padding-left: $golden_minor / 2 +em;
+			padding-right: $golden_minor / 2 +em;
 		}
 
 		&:hover {
@@ -65,35 +77,21 @@
 			opacity: 1;
 		}
 
-		&::before {
-			@extend %genericon;
-			content: '';
-			display: inline-block;
-			vertical-align: top;
-		}
-
 		&.back-to-top {
 			@extend %font_weight_400;
 
 			&::before {
+				@extend %genericon;
 				content: '\f435';
-				padding: 0 .38em;
+				display: inline-block;
+				padding: 0 ( $golden_minor +em );
+				vertical-align: top;
 			}
 
 		}
 
-	}
-
-
-
-	@each $social, $params in $social_icons {
-
-		$href: nth( $params, 2 );
-		$char: nth( $params, 1 );
-
-		a[href*="#{$href}"]::before,
-		.#{$social} a::before {
-			content: $char;
+		.widget_nav_menu & {
+			opacity: 1;
 		}
 
 	}

@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0
- * @version  2.2.0
+ * @version  2.5.0
  *
  * Contents:
  *
@@ -334,7 +334,7 @@
 	 * Customizer renderer
 	 *
 	 * @since    1.0
-	 * @version  2.2.0
+	 * @version  2.5.0
 	 *
 	 * @param  object $wp_customize WP customizer object.
 	 */
@@ -399,6 +399,10 @@
 					$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 					$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
 					$wp_customize->get_setting( 'header_textcolor' )->transport = 'postMessage';
+
+				// Remove header color in favor of theme options
+
+					$wp_customize->remove_control( 'header_textcolor' );
 
 				// Move background color setting alongside background image
 
@@ -910,7 +914,7 @@
 	 * Caching $output into 'auberge-custom-css' transient.
 	 *
 	 * @since    1.0
-	 * @version  2.0
+	 * @version  2.5.0
 	 *
 	 * @param  bool $set_cache  Determines whether the results should be cached or not.
 	 * @param  bool $return     Whether to return a value or just run the process.
@@ -922,8 +926,8 @@
 
 				global $wp_customize;
 
-				if ( ! isset( $wp_customize ) || ! is_object( $wp_customize ) ) {
-					$wp_customize = null;
+				if ( ! $wp_customize instanceof WP_Customize_Manager ) {
+					return;
 				}
 
 				$output        = (string) apply_filters( 'wmhook_custom_styles', '' );

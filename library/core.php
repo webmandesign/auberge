@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0
- * @version  2.0
+ * @version  2.5.0
  *
  * Contents:
  *
@@ -97,112 +97,14 @@
 	 * @link  http://blog.rrwd.nl/2014/11/21/html5-headings-in-wordpress-lets-fight/
 	 *
 	 * @since    1.0
-	 * @version  2.0
+	 * @version  2.5.0
 	 */
 	if ( ! function_exists( 'wm_logo' ) ) {
 		function wm_logo( $container_class = 'site-branding' ) {
 
-			// Helper variables
-
-				$output = array();
-
-				// @todo Remove `wp_title` with WordPress 4.6
-				$document_title = ( 0 > version_compare( $GLOBALS['wp_version'], '4.4' ) ) ? ( wp_title( '|', false, 'right' ) ) : ( wp_get_document_title() ); // Since WordPress 4.4
-
-				$custom_logo = get_theme_mod( 'custom_logo' ); // Since WordPress 4.5
-
-				// If we don't get WordPress 4.5+ custom logo, try Jetpack Site Logo
-
-					if ( empty( $custom_logo ) && function_exists( 'jetpack_get_site_logo' ) ) {
-						$custom_logo = get_option( 'site_logo', array() );
-						$custom_logo = ( isset( $custom_logo['id'] ) && $custom_logo['id'] ) ? ( absint( $custom_logo['id'] ) ) : ( false );
-					}
-
-				$blog_info = apply_filters( 'wmhook_wm_logo_blog_info', array(
-						'name'        => trim( get_bloginfo( 'name' ) ),
-						'description' => trim( get_bloginfo( 'description' ) ),
-					), $container_class );
-
-				$args = apply_filters( 'wmhook_wm_logo_args', array(
-						'logo_image' => ( ! empty( $custom_logo ) ) ? ( $custom_logo ) : ( false ),
-						'logo_type'  => 'text',
-						'title_att'  => ( $blog_info['description'] ) ? ( $blog_info['name'] . ' | ' . $blog_info['description'] ) : ( $blog_info['name'] ),
-						'url'        => home_url( '/' ),
-						'container'  => $container_class,
-					) );
-
-
-			// Processing
-
-				// Logo image
-
-					if ( $args['logo_image'] ) {
-
-						$img_id = ( is_numeric( $args['logo_image'] ) ) ? ( absint( $args['logo_image'] ) ) : ( wm_get_image_id_from_url( $args['logo_image'] ) );
-
-						if ( $img_id ) {
-
-							$atts = (array) apply_filters( 'wmhook_wm_logo_image_atts', array(
-									'alt'   => esc_attr( sprintf( _x( '%s logo', 'Site logo image "alt" HTML attribute text.', 'auberge' ), $blog_info['name'] ) ),
-									'title' => esc_attr( $args['title_att'] ),
-									'class' => '',
-								) );
-
-							$args['logo_image'] = wp_get_attachment_image( absint( $img_id ), 'full', false, $atts );
-
-						}
-
-						$args['logo_type'] = 'img';
-
-					}
-
-					$args['logo_image'] = apply_filters( 'wmhook_wm_logo_logo_image', $args['logo_image'] );
-
-				// Logo HTML
-
-					$logo_class = apply_filters( 'wmhook_wm_logo_class', 'site-title logo type-' . $args['logo_type'], $args );
-
-					if ( $args['container'] ) {
-						$output[1] = '<div class="' . esc_attr( trim( $args['container'] ) ) . '">';
-					}
-
-						if ( is_front_page() ) {
-							$output[10] = '<h1 id="site-title" class="' . esc_attr( $logo_class ) . '">';
-						} else {
-							$output[10] = '<h2 class="screen-reader-text">' . $document_title . '</h2>'; // To provide BODY heading on subpages
-							$output[15] = '<a id="site-title" class="' . esc_attr( $logo_class ) . '" href="' . esc_url( $args['url'] ) . '" title="' . esc_attr( $args['title_att'] ) . '" rel="home">';
-						}
-
-							if ( 'text' === $args['logo_type'] ) {
-								$output[30] = '<span class="text-logo">' . $blog_info['name'] . '</span>';
-							} else {
-								$output[30] = $args['logo_image'] . '<span class="screen-reader-text">' . $blog_info['name'] . '</span>';
-							}
-
-						if ( is_front_page() ) {
-							$output[40] = '</h1>';
-						} else {
-							$output[40] = '</a>';
-						}
-
-							if ( $blog_info['description'] ) {
-								$output[50] = '<div class="site-description">' . $blog_info['description'] . '</div>';
-							}
-
-					if ( $args['container'] ) {
-						$output[100] = '</div>';
-					}
-
-					// Filter output array
-
-						$output = (array) apply_filters( 'wmhook_wm_logo_output', $output, $args );
-
-						ksort( $output );
-
-
 			// Output
 
-				echo implode( '', $output );
+				get_template_part( 'template-parts/site', 'branding' );
 
 		}
 	} // /wm_logo
@@ -622,7 +524,7 @@
 	 * Paginated heading suffix
 	 *
 	 * @since    1.0
-	 * @version  2.0
+	 * @version  2.5.0
 	 *
 	 * @param  string $tag           Wrapper tag
 	 * @param  string $singular_only Display only on singular posts of specific type
@@ -633,9 +535,9 @@
 			// Requirements check
 
 				if (
-						$singular_only
-						&& ! is_singular( $singular_only )
-					) {
+					$singular_only
+					&& ! is_singular( $singular_only )
+				) {
 					return;
 				}
 
@@ -644,16 +546,8 @@
 
 				global $page, $paged;
 
-				$output = '';
-
-				if ( ! isset( $paged ) ) {
-					$paged = 0;
-				}
-				if ( ! isset( $page ) ) {
-					$page = 0;
-				}
-
-				$paged = max( $page, $paged );
+				$output    = '';
+				$paginated = max( absint( $page ), absint( $paged ) );
 
 				$tag = trim( $tag );
 				if ( $tag ) {
@@ -665,8 +559,8 @@
 
 			// Processing
 
-				if ( 1 < $paged ) {
-					$output = ' ' . $tag[0] . sprintf( esc_html_x( '(page %s)', 'Paginated content title suffix, %s: page number.', 'auberge' ), number_format_i18n( $paged ) ) . $tag[1];
+				if ( 1 < $paginated ) {
+					$output = ' ' . $tag[0] . sprintf( esc_html_x( '(page %s)', 'Paginated content title suffix, %s: page number.', 'auberge' ), number_format_i18n( $paginated ) ) . $tag[1];
 				}
 
 
@@ -683,7 +577,7 @@
 	 * Checks for <!--more--> tag in post content
 	 *
 	 * @since    1.0
-	 * @version  1.0
+	 * @version  2.5.0
 	 *
 	 * @param  obj/absint $post
 	 */
@@ -692,26 +586,35 @@
 
 			// Helper variables
 
+				$output = false;
+
 				if ( empty( $post ) ) {
-					global $post;
+					$post = $GLOBALS['post'];
 				} elseif ( is_numeric( $post ) ) {
-					$post = get_post( absint( $post ) );
+					$post = get_post( $post );
 				}
 
 
 			// Requirements check
 
-				if (
-						! is_object( $post )
-						|| ! isset( $post->post_content )
-					) {
+				if ( ! $post instanceof WP_Post ) {
 					return;
+				}
+
+
+			// Processing
+
+				if ( preg_match( '/<!--more(.*?)?-->/', $post->post_content, $matches ) ) {
+					$output = true;
+					if ( ! empty( $matches[1] ) ) {
+						$output = strip_tags( wp_kses_no_null( trim( $matches[1] ) ) );
+					}
 				}
 
 
 			// Output
 
-				return strpos( $post->post_content, '<!--more-->' );
+				return $output;
 
 		}
 	} // /wm_has_more_tag
