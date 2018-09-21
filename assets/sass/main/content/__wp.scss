@@ -29,17 +29,6 @@
 		text-align: center;
 		z-index: 10;
 
-		.genericon {
-			margin-#{$left}: -.38em; // {{RTL}}
-			font-size: 18px;
-			vertical-align: bottom;
-
-			[dir="rtl"] & {
-				transform: scaleX( -1 );
-			}
-
-		}
-
 		&::before,
 		&::after {
 			content: '';

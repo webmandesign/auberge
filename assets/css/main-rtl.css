@@ -1161,10 +1161,6 @@ body:not(.sticky-header) .site-header .back-to-top { display: none; }
 
 .label-sticky { position: absolute; display: block; width: 32px; height: 32px; left: 0; top: 0; line-height: 28px; text-align: center; z-index: 10; }
 
-.label-sticky .genericon { margin-right: -.38em; font-size: 18px; vertical-align: bottom; }
-
-[dir="rtl"] .label-sticky .genericon { -webkit-transform: scaleX(-1); -ms-transform: scaleX(-1); transform: scaleX(-1); }
-
 .label-sticky::before, .label-sticky::after { content: ''; position: absolute; display: block; border-width: 16px; border-style: solid; }
 
 .site .label-sticky::before, .site .label-sticky::after { border-bottom-color: transparent; border-right-color: transparent; }

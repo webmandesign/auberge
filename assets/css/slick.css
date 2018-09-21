@@ -49,9 +49,9 @@
 
 @media only screen and (min-width: 55em) { .site-banner .slick-prev, .site-banner .slick-next { width: 4.25em; height: 4.25em; bottom: 5.25em; } }
 
-.site-banner .slick-prev .genericon, .site-banner .slick-next .genericon { font-size: 1.62em; vertical-align: middle; }
+.site-banner .slick-prev .genericons-neue, .site-banner .slick-next .genericons-neue { font-size: 1.62em; vertical-align: middle; }
 
-.site-banner .slick-prev .genericon::before, .site-banner .slick-next .genericon::before { content: ""; }
+.site-banner .slick-prev .genericons-neue::before, .site-banner .slick-next .genericons-neue::before { content: ""; }
 
 .site-banner .slick-prev.slick-disabled, .site-banner .slick-next.slick-disabled { opacity: .25; }
 
@@ -61,7 +61,7 @@
 
 .site-banner .slick-next { right: 0; }
 
-.site-banner .slick-next .genericon::before { content: ""; }
+.site-banner .slick-next .genericons-neue::before { content: ""; }
 
 .site-banner .slick-prev:hover, .site-banner .slick-next:hover, .site-banner .slick-dots .slick-active button { opacity: 1; }
 

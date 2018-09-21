@@ -5,7 +5,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0
- * @version  2.4.0
+ * @version  2.5.1
  *
  * Contents:
  *
@@ -188,8 +188,8 @@
 						'slide'          : 'article',
 						'speed'          : 600,
 						'swipeToSlide'   : true,
-						'prevArrow'      : '<div class="slider-nav slider-nav-prev"><button type="button" class="slick-prev"><span class="genericon"></span></button></div>',
-						'nextArrow'      : '<div class="slider-nav slider-nav-next"><button type="button" class="slick-next"><span class="genericon"></span></button></div>',
+						'prevArrow'      : '<div class="slider-nav slider-nav-prev"><button type="button" class="slick-prev"><span class="genericons-neue"></span></button></div>',
+						'nextArrow'      : '<div class="slider-nav slider-nav-next"><button type="button" class="slick-next"><span class="genericons-neue"></span></button></div>',
 						'rtl'            : $wmIsRtl
 					} );
 

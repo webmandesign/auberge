@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0
- * @version  2.5.0
+ * @version  2.5.1
  *
  * Contents:
  *
@@ -914,7 +914,7 @@
 	 * Caching $output into 'auberge-custom-css' transient.
 	 *
 	 * @since    1.0
-	 * @version  2.5.0
+	 * @version  2.5.1
 	 *
 	 * @param  bool $set_cache  Determines whether the results should be cached or not.
 	 * @param  bool $return     Whether to return a value or just run the process.
@@ -927,7 +927,9 @@
 				global $wp_customize;
 
 				if ( ! $wp_customize instanceof WP_Customize_Manager ) {
-					return;
+					$is_customizer_preview = ( $wp_customize && $wp_customize->is_preview() );
+				} else {
+					$is_customizer_preview = false;
 				}
 
 				$output        = (string) apply_filters( 'wmhook_custom_styles', '' );
@@ -957,7 +959,7 @@
 					if (
 							! empty( $theme_options )
 							&& (
-								( $wp_customize && $wp_customize->is_preview() )
+								$is_customizer_preview
 								|| empty( $replacements )
 							)
 						) {
@@ -1104,7 +1106,7 @@
 
 					if (
 							empty( $output_cached )
-							|| ( $wp_customize && $wp_customize->is_preview() )
+							|| $is_customizer_preview
 						) {
 
 						// Replace tags in custom CSS strings with actual values

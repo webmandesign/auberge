@@ -1,5 +1,20 @@
 # Auberge Changelog
 
+## 2.5.1
+
+* **Fix**: Theme customizations not working after previous theme update
+* **Fix**: Genericons display in slider navigation
+
+### Files changed:
+
+	changelog.md
+	style.css
+	assets/js/scripts-global.js
+	assets/sass/main.scss
+	assets/sass/slick.scss
+	library/customize.php
+
+
 ## 2.5.0
 
 * **Add**: Functionality to use image logo together with site title text

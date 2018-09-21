@@ -58,7 +58,7 @@
 			bottom: 5.25em;
 		}
 
-		.genericon {
+		.genericons-neue {
 			font-size: 1.62em;
 			vertical-align: middle;
 
@@ -86,7 +86,7 @@
 		.slick-next {
 			#{$right}: 0; // {{RTL}}
 
-			.genericon::before {
+			.genericons-neue::before {
 				@include rtl_property( content, '\f429', '\f430' ); // {{RTL}}
 			}
 
