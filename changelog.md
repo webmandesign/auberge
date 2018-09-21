@@ -1,5 +1,16 @@
 # Auberge Changelog
 
+## 2.5.2
+
+* **Fix**: Theme customizations not working after previous theme update
+
+### Files changed:
+
+	changelog.md
+	style.css
+	library/customize.php
+
+
 ## 2.5.1
 
 * **Fix**: Theme customizations not working after previous theme update

@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0
- * @version  2.5.1
+ * @version  2.5.2
  *
  * Contents:
  *
@@ -914,7 +914,7 @@
 	 * Caching $output into 'auberge-custom-css' transient.
 	 *
 	 * @since    1.0
-	 * @version  2.5.1
+	 * @version  2.5.2
 	 *
 	 * @param  bool $set_cache  Determines whether the results should be cached or not.
 	 * @param  bool $return     Whether to return a value or just run the process.
@@ -926,7 +926,7 @@
 
 				global $wp_customize;
 
-				if ( ! $wp_customize instanceof WP_Customize_Manager ) {
+				if ( $wp_customize instanceof WP_Customize_Manager ) {
 					$is_customizer_preview = ( $wp_customize && $wp_customize->is_preview() );
 				} else {
 					$is_customizer_preview = false;
