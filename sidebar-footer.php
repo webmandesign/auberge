@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0
- * @version  2.0
+ * @version  2.5.3
  */
 
 
@@ -33,7 +33,7 @@
 
 		<div id="footer-widgets" class="footer-widgets clearfix">
 
-			<aside id="footer-widgets-container" class="widget-area footer-widgets-container" role="complementary" aria-labelledby="sidebar-footer-label">
+			<aside id="footer-widgets-container" class="widget-area footer-widgets-container" aria-labelledby="sidebar-footer-label">
 
 				<h2 class="screen-reader-text" id="sidebar-footer-label"><?php echo esc_attr_x( 'Footer sidebar', 'Sidebar aria label', 'auberge' ); ?></h2>
 

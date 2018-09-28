@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0
- * @version  2.0
+ * @version  2.5.3
  */
 
 
@@ -31,7 +31,7 @@
 
 	?>
 
-	<aside id="secondary" class="widget-area sidebar" role="complementary" aria-labelledby="sidebar-label"<?php echo wm_schema_org( 'WPSideBar' ); ?>>
+	<aside id="secondary" class="widget-area sidebar" aria-labelledby="sidebar-label"<?php echo wm_schema_org( 'WPSideBar' ); ?>>
 
 		<h2 class="screen-reader-text" id="sidebar-label"><?php echo esc_attr_x( 'Sidebar', 'Sidebar aria label', 'auberge' ); ?></h2>
 

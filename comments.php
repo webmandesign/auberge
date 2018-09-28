@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0
- * @version  2.5.0
+ * @version  2.5.3
  */
 
 
@@ -107,7 +107,7 @@ do_action( 'tha_comments_before' );
 
 				?>
 
-				<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation" aria-labelledby="comment-nav-below-label">
+				<nav id="comment-nav-below" class="navigation comment-navigation" aria-labelledby="comment-nav-below-label">
 
 					<h2 class="screen-reader-text" id="comment-nav-below-label"><?php esc_html_e( 'Comment navigation', 'auberge' ); ?></h2>
 

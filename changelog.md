@@ -1,5 +1,25 @@
 # Auberge Changelog
 
+## 2.5.3
+
+* **Update**: Removing unnecessary `role` HTML attributes
+
+### Files changed:
+
+	changelog.md
+	comments.php
+	sidebar-footer.php
+	sidebar-front-page.php
+	sidebar.php
+	style.css
+	includes/setup/setup.php
+	template-parts/content-attachment-image.php
+	template-parts/content-page.php
+	template-parts/content-post-condensed.php
+	template-parts/content.php
+	template-parts/menu-primary.php
+
+
 ## 2.5.2
 
 * **Fix**: Theme customizations not working after previous theme update

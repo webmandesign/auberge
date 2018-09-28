@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0
- * @version  2.5.0
+ * @version  2.5.3
  *
  * Contents:
  *
@@ -1677,14 +1677,14 @@
 	 * Header top
 	 *
 	 * @since    1.0
-	 * @version  2.0
+	 * @version  2.5.3
 	 */
 	if ( ! function_exists( 'wm_header_top' ) ) {
 		function wm_header_top() {
 
 			// Output
 
-				echo "\r\n\r\n" . '<header id="masthead" class="site-header" role="banner"' . wm_schema_org( 'WPHeader' ) . '><div class="site-header-inner">' . "\r\n\r\n";
+				echo "\r\n\r\n" . '<header id="masthead" class="site-header" ' . wm_schema_org( 'WPHeader' ) . '><div class="site-header-inner">' . "\r\n\r\n";
 
 		}
 	} // /wm_header_top
@@ -2273,7 +2273,7 @@
 	 * Content top
 	 *
 	 * @since    1.0
-	 * @version  2.0
+	 * @version  2.5.3
 	 */
 	if ( ! function_exists( 'wm_content_top' ) ) {
 		function wm_content_top() {
@@ -2288,7 +2288,7 @@
 
 				do_action( 'wmhook_content_main_before' );
 
-				echo "\r\n\t\t" . '<main id="main" class="site-main clearfix" role="main"' . wm_schema_org( 'mainContentOfPage' ) . '>' . "\r\n\r\n";
+				echo "\r\n\t\t" . '<main id="main" class="site-main clearfix" ' . wm_schema_org( 'mainContentOfPage' ) . '>' . "\r\n\r\n";
 
 		}
 	} // /wm_content_top
@@ -3075,7 +3075,7 @@
 		 * Pagination
 		 *
 		 * @since    1.0
-		 * @version  2.0
+		 * @version  2.5.3
 		 */
 		if ( ! function_exists( 'wm_pagination' ) ) {
 			function wm_pagination() {
@@ -3104,7 +3104,7 @@
 				// Processing
 
 					if ( $output = paginate_links( $pagination ) ) {
-						$output = '<nav class="pagination" role="navigation" aria-labelledby="pagination-label">'
+						$output = '<nav class="pagination" aria-labelledby="pagination-label">'
 						          . '<h2 class="screen-reader-text" id="pagination-label">' . esc_attr__( 'Posts Navigation', 'auberge' ) . '</h2>'
 						          . $output
 						          . '</nav>';

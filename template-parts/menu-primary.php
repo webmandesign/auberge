@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    2.0
- * @version  2.0
+ * @version  2.5.3
  */
 
 
@@ -15,7 +15,7 @@
 
 ?>
 
-<nav id="site-navigation" class="main-navigation" role="navigation" aria-labelledby="site-navigation-label"<?php echo wm_schema_org( 'SiteNavigationElement' ); ?>>
+<nav id="site-navigation" class="main-navigation" aria-labelledby="site-navigation-label"<?php echo wm_schema_org( 'SiteNavigationElement' ); ?>>
 
 	<h2 class="screen-reader-text" id="site-navigation-label"><?php esc_html_e( 'Primary Menu', 'auberge' ); ?></h2>
 
