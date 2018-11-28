@@ -1,5 +1,26 @@
 # Auberge Changelog
 
+## 2.5.4
+
+* **Update**: Compatibility with Advanced Custom Fields plugin
+* **Fix**: Making social menu multilingual website ready
+* **Fix**: Compatibility with WordPress 5.0
+* **Fix**: Icons display
+
+### Files changed:
+
+	changelog.md
+	style.css
+	assets/fonts/genericons-neue/genericons-neue.css
+	assets/js/scripts-global.js
+	assets/images/svg/social-icons.svg
+	assets/sass/slick.scss
+	includes/plugins/advanced-custom-fields/advanced-custom-fields.php
+	includes/setup/setup.php
+	includes/svg/class-svg.php
+	template-parts/menu-social.php
+
+
 ## 2.5.3
 
 * **Update**: Removing unnecessary `role` HTML attributes

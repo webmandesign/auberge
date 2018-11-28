@@ -5,9 +5,9 @@ Genericons Neue styles.
 @copyright  WebMan Design, Oliver Juhas
 
 @since    2.5.0
-@version  2.5.0
+@version  2.5.4
 
-@link  http://genericons.com/
+@link  https://github.com/Automattic/genericons-neue
 */
 
 
@@ -27,6 +27,23 @@ Genericons Neue styles.
 		url("Genericons-Neue.ttf?5d630a71c44ef73497a7242b3bfc0208") format("truetype");
 	font-weight:normal;
 	font-style:normal;
+}
+
+.genericons-neue {
+	font-family: 'Genericons-Neue';
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-decoration: inherit;
+	text-transform: none;
+	speak: none;
+
+	display: inline-block;
+	line-height: 1;
+	text-rendering: auto;
+	-moz-osx-font-smoothing: grayscale;
+	 -webkit-font-smoothing: antialiased;
+	vertical-align: middle;
 }
 
 .genericons-neue-activity::before { content: '\f508'; }

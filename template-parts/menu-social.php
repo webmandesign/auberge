@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0
- * @version  2.5.0
+ * @version  2.5.4
  */
 
 
@@ -22,24 +22,17 @@
 
 // Variables
 
+	$cache_key   = wm_social_cache_key();
+	$cache_group = 'auberge_' . get_bloginfo( 'language' );
+
 	$back_to_top  = '<li class="back-to-top-link">';
 	$back_to_top .= '<a href="#page" class="back-to-top animated" title="' . esc_attr__( 'Back to top', 'auberge' ) . '">';
 	$back_to_top .= '<span class="screen-reader-text">' . esc_html__( 'Back to top &uarr;', 'auberge' ) . '</span>';
 	$back_to_top .= '</a>';
 	$back_to_top .= '</li>';
 
-	$social_menu_html = get_transient( 'auberge_social_links' );
-
-	$social_menu_args = array(
-		'theme_location' => 'social',
-		'container'      => false,
-		'menu_class'     => 'social-links-items',
-		'depth'          => 1,
-		'link_before'    => '<span class="screen-reader-text">',
-		'link_after'     => '</span>',
-		'fallback_cb'    => false,
-		'items_wrap'     => '<ul data-id="%1$s" class="%2$s">%3$s' . $back_to_top . '</ul>',
-	);
+	$social_menu_html = wp_cache_get( $cache_key, $cache_group );
+	$social_menu_args = wm_social_menu_args( '<ul data-id="%1$s" class="%2$s">%3$s' . $back_to_top . '</ul>' );
 
 
 ?>
@@ -65,9 +58,21 @@
 		 * @see  wm_social_cache_flush()
 		 */
 		if ( ! $social_menu_html ) {
-			$social_menu_html = wp_nav_menu( array_merge( array( 'echo' => false ), $social_menu_args ) );
-			$social_menu_html = str_replace( ' id=', ' data-id=', $social_menu_html ); // Fix for multiple displays
-			set_transient( 'auberge_social_links', $social_menu_html );
+			$social_menu_args['echo'] = false;
+
+			$social_menu_html = wp_nav_menu( $social_menu_args );
+			$social_menu_html = str_replace(
+				' id=',
+				' data-id=',
+				$social_menu_html
+			);
+
+			wp_cache_set(
+				$cache_key,
+				$social_menu_html,
+				$cache_group,
+				7 * 24 * 60 * 60
+			);
 		}
 
 		echo $social_menu_html;

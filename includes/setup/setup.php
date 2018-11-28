@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0
- * @version  2.5.3
+ * @version  2.5.4
  *
  * Contents:
  *
@@ -1734,20 +1734,66 @@
 
 
 			/**
-			 * Flush social menu cache
+			 * Social menu args.
+			 *
+			 * @since    2.5.4
+			 * @version  2.5.4
+			 *
+			 * @param  string $items_wrap
+			 */
+			function wm_social_menu_args( $items_wrap = '<ul data-id="%1$s" class="%2$s">%3$s</ul>' ) {
+
+				// Output
+
+					return array(
+						'theme_location' => 'social',
+						'container'      => false,
+						'menu_class'     => 'social-links-items',
+						'depth'          => 1,
+						'link_before'    => '<span class="screen-reader-text">',
+						'link_after'     => '</span><!--{{icon}}-->',
+						'fallback_cb'    => false,
+						'items_wrap'     => (string) $items_wrap,
+					);
+
+			} // /wm_social_menu_args
+
+
+
+			/**
+			 * Social menu cache key.
+			 *
+			 * @since    2.5.4
+			 * @version  2.5.4
+			 */
+			function wm_social_cache_key() {
+
+				// Output
+
+					return 'auberge_social_links';
+
+			} // /wm_social_cache_key
+
+
+
+			/**
+			 * Flush social menu cache.
 			 *
 			 * @since    2.5.0
-			 * @version  2.5.0
+			 * @version  2.5.4
 			 */
 			function wm_social_cache_flush() {
 
 				// Processing
 
-					delete_transient( 'auberge_social_links' );
+					wp_cache_delete(
+						wm_social_cache_key(),
+						'auberge_' . get_bloginfo( 'language' )
+					);
 
 			} // /wm_social_cache_flush
 
-			add_action( 'wp_update_nav_menu', 'wm_social_cache_flush' );
+			add_action( 'wp_update_nav_menu',   'wm_social_cache_flush' );
 			add_action( 'customize_save_after', 'wm_social_cache_flush' );
 			add_action( 'wmhook_theme_upgrade', 'wm_social_cache_flush' );
 
@@ -1757,7 +1803,7 @@
 			 * Social links supported icons.
 			 *
 			 * @since    2.5.0
-			 * @version  2.5.0
+			 * @version  2.5.4
 			 */
 			function wm_social_links_icons() {
 
@@ -1820,8 +1866,10 @@
 			/**
 			 * Display SVG icons in social links menu.
 			 *
+			 * Note that the menu has to be set to output `<!--{{icon}}-->` placeholders!
+			 *
 			 * @since    2.5.0
-			 * @version  2.5.0
+			 * @version  2.5.4
 			 *
 			 * @param  string  $item_output The menu item output.
 			 * @param  WP_Post $item        Menu item object.
@@ -1830,39 +1878,36 @@
 			 */
 			function wm_nav_menu_social_icons( $item_output, $item, $depth, $args ) {
 
+				// Requirements check
+
+					if ( false === strpos( $item_output, '<!--{{icon}}-->' ) ) {
+						return $item_output;
+					}
+
+
 				// Variables
 
-					$locations = get_nav_menu_locations();
+					$social_icons = Auberge_SVG::get_social_icons();
+					$social_icon  = 'chain';
 
 
 				// Processing
 
-					if (
-						isset( $locations['social'] )
-						&& isset( $args->menu->term_id )
-						&& absint( $locations['social'] ) === absint( $args->menu->term_id )
-					) {
-
-						$social_icons = Auberge_SVG::get_social_icons();
-						$social_icon  = 'chain';
-
-						foreach ( $social_icons as $url => $icon ) {
-							if ( false !== strpos( $item_output, $url ) ) {
-								$social_icon = $icon;
-								break;
-							}
+					foreach ( $social_icons as $url => $icon ) {
+						if ( false !== strpos( $item_output, $url ) ) {
+							$social_icon = $icon;
+							break;
 						}
-
-						$item_output = str_replace(
-							$args->link_after,
-							'</span>' . Auberge_SVG::get( array(
-								'icon' => esc_attr( $social_icon ),
-								'base' => 'social-icon',
-							) ),
-							$item_output
-						);
-
 					}
+
+					$item_output = str_replace(
+						'<!--{{icon}}-->',
+						'<!--{{icon}}-->' . Auberge_SVG::get( array(
+							'icon' => esc_attr( $social_icon ),
+							'base' => 'social-icon',
+						) ),
+						$item_output
+					);
 
 
 				// Output
@@ -1876,29 +1921,35 @@
 
 
 			/**
-			 * Display social links in Navigation Menu widget
+			 * Sets Social menu args for menu in widget.
+			 *
+			 * Checks whether the menu:
+			 * - is associated with `social` location,
+			 * - or has "[soc]" in menu title/name (useful for forcing the menu args on any menu in widget).
 			 *
 			 * @since    2.5.0
-			 * @version  2.5.0
+			 * @version  2.5.4
 			 *
-			 * @param  array  $nav_menu_args Array of parameters for `wp_nav_menu()` function.
-			 * @param  string $nav_menu      Menu slug assigned in the widget.
-			 * @param  array  $args          Widget parameters.
+			 * @param  array  $nav_menu_args  An array of arguments passed to wp_nav_menu() to retrieve a navigation menu.
+			 * @param  string $nav_menu       Nav menu object for the current menu.
 			 */
-			function wm_social_widget( $nav_menu_args, $nav_menu, $args ) {
+			function wm_social_widget( $nav_menu_args, $nav_menu ) {
 
 				// Variables
 
-					$nav_menu_obj = wp_get_nav_menu_object( $nav_menu );
-					$locations    = get_nav_menu_locations();
+					$locations = get_nav_menu_locations();
+
+					$locations['social'] = ( isset( $locations['social'] ) ) ? ( $locations['social'] ) : ( false );
 
 
 				// Requirements check
 
 					if (
-						! isset( $locations['social'] )
-						|| ! $locations['social']
-						|| absint( $locations['social'] ) !== absint( $nav_menu_obj->term_id )
+						! isset( $nav_menu->term_id )
+						|| (
+							false === stripos( $nav_menu->name, '[soc]' )
+							&& $locations['social'] !== $nav_menu->term_id
+						)
 					) {
 						return $nav_menu_args;
 					}
@@ -1906,12 +1957,14 @@
 
 				// Processing
 
+					$menu_args = wm_social_menu_args();
+
 					$nav_menu_args['container_class'] = 'social-links';
 					$nav_menu_args['menu_class']      = 'social-links-items';
-					$nav_menu_args['depth']           = 1;
-					$nav_menu_args['link_before']     = '<span class="screen-reader-text">';
-					$nav_menu_args['link_after']      = '</span>';
-					$nav_menu_args['items_wrap']      = '<ul id="%1$s" class="%2$s">%3$s</ul>';
+					$nav_menu_args['depth']           = $menu_args['depth'];
+					$nav_menu_args['link_before']     = $menu_args['link_before'];
+					$nav_menu_args['link_after']      = $menu_args['link_after'];
+					$nav_menu_args['items_wrap']      = $menu_args['items_wrap'];
 
 
 				// Output

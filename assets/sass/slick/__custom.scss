@@ -61,11 +61,6 @@
 		.genericons-neue {
 			font-size: 1.62em;
 			vertical-align: middle;
-
-			&::before {
-				@include rtl_property( content, '\f430', '\f429' ); // {{RTL}}
-			}
-
 		}
 
 		&.slick-disabled {
@@ -85,11 +80,6 @@
 
 		.slick-next {
 			#{$right}: 0; // {{RTL}}
-
-			.genericons-neue::before {
-				@include rtl_property( content, '\f429', '\f430' ); // {{RTL}}
-			}
-
 		}
 
 		.slick-prev:hover,
@@ -131,5 +121,17 @@
 		.slick-slider .slick-dots {
 			padding-#{$right}: 10.5em; // {{RTL}}
 		}
+
+}
+
+.genericons-neue::before {
+
+	.slick-slider & {
+		@include rtl_property( content, '\f430', '\f429' ); // {{RTL}}
+	}
+
+	.slick-next & {
+		@include rtl_property( content, '\f429', '\f430' ); // {{RTL}}
+	}
 
 }

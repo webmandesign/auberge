@@ -51,8 +51,6 @@
 
 .site-banner .slick-prev .genericons-neue, .site-banner .slick-next .genericons-neue { font-size: 1.62em; vertical-align: middle; }
 
-.site-banner .slick-prev .genericons-neue::before, .site-banner .slick-next .genericons-neue::before { content: ""; }
-
 .site-banner .slick-prev.slick-disabled, .site-banner .slick-next.slick-disabled { opacity: .25; }
 
 .site-banner .slick-prev { left: 2.62em; }
@@ -60,8 +58,6 @@
 @media only screen and (min-width: 55em) { .site-banner .slick-prev { left: 5.25em; } }
 
 .site-banner .slick-next { left: 0; }
-
-.site-banner .slick-next .genericons-neue::before { content: ""; }
 
 .site-banner .slick-prev:hover, .site-banner .slick-next:hover, .site-banner .slick-dots .slick-active button { opacity: 1; }
 
@@ -74,3 +70,7 @@
 .site-banner .slick-dots button { text-indent: -999em; width: .62em; height: .62em; padding: 0; background: transparent; border-width: 1px; border-style: solid; border-radius: 50%; overflow: hidden; opacity: .5; }
 
 .site-banner .slick-slider .slick-dots { padding-left: 10.5em; }
+
+.slick-slider .genericons-neue::before { content: ""; }
+
+.slick-next .genericons-neue::before { content: ""; }
