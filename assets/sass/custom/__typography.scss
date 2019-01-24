@@ -8,20 +8,24 @@
 
 
 
-/*//
+html {
+	font-family: map_get( $customize_options, 'font-family-body' );
+	font-family: var(--font-family-body);
 
-	html {
-		font-family: [[font_family_body]]'Helvetica Neue', Helvetica, Arial, sans-serif;
-		font-size: [[font_size_body]]px;
+	@include responsive( map_get( $breakpoint, 's' ) ) {
+		font-size: map_get( $customize_options, 'font-size-body' );
+		font-size: var(--font-size-body);
 	}
 
-	h1, h2, h3, h4, h5, h6,
-	.h1, .h2, .h3, .h4, .h5, .h6 {
-		font-family: [[font_family_headings]]'Helvetica Neue', Helvetica, Arial, sans-serif;
-	}
+}
 
-	.site-title {
-		font-family: [[font_family_logo]]'Helvetica Neue', Helvetica, Arial, sans-serif;
-	}
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+	font-family: map_get( $customize_options, 'font-family-headings' );
+	font-family: var(--font-family-headings);
+}
 
-//*/
+.site-title {
+	font-family: map_get( $customize_options, 'font-family-logo' );
+	font-family: var(--font-family-logo);
+}

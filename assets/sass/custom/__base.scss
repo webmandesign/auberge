@@ -9,30 +9,30 @@
 
 
 body {
-	color: map_get( $colors, 'content_text' ); // Plus
-	/*[*/
-	background-color: map_get( $colors, 'body_background' );
-	/*]*/
-	/*//
-	background-color: [[background_color]];
-	//*/
+	background-color: #eaecee;
+	color: map_get( $customize_options, 'color-content-text' ); // Plus
+	color: var(--color-content-text); // Plus
 }
 
 .site,
 .page-section .posts .entry {
-	background-color: map_get( $colors, 'content' ); // Plus
+	background-color: map_get( $customize_options, 'color-content' ); // Plus
+	background-color: var(--color-content); // Plus
 }
 
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-	color: map_get( $colors, 'content_headings' ); // Plus
+	color: map_get( $customize_options, 'color-content-headings-text' ); // Plus
+	color: var(--color-content-headings-text); // Plus
 }
 
 hr,
 code,
 pre {
-	background-color: map_get( $colors, 'content_border' ); // Plus
-	color: map_get( $colors, 'content_text' ); // Plus
+	background-color: map_get( $customize_options, 'color-content-border' ); // Plus
+	color: map_get( $customize_options, 'color-content-text' ); // Plus
+	background-color: var(--color-content-border); // Plus
+	color: var(--color-content-text); // Plus
 }
 
 button,

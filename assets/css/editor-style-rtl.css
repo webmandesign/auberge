@@ -1,6 +1,4 @@
 /* FILE: editor-style-rtl.scss */
-@import url("main-rtl.css");
-@import url("custom-editor.css");
 body { direction: rtl; unicode-bidi: embed; }
 
 .mce-content-body::after { left: 0; right: auto; }

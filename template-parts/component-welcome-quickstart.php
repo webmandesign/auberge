@@ -8,7 +8,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    2.2.0
- * @version  2.2.0
+ * @version  2.6.0
  */
 
 
@@ -57,5 +57,3 @@
 	</div>
 
 </div>
-
-<hr>

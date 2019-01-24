@@ -1,8 +1,126 @@
-/////////////////////
+/* FILE: _setup.scss */
+
 //
-// Layout
+// Stylesheets setup.
 //
-/////////////////////
+// @package    Auberge
+// @copyright  WebMan Design, Oliver Juhas
+//
+// @since    2.2.0
+// @version  2.6.0
+//
+
+// Theme options
+
+	$customize_options: (
+
+		// Colors
+
+			'color-accent': #0aac8e,
+			'color-accent-text': #ffffff,
+
+			'color-header': #1a1c1e,
+			'color-header-text': #ffffff,
+
+			'color-front-widgets': #1a1c1e,
+			'color-front-widgets-text': #8a8c8e,
+
+			'color-footer': #1a1c1e,
+			'color-footer-text': #8a8c8e,
+
+		// Layout
+
+			'layout-width-site': 1640px,
+			'layout-width-content': 1020px,
+
+		// Typography
+
+			'font-size-body': 16px,
+			'font-family-logo': ( 'Ubuntu', 'Helvetica Neue', Helvetica, Arial, sans-serif ),
+			'font-family-headings': ( 'Ubuntu', 'Helvetica Neue', Helvetica, Arial, sans-serif ),
+			'font-family-body': ( 'Ubuntu', 'Helvetica Neue', Helvetica, Arial, sans-serif ),
+
+		// Colors Plus
+		// @package  Auberge Plus
+		// @see "// Plus" in custom SCSS files.
+
+			'color-navigation': #3a3c3e, // Plus
+			'color-navigation-text': #fff, // Plus
+			'color-navigation-border': #4a4c4e, // Plus
+
+			'color-content': #fff, // Plus
+			'color-content-text': #6a6c6e, // Plus
+			'color-content-headings-text': #1a1c1e, // Plus
+			'color-content-border': #eaecee, // Plus
+
+	);
+
+
+
+// Typography
+
+	// Starter CSS backwards compatibility
+
+		$font_size: map_get( $customize_options, 'font-size-body' ) / 1px; // "/ 1px" makes the value unitless.
+
+	// Headings
+
+		$h_tags_setup: (
+
+			// $selector : (
+			//   $size
+			//   $line_height
+			//   $margin_top
+			//   $margin_bottom
+			// )
+
+			'h1, .h1' : (
+				1.62,
+				1.38,
+				2.3 / 1.62,
+				1.62 / 1.62
+			),
+
+			'h2, .h2' : (
+				1.38,
+				1.38,
+				2.3 / 1.38,
+				1.62 / 1.38
+			),
+
+			'h3, .h3' : (
+				1.24,
+				1.38,
+				2.3 / 1.24,
+				1.62 / 1.24
+			),
+
+			'h4, .h4' : (
+				1.15,
+				1.38,
+				2.3 / 1.15,
+				1.62 / 1.15
+			),
+
+			'h5, .h5' : (
+				1.15,
+				1.38,
+				2.3 / 1.15,
+				1.62 / 1.15
+			),
+
+			'h6, .h6' : (
+				1.15,
+				1.38,
+				2.3 / 1.15,
+				1.62 / 1.15
+			),
+
+		) !default;
+
+
+
+// Others
 
 	//
 	// Breakpoints info:
@@ -16,169 +134,7 @@
 	// 'xxxxl' : 2560, // = 160em // Starting desktop WQHD
 	//
 
-	//
-	// Site widths
-	//
-
-		$boxed_width: 1640;   // In px // Default max boxed site width
-		$content_width: 1020; // In px // Default content width
-
-
-
-
-
-/////////////////////
-//
-// Appearance
-//
-/////////////////////
-
-	//
-	// Theme colors
-	// For accessibility test with http://jxnblk.com/colorable/demos/text/
-	//
-	// //* = Doesn't change via Customizer.
-	//
-
-		$colors: (
-
-			// Accent color
-
-				'accent':      #0aac8e,
-				'accent_text': #fff,
-
-			// Body
-
-				'body_background': #eaecee,
-
-			// Site header
-
-				'header':      #1a1c1e,
-				'header_text': #fff,
-
-			// Navigation
-
-				'navigation':        #3a3c3e,
-				'navigation_text':   #fff,
-				'navigation_border': #4a4c4e,
-
-			// Site content
-
-				'content':          #fff,
-				'content_text':     #6a6c6e,
-				'content_headings': #1a1c1e,
-				'content_border':   #eaecee,
-
-			// Sidebars
-
-				'front_widgets':      #1a1c1e,
-				'front_widgets_text': #8a8c8e,
-
-			// Site footer
-
-				'footer':      #1a1c1e,
-				'footer_text': #8a8c8e,
-
-		);
-
-
-
-
-
-/////////////////////
-//
-// Typography
-//
-/////////////////////
-
-	//
-	// Font size
-	//
-
-		$font_size: 16; // Set also in `assets/css-generate/custom-styles.php`
-
-
-
-	//
-	// Font families
-	//
-
-		$font_family: (
-			'body':     "'Ubuntu', 'Helvetica Neue', Helvetica, Arial, sans-serif",
-			'headings': "'Ubuntu', 'Helvetica Neue', Helvetica, Arial, sans-serif",
-			'logo':     "'Ubuntu', 'Helvetica Neue', Helvetica, Arial, sans-serif",
-		) !default;
-
-
-
-	//
-	// Headings
-	//
-
-		$h_tags_setup: (
-
-			// $selector : (
-			//   $size
-			//   $line_height
-			//   $margin_top
-			//   $margin_bottom
-			// )
-
-			'h1, .h1' : (
-					1.62,
-					1.38,
-					2.3 / 1.62,
-					1.62 / 1.62
-				),
-
-			'h2, .h2' : (
-					1.38,
-					1.38,
-					2.3 / 1.38,
-					1.62 / 1.38
-				),
-
-			'h3, .h3' : (
-					1.24,
-					1.38,
-					2.3 / 1.24,
-					1.62 / 1.24
-				),
-
-			'h4, .h4' : (
-					1.15,
-					1.38,
-					2.3 / 1.15,
-					1.62 / 1.15
-				),
-			'h5, .h5' : (
-					1.15,
-					1.38,
-					2.3 / 1.15,
-					1.62 / 1.15
-				),
-			'h6, .h6' : (
-					1.15,
-					1.38,
-					2.3 / 1.15,
-					1.62 / 1.15
-				)
-
-		) !default;
-
-
-
-
-
-/////////////////////
-//
-// Icons
-//
-/////////////////////
-
-	//
 	// Entry meta
-	//
 
 		$entry_meta_icons: (
 

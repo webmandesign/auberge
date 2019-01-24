@@ -61,32 +61,6 @@
 
 
 //
-// Convert px value to rem or em
-//
-// @link  https://webdesign.tutsplus.com/courses/become-a-css-superhero-with-stylus/lessons/create-a-px-to-rem-or-em-converter-function
-//
-// @param  int $value Value of px to convert
-// @param  int $base  If set, the output is in em relative to this base value
-//
-@function px( $value, $base: 0 ) {
-
-	// Output
-
-		@if 0 < $base {
-
-			@return $value / $base +em
-
-		} @else {
-
-			@return $value / $font_size +rem
-
-		}
-
-} // /px
-
-
-
-//
 // Repeat CSS selectors several times
 //
 // @example

@@ -1,13 +1,14 @@
 /* FILE: custom-style.scss */
+/* FILE: _setup.scss */
 /* FILE: custom/__editor-style.scss */
 /* FILE: custom/__base.scss */
-body { color: #6a6c6e; /*[*/ background-color: #eaecee; /*]*/ /*// background-color: [[background_color]]; //*/ }
+body { background-color: #eaecee; color: #6a6c6e; color: var(--color-content-text); }
 
-.site, .page-section .posts .entry { background-color: #fff; }
+.site, .page-section .posts .entry { background-color: #fff; background-color: var(--color-content); }
 
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { color: #1a1c1e; }
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { color: #1a1c1e; color: var(--color-content-headings-text); }
 
-hr, code, pre { background-color: #eaecee; color: #6a6c6e; }
+hr, code, pre { background-color: #eaecee; color: #6a6c6e; background-color: var(--color-content-border); color: var(--color-content-text); }
 
 button, input, select, textarea, tbody tr:hover td, tbody tr:hover th { background-color: rgba(0, 0, 0, 0.05); }
 
@@ -40,29 +41,29 @@ button, input, select, textarea, tbody tr:hover td, tbody tr:hover th { backgrou
 ::selection { background: #fafcbe; color: #6a6c2e; }
 
 /* FILE: custom/__accent.scss */
-a, .accent-color { /*[*/ color: #0aac8e; /*]*/ /*// color: [[color_accent]]; //*/ }
+a, .accent-color { color: #0aac8e; color: var(--color-accent); }
 
-mark, ins, .highlight, pre::before, .pagination a, .pagination span, .label-sticky, .button, button, form button, .fl-node-content button, input[type="button"], input[type="reset"], input[type="submit"], .menu-group-nav a, .post-navigation .nav-previous, .post-navigation .nav-next, .bypostauthor > .comment-body .comment-author::before, .comment-navigation a, .widget_calendar tbody a, .widget .tagcloud a:hover, body #infinite-handle span, .rtb-message, .site-content div.sharedaddy .sd-content ul li a.sd-button:not(.no-text) { /*[*/ background-color: #0aac8e; color: #fff; /*]*/ /*// background-color: [[color_accent]]; color: [[color_accent_text]]; //*/ }
+mark, ins, .highlight, pre::before, .pagination a, .pagination span, .label-sticky, .button, button, form button, .fl-node-content button, input[type="button"], input[type="reset"], input[type="submit"], .menu-group-nav a, .post-navigation .nav-previous, .post-navigation .nav-next, .bypostauthor > .comment-body .comment-author::before, .comment-navigation a, .widget_calendar tbody a, .widget .tagcloud a:hover, body #infinite-handle span, .rtb-message, .site-content div.sharedaddy .sd-content ul li a.sd-button:not(.no-text) { background-color: #0aac8e; color: #ffffff; background-color: var(--color-accent); color: var(--color-accent-text); }
 
-mark, ins, .highlight { /*[*/ box-shadow: 0.38em 0 0 #0aac8e, -0.38em 0 0 #0aac8e; /*]*/ /*// box-shadow:  .38em 0 0 [[color_accent]], -.38em 0 0 [[color_accent]]; //*/ }
+mark, ins, .highlight { box-shadow: 0.38em 0 0 #0aac8e, -0.38em 0 0 #0aac8e; box-shadow: 0.38em 0 0 var(--color-accent), -0.38em 0 0 var(--color-accent); }
 
-.post-navigation .nav-previous::before { /*[*/ background: #0aac8e; background: linear-gradient(to left, transparent 19%, #0aac8e 81%); /*]*/ /*// background: [[color_accent]]; background: linear-gradient( to left, transparent 19%, [[color_accent]] 81% ); //*/ }
+.post-navigation .nav-previous::before { background: #0aac8e; background: linear-gradient(to left, transparent 19%, #0aac8e 81%); background: var(--color-accent); background: linear-gradient(to left, transparent 19%, var(--color-accent) 81%); }
 
-[dir="rtl"] .post-navigation .nav-previous::before { /*[*/ background: linear-gradient(to right, transparent 19%, #0aac8e 81%); /*]*/ /*// background: linear-gradient( to right, transparent 19%, [[color_accent]] 81% ); //*/ }
+[dir="rtl"] .post-navigation .nav-previous::before { background: linear-gradient(to right, transparent 19%, #0aac8e 81%); background: linear-gradient(to right, transparent 19%, var(--color-accent) 81%); }
 
-.post-navigation .nav-next::before { /*[*/ background: #0aac8e; background: linear-gradient(to right, transparent 19%, #0aac8e 81%); /*]*/ /*// background: [[color_accent]]; background: linear-gradient( to right, transparent 19%, [[color_accent]] 81% ); //*/ }
+.post-navigation .nav-next::before { background: #0aac8e; background: linear-gradient(to right, transparent 19%, #0aac8e 81%); background: var(--color-accent); background: linear-gradient(to right, transparent 19%, var(--color-accent) 81%); }
 
-[dir="rtl"] .post-navigation .nav-next::before { /*[*/ background: linear-gradient(to left, transparent 19%, #0aac8e 81%); /*]*/ /*// background: linear-gradient( to left, transparent 19%, [[color_accent]] 81% ); //*/ }
+[dir="rtl"] .post-navigation .nav-next::before { background: linear-gradient(to left, transparent 19%, #0aac8e 81%); background: linear-gradient(to left, transparent 19%, var(--color-accent) 81%); }
 
-body { width: 100%; max-width: 657.2px; max-width: 41.075rem; font-size: 16px; }
+body { width: 100%; max-width: calc( .62 * ( map_get( $customize_options, 'layout-width-content' ) + 40px )); max-width: calc( .62 * ( var(--layout-width-content) + 40px )); font-size: 16px; }
 
-body.page-template-_fullwidth, body.page-template-_menu { max-width: 1060px; max-width: 66.25rem; }
+body.page-template-_fullwidth, body.page-template-_menu { max-width: calc( map_get( $customize_options, 'layout-width-content' ) + 40px); max-width: calc( var(--layout-width-content) + 40px); }
 
 body.mce-content-body { padding: 20px !important; }
 
 body *, body *::after, body *::before { border-color: inherit; }
 
-.mce-content-body { position: relative; font-family: 'Ubuntu', 'Helvetica Neue', Helvetica, Arial, sans-serif; background-color: #fff; color: #6a6c6e; }
+.mce-content-body { position: relative; font-family: Ubuntu, Helvetica Neue, Helvetica, Arial, sans-serif; background-color: #fff; color: #6a6c6e; background-color: var(--color-content); color: var(--color-content-text); }
 
 .mce-content-body::after { content: ''; position: absolute; display: block; width: 1px; height: 100%; right: 0; top: 0; border-right-width: 1px; border-right-style: dashed; }
 

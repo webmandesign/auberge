@@ -9,23 +9,15 @@
 
 
 .site-banner {
-	/*[*/
-	background-color: map_get( $colors, 'front_widgets' );
-	color: map_get( $colors, 'accent_text' );
-	/*]*/
-	/*//
-	background-color: [[color_front_widgets]];
-	color: [[color_accent_text]];
-	//*/
+	background-color: map_get( $customize_options, 'color-front-widgets' );
+	color: map_get( $customize_options, 'color-accent-text' );
+	background-color: var(--color-front-widgets);
+	color: var(--color-accent-text);
 }
 
 .custom-banner::before,
 .site-banner-media::before {
 	background: transparent;
-	/*[*/
-	background: linear-gradient( transparent, map_get( $colors, 'front_widgets' ) );
-	/*]*/
-	/*//
-	background: linear-gradient( transparent, [[color_front_widgets]] );
-	//*/
+	background: linear-gradient( transparent, map_get( $customize_options, 'color-front-widgets' ) );
+	background: linear-gradient( transparent, var(--color-front-widgets) );
 }

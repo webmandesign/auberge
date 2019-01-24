@@ -26,8 +26,8 @@
 
 	.site {
 		width: 100%;
-		max-width: $boxed_width +px;
-		max-width: $boxed_width * $px;
+		max-width: map_get( $customize_options, 'layout-width-site' );
+		max-width: var(--layout-width-site);
 		margin: 0 auto;
 		box-shadow: 0 0 3.62rem rgba( #000, .07 );
 	}
@@ -49,8 +49,8 @@
 	/* $content_width */
 	%content_width {
 		@extend %basic_width;
-		max-width: $content_width +px;
-		max-width: $content_width * $px;
+		max-width: map_get( $customize_options, 'layout-width-content' );
+		max-width: var(--layout-width-content);
 	}
 
 	%full_width {

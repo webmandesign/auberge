@@ -3282,17 +3282,17 @@
 	 * Get Google Fonts link
 	 *
 	 * Returns a string such as:
-	 * //fonts.googleapis.com/css?family=Alegreya+Sans:300,400|Exo+2:400,700|Allan&subset=latin,latin-ext
+	 * https://fonts.googleapis.com/css?family=Alegreya+Sans:300,400|Exo+2:400,700|Allan&subset=latin,latin-ext
 	 *
 	 * @since    1.0
-	 * @version  1.4.8
+	 * @version  2.6.0
 	 *
 	 * @param  array $fonts Fallback fonts.
 	 */
 	if ( ! function_exists( 'wm_google_fonts_url' ) ) {
 		function wm_google_fonts_url( $fonts = array() ) {
 
-			// Helper variables
+			// Variables
 
 				$output = '';
 				$family = array();
@@ -3303,6 +3303,8 @@
 				if ( empty( $fonts_setup ) && ! empty( $fonts ) ) {
 					$fonts_setup = (array) $fonts;
 				}
+
+				$http = ( is_ssl() ) ? ( 'https' ) : ( 'http' );
 
 
 			// Requirements check
@@ -3323,9 +3325,9 @@
 
 				if ( ! empty( $family ) ) {
 					$output = esc_url_raw( add_query_arg( array(
-							'family' => implode( '|', (array) array_unique( $family ) ),
-							'subset' => implode( ',', (array) $subset ), //Subset can be array if multiselect Customizer input field used
-						), '//fonts.googleapis.com/css' ) );
+						'family' => implode( '|', (array) array_unique( $family ) ),
+						'subset' => implode( ',', (array) $subset ), //Subset can be array if multiselect Customizer input field used
+					), $http . '://fonts.googleapis.com/css' ) );
 				}
 
 

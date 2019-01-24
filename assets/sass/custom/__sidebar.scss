@@ -9,12 +9,8 @@
 
 
 .front-page-widgets-wrapper {
-	/*[*/
-	background-color: map_get( $colors, 'front_widgets' );
-	color: map_get( $colors, 'front_widgets_text' );
-	/*]*/
-	/*//
-	background-color: [[color_front_widgets]];
-	color: [[color_front_widgets_text]];
-	//*/
+	background-color: map_get( $customize_options, 'color-front-widgets' );
+	color: map_get( $customize_options, 'color-front-widgets-text' );
+	background-color: var(--color-front-widgets);
+	color: var(--color-front-widgets-text);
 }

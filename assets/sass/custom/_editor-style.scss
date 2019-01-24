@@ -26,15 +26,15 @@
 
 		body {
 			width: 100%;
-			max-width: ( $content_width + 40 ) * .62 +px;
-			max-width: ( $content_width + 40 ) * .62 * $px;
+			max-width: calc( .62 * ( map_get( $customize_options, 'layout-width-content' ) + 40px ) );
+			max-width: calc( .62 * ( var(--layout-width-content) + 40px ) );
 			font-size: 16px;
 
 
 			&.page-template-_fullwidth,
 			&.page-template-_menu {
-				max-width: ( $content_width + 40 ) +px;
-				max-width: ( $content_width + 40 ) * $px;
+				max-width: calc( map_get( $customize_options, 'layout-width-content' ) + 40px );
+				max-width: calc( var(--layout-width-content) + 40px );
 			}
 
 			&.mce-content-body {
@@ -51,9 +51,11 @@
 
 		.mce-content-body {
 			position: relative;
-			font-family: #{ map_get( $font_family, 'body' ) };
-			background-color: map_get( $colors, 'content' );
-			color: map_get( $colors, 'content_text' );
+			font-family: #{ map_get( $customize_options, 'font-family-body' ) };
+			background-color: map_get( $customize_options, 'color-content' );
+			color: map_get( $customize_options, 'color-content-text' );
+			background-color: var(--color-content);
+			color: var(--color-content-text);
 
 			&::after {
 				content: '';

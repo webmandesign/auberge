@@ -11,19 +11,11 @@
 // Jetpack
 
 	.infinite-loader .spinner > div > div {
-		/*[*/
-		background-color: map_get( $colors, 'accent' ) !important;
-		/*]*/
-		/*//
-		background-color: [[color_accent]] !important;
-		//*/
+		background-color: map_get( $customize_options, 'color-accent' ) !important;
+		background-color: var(--color-accent) !important;
 	}
 
 	.site-content div.sharedaddy .sd-content ul li a.sd-button:not(.no-text) {
-		/*[*/
-		color: map_get( $colors, 'accent_text' ) !important;
-		/*]*/
-		/*//
-		color: [[color_accent_text]] !important;
-		//*/
+		color: map_get( $customize_options, 'color-accent-text' ) !important;
+		color: var(--color-accent-text) !important;
 	}

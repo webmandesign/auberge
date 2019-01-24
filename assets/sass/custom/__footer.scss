@@ -9,12 +9,8 @@
 
 
 .site-footer {
-	/*[*/
-	background-color: map_get( $colors, 'footer' );
-	color: map_get( $colors, 'footer_text' );
-	/*]*/
-	/*//
-	background-color: [[color_footer]];
-	color: [[color_footer_text]];
-	//*/
+	background-color: map_get( $customize_options, 'color-footer' );
+	color: map_get( $customize_options, 'color-footer-text' );
+	background-color: var(--color-footer);
+	color: var(--color-footer-text);
 }

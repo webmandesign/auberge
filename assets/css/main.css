@@ -1,5 +1,9 @@
 @charset "UTF-8";
 /* FILE: main.scss */
+/* FILE: _setup.scss */
+/* FILE: _css-vars.scss */
+:root { --color-accent: #0aac8e; --color-accent-text: #ffffff; --color-header: #1a1c1e; --color-header-text: #ffffff; --color-front-widgets: #1a1c1e; --color-front-widgets-text: #8a8c8e; --color-footer: #1a1c1e; --color-footer-text: #8a8c8e; --layout-width-site: 1640px; --layout-width-content: 1020px; --font-size-body: 16px; --font-family-logo: "Ubuntu", "Helvetica Neue", Helvetica, Arial, sans-serif; --font-family-headings: "Ubuntu", "Helvetica Neue", Helvetica, Arial, sans-serif; --font-family-body: "Ubuntu", "Helvetica Neue", Helvetica, Arial, sans-serif; --color-navigation: #3a3c3e; --color-navigation-text: #fff; --color-navigation-border: #4a4c4e; --color-content: #fff; --color-content-text: #6a6c6e; --color-content-headings-text: #1a1c1e; --color-content-border: #eaecee; }
+
 /* FILE: starter/_starter.scss */
 /* FILE: starter/generic/_generic.scss */
 /* FILE: starter/generic/__normalize.scss */
@@ -835,12 +839,12 @@ blockquote.alignright::after { border-left-width: .19em; border-left-style: soli
 
 @media only screen and (min-width: 80em) { body { padding-left: 4%; padding-right: 4%; } }
 
-.site { width: 100%; max-width: 1640px; max-width: 102.5rem; margin: 0 auto; box-shadow: 0 0 3.62rem rgba(0, 0, 0, 0.07); }
+.site { width: 100%; max-width: 1640px; max-width: var(--layout-width-site); margin: 0 auto; box-shadow: 0 0 3.62rem rgba(0, 0, 0, 0.07); }
 
 .content-area, .site-footer-area, .front-page-widgets, .fl-builder .page-section, .page-template .fl-row-fixed-width, .breadcrumbs { width: 88%; margin: 0 auto; }
 
 /* $content_width */
-.content-area, .site-footer-area, .front-page-widgets, .fl-builder .page-section, .page-template .fl-row-fixed-width, .breadcrumbs { max-width: 1020px; max-width: 63.75rem; }
+.content-area, .site-footer-area, .front-page-widgets, .fl-builder .page-section, .page-template .fl-row-fixed-width, .breadcrumbs { max-width: 1020px; max-width: var(--layout-width-content); }
 
 /* FILE: main/base/__classes.scss */
 @media only screen and (min-width: 55em) { .no-wrap { white-space: nowrap; } }
@@ -878,7 +882,7 @@ blockquote.alignright::after { border-left-width: .19em; border-left-style: soli
 .column-34 { width: 73%; }
 
 /* FILE: main/typography/_typography.scss */
-html { font-family: 'Ubuntu', 'Helvetica Neue', Helvetica, Arial, sans-serif; }
+html { font-family: Ubuntu, Helvetica Neue, Helvetica, Arial, sans-serif; }
 
 /* FILE: main/forms/_forms.scss */
 ::-webkit-input-placeholder { font-weight: 400; font-style: italic; opacity: .75; }

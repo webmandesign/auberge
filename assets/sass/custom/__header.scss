@@ -9,14 +9,10 @@
 
 
 .site-header {
-	/*[*/
-	background-color: map_get( $colors, 'header' );
-	color: map_get( $colors, 'header_text' );
-	/*]*/
-	/*//
-	background-color: [[color_header]];
-	color: [[color_header_text]];
-	//*/
+	background-color: map_get( $customize_options, 'color-header' );
+	color: map_get( $customize_options, 'color-header-text' );
+	background-color: var(--color-header);
+	color: var(--color-header-text);
 }
 
 
@@ -24,12 +20,8 @@
 .nav-search-form {
 
 	.form-search {
-		/*[*/
-		background-color: map_get( $colors, 'accent' );
-		/*]*/
-		/*//
-		background-color: [[color_accent]];
-		//*/
+		background-color: map_get( $customize_options, 'color-accent' );
+		background-color: var(--color-accent);
 	}
 
 	.search-field {

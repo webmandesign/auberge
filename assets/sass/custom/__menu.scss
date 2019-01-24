@@ -9,11 +9,14 @@
 
 
 .main-navigation {
-	border-color: map_get( $colors, 'navigation_border' ); // Plus
+	border-color: map_get( $customize_options, 'color-navigation-border' ); // Plus
+	border-color: var(--color-navigation-border); // Plus
 
 	li ul {
-		background-color: map_get( $colors, 'navigation' ); // Plus
-		color: map_get( $colors, 'navigation_text' ); // Plus
+		background-color: map_get( $customize_options, 'color-navigation' ); // Plus
+		color: map_get( $customize_options, 'color-navigation-text' ); // Plus
+		background-color: var(--color-navigation); // Plus
+		color: var(--color-navigation-text); // Plus
 	}
 
 	.menu li li {
@@ -21,7 +24,8 @@
 		&:hover > a,
 		& > a:hover,
 		&.active-menu-item > a {
-			background-color: map_get( $colors, 'navigation_border' ); // Plus
+			background-color: map_get( $customize_options, 'color-navigation-border' ); // Plus
+			background-color: var(--color-navigation-border); // Plus
 		}
 
 	}
@@ -35,11 +39,13 @@
 	.main-navigation {
 
 		&-inner {
-			background-color: map_get( $colors, 'navigation' ); // Plus
+			background-color: map_get( $customize_options, 'color-navigation' ); // Plus
+			background-color: var(--color-navigation); // Plus
 		}
 
 		ul a {
-			color: map_get( $colors, 'navigation_text' ); // Plus
+			color: map_get( $customize_options, 'color-navigation-text' ); // Plus
+			color: var(--color-navigation-text); // Plus
 		}
 
 		.menu {
@@ -50,12 +56,14 @@
 			li.active-menu-item > a,
 			li li.active-menu-item > a {
 				background: transparent; //*
-				color: map_get( $colors, 'navigation_text' ); // Plus
+				color: map_get( $customize_options, 'color-navigation-text' ); // Plus
+				color: var(--color-navigation-text); // Plus
 			}
 
 			li.current-menu-item > a,
 			li li.current-menu-item > a {
-				background-color: map_get( $colors, 'navigation_border' ); // Plus
+				background-color: map_get( $customize_options, 'color-navigation-border' ); // Plus
+				background-color: var(--color-navigation-border); // Plus
 			}
 
 		}
@@ -74,12 +82,8 @@
 		}
 
 		&::before {
-			/*[*/
-			background: map_get( $colors, 'accent' );
-			/*]*/
-			/*//
-			background: [[color_accent]];
-			//*/
+			background: map_get( $customize_options, 'color-accent' );
+			background: var(--color-accent);
 		}
 
 	}

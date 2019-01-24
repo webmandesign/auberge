@@ -85,7 +85,9 @@
 								'css_var'     => 'maybe_hash_hex_color',
 								'preview_js'  => array(
 									'css' => array(
-										':root' => array( '--[[id]]' ),
+										':root' => array(
+											'--[[id]]',
+										),
 									),
 								),
 							),
@@ -98,7 +100,9 @@
 								'css_var'     => 'maybe_hash_hex_color',
 								'preview_js'  => array(
 									'css' => array(
-										':root' => array( '--[[id]]' ),
+										':root' => array(
+											'--[[id]]',
+										),
 									),
 								),
 							),
@@ -118,7 +122,9 @@
 								'css_var'    => 'maybe_hash_hex_color',
 								'preview_js' => array(
 									'css' => array(
-										':root' => array( '--[[id]]' ),
+										':root' => array(
+											'--[[id]]',
+										),
 									),
 								),
 							),
@@ -131,7 +137,9 @@
 								'css_var'     => 'maybe_hash_hex_color',
 								'preview_js'  => array(
 									'css' => array(
-										':root' => array( '--[[id]]' ),
+										':root' => array(
+											'--[[id]]',
+										),
 									),
 								),
 							),
@@ -156,7 +164,9 @@
 									'css_var'    => 'maybe_hash_hex_color',
 									'preview_js' => array(
 										'css' => array(
-											':root' => array( '--[[id]]' ),
+											':root' => array(
+												'--[[id]]',
+											),
 										),
 									),
 								),
@@ -168,7 +178,9 @@
 									'css_var'    => 'maybe_hash_hex_color',
 									'preview_js' => array(
 										'css' => array(
-											':root' => array( '--[[id]]' ),
+											':root' => array(
+												'--[[id]]',
+											),
 										),
 									),
 								),
@@ -188,7 +200,9 @@
 								'css_var'    => 'maybe_hash_hex_color',
 								'preview_js' => array(
 									'css' => array(
-										':root' => array( '--[[id]]' ),
+										':root' => array(
+											'--[[id]]',
+										),
 									),
 								),
 							),
@@ -200,7 +214,9 @@
 								'css_var'    => 'maybe_hash_hex_color',
 								'preview_js' => array(
 									'css' => array(
-										':root' => array( '--[[id]]' ),
+										':root' => array(
+											'--[[id]]',
+										),
 									),
 								),
 							),
@@ -311,7 +327,12 @@
 									'css_var'     => '[[value]]px',
 									'preview_js'  => array(
 										'css' => array(
-											':root' => array( array( '--[[id]]', 'px' ) ),
+											':root' => array(
+												array(
+													'property' => '--[[id]]',
+													'suffix'   => 'px',
+												),
+											),
 										),
 									),
 								),

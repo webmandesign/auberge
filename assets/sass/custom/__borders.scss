@@ -9,7 +9,8 @@
 
 
 .site {
-	border-color: map_get( $colors, 'content_border' ); // Plus
+	border-color: map_get( $customize_options, 'color-content-border' ); // Plus
+	border-color: var(--color-content-border); // Plus
 }
 
 
@@ -22,10 +23,6 @@ textarea:focus,
 .posts .entry:hover,
 .widget .tagcloud a:hover,
 .site .picker__input.picker__input--active {
-	/*[*/
-	border-color: map_get( $colors, 'accent' );
-	/*]*/
-	/*//
-	border-color: [[color_accent]];
-	//*/
+	border-color: map_get( $customize_options, 'color-accent' );
+	border-color: var(--color-accent);
 }

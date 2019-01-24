@@ -11,15 +11,15 @@
 // Font families
 
 	%font_body {
-		font-family: #{ map_get( $font_family, 'body' ) };
+		font-family: #{ map_get( $customize_options, 'font-family-body' ) };
 	}
 
 	%font_headings {
-		font-family: #{ map_get( $font_family, 'headings' ) };
+		font-family: #{ map_get( $customize_options, 'font-family-headings' ) };
 	}
 
 	%font_logo {
-		font-family: #{ map_get( $font_family, 'logo' ) };
+		font-family: #{ map_get( $customize_options, 'font-family-logo' ) };
 		text-rendering: auto;
 	}
 
