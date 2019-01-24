@@ -1,5 +1,16 @@
 # Auberge Changelog
 
+## 2.6.0
+
+* **Update**: 
+* **Fix**: 
+
+### Files changed:
+
+	changelog.md
+	style.css
+
+
 ## 2.5.4
 
 * **Update**: Compatibility with Advanced Custom Fields plugin

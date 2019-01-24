@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0
- * @version  2.5.4
+ * @version  2.6.0
  *
  * Contents:
  *
@@ -26,6 +26,10 @@
 /**
  * 1) Required files
  */
+
+	// Theme options
+
+		require_once( get_template_directory() . '/includes/theme-options/theme-options.php' );
 
 	// Post media
 
@@ -267,7 +271,7 @@
 	 * Theme setup
 	 *
 	 * @since    1.0
-	 * @version  2.5.0
+	 * @version  2.6.0
 	 */
 	if ( ! function_exists( 'wm_setup' ) ) {
 		function wm_setup() {
@@ -282,8 +286,8 @@
 
 					$visual_editor_css = array_filter( (array) apply_filters( 'wmhook_wm_setup_visual_editor_css', array(
 							str_replace( ',', '%2C', wm_google_fonts_url() ),
-							esc_url_raw( add_query_arg( array( 'ver' => wp_get_theme( get_template() )->get( 'Version' ) ), wm_get_stylesheet_directory_uri( 'assets/fonts/genericons-neue/genericons-neue.css' ) ) ),
-							esc_url_raw( add_query_arg( array( 'ver' => wp_get_theme( get_template() )->get( 'Version' ) ), wm_get_stylesheet_directory_uri( 'assets/css/editor-style' . $rtl_suffix . '.css' ) ) ),
+							esc_url_raw( add_query_arg( array( 'ver' => wp_get_theme( get_template() )->get( 'Version' ) ), get_theme_file_uri( 'assets/fonts/genericons-neue/genericons-neue.css' ) ) ),
+							esc_url_raw( add_query_arg( array( 'ver' => wp_get_theme( get_template() )->get( 'Version' ) ), get_theme_file_uri( 'assets/css/editor-style' . $rtl_suffix . '.css' ) ) ),
 						) ) );
 
 						add_editor_style( $visual_editor_css );
@@ -482,52 +486,6 @@
 	} // /wm_setup
 
 	add_action( 'after_setup_theme', 'wm_setup', 10 );
-
-
-
-	/**
-	 * Theme version 2.0 upgrade admin notice
-	 *
-	 * @since    2.0
-	 * @version  2.0
-	 *
-	 * @param  float $current_theme_version
-	 * @param  float $new_theme_version
-	 */
-	if ( ! function_exists( 'wm_theme_v2_upgrade_notice' ) ) {
-		function wm_theme_v2_upgrade_notice( $current_theme_version, $new_theme_version ) {
-
-			// Processing
-
-				if (
-						version_compare( $current_theme_version, '2.0', '<' )
-						&& is_child_theme()
-					) {
-
-					set_transient(
-							'auberge_admin_notice',
-							array(
-								esc_html__( 'Thank you for upgrading your theme.', 'auberge' )
-								. ' ' . esc_html__( 'We have noticed you are using a child theme.', 'auberge' )
-								. '<br><strong>'
-								. esc_html__( 'Please note that there has been a lot of changes in this new theme version and you should check the code in your child theme for compatibility!', 'auberge' )
-								. '</strong>'
-								. '<br><a href="https://github.com/webmandesign/auberge/blob/master/changelog.md" target="_blank">'
-								. esc_html__( 'Read theme changelog &raquo;', 'auberge' )
-								. '</a>',
-								'notice-error',
-								'switch_themes',
-								3
-							),
-							( 60 * 60 * 48 )
-						);
-
-				}
-
-		}
-	} // /wm_theme_v2_upgrade_notice
-
-	add_action( 'wmhook_theme_upgrade', 'wm_theme_v2_upgrade_notice', 10, 2 );
 
 
 
@@ -1115,7 +1073,7 @@
 	 * Registering theme styles and scripts
 	 *
 	 * @since    1.0
-	 * @version  2.5.0
+	 * @version  2.6.0
 	 */
 	if ( ! function_exists( 'wm_register_assets' ) ) {
 		function wm_register_assets() {
@@ -1130,12 +1088,12 @@
 				// Styles
 
 					$register_styles = apply_filters( 'wmhook_wm_register_assets_register_styles', array(
-							'genericons-neue' => array( wm_get_stylesheet_directory_uri( 'assets/fonts/genericons-neue/genericons-neue.css' ) ),
-							'slick'           => array( wm_get_stylesheet_directory_uri( 'assets/css/slick.css' ) ),
+							'genericons-neue' => array( get_theme_file_uri( 'assets/fonts/genericons-neue/genericons-neue.css' ) ),
+							'slick'           => array( get_theme_file_uri( 'assets/css/slick.css' ) ),
 							'wm-google-fonts' => array( wm_google_fonts_url() ),
-							'wm-main'         => array( wm_get_stylesheet_directory_uri( 'assets/css/main.css' ) ),
+							'wm-main'         => array( get_theme_file_uri( 'assets/css/main.css' ) ),
 							'wm-stylesheet'   => array( get_stylesheet_uri() ),
-							'wm-custom'       => array( wm_get_stylesheet_directory_uri( 'assets/css/custom.css' ), 'deps' => array( 'wm-main' ) ),
+							'wm-custom'       => array( get_theme_file_uri( 'assets/css/custom.css' ), 'deps' => array( 'wm-main' ) ),
 						) );
 
 					foreach ( $register_styles as $handle => $atts ) {
@@ -1150,10 +1108,10 @@
 				// Scripts
 
 					$register_scripts = apply_filters( 'wmhook_wm_register_assets_register_scripts', array(
-							'slick'                  => array( 'src' => wm_get_stylesheet_directory_uri( 'assets/js/vendor/slick.min.js' ), 'deps' => array( 'jquery' ) ),
-							'wm-scripts-global'      => array( 'src' => wm_get_stylesheet_directory_uri( 'assets/js/scripts-global.js' ), 'deps' => array( 'jquery', 'imagesloaded', 'wm-scripts-navigation' ) ),
-							'wm-scripts-navigation'  => array( wm_get_stylesheet_directory_uri( 'assets/js/scripts-navigation.js' ) ),
-							'wm-skip-link-focus-fix' => array( wm_get_stylesheet_directory_uri( 'assets/js/skip-link-focus-fix.js' ) ),
+							'slick'                  => array( 'src' => get_theme_file_uri( 'assets/js/vendor/slick.min.js' ), 'deps' => array( 'jquery' ) ),
+							'wm-scripts-global'      => array( 'src' => get_theme_file_uri( 'assets/js/scripts-global.js' ), 'deps' => array( 'jquery', 'imagesloaded', 'wm-scripts-navigation' ) ),
+							'wm-scripts-navigation'  => array( get_theme_file_uri( 'assets/js/scripts-navigation.js' ) ),
+							'wm-skip-link-focus-fix' => array( get_theme_file_uri( 'assets/js/skip-link-focus-fix.js' ) ),
 						) );
 
 					foreach ( $register_scripts as $handle => $atts ) {
@@ -1356,7 +1314,7 @@
 		 * Customizer preview assets enqueue
 		 *
 		 * @since    1.4
-		 * @version  2.0
+		 * @version  2.6.0
 		 */
 		if ( ! function_exists( 'wm_customizer_preview_enqueue_assets' ) ) {
 			function wm_customizer_preview_enqueue_assets() {
@@ -1365,7 +1323,7 @@
 
 					wp_enqueue_script(
 							'wm-customizer-preview',
-							wm_get_stylesheet_directory_uri( 'assets/js/customize-preview.js' ),
+							get_theme_file_uri( 'assets/js/customize-preview.js' ),
 							array( 'customize-preview' ),
 							esc_attr( trim( wp_get_theme( get_template() )->get( 'Version' ) ) ),
 							true

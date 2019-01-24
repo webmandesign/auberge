@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Auberge\n"
-"Report-Msgid-Bugs-To: http://support.webmandesign.eu\n"
+"Report-Msgid-Bugs-To: https://support.webmandesign.eu\n"
 "POT-Creation-Date: 2018-09-18 16:26+0200\n"
 "PO-Revision-Date: 2015-04-21 20:43+0100\n"
 "Last-Translator: WebMan - Oliver Juhas <webmandesigneu@gmail.com>\n"

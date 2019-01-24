@@ -5,7 +5,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0
- * @version  2.5.4
+ * @version  2.6.0
  *
  * Contents:
  *
@@ -22,6 +22,8 @@
 
 
 ( function( $ ) {
+
+	'use strict';
 
 
 

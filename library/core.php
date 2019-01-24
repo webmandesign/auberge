@@ -7,6 +7,7 @@
  *
  * @since    1.0
  * @version  2.5.0
+ * @version  2.6.0
  *
  * Contents:
  *
@@ -53,6 +54,7 @@
 	 *
 	 * @since    1.0
 	 * @version  2.0
+	 * @version  2.6.0
 	 */
 	if ( ! function_exists( 'wm_theme_upgrade' ) ) {
 		function wm_theme_upgrade() {
@@ -66,14 +68,11 @@
 			// Processing
 
 				if (
-						empty( $current_theme_version )
-						|| $new_theme_version != $current_theme_version
-					) {
-
-					do_action( 'wmhook_theme_upgrade', $current_theme_version, $new_theme_version );
-
+					empty( $current_theme_version )
+					|| $new_theme_version != $current_theme_version
+				) {
+					do_action( 'wmhook_theme_upgrade', $new_theme_version, $current_theme_version );
 					set_transient( 'auberge-version', $new_theme_version );
-
 				}
 
 		}
@@ -630,55 +629,6 @@
 	// Escape inline CSS
 
 		add_filter( 'wmhook_esc_css', 'wp_strip_all_tags' );
-		add_filter( 'wmhook_esc_css', 'wm_fix_ssl_urls' );
-
-
-
-	/**
-	 * Outputs URL to the specific file
-	 *
-	 * This function looks for the file in the child theme first.
-	 * If the file is not located in child theme, output the URL from parent theme.
-	 *
-	 * @since    1.0
-	 * @version  2.0
-	 *
-	 * @param   string $file_relative_path File to look for (insert the relative path within the theme folder)
-	 *
-	 * @return  string Actual URL to the file
-	 */
-	if ( ! function_exists( 'wm_get_stylesheet_directory_uri' ) ) {
-		function wm_get_stylesheet_directory_uri( $file_relative_path ) {
-
-			// Helper variables
-
-				$output = '';
-
-				$file_relative_path = trim( $file_relative_path );
-
-
-			// Requirements chek
-
-				if ( ! $file_relative_path ) {
-					return;
-				}
-
-
-			// Processing
-
-				if ( file_exists( trailingslashit( get_stylesheet_directory() ) . $file_relative_path ) ) {
-					$output = trailingslashit( get_stylesheet_directory_uri() ) . $file_relative_path;
-				} else {
-					$output = trailingslashit( get_template_directory_uri() ) . $file_relative_path;
-				}
-
-
-			// Output
-
-				return apply_filters( 'wmhook_wm_get_stylesheet_directory_uri_output', esc_url( $output ), $file_relative_path );
-
-		}
-	} // /wm_get_stylesheet_directory_uri
 
 
 
@@ -687,55 +637,6 @@
 /**
  * 100) Helpers
  */
-
-	/**
-	 * Check WordPress version
-	 *
-	 * @since    1.0
-	 * @version  2.0
-	 *
-	 * @param  float $version
-	 */
-	if ( ! function_exists( 'wm_check_wp_version' ) ) {
-		function wm_check_wp_version( $version = 4.3 ) {
-
-			// Output
-
-				return apply_filters( 'wmhook_wm_check_wp_version_output', version_compare( $GLOBALS['wp_version'], $version, '>=' ), $version, $GLOBALS['wp_version'] );
-
-		}
-	} // /wm_check_wp_version
-
-
-
-	/**
-	 * Fixing URLs in `is_ssl()` returns TRUE
-	 *
-	 * @since    2.0
-	 * @version  2.0
-	 *
-	 * @param  string $content
-	 */
-	if ( ! function_exists( 'wm_fix_ssl_urls' ) ) {
-		function wm_fix_ssl_urls( $content ) {
-
-			// Processing
-
-				if ( is_ssl() ) {
-					$content = str_ireplace( 'http:', 'https:', $content );
-					$content = str_ireplace( 'xmlns="https:', 'xmlns="http:', $content );
-					$content = str_ireplace( "xmlns='https:", "xmlns='http:", $content );
-				}
-
-
-			// Output
-
-				return $content;
-
-		}
-	} // /wm_fix_ssl_urls
-
-
 
 	/**
 	 * Remove shortcodes from string
@@ -759,177 +660,6 @@
 	} // /wm_remove_shortcodes
 
 	add_filter( 'the_excerpt', 'wm_remove_shortcodes', 10 );
-
-
-
-	/**
-	 * HTML in widget titles
-	 *
-	 * Just replace the "<" and ">" in HTML tag with "[" and "]".
-	 * Examples:
-	 * "[em][/em]" will output "<em></em>"
-	 * "[br /]" will output "<br />"
-	 *
-	 * @since    1.0
-	 * @version  2.0
-	 *
-	 * @param  string $title
-	 */
-	if ( ! function_exists( 'wm_html_widget_title' ) ) {
-		function wm_html_widget_title( $title ) {
-
-			// Helper variables
-
-				$replacements = array(
-					'[' => '<',
-					']' => '>',
-				);
-
-				$allowed_tags = array(
-						'a'      => array( 'href' => array() ),
-						'abbr'   => array(),
-						'br'     => array(),
-						'code'   => array(),
-						'del'    => array(),
-						'em'     => array(),
-						'ins'    => array(),
-						'mark'   => array(),
-						'q'      => array(),
-						's'      => array(),
-						'small'  => array(),
-						'span'   => array( 'class' => array() ),
-						'strong' => array(),
-						'sub'    => array(),
-						'sup'    => array(),
-					);
-
-
-			// Output
-
-				return wp_kses( strtr( $title, $replacements ), $allowed_tags );
-
-		}
-	} // /wm_html_widget_title
-
-	remove_filter( 'widget_title', 'esc_html' );
-
-	add_filter( 'widget_title', 'wm_html_widget_title' );
-	add_filter( 'widget_text',  'do_shortcode'         );
-
-
-
-	/**
-	 * Accessibility skip links
-	 *
-	 * @since    2.0
-	 * @version  2.0
-	 *
-	 * @param  string $id     Link target element ID.
-	 * @param  string $text   Link text.
-	 * @param  string $class  Additional link CSS classes.
-	 */
-	if ( ! function_exists( 'wm_link_skip_to' ) ) {
-		function wm_link_skip_to( $id = 'content', $text = '', $class = '' ) {
-
-			// Helper variables
-
-				if ( empty( $text ) ) {
-					$text = esc_html__( 'Skip to content', 'auberge' );
-				}
-
-
-			// Output
-
-				return apply_filters( 'wmhook_wm_link_skip_to_output', '<a class="' . esc_attr( trim( 'skip-link screen-reader-text ' . $class ) ) . '" href="#' . esc_attr( trim( $id ) ) . '">' . esc_html( $text ) . '</a>' );
-
-		}
-	} // /wm_link_skip_to
-
-
-
-	/**
-	 * Get image ID from its URL
-	 *
-	 * @link   http://pippinsplugins.com/retrieve-attachment-id-from-image-url/
-	 * @link   http://make.wordpress.org/core/2012/12/12/php-warning-missing-argument-2-for-wpdb-prepare/
-	 *
-	 * @since    1.0
-	 * @version  2.0
-	 *
-	 * @param  string $url
-	 */
-	if ( ! function_exists( 'wm_get_image_id_from_url' ) ) {
-		function wm_get_image_id_from_url( $url ) {
-
-			// Helper variables
-
-				global $wpdb;
-
-				$output = null;
-
-				$cache = array_filter( (array) get_transient( 'wm-image-ids' ) );
-
-
-			// Return cached result if found and relevant
-
-				if (
-						! empty( $cache )
-						&& isset( $cache[ $url ] )
-						&& wp_get_attachment_url( absint( $cache[ $url ] ) )
-						&& $url == wp_get_attachment_url( absint( $cache[ $url ] ) )
-					) {
-
-					return absint( apply_filters( 'wmhook_wm_get_image_id_from_url_output', $cache[ $url ] ) );
-
-				}
-
-
-			// Processing
-
-				if (
-						is_object( $wpdb )
-						&& isset( $wpdb->posts )
-					) {
-
-					$attachment = $wpdb->get_col( $wpdb->prepare( "SELECT id FROM $wpdb->posts WHERE guid='%s'", esc_url( $url ) ) );
-
-					$output = ( isset( $attachment[0] ) ) ? ( $attachment[0] ) : ( null );
-
-				}
-
-				// Cache the new record
-
-					$cache[ $url ] = $output;
-
-					set_transient( 'wm-image-ids', array_filter( (array) $cache ) );
-
-
-			// Output
-
-				return absint( apply_filters( 'wmhook_wm_get_image_id_from_url_output', $output ) );
-
-		}
-	} // /wm_get_image_id_from_url
-
-
-
-		/**
-		 * Flush out the transients used in wm_get_image_id_from_url
-		 *
-		 * @since    1.0
-		 * @version  1.0
-		 */
-		if ( ! function_exists( 'wm_image_ids_transient_flusher' ) ) {
-			function wm_image_ids_transient_flusher() {
-
-				// Processing
-
-					delete_transient( 'wm-image-ids' );
-
-			}
-		} // /wm_image_ids_transient_flusher
-
-		add_action( 'switch_theme', 'wm_image_ids_transient_flusher' );
 
 
 
@@ -1007,3 +737,23 @@
 
 		add_action( 'edit_category', 'wm_all_categories_transient_flusher' );
 		add_action( 'save_post',     'wm_all_categories_transient_flusher' );
+
+
+
+	/**
+	 * Cache: Get transient key.
+	 *
+	 * @since    2.6.0
+	 * @version  2.6.0
+	 *
+	 * @param  string $context
+	 */
+	if ( ! function_exists( 'wm_get_transient_key' ) ) {
+		function wm_get_transient_key( $context = '' ) {
+
+			// Output
+
+				return 'auberge-' . sanitize_title( $context );
+
+		}
+	} // /wm_get_transient_key

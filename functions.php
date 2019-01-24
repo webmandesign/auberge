@@ -2,19 +2,17 @@
 /**
  * Auberge WordPress Theme
  *
- * Auberge WordPress Theme, Copyright 2015 WebMan [http://www.webmandesign.eu/]
+ * Auberge WordPress Theme, Copyright 2015 WebMan [https://www.webmandesign.eu/]
  * Auberge is distributed under the terms of the GNU GPL
- *
- * Requires at least:  4.3
  *
  * @package    Auberge
  * @copyright  WebMan Design, Oliver Juhas
  * @license    GPL-3.0, http://www.gnu.org/licenses/gpl-3.0.html
  *
  * @since    1.0
- * @version  2.1
+ * @version  2.6.0
  *
- * @link  http://www.webmandesign.eu
+ * @link  https://www.webmandesign.eu
  *
  * Contents:
  *

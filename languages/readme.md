@@ -15,4 +15,4 @@ If you have obtained the theme from **[WordPress.org themes repository](https://
 
 If you have obtained the theme from **[WordPress.org themes repository](https://wordpress.org/themes/author/webmandesign/)**, please translate the theme by clicking the [Translate Auberge](https://translate.wordpress.org/projects/wp-themes/auberge) link in [theme page](https://wordpress.org/themes/auberge/) sidebar.
 
-Otherwise, if you would like to help out translating the theme, please contribute on our [support forum](http://support.webmandesign.eu/).
+Otherwise, if you would like to help out translating the theme, please contribute on our [support forum](https://support.webmandesign.eu/).

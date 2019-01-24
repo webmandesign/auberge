@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    2.1
- * @version  2.2.0
+ * @version  2.6.0
  *
  * Contents:
  *
@@ -169,7 +169,7 @@ class Auberge_Welcome {
 		 * Styles and scripts
 		 *
 		 * @since    2.1
-		 * @version  2.2.0
+		 * @version  2.6.0
 		 *
 		 * @param  string $hook_suffix
 		 */
@@ -188,7 +188,7 @@ class Auberge_Welcome {
 
 					wp_enqueue_style(
 							get_template() . '-welcome',
-							wm_get_stylesheet_directory_uri( 'assets/css/welcome.css' ),
+							get_theme_file_uri( 'assets/css/welcome.css' ),
 							false,
 							esc_attr( trim( wp_get_theme( get_template() )->get( 'Version' ) ) ),
 							'screen'

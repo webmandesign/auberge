@@ -56,7 +56,7 @@
 								. '<p class="description">'
 								. sprintf(
 									esc_html_x( 'You can obtain other professional WordPress themes at %s.', '%s: theme author link.', 'auberge' ),
-									'<strong><a href="http://www.webmandesign.eu" target="_blank">WebManDesign.eu</a></strong>'
+									'<strong><a href="https://www.webmandesign.eu" target="_blank">WebManDesign.eu</a></strong>'
 								)
 								. '</p>'
 								. '<p class="description">'

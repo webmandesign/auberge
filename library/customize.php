@@ -7,27 +7,15 @@
  *
  * @since    1.0
  * @version  2.5.2
+ * @version  2.6.0
  *
  * Contents:
  *
- *  1) Required files
  * 10) Assets
  * 20) Sanitize
  * 30) Customizer core
- * 40) CSS functions
+ * 40) CSS variables
  */
-
-
-
-
-
-/**
- * 1) Required files
- */
-
-	// Theme options arrays
-
-		locate_template( 'includes/theme-options/theme-options.php', true );
 
 
 
@@ -82,56 +70,70 @@
 	 * to trigger a class on an element, for example.
 	 *
 	 * If `preview_js => false` set, the change of the theme option won't trigger the customizer
-	 * preview refresh. This is useful to disable "about theme page", for example.
+	 * preview refresh. This is useful to disable welcome page, for example.
 	 *
 	 * The actual JavaScript is outputted in the footer of the page.
 	 *
-	 * Use this structure for `preview_js` property:
-	 *
 	 * @example
-	 *
 	 *   'preview_js' => array(
 	 *
 	 *     // Setting CSS styles:
+	 *     'css' => array(
 	 *
-	 *       'css' => array(
-	 *
-	 *           // Sets the whole value to the `css-property-name` of the `selector`
-	 *
-	 *             'selector' => array(
-	 *                 'css-property-name',...
-	 *               ),
-	 *
-	 *           // Sets the `css-property-name` of the `selector` with value followed by the `suffix` (such as "px")
-	 *
-	 *             'selector' => array(
-	 *                 array( 'css-property-name', 'suffix' ),...
-	 *               ),
-	 *
-	 *           // Replaces "@" in `selector` for `selector-replace-value` (such as "@ h2, @ h3" to ".footer h2, .footer h3")
-	 *
-	 *             'selector' => array(
-	 *                 'selector_replace' => 'selector-replace-value', // Must be the first array item
-	 *                 'css-property-name',...
-	 *               ),
-	 *
+	 *       // CSS variables (the `[[id]]` gets replaced with option ID)
+	 * 			 ':root' => array(
+	 *         '--[[id]]',
+	 *       ),
+	 * 			 ':root' => array(
+	 *         array(
+	 *           'property' => '--[[id]]',
+	 *           'suffix'   => 'px',
 	 *         ),
+	 *       ),
 	 *
-	 *     // Or setting custom JavaScript:
+	 *       // Sets the whole value to the `css-property-name` of the `selector`
+	 *       'selector' => array(
+	 *         'background-color',...
+	 *       ),
 	 *
-	 *       'custom' => 'JavaScript here', // Such as "jQuery( '.site-title.type-text' ).toggleClass( 'styled' );"
+	 *       // Sets the `css-property-name` of the `selector` with specific settings
+	 *       'selector' => array(
+	 *         array(
+	 *           'property'         => 'text-shadow',
+	 *           'prefix'           => '0 1px 1px rgba(',
+	 *           'suffix'           => ', .5)',
+	 *           'process_callback' => 'hexToRgb',
+	 *           'custom'           => '0 0 0 1em [[value]] ), 0 0 0 2em transparent, 0 0 0 3em [[value]]',
+	 *         ),...
+	 *       ),
+	 *
+	 *       // Replaces "@" in `selector` for `selector-replace-value` (such as "@ h2, @ h3" to ".footer h2, .footer h3")
+	 *       'selector' => array(
+	 *         'selector_replace' => 'selector-replace-value',
+	 *         'selector_before'  => '@media only screen and (min-width: 80em) {',
+	 *         'selector_after'   => '}',
+	 *         'background-color',...
+	 *       ),
+	 *
+	 *     ),
+	 *
+	 *     // And/or setting custom JavaScript:
+	 *     'custom' => 'JavaScript here', // Such as "jQuery( '.site-title.type-text' ).toggleClass( 'styled' );"
 	 *
 	 *   );
 	 *
+	 * @uses  `wmhook_theme_options` global hook
+	 *
 	 * @since    1.0
 	 * @version  2.0
+	 * @version  2.6.0
 	 */
 	if ( ! function_exists( 'wm_theme_customizer_js' ) ) {
 		function wm_theme_customizer_js() {
 
-			// Helper variables
+			// Variables
 
-				$theme_options = apply_filters( 'wmhook_theme_options', array() );
+				$theme_options = (array) apply_filters( 'wmhook_theme_options', array() );
 
 				ksort( $theme_options );
 
@@ -140,68 +142,95 @@
 
 			// Processing
 
-				if ( is_array( $theme_options ) && ! empty( $theme_options ) ) {
+				if (
+					is_array( $theme_options )
+					&& ! empty( $theme_options )
+				) {
 
 					foreach ( $theme_options as $theme_option ) {
 
-						if ( isset( $theme_option['preview_js'] ) && is_array( $theme_option['preview_js'] ) ) {
+						if (
+							isset( $theme_option['preview_js'] )
+							&& is_array( $theme_option['preview_js'] )
+						) {
 
 							$output_single  = "wp.customize("  . "\r\n";
 							$output_single .= "\t" . "'" . $theme_option['id'] . "',"  . "\r\n";
 							$output_single .= "\t" . "function( value ) {"  . "\r\n";
 							$output_single .= "\t\t" . 'value.bind( function( to ) {' . "\r\n";
 
-							if ( isset( $theme_option['preview_js']['css'] ) ) {
+							// CSS
 
-								$output_single .= "\t\t\t" . "var newCss = '';" . "\r\n\r\n";
-								$output_single .= "\t\t\t" . "if ( jQuery( '#jscss-" . $theme_option['id'] . "' ).length ) { jQuery( '#jscss-" . $theme_option['id'] . "' ).remove() }" . "\r\n\r\n";
+								if ( isset( $theme_option['preview_js']['css'] ) ) {
+									$output_single .= "\t\t\t" . "var newCss = '';" . "\r\n\r\n";
+									$output_single .= "\t\t\t" . "if ( jQuery( '#jscss-" . $theme_option['id'] . "' ).length ) { jQuery( '#jscss-" . $theme_option['id'] . "' ).remove() }" . "\r\n\r\n";
 
-								foreach ( $theme_option['preview_js']['css'] as $selector => $properties ) {
+									foreach ( $theme_option['preview_js']['css'] as $selector => $properties ) {
+										if ( is_array( $properties ) ) {
+											$output_single_css = $selector_before = $selector_after = '';
 
-									if ( is_array( $properties ) ) {
+											foreach ( $properties as $key => $property ) {
 
-										$output_single_css = '';
+												// Selector setup
 
-										foreach ( $properties as $key => $property ) {
+													if ( 'selector_replace' === $key ) {
+														$selector = str_replace( '@', $property, $selector );
+														continue;
+													}
 
-											if ( 'selector_replace' === $key ) {
-												$selector = str_replace( '@', $property, $selector );
-												continue;
+													if ( 'selector_before' === $key ) {
+														$selector_before = $property;
+														continue;
+													}
+
+													if ( 'selector_after' === $key ) {
+														$selector_after = $property;
+														continue;
+													}
+
+												// CSS properties setup
+
+													if ( ! is_array( $property ) ) {
+														$property = array( 'property' => (string) $property );
+													}
+
+													$property = wp_parse_args( (array) $property, array(
+														'custom'           => '',
+														'prefix'           => '',
+														'process_callback' => '',
+														'property'         => '',
+														'suffix'           => '',
+													) );
+
+													// Replace `[[id]]` placeholder with option ID.
+													$property['property'] = str_replace(
+														'[[id]]',
+														$theme_option['id'],
+														$property['property']
+													);
+
+													$value = ( empty( $property['process_callback'] ) ) ? ( 'to' ) : ( trim( $property['process_callback'] ) . '( to )' );
+
+													if ( empty( $property['custom'] ) ) {
+														$output_single_css .= $property['property'] . ": " . $property['prefix'] . "' + " . $value . " + '" . $property['suffix'] . "; ";
+													} else {
+														$output_single_css .= $property['property'] . ": " . str_replace( '[[value]]', "' + " . $value . " + '", $property['custom'] ) . "; ";
+													}
+
 											}
 
-											if ( ! is_array( $property ) ) {
-												$property = array( $property, '' );
-											}
-											if ( ! isset( $property[1] ) ) {
-												$property[1] = '';
-											}
-											if ( ! isset( $property[2] ) ) {
-												$property[2] = '';
-											}
+											$output_single .= "\t\t\t" . "newCss += '" . $selector_before . $selector . " { " . $output_single_css . "}" . $selector_after . " ';" . "\r\n";
 
-											/**
-											 * $property[0] = CSS style property
-											 * $property[1] = suffix (such as CSS unit)
-											 * $property[2] = prefix (such as CSS linear gradient)
-											 */
-
-											$output_single_css .= $property[0] . ": " . $property[2] . "' + to + '" . $property[1] . "; ";
-
-										} // /foreach
-
-										$output_single .= "\t\t\t" . "newCss += '" . $selector . " { " . $output_single_css . "} ';" . "\r\n";
-
+										}
 									}
 
-								} // /foreach
+									$output_single .= "\r\n\t\t\t" . "jQuery( document ).find( 'head' ).append( jQuery( '<style id=\'jscss-" . $theme_option['id'] . "\'> ' + newCss + '</style>' ) );" . "\r\n";
 
-								$output_single .= "\r\n\t\t\t" . "jQuery( document ).find( 'head' ).append( jQuery( '<style id=\'jscss-" . $theme_option['id'] . "\'> ' + newCss + '</style>' ) );" . "\r\n";
+							// Custom JS
 
-							} elseif ( isset( $theme_option['preview_js']['custom'] ) ) {
-
-								$output_single .= "\t\t" . $theme_option['preview_js']['custom'] . "\r\n";
-
-							}
+								if ( isset( $theme_option['preview_js']['custom'] ) ) {
+									$output_single .= "\t\t" . $theme_option['preview_js']['custom'] . "\r\n";
+								}
 
 							$output_single .= "\t\t" . '} );' . "\r\n";
 							$output_single .= "\t" . '}'. "\r\n";
@@ -212,15 +241,15 @@
 
 						}
 
-					} // /foreach
+					}
 
 				}
 
 
 			// Output
 
-				if ( $output = trim( apply_filters( 'wmhook_wm_theme_customizer_js_output', $output ) ) ) {
-					echo '<!-- Theme custom scripts -->' . "\r\n" . '<script type="text/javascript"><!--' . "\r\n" . '( function( $ ) {' . "\r\n\r\n" . trim( $output ) . "\r\n\r\n" . '} )( jQuery );' . "\r\n" . '//--></script>';
+				if ( $output = trim( $output ) ) {
+					echo apply_filters( 'wmhook_wm_theme_customizer_js_output', '<!-- Theme custom scripts -->' . "\r\n" . '<script type="text/javascript"><!--' . "\r\n" . '( function( $ ) {' . "\r\n\r\n" . trim( $output ) . "\r\n\r\n" . '} )( jQuery );' . "\r\n" . '//--></script>' );
 				}
 
 		}
@@ -239,6 +268,7 @@
 	 *
 	 * @since    2.0
 	 * @version  2.0
+	 * @version  2.6.0
 	 *
 	 * @param  string               $value WP customizer value to sanitize.
 	 * @param  WP_Customize_Setting $setting
@@ -248,7 +278,7 @@
 
 			// Output
 
-				return apply_filters( 'wmhook_wm_sanitize_checkbox_output', ( ( isset( $value ) && true == $value ) ? ( true ) : ( false ) ), $value, $setting );
+				return ( isset( $value ) && true == $value ) ? ( true ) : ( false );
 
 		}
 	} // /wm_sanitize_checkbox
@@ -260,6 +290,7 @@
 	 *
 	 * @since    2.0
 	 * @version  2.0
+	 * @version  2.6.0
 	 *
 	 * @param  string               $value WP customizer value to sanitize.
 	 * @param  WP_Customize_Setting $setting
@@ -278,7 +309,7 @@
 
 			// Output
 
-				return apply_filters( 'wmhook_wm_sanitize_checkbox_output', ( array_key_exists( $value, $choices ) ? ( $value ) : ( $setting->default ) ), $value, $setting );
+				return ( array_key_exists( $value, $choices ) ) ? ( $value ) : ( $setting->default );
 
 		}
 	} // /wm_sanitize_select
@@ -335,6 +366,7 @@
 	 *
 	 * @since    1.0
 	 * @version  2.5.0
+	 * @version  2.6.0
 	 *
 	 * @param  object $wp_customize WP customizer object.
 	 */
@@ -372,7 +404,7 @@
 
 				// To make sure our customizer sections start after WordPress default ones
 
-					$priority = apply_filters( 'wmhook_wm_theme_customizer_priority', 200 );
+					$priority = apply_filters( 'wmhook_wm_theme_customizer_priority', 0 );
 
 				// Default section name in case not set (should be overwritten anyway)
 
@@ -386,13 +418,6 @@
 
 
 			// Processing
-
-				// Moving "Widgets" panel after the custom "Theme" panel
-				// @link  https://developer.wordpress.org/themes/advanced-topics/customizer-api/#sections
-
-					if ( $wp_customize->get_panel( 'widgets' ) ) {
-						$wp_customize->get_panel( 'widgets' )->priority = $priority + 10;
-					}
 
 				// Set live preview for predefined controls
 
@@ -884,456 +909,302 @@
 				// Assets needed for customizer preview
 
 					if ( $wp_customize->is_preview() ) {
-
 						add_action( 'wp_footer', 'wm_theme_customizer_js', 99 );
-
 					}
 
 		}
 	} // /wm_theme_customizer
 
-	add_action( 'customize_register', 'wm_theme_customizer', 100 ); // After Jetpack logo action
+	add_action( 'customize_register', 'wm_theme_customizer' );
 
 
 
 
 
 /**
- * 40) CSS styles
+ * 40) CSS variables
  */
 
 	/**
-	 * Outputs custom CSS styles set via Customizer
+	 * Ensure compatibility with older browsers.
 	 *
-	 * This function allows you to hook your custom CSS styles string
-	 * onto 'wmhook_custom_styles' filter hook.
-	 * Then just use a '[[customizer_option_id]]' tags in your custom CSS
-	 * styles string where the specific option value should be used.
+	 * @link  https://github.com/jhildenbiddle/css-vars-ponyfill
 	 *
-	 * Caching $replacement into 'auberge-customizer-values' transient.
-	 * Caching $output into 'auberge-custom-css' transient.
-	 *
-	 * @since    1.0
-	 * @version  2.5.2
-	 *
-	 * @param  bool $set_cache  Determines whether the results should be cached or not.
-	 * @param  bool $return     Whether to return a value or just run the process.
+	 * @since    1.9.0
+	 * @version  1.9.0
 	 */
-	if ( ! function_exists( 'wm_custom_styles' ) ) {
-		function wm_custom_styles( $set_cache = false, $return = true ) {
+	if ( ! function_exists( 'wm_css_vars_compatibility' ) ) {
+		function wm_css_vars_compatibility() {
 
-			// Helper variables
+			// Processing
 
-				global $wp_customize;
+				wp_enqueue_script(
+					'css-vars-ponyfill',
+					trailingslashit( get_template_directory_uri() ) . WM_LIBRARY_DIR . 'js/vendor/css-vars-ponyfill/css-vars-ponyfill.min.js',
+					array(),
+					'1.16.1'
+				);
 
-				if ( $wp_customize instanceof WP_Customize_Manager ) {
-					$is_customizer_preview = ( $wp_customize && $wp_customize->is_preview() );
-				} else {
-					$is_customizer_preview = false;
-				}
+				wp_add_inline_script(
+					'css-vars-ponyfill',
+					"cssVars( { onlyVars: true, exclude: 'link:not([href^=\"" . esc_url_raw( get_theme_root_uri() ) . "\"])' } );"
+				);
 
-				$output        = (string) apply_filters( 'wmhook_custom_styles', '' );
-				$theme_options = (array) apply_filters( 'wmhook_theme_options', array() );
-				$alphas        = array_filter( (array) apply_filters( 'wmhook_wm_custom_styles_alphas', array() ) );
+		}
+	} // /wm_css_vars_compatibility
 
-				$replacements  = array_filter( array_filter( (array) get_transient( 'auberge-customizer-values' ) ) ); // There have to be values (defaults) set!
+	add_action( 'wp_enqueue_scripts', 'wm_css_vars_compatibility', 0 );
 
-				/**
-				 * Force caching during the first theme display when no cache set (default
-				 * values will be used).
-				 * Cache is being set only after saving Customizer.
-				 */
-				if ( empty( $replacements ) ) {
-					$set_cache = true;
+
+
+	/**
+	 * Get CSS vars from theme options.
+	 *
+	 * @since    1.9.0
+	 * @version  1.9.0
+	 */
+	if ( ! function_exists( 'wm_get_css_vars_from_theme_options' ) ) {
+		function wm_get_css_vars_from_theme_options() {
+
+			// Variables
+
+				$is_customize_preview = is_customize_preview();
+				$cache_transient      = wm_get_transient_key( 'css-vars' );
+
+				$css_vars = (string) get_transient( $cache_transient );
+
+
+			// Requirements check
+
+				if (
+					! empty( $css_vars )
+					&& ! $is_customize_preview
+				) {
+					return (string) $css_vars;
 				}
 
 
 			// Processing
 
-				/**
-				 * Setting up replacements array when no cache exists.
-				 * Also, creates a new cache for replacements values.
-				 * The cache is being created only when saving the Customizer settings.
-				 */
-
-					if (
-							! empty( $theme_options )
-							&& (
-								$is_customizer_preview
-								|| empty( $replacements )
-							)
-						) {
-
-						foreach ( $theme_options as $theme_option ) {
-
-							// Reset variables
-
-								$option_id = $value = '';
-
-							// Set option ID
-
-								if ( isset( $theme_option['id'] ) ) {
-									$option_id = $theme_option['id'];
-								}
-
-							// If no option ID set, jump to next option
-
-								if ( empty( $option_id ) ) {
-									continue;
-								}
-
-							// If we have an ID, get the default value if set
-
-								if ( isset( $theme_option['default'] ) ) {
-									$value = $theme_option['default'];
-								}
-
-							// Get the option value saved in database and apply it when exists
-
-								if ( $mod = get_theme_mod( $option_id ) ) {
-									$value = $mod;
-								}
-
-							// Make sure the color value contains '#'
-
-								if ( 'color' === $theme_option['type'] ) {
-									$value = wm_maybe_hash_hex_color( $value );
-								}
-
-							// Make sure the image URL is used in CSS format
-
-								if ( 'image' === $theme_option['type'] ) {
-									if ( is_array( $value ) && isset( $value['id'] ) ) {
-										$value = absint( $value['id'] );
-									}
-									if ( is_numeric( $value ) ) {
-										$value = wp_get_attachment_image_src( absint( $value ), 'full' );
-										$value = $value[0];
-									}
-									if ( ! empty( $value ) ) {
-										$value = "url('" . esc_url( $value ) . "')";
-									} else {
-										$value = 'none';
-									}
-								}
-
-							// Value filtering
-
-								$value = apply_filters( 'wmhook_wm_custom_styles_value', $value, $theme_option );
-
-							// Convert array to string as otherwise the strtr() function throws error
-
-								if ( is_array( $value ) ) {
-									$value = (string) implode( ',', (array) $value );
-								}
-
-							// Finally modify the output string
-
-								$replacements[ '[[' . str_replace( '-', '_', $option_id ) . ']]' ] = $value;
-
-								// Add also rgba() color interpratation
-
-									if ( 'color' === $theme_option['type'] && ! empty( $alphas ) ) {
-										foreach ( $alphas as $alpha ) {
-											$replacements[ '[[' . str_replace( '-', '_', $option_id ) . '(' . absint( $alpha ) . ')]]' ] = wm_color_hex_to_rgba( $value, absint( $alpha ) );
-										} // /foreach
-									}
-
-						} // /foreach
-
-						// Add WordPress Custom Background and Header support
-
-							// Background color
-
-								if ( $value = get_background_color() ) {
-									$replacements['[[background_color]]'] = wm_maybe_hash_hex_color( $value );
-
-									if ( ! empty( $alphas ) ) {
-										foreach ( $alphas as $alpha ) {
-											$replacements[ '[[background_color(' . absint( $alpha ) . ')]]' ] = wm_color_hex_to_rgba( $value, absint( $alpha ) );
-										} // /foreach
-									}
-								}
-
-							// Background image
-
-								if ( $value = get_background_image() ) {
-									$replacements['[[background_image]]'] = "url('" . esc_url( $value ) . "')";
-								} else {
-									$replacements['[[background_image]]'] = 'none';
-								}
-
-							// Header text color
-
-								if ( $value = get_header_textcolor() ) {
-									$replacements['[[header_textcolor]]'] = wm_maybe_hash_hex_color( $value );
-
-									if ( ! empty( $alphas ) ) {
-										foreach ( $alphas as $alpha ) {
-											$replacements[ '[[header_textcolor(' . absint( $alpha ) . ')]]' ] = wm_color_hex_to_rgba( $value, absint( $alpha ) );
-										} // /foreach
-									}
-								}
-
-							// Header image
-
-								if ( $value = get_header_image() ) {
-									$replacements['[[header_image]]'] = "url('" . esc_url( $value ) . "')";
-								} else {
-									$replacements['[[header_image]]'] = 'none';
-								}
-
-						$replacements = (array) apply_filters( 'wmhook_wm_custom_styles_replacements', $replacements, $theme_options, $output );
-
-						if (
-								$set_cache
-								&& ! empty( $replacements )
-							) {
-							set_transient( 'auberge-customizer-values', $replacements );
-						}
-
+				foreach ( (array) apply_filters( 'wmhook_theme_options', array() ) as $option ) {
+					if ( ! isset( $option['css_var'] ) ) {
+						continue;
 					}
 
-				// Prepare output and cache
-
-					$output_cached = (string) get_transient( 'auberge-custom-css' );
-
-					// Debugging set (via "debug" URL parameter)
-
-						if ( isset( $_GET['debug'] ) ) {
-							$output_cached = (string) get_transient( 'auberge-custom-css-debug' );
-						}
-
-					if (
-							empty( $output_cached )
-							|| $is_customizer_preview
-						) {
-
-						// Replace tags in custom CSS strings with actual values
-
-							$output = strtr( $output, $replacements );
-
-						if ( $set_cache ) {
-							set_transient( 'auberge-custom-css-debug', apply_filters( 'wmhook_wm_custom_styles_output_cache_debug', $output ) );
-							set_transient( 'auberge-custom-css', apply_filters( 'wmhook_wm_custom_styles_output_cache', $output ) );
-						}
-
+					if ( isset( $option['default'] ) ) {
+						$value = $option['default'];
 					} else {
-
-						$output = $output_cached;
-
+						$value = '';
 					}
+
+					$mod = wm_option( $option['id'] );
+					if ( isset( $option['validate'] ) && is_callable( $option['validate'] ) ) {
+						$mod = call_user_func( $option['validate'], $mod );
+					}
+					if ( ! empty( $mod ) || 'checkbox' === $option['type'] ) {
+						if ( 'color' === $option['type'] ) {
+							$value_check = maybe_hash_hex_color( $value );
+							$mod         = maybe_hash_hex_color( $mod );
+						} else {
+							$value_check = $value;
+						}
+						// No need to output CSS var if it is the same as default.
+						if ( $value_check === $mod ) {
+							continue;
+						}
+						$value = $mod;
+					} else {
+						// No need to output CSS var if it was not changed in customizer.
+						continue;
+					}
+
+					// Array value to string. Just in case.
+					if ( is_array( $value ) ) {
+						$value = (string) implode( ',', (array) $value );
+					}
+
+					if ( is_callable( $option['css_var'] ) ) {
+						$value = call_user_func( $option['css_var'], $value );
+					} else {
+						$value = str_replace(
+							'[[value]]',
+							$value,
+							(string) $option['css_var']
+						);
+					}
+
+					$css_vars .= ' --' . $option['id'] . ': ' . $value . ';';
+				}
+
+				// Cache the results.
+				if ( ! $is_customize_preview ) {
+					set_transient( $cache_transient, $css_vars );
+				}
 
 
 			// Output
 
-				if ( $output && $return ) {
-					return (string) apply_filters( 'wmhook_wm_custom_styles_output', trim( $output ) );
+				return (string) $css_vars;
+
+		}
+	} // /wm_get_css_vars_from_theme_options
+
+
+
+	/**
+	 * Customized styles.
+	 *
+	 * @since    1.9.0
+	 * @version  1.9.0
+	 */
+	if ( ! function_exists( 'wm_customized_styles' ) ) {
+		function wm_customized_styles() {
+
+			// Processing
+
+				if ( $css_vars = wm_get_css_vars_from_theme_options() ) {
+
+					$css_vars = (string) apply_filters( 'wmhook_wm_customized_styles',
+						'/* START CSS variables */'
+						. PHP_EOL
+						. ':root { '
+						. PHP_EOL
+						. $css_vars
+						. PHP_EOL
+						. '}'
+						. PHP_EOL
+						. '/* END CSS variables */'
+					);
+
+					wp_add_inline_style(
+						'forstron',
+						apply_filters( 'wmhook_esc_css', $css_vars )
+					);
+
 				}
 
 		}
-	} // /wm_custom_styles
+	} // /wm_customized_styles
+
+	add_action( 'wp_enqueue_scripts', 'wm_customized_styles', 110 );
+
+
+
+	/**
+	 * Customized styles: editor.
+	 *
+	 * Ajax callback for outputting custom styles for content editor.
+	 *
+	 * @see  https://github.com/justintadlock/stargazer/blob/master/inc/custom-colors.php
+	 *
+	 * @since    1.9.0
+	 * @version  1.9.0
+	 */
+	if ( ! function_exists( 'wm_customized_styles_editor' ) ) {
+		function wm_customized_styles_editor() {
+
+			// Processing
+
+				if ( $css_vars = wm_get_css_vars_from_theme_options() ) {
+					header( 'Content-type: text/css' );
+
+					$css_vars = (string) apply_filters( 'wmhook_wm_customized_styles_editor',
+						'/* START CSS variables */'
+						. PHP_EOL
+						. ':root { '
+						. PHP_EOL
+						. $css_vars
+						. PHP_EOL
+						. '}'
+						. PHP_EOL
+						. '/* END CSS variables */'
+					);
+
+					echo (string) apply_filters( 'wmhook_esc_css', $css_vars );
+				}
+
+				die();
+
+		}
+	} // /wm_customized_styles_editor
+
+	add_action( 'wp_ajax_forstron_editor_styles',         'wm_customized_styles_editor' );
+	add_action( 'wp_ajax_no_priv_forstron_editor_styles', 'wm_customized_styles_editor' );
 
 
 
 		/**
-		 * Flush out the transients used in wm_custom_styles
+		 * Enqueue customized styles as editor stylesheet.
 		 *
-		 * @since    1.0
-		 * @version  1.1
+		 * @since    1.9.0
+		 * @version  1.9.0
+		 *
+		 * @param  array $visual_editor_css
 		 */
-		if ( ! function_exists( 'wm_custom_styles_transient_flusher' ) ) {
-			function wm_custom_styles_transient_flusher() {
+		if ( ! function_exists( 'wm_customized_styles_editor_enqueue' ) ) {
+			function wm_customized_styles_editor_enqueue( $visual_editor_css = array() ) {
 
 				// Processing
 
-					delete_transient( 'auberge-customizer-values' );
-					delete_transient( 'auberge-custom-css-debug' );
-					delete_transient( 'auberge-custom-css' );
+					/**
+					 * @see  `stargazer_get_editor_styles` https://github.com/justintadlock/stargazer/blob/master/inc/stargazer.php
+					 */
+					$visual_editor_css[] = esc_url_raw( add_query_arg(
+						array(
+							'action' => 'forstron_editor_styles',
+							'ver'    => WM_SCRIPTS_VERSION . '.' . get_theme_mod( '__customize_timestamp' ),
+						),
+						admin_url( 'admin-ajax.php' )
+					) );
+
+
+				// Output
+
+					return $visual_editor_css;
 
 			}
-		} // /wm_custom_styles_transient_flusher
+		} // /wm_customized_styles_editor_enqueue
 
-		add_action( 'switch_theme',         'wm_custom_styles_transient_flusher' );
-		add_action( 'wmhook_theme_upgrade', 'wm_custom_styles_transient_flusher' );
-
-
-
-	/**
-	 * Force cache only for the above function
-	 *
-	 * Useful to pass into the action hooks.
-	 *
-	 * @since    1.0
-	 * @version  1.0
-	 */
-	if ( ! function_exists( 'wm_custom_styles_cache' ) ) {
-		function wm_custom_styles_cache() {
-
-			// Processing
-
-				// Set cache, do not return
-
-					wm_custom_styles( true, false );
-
-		}
-	} // /wm_custom_styles_cache
-
-	add_action( 'customize_save_after', 'wm_custom_styles_cache' );
+		add_filter( 'wmhook_wm_setup_visual_editor_css', 'wm_customized_styles_editor_enqueue' );
 
 
 
 	/**
-	 * Hex color to RGBA
+	 * Customizer save timestamp.
 	 *
-	 * @since    1.0
-	 * @version  2.0
-	 *
-	 * @link  http://php.net/manual/en/function.hexdec.php
-	 *
-	 * @param  string $hex
-	 * @param  absint $alpha [0-100]
-	 *
-	 * @return  string Color in rgb() or rgba() format to use in CSS.
+	 * @since    1.9.0
+	 * @version  1.9.0
 	 */
-	if ( ! function_exists( 'wm_color_hex_to_rgba' ) ) {
-		function wm_color_hex_to_rgba( $hex, $alpha = 100 ) {
-
-			// Helper variables
-
-				$alpha = absint( $alpha );
-
-				$output = ( 100 === $alpha ) ? ( 'rgb(' ) : ( 'rgba(' );
-
-				$rgb = array();
-
-				$hex = preg_replace( '/[^0-9A-Fa-f]/', '', $hex );
-				$hex = substr( $hex, 0, 6 );
-
+	if ( ! function_exists( 'wm_customize_timestamp' ) ) {
+		function wm_customize_timestamp() {
 
 			// Processing
 
-				// Converting hex color into rgb
-
-					$color = (int) hexdec( $hex );
-
-					$rgb['r'] = (int) 0xFF & ( $color >> 0x10 );
-					$rgb['g'] = (int) 0xFF & ( $color >> 0x8 );
-					$rgb['b'] = (int) 0xFF & $color;
-
-					$output .= implode( ',', $rgb );
-
-				// Using alpha (rgba)?
-
-					if ( 100 > $alpha ) {
-						$output .= ',' . ( $alpha / 100 );
-					}
-
-				// Closing opening bracket
-
-					$output .= ')';
-
-
-			// Output
-
-				return apply_filters( 'wmhook_wm_color_hex_to_rgba_output', $output, $hex, $alpha );
+				set_theme_mod( '__customize_timestamp', esc_attr( gmdate( 'ymdHis' ) ) );
 
 		}
-	} // /wm_color_hex_to_rgba
+	} // /wm_customize_timestamp
+
+	add_action( 'customize_save_after', 'wm_customize_timestamp' );
 
 
 
 	/**
-	 * CSS minifier
+	 * Cache: Flush CSS vars.
 	 *
-	 * @since    1.0
-	 * @version  1.3
-	 *
-	 * @param  string $css Code to minify
+	 * @since    1.9.0
+	 * @version  1.9.0
 	 */
-	if ( ! function_exists( 'wm_minify_css' ) ) {
-		function wm_minify_css( $css ) {
-
-			// Requirements check
-
-				if (
-						! is_string( $css )
-						&& ! apply_filters( 'wmhook_wm_minify_css_disable', false )
-					) {
-					return $css;
-				}
-
+	if ( ! function_exists( 'wm_cache_flush_css_vars' ) ) {
+		function wm_cache_flush_css_vars() {
 
 			// Processing
 
-				$css = apply_filters( 'wmhook_wm_minify_css_pre', $css );
-
-				// Remove CSS comments
-
-					$css = preg_replace( '!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $css );
-
-				// Remove tabs, spaces, line breaks, etc.
-
-					$css = str_replace( array( "\r\n", "\r", "\n", "\t" ), '', $css );
-					$css = str_replace( array( '  ', '   ', '    ', '     ' ), ' ', $css );
-					$css = str_replace( array( ' { ', ': ', '; }' ), array( '{', ':', '}' ), $css );
-
-
-			// Output
-
-				return apply_filters( 'wmhook_wm_minify_css_output', $css );
+				delete_transient( wm_get_transient_key( 'css-vars' ) );
 
 		}
-	} // /wm_minify_css
+	} // /wm_cache_flush_css_vars
 
-	add_filter( 'wmhook_wm_custom_styles_output_cache', 'wm_minify_css' );
-
-
-	/**
-	 * Duplicating WordPress native function in case it does not exist yet
-	 *
-	 * @since    1.0
-	 * @version  1.0
-	 *
-	 * @link  https://developer.wordpress.org/reference/functions/maybe_hash_hex_color/
-	 * @link  https://developer.wordpress.org/reference/functions/sanitize_hex_color_no_hash/
-	 *
-	 * @param  string $color
-	 */
-	if ( ! function_exists( 'wm_maybe_hash_hex_color' ) ) {
-		function wm_maybe_hash_hex_color( $color ) {
-
-			// Requirements check
-
-				if (
-						function_exists( 'maybe_hash_hex_color' )
-						&& function_exists( 'sanitize_hex_color_no_hash' )
-					) {
-					return maybe_hash_hex_color( $color );
-				}
-
-
-			// Helper variables
-
-				// 3 or 6 hex digits, or the empty string.
-
-					if ( preg_match( '|([A-Fa-f0-9]{3}){1,2}$|', $color ) ) {
-						$color = ltrim( $color, '#' );
-					} else {
-						$color = '';
-					}
-
-
-			// Processing
-
-				if ( $color ) {
-					$color = '#' . $color;
-				}
-
-
-			// Output
-
-				return $color;
-
-		}
-	} // /wm_maybe_hash_hex_color
+	add_action( 'switch_theme',         'wm_cache_flush_css_vars' );
+	add_action( 'customize_save_after', 'wm_cache_flush_css_vars' );
+	add_action( 'wmhook_theme_upgrade', 'wm_cache_flush_css_vars' );
