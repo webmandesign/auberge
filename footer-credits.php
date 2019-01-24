@@ -9,7 +9,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    2.0
- * @version  2.4.0
+ * @version  2.6.0
  */
 
 
@@ -64,9 +64,8 @@
 
 				<?php
 
-				// This is already validated/sanitized when stored in customizer (with wp_kses_post())
-
-					echo $custom_credits;
+				// This is already validated/sanitized when stored in customizer (with wp_kses_post()).
+				echo $custom_credits; // WPCS: XSS OK.
 
 				?>
 

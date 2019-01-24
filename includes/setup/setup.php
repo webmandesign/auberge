@@ -964,7 +964,7 @@
 		 * Register predefined widget areas (sidebars)
 		 *
 		 * @since    1.0
-		 * @version  1.0
+		 * @version  2.6.0
 		 */
 		if ( ! function_exists( 'wm_register_widget_areas' ) ) {
 			function wm_register_widget_areas() {
@@ -972,17 +972,15 @@
 				// Processing
 
 					foreach( wm_helper_var( 'widget-areas' ) as $id => $area ) {
-
 						register_sidebar( array(
-								'id'            => $id,
-								'name'          => $area['name'],
-								'description'   => $area['description'],
-								'before_widget' => '<div id="%1$s" class="widget %2$s">',
-								'after_widget'  => '</div>',
-								'before_title'  => '<h3 class="widget-title">',
-								'after_title'   => '</h3>'
-							) );
-
+							'id'            => $id,
+							'name'          => $area['name'],
+							'description'   => $area['description'],
+							'before_widget' => '<section id="%1$s" class="widget %2$s">',
+							'after_widget'  => '</section>',
+							'before_title'  => '<h3 class="widget-title">',
+							'after_title'   => '</h3>'
+						) );
 					}
 
 			}
@@ -3086,7 +3084,7 @@
 		 * Pagination
 		 *
 		 * @since    1.0
-		 * @version  2.5.3
+		 * @version  2.6.0
 		 */
 		if ( ! function_exists( 'wm_pagination' ) ) {
 			function wm_pagination() {
@@ -3105,18 +3103,18 @@
 					$output = '';
 
 					$pagination = array(
-							'prev_text' => esc_html_x( '&laquo;', 'Pagination text (visible): previous.', 'auberge' ) . '<span class="screen-reader-text"> '
-							               . esc_html_x( 'Previous page', 'Pagination text (hidden): previous.', 'auberge' ) . '</span>',
-							'next_text' => '<span class="screen-reader-text">' . esc_html_x( 'Next page', 'Pagination text (hidden): next.', 'auberge' )
-							               . ' </span>' . esc_html_x( '&raquo;', 'Pagination text (visible): next.', 'auberge' ),
-						);
+						'prev_text' => esc_html_x( '&laquo;', 'Pagination text (visible): previous.', 'auberge' ) . '<span class="screen-reader-text"> '
+						               . esc_html_x( 'Previous page', 'Pagination text (hidden): previous.', 'auberge' ) . '</span>',
+						'next_text' => '<span class="screen-reader-text">' . esc_html_x( 'Next page', 'Pagination text (hidden): next.', 'auberge' )
+						               . ' </span>' . esc_html_x( '&raquo;', 'Pagination text (visible): next.', 'auberge' ),
+					);
 
 
 				// Processing
 
 					if ( $output = paginate_links( $pagination ) ) {
 						$output = '<nav class="pagination" aria-labelledby="pagination-label">'
-						          . '<h2 class="screen-reader-text" id="pagination-label">' . esc_attr__( 'Posts Navigation', 'auberge' ) . '</h2>'
+						          . '<h2 class="screen-reader-text" id="pagination-label">' . esc_html__( 'Posts Navigation', 'auberge' ) . '</h2>'
 						          . $output
 						          . '</nav>';
 					}
@@ -3124,7 +3122,7 @@
 
 				// Output
 
-					echo $output;
+					echo $output; // WPCS: XSS OK.
 
 			}
 		} // /wm_pagination
@@ -3716,10 +3714,4 @@
 
 		if ( ( class_exists( 'OCDI_Plugin' ) || class_exists( 'PT_One_Click_Demo_Import' ) ) && is_admin() ) {
 			require_once( get_template_directory() . '/includes/plugins/one-click-demo-import/class-one-click-demo-import.php' );
-		}
-
-	// Smart Slider 3 setup
-
-		if ( class_exists( 'N2SS3' ) ) {
-			require_once( get_template_directory() . '/includes/plugins/smart-slider/smart-slider.php' );
 		}

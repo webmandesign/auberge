@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0
- * @version  2.5.4
+ * @version  2.6.0
  */
 
 
@@ -75,7 +75,7 @@
 			);
 		}
 
-		echo $social_menu_html;
+		echo $social_menu_html; // WPCS: XSS OK.
 
 	}
 

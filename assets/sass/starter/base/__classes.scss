@@ -12,6 +12,7 @@
 
 	%screen_reader_hiding {
 		clip: rect( 1px, 1px, 1px, 1px );
+		clip-path: inset( 50% );
 		position: absolute !important;
 		height: 1px;
 		width: 1px;
@@ -21,6 +22,7 @@
 
 	%screen_reader_hiding_disable {
 		clip: auto;
+		clip-path: none;
 		position: static !important;
 		height: auto;
 		width: auto;
@@ -31,23 +33,27 @@
 	.screen-reader-text {
 		@extend %screen_reader_hiding;
 		padding: 0;
-		margin: 0;
+		margin: -1px;
+		word-wrap: normal !important;
+		border: 0;
 
 		&:hover,
 		&:active,
 		&:focus {
 			clip: auto !important;
+			clip-path: none;
 			display: block;
 			width: auto;
 			height: auto;
 			#{$left}: $golden_minor +rem; // {{RTL}}
 			top: $golden_minor +rem;
-			line-height: normal;
-			text-decoration: none;
 			padding: 1rem;
+			margin: 0;
 			font-size: 14px;
 			font-size: .81rem;
 			font-weight: 700;
+			line-height: normal;
+			text-decoration: none;
 			background-color: #47c;
 			color: #fff;
 			z-index: 100000; /* Above WP toolbar. */

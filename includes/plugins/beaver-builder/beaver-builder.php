@@ -10,7 +10,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.2
- * @version  2.0
+ * @version  2.6.0
  *
  * Contents:
  *
@@ -102,7 +102,7 @@
 	 * Global settings
 	 *
 	 * @since    1.2
-	 * @version  2.0
+	 * @version  2.6.0
 	 *
 	 * @param  array  $defaults
 	 * @param  string $form_type
@@ -116,7 +116,7 @@
 
 					// "Default Page Heading" section
 
-						$defaults->show_default_heading     = 1;
+						$defaults->show_default_heading     = '1';
 						$defaults->default_heading_selector = '.entry-header';
 
 					// "Rows" section

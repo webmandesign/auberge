@@ -256,13 +256,13 @@ th, td { padding: 0.62em 1em; border-width: 1px; border-style: solid; vertical-a
 th, tfoot td { text-align: right; border-width: 2px; }
 
 /* FILE: starter/base/__classes.scss */
-.screen-reader-text, .comments-link .comments-title, .site-title-hidden .site-branding-text, .site-description, .entry-meta-description, .posts .entry-meta-element.author, .items .entry-meta, .tax-nova_menu.no-tax-children .page-header { clip: rect(1px, 1px, 1px, 1px); position: absolute !important; height: 1px; width: 1px; line-height: 1px; overflow: hidden; }
+.screen-reader-text, .comments-link .comments-title, .site-title-hidden .site-branding-text, .site-description, .entry-meta-description, .posts .entry-meta-element.author, .items .entry-meta, .tax-nova_menu.no-tax-children .page-header { clip: rect(1px, 1px, 1px, 1px); -webkit-clip-path: inset(50%); clip-path: inset(50%); position: absolute !important; height: 1px; width: 1px; line-height: 1px; overflow: hidden; }
 
-.social-links .lang-item .screen-reader-text, .social-links .menu-item-language .screen-reader-text { clip: auto; position: static !important; height: auto; width: auto; line-height: normal; overflow: visible; }
+.social-links .lang-item .screen-reader-text, .social-links .menu-item-language .screen-reader-text { clip: auto; -webkit-clip-path: none; clip-path: none; position: static !important; height: auto; width: auto; line-height: normal; overflow: visible; }
 
-.screen-reader-text { padding: 0; margin: 0; }
+.screen-reader-text { padding: 0; margin: -1px; word-wrap: normal !important; border: 0; }
 
-.screen-reader-text:hover, .screen-reader-text:active, .screen-reader-text:focus { clip: auto !important; display: block; width: auto; height: auto; right: 0.38rem; top: 0.38rem; line-height: normal; text-decoration: none; padding: 1rem; font-size: 14px; font-size: .81rem; font-weight: 700; background-color: #47c; color: #fff; z-index: 100000; /* Above WP toolbar. */ }
+.screen-reader-text:hover, .screen-reader-text:active, .screen-reader-text:focus { clip: auto !important; -webkit-clip-path: none; clip-path: none; display: block; width: auto; height: auto; right: 0.38rem; top: 0.38rem; padding: 1rem; margin: 0; font-size: 14px; font-size: .81rem; font-weight: 700; line-height: normal; text-decoration: none; background-color: #47c; color: #fff; z-index: 100000; /* Above WP toolbar. */ }
 
 .focus-position-static:hover, .focus-position-static:active, .focus-position-static:focus { position: static !important; margin: 1px; text-align: center; }
 
