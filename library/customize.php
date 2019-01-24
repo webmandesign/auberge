@@ -930,8 +930,8 @@
 	 *
 	 * @link  https://github.com/jhildenbiddle/css-vars-ponyfill
 	 *
-	 * @since    1.9.0
-	 * @version  1.9.0
+	 * @since    2.6.0
+	 * @version  2.6.0
 	 */
 	if ( ! function_exists( 'wm_css_vars_compatibility' ) ) {
 		function wm_css_vars_compatibility() {
@@ -940,7 +940,7 @@
 
 				wp_enqueue_script(
 					'css-vars-ponyfill',
-					trailingslashit( get_template_directory_uri() ) . WM_LIBRARY_DIR . 'js/vendor/css-vars-ponyfill/css-vars-ponyfill.min.js',
+					trailingslashit( get_template_directory_uri() ) . 'library/js/vendor/css-vars-ponyfill/css-vars-ponyfill.min.js',
 					array(),
 					'1.16.1'
 				);
@@ -960,8 +960,8 @@
 	/**
 	 * Get CSS vars from theme options.
 	 *
-	 * @since    1.9.0
-	 * @version  1.9.0
+	 * @since    2.6.0
+	 * @version  2.6.0
 	 */
 	if ( ! function_exists( 'wm_get_css_vars_from_theme_options' ) ) {
 		function wm_get_css_vars_from_theme_options() {
@@ -997,7 +997,7 @@
 						$value = '';
 					}
 
-					$mod = wm_option( $option['id'] );
+					$mod = get_theme_mod( $option['id'] );
 					if ( isset( $option['validate'] ) && is_callable( $option['validate'] ) ) {
 						$mod = call_user_func( $option['validate'], $mod );
 					}
@@ -1054,8 +1054,8 @@
 	/**
 	 * Customized styles.
 	 *
-	 * @since    1.9.0
-	 * @version  1.9.0
+	 * @since    2.6.0
+	 * @version  2.6.0
 	 */
 	if ( ! function_exists( 'wm_customized_styles' ) ) {
 		function wm_customized_styles() {
@@ -1077,7 +1077,7 @@
 					);
 
 					wp_add_inline_style(
-						'forstron',
+						'auberge',
 						apply_filters( 'wmhook_esc_css', $css_vars )
 					);
 
@@ -1097,8 +1097,8 @@
 	 *
 	 * @see  https://github.com/justintadlock/stargazer/blob/master/inc/custom-colors.php
 	 *
-	 * @since    1.9.0
-	 * @version  1.9.0
+	 * @since    2.6.0
+	 * @version  2.6.0
 	 */
 	if ( ! function_exists( 'wm_customized_styles_editor' ) ) {
 		function wm_customized_styles_editor() {
@@ -1128,16 +1128,16 @@
 		}
 	} // /wm_customized_styles_editor
 
-	add_action( 'wp_ajax_forstron_editor_styles',         'wm_customized_styles_editor' );
-	add_action( 'wp_ajax_no_priv_forstron_editor_styles', 'wm_customized_styles_editor' );
+	add_action( 'wp_ajax_auberge_editor_styles',         'wm_customized_styles_editor' );
+	add_action( 'wp_ajax_no_priv_auberge_editor_styles', 'wm_customized_styles_editor' );
 
 
 
 		/**
 		 * Enqueue customized styles as editor stylesheet.
 		 *
-		 * @since    1.9.0
-		 * @version  1.9.0
+		 * @since    2.6.0
+		 * @version  2.6.0
 		 *
 		 * @param  array $visual_editor_css
 		 */
@@ -1151,8 +1151,8 @@
 					 */
 					$visual_editor_css[] = esc_url_raw( add_query_arg(
 						array(
-							'action' => 'forstron_editor_styles',
-							'ver'    => WM_SCRIPTS_VERSION . '.' . get_theme_mod( '__customize_timestamp' ),
+							'action' => 'auberge_editor_styles',
+							'ver'    => wp_get_theme( get_template() )->get( 'Version' ) . '.' . get_theme_mod( '__customize_timestamp' ),
 						),
 						admin_url( 'admin-ajax.php' )
 					) );
@@ -1172,8 +1172,8 @@
 	/**
 	 * Customizer save timestamp.
 	 *
-	 * @since    1.9.0
-	 * @version  1.9.0
+	 * @since    2.6.0
+	 * @version  2.6.0
 	 */
 	if ( ! function_exists( 'wm_customize_timestamp' ) ) {
 		function wm_customize_timestamp() {
@@ -1192,8 +1192,8 @@
 	/**
 	 * Cache: Flush CSS vars.
 	 *
-	 * @since    1.9.0
-	 * @version  1.9.0
+	 * @since    2.6.0
+	 * @version  2.6.0
 	 */
 	if ( ! function_exists( 'wm_cache_flush_css_vars' ) ) {
 		function wm_cache_flush_css_vars() {

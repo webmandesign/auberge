@@ -10,7 +10,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.1
- * @version  2.2.0
+ * @version  2.6.0
  *
  * Contents:
  *
@@ -358,7 +358,7 @@
 		 * Jetpack food menus Add Many Items styles
 		 *
 		 * @since    1.0
-		 * @version  1.3
+		 * @version  2.6.0
 		 */
 		if ( ! function_exists( 'wm_jetpack_styles_admin' ) ) {
 			function wm_jetpack_styles_admin() {
@@ -374,14 +374,14 @@
 				// Processing
 
 					if (
-							isset( $current_screen->id )
-							&& 'nova_menu_item_page_add_many_nova_items' === $current_screen->id
-						) {
+						isset( $current_screen->id )
+						&& 'nova_menu_item_page_add_many_nova_items' === $current_screen->id
+					) {
 
-							wp_add_inline_style(
-									'nova-font',
-									apply_filters( 'wmhook_esc_css', $styles )
-								);
+						wp_add_inline_style(
+							'auberge',
+							apply_filters( 'wmhook_esc_css', $styles )
+						);
 
 					}
 
