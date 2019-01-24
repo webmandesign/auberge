@@ -225,6 +225,7 @@
 									}
 
 									$output_single .= "\r\n\t\t\t" . "jQuery( document ).find( 'head' ).append( jQuery( '<style id=\'jscss-" . $theme_option['id'] . "\'> ' + newCss + '</style>' ) );" . "\r\n";
+								}
 
 							// Custom JS
 
