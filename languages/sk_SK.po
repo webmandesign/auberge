@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Auberge Plus 1.4\n"
 "Report-Msgid-Bugs-To: https://support.webmandesign.eu\n"
-"POT-Creation-Date: 2018-09-18 16:26+0200\n"
-"PO-Revision-Date: 2018-09-18 16:26+0200\n"
+"POT-Creation-Date: 2019-01-24 20:09+0100\n"
+"PO-Revision-Date: 2019-01-24 20:10+0100\n"
 "Last-Translator: Oliver Juhas, WebMan Design\n"
 "Language-Team: WebMan - Oliver Juhas <webmandesigneu@gmail.com>\n"
 "Language: sk_SK\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.1.1\n"
+"X-Generator: Poedit 2.2.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
@@ -68,7 +68,7 @@ msgstr "Používame %2$s tému %1$s."
 msgid "https://wordpress.org/"
 msgstr "https://sk.wordpress.org/"
 
-#: footer-credits.php:61 template-parts/menu-social.php:27
+#: footer-credits.php:61 template-parts/menu-social.php:30
 msgid "Back to top &uarr;"
 msgstr "Späť nahor &uarr;"
 
@@ -87,15 +87,15 @@ msgstr ""
 "Týmto nastavením obmedzíte zobrazenie jedálneho lístka na tejto stránky na "
 "špecifickú sekciu."
 
-#: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:109
+#: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:106
 msgid "Quote post format options"
 msgstr "Nastavenia citácie"
 
-#: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:114
+#: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:111
 msgid "Quote source"
 msgstr "Zdroj citátu"
 
-#: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:117
+#: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:114
 msgid ""
 "In case you have not provided the quote source in using the \"cite\" HTML "
 "tag in post content, you can set it here."
@@ -103,21 +103,21 @@ msgstr ""
 "V prípade, že ste neposkytli zdroj citácie pomocou \"cite\" HTML tagu priamo "
 "v obsahu článku, môžete tak urobiť týmto nastavením."
 
-#: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:119
+#: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:116
 msgid "John Doe"
 msgstr "Janko Hraško"
 
-#: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:160
+#: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:154
 msgid "Front page options"
 msgstr "Nastavenia úvodnej stránky"
 
-#: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:165
-#: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:216
+#: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:159
+#: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:207
 msgid "Banner text"
 msgstr "Text zobrazený v banneri"
 
-#: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:168
-#: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:219
+#: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:162
+#: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:210
 msgid ""
 "This text will override the default text displayed in your website front "
 "page banner."
@@ -125,7 +125,7 @@ msgstr ""
 "Týmto nastavením prepíšete pôvodný text zobrazený v banneri na úvodnej "
 "stránke."
 
-#: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:211
+#: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:202
 msgid "Featured post options"
 msgstr "Nastavenia odporúčaných článkov"
 
@@ -213,257 +213,236 @@ msgstr ""
 msgid "View the list of required plugins &raquo;"
 msgstr "Zobraziť zoznam požadovaných modulov &raquo;"
 
-#: includes/setup/setup.php:115
-msgid " - do not use Google Font"
-msgstr "- nepoužiť Google Fonty"
-
 #: includes/setup/setup.php:119
+msgid " - do not use Google Font"
+msgstr " - nepoužiť Google Fonty"
+
+#: includes/setup/setup.php:123
 msgctxt "Google Font default setup options group title."
 msgid "Theme default"
 msgstr "Pôvodné nastavenie"
 
-#: includes/setup/setup.php:125 includes/setup/setup.php:130
-#: includes/setup/setup.php:136 includes/setup/setup.php:141
-#: includes/setup/setup.php:146 includes/setup/setup.php:151
-#: includes/setup/setup.php:156 includes/setup/setup.php:160
-#: includes/setup/setup.php:166
+#: includes/setup/setup.php:129 includes/setup/setup.php:134
+#: includes/setup/setup.php:140 includes/setup/setup.php:145
+#: includes/setup/setup.php:150 includes/setup/setup.php:155
+#: includes/setup/setup.php:160 includes/setup/setup.php:164
+#: includes/setup/setup.php:170
 #, php-format
 msgctxt "Google Font setup recommendation (numbered) group title."
 msgid "Recommendation #%d"
 msgstr "Skupina č. %d"
 
-#: includes/setup/setup.php:174
+#: includes/setup/setup.php:178
 msgctxt "Title for selection of fonts picked from Google Fontss"
 msgid "Fonts selection"
 msgstr "Výber typov písma"
 
-#: includes/setup/setup.php:226
+#: includes/setup/setup.php:230
 msgid "Sidebar"
 msgstr "Bočný panel"
 
-#: includes/setup/setup.php:227
+#: includes/setup/setup.php:231
 msgid "Page sidebar."
 msgstr "Bočný panel na stránke."
 
-#: includes/setup/setup.php:230
+#: includes/setup/setup.php:234
 msgid "Front Page Widgets"
 msgstr "Widgety úvodnej stránky"
 
-#: includes/setup/setup.php:231
+#: includes/setup/setup.php:235
 msgid ""
 "This widgets area is displayed below the Banner area on the front page "
 "(homepage)."
 msgstr "Tieto widgety sa zobrazia pod bannerom na úvodnej stránke."
 
-#: includes/setup/setup.php:234
+#: includes/setup/setup.php:238
 msgid "Footer Widgets"
 msgstr "Widgety v pätke"
 
-#: includes/setup/setup.php:235
+#: includes/setup/setup.php:239
 msgid "Masonry layout is used to display footer widgets."
 msgstr ""
 "Widgety v pätke budú automaticky rozložené aby sa ušetrilo čo najviac miesta "
 "(tzv. \"masonry\" rozloženie)."
 
-#: includes/setup/setup.php:319 template-parts/menu-primary.php:20
+#: includes/setup/setup.php:339 template-parts/menu-primary.php:20
 msgid "Primary Menu"
 msgstr "Hlavné menu"
 
-#: includes/setup/setup.php:320
+#: includes/setup/setup.php:340
 msgid "Social Links Menu"
 msgstr "Odkazy sociálnych sietí"
 
-#: includes/setup/setup.php:389
+#: includes/setup/setup.php:409
 msgctxt "Header image description."
 msgid "Coffee machine"
 msgstr "Kávovar"
 
-#: includes/setup/setup.php:395
+#: includes/setup/setup.php:415
 msgctxt "Header image description."
 msgid "Restaurant interior from above"
 msgstr "Interiér reštaurácie zhora"
 
-#: includes/setup/setup.php:401
+#: includes/setup/setup.php:421
 msgctxt "Header image description."
 msgid "Pouring coffee"
 msgstr "Nalievanie kávy"
 
-#: includes/setup/setup.php:510
-msgid "Thank you for upgrading your theme."
-msgstr "Ďakujeme, že ste aktualizovali vašu tému."
-
-#: includes/setup/setup.php:511
-msgid "We have noticed you are using a child theme."
-msgstr "Všimli sme si, že používate odvodenú tému."
-
-#: includes/setup/setup.php:513
-msgid ""
-"Please note that there has been a lot of changes in this new theme version "
-"and you should check the code in your child theme for compatibility!"
-msgstr ""
-"Upozorňujeme, že v tejto novej verzii témy došlo k početným a výrazným "
-"zmenám, a mali by ste preto skontrolovať kód vašej odvodenej témy pre "
-"zabezpečenie kompatibility."
-
-#: includes/setup/setup.php:516
-msgid "Read theme changelog &raquo;"
-msgstr "Prezrieť zoznam zmien témy &raquo;"
-
-#: includes/setup/setup.php:597
+#: includes/setup/setup.php:528
 #, php-format
 msgctxt "%s: Theme name."
 msgid "Thank you for installing the %s theme!"
 msgstr "Ďakujeme, že používate tému %s!"
 
-#: includes/setup/setup.php:603
+#: includes/setup/setup.php:534
 msgid "Please read the information about the theme."
 msgstr "Prosíme, prečítajte si informácie o téme."
 
-#: includes/setup/setup.php:612
+#: includes/setup/setup.php:543
 #, php-format
 msgctxt "%s: Theme name."
 msgid "Get started with %s"
 msgstr "Začíname s %s"
 
-#: includes/setup/setup.php:666
+#: includes/setup/setup.php:597
 msgid "In posts list."
 msgstr "V zozname článkov."
 
-#: includes/setup/setup.php:677
+#: includes/setup/setup.php:608
 msgid "In single post page."
 msgstr "Na stránke článku."
 
-#: includes/setup/setup.php:683
+#: includes/setup/setup.php:614
 msgid "In front page banner."
 msgstr "V banneri úvodnej stránky."
 
-#: includes/setup/setup.php:689
+#: includes/setup/setup.php:620
 msgid "In food menu list."
 msgstr "V jedálnom lístku."
 
-#: includes/setup/setup.php:826
+#: includes/setup/setup.php:690
 msgctxt "WordPress predefined image size name."
 msgid "Thumbnail size"
 msgstr "Veľkosť miniatúry"
 
-#: includes/setup/setup.php:827
+#: includes/setup/setup.php:691
 msgctxt "WordPress predefined image size name."
 msgid "Medium size"
 msgstr "Stredný rozmer"
 
-#: includes/setup/setup.php:828
+#: includes/setup/setup.php:692
 msgctxt "WordPress predefined image size name."
 msgid "Large size"
 msgstr "Veľký rozmer"
 
-#: includes/setup/setup.php:861
+#: includes/setup/setup.php:725
 msgid "Recommended image sizes"
 msgstr "Odporúčané rozmery obrázkov"
 
-#: includes/setup/setup.php:862
+#: includes/setup/setup.php:726
 msgid ""
 "For the theme to work correctly, please, set these recommended image sizes:"
 msgstr ""
 "Prosíme, nastavte tieto odporúčané rozmery obrázkov pre správne zobrazenie v "
 "téme:"
 
-#: includes/setup/setup.php:868
+#: includes/setup/setup.php:732
 msgid "Size name"
 msgstr "Názov rozmeru"
 
-#: includes/setup/setup.php:869
+#: includes/setup/setup.php:733
 msgid "Size parameters"
 msgstr "Parametre rozmeru"
 
-#: includes/setup/setup.php:870
+#: includes/setup/setup.php:734
 msgid "Theme usage"
 msgstr "Použitie v téme"
 
-#: includes/setup/setup.php:878
+#: includes/setup/setup.php:742
 msgid "cropped"
 msgstr "orezaný"
 
-#: includes/setup/setup.php:878
+#: includes/setup/setup.php:742
 msgid "scaled"
 msgstr "zmenšený"
 
-#: includes/setup/setup.php:886
+#: includes/setup/setup.php:750
 msgid ""
 "Additional image size added by the theme. Can not be changed on this page."
 msgstr ""
 "Dodatočný rozmer obrázkov vytvorený použitou témou. Nie je ho možné nastaviť "
 "na tejto stránke."
 
-#: includes/setup/setup.php:891
+#: includes/setup/setup.php:755
 #, php-format
 msgctxt "1: image width, 2: image height, 3: cropped or scaled?"
 msgid "%1$d &times; %2$d, %3$s"
 msgstr "%1$d &times; %2$d, %3$s"
 
-#: includes/setup/setup.php:1088
+#: includes/setup/setup.php:950
 msgid "Button link"
 msgstr "Tlačidlo z odkazu"
 
-#: includes/setup/setup.php:1322
+#: includes/setup/setup.php:1158
 msgctxt "Back to food menu sections selectors button title."
 msgid "&uarr; Menu sections"
 msgstr "&uarr; Skupiny jedál"
 
-#: includes/setup/setup.php:2350
+#: includes/setup/setup.php:2242
 msgid "Breadcrumbs navigation"
 msgstr "Omrvinková navigácia"
 
-#: includes/setup/setup.php:2838
+#: includes/setup/setup.php:2730
 msgid "Previous post"
 msgstr "Predchádzajúca stránka"
 
-#: includes/setup/setup.php:2839
+#: includes/setup/setup.php:2731
 msgid "Next post"
 msgstr "Nasledujúca stránka"
 
-#: includes/setup/setup.php:2883
+#: includes/setup/setup.php:2775
 msgid "This is sticky post"
 msgstr "Odporúčaný článok"
 
-#: includes/setup/setup.php:2912
+#: includes/setup/setup.php:2804
 msgid "This content is password protected."
 msgstr "Tento obsah je chránený heslom."
 
-#: includes/setup/setup.php:2912
+#: includes/setup/setup.php:2804
 msgid "Enter the password to view it."
 msgstr "Zadajte heslo pre jeho zobrazenie."
 
-#: includes/setup/setup.php:3026
+#: includes/setup/setup.php:2918
 #, php-format
 msgctxt "%s: Name of current post."
 msgid "Continue reading%s&hellip;"
 msgstr "Prečítať%s&hellip;"
 
-#: includes/setup/setup.php:3097
+#: includes/setup/setup.php:2989
 msgctxt "Pagination text (visible): previous."
 msgid "&laquo;"
 msgstr "&laquo;"
 
-#: includes/setup/setup.php:3098
+#: includes/setup/setup.php:2990
 msgctxt "Pagination text (hidden): previous."
 msgid "Previous page"
 msgstr "Predchádzajúca stránka"
 
-#: includes/setup/setup.php:3099
+#: includes/setup/setup.php:2991
 msgctxt "Pagination text (hidden): next."
 msgid "Next page"
 msgstr "Nasledujúca stránka"
 
-#: includes/setup/setup.php:3100
+#: includes/setup/setup.php:2992
 msgctxt "Pagination text (visible): next."
 msgid "&raquo;"
 msgstr "&raquo;"
 
-#: includes/setup/setup.php:3108
+#: includes/setup/setup.php:3000
 msgid "Posts Navigation"
 msgstr "Navigácia príspevkov"
 
-#: includes/setup/setup.php:3138
+#: includes/setup/setup.php:3030
 msgid "All posts"
 msgstr "Všetky články"
 
@@ -970,229 +949,229 @@ msgstr "Advanced Custom Fields (jednoduché nastavenie stránky)"
 msgid "One Click Demo Import (for installing theme demo content)"
 msgstr "One Click Demo Import (pre inštaláciu demo obsahu témy)"
 
-#: includes/theme-options/theme-options.php:47
-#: includes/theme-options/theme-options.php:75
-#: includes/theme-options/theme-options.php:97
-#: includes/theme-options/theme-options.php:132
-#: includes/theme-options/theme-options.php:174
-#: includes/theme-options/theme-options.php:212
-#: includes/theme-options/theme-options.php:256
-#: includes/theme-options/theme-options.php:319
+#: includes/theme-options/theme-options.php:48
+#: includes/theme-options/theme-options.php:76
+#: includes/theme-options/theme-options.php:114
+#: includes/theme-options/theme-options.php:151
+#: includes/theme-options/theme-options.php:192
+#: includes/theme-options/theme-options.php:232
+#: includes/theme-options/theme-options.php:276
+#: includes/theme-options/theme-options.php:348
 msgctxt "Customizer panel title."
 msgid "Theme Options"
 msgstr "Nastavenia témy"
 
-#: includes/theme-options/theme-options.php:48
+#: includes/theme-options/theme-options.php:49
 msgid "Theme Credits"
 msgstr "O téme"
 
-#: includes/theme-options/theme-options.php:51
+#: includes/theme-options/theme-options.php:52
 #, php-format
 msgctxt "1: linked theme name, 2: theme author name."
 msgid "%1$s is a WordPress theme developed by %2$s."
 msgstr "%1$s je WordPress téma vytvorená spoločnosťou %2$s."
 
-#: includes/theme-options/theme-options.php:58
+#: includes/theme-options/theme-options.php:59
 #, php-format
 msgctxt "%s: theme author link."
 msgid "You can obtain other professional WordPress themes at %s."
 msgstr "Ďalšie profesionálne WordPress témy môžete získať na %s."
 
-#: includes/theme-options/theme-options.php:63
+#: includes/theme-options/theme-options.php:64
 msgid "Thank you for using this awesome theme!"
 msgstr "Ďakujeme, že používate túto úžasnú tému!"
 
-#: includes/theme-options/theme-options.php:74
-#: includes/theme-options/theme-options.php:96
-#: includes/theme-options/theme-options.php:131
-#: includes/theme-options/theme-options.php:173
+#: includes/theme-options/theme-options.php:75
+#: includes/theme-options/theme-options.php:113
+#: includes/theme-options/theme-options.php:150
+#: includes/theme-options/theme-options.php:191
 #, php-format
 msgctxt "%s = section name. Customizer section title."
 msgid "Colors: %s"
 msgstr "Farby: %s"
 
-#: includes/theme-options/theme-options.php:74
+#: includes/theme-options/theme-options.php:75
 msgctxt "Customizer color section title"
 msgid "Accents"
 msgstr "Akcentované"
 
-#: includes/theme-options/theme-options.php:81
+#: includes/theme-options/theme-options.php:82
 msgid "Accent color"
 msgstr "Akcentovaná farba"
 
-#: includes/theme-options/theme-options.php:82
+#: includes/theme-options/theme-options.php:83
 msgid "This color affects links, buttons and other elements of the website"
 msgstr "Táto farba sa aplikuje na odkazy, tlačidlá a iné elementy webstránky"
 
-#: includes/theme-options/theme-options.php:88
+#: includes/theme-options/theme-options.php:97
 msgid "Accent text color"
 msgstr "Farba textu na akcentovanej farbe"
 
-#: includes/theme-options/theme-options.php:89
+#: includes/theme-options/theme-options.php:98
 msgid "Color of text over accent color background"
 msgstr "Farba textu zobrazeného na pozadí akcentovanej farby"
 
-#: includes/theme-options/theme-options.php:96
+#: includes/theme-options/theme-options.php:113
 msgctxt "Customizer color section title"
 msgid "Header"
 msgstr "Hlavička"
 
-#: includes/theme-options/theme-options.php:103
-#: includes/theme-options/theme-options.php:143
-#: includes/theme-options/theme-options.php:180
+#: includes/theme-options/theme-options.php:120
+#: includes/theme-options/theme-options.php:162
+#: includes/theme-options/theme-options.php:198
 msgid "Background color"
 msgstr "Farba pozadia"
 
-#: includes/theme-options/theme-options.php:116
-#: includes/theme-options/theme-options.php:159
-#: includes/theme-options/theme-options.php:193
+#: includes/theme-options/theme-options.php:134
+#: includes/theme-options/theme-options.php:176
+#: includes/theme-options/theme-options.php:212
 msgid "Text color"
 msgstr "Farba textu"
 
-#: includes/theme-options/theme-options.php:117
+#: includes/theme-options/theme-options.php:135
 msgid "Note that for certain header elements the color will be faded out a bit"
 msgstr ""
 "Upozorňujeme, že na niektorých elementoch záhlavia bude farba trochu "
 "vyblednutá."
 
-#: includes/theme-options/theme-options.php:131
+#: includes/theme-options/theme-options.php:150
 msgctxt "Customizer color section title"
 msgid "Content"
 msgstr "Obsah"
 
-#: includes/theme-options/theme-options.php:137
+#: includes/theme-options/theme-options.php:156
 msgid "Front page widgets"
 msgstr "Widgety úvodnej stránky"
 
-#: includes/theme-options/theme-options.php:173
+#: includes/theme-options/theme-options.php:191
 msgctxt "Customizer color section title"
 msgid "Footer"
 msgstr "Pätička"
 
-#: includes/theme-options/theme-options.php:211
+#: includes/theme-options/theme-options.php:231
 msgctxt "Customizer section title."
 msgid "Layout"
 msgstr "Rozloženie"
 
-#: includes/theme-options/theme-options.php:217
+#: includes/theme-options/theme-options.php:237
 msgid "Front page layout"
 msgstr "Rozloženie úvodnej stránky"
 
-#: includes/theme-options/theme-options.php:222
+#: includes/theme-options/theme-options.php:242
 msgid "Condensed blog posts"
 msgstr "Kondenzované články blogu"
 
-#: includes/theme-options/theme-options.php:223
-#: includes/theme-options/theme-options.php:237
+#: includes/theme-options/theme-options.php:243
+#: includes/theme-options/theme-options.php:257
 msgid "Select if and where to display this page section"
 msgstr "Zvoľte či, a kde sa má táto sekcia zobraziť"
 
-#: includes/theme-options/theme-options.php:226
-#: includes/theme-options/theme-options.php:240
+#: includes/theme-options/theme-options.php:246
+#: includes/theme-options/theme-options.php:260
 msgid "Disable section"
 msgstr "Vypnúť sekciu"
 
-#: includes/theme-options/theme-options.php:227
-#: includes/theme-options/theme-options.php:241
+#: includes/theme-options/theme-options.php:247
+#: includes/theme-options/theme-options.php:261
 msgid "First section above page content"
 msgstr "Prvá sekcia nad samotným obsahom stránky"
 
-#: includes/theme-options/theme-options.php:228
-#: includes/theme-options/theme-options.php:242
+#: includes/theme-options/theme-options.php:248
+#: includes/theme-options/theme-options.php:262
 msgid "Second section above page content"
 msgstr "Druhá sekcia nad samotným obsahom stránky"
 
-#: includes/theme-options/theme-options.php:229
-#: includes/theme-options/theme-options.php:243
+#: includes/theme-options/theme-options.php:249
+#: includes/theme-options/theme-options.php:263
 msgid "First section below page content"
 msgstr "Prvá sekcia pod samotným obsahom stránky"
 
-#: includes/theme-options/theme-options.php:230
-#: includes/theme-options/theme-options.php:244
+#: includes/theme-options/theme-options.php:250
+#: includes/theme-options/theme-options.php:264
 msgid "Second section below page content"
 msgstr "Druhá sekcia pod samotným obsahom stránky"
 
 #. translators: Custom page template name.
-#: includes/theme-options/theme-options.php:236 page-template/_menu.php:17
+#: includes/theme-options/theme-options.php:256 page-template/_menu.php:17
 msgid "Food menu"
 msgstr "Jedálny lístok"
 
-#: includes/theme-options/theme-options.php:255
+#: includes/theme-options/theme-options.php:275
 msgctxt "Customizer section title."
 msgid "Typography"
 msgstr "Písmo"
 
-#: includes/theme-options/theme-options.php:261
+#: includes/theme-options/theme-options.php:281
 msgid ""
 "Set a Google Font to be used for website logo, headings and general text."
 msgstr ""
 "Nastavte Google Font pouzitý pre logo, nadpisy a ostatné texty webstránky."
 
-#: includes/theme-options/theme-options.php:261
+#: includes/theme-options/theme-options.php:281
 #, php-format
 msgctxt "%s: linked source website name."
 msgid "Font matches recommendations from %s."
 msgstr "Odporúčané skupiny písma z %s."
 
-#: includes/theme-options/theme-options.php:267
+#: includes/theme-options/theme-options.php:287
 msgid "Logo (site title) font"
 msgstr "Písmo loga"
 
-#: includes/theme-options/theme-options.php:274
+#: includes/theme-options/theme-options.php:295
 msgid "Headings font"
 msgstr "Písmo nadpisov"
 
-#: includes/theme-options/theme-options.php:281
+#: includes/theme-options/theme-options.php:303
 msgid "General text font"
 msgstr "Základný typ písma"
 
-#: includes/theme-options/theme-options.php:289
+#: includes/theme-options/theme-options.php:312
 msgid "Font subset"
 msgstr "Znaková sada písma"
 
-#: includes/theme-options/theme-options.php:297
+#: includes/theme-options/theme-options.php:320
 msgid "Basic font size"
 msgstr "Základná veľkosť písma"
 
-#: includes/theme-options/theme-options.php:298
+#: includes/theme-options/theme-options.php:321
 msgid ""
 "All other font sizes are calculated automatically from this basic font size"
 msgstr ""
 "Všetky ostatné veľkosti písma budú automaticky vypočítané z tejto základnej "
 "hodnoty"
 
-#: includes/theme-options/theme-options.php:318
+#: includes/theme-options/theme-options.php:347
 msgctxt "Customizer section title."
 msgid "Others"
 msgstr "Ostatné"
 
-#: includes/theme-options/theme-options.php:325
+#: includes/theme-options/theme-options.php:354
 msgid "Show \"Welcome\" page"
 msgstr "Zobraziť stránku \"Vitajte\""
 
-#: includes/theme-options/theme-options.php:326
+#: includes/theme-options/theme-options.php:355
 msgid "Under \"Appearance\" WordPress dashboard menu"
 msgstr "V administračnom menu \"Vzhľad\""
 
-#: includes/theme-options/theme-options.php:334
+#: includes/theme-options/theme-options.php:363
 msgid "Disable excerpt on single post page"
 msgstr "Nezobrazovať zhrnutie na stránke článku"
 
-#: includes/theme-options/theme-options.php:344
+#: includes/theme-options/theme-options.php:373
 msgctxt "Customizer section title."
 msgid "Food Menu"
 msgstr "Jedálny lístok"
 
-#: includes/theme-options/theme-options.php:345
+#: includes/theme-options/theme-options.php:374
 msgctxt "Customizer panel title."
 msgid "Theme"
 msgstr "Téma"
 
-#: includes/theme-options/theme-options.php:351
+#: includes/theme-options/theme-options.php:380
 msgid "Disable food menu"
 msgstr "Vypnúť jedálny lístok"
 
-#: includes/theme-options/theme-options.php:352
+#: includes/theme-options/theme-options.php:381
 msgid ""
 "In case you want to use the theme for a business website or a recipe blog "
 "(only available with Auberge Plus), you can disable the Food Menu "
@@ -1202,11 +1181,11 @@ msgstr ""
 "receptov (k dispozícii iba s Auberge Plus), môžete vypnúť funkcionalitu "
 "jedálneho lístka."
 
-#: includes/theme-options/theme-options.php:358
+#: includes/theme-options/theme-options.php:387
 msgid "Disable food section archive linking"
 msgstr "Vypnúť odkazy na stránky archívu sekcií jedálneho lístka"
 
-#: includes/theme-options/theme-options.php:359
+#: includes/theme-options/theme-options.php:388
 msgid ""
 "By default, all food menu section titles are linked to corresponding archive "
 "page."
@@ -1214,7 +1193,7 @@ msgstr ""
 "V predvolenom nastavení sú všetky sekcie jedálneho lístka odkazované na "
 "stránku špecifického archívu."
 
-#: includes/theme-options/theme-options.php:359
+#: includes/theme-options/theme-options.php:388
 msgid "You can override this behavior here."
 msgstr "Toto nastavenie môžete zmeniť."
 
@@ -1223,101 +1202,97 @@ msgstr "Toto nastavenie môžete zmeniť."
 msgid "Welcome"
 msgstr "Vitajte"
 
-#: library/controls/class-WM_Customizer_HTML.php:32
+#: library/controls/class-WM_Customizer_HTML.php:33
 msgid "Please set the `content` parameter for the HTML control."
 msgstr "Nastavte parameter `content` pre pole HTML."
 
-#: library/controls/class-WM_Customizer_Multiselect.php:43
+#: library/controls/class-WM_Customizer_Multiselect.php:42
 msgid "Press CTRL key for multiple selection."
-msgstr "Pridržte klávesu CTRL pre viacnásobnú voľbu"
+msgstr "Pridržte klávesu CTRL pre viacnásobnú voľbu."
 
-#: library/core.php:150
+#: library/core.php:149
 #, php-format
 msgctxt "%s: post title."
 msgid "\"%s\" table of contents"
 msgstr "Obsah článku \"%s\""
 
-#: library/core.php:188
+#: library/core.php:187
 #, php-format
 msgid "Page %s"
 msgstr "Stránka %s"
 
-#: library/core.php:324
+#: library/core.php:323
 msgctxt "Post meta info description: author name."
 msgid "Written by:"
 msgstr "Autor:"
 
-#: library/core.php:340
+#: library/core.php:339
 msgctxt "Post meta info description: categories list."
 msgid "Categorized in:"
 msgstr "Kategorizované:"
 
-#: library/core.php:361
+#: library/core.php:360
 msgctxt "Post meta info description: comments count."
 msgid "Comments:"
 msgstr "Komentáre:"
 
-#: library/core.php:362
+#: library/core.php:361
 #, php-format
 msgctxt "%s: number of comments."
 msgid "Comments: %s"
 msgstr "Komentáre: %s"
 
-#: library/core.php:362
+#: library/core.php:361
 msgctxt "Title for number of comments in post meta."
 msgid "Comments:"
 msgstr "Komentáre:"
 
-#: library/core.php:375
+#: library/core.php:374
 msgctxt "Post meta info description: publish date."
 msgid "Posted on:"
 msgstr "Publikované dňa:"
 
-#: library/core.php:400
+#: library/core.php:399
 #, php-format
 msgid "Edit the \"%s\""
 msgstr "Upraviť \"%s\""
 
-#: library/core.php:400
+#: library/core.php:399
 msgctxt "Edit post link."
 msgid "Edit"
 msgstr "Upraviť"
 
-#: library/core.php:447
+#: library/core.php:446
 msgctxt "Post meta info description: post bookmark link."
 msgid "Bookmark link:"
 msgstr "Odkaz:"
 
-#: library/core.php:448
+#: library/core.php:447
 #, php-format
 msgid "Permalink to \"%s\""
 msgstr "Trvalý odkaz na \"%s\""
 
-#: library/core.php:462
+#: library/core.php:461
 msgctxt "Post meta info description: tags list."
 msgid "Tagged as:"
 msgstr "Označené ako:"
 
-#: library/core.php:476
+#: library/core.php:475
 msgid "Views count"
 msgstr "Počet zhliadnutí"
 
-#: library/core.php:563
+#: library/core.php:562
 #, php-format
 msgctxt "Paginated content title suffix, %s: page number."
 msgid "(page %s)"
 msgstr "(stránka %s)"
 
-#: library/core.php:837
-msgid "Skip to content"
-msgstr "Preskočiť na obsah"
-
-#: library/customize.php:414
+#: library/customize.php:440
 msgctxt "Customizer section title."
 msgid "Background"
 msgstr "Pozadie"
 
-#: library/customize.php:419
+#: library/customize.php:445
 msgctxt "Customizer section title."
 msgid "Header"
 msgstr "Hlavička"
@@ -1552,7 +1527,7 @@ msgstr ""
 
 #: template-parts/component-welcome-quickstart.php:52
 msgid "Customization changes will go live only after you save them!"
-msgstr "Zmeny, ktoré vykonáte, sa aplikujú až keď ich uložíte."
+msgstr "Zmeny, ktoré vykonáte, sa aplikujú až keď ich uložíte!"
 
 #: template-parts/component-welcome-quickstart.php:55
 msgid "Customize the Theme &raquo;"
@@ -1624,10 +1599,10 @@ msgctxt "Mobile navigation toggle button title."
 msgid "Menu"
 msgstr "Navigácia"
 
-#: template-parts/menu-social.php:26
+#: template-parts/menu-social.php:29
 msgid "Back to top"
 msgstr "Späť nahor"
 
-#: template-parts/menu-social.php:47
+#: template-parts/menu-social.php:40
 msgid "Social Menu"
 msgstr "Menu sociálnych sietí"

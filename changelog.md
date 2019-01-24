@@ -2,13 +2,54 @@
 
 ## 2.6.0
 
-* **Update**: 
-* **Fix**: 
+* **Update**: Support URL
+* **Update**: Improving code
+* **Update**: Improving security
+* **Update**: Adding WPCS comments to code
+* **Update**: Improving widget areas markup
+* **Update**: `.screen-reader-text` CSS class styles
+* **Update**: Improving customizer functionality
+* **Update**: Using CSS variables instead of generating customized styles
+* **Update**: Removing obsolete functionality
+* **Update**: Removing media sizes override on theme activation
+* **Update**: Updating readme file
+* **Update**: Setting `use strict` in JavaScript
+* **Update**: Removing all `locate_template()` function references
+* **Update**: Localization
+* **Update**: Documentation
 
 ### Files changed:
 
 	changelog.md
+	footer-credits.php
+	functions.php
+	readme.txt
 	style.css
+	assets/js/scripts-global.js
+	assets/js/scripts-navigation.js
+	assets/js/skip-link-focus-fix.js
+	assets/sass/_css-vars.scss
+	assets/sass/_setup.scss
+	assets/sass/custom-editor.scss
+	assets/sass/custom.scss
+	assets/sass/editor-style.scss
+	assets/sass/main.scss
+	assets/sass/starter/_starter.scss
+	includes/plugins/beaver-builder/beaver-builder.php
+	includes/setup/setup.php
+	includes/tgmpa/class-tgm-plugin-activation.php
+	includes/theme-options/theme-options.php
+	includes/welcome/class-welcome.php
+	languages/*.*
+	library/admin.php
+	library/core.php
+	library/customize.php
+	library/controls/class-WM_Customizer_HTML.php
+	library/controls/class-WM_Customizer_Multiselect.php
+	library/controls/class-WM_Customizer_Select.php
+	template-parts/component-welcome-header.php
+	template-parts/component-welcome-quickstart.php
+	template-parts/menu-social.php
 
 
 ## 2.5.4

@@ -412,9 +412,6 @@
 					$customizer_panel   = '';
 					$customizer_section = 'auberge';
 
-				/**
-				 * @todo  Consider switching from 'type' => 'theme_mod' to 'option' for better theme upgradability.
-				 */
 				$type = apply_filters( 'wmhook_wm_theme_customizer_type', 'theme_mod' );
 
 
