@@ -6,11 +6,12 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0
- * @version  2.2.0
+ * @version  2.6.0
  *
  * Contents:
  *
- * 10) Options functions
+ *  10) Options functions
+ * 100) Others
  */
 
 
@@ -25,7 +26,7 @@
 	 * Set theme options array
 	 *
 	 * @since    1.0
-	 * @version  2.2.0
+	 * @version  2.6.0
 	 *
 	 * @param  array $options
 	 */
@@ -81,6 +82,12 @@
 								'label'       => esc_html__( 'Accent color', 'auberge' ),
 								'description' => esc_html__( 'This color affects links, buttons and other elements of the website', 'auberge' ),
 								'default'     => '#0aac8e',
+								'css_var'     => 'maybe_hash_hex_color',
+								'preview_js'  => array(
+									'css' => array(
+										':root' => array( '--[[id]]' ),
+									),
+								),
 							),
 							100 . 'colors' . 10 . 110 => array(
 								'type'        => 'color',
@@ -88,6 +95,12 @@
 								'label'       => esc_html__( 'Accent text color', 'auberge' ),
 								'description' => esc_html__( 'Color of text over accent color background', 'auberge' ),
 								'default'     => '#ffffff',
+								'css_var'     => 'maybe_hash_hex_color',
+								'preview_js'  => array(
+									'css' => array(
+										':root' => array( '--[[id]]' ),
+									),
+								),
 							),
 
 						100 . 'colors' . 20 => array(
@@ -102,13 +115,12 @@
 								'id'         => 'color' . '-header',
 								'label'      => esc_html__( 'Background color', 'auberge' ),
 								'default'    => '#1a1c1e',
+								'css_var'    => 'maybe_hash_hex_color',
 								'preview_js' => array(
-										'css' => array(
-												'.site-header' => array(
-														'background-color'
-													),
-											),
+									'css' => array(
+										':root' => array( '--[[id]]' ),
 									),
+								),
 							),
 							100 . 'colors' . 20 . 110 => array(
 								'type'        => 'color',
@@ -116,13 +128,12 @@
 								'label'       => esc_html__( 'Text color', 'auberge' ),
 								'description' => esc_html__( 'Note that for certain header elements the color will be faded out a bit', 'auberge' ),
 								'default'     => '#ffffff',
+								'css_var'     => 'maybe_hash_hex_color',
 								'preview_js'  => array(
-										'css' => array(
-												'.site-header' => array(
-														'color'
-													),
-											),
+									'css' => array(
+										':root' => array( '--[[id]]' ),
 									),
+								),
 							),
 
 						100 . 'colors' . 30 => array(
@@ -142,29 +153,24 @@
 									'id'         => 'color' . '-front-widgets',
 									'label'      => esc_html__( 'Background color', 'auberge' ),
 									'default'    => '#1a1c1e',
+									'css_var'    => 'maybe_hash_hex_color',
 									'preview_js' => array(
-											'css' => array(
-													'.front-page-widgets-wrapper, .site-banner' => array(
-															'background-color'
-														),
-													'.custom-banner:before, .site-banner-media:before' => array(
-															array( 'background', ' )', 'linear-gradient( transparent, ' )
-														),
-												),
+										'css' => array(
+											':root' => array( '--[[id]]' ),
 										),
+									),
 								),
 								100 . 'colors' . 30 . 220 => array(
 									'type'       => 'color',
 									'id'         => 'color' . '-front-widgets-text',
 									'label'      => esc_html__( 'Text color', 'auberge' ),
 									'default'    => '#8a8c8e',
+									'css_var'    => 'maybe_hash_hex_color',
 									'preview_js' => array(
-											'css' => array(
-													'.front-page-widgets-wrapper' => array(
-															'color'
-														),
-												),
+										'css' => array(
+											':root' => array( '--[[id]]' ),
 										),
+									),
 								),
 
 						100 . 'colors' . 90 => array(
@@ -179,26 +185,24 @@
 								'id'         => 'color' . '-footer',
 								'label'      => esc_html__( 'Background color', 'auberge' ),
 								'default'    => '#1a1c1e',
+								'css_var'    => 'maybe_hash_hex_color',
 								'preview_js' => array(
-										'css' => array(
-												'.site-footer' => array(
-														'background-color'
-													),
-											),
+									'css' => array(
+										':root' => array( '--[[id]]' ),
 									),
+								),
 							),
 							100 . 'colors' . 90 . 110 => array(
 								'type'       => 'color',
 								'id'         => 'color' . '-footer-text',
 								'label'      => esc_html__( 'Text color', 'auberge' ),
 								'default'    => '#8a8c8e',
+								'css_var'    => 'maybe_hash_hex_color',
 								'preview_js' => array(
-										'css' => array(
-												'.site-footer' => array(
-														'color'
-													),
-											),
+									'css' => array(
+										':root' => array( '--[[id]]' ),
 									),
+								),
 							),
 
 
@@ -223,12 +227,12 @@
 									'description' => esc_html__( 'Select if and where to display this page section', 'auberge' ),
 									'default'     => 'top|10',
 									'options'     => array(
-											'-'         => esc_html__( 'Disable section', 'auberge' ),
-											'top|10'    => esc_html__( 'First section above page content', 'auberge' ),
-											'top|20'    => esc_html__( 'Second section above page content', 'auberge' ),
-											'bottom|10' => esc_html__( 'First section below page content', 'auberge' ),
-											'bottom|20' => esc_html__( 'Second section below page content', 'auberge' ),
-										),
+										'-'         => esc_html__( 'Disable section', 'auberge' ),
+										'top|10'    => esc_html__( 'First section above page content', 'auberge' ),
+										'top|20'    => esc_html__( 'Second section above page content', 'auberge' ),
+										'bottom|10' => esc_html__( 'First section below page content', 'auberge' ),
+										'bottom|20' => esc_html__( 'Second section below page content', 'auberge' ),
+									),
 								),
 								200 . 'layout' . 120 => array(
 									'type'        => 'select',
@@ -237,12 +241,12 @@
 									'description' => esc_html__( 'Select if and where to display this page section', 'auberge' ),
 									'default'     => 'bottom|10',
 									'options'     => array(
-											'-'         => esc_html__( 'Disable section', 'auberge' ),
-											'top|10'    => esc_html__( 'First section above page content', 'auberge' ),
-											'top|20'    => esc_html__( 'Second section above page content', 'auberge' ),
-											'bottom|10' => esc_html__( 'First section below page content', 'auberge' ),
-											'bottom|20' => esc_html__( 'Second section below page content', 'auberge' ),
-										),
+										'-'         => esc_html__( 'Disable section', 'auberge' ),
+										'top|10'    => esc_html__( 'First section above page content', 'auberge' ),
+										'top|20'    => esc_html__( 'Second section above page content', 'auberge' ),
+										'bottom|10' => esc_html__( 'First section below page content', 'auberge' ),
+										'bottom|20' => esc_html__( 'Second section below page content', 'auberge' ),
+									),
 								),
 
 
@@ -265,22 +269,25 @@
 									'type'    => 'select',
 									'id'      => 'font' . '-family-logo',
 									'label'   => esc_html__( 'Logo (site title) font', 'auberge' ),
-									'options' => wm_helper_var( 'google-fonts' ),
 									'default' => 'Ubuntu:400,300',
+									'options' => wm_helper_var( 'google-fonts' ),
+									'css_var' => 'wm_css_font_family',
 								),
 								900 . 'typography' . 120 => array(
 									'type'    => 'select',
 									'id'      => 'font' . '-family-headings',
 									'label'   => esc_html__( 'Headings font', 'auberge' ),
-									'options' => wm_helper_var( 'google-fonts' ),
 									'default' => 'Ubuntu:400,300',
+									'options' => wm_helper_var( 'google-fonts' ),
+									'css_var' => 'wm_css_font_family',
 								),
 								900 . 'typography' . 130 => array(
 									'type'    => 'select',
 									'id'      => 'font' . '-family-body',
 									'label'   => esc_html__( 'General text font', 'auberge' ),
-									'options' => wm_helper_var( 'google-fonts' ),
 									'default' => 'Ubuntu:400,300',
+									'options' => wm_helper_var( 'google-fonts' ),
+									'css_var' => 'wm_css_font_family',
 								),
 
 								900 . 'typography' . 140 => array(
@@ -299,13 +306,14 @@
 									'default'     => 16,
 									'min'         => 12,
 									'max'         => 24,
+									'step'        => 1,
+									'validate'    => 'absint',
+									'css_var'     => '[[value]]px',
 									'preview_js'  => array(
-											'css' => array(
-													'html' => array(
-														array( 'font-size', 'px' )
-													),
-												),
+										'css' => array(
+											':root' => array( array( '--[[id]]', 'px' ) ),
 										),
+									),
 								),
 
 
@@ -376,77 +384,6 @@
 
 
 	/**
-	 * Basic custom CSS styles template
-	 *
-	 * Use a '[[customizer_option_id]]' tags in your custom CSS styles string
-	 * where the specific option value should be used.
-	 *
-	 * @since    1.0
-	 * @version  2.0
-	 *
-	 * @param  string $styles
-	 */
-	if ( ! function_exists( 'wm_custom_css_template' ) ) {
-		function wm_custom_css_template( $styles = '' ) {
-
-			// Processing
-
-				ob_start();
-
-				locate_template( 'assets/css/custom.css',       true );
-				locate_template( 'assets/plus/css/custom.css',  true );
-				locate_template( 'assets/css/custom-addon.css', true );
-
-
-			// Output
-
-				return apply_filters( 'wmhook_wm_custom_css_template_output', ob_get_clean() );
-
-		}
-	} // /wm_custom_css_template
-
-	add_filter( 'wmhook_custom_styles', 'wm_custom_css_template', 10 );
-
-
-
-	/**
-	 * CSS generator replacements addon
-	 *
-	 * @since    2.0
-	 * @version  2.0
-	 *
-	 * @param  array $replacements
-	 */
-	if ( ! function_exists( 'wm_custom_styles_replacements' ) ) {
-		function wm_custom_styles_replacements( $replacements = array() ) {
-
-			// Helper variables
-
-				$addons = array(
-						'/* End of file */'                => "\r\n\r\n",
-						'/*[*/'                            => '/** ', // Open a comment
-						'/*]*/'                            => ' **/', // Close a comment
-						'/*//'                             => '', // Remove a comment opening
-						'//*/'                             => '', // Remove a comment closing
-						'[[get_template_directory]]'       => untrailingslashit( get_template_directory() ),
-						'[[get_stylesheet_directory]]'     => untrailingslashit( get_stylesheet_directory() ),
-						'[[get_template_directory_uri]]'   => str_replace( array( 'http:', 'https:' ), '', untrailingslashit( get_template_directory_uri() ) ),
-						'[[get_stylesheet_directory_uri]]' => str_replace( array( 'http:', 'https:' ), '', untrailingslashit( get_stylesheet_directory_uri() ) ),
-					);
-
-
-			// Output
-
-				return array_merge( $replacements, $addons );
-
-		}
-	} // /wm_custom_styles_replacements
-
-	add_filter( 'wmhook_wm_custom_styles_replacements', 'wm_custom_styles_replacements', 10 );
-
-
-
-	/**
 	 * Customizer partial refresh
 	 *
 	 * @since    2.0
@@ -496,3 +433,44 @@
 
 			}
 		} // /wm_customizer_partial_refresh_logo
+
+
+
+
+
+/**
+ * 100) Others
+ */
+
+	/**
+	 * Theme option font value to CSS font-family value.
+	 *
+	 * @since    2.6.0
+	 * @version  2.6.0
+	 *
+	 * @param  string $font
+	 */
+	if ( ! function_exists( 'wm_css_font_family' ) ) {
+		function wm_css_font_family( $font = '' ) {
+
+			// Variables
+
+				$output = 'sans-serif';
+
+
+			// Processing
+
+				if ( $font ) {
+					$google_fonts = wm_helper_var( 'google-fonts' );
+					if ( isset( $google_fonts[ $font ] ) ) {
+						$output = "'" . $google_fonts[ $font ] . "'";
+					}
+				}
+
+
+			// Output
+
+				return $output;
+
+		}
+	} // /wm_css_font_family
