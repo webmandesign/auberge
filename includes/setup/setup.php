@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0
- * @version  2.6.0
+ * @version  2.7.0
  *
  * Contents:
  *
@@ -504,52 +504,14 @@
 		 * Display "Welcome" admin notice
 		 *
 		 * @since    2.2.0
-		 * @version  2.2.0
+		 * @version  2.7.0
 		 */
 		if ( ! function_exists( 'wm_welcome_admin_notice' ) ) {
 			function wm_welcome_admin_notice() {
 
-				// Helper variables
+				// Processing
 
-					$theme_slug = get_template();
-					$theme_name = wp_get_theme( $theme_slug )->get( 'Name' );
-
-
-				// Output
-
-					?>
-
-					<div class="updated notice is-dismissible">
-						<p>
-							<strong>
-								<?php
-
-									printf(
-										esc_html_x( 'Thank you for installing the %s theme!', '%s: Theme name.', 'auberge' ),
-										$theme_name
-									);
-
-								?>
-								<a href="<?php echo esc_url( admin_url( 'themes.php?page=' . $theme_slug . '-welcome' ) ); ?>">
-									<?php esc_html_e( 'Please read the information about the theme.', 'auberge' ); ?>
-								</a>
-							</strong>
-						</p>
-						<p>
-							<a href="<?php echo esc_url( admin_url( 'themes.php?page=' . $theme_slug . '-welcome' ) ); ?>" class="button button-primary">
-								<?php
-
-									printf(
-										esc_html_x( 'Get started with %s', '%s: Theme name.', 'auberge' ),
-										$theme_name
-									);
-
-								?>
-							</a>
-						</p>
-					</div>
-
-					<?php
+					get_template_part( 'template-parts/component-notice', 'welcome' );
 
 			}
 		} // /wm_welcome_admin_notice
@@ -977,7 +939,7 @@
 	 * Registering theme styles and scripts
 	 *
 	 * @since    1.0
-	 * @version  2.6.0
+	 * @version  2.7.0
 	 */
 	if ( ! function_exists( 'wm_register_assets' ) ) {
 		function wm_register_assets() {
@@ -1021,7 +983,6 @@
 						'slick'                  => array( 'src' => get_theme_file_uri( 'assets/js/vendor/slick.min.js' ), 'deps' => array( 'jquery' ) ),
 						'wm-scripts-global'      => array( 'src' => get_theme_file_uri( 'assets/js/scripts-global.js' ), 'deps' => array( 'jquery', 'imagesloaded', 'wm-scripts-navigation' ) ),
 						'wm-scripts-navigation'  => array( get_theme_file_uri( 'assets/js/scripts-navigation.js' ) ),
-						'wm-skip-link-focus-fix' => array( get_theme_file_uri( 'assets/js/skip-link-focus-fix.js' ) ),
 					) );
 
 					foreach ( $register_scripts as $handle => $atts ) {
@@ -1044,7 +1005,7 @@
 	 * Frontend HTML head assets enqueue
 	 *
 	 * @since    1.0
-	 * @version  2.6.0
+	 * @version  2.7.0
 	 */
 	if ( ! function_exists( 'wm_enqueue_assets' ) ) {
 		function wm_enqueue_assets() {
@@ -1143,9 +1104,6 @@
 
 					// Global theme scripts
 					$enqueue_scripts[] = 'wm-scripts-global';
-
-					// Skip link focus fix
-					$enqueue_scripts[] = 'wm-skip-link-focus-fix';
 
 					$enqueue_scripts = apply_filters( 'wmhook_wm_enqueue_assets_enqueue_scripts', $enqueue_scripts );
 
@@ -2790,18 +2748,26 @@
 		 * If the post has more tag, display the content appropriately.
 		 *
 		 * @since    1.0
-		 * @version  2.5.0
+		 * @version  2.7.0
 		 *
 		 * @param  string $excerpt
 		 */
 		if ( ! function_exists( 'wm_excerpt' ) ) {
-			function wm_excerpt( $excerpt ) {
+			function wm_excerpt( $excerpt = '' ) {
+
+				// Variables
+
+					$post_id = get_the_ID();
+
 
 				// Requirements check
 
-					if ( post_password_required() ) {
-						if ( ! is_single() ) {
-							return esc_html__( 'This content is password protected.', 'auberge' ) . ' <a href="' . esc_url( get_permalink() ) . '">' . esc_html__( 'Enter the password to view it.', 'auberge' ) . '</a>';
+					if ( post_password_required( $post_id ) ) {
+						if ( ! is_single( $post_id ) ) {
+							return esc_html__( 'This content is password protected.', 'auberge' )
+							       . ' <a href="' . esc_url( get_permalink() ) . '">'
+							       . esc_html__( 'Enter the password to view it.', 'auberge' )
+							       . '</a>';
 						}
 						return;
 					}
@@ -2810,40 +2776,23 @@
 				// Processing
 
 					if (
-							! is_single()
-							&& wm_has_more_tag()
-						) {
+						! is_single( $post_id )
+						&& wm_has_more_tag()
+					) {
 
-						/**
-						 * Post has more tag
-						 */
+						if ( has_excerpt( $post_id ) ) {
+							$excerpt = str_replace(
+								'entry-summary',
+								'entry-summary has-more-tag',
+								$excerpt
+							);
+						} else {
+							$excerpt = '';
+						}
 
-							if ( has_excerpt() ) {
-								$excerpt = '<p class="entry-summary has-more-tag">' . get_the_excerpt() . '</p>';
-							} else {
-								$excerpt = '';
-							}
-
-							$excerpt = apply_filters( 'the_content', $excerpt . get_the_content( '' ) );
-
-					} else {
-
-						/**
-						 * Default excerpt for posts without more tag
-						 */
-
-							$excerpt = strtr( $excerpt, apply_filters( 'wmhook_wm_excerpt_replacements', array( '<p' => '<p class="entry-summary"' ) ) );
+						$excerpt = apply_filters( 'the_content', $excerpt . get_the_content( '' ) . wm_get_continue_reading_html() );
 
 					}
-
-					// Adding "Continue reading" link
-
-						if (
-								! is_single()
-								&& in_array( get_post_type(), apply_filters( 'wmhook_wm_excerpt_continue_reading_post_type', array( 'post', 'page' ) ) )
-							) {
-							$excerpt .= apply_filters( 'wmhook_wm_excerpt_continue_reading', '' );
-						}
 
 
 				// Output
@@ -2854,6 +2803,135 @@
 		} // /wm_excerpt
 
 		add_filter( 'the_excerpt', 'wm_excerpt', 20 );
+
+
+
+			/**
+			 * Wrap excerpt within a `div.entry-summary`.
+			 *
+			 * Line breaks are required for proper functionality of `wpautop()` later on.
+			 *
+			 * @since    2.7.0
+			 * @version  2.7.0
+			 *
+			 * @param  string $post_excerpt
+			 */
+			if ( ! function_exists( 'wm_wrap_excerpt' ) ) {
+				function wm_wrap_excerpt( $post_excerpt = '' ) {
+
+					// Output
+
+						return '<div class="entry-summary">' . PHP_EOL . $post_excerpt . PHP_EOL . '</div>';
+
+				}
+			} // /wm_wrap_excerpt
+
+			add_filter( 'get_the_excerpt', 'wm_wrap_excerpt', 20 );
+
+
+
+			/**
+			 * Adding "Continue reading" link to excerpt
+			 *
+			 * @since    1.0.0
+			 * @version  2.7.0
+			 *
+			 * @param  string  $post_excerpt  The post excerpt.
+			 * @param  WP_Post $post          Post object.
+			 */
+			if ( ! function_exists( 'wm_excerpt_continue_reading' ) ) {
+				function wm_excerpt_continue_reading( $post_excerpt = '', $post = null ) {
+
+					// Variables
+
+						$post_id = get_the_ID();
+
+
+					// Processing
+
+						if (
+							! post_password_required( $post_id )
+							&& ! is_single( $post_id )
+							&& ! wm_has_more_tag()
+							&& in_array(
+								get_post_type( $post_id ),
+								(array) apply_filters( 'wmhook_wm_excerpt_continue_reading_post_type', array( 'post', 'page' ) )
+							)
+						) {
+							$post_excerpt .= wm_get_continue_reading_html( $post );
+						}
+
+
+					// Output
+
+						return $post_excerpt;
+
+				}
+			} // /wm_excerpt_continue_reading
+
+			add_filter( 'get_the_excerpt', 'wm_excerpt_continue_reading', 30, 2 );
+
+
+
+			/**
+			 * Get "Continue reading" HTML.
+			 *
+			 * @since    2.7.0
+			 * @version  2.7.0
+			 *
+			 * @param  WP_Post $post   Post object.
+			 * @param  string  $scope  Optional identification of specific "Continue reading" text for better filtering.
+			 */
+			if ( ! function_exists( 'wm_get_continue_reading_html' ) ) {
+				function wm_get_continue_reading_html( $post = null, $scope = '' ) {
+
+					// Pre
+
+						$pre = apply_filters( 'wmhook_wm_get_continue_reading_html_pre', false, $post, $scope );
+
+						if ( false !== $pre ) {
+							return $pre;
+						}
+
+
+					// Variables
+
+						$html     = '';
+						$scope    = (string) $scope;
+						$template = 'template-parts/component-link-more';
+
+
+					// Processing
+
+						ob_start();
+
+						if ( $scope && locate_template( $template . '-' . $scope . '.php' ) ) {
+							get_template_part( $template, $scope );
+						} else {
+							get_template_part( $template, get_post_type() );
+						}
+
+						/**
+						 * Stripping all new line and tab characters to prevent `wpautop()` messing things up later.
+						 *
+						 * "\t" - a tab.
+						 * "\n" - a new line (line feed).
+						 * "\r" - a carriage return.
+						 * "\x0B" - a vertical tab.
+						 */
+						$html = str_replace(
+							array( "\t", "\n", "\r", "\x0B" ),
+							'',
+							ob_get_clean()
+						);
+
+
+					// Output
+
+						return (string) apply_filters( 'wmhook_wm_get_continue_reading_html', $html, $post, $scope );
+
+				}
+			} // /wm_get_continue_reading_html
 
 
 
@@ -2898,31 +2976,6 @@
 			} // /wm_excerpt_more
 
 			add_filter( 'excerpt_more', 'wm_excerpt_more', 10 );
-
-
-
-			/**
-			 * Excerpt "Continue reading" text
-			 *
-			 * @since    1.0
-			 * @version  2.2.0
-			 *
-			 * @param  string $continue
-			 */
-			if ( ! function_exists( 'wm_excerpt_continue_reading' ) ) {
-				function wm_excerpt_continue_reading( $continue ) {
-
-					// Output
-
-						return '<div class="link-more"><a href="' . esc_url( get_permalink( get_the_ID() ) ) . '" class="more-link">' . sprintf(
-								esc_html_x( 'Continue reading%s&hellip;', '%s: Name of current post.', 'auberge' ),
-								the_title( '<span class="screen-reader-text"> &ldquo;', '&rdquo;</span>', false )
-							) . '</a></div>';
-
-				}
-			} // /wm_excerpt_continue_reading
-
-			add_filter( 'wmhook_wm_excerpt_continue_reading', 'wm_excerpt_continue_reading', 10 );
 
 
 

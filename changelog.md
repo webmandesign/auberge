@@ -1,5 +1,46 @@
 # Auberge Changelog
 
+## 2.7.0
+
+* **Update**: Navigation touch screen functionality
+* **Update**: Excerpts display
+* **Update**: Info about demo required plugins
+* **Update**: Removing obsolete code and scripts
+* **Update**: Welcome page and notice info
+* **Update**: Improving CSS variables functionality for browsers with no support
+* **Update**: Donation links
+* **Update**: Styles
+* **Update**: Improving code
+* **Update**: Localization
+
+### Files changed:
+
+	changelog.md
+	footer.php
+	header.php
+	readme.txt
+	style.css
+	assets/js/scripts-global.js
+	assets/js/scripts-navigation.js
+	assets/sass/_css-vars.scss
+	assets/sass/custom.scss
+	assets/sass/main.scss
+	assets/sass/custom/_custom.scss
+	includes/plugins/one-click-demo-import/class-one-click-demo-import.php
+	includes/setup/setup.php
+	includes/theme-options/theme-options.php
+	includes/welcome/class-welcome.php
+	languages/*.*
+	library/customize.php
+	template-parts/component-link-more.php
+	template-parts/component-notice-welcome.php
+	template-parts/component-welcome-footer.php
+	template-parts/component-welcome-header.php
+	template-parts/content-food-menu.php
+	template-parts/content-post-condensed.php
+	template-parts/content.php
+
+
 ## 2.6.0
 
 * **Update**: Support URL

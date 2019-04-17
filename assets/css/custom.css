@@ -96,12 +96,3 @@ mark, ins, .highlight { box-shadow: 0.38em 0 0 #0aac8e, -0.38em 0 0 #0aac8e; box
 .site { border-color: #eaecee; border-color: var(--color-content-border); }
 
 input:focus, select:focus, textarea:focus, .label-sticky::before, .label-sticky::after, .posts .entry:hover, .widget .tagcloud a:hover, .site .picker__input.picker__input--active { border-color: #0aac8e; border-color: var(--color-accent); }
-
-/* FILE: custom/__typography.scss */
-html { font-family: "Ubuntu", "Helvetica Neue", Helvetica, Arial, sans-serif; font-family: var(--font-family-body); }
-
-@media only screen and (min-width: 28em) { html { font-size: 16px; font-size: var(--font-size-body); } }
-
-h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { font-family: "Ubuntu", "Helvetica Neue", Helvetica, Arial, sans-serif; font-family: var(--font-family-headings); }
-
-.site-title { font-family: "Ubuntu", "Helvetica Neue", Helvetica, Arial, sans-serif; font-family: var(--font-family-logo); }

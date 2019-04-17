@@ -8,17 +8,8 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.4.8
- * @version  2.6.0
- *
- * Contents:
- *
- * 10) Accessibility
- * 20) Mobile navigation
+ * @version  2.7.0
  */
-
-
-
-
 
 ( function( $ ) {
 
@@ -29,323 +20,219 @@
 
 
 	/**
-	 * Cache
+	 * Variables
 	 */
 
-		var $aubergeSiteNavigation   = $( document.getElementById( 'site-navigation' ) ),
-		    $aubergeSiteMenuPrimary  = $( document.getElementById( 'menu-primary' ) ),
-		    $aubergeMenuToggleButton = $( document.getElementById( 'menu-toggle' ) );
-
-
+		var
+			$aubergeSiteNavigation   = $( document.getElementById( 'site-navigation' ) ),
+			$aubergeSiteMenuPrimary  = $( document.getElementById( 'menu-primary' ) ),
+			$aubergeMenuToggleButton = $( document.getElementById( 'menu-toggle' ) );
 
 
 
 	/**
-	 * 10) Accessibility
+	 * Adding ARIA attributes
+	 */
+
+		$aubergeSiteNavigation
+			.find( '.menu-item-has-children' )
+				.attr( 'aria-haspopup', 'true' );
+
+
+
+	/**
+	 * Setting `.focus` class for menu parent
+	 */
+
+		$aubergeSiteNavigation
+			.on( 'focus.aria mouseenter.aria', '.menu-item-has-children', function ( e ) {
+
+				// Processing
+
+					$( e.currentTarget )
+						.addClass( 'focus' );
+
+			} );
+
+		$aubergeSiteNavigation
+			.on( 'blur.aria mouseleave.aria', '.menu-item-has-children', function ( e ) {
+
+				// Processing
+
+					$( e.currentTarget )
+						.removeClass( 'focus' );
+
+			} );
+
+
+
+	/**
+	 * Touch-enabled
+	 */
+
+		$aubergeSiteNavigation
+			.on( 'touchstart', '.menu-item-has-children > a', function( e ) {
+
+				// Variables
+
+					var
+						el = $( this ).parent( 'li' );
+
+
+				// Processing
+
+					/**
+					 * First touch does not trigger the link, only opens the submenu.
+					 * Second touch does trigger the link.
+					 */
+					if ( ! el.hasClass( 'focus' ) ) {
+						e.preventDefault();
+
+						el
+							.toggleClass( 'focus' )
+							.siblings( '.focus' )
+								.removeClass( 'focus' );
+					}
+
+			} );
+
+
+
+	/**
+	 * Mobile navigation
 	 */
 
 		/**
-		 * Adding ARIA attributes
+		 * Mobile menu actions
 		 */
+		function aubergeMobileMenuActions() {
 
-			$aubergeSiteNavigation
-				.find( 'li' )
-					.attr( 'role', 'menuitem' );
+			// Processing
 
-			$aubergeSiteNavigation
-				.find( '.menu-item-has-children' )
-					.attr( 'aria-haspopup', 'true' );
+				if ( ! $aubergeSiteNavigation.hasClass( 'active' ) ) {
 
-			$aubergeSiteNavigation
-				.find( '.sub-menu' )
-					.attr( 'role', 'menu' );
+					$aubergeSiteMenuPrimary
+						.attr( 'aria-hidden', 'true' );
 
+					$aubergeMenuToggleButton
+						.attr( 'aria-expanded', 'false' );
 
+				}
 
-		/**
-		 * Setting `.focus` class for menu parent
-		 */
+				$aubergeSiteNavigation
+					.on( 'keydown', function( e ) {
 
-			$aubergeSiteNavigation
-				.on( 'focus.aria mouseenter.aria', '.menu-item-has-children', function ( e ) {
+						// Processing
 
-					// Processing
+							if ( e.which === 27 ) {
 
-						$( e.currentTarget )
-							.addClass( 'focus' );
+								// ESC key
 
-				} );
+									e.preventDefault();
 
-			$aubergeSiteNavigation
-				.on( 'blur.aria mouseleave.aria', '.menu-item-has-children', function ( e ) {
+									$aubergeSiteNavigation
+										.removeClass( 'active' );
 
-					// Processing
+									$aubergeSiteMenuPrimary
+										.attr( 'aria-hidden', 'true' );
 
-						$( e.currentTarget )
-							.removeClass( 'focus' );
+									$aubergeMenuToggleButton
+										.focus();
 
-				} );
+							}
 
+					} );
 
+		} // /aubergeMobileMenuActions
 
-		/**
-		 * Touch-enabled
-		 */
+		// Default mobile menu setup
 
-			$aubergeSiteNavigation
-				.on( 'touchstart click', '.menu-item-has-children > a .expander', function( e ) {
+			if ( 880 >= window.innerWidth ) {
 
-					// Helper variables
+				$aubergeSiteNavigation
+					.removeClass( 'active' );
 
-						var $this = $( this ).parent().parent(); // Get the LI element
+				aubergeMobileMenuActions();
 
+			}
+
+		// Clicking the menu toggle button
+
+			$aubergeMenuToggleButton
+				.on( 'click', function( e ) {
 
 					// Processing
 
 						e.preventDefault();
 
-						$this
-							.toggleClass( 'focus' )
-							.siblings()
-								.removeClass( 'focus' );
+						$aubergeSiteNavigation
+							.toggleClass( 'active' );
 
-				} );
+						if ( $aubergeSiteNavigation.hasClass( 'active' ) ) {
 
+							$aubergeSiteMenuPrimary
+								.attr( 'aria-hidden', 'false' );
 
+							$aubergeMenuToggleButton
+								.attr( 'aria-expanded', 'true' );
 
-		/**
-		 * Menu navigation with arrow keys
-		 */
+							$( 'html, body' )
+								.stop()
+								.animate( { scrollTop : '0px' }, 0 );
 
-			$aubergeSiteNavigation
-				.on( 'keydown', 'a', function( e ) {
+						} else {
 
-					// Helper variables
+							$aubergeSiteMenuPrimary
+								.attr( 'aria-hidden', 'true' );
 
-						var $this = $( this );
-
-
-					// Processing
-
-						if ( e.which === 37 ) {
-
-							// Left key
-
-								e.preventDefault();
-
-								$this
-									.parent()
-									.prev()
-										.children( 'a' )
-											.focus();
-
-						} else if ( e.which === 39 ) {
-
-							// Right key
-
-								e.preventDefault();
-
-								$this
-									.parent()
-									.next()
-										.children( 'a' )
-											.focus();
-
-						} else if ( e.which === 40 ) {
-
-							// Down key
-
-								e.preventDefault();
-
-								if ( $this.next().length ) {
-
-									$this
-										.next()
-											.find( 'li:first-child a' )
-											.first()
-												.focus();
-
-								} else {
-
-									$this
-										.parent()
-										.next()
-											.children( 'a' )
-												.focus();
-
-								}
-
-						} else if ( e.which === 38 ) {
-
-							// Up key
-
-								e.preventDefault();
-
-								if ( $this.parent().prev().length ) {
-
-									$this
-										.parent()
-										.prev()
-											.children( 'a' )
-												.focus();
-
-								} else {
-
-									$this
-										.parents( 'ul' )
-										.first()
-										.prev( 'a' )
-											.focus();
-
-								}
+							$aubergeMenuToggleButton
+								.attr( 'aria-expanded', 'false' );
 
 						}
 
 				} );
 
+		// Refocus to menu toggle button once the end of the menu is reached
 
+			$aubergeSiteNavigation
+				.on( 'focus.aria', '.menu-toggle-skip-link', function( e ) {
 
-
-
-	/**
-	 * 20) Mobile navigation
-	 */
-
-		/**
-		 * Mobile navigation
-		 */
-
-			/**
-			 * Mobile menu actions
-			 */
-			function aubergeMobileMenuActions() {
-
-				// Processing
-
-					if ( ! $aubergeSiteNavigation.hasClass( 'active' ) ) {
-
-						$aubergeSiteMenuPrimary
-							.attr( 'aria-hidden', 'true' );
+					// Processing
 
 						$aubergeMenuToggleButton
-							.attr( 'aria-expanded', 'false' );
+							.focus();
 
-					}
+				} );
 
-					$aubergeSiteNavigation
-						.on( 'keydown', function( e ) {
+		// Disable mobile navigation on wider screens
 
-							// Processing
+			$( window )
+				.on( 'resize orientationchange', function( e ) {
 
-								if ( e.which === 27 ) {
+					// Processing
 
-									// ESC key
+						if ( 880 < window.innerWidth ) {
 
-										e.preventDefault();
-
-										$aubergeSiteNavigation
-											.removeClass( 'active' );
-
-										$aubergeSiteMenuPrimary
-											.attr( 'aria-hidden', 'true' );
-
-										$aubergeMenuToggleButton
-											.focus();
-
-								}
-
-						} );
-
-			} // /aubergeMobileMenuActions
-
-			// Default mobile menu setup
-
-				if ( 880 >= window.innerWidth ) {
-
-					$aubergeSiteNavigation
-						.removeClass( 'active' );
-
-					aubergeMobileMenuActions();
-
-				}
-
-			// Clicking the menu toggle button
-
-				$aubergeMenuToggleButton
-					.on( 'click', function( e ) {
-
-						// Processing
-
-							e.preventDefault();
+							// On desktops
 
 							$aubergeSiteNavigation
-								.toggleClass( 'active' );
+								.removeClass( 'active' );
 
-							if ( $aubergeSiteNavigation.hasClass( 'active' ) ) {
-
-								$aubergeSiteMenuPrimary
-									.attr( 'aria-hidden', 'false' );
-
-								$aubergeMenuToggleButton
-									.attr( 'aria-expanded', 'true' );
-
-								$( 'html, body' )
-									.stop()
-									.animate( { scrollTop : '0px' }, 0 );
-
-							} else {
-
-								$aubergeSiteMenuPrimary
-									.attr( 'aria-hidden', 'true' );
-
-								$aubergeMenuToggleButton
-									.attr( 'aria-expanded', 'false' );
-
-							}
-
-					} );
-
-			// Refocus to menu toggle button once the end of the menu is reached
-
-				$aubergeSiteNavigation
-					.on( 'focus.aria', '.menu-toggle-skip-link', function( e ) {
-
-						// Processing
+							$aubergeSiteMenuPrimary
+								.attr( 'aria-hidden', 'false' );
 
 							$aubergeMenuToggleButton
-								.focus();
+								.attr( 'aria-expanded', 'true' );
 
-					} );
+						} else {
 
-			// Disable mobile navigation on wider screens
+							// On mobiles
 
-				$( window )
-					.on( 'resize orientationchange', function( e ) {
+							aubergeMobileMenuActions();
 
-						// Processing
+						}
 
-							if ( 880 < window.innerWidth ) {
-
-								// On desktops
-
-								$aubergeSiteNavigation
-									.removeClass( 'active' );
-
-								$aubergeSiteMenuPrimary
-									.attr( 'aria-hidden', 'false' );
-
-								$aubergeMenuToggleButton
-									.attr( 'aria-expanded', 'true' );
-
-							} else {
-
-								// On mobiles
-
-								aubergeMobileMenuActions();
-
-							}
-
-					} );
+				} );
 
 
 

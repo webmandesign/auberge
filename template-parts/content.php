@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0
- * @version  2.5.3
+ * @version  2.7.0
  */
 
 
@@ -28,13 +28,9 @@
 		<?php
 
 		if ( is_single() ) {
-
-			the_content( apply_filters( 'wmhook_wm_excerpt_continue_reading', '' ) );
-
+			the_content();
 		} else {
-
 			the_excerpt();
-
 		}
 
 		?>

@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0
- * @version  2.6.0
+ * @version  2.7.0
  *
  * Contents:
  *
@@ -26,7 +26,7 @@
 	 * Set theme options array
 	 *
 	 * @since    1.0
-	 * @version  2.6.0
+	 * @version  2.7.0
 	 *
 	 * @param  array $options
 	 */
@@ -132,7 +132,7 @@
 								'type'        => 'color',
 								'id'          => 'color' . '-header-text',
 								'label'       => esc_html__( 'Text color', 'auberge' ),
-								'description' => esc_html__( 'Note that for certain header elements the color will be faded out a bit', 'auberge' ),
+								'description' => esc_html__( 'Note that for certain header elements the color will be faded out a bit.', 'auberge' ),
 								'default'     => '#ffffff',
 								'css_var'     => 'maybe_hash_hex_color',
 								'preview_js'  => array(

@@ -36,11 +36,20 @@
 			font-size: nth( map_get( $h_tags_setup, 'h3, .h3' ), 1 ) +em;
 		}
 
+		&-summary {
+			margin-bottom: 1rem;
+		}
+
 		&-content {
 			padding: 0;
 
 			p {
 				margin-bottom: 1rem;
+
+				&:last-child {
+					margin-bottom: 0;
+				}
+
 			}
 
 		}

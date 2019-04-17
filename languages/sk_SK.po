@@ -2,10 +2,10 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Auberge Plus 1.4\n"
 "Report-Msgid-Bugs-To: https://support.webmandesign.eu\n"
-"POT-Creation-Date: 2019-01-24 20:09+0100\n"
-"PO-Revision-Date: 2019-01-24 20:10+0100\n"
+"POT-Creation-Date: 2019-04-17 17:29+0200\n"
+"PO-Revision-Date: 2019-04-17 17:30+0200\n"
 "Last-Translator: Oliver Juhas, WebMan Design\n"
-"Language-Team: WebMan - Oliver Juhas <webmandesigneu@gmail.com>\n"
+"Language-Team: \n"
 "Language: sk_SK\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -97,8 +97,8 @@ msgstr "Zdroj citátu"
 
 #: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:114
 msgid ""
-"In case you have not provided the quote source in using the \"cite\" HTML "
-"tag in post content, you can set it here."
+"In case you have not provided the quote source in using the \"cite\" HTML tag "
+"in post content, you can set it here."
 msgstr ""
 "V prípade, že ste neposkytli zdroj citácie pomocou \"cite\" HTML tagu priamo "
 "v obsahu článku, môžete tak urobiť týmto nastavením."
@@ -119,8 +119,8 @@ msgstr "Text zobrazený v banneri"
 #: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:162
 #: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:210
 msgid ""
-"This text will override the default text displayed in your website front "
-"page banner."
+"This text will override the default text displayed in your website front page "
+"banner."
 msgstr ""
 "Týmto nastavením prepíšete pôvodný text zobrazený v banneri na úvodnej "
 "stránke."
@@ -167,8 +167,8 @@ msgstr "Kvalita súborov médií"
 
 #: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:143
 msgid ""
-"Please note that imported media files (such as images, video and audio "
-"files) are of low quality to prevent copyright infringement."
+"Please note that imported media files (such as images, video and audio files) "
+"are of low quality to prevent copyright infringement."
 msgstr ""
 "Upozorňujeme, že importované súbory médií (napríklad obrázky, video a audio "
 "súbory) majú nízku kvalitu, aby sa zabránilo porušovaniu autorských práv."
@@ -186,19 +186,18 @@ msgid "Get media for your website &raquo;"
 msgstr "Získať médiá pre vaše webové stránky &raquo;"
 
 #: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:153
-msgid "Install required plugins!"
-msgstr "Inštalovať vyžadované moduly!"
+msgid "Install demo required plugins!"
+msgstr "Nainštalujte vyžadované demo pluginy!"
 
 #: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:157
-msgid ""
-"Please read the information about the theme demo required plugins first."
+msgid "Please read the information about the theme demo required plugins first."
 msgstr ""
 "Najskôr si prečítajte informácie o moduloch vyžadovaných pre demo obsah témy."
 
 #: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:158
 msgid ""
-"If you do not install and activate demo required plugins, some of the "
-"content will not be imported."
+"If you do not install and activate demo required plugins, some of the content "
+"will not be imported."
 msgstr ""
 "Ak moduly vyžadované pre demo obsah témy nebudú nainštalované a aktivované, "
 "časti demo obsahu nebudú importované."
@@ -212,6 +211,14 @@ msgstr ""
 #: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:160
 msgid "View the list of required plugins &raquo;"
 msgstr "Zobraziť zoznam požadovaných modulov &raquo;"
+
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:166
+msgid ""
+"(Note that this set of plugins may differ from plugins recommended under "
+"Appearance &rarr; Install Plugins!)"
+msgstr ""
+"(Upozorňujeme, že táto sada pluginov sa môže líšiť od pluginov odporúčaných "
+"na stránke Vzhľad &rarr; Inštalovať pluginy!)"
 
 #: includes/setup/setup.php:119
 msgid " - do not use Google Font"
@@ -288,161 +295,139 @@ msgctxt "Header image description."
 msgid "Pouring coffee"
 msgstr "Nalievanie kávy"
 
-#: includes/setup/setup.php:528
-#, php-format
-msgctxt "%s: Theme name."
-msgid "Thank you for installing the %s theme!"
-msgstr "Ďakujeme, že používate tému %s!"
-
-#: includes/setup/setup.php:534
-msgid "Please read the information about the theme."
-msgstr "Prosíme, prečítajte si informácie o téme."
-
-#: includes/setup/setup.php:543
-#, php-format
-msgctxt "%s: Theme name."
-msgid "Get started with %s"
-msgstr "Začíname s %s"
-
-#: includes/setup/setup.php:597
+#: includes/setup/setup.php:559
 msgid "In posts list."
 msgstr "V zozname článkov."
 
-#: includes/setup/setup.php:608
+#: includes/setup/setup.php:570
 msgid "In single post page."
 msgstr "Na stránke článku."
 
-#: includes/setup/setup.php:614
+#: includes/setup/setup.php:576
 msgid "In front page banner."
 msgstr "V banneri úvodnej stránky."
 
-#: includes/setup/setup.php:620
+#: includes/setup/setup.php:582
 msgid "In food menu list."
 msgstr "V jedálnom lístku."
 
-#: includes/setup/setup.php:690
+#: includes/setup/setup.php:652
 msgctxt "WordPress predefined image size name."
 msgid "Thumbnail size"
 msgstr "Veľkosť miniatúry"
 
-#: includes/setup/setup.php:691
+#: includes/setup/setup.php:653
 msgctxt "WordPress predefined image size name."
 msgid "Medium size"
 msgstr "Stredný rozmer"
 
-#: includes/setup/setup.php:692
+#: includes/setup/setup.php:654
 msgctxt "WordPress predefined image size name."
 msgid "Large size"
 msgstr "Veľký rozmer"
 
-#: includes/setup/setup.php:725
+#: includes/setup/setup.php:687
 msgid "Recommended image sizes"
 msgstr "Odporúčané rozmery obrázkov"
 
-#: includes/setup/setup.php:726
+#: includes/setup/setup.php:688
 msgid ""
 "For the theme to work correctly, please, set these recommended image sizes:"
 msgstr ""
 "Prosíme, nastavte tieto odporúčané rozmery obrázkov pre správne zobrazenie v "
 "téme:"
 
-#: includes/setup/setup.php:732
+#: includes/setup/setup.php:694
 msgid "Size name"
 msgstr "Názov rozmeru"
 
-#: includes/setup/setup.php:733
+#: includes/setup/setup.php:695
 msgid "Size parameters"
 msgstr "Parametre rozmeru"
 
-#: includes/setup/setup.php:734
+#: includes/setup/setup.php:696
 msgid "Theme usage"
 msgstr "Použitie v téme"
 
-#: includes/setup/setup.php:742
+#: includes/setup/setup.php:704
 msgid "cropped"
 msgstr "orezaný"
 
-#: includes/setup/setup.php:742
+#: includes/setup/setup.php:704
 msgid "scaled"
 msgstr "zmenšený"
 
-#: includes/setup/setup.php:750
+#: includes/setup/setup.php:712
 msgid ""
 "Additional image size added by the theme. Can not be changed on this page."
 msgstr ""
 "Dodatočný rozmer obrázkov vytvorený použitou témou. Nie je ho možné nastaviť "
 "na tejto stránke."
 
-#: includes/setup/setup.php:755
+#: includes/setup/setup.php:717
 #, php-format
 msgctxt "1: image width, 2: image height, 3: cropped or scaled?"
 msgid "%1$d &times; %2$d, %3$s"
 msgstr "%1$d &times; %2$d, %3$s"
 
-#: includes/setup/setup.php:950
+#: includes/setup/setup.php:912
 msgid "Button link"
 msgstr "Tlačidlo z odkazu"
 
-#: includes/setup/setup.php:1158
+#: includes/setup/setup.php:1116
 msgctxt "Back to food menu sections selectors button title."
 msgid "&uarr; Menu sections"
 msgstr "&uarr; Skupiny jedál"
 
-#: includes/setup/setup.php:2242
+#: includes/setup/setup.php:2200
 msgid "Breadcrumbs navigation"
 msgstr "Omrvinková navigácia"
 
-#: includes/setup/setup.php:2730
+#: includes/setup/setup.php:2688
 msgid "Previous post"
 msgstr "Predchádzajúca stránka"
 
-#: includes/setup/setup.php:2731
+#: includes/setup/setup.php:2689
 msgid "Next post"
 msgstr "Nasledujúca stránka"
 
-#: includes/setup/setup.php:2775
+#: includes/setup/setup.php:2733
 msgid "This is sticky post"
 msgstr "Odporúčaný článok"
 
-#: includes/setup/setup.php:2804
+#: includes/setup/setup.php:2767
 msgid "This content is password protected."
 msgstr "Tento obsah je chránený heslom."
 
-#: includes/setup/setup.php:2804
+#: includes/setup/setup.php:2769
 msgid "Enter the password to view it."
 msgstr "Zadajte heslo pre jeho zobrazenie."
 
-#: includes/setup/setup.php:2918
-#, php-format
-msgctxt "%s: Name of current post."
-msgid "Continue reading%s&hellip;"
-msgstr "Prečítať%s&hellip;"
-
-#: includes/setup/setup.php:2989
+#: includes/setup/setup.php:3042
 msgctxt "Pagination text (visible): previous."
 msgid "&laquo;"
 msgstr "&laquo;"
 
-#: includes/setup/setup.php:2990
+#: includes/setup/setup.php:3043
 msgctxt "Pagination text (hidden): previous."
 msgid "Previous page"
 msgstr "Predchádzajúca stránka"
 
-#: includes/setup/setup.php:2991
+#: includes/setup/setup.php:3044
 msgctxt "Pagination text (hidden): next."
 msgid "Next page"
 msgstr "Nasledujúca stránka"
 
-#: includes/setup/setup.php:2992
+#: includes/setup/setup.php:3045
 msgctxt "Pagination text (visible): next."
 msgid "&raquo;"
 msgstr "&raquo;"
 
-#: includes/setup/setup.php:3000
+#: includes/setup/setup.php:3053
 msgid "Posts Navigation"
 msgstr "Navigácia príspevkov"
 
-#: includes/setup/setup.php:3030
+#: includes/setup/setup.php:3083
 msgid "All posts"
 msgstr "Všetky články"
 
@@ -589,8 +574,8 @@ msgstr "Nebola vykonaná žiadna akcia. Modul %1$s je už aktívny."
 #: includes/tgmpa/class-tgm-plugin-activation.php:411
 #, php-format
 msgid ""
-"Plugin not activated. A higher version of %s is needed for this theme. "
-"Please update the plugin."
+"Plugin not activated. A higher version of %s is needed for this theme. Please "
+"update the plugin."
 msgstr ""
 "Modul nebol aktivovaný. Táto téma vyžaduje vyššiu verziu modulu %s. Prosíme, "
 "aktualizujte modul."
@@ -628,8 +613,8 @@ msgstr "Vyžaduje aktualizáciu"
 
 #: includes/tgmpa/class-tgm-plugin-activation.php:953
 msgid ""
-"The remote plugin package does not contain a folder with the desired slug "
-"and renaming did not work."
+"The remote plugin package does not contain a folder with the desired slug and "
+"renaming did not work."
 msgstr ""
 "Vzdialený balík modulu neobsahuje zložku pomenovanú vyžadovaným slugom a "
 "premenovanie neprebehlo úspešne."
@@ -640,8 +625,8 @@ msgid ""
 "Please contact the plugin provider and ask them to package their plugin "
 "according to the WordPress guidelines."
 msgstr ""
-"Prosíme, kontaktujte poskytovateľov modulu a požiadajte ich o prípravu "
-"balíka modulu podľa pokynov WordPress."
+"Prosíme, kontaktujte poskytovateľov modulu a požiadajte ich o prípravu balíka "
+"modulu podľa pokynov WordPress."
 
 #: includes/tgmpa/class-tgm-plugin-activation.php:956
 msgid ""
@@ -720,9 +705,9 @@ msgstr "%1$s, %2$s"
 msgctxt "plugins"
 msgid "All <span class=\"count\">(%s)</span>"
 msgid_plural "All <span class=\"count\">(%s)</span>"
-msgstr[0] "Všetko: <span>%s</span>"
-msgstr[1] "Všetky: <span>%s</span>"
-msgstr[2] "Všetky: <span>%s</span>"
+msgstr[0] "Všetko: <span class=\"count\">(%s)</span>"
+msgstr[1] "Všetky: <span class=\"count\">(%s)</span>"
+msgstr[2] "Všetky: <span class=\"count\">(%s)</span>"
 
 #. translators: 1: number of plugins.
 #: includes/tgmpa/class-tgm-plugin-activation.php:2411
@@ -1029,7 +1014,7 @@ msgid "Text color"
 msgstr "Farba textu"
 
 #: includes/theme-options/theme-options.php:135
-msgid "Note that for certain header elements the color will be faded out a bit"
+msgid "Note that for certain header elements the color will be faded out a bit."
 msgstr ""
 "Upozorňujeme, že na niektorých elementoch záhlavia bude farba trochu "
 "vyblednutá."
@@ -1146,6 +1131,7 @@ msgid "Others"
 msgstr "Ostatné"
 
 #: includes/theme-options/theme-options.php:354
+#: template-parts/component-notice-welcome.php:40
 msgid "Show \"Welcome\" page"
 msgstr "Zobraziť stránku \"Vitajte\""
 
@@ -1197,10 +1183,28 @@ msgstr ""
 msgid "You can override this behavior here."
 msgstr "Toto nastavenie môžete zmeniť."
 
-#: includes/welcome/class-welcome.php:147
-#: includes/welcome/class-welcome.php:149
+#: includes/welcome/class-welcome.php:148 includes/welcome/class-welcome.php:150
 msgid "Welcome"
 msgstr "Vitajte"
+
+#: includes/welcome/class-welcome.php:223
+#, php-format
+msgctxt "%1$s: heart icon, %2$s: star icons"
+msgid "If you %1$s like this theme, please rate it %2$s"
+msgstr "Ak sa vám táto téma %1$s páči, ohodnoťte ju %2$s"
+
+#: includes/welcome/class-welcome.php:229
+msgid "And/or please consider a donation, thank you 🙏😊"
+msgstr "A/alebo pouvažujte o malom dare, prosím. Vďaka 🙏😊"
+
+#: includes/welcome/class-welcome.php:247
+msgid ""
+"Have a suggestion for improvement or something is not working as it should?"
+msgstr "Máte návrh na zlepšenie, alebo niečo nefunguje tak, ako by malo?"
+
+#: includes/welcome/class-welcome.php:249
+msgid "Contact support center &rarr;"
+msgstr "Kontaktujte centrum technickej podpory &rarr;"
 
 #: library/controls/class-WM_Customizer_HTML.php:33
 msgid "Please set the `content` parameter for the HTML control."
@@ -1287,12 +1291,12 @@ msgctxt "Paginated content title suffix, %s: page number."
 msgid "(page %s)"
 msgstr "(stránka %s)"
 
-#: library/customize.php:440
+#: library/customize.php:437
 msgctxt "Customizer section title."
 msgid "Background"
 msgstr "Pozadie"
 
-#: library/customize.php:445
+#: library/customize.php:442
 msgctxt "Customizer section title."
 msgid "Header"
 msgstr "Hlavička"
@@ -1405,6 +1409,24 @@ msgstr "Bočný panel"
 msgid "Toggle sidebar"
 msgstr "Zobraziť/skryť bočný panel"
 
+#: template-parts/component-link-more.php:22
+#, php-format
+msgctxt "%s: Name of current post."
+msgid "Continue reading%s&hellip;"
+msgstr "Prečítať%s&hellip;"
+
+#: template-parts/component-notice-welcome.php:27
+#, php-format
+msgctxt "%s: Theme name."
+msgid "Thank you for installing %s theme!"
+msgstr "Ďakujeme, za inštaláciu témy %s!"
+
+#: template-parts/component-notice-welcome.php:34
+msgid "Visit \"Welcome\" page for information on how to set up your website."
+msgstr ""
+"Začnite na uvítacej stránke, kde nájdete informácie, ako nastaviť vašu webovú "
+"stránku."
+
 #: template-parts/component-welcome-demo.php:22
 msgid "Installing the theme demo content"
 msgstr "Inštalácia demo obsahu témy"
@@ -1447,7 +1469,7 @@ msgstr ""
 "Alebo spustite proces importu v administračnom menu Vzhľad &raquo; Import "
 "demo dát."
 
-#: template-parts/component-welcome-footer.php:22
+#: template-parts/component-welcome-footer.php:28
 msgid ""
 "You can disable this page in Appearance &raquo; Customize &raquo; Theme "
 "Options &raquo; Others."
@@ -1472,11 +1494,11 @@ msgid "Please take time to read the steps below to set up your website."
 msgstr ""
 "Venujte prosím čas doleuvedeným inštrukciám pre nastavenie vašej webstránky."
 
-#: template-parts/component-welcome-header.php:48
+#: template-parts/component-welcome-header.php:50
 msgid "Theme Documentation"
 msgstr "Dokumentácia témy"
 
-#: template-parts/component-welcome-header.php:50
+#: template-parts/component-welcome-header.php:52
 msgid "Support Center"
 msgstr "Centrum pomoci"
 
@@ -1557,8 +1579,7 @@ msgstr "Nenašli sa žiadne záznamy"
 
 #: template-parts/content-none.php:34
 #, php-format
-msgid ""
-"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 "Pripravený publikovať svoj prvý článok? <a href=\"%1$s\">Začnite hneď</a>."
 
@@ -1572,8 +1593,7 @@ msgstr ""
 
 #: template-parts/content-none.php:50
 msgid ""
-"It seems we can not find what you are looking for. Perhaps searching can "
-"help."
+"It seems we can not find what you are looking for. Perhaps searching can help."
 msgstr "Nemôžeme nájsť, čo hľadáte. Skúste vyhľadávacie pole."
 
 #: template-parts/loop-banner.php:72
@@ -1606,3 +1626,17 @@ msgstr "Späť nahor"
 #: template-parts/menu-social.php:40
 msgid "Social Menu"
 msgstr "Menu sociálnych sietí"
+
+#~ msgid "Install required plugins!"
+#~ msgstr "Inštalovať vyžadované moduly!"
+
+#~ msgctxt "%s: Theme name."
+#~ msgid "Thank you for installing the %s theme!"
+#~ msgstr "Ďakujeme, že používate tému %s!"
+
+#~ msgid "Please read the information about the theme."
+#~ msgstr "Prosíme, prečítajte si informácie o téme."
+
+#~ msgctxt "%s: Theme name."
+#~ msgid "Get started with %s"
+#~ msgstr "Začíname s %s"

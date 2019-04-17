@@ -5,7 +5,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0
- * @version  2.6.0
+ * @version  2.7.0
  *
  * Contents:
  *
@@ -16,10 +16,6 @@
  *  50) Site footer
  * 100) Others
  */
-
-
-
-
 
 ( function( $ ) {
 
@@ -33,11 +29,8 @@
 	 * 10) Basics
 	 */
 
-		/**
-		 * RTL check
-		 */
-
-			var $wmIsRtl = ( 'rtl' === $( 'html' ).attr( 'dir' ) );
+		var
+			$wmIsRtl = ( 'rtl' === $( 'html' ).attr( 'dir' ) );
 
 
 
@@ -83,15 +76,6 @@
 
 
 
-		/**
-		 * Clear floats after columns
-		 */
-
-			$( '.column.last' )
-				.after( '<div class="clear" />' );
-
-
-
 
 
 	/**
@@ -107,8 +91,9 @@
 
 					// Helper variables
 
-						var $documentScrollTop = $( document ).scrollTop(),
-						    $headerHeight      = $( '#masthead' ).outerHeight();
+						var
+							$documentScrollTop = $( document ).scrollTop(),
+							$headerHeight      = $( '#masthead' ).outerHeight();
 
 
 					// Processing
@@ -163,39 +148,33 @@
 	 * 30) Banner
 	 */
 
-		/**
-		 * Banner slider
-		 */
+		if ( $().slick ) {
+			$( '#site-banner.enable-slider .site-banner-inner' )
+				.on( 'init', function( event, slick ) {
 
-			if ( $().slick ) {
+					// Processing
 
-				$( '#site-banner.enable-slider .site-banner-inner' )
-					.on( 'init', function( event, slick ) {
+						$( '.slider-nav-next' )
+							.before( $( '.slider-nav-prev' ) );
 
-						// Processing
-
-							$( '.slider-nav-next' )
-								.before( $( '.slider-nav-prev' ) );
-
-					} )
-					.slick( {
-						'adaptiveHeight' : true,
-						'autoplay'       : true,
-						'autoplaySpeed'  : ( ! $( '#site-banner' ).data( 'speed' ) ) ? ( 5400 ) : ( $( '#site-banner' ).data( 'speed' ) ),
-						'cssEase'        : 'ease-in-out',
-						'dots'           : true,
-						'easing'         : 'easeInOutBack',
-						'fade'           : true,
-						'pauseOnHover'   : true,
-						'slide'          : 'article',
-						'speed'          : 600,
-						'swipeToSlide'   : true,
-						'prevArrow'      : '<div class="slider-nav slider-nav-prev"><button class="slick-prev"><span class="genericons-neue"></span></button></div>',
-						'nextArrow'      : '<div class="slider-nav slider-nav-next"><button class="slick-next"><span class="genericons-neue"></span></button></div>',
-						'rtl'            : $wmIsRtl
-					} );
-
-			} // /slick
+				} )
+				.slick( {
+					'adaptiveHeight' : true,
+					'autoplay'       : true,
+					'autoplaySpeed'  : ( ! $( '#site-banner' ).data( 'speed' ) ) ? ( 5400 ) : ( $( '#site-banner' ).data( 'speed' ) ),
+					'cssEase'        : 'ease-in-out',
+					'dots'           : true,
+					'easing'         : 'easeInOutBack',
+					'fade'           : true,
+					'pauseOnHover'   : true,
+					'slide'          : 'article',
+					'speed'          : 600,
+					'swipeToSlide'   : true,
+					'prevArrow'      : '<div class="slider-nav slider-nav-prev"><button class="slick-prev"><span class="genericons-neue"></span></button></div>',
+					'nextArrow'      : '<div class="slider-nav slider-nav-next"><button class="slick-next"><span class="genericons-neue"></span></button></div>',
+					'rtl'            : $wmIsRtl
+				} );
+		}
 
 
 
@@ -211,13 +190,12 @@
 
 			if ( $().masonry ) {
 
-
-
 				/**
 				 * Posts list
 				 */
 
-					var $postsContainers = $( '.posts' );
+					var
+						$postsContainers = $( '.posts' );
 
 					$postsContainers
 						.imagesLoaded( function() {
@@ -246,7 +224,8 @@
 				 * [gallery] shortcode Masonry layout
 				 */
 
-					var $galleryContainers = $( '.gallery' );
+					var
+						$galleryContainers = $( '.gallery' );
 
 					$galleryContainers
 						.imagesLoaded( function() {
@@ -262,9 +241,7 @@
 
 						} );
 
-
-
-			} // /masonry
+			}
 
 
 
@@ -279,13 +256,12 @@
 		 */
 
 			if (
-					$().masonry
-					&& 3 < $( '#footer-widgets .widget' ).length
-				) {
+				$().masonry
+				&& 3 < $( '#footer-widgets .widget' ).length
+			) {
 
-
-
-				var $footerWidgets = $( '#footer-widgets-container' );
+				var
+					$footerWidgets = $( '#footer-widgets-container' );
 
 				$footerWidgets
 					.imagesLoaded( function() {
@@ -301,9 +277,7 @@
 
 					} );
 
-
-
-			} // /masonry
+			}
 
 
 
@@ -344,8 +318,9 @@
 
 							e.preventDefault();
 
-							var $this                 = $( this ),
-							    mobileSidebarExpanded = $this.attr( 'aria-expanded' );
+							var
+								$this                 = $( this ),
+								mobileSidebarExpanded = $this.attr( 'aria-expanded' );
 
 							if ( 'false' == mobileSidebarExpanded ) {
 								mobileSidebarExpanded = 'true';
@@ -366,11 +341,13 @@
 		 * Food menu groups navigation
 		 */
 
-		 	var $aubergeFoodMenuGroupHeaders = $( '.items-list .menu-group-header' ).length;
+		 	var
+		 		$aubergeFoodMenuGroupHeaders = $( '.items-list .menu-group-header' ).length;
 
 			if ( 1 < $aubergeFoodMenuGroupHeaders ) {
 
-				var $menuGroups = [];
+				var
+					$menuGroups = [];
 
 				// Set class on items list
 
@@ -384,9 +361,10 @@
 
 							// Helper variables
 
-								var $this      = $( this ),
-								    $thisTitle = $this.find( '> .menu-group-title' ).text(),
-								    $thisID    = $this.attr( 'id' );
+								var
+									$this      = $( this ),
+									$thisTitle = $this.find( '> .menu-group-title' ).text(),
+									$thisID    = $this.attr( 'id' );
 
 
 							// Processing
@@ -424,8 +402,9 @@
 
 							// Helper variables
 
-								var $menuGroupNav    = $( '#menu-group-nav' ),
-								    $menuGroupNavTop = $menuGroupNav.offset().top;
+								var
+									$menuGroupNav    = $( '#menu-group-nav' ),
+									$menuGroupNavTop = $menuGroupNav.offset().top;
 
 
 							// Processing
@@ -465,19 +444,15 @@
 		 * @link  https://wordpress.org/plugins/restaurant-reservations/
 		 */
 
-			var $aubergeRtbContact = $( '.rtb-booking-form .contact' ).hide();
+			var
+				$aubergeRtbContact = $( '.rtb-booking-form .contact' ).hide();
 
 			$( '#rtb-time' )
 				.on( 'change', function() {
 
-					// Helper variables
-
-						var $this = $( this );
-
-
 					// Processing
 
-						if ( $this.attr( 'value' ) ) {
+						if ( $( this ).attr( 'value' ) ) {
 
 							$aubergeRtbContact
 								.slideDown();
@@ -510,7 +485,8 @@
 
 							if ( $().masonry ) {
 
-								var $postsContainers = $( '.posts' );
+								var
+									$postsContainers = $( '.posts' );
 
 								$postsContainers
 									.imagesLoaded( function() {
@@ -530,7 +506,7 @@
 
 									} );
 
-							} // /masonry
+							}
 
 				} );
 

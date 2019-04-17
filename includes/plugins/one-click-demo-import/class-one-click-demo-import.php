@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    2.1
- * @version  2.3.0
+ * @version  2.7.0
  *
  * Contents:
  *
@@ -150,7 +150,7 @@ class Auberge_One_Click_Demo_Import {
 				$text .= '<div class="ocdi__demo-import-notice">';
 
 					$text .= '<h3>';
-					$text .= esc_html__( 'Install required plugins!', 'auberge' );
+					$text .= esc_html__( 'Install demo required plugins!', 'auberge' );
 					$text .= '</h3>';
 
 					$text .= '<p>';
@@ -159,6 +159,12 @@ class Auberge_One_Click_Demo_Import {
 					$text .= ' <a href="https://github.com/webmandesign/demo-content/tree/master/auberge/content#before-you-begin" target="_blank" title="' . esc_attr__( 'Read the information before you run the theme demo content import process.', 'auberge' ) . '"><strong>';
 					$text .= esc_html__( 'View the list of required plugins &raquo;', 'auberge' );
 					$text .= '</strong></a>';
+					$text .= '</p>';
+
+					$text .= '<p>';
+					$text .= '<em>';
+					$text .= esc_html__( '(Note that this set of plugins may differ from plugins recommended under Appearance &rarr; Install Plugins!)', 'auberge' );
+					$text .= '</em>';
 					$text .= '</p>';
 
 				$text .= '</div>';

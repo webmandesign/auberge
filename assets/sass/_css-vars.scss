@@ -7,13 +7,14 @@
 // @copyright  WebMan Design, Oliver Juhas
 //
 // @since    2.6.0
-// @version  2.6.0
+// @version  2.7.0
 //
 
 :root {
 
 	@each $option, $value in $customize_options {
-		--#{$option}: $value;
+		// Converting values to string to prevent issues.
+		--#{$option}: #{$value+''};
 	}
 
 }

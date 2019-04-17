@@ -8,7 +8,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    2.2.0
- * @version  2.6.0
+ * @version  2.7.0
  */
 
 
@@ -41,6 +41,8 @@
 	?>
 	<br>
 	<?php esc_html_e( 'Please take time to read the steps below to set up your website.', 'auberge' ); ?>
+	<br>
+	<?php echo Auberge_Welcome::get_info_like(); ?>
 </div>
 
 <p class="wm-actions">

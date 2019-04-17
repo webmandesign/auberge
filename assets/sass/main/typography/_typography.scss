@@ -12,14 +12,17 @@
 
 	%font_body {
 		font-family: #{ map_get( $customize_options, 'font-family-body' ) };
+		font-family: var(--font-family-body);
 	}
 
 	%font_headings {
 		font-family: #{ map_get( $customize_options, 'font-family-headings' ) };
+		font-family: var(--font-family-headings);
 	}
 
 	%font_logo {
 		font-family: #{ map_get( $customize_options, 'font-family-logo' ) };
+		font-family: var(--font-family-logo);
 		text-rendering: auto;
 	}
 
@@ -29,6 +32,21 @@
 
 	html {
 		@extend %font_body;
+
+		@include responsive( map_get( $breakpoint, 's' ) ) {
+			font-size: map_get( $customize_options, 'font-size-body' );
+			font-size: var(--font-size-body);
+		}
+
+	}
+
+	h1, h2, h3, h4, h5, h6,
+	.h1, .h2, .h3, .h4, .h5, .h6 {
+		@extend %font_headings;
+	}
+
+	.site-title {
+		@extend %font_logo;
 	}
 
 

@@ -7,7 +7,7 @@
  *
  * @since    1.0
  * @version  2.5.2
- * @version  2.6.0
+ * @version  2.7.0
  *
  * Contents:
  *
@@ -929,7 +929,7 @@
 	 * @link  https://github.com/jhildenbiddle/css-vars-ponyfill
 	 *
 	 * @since    2.6.0
-	 * @version  2.6.0
+	 * @version  2.7.0
 	 */
 	if ( ! function_exists( 'wm_css_vars_compatibility' ) ) {
 		function wm_css_vars_compatibility() {
@@ -945,7 +945,12 @@
 
 				wp_add_inline_script(
 					'css-vars-ponyfill',
-					"cssVars( { onlyVars: true, exclude: 'link:not([href^=\"" . esc_url_raw( get_theme_root_uri() ) . "\"])' } );"
+					'window.onload = function() {' . PHP_EOL .
+					"\t" . 'cssVars( {' . PHP_EOL .
+					"\t\t" . 'onlyVars: true,' . PHP_EOL .
+					"\t\t" . 'exclude: \'link:not([href^="' . esc_url_raw( get_theme_root_uri() ) . '"])\'' . PHP_EOL .
+					"\t" . '} );' . PHP_EOL .
+					'};'
 				);
 
 		}
@@ -959,7 +964,7 @@
 	 * Get CSS vars from theme options.
 	 *
 	 * @since    2.6.0
-	 * @version  2.6.0
+	 * @version  2.7.0
 	 */
 	if ( ! function_exists( 'wm_get_css_vars_from_theme_options' ) ) {
 		function wm_get_css_vars_from_theme_options() {
@@ -996,10 +1001,16 @@
 					}
 
 					$mod = get_theme_mod( $option['id'] );
-					if ( isset( $option['validate'] ) && is_callable( $option['validate'] ) ) {
+					if (
+						isset( $option['validate'] )
+						&& is_callable( $option['validate'] )
+					) {
 						$mod = call_user_func( $option['validate'], $mod );
 					}
-					if ( ! empty( $mod ) || 'checkbox' === $option['type'] ) {
+					if (
+						! empty( $mod )
+						|| 'checkbox' === $option['type']
+					) {
 						if ( 'color' === $option['type'] ) {
 							$value_check = maybe_hash_hex_color( $value );
 							$mod         = maybe_hash_hex_color( $mod );
@@ -1031,7 +1042,8 @@
 						);
 					}
 
-					$css_vars .= ' --' . $option['id'] . ': ' . $value . ';';
+					// Do not apply `esc_attr()` as it will escape quote marks, such as in background image URL.
+					$css_vars .= ' --' . sanitize_title( $option['id'] ) . ': ' . $value . ';';
 				}
 
 				// Cache the results.

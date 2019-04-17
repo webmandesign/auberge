@@ -3,9 +3,9 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Auberge\n"
 "Report-Msgid-Bugs-To: https://support.webmandesign.eu\n"
-"POT-Creation-Date: 2019-01-24 20:09+0100\n"
+"POT-Creation-Date: 2019-04-17 17:29+0200\n"
 "PO-Revision-Date: 2015-04-21 20:43+0100\n"
-"Last-Translator: WebMan - Oliver Juhas <webmandesigneu@gmail.com>\n"
+"Last-Translator: Oliver Juhas, WebMan Design\n"
 "Language-Team: \n"
 "Language: en\n"
 "MIME-Version: 1.0\n"
@@ -176,7 +176,7 @@ msgid "Get media for your website &raquo;"
 msgstr ""
 
 #: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:153
-msgid "Install required plugins!"
+msgid "Install demo required plugins!"
 msgstr ""
 
 #: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:157
@@ -197,6 +197,12 @@ msgstr ""
 
 #: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:160
 msgid "View the list of required plugins &raquo;"
+msgstr ""
+
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:166
+msgid ""
+"(Note that this set of plugins may differ from plugins recommended under "
+"Appearance &rarr; Install Plugins!)"
 msgstr ""
 
 #: includes/setup/setup.php:119
@@ -272,157 +278,135 @@ msgctxt "Header image description."
 msgid "Pouring coffee"
 msgstr ""
 
-#: includes/setup/setup.php:528
-#, php-format
-msgctxt "%s: Theme name."
-msgid "Thank you for installing the %s theme!"
-msgstr ""
-
-#: includes/setup/setup.php:534
-msgid "Please read the information about the theme."
-msgstr ""
-
-#: includes/setup/setup.php:543
-#, php-format
-msgctxt "%s: Theme name."
-msgid "Get started with %s"
-msgstr ""
-
-#: includes/setup/setup.php:597
+#: includes/setup/setup.php:559
 msgid "In posts list."
 msgstr ""
 
-#: includes/setup/setup.php:608
+#: includes/setup/setup.php:570
 msgid "In single post page."
 msgstr ""
 
-#: includes/setup/setup.php:614
+#: includes/setup/setup.php:576
 msgid "In front page banner."
 msgstr ""
 
-#: includes/setup/setup.php:620
+#: includes/setup/setup.php:582
 msgid "In food menu list."
 msgstr ""
 
-#: includes/setup/setup.php:690
+#: includes/setup/setup.php:652
 msgctxt "WordPress predefined image size name."
 msgid "Thumbnail size"
 msgstr ""
 
-#: includes/setup/setup.php:691
+#: includes/setup/setup.php:653
 msgctxt "WordPress predefined image size name."
 msgid "Medium size"
 msgstr ""
 
-#: includes/setup/setup.php:692
+#: includes/setup/setup.php:654
 msgctxt "WordPress predefined image size name."
 msgid "Large size"
 msgstr ""
 
-#: includes/setup/setup.php:725
+#: includes/setup/setup.php:687
 msgid "Recommended image sizes"
 msgstr ""
 
-#: includes/setup/setup.php:726
+#: includes/setup/setup.php:688
 msgid ""
 "For the theme to work correctly, please, set these recommended image sizes:"
 msgstr ""
 
-#: includes/setup/setup.php:732
+#: includes/setup/setup.php:694
 msgid "Size name"
 msgstr ""
 
-#: includes/setup/setup.php:733
+#: includes/setup/setup.php:695
 msgid "Size parameters"
 msgstr ""
 
-#: includes/setup/setup.php:734
+#: includes/setup/setup.php:696
 msgid "Theme usage"
 msgstr ""
 
-#: includes/setup/setup.php:742
+#: includes/setup/setup.php:704
 msgid "cropped"
 msgstr ""
 
-#: includes/setup/setup.php:742
+#: includes/setup/setup.php:704
 msgid "scaled"
 msgstr ""
 
-#: includes/setup/setup.php:750
+#: includes/setup/setup.php:712
 msgid ""
 "Additional image size added by the theme. Can not be changed on this page."
 msgstr ""
 
-#: includes/setup/setup.php:755
+#: includes/setup/setup.php:717
 #, php-format
 msgctxt "1: image width, 2: image height, 3: cropped or scaled?"
 msgid "%1$d &times; %2$d, %3$s"
 msgstr ""
 
-#: includes/setup/setup.php:950
+#: includes/setup/setup.php:912
 msgid "Button link"
 msgstr ""
 
-#: includes/setup/setup.php:1158
+#: includes/setup/setup.php:1116
 msgctxt "Back to food menu sections selectors button title."
 msgid "&uarr; Menu sections"
 msgstr ""
 
-#: includes/setup/setup.php:2242
+#: includes/setup/setup.php:2200
 msgid "Breadcrumbs navigation"
 msgstr ""
 
-#: includes/setup/setup.php:2730
+#: includes/setup/setup.php:2688
 msgid "Previous post"
 msgstr ""
 
-#: includes/setup/setup.php:2731
+#: includes/setup/setup.php:2689
 msgid "Next post"
 msgstr ""
 
-#: includes/setup/setup.php:2775
+#: includes/setup/setup.php:2733
 msgid "This is sticky post"
 msgstr ""
 
-#: includes/setup/setup.php:2804
+#: includes/setup/setup.php:2767
 msgid "This content is password protected."
 msgstr ""
 
-#: includes/setup/setup.php:2804
+#: includes/setup/setup.php:2769
 msgid "Enter the password to view it."
 msgstr ""
 
-#: includes/setup/setup.php:2918
-#, php-format
-msgctxt "%s: Name of current post."
-msgid "Continue reading%s&hellip;"
-msgstr ""
-
-#: includes/setup/setup.php:2989
+#: includes/setup/setup.php:3042
 msgctxt "Pagination text (visible): previous."
 msgid "&laquo;"
 msgstr ""
 
-#: includes/setup/setup.php:2990
+#: includes/setup/setup.php:3043
 msgctxt "Pagination text (hidden): previous."
 msgid "Previous page"
 msgstr ""
 
-#: includes/setup/setup.php:2991
+#: includes/setup/setup.php:3044
 msgctxt "Pagination text (hidden): next."
 msgid "Next page"
 msgstr ""
 
-#: includes/setup/setup.php:2992
+#: includes/setup/setup.php:3045
 msgctxt "Pagination text (visible): next."
 msgid "&raquo;"
 msgstr ""
 
-#: includes/setup/setup.php:3000
+#: includes/setup/setup.php:3053
 msgid "Posts Navigation"
 msgstr ""
 
-#: includes/setup/setup.php:3030
+#: includes/setup/setup.php:3083
 msgid "All posts"
 msgstr ""
 
@@ -971,7 +955,7 @@ msgid "Text color"
 msgstr ""
 
 #: includes/theme-options/theme-options.php:135
-msgid "Note that for certain header elements the color will be faded out a bit"
+msgid "Note that for certain header elements the color will be faded out a bit."
 msgstr ""
 
 #: includes/theme-options/theme-options.php:150
@@ -1083,6 +1067,7 @@ msgid "Others"
 msgstr ""
 
 #: includes/theme-options/theme-options.php:354
+#: template-parts/component-notice-welcome.php:40
 msgid "Show \"Welcome\" page"
 msgstr ""
 
@@ -1129,9 +1114,28 @@ msgstr ""
 msgid "You can override this behavior here."
 msgstr ""
 
-#: includes/welcome/class-welcome.php:147
-#: includes/welcome/class-welcome.php:149
+#: includes/welcome/class-welcome.php:148
+#: includes/welcome/class-welcome.php:150
 msgid "Welcome"
+msgstr ""
+
+#: includes/welcome/class-welcome.php:223
+#, php-format
+msgctxt "%1$s: heart icon, %2$s: star icons"
+msgid "If you %1$s like this theme, please rate it %2$s"
+msgstr ""
+
+#: includes/welcome/class-welcome.php:229
+msgid "And/or please consider a donation, thank you 🙏😊"
+msgstr ""
+
+#: includes/welcome/class-welcome.php:247
+msgid ""
+"Have a suggestion for improvement or something is not working as it should?"
+msgstr ""
+
+#: includes/welcome/class-welcome.php:249
+msgid "Contact support center &rarr;"
 msgstr ""
 
 #: library/controls/class-WM_Customizer_HTML.php:33
@@ -1219,12 +1223,12 @@ msgctxt "Paginated content title suffix, %s: page number."
 msgid "(page %s)"
 msgstr ""
 
-#: library/customize.php:440
+#: library/customize.php:437
 msgctxt "Customizer section title."
 msgid "Background"
 msgstr ""
 
-#: library/customize.php:445
+#: library/customize.php:442
 msgctxt "Customizer section title."
 msgid "Header"
 msgstr ""
@@ -1337,6 +1341,22 @@ msgstr ""
 msgid "Toggle sidebar"
 msgstr ""
 
+#: template-parts/component-link-more.php:22
+#, php-format
+msgctxt "%s: Name of current post."
+msgid "Continue reading%s&hellip;"
+msgstr ""
+
+#: template-parts/component-notice-welcome.php:27
+#, php-format
+msgctxt "%s: Theme name."
+msgid "Thank you for installing %s theme!"
+msgstr ""
+
+#: template-parts/component-notice-welcome.php:34
+msgid "Visit \"Welcome\" page for information on how to set up your website."
+msgstr ""
+
 #: template-parts/component-welcome-demo.php:22
 msgid "Installing the theme demo content"
 msgstr ""
@@ -1372,7 +1392,7 @@ msgid ""
 "process."
 msgstr ""
 
-#: template-parts/component-welcome-footer.php:22
+#: template-parts/component-welcome-footer.php:28
 msgid ""
 "You can disable this page in Appearance &raquo; Customize &raquo; Theme "
 "Options &raquo; Others."
@@ -1394,11 +1414,11 @@ msgstr ""
 msgid "Please take time to read the steps below to set up your website."
 msgstr ""
 
-#: template-parts/component-welcome-header.php:48
+#: template-parts/component-welcome-header.php:50
 msgid "Theme Documentation"
 msgstr ""
 
-#: template-parts/component-welcome-header.php:50
+#: template-parts/component-welcome-header.php:52
 msgid "Support Center"
 msgstr ""
 
