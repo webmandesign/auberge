@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    2.0
- * @version  2.1
+ * @version  2.7.0
  */
 
 
@@ -596,3 +596,65 @@
 
 		}
 	} // /wm_post_media_video
+
+
+
+	/**
+	 * @todo  Remove with WP 5.2+?
+	 *
+	 * Fix for retrieving Gutenberg gallery setup parameters in array.
+	 *
+	 * @link  https://core.trac.wordpress.org/ticket/43826
+	 *
+	 * @since    2.7.0
+	 * @version  2.7.0
+	 *
+	 * @param  array       $gallery  The first-found post gallery.
+	 * @param  int|WP_Post $post     Post ID or object.
+	 */
+	if ( ! function_exists( 'wm_get_post_gallery_fix' ) ) {
+		function wm_get_post_gallery_fix( $gallery, $post ) {
+
+			// Variables
+
+				$post = get_post( $post );
+
+
+			// Requirements check
+
+				if (
+					$gallery
+					|| ! $post
+					|| ! function_exists( 'has_blocks' )
+					|| ! has_blocks( $post->post_content )
+				) {
+					return $gallery;
+				}
+
+
+			// Processing
+
+				preg_match_all(
+					'/wp:gallery(.*)-->/i',
+					$post->post_content,
+					$galleries
+				);
+
+				if ( ! empty( $galleries[1] ) ) {
+					$gallery = json_decode( reset( $galleries[1] ), true );
+					foreach ( $gallery as $key => $value ) {
+						if ( is_array( $value ) ) {
+							$gallery[ $key ] = implode( ',', $value );
+						}
+					}
+				}
+
+
+			// Output
+
+				return $gallery;
+
+		}
+	} // /wm_get_post_gallery_fix
+
+	add_filter( 'get_post_gallery', 'wm_get_post_gallery_fix', 10, 2 );

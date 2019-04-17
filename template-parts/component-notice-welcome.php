@@ -15,7 +15,8 @@
 
 // Helper variables
 
-	$theme_name = wp_get_theme( 'auberge' )->get( 'Name' );
+	$theme = get_template();
+	$theme_name = wp_get_theme( $theme )->get( 'Name' );
 
 ?>
 
@@ -36,7 +37,7 @@
 		<?php echo Auberge_Welcome::get_info_like(); ?>
 	</p>
 	<p class="call-to-action">
-		<a href="<?php echo esc_url( admin_url( 'themes.php?page=auberge-welcome' ) ); ?>" class="button button-primary button-hero">
+		<a href="<?php echo esc_url( admin_url( 'themes.php?page=' . $theme . '-welcome' ) ); ?>" class="button button-primary button-hero">
 			<?php esc_html_e( 'Show "Welcome" page', 'auberge' ); ?>
 		</a>
 	</p>
