@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0
- * @version  2.7.0
+ * @version  2.7.1
  */
 
 
@@ -36,6 +36,12 @@ wp_head();
 <body id="top" <?php body_class(); echo wm_schema_org( 'WebPage' ); ?>>
 
 <?php
+
+if ( function_exists( 'wp_body_open' ) ) {
+	wp_body_open();
+} else {
+	do_action( 'wp_body_open' );
+}
 
 do_action( 'tha_body_top' );
 

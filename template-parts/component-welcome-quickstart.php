@@ -8,20 +8,27 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    2.2.0
- * @version  2.6.0
+ * @version  2.7.1
  */
 
 
 
 
 
+// Requirements check
+
+	if ( ! class_exists( 'Auberge_Welcome' ) ) {
+		return;
+	}
+
+
 ?>
 
 <h2 class="screen-reader-text"><?php esc_html_e( 'Quickstart Guide', 'auberge' ); ?></h2>
 
-<div class="feature-section two-col">
+<div class="feature-section two-col has-2-columns" style="max-width: none;">
 
-	<div class="first-feature col">
+	<div class="first-feature col column">
 
 		<span class="dropcap">1</span>
 
@@ -41,7 +48,7 @@
 
 	</div>
 
-	<div class="last-feature col">
+	<div class="last-feature col column">
 
 		<span class="dropcap">2</span>
 

@@ -6,11 +6,18 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    2.7.0
- * @version  2.7.0
+ * @version  2.7.1
  */
 
 
 
+
+
+// Requirements check
+
+	if ( ! class_exists( 'Auberge_Welcome' ) ) {
+		return;
+	}
 
 
 // Helper variables

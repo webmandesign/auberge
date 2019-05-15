@@ -1,5 +1,26 @@
 # Auberge Changelog
 
+## 2.7.1
+
+* **Add**: Adding WhatsApp and Google social icon
+* **Update**: Implementing WordPress 5.2 code updates
+* **Fix**: Preventing PHP error after theme activation
+
+### Files changed:
+
+	changelog.md
+	header.php
+	readme.txt
+	style.css
+	assets/images/svg/social-icons.svg
+	includes/setup/setup.php
+	template-parts/component-notice-welcome.php
+	template-parts/component-welcome-demo.php
+	template-parts/component-welcome-footer.php
+	template-parts/component-welcome-header.php
+	template-parts/component-welcome-quickstart.php
+
+
 ## 2.7.0
 
 * **Update**: Navigation touch screen functionality

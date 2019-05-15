@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0
- * @version  2.7.0
+ * @version  2.7.1
  *
  * Contents:
  *
@@ -1176,7 +1176,7 @@
 	 * HTML Body classes
 	 *
 	 * @since    1.0
-	 * @version  2.5.0
+	 * @version  2.7.1
 	 *
 	 * @param  array $classes
 	 */
@@ -1210,12 +1210,6 @@
 
 					if ( is_singular() ) {
 						$body_classes['is-singular'] = ++$i;
-					}
-
-				// Privacy Policy page
-
-					if ( (int) get_option( 'wp_page_for_privacy_policy' ) === get_the_ID() ) {
-						$body_classes['page-privacy-policy'] = ++$i;
 					}
 
 				// Has featured image?
@@ -1600,7 +1594,7 @@
 			 * Social links supported icons.
 			 *
 			 * @since    2.5.0
-			 * @version  2.5.4
+			 * @version  2.7.1
 			 */
 			function wm_social_links_icons() {
 
@@ -1618,7 +1612,8 @@
 						'facebook.com'      => 'facebook',
 						'flickr.com'        => 'flickr',
 						'foursquare.com'    => 'foursquare',
-						'plus.google.com'   => 'google-plus',
+						'plus.google.'      => 'google-plus',
+						'google.'           => 'google',
 						'github.com'        => 'github',
 						'instagram.com'     => 'instagram',
 						'linkedin.com'      => 'linkedin',
@@ -1626,6 +1621,7 @@
 						'medium.com'        => 'medium',
 						'paypal.com'        => 'paypal',
 						'pscp.tv'           => 'periscope',
+						'tel:'              => 'phone',
 						'pinterest.com'     => 'pinterest',
 						'getpocket.com'     => 'get-pocket',
 						'reddit.com'        => 'reddit',
@@ -1647,6 +1643,7 @@
 						'vimeo.com'         => 'vimeo',
 						'vine.co'           => 'vine',
 						'vk.com'            => 'vk',
+						'wa.me'             => 'whatsapp',
 						'wordpress.org'     => 'wordpress',
 						'wordpress.com'     => 'wordpress',
 						'xing.com'          => 'xing',
