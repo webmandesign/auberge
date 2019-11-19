@@ -9,7 +9,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    2.0
- * @version  2.6.0
+ * @version  2.7.2
  */
 
 
@@ -48,8 +48,8 @@
 
 				printf(
 					esc_html_x( 'Using %1$s %2$s theme.', '1: theme name, 2: linked "WordPress" word.', 'auberge' ),
-					'<a href="' . esc_url( wp_get_theme( get_template() )->get( 'ThemeURI' ) ) . '"><strong>' . wp_get_theme( get_template() )->get( 'Name' ) . '</strong></a>',
-					'<a href="' . esc_url( __( 'https://wordpress.org/', 'auberge' ) ) . '">WordPress</a>'
+					'<a rel="nofollow" href="' . esc_url( wp_get_theme( get_template() )->get( 'ThemeURI' ) ) . '"><strong>' . wp_get_theme( get_template() )->get( 'Name' ) . '</strong></a>',
+					'<a rel="nofollow" href="' . esc_url( __( 'https://wordpress.org/', 'auberge' ) ) . '">WordPress</a>'
 				);
 
 				if ( function_exists( 'the_privacy_policy_link' ) ) {

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Auberge\n"
 "Report-Msgid-Bugs-To: https://support.webmandesign.eu\n"
-"POT-Creation-Date: 2019-04-17 17:29+0200\n"
+"POT-Creation-Date: 2019-11-19 10:23+0100\n"
 "PO-Revision-Date: 2015-04-21 20:43+0100\n"
 "Last-Translator: Oliver Juhas, WebMan Design\n"
 "Language-Team: \n"
@@ -11,7 +11,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.2.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
@@ -95,8 +95,8 @@ msgstr ""
 
 #: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:114
 msgid ""
-"In case you have not provided the quote source in using the \"cite\" HTML "
-"tag in post content, you can set it here."
+"In case you have not provided the quote source in using the \"cite\" HTML tag "
+"in post content, you can set it here."
 msgstr ""
 
 #: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:116
@@ -115,8 +115,8 @@ msgstr ""
 #: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:162
 #: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:210
 msgid ""
-"This text will override the default text displayed in your website front "
-"page banner."
+"This text will override the default text displayed in your website front page "
+"banner."
 msgstr ""
 
 #: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:202
@@ -151,55 +151,74 @@ msgstr ""
 msgid "Load more&hellip;"
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:107
-msgid "Theme demo content"
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:106
+msgid "Manual import procedure"
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:139
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:110
+msgid ""
+"By importing this demo content you get the exact copy of the theme demo "
+"website."
+msgstr ""
+
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:111
+msgid "Preview the theme demo website &raquo;"
+msgstr ""
+
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:115
+msgid ""
+"For instructions on importing theme demo content please visit GitHub "
+"repository."
+msgstr ""
+
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:116
+msgid "GitHub repository instructions &raquo;"
+msgstr ""
+
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:124
 msgid "Media files quality"
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:143
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:128
 msgid ""
-"Please note that imported media files (such as images, video and audio "
-"files) are of low quality to prevent copyright infringement."
+"Please note that imported media files (such as images, video and audio files) "
+"are of low quality to prevent copyright infringement."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:144
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:129
 msgid ""
 "Please read \"Credits\" section of theme documentation for reference where "
 "the demo media files were obtained from."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:145
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:130
 msgid "Get media for your website &raquo;"
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:153
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:138
 msgid "Install demo required plugins!"
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:157
-msgid ""
-"Please read the information about the theme demo required plugins first."
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:142
+msgid "Please read the information about the theme demo required plugins first."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:158
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:143
 msgid ""
-"If you do not install and activate demo required plugins, some of the "
-"content will not be imported."
+"If you do not install and activate demo required plugins, some of the content "
+"will not be imported."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:159
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:144
 msgid ""
 "Read the information before you run the theme demo content import process."
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:160
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:145
 msgid "View the list of required plugins &raquo;"
 msgstr ""
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:166
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:151
 msgid ""
 "(Note that this set of plugins may differ from plugins recommended under "
 "Appearance &rarr; Install Plugins!)"
@@ -358,55 +377,55 @@ msgctxt "Back to food menu sections selectors button title."
 msgid "&uarr; Menu sections"
 msgstr ""
 
-#: includes/setup/setup.php:2200
+#: includes/setup/setup.php:2197
 msgid "Breadcrumbs navigation"
 msgstr ""
 
-#: includes/setup/setup.php:2688
+#: includes/setup/setup.php:2685
 msgid "Previous post"
 msgstr ""
 
-#: includes/setup/setup.php:2689
+#: includes/setup/setup.php:2686
 msgid "Next post"
 msgstr ""
 
-#: includes/setup/setup.php:2733
+#: includes/setup/setup.php:2730
 msgid "This is sticky post"
 msgstr ""
 
-#: includes/setup/setup.php:2767
+#: includes/setup/setup.php:2764
 msgid "This content is password protected."
 msgstr ""
 
-#: includes/setup/setup.php:2769
+#: includes/setup/setup.php:2766
 msgid "Enter the password to view it."
 msgstr ""
 
-#: includes/setup/setup.php:3042
+#: includes/setup/setup.php:3046
 msgctxt "Pagination text (visible): previous."
 msgid "&laquo;"
 msgstr ""
 
-#: includes/setup/setup.php:3043
+#: includes/setup/setup.php:3047
 msgctxt "Pagination text (hidden): previous."
 msgid "Previous page"
 msgstr ""
 
-#: includes/setup/setup.php:3044
+#: includes/setup/setup.php:3048
 msgctxt "Pagination text (hidden): next."
 msgid "Next page"
 msgstr ""
 
-#: includes/setup/setup.php:3045
+#: includes/setup/setup.php:3049
 msgctxt "Pagination text (visible): next."
 msgid "&raquo;"
 msgstr ""
 
-#: includes/setup/setup.php:3053
+#: includes/setup/setup.php:3057
 msgid "Posts Navigation"
 msgstr ""
 
-#: includes/setup/setup.php:3083
+#: includes/setup/setup.php:3087
 msgid "All posts"
 msgstr ""
 
@@ -537,8 +556,8 @@ msgstr ""
 #: includes/tgmpa/class-tgm-plugin-activation.php:411
 #, php-format
 msgid ""
-"Plugin not activated. A higher version of %s is needed for this theme. "
-"Please update the plugin."
+"Plugin not activated. A higher version of %s is needed for this theme. Please "
+"update the plugin."
 msgstr ""
 
 #. translators: 1: dashboard link.
@@ -571,8 +590,8 @@ msgstr ""
 
 #: includes/tgmpa/class-tgm-plugin-activation.php:953
 msgid ""
-"The remote plugin package does not contain a folder with the desired slug "
-"and renaming did not work."
+"The remote plugin package does not contain a folder with the desired slug and "
+"renaming did not work."
 msgstr ""
 
 #: includes/tgmpa/class-tgm-plugin-activation.php:953
@@ -1067,7 +1086,7 @@ msgid "Others"
 msgstr ""
 
 #: includes/theme-options/theme-options.php:354
-#: template-parts/component-notice-welcome.php:40
+#: template-parts/component-notice-welcome.php:48
 msgid "Show \"Welcome\" page"
 msgstr ""
 
@@ -1114,27 +1133,26 @@ msgstr ""
 msgid "You can override this behavior here."
 msgstr ""
 
-#: includes/welcome/class-welcome.php:148
-#: includes/welcome/class-welcome.php:150
+#: includes/welcome/class-welcome.php:147 includes/welcome/class-welcome.php:149
 msgid "Welcome"
 msgstr ""
 
-#: includes/welcome/class-welcome.php:223
+#: includes/welcome/class-welcome.php:222
 #, php-format
 msgctxt "%1$s: heart icon, %2$s: star icons"
 msgid "If you %1$s like this theme, please rate it %2$s"
 msgstr ""
 
-#: includes/welcome/class-welcome.php:229
+#: includes/welcome/class-welcome.php:228
 msgid "And/or please consider a donation, thank you 🙏😊"
 msgstr ""
 
-#: includes/welcome/class-welcome.php:247
+#: includes/welcome/class-welcome.php:246
 msgid ""
 "Have a suggestion for improvement or something is not working as it should?"
 msgstr ""
 
-#: includes/welcome/class-welcome.php:249
+#: includes/welcome/class-welcome.php:248
 msgid "Contact support center &rarr;"
 msgstr ""
 
@@ -1347,126 +1365,91 @@ msgctxt "%s: Name of current post."
 msgid "Continue reading%s&hellip;"
 msgstr ""
 
-#: template-parts/component-notice-welcome.php:27
+#: template-parts/component-notice-welcome.php:35
 #, php-format
 msgctxt "%s: Theme name."
 msgid "Thank you for installing %s theme!"
 msgstr ""
 
-#: template-parts/component-notice-welcome.php:34
+#: template-parts/component-notice-welcome.php:42
 msgid "Visit \"Welcome\" page for information on how to set up your website."
 msgstr ""
 
-#: template-parts/component-welcome-demo.php:22
-msgid "Installing the theme demo content"
-msgstr ""
-
-#: template-parts/component-welcome-demo.php:25
-msgid ""
-"You can install the theme demo content including pages, posts, custom post "
-"types, layouts, menus and widgets directly from your WordPress dashboard by "
-"clicking the button bellow."
-msgstr ""
-
-#: template-parts/component-welcome-demo.php:29
-msgid ""
-"Alternatively (such as when the automated installation fails) you can follow "
-"theme documentation instructions for manual demo content installation."
-msgstr ""
-
-#: template-parts/component-welcome-demo.php:30
-msgid "Read the instructions &raquo;"
-msgstr ""
-
-#: template-parts/component-welcome-demo.php:35
-msgid "Install and run \"One Click Demo Import\" plugin"
-msgstr ""
-
-#: template-parts/component-welcome-demo.php:39
-msgid "Install theme demo content"
-msgstr ""
-
-#: template-parts/component-welcome-demo.php:43
-msgid ""
-"Or head over to Appearance &raquo; Import Demo Data to start the import "
-"process."
-msgstr ""
-
-#: template-parts/component-welcome-footer.php:28
+#: template-parts/component-welcome-footer.php:38
 msgid ""
 "You can disable this page in Appearance &raquo; Customize &raquo; Theme "
 "Options &raquo; Others."
 msgstr ""
 
-#: template-parts/component-welcome-header.php:24
+#: template-parts/component-welcome-header.php:31
 #, php-format
 msgctxt "1: theme name, 2: theme version number."
 msgid "Welcome to %1$s %2$s"
 msgstr ""
 
-#: template-parts/component-welcome-header.php:36
+#: template-parts/component-welcome-header.php:43
 #, php-format
 msgctxt "1: theme name, 2: theme developer link."
 msgid "Thank you for using %1$s WordPress theme by %2$s!"
 msgstr ""
 
-#: template-parts/component-welcome-header.php:43
+#: template-parts/component-welcome-header.php:50
 msgid "Please take time to read the steps below to set up your website."
 msgstr ""
 
-#: template-parts/component-welcome-header.php:50
+#: template-parts/component-welcome-header.php:57
 msgid "Theme Documentation"
 msgstr ""
 
-#: template-parts/component-welcome-header.php:52
+#: template-parts/component-welcome-header.php:59
 msgid "Support Center"
 msgstr ""
 
-#: template-parts/component-welcome-quickstart.php:20
+#: template-parts/component-welcome-quickstart.php:27
 msgid "Quickstart Guide"
 msgstr ""
 
-#: template-parts/component-welcome-quickstart.php:28
+#: template-parts/component-welcome-quickstart.php:35
 msgid "The WordPress settings"
 msgstr ""
 
-#: template-parts/component-welcome-quickstart.php:31
+#: template-parts/component-welcome-quickstart.php:38
 msgid ""
 "Do not forget to set up your WordPress in \"Settings\" section of the "
 "WordPress dashboard."
 msgstr ""
 
-#: template-parts/component-welcome-quickstart.php:32
+#: template-parts/component-welcome-quickstart.php:39
 msgid "Please go through all the subsections and options."
 msgstr ""
 
-#: template-parts/component-welcome-quickstart.php:33
+#: template-parts/component-welcome-quickstart.php:40
 msgid "This step is required for all WordPress websites."
 msgstr ""
 
-#: template-parts/component-welcome-quickstart.php:37
+#: template-parts/component-welcome-quickstart.php:44
 msgid ""
 "Please, pay special attention to image sizes settings under Settings &raquo; "
 "Media."
 msgstr ""
 
-#: template-parts/component-welcome-quickstart.php:40
+#: template-parts/component-welcome-quickstart.php:47
 msgid "Set Up WordPress &raquo;"
 msgstr ""
 
-#: template-parts/component-welcome-quickstart.php:48
+#: template-parts/component-welcome-quickstart.php:55
 msgid "Customize the theme"
 msgstr ""
 
-#: template-parts/component-welcome-quickstart.php:51
+#: template-parts/component-welcome-quickstart.php:58
 msgid "You can customize the theme using live-preview editor."
 msgstr ""
 
-#: template-parts/component-welcome-quickstart.php:52
+#: template-parts/component-welcome-quickstart.php:59
 msgid "Customization changes will go live only after you save them!"
 msgstr ""
 
-#: template-parts/component-welcome-quickstart.php:55
+#: template-parts/component-welcome-quickstart.php:62
 msgid "Customize the Theme &raquo;"
 msgstr ""
 
@@ -1494,8 +1477,7 @@ msgstr ""
 
 #: template-parts/content-none.php:34
 #, php-format
-msgid ""
-"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
 #: template-parts/content-none.php:44
@@ -1506,8 +1488,7 @@ msgstr ""
 
 #: template-parts/content-none.php:50
 msgid ""
-"It seems we can not find what you are looking for. Perhaps searching can "
-"help."
+"It seems we can not find what you are looking for. Perhaps searching can help."
 msgstr ""
 
 #: template-parts/loop-banner.php:72

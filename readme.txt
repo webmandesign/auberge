@@ -3,7 +3,7 @@ Contributors: webmandesign
 Tags: one-column, two-columns, right-sidebar, grid-layout, flexible-header, custom-background, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, footer-widgets, full-width-template, microformats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, post-formats, blog, food-and-drink
 Requires at least: 4.7.0
 Tested up to: 5.2
-Stable tag: 2.7.1
+Stable tag: 2.7.2
 License: GNU General Public License v3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -37,8 +37,8 @@ Please see `changelog.md` file.
 
 == Upgrade Notice ==
 
-= 2.7.1 =
-Implementing WordPress 5.2 code updates, adding WhatsApp and Google social icon, preventing PHP error after theme activation.
+= 2.7.2 =
+Adding `nofollow` rel attribute to footer links, setting manual import for One Click Demo Import plugin to comply with WordPress.org theme requirements, updating localization, not wrapping post excerpt in additional DIV when its empty.
 
 
 == Resources ==

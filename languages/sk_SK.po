@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Auberge Plus 1.4\n"
 "Report-Msgid-Bugs-To: https://support.webmandesign.eu\n"
-"POT-Creation-Date: 2019-04-17 17:29+0200\n"
-"PO-Revision-Date: 2019-04-17 17:30+0200\n"
+"POT-Creation-Date: 2019-11-19 10:23+0100\n"
+"PO-Revision-Date: 2019-11-19 10:26+0100\n"
 "Last-Translator: Oliver Juhas, WebMan Design\n"
 "Language-Team: \n"
 "Language: sk_SK\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.1\n"
+"X-Generator: Poedit 2.2.4\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
@@ -97,8 +97,8 @@ msgstr "Zdroj citátu"
 
 #: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:114
 msgid ""
-"In case you have not provided the quote source in using the \"cite\" HTML tag "
-"in post content, you can set it here."
+"In case you have not provided the quote source in using the \"cite\" HTML "
+"tag in post content, you can set it here."
 msgstr ""
 "V prípade, že ste neposkytli zdroj citácie pomocou \"cite\" HTML tagu priamo "
 "v obsahu článku, môžete tak urobiť týmto nastavením."
@@ -119,8 +119,8 @@ msgstr "Text zobrazený v banneri"
 #: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:162
 #: includes/plugins/advanced-custom-fields/advanced-custom-fields.php:210
 msgid ""
-"This text will override the default text displayed in your website front page "
-"banner."
+"This text will override the default text displayed in your website front "
+"page banner."
 msgstr ""
 "Týmto nastavením prepíšete pôvodný text zobrazený v banneri na úvodnej "
 "stránke."
@@ -157,23 +157,45 @@ msgstr "Dole"
 msgid "Load more&hellip;"
 msgstr "Načítať ďalšie&hellip;"
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:107
-msgid "Theme demo content"
-msgstr "Demo obsah témy"
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:106
+msgid "Manual import procedure"
+msgstr "Postup manuálneho importu"
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:139
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:110
+msgid ""
+"By importing this demo content you get the exact copy of the theme demo "
+"website."
+msgstr ""
+"Importovaním tohto demo obsahu témy získate totožnú kópiu demo webstránky "
+"témy."
+
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:111
+msgid "Preview the theme demo website &raquo;"
+msgstr "Prezrieť demo webstránku témy &raquo;"
+
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:115
+msgid ""
+"For instructions on importing theme demo content please visit GitHub "
+"repository."
+msgstr "Inštrukcie pre import demo obsahu témy nájdete v GitHub depozitári."
+
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:116
+msgid "GitHub repository instructions &raquo;"
+msgstr "Inštrukcie v GitHub depozitári &raquo;"
+
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:124
 msgid "Media files quality"
 msgstr "Kvalita súborov médií"
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:143
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:128
 msgid ""
-"Please note that imported media files (such as images, video and audio files) "
-"are of low quality to prevent copyright infringement."
+"Please note that imported media files (such as images, video and audio "
+"files) are of low quality to prevent copyright infringement."
 msgstr ""
 "Upozorňujeme, že importované súbory médií (napríklad obrázky, video a audio "
 "súbory) majú nízku kvalitu, aby sa zabránilo porušovaniu autorských práv."
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:144
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:129
 msgid ""
 "Please read \"Credits\" section of theme documentation for reference where "
 "the demo media files were obtained from."
@@ -181,38 +203,39 @@ msgstr ""
 "Zoznam zdrojov multimediálnych súborov nájdete v sekcii \"Credits\" v "
 "dokumentácii témy."
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:145
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:130
 msgid "Get media for your website &raquo;"
 msgstr "Získať médiá pre vaše webové stránky &raquo;"
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:153
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:138
 msgid "Install demo required plugins!"
 msgstr "Nainštalujte vyžadované demo pluginy!"
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:157
-msgid "Please read the information about the theme demo required plugins first."
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:142
+msgid ""
+"Please read the information about the theme demo required plugins first."
 msgstr ""
 "Najskôr si prečítajte informácie o moduloch vyžadovaných pre demo obsah témy."
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:158
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:143
 msgid ""
-"If you do not install and activate demo required plugins, some of the content "
-"will not be imported."
+"If you do not install and activate demo required plugins, some of the "
+"content will not be imported."
 msgstr ""
 "Ak moduly vyžadované pre demo obsah témy nebudú nainštalované a aktivované, "
 "časti demo obsahu nebudú importované."
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:159
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:144
 msgid ""
 "Read the information before you run the theme demo content import process."
 msgstr ""
 "Preštudujte si informácie predtým, než spustíte proces importu demo obsahu."
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:160
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:145
 msgid "View the list of required plugins &raquo;"
 msgstr "Zobraziť zoznam požadovaných modulov &raquo;"
 
-#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:166
+#: includes/plugins/one-click-demo-import/class-one-click-demo-import.php:151
 msgid ""
 "(Note that this set of plugins may differ from plugins recommended under "
 "Appearance &rarr; Install Plugins!)"
@@ -379,55 +402,55 @@ msgctxt "Back to food menu sections selectors button title."
 msgid "&uarr; Menu sections"
 msgstr "&uarr; Skupiny jedál"
 
-#: includes/setup/setup.php:2200
+#: includes/setup/setup.php:2197
 msgid "Breadcrumbs navigation"
 msgstr "Omrvinková navigácia"
 
-#: includes/setup/setup.php:2688
+#: includes/setup/setup.php:2685
 msgid "Previous post"
 msgstr "Predchádzajúca stránka"
 
-#: includes/setup/setup.php:2689
+#: includes/setup/setup.php:2686
 msgid "Next post"
 msgstr "Nasledujúca stránka"
 
-#: includes/setup/setup.php:2733
+#: includes/setup/setup.php:2730
 msgid "This is sticky post"
 msgstr "Odporúčaný článok"
 
-#: includes/setup/setup.php:2767
+#: includes/setup/setup.php:2764
 msgid "This content is password protected."
 msgstr "Tento obsah je chránený heslom."
 
-#: includes/setup/setup.php:2769
+#: includes/setup/setup.php:2766
 msgid "Enter the password to view it."
 msgstr "Zadajte heslo pre jeho zobrazenie."
 
-#: includes/setup/setup.php:3042
+#: includes/setup/setup.php:3046
 msgctxt "Pagination text (visible): previous."
 msgid "&laquo;"
 msgstr "&laquo;"
 
-#: includes/setup/setup.php:3043
+#: includes/setup/setup.php:3047
 msgctxt "Pagination text (hidden): previous."
 msgid "Previous page"
 msgstr "Predchádzajúca stránka"
 
-#: includes/setup/setup.php:3044
+#: includes/setup/setup.php:3048
 msgctxt "Pagination text (hidden): next."
 msgid "Next page"
 msgstr "Nasledujúca stránka"
 
-#: includes/setup/setup.php:3045
+#: includes/setup/setup.php:3049
 msgctxt "Pagination text (visible): next."
 msgid "&raquo;"
 msgstr "&raquo;"
 
-#: includes/setup/setup.php:3053
+#: includes/setup/setup.php:3057
 msgid "Posts Navigation"
 msgstr "Navigácia príspevkov"
 
-#: includes/setup/setup.php:3083
+#: includes/setup/setup.php:3087
 msgid "All posts"
 msgstr "Všetky články"
 
@@ -574,8 +597,8 @@ msgstr "Nebola vykonaná žiadna akcia. Modul %1$s je už aktívny."
 #: includes/tgmpa/class-tgm-plugin-activation.php:411
 #, php-format
 msgid ""
-"Plugin not activated. A higher version of %s is needed for this theme. Please "
-"update the plugin."
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
 msgstr ""
 "Modul nebol aktivovaný. Táto téma vyžaduje vyššiu verziu modulu %s. Prosíme, "
 "aktualizujte modul."
@@ -613,8 +636,8 @@ msgstr "Vyžaduje aktualizáciu"
 
 #: includes/tgmpa/class-tgm-plugin-activation.php:953
 msgid ""
-"The remote plugin package does not contain a folder with the desired slug and "
-"renaming did not work."
+"The remote plugin package does not contain a folder with the desired slug "
+"and renaming did not work."
 msgstr ""
 "Vzdialený balík modulu neobsahuje zložku pomenovanú vyžadovaným slugom a "
 "premenovanie neprebehlo úspešne."
@@ -625,8 +648,8 @@ msgid ""
 "Please contact the plugin provider and ask them to package their plugin "
 "according to the WordPress guidelines."
 msgstr ""
-"Prosíme, kontaktujte poskytovateľov modulu a požiadajte ich o prípravu balíka "
-"modulu podľa pokynov WordPress."
+"Prosíme, kontaktujte poskytovateľov modulu a požiadajte ich o prípravu "
+"balíka modulu podľa pokynov WordPress."
 
 #: includes/tgmpa/class-tgm-plugin-activation.php:956
 msgid ""
@@ -1014,7 +1037,8 @@ msgid "Text color"
 msgstr "Farba textu"
 
 #: includes/theme-options/theme-options.php:135
-msgid "Note that for certain header elements the color will be faded out a bit."
+msgid ""
+"Note that for certain header elements the color will be faded out a bit."
 msgstr ""
 "Upozorňujeme, že na niektorých elementoch záhlavia bude farba trochu "
 "vyblednutá."
@@ -1131,7 +1155,7 @@ msgid "Others"
 msgstr "Ostatné"
 
 #: includes/theme-options/theme-options.php:354
-#: template-parts/component-notice-welcome.php:40
+#: template-parts/component-notice-welcome.php:48
 msgid "Show \"Welcome\" page"
 msgstr "Zobraziť stránku \"Vitajte\""
 
@@ -1183,26 +1207,27 @@ msgstr ""
 msgid "You can override this behavior here."
 msgstr "Toto nastavenie môžete zmeniť."
 
-#: includes/welcome/class-welcome.php:148 includes/welcome/class-welcome.php:150
+#: includes/welcome/class-welcome.php:147
+#: includes/welcome/class-welcome.php:149
 msgid "Welcome"
 msgstr "Vitajte"
 
-#: includes/welcome/class-welcome.php:223
+#: includes/welcome/class-welcome.php:222
 #, php-format
 msgctxt "%1$s: heart icon, %2$s: star icons"
 msgid "If you %1$s like this theme, please rate it %2$s"
 msgstr "Ak sa vám táto téma %1$s páči, ohodnoťte ju %2$s"
 
-#: includes/welcome/class-welcome.php:229
+#: includes/welcome/class-welcome.php:228
 msgid "And/or please consider a donation, thank you 🙏😊"
 msgstr "A/alebo pouvažujte o malom dare, prosím. Vďaka 🙏😊"
 
-#: includes/welcome/class-welcome.php:247
+#: includes/welcome/class-welcome.php:246
 msgid ""
 "Have a suggestion for improvement or something is not working as it should?"
 msgstr "Máte návrh na zlepšenie, alebo niečo nefunguje tak, ako by malo?"
 
-#: includes/welcome/class-welcome.php:249
+#: includes/welcome/class-welcome.php:248
 msgid "Contact support center &rarr;"
 msgstr "Kontaktujte centrum technickej podpory &rarr;"
 
@@ -1415,61 +1440,19 @@ msgctxt "%s: Name of current post."
 msgid "Continue reading%s&hellip;"
 msgstr "Prečítať%s&hellip;"
 
-#: template-parts/component-notice-welcome.php:27
+#: template-parts/component-notice-welcome.php:35
 #, php-format
 msgctxt "%s: Theme name."
 msgid "Thank you for installing %s theme!"
 msgstr "Ďakujeme, za inštaláciu témy %s!"
 
-#: template-parts/component-notice-welcome.php:34
+#: template-parts/component-notice-welcome.php:42
 msgid "Visit \"Welcome\" page for information on how to set up your website."
 msgstr ""
-"Začnite na uvítacej stránke, kde nájdete informácie, ako nastaviť vašu webovú "
-"stránku."
+"Začnite na uvítacej stránke, kde nájdete informácie, ako nastaviť vašu "
+"webovú stránku."
 
-#: template-parts/component-welcome-demo.php:22
-msgid "Installing the theme demo content"
-msgstr "Inštalácia demo obsahu témy"
-
-#: template-parts/component-welcome-demo.php:25
-msgid ""
-"You can install the theme demo content including pages, posts, custom post "
-"types, layouts, menus and widgets directly from your WordPress dashboard by "
-"clicking the button bellow."
-msgstr ""
-"Kliknutím na doleuvedené tlačidlo inštalujete demo obsah témy obsahujúci "
-"stránky, články, vlastné typy obsahu, rozloženia stránok, navigačné menu a "
-"widgety."
-
-#: template-parts/component-welcome-demo.php:29
-msgid ""
-"Alternatively (such as when the automated installation fails) you can follow "
-"theme documentation instructions for manual demo content installation."
-msgstr ""
-"Ako alternatívu (v prípade zlyhania automatického importu) môžete použiť "
-"manuálny import demo obsahu témy popísaný v dokumentácii."
-
-#: template-parts/component-welcome-demo.php:30
-msgid "Read the instructions &raquo;"
-msgstr "Prečítajte si inštrukcie &raquo;"
-
-#: template-parts/component-welcome-demo.php:35
-msgid "Install and run \"One Click Demo Import\" plugin"
-msgstr "Inštaluj a spusti modul \"Importuj demo jedným klikom\""
-
-#: template-parts/component-welcome-demo.php:39
-msgid "Install theme demo content"
-msgstr "Inštaluj demo obsah témy"
-
-#: template-parts/component-welcome-demo.php:43
-msgid ""
-"Or head over to Appearance &raquo; Import Demo Data to start the import "
-"process."
-msgstr ""
-"Alebo spustite proces importu v administračnom menu Vzhľad &raquo; Import "
-"demo dát."
-
-#: template-parts/component-welcome-footer.php:28
+#: template-parts/component-welcome-footer.php:38
 msgid ""
 "You can disable this page in Appearance &raquo; Customize &raquo; Theme "
 "Options &raquo; Others."
@@ -1477,56 +1460,56 @@ msgstr ""
 "Túto stránku môžete vypnúť v administračnom menu Vzhľad &raquo; Prispôsobiť "
 "&raquo; Nastavenia témy &raquo; Ostatné."
 
-#: template-parts/component-welcome-header.php:24
+#: template-parts/component-welcome-header.php:31
 #, php-format
 msgctxt "1: theme name, 2: theme version number."
 msgid "Welcome to %1$s %2$s"
 msgstr "Víta vás %1$s %2$s"
 
-#: template-parts/component-welcome-header.php:36
+#: template-parts/component-welcome-header.php:43
 #, php-format
 msgctxt "1: theme name, 2: theme developer link."
 msgid "Thank you for using %1$s WordPress theme by %2$s!"
 msgstr "Ďakujeme, že používate %1$s WordPress tému od %2$s!"
 
-#: template-parts/component-welcome-header.php:43
+#: template-parts/component-welcome-header.php:50
 msgid "Please take time to read the steps below to set up your website."
 msgstr ""
 "Venujte prosím čas doleuvedeným inštrukciám pre nastavenie vašej webstránky."
 
-#: template-parts/component-welcome-header.php:50
+#: template-parts/component-welcome-header.php:57
 msgid "Theme Documentation"
 msgstr "Dokumentácia témy"
 
-#: template-parts/component-welcome-header.php:52
+#: template-parts/component-welcome-header.php:59
 msgid "Support Center"
 msgstr "Centrum pomoci"
 
-#: template-parts/component-welcome-quickstart.php:20
+#: template-parts/component-welcome-quickstart.php:27
 msgid "Quickstart Guide"
 msgstr "Sprievodca nastavením"
 
-#: template-parts/component-welcome-quickstart.php:28
+#: template-parts/component-welcome-quickstart.php:35
 msgid "The WordPress settings"
 msgstr "Nastavenia WordPress"
 
-#: template-parts/component-welcome-quickstart.php:31
+#: template-parts/component-welcome-quickstart.php:38
 msgid ""
 "Do not forget to set up your WordPress in \"Settings\" section of the "
 "WordPress dashboard."
 msgstr ""
 "Nezabudnite nastaviť váš WordPress v administračnom menu \"Nastavenia\"."
 
-#: template-parts/component-welcome-quickstart.php:32
+#: template-parts/component-welcome-quickstart.php:39
 msgid "Please go through all the subsections and options."
 msgstr ""
 "Prosíme, prejdite si všetky sekcie nastavení, ktoré vám WordPress ponúka."
 
-#: template-parts/component-welcome-quickstart.php:33
+#: template-parts/component-welcome-quickstart.php:40
 msgid "This step is required for all WordPress websites."
 msgstr "Tento krok je vyžadovaný na všetkých webových stránkach WordPress."
 
-#: template-parts/component-welcome-quickstart.php:37
+#: template-parts/component-welcome-quickstart.php:44
 msgid ""
 "Please, pay special attention to image sizes settings under Settings &raquo; "
 "Media."
@@ -1534,24 +1517,24 @@ msgstr ""
 "Odporúčame skontrolovať hlavne nastavenia veľkostí obrázkov na stránke "
 "Nastavenia &raquo; Multimédiá."
 
-#: template-parts/component-welcome-quickstart.php:40
+#: template-parts/component-welcome-quickstart.php:47
 msgid "Set Up WordPress &raquo;"
 msgstr "Nastaviť WordPress &raquo;"
 
-#: template-parts/component-welcome-quickstart.php:48
+#: template-parts/component-welcome-quickstart.php:55
 msgid "Customize the theme"
 msgstr "Prispôsobenie témy"
 
-#: template-parts/component-welcome-quickstart.php:51
+#: template-parts/component-welcome-quickstart.php:58
 msgid "You can customize the theme using live-preview editor."
 msgstr ""
 "Tému si môžete prispôsobiť jednoducho použitím editora so živím náhľadom."
 
-#: template-parts/component-welcome-quickstart.php:52
+#: template-parts/component-welcome-quickstart.php:59
 msgid "Customization changes will go live only after you save them!"
 msgstr "Zmeny, ktoré vykonáte, sa aplikujú až keď ich uložíte!"
 
-#: template-parts/component-welcome-quickstart.php:55
+#: template-parts/component-welcome-quickstart.php:62
 msgid "Customize the Theme &raquo;"
 msgstr "Prispôsobiť tému &raquo;"
 
@@ -1579,7 +1562,8 @@ msgstr "Nenašli sa žiadne záznamy"
 
 #: template-parts/content-none.php:34
 #, php-format
-msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 "Pripravený publikovať svoj prvý článok? <a href=\"%1$s\">Začnite hneď</a>."
 
@@ -1593,7 +1577,8 @@ msgstr ""
 
 #: template-parts/content-none.php:50
 msgid ""
-"It seems we can not find what you are looking for. Perhaps searching can help."
+"It seems we can not find what you are looking for. Perhaps searching can "
+"help."
 msgstr "Nemôžeme nájsť, čo hľadáte. Skúste vyhľadávacie pole."
 
 #: template-parts/loop-banner.php:72
@@ -1626,6 +1611,45 @@ msgstr "Späť nahor"
 #: template-parts/menu-social.php:40
 msgid "Social Menu"
 msgstr "Menu sociálnych sietí"
+
+#~ msgid "Theme demo content"
+#~ msgstr "Demo obsah témy"
+
+#~ msgid "Installing the theme demo content"
+#~ msgstr "Inštalácia demo obsahu témy"
+
+#~ msgid ""
+#~ "You can install the theme demo content including pages, posts, custom "
+#~ "post types, layouts, menus and widgets directly from your WordPress "
+#~ "dashboard by clicking the button bellow."
+#~ msgstr ""
+#~ "Kliknutím na doleuvedené tlačidlo inštalujete demo obsah témy obsahujúci "
+#~ "stránky, články, vlastné typy obsahu, rozloženia stránok, navigačné menu "
+#~ "a widgety."
+
+#~ msgid ""
+#~ "Alternatively (such as when the automated installation fails) you can "
+#~ "follow theme documentation instructions for manual demo content "
+#~ "installation."
+#~ msgstr ""
+#~ "Ako alternatívu (v prípade zlyhania automatického importu) môžete použiť "
+#~ "manuálny import demo obsahu témy popísaný v dokumentácii."
+
+#~ msgid "Read the instructions &raquo;"
+#~ msgstr "Prečítajte si inštrukcie &raquo;"
+
+#~ msgid "Install and run \"One Click Demo Import\" plugin"
+#~ msgstr "Inštaluj a spusti modul \"Importuj demo jedným klikom\""
+
+#~ msgid "Install theme demo content"
+#~ msgstr "Inštaluj demo obsah témy"
+
+#~ msgid ""
+#~ "Or head over to Appearance &raquo; Import Demo Data to start the import "
+#~ "process."
+#~ msgstr ""
+#~ "Alebo spustite proces importu v administračnom menu Vzhľad &raquo; Import "
+#~ "demo dát."
 
 #~ msgid "Install required plugins!"
 #~ msgstr "Inštalovať vyžadované moduly!"

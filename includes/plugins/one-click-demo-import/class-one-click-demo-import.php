@@ -6,14 +6,13 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    2.1
- * @version  2.7.0
+ * @version  2.7.2
  *
  * Contents:
  *
  *   0) Init
- *  10) Files
- *  20) Texts
- *  30) Setup
+ *  10) Texts
+ *  20) Setup
  * 100) Helpers
  */
 class Auberge_One_Click_Demo_Import {
@@ -34,7 +33,7 @@ class Auberge_One_Click_Demo_Import {
 		 * Constructor
 		 *
 		 * @since    2.1
-		 * @version  2.3.0
+		 * @version  2.7.2
 		 */
 		private function __construct() {
 
@@ -46,13 +45,11 @@ class Auberge_One_Click_Demo_Import {
 
 						add_action( 'admin_enqueue_scripts', __CLASS__ . '::styles', 99 );
 
-						add_action( 'pt-ocdi/after_import', __CLASS__ . '::after' );
-
 						add_action( 'pt-ocdi/before_widgets_import', __CLASS__ . '::before_widgets_import' );
 
-					// Filters
+						add_action( 'pt-ocdi/after_import', __CLASS__ . '::after' );
 
-						add_filter( 'pt-ocdi/import_files', __CLASS__ . '::files' );
+					// Filters
 
 						add_filter( 'pt-ocdi/plugin_intro_text', __CLASS__ . '::info' );
 
@@ -88,50 +85,38 @@ class Auberge_One_Click_Demo_Import {
 
 
 	/**
-	 * 10) Files
-	 */
-
-		/**
-		 * Import files setup
-		 *
-		 * @since    2.1
-		 * @version  2.1
-		 */
-		public static function files() {
-
-			// Output
-
-				return array(
-
-						array(
-							'import_file_name'       => esc_html__( 'Theme demo content', 'auberge' ),
-							'import_file_url'        => esc_url_raw( 'https://raw.githubusercontent.com/webmandesign/demo-content/master/auberge/content/demo-content-auberge.xml' ),
-							'import_widget_file_url' => esc_url_raw( 'https://raw.githubusercontent.com/webmandesign/demo-content/master/auberge/widgets/auberge-widgets.wie' ),
-						),
-
-					);
-
-		} // /files
-
-
-
-
-
-	/**
-	 * 20) Texts
+	 * 10) Texts
 	 */
 
 		/**
 		 * Info texts
 		 *
 		 * @since    2.1
-		 * @version  2.2.1
+		 * @version  2.7.2
 		 *
 		 * @param  string $text  Default intro text.
 		 */
 		public static function info( $text = '' ) {
 
 			// Processing
+
+				$text .= '<div class="manual-import-info">';
+
+					$text .= '<h2>';
+					$text .= esc_html__( 'Manual import procedure', 'auberge' );
+					$text .= '</h2>';
+
+					$text .= '<p>';
+					$text .= esc_html__( 'By importing this demo content you get the exact copy of the theme demo website.', 'auberge' );
+					$text .= ' (<a href="https://themedemos.webmandesign.eu/auberge/">' . esc_html__( 'Preview the theme demo website &raquo;', 'auberge' ) . '</a>)';
+
+					$text .= '<br>';
+
+					$text .= esc_html__( 'For instructions on importing theme demo content please visit GitHub repository.', 'auberge' );
+					$text .= ' (<a href="https://github.com/webmandesign/demo-content/blob/master/auberge/readme.md#what-is-this">' . esc_html__( 'GitHub repository instructions &raquo;', 'auberge' ) . '</a>)';
+					$text .= '</p>';
+
+				$text .= '</div>';
 
 				$text .= '<div class="media-files-quality-info">';
 
@@ -142,7 +127,7 @@ class Auberge_One_Click_Demo_Import {
 					$text .= '<p>';
 					$text .= esc_html__( 'Please note that imported media files (such as images, video and audio files) are of low quality to prevent copyright infringement.', 'auberge' );
 					$text .= ' ' . esc_html__( 'Please read "Credits" section of theme documentation for reference where the demo media files were obtained from.', 'auberge' );
-					$text .= ' <a href="https://webmandesign.github.io/docs/auberge/#credits" target="_blank">' . esc_html__( 'Get media for your website &raquo;', 'auberge' ) . '</a>';
+					$text .= ' <a href="https://webmandesign.github.io/docs/auberge/#credits">' . esc_html__( 'Get media for your website &raquo;', 'auberge' ) . '</a>';
 					$text .= '</p>';
 
 				$text .= '</div>';
@@ -156,7 +141,7 @@ class Auberge_One_Click_Demo_Import {
 					$text .= '<p>';
 					$text .= esc_html__( 'Please read the information about the theme demo required plugins first.', 'auberge' );
 					$text .= ' ' . esc_html__( 'If you do not install and activate demo required plugins, some of the content will not be imported.', 'auberge' );
-					$text .= ' <a href="https://github.com/webmandesign/demo-content/tree/master/auberge/content#before-you-begin" target="_blank" title="' . esc_attr__( 'Read the information before you run the theme demo content import process.', 'auberge' ) . '"><strong>';
+					$text .= ' <a href="https://github.com/webmandesign/demo-content/blob/master/auberge/readme.md#required-plugins" title="' . esc_attr__( 'Read the information before you run the theme demo content import process.', 'auberge' ) . '"><strong>';
 					$text .= esc_html__( 'View the list of required plugins &raquo;', 'auberge' );
 					$text .= '</strong></a>';
 					$text .= '</p>';
@@ -181,7 +166,7 @@ class Auberge_One_Click_Demo_Import {
 
 
 	/**
-	 * 30) Setup
+	 * 20) Setup
 	 */
 
 		/**

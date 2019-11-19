@@ -1,5 +1,24 @@
 # Auberge Changelog
 
+## 2.7.2
+
+* **Update**: Adding `nofollow` rel attribute to footer links
+* **Update**: Setting manual import for One Click Demo Import plugin to comply with WordPress.org theme requirements
+* **Update**: Localization
+* **Fix**: Not wrapping post excerpt in additional DIV when its empty
+
+### Files changed:
+
+	changelog.md
+	footer-credits.php
+	readme.txt
+	style.css
+	includes/plugins/one-click-demo-import/class-one-click-demo-import.php
+	includes/setup/setup.php
+	includes/welcome/class-welcome.php
+	template-parts/component-welcome-footer.php
+
+
 ## 2.7.1
 
 * **Add**: Adding WhatsApp and Google social icon

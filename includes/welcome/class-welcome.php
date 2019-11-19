@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    2.1
- * @version  2.7.0
+ * @version  2.7.2
  *
  * Contents:
  *
@@ -85,7 +85,7 @@ class Auberge_Welcome {
 		 * Render the screen content
 		 *
 		 * @since    2.1
-		 * @version  2.2.0
+		 * @version  2.7.2
 		 */
 		public static function render() {
 
@@ -94,7 +94,6 @@ class Auberge_Welcome {
 				$sections = (array) apply_filters( 'wmhook_auberge_welcome_render_sections', array(
 						0   => 'header',
 						10  => 'quickstart',
-						20  => 'demo',
 						100 => 'footer',
 					) );
 

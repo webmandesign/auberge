@@ -8,7 +8,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    2.2.0
- * @version  2.7.1
+ * @version  2.7.2
  */
 
 
@@ -25,6 +25,9 @@
 ?>
 
 </div> <!-- /.welcome-content -->
+
+<br>
+<br>
 
 <p>
 	<?php echo Auberge_Welcome::get_info_support(); ?>

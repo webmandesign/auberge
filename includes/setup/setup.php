@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0
- * @version  2.7.1
+ * @version  2.7.2
  *
  * Contents:
  *
@@ -2809,12 +2809,19 @@
 			 * Line breaks are required for proper functionality of `wpautop()` later on.
 			 *
 			 * @since    2.7.0
-			 * @version  2.7.0
+			 * @version  2.7.2
 			 *
 			 * @param  string $post_excerpt
 			 */
 			if ( ! function_exists( 'wm_wrap_excerpt' ) ) {
 				function wm_wrap_excerpt( $post_excerpt = '' ) {
+
+					// Requirements check
+
+						if ( empty( $post_excerpt ) ) {
+							return $post_excerpt;
+						}
+
 
 					// Output
 
