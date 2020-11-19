@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0
- * @version  2.2.0
+ * @version  2.7.4
  */
 
 
@@ -69,7 +69,7 @@
 
 	<aside class="site-banner-inner">
 
-		<h2 class="screen-reader-text"><?php echo esc_attr__( 'Site banner', 'auberge' ); ?></h2>
+		<h2 class="screen-reader-text"><?php echo esc_html__( 'Site banner', 'auberge' ); ?></h2>
 
 		<?php
 
