@@ -11,7 +11,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0
- * @version  2.0
+ * @version  2.7.4
  *
  * @uses  Jetpack -> Featured Content
  * @link  http://jetpack.me/support/featured-content/
@@ -120,7 +120,7 @@
 		 * Getter function
 		 *
 		 * @since    1.3
-		 * @version  1.3
+		 * @version  2.7.4
 		 *
 		 * @param  array $featured_posts
 		 */
@@ -134,28 +134,21 @@
 					}
 
 
-				// Helper variables
+				// Variables
 
 					$nsfp_plugin_options = get_option( 'nsfp_plugin_options' );
 
-					if (
-							isset( $nsfp_plugin_options['nsfp_posttypes'] )
-							&& ! empty( $nsfp_plugin_options['nsfp_posttypes'] )
-						) {
-						$post_type = array_keys( $nsfp_plugin_options['nsfp_posttypes'] );
-					} else {
-						$post_type = 'post';
-					}
+					$post_type = ( ! empty( $nsfp_plugin_options['nsfp_posttypes'] ) ) ? ( $nsfp_plugin_options['nsfp_posttypes'] ) : ( array( 'post' ) );
 
 
 				// Processing
 
-					$nsfp_featured_posts = get_posts( array(
+					$nsfp_featured_posts = get_posts( (array) apply_filters( 'wm_nsfp_get_banner_posts_get_posts_args',array(
 						'numberposts' => 6, //Max posts count
 						'post_type'   => $post_type,
 						'meta_key'    => '_is_ns_featured_post',
 						'meta_value'  => 'yes',
-					) );
+					) ) );
 
 					if ( ! empty( $nsfp_featured_posts ) ) {
 						$featured_posts = $nsfp_featured_posts;

@@ -246,7 +246,7 @@ dt { margin-top: 0.62em; }
 
 dd { margin-right: 1.62em; }
 
-a, p, address, textarea, .comment-content a { overflow-wrap: break-word; word-wrap: break-word; }
+a, p, address, textarea, .comment-content a, h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 { overflow-wrap: break-word; word-wrap: break-word; }
 
 pre, pre code, select { overflow-wrap: normal; word-wrap: normal; -webkit-hyphens: manual; -moz-hyphens: manual; -ms-hyphens: manual; hyphens: manual; }
 
@@ -355,7 +355,7 @@ cite, .font-style-normal, .widget_calendar caption { font-style: normal; }
 
 .line-height-xs { line-height: 1; }
 
-blockquote, table, .line-height-s, .wp-caption .wp-caption-text, .gallery-caption, .format-link .entry-content, .post-navigation a { line-height: 1.38; }
+blockquote, table, .line-height-s, .wp-caption .wp-caption-text, .gallery-caption, .format-link .entry-content, h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6, .post-navigation a { line-height: 1.38; }
 
 html, .line-height-m, .form-allowed-tags, .format-status .entry-content, .sidebar, .tagcloud { line-height: 1.62; }
 
@@ -947,6 +947,31 @@ h1:first-child, h2:first-child, h3:first-child, h4:first-child, h5:first-child, 
 h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, .h1 a, .h2 a, .h3 a, .h4 a, .h5 a, .h6 a { text-decoration: none; color: inherit; }
 
 h1, h2, h3, .h1, .h2, .h3 { letter-spacing: .1em; }
+
+h1, .h1 { font-size: 1.3122em; line-height: 1.38; margin-top: 1.41975em; margin-bottom: 1em; }
+
+h2, .h2 { font-size: 1.1178em; line-height: 1.38; margin-top: 1.66667em; margin-bottom: 1.17391em; }
+
+h3, .h3 { font-size: 1.0044em; line-height: 1.38; margin-top: 1.85484em; margin-bottom: 1.30645em; }
+
+h4, .h4 { font-size: 1em; line-height: 1.38; margin-top: 0.62em; margin-bottom: 0.62em; }
+
+h5, .h5 { font-size: 1em; line-height: 1.38; margin-top: 0.62em; margin-bottom: 0.62em; }
+
+h6, .h6 { font-size: 1em; line-height: 1.38; margin-top: 0.62em; margin-bottom: 0.62em; }
+
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 { padding: 0; text-rendering: optimizeLegibility; }
+
+h1:first-child, .screen-reader-text + h1, .h1:first-child, .screen-reader-text + .h1, h2:first-child, .screen-reader-text + h2, .h2:first-child, .screen-reader-text + .h2, h3:first-child, .screen-reader-text + h3, .h3:first-child, .screen-reader-text + .h3, h4:first-child, .screen-reader-text + h4, .h4:first-child, .screen-reader-text + .h4, h5:first-child, .screen-reader-text + h5, .h5:first-child, .screen-reader-text + .h5, h6:first-child, .screen-reader-text + h6, .h6:first-child, .screen-reader-text + .h6 { margin-top: 0; }
+
+h1 a, .h1 a, h2 a, .h2 a, h3 a, .h3 a, h4 a, .h4 a, h5 a, .h5 a, h6 a, .h6 a { text-decoration: none; color: inherit; }
+
+@media only screen and (min-width: 42em) { h1, .h1 { font-size: 1.62em; line-height: 1.38; margin-top: 1.41975em; margin-bottom: 1em; }
+  h2, .h2 { font-size: 1.38em; line-height: 1.38; margin-top: 1.66667em; margin-bottom: 1.17391em; }
+  h3, .h3 { font-size: 1.24em; line-height: 1.38; margin-top: 1.85484em; margin-bottom: 1.30645em; }
+  h4, .h4 { font-size: 1.15em; line-height: 1.38; margin-top: 2em; margin-bottom: 1.4087em; }
+  h5, .h5 { font-size: 1.15em; line-height: 1.38; margin-top: 2em; margin-bottom: 1.4087em; }
+  h6, .h6 { font-size: 1.15em; line-height: 1.38; margin-top: 2em; margin-bottom: 1.4087em; } }
 
 /* FILE: main/headings/__entry-header.scss */
 .single-post .entry-header { margin-bottom: 1.62em; }

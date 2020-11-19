@@ -5,7 +5,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0
- * @version  2.7.0
+ * @version  2.7.4
  *
  * Contents:
  *
@@ -435,36 +435,6 @@
 						} );
 
 			}
-
-
-
-		/**
-		 * Restaurant Reservations plugin support
-		 *
-		 * @link  https://wordpress.org/plugins/restaurant-reservations/
-		 */
-
-			var
-				$aubergeRtbContact = $( '.rtb-booking-form .contact' ).hide();
-
-			$( '#rtb-time' )
-				.on( 'change', function() {
-
-					// Processing
-
-						if ( $( this ).attr( 'value' ) ) {
-
-							$aubergeRtbContact
-								.slideDown();
-
-						} else {
-
-							$aubergeRtbContact
-								.slideUp();
-
-						}
-
-				} );
 
 
 

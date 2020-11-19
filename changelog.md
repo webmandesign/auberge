@@ -1,5 +1,23 @@
 # Auberge Changelog
 
+## 2.7.4, 20201119
+
+### Update
+- Removing Restaurant Reservations plugin related JavaScript
+
+### Fix
+- Heading font size styles
+- Homepage slideshow functionality
+
+### File updates
+	changelog.md
+	readme.txt
+	style.css
+	assets/js/scripts-global.js
+	assets/sass/main.scss
+	includes/custom-header/custom-header.php
+
+
 ## 2.7.2
 
 * **Update**: Adding `nofollow` rel attribute to footer links

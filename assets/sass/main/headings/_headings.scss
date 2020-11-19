@@ -37,6 +37,12 @@
 		letter-spacing: .1em;
 	}
 
+	@include h_tags( $golden_major + $golden_minor / 2, true ); // Heading styles on small devices
+
+	@include responsive( map_get( $breakpoint, 'm' ) ) {
+		@include h_tags(); // Heading styles on large devices
+	}
+
 
 
 // Imports

@@ -1317,4 +1317,3 @@
     }
     return cssVars;
 });
-//# sourceMappingURL=css-vars-ponyfill.js.map
