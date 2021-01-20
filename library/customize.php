@@ -7,7 +7,7 @@
  *
  * @since    1.0
  * @version  2.5.2
- * @version  2.7.0
+ * @version  2.7.5
  *
  * Contents:
  *
@@ -929,7 +929,7 @@
 	 * @link  https://github.com/jhildenbiddle/css-vars-ponyfill
 	 *
 	 * @since    2.6.0
-	 * @version  2.7.0
+	 * @version  2.7.5
 	 */
 	if ( ! function_exists( 'wm_css_vars_compatibility' ) ) {
 		function wm_css_vars_compatibility() {
@@ -940,7 +940,7 @@
 					'css-vars-ponyfill',
 					trailingslashit( get_template_directory_uri() ) . 'library/js/vendor/css-vars-ponyfill/css-vars-ponyfill.min.js',
 					array(),
-					'1.16.1'
+					'v2.4.2'
 				);
 
 				wp_add_inline_script(

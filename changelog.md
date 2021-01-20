@@ -1,5 +1,19 @@
 # Auberge Changelog
 
+## 2.7.5, 20210120
+
+### Update
+- Updating JavaScript libraries
+
+### File updates
+	changelog.md
+	readme.txt
+	style.css
+	library/customize.php
+	library/js/vendor/css-vars-ponyfill/css-vars-ponyfill.js
+	library/js/vendor/css-vars-ponyfill/css-vars-ponyfill.min.js
+
+
 ## 2.7.4, 20201119
 
 ### Update

@@ -1,7 +1,7 @@
 === Auberge ===
 Contributors: webmandesign
 Requires at least: 4.8
-Tested up to: 5.5
+Tested up to: 5.6
 Requires PHP: 5.6
 License: GPL-3.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-3.0-standalone.html
@@ -36,8 +36,8 @@ Please see `changelog.md` file.
 
 == Upgrade Notice ==
 
-= 2.7.4 =
-Removing Restaurant Reservations plugin related JavaScript, fixing heading font sizes, fixing homepage slideshow functionality.
+= 2.7.5 =
+Updating JavaScript.
 
 
 == Resources ==
