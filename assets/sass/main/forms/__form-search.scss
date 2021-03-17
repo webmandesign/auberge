@@ -28,12 +28,12 @@
 	}
 
 
-
-	.form-search {
+	form[role="search"],
+	.form-search,
+	.search-form {
 		width: 100%;
 		max-width: 100%;
-		padding: 1rem;
-		text-align: center;
+		padding: 1em;
 		line-height: 1;
 		overflow: hidden;
 		box-shadow: 0 5px 20px 0 rgba( #000, .2 );
@@ -43,8 +43,19 @@
 			position: absolute;
 			#{$right}: 0; // {{RTL}}
 			top: -100%;
+			font-size: 1.62em;
 			opacity: 0;
 			z-index: -1;
+		}
+
+		&::after {
+			@extend %genericon;
+			content: '\f400';
+			position: absolute;
+			#{$right}: 2em; // {{RTL}}
+			top: 50%;
+			transform: translateY(-50%);
+			vertical-align: top;
 		}
 
 	}
@@ -53,14 +64,31 @@
 
 	.search-field {
 
-		@include responsive( map_get( $breakpoint, 'l' ) ) {
-			font-size: 1.62em;
-		}
-
 		&,
 		&:focus {
-			padding: 4% 2%;
+			padding: 1em;
+			padding-#{$right}: 2.5em;
 			vertical-align: top;
+		}
+
+	}
+
+
+
+	[type="submit"] {
+		position: absolute;
+		width: 3em;
+		height: 100%;
+		#{$right}: 1em; // {{RTL}}
+		top: 0;
+		opacity: 0;
+		overflow: hidden;
+		z-index: 10;
+
+		&:hover,
+		&:focus,
+		&:active {
+			opacity: 0;
 		}
 
 	}
@@ -69,12 +97,18 @@
 
 
 
-.nav-search-form.active .form-search,
-.no-js .nav-search-form:hover .form-search {
+.nav-search-form.active,
+.no-js .nav-search-form:hover {
 
-	@include responsive( map_get( $breakpoint, 'l' ) ) {
-		top: 100%;
-		opacity: 1;
+	form[role="search"],
+	.form-search,
+	.search-form {
+
+		@include responsive( map_get( $breakpoint, 'l' ) ) {
+			top: 100%;
+			opacity: 1;
+		}
+
 	}
 
 }

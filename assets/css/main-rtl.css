@@ -781,7 +781,7 @@ div.sharedaddy .sd-social .sd-button .share-count { background: none; color: inh
 
 /* FILE: main/_main.scss */
 /* FILE: main/icons/_icons.scss */
-.genericons-neue::before, pre::before, .search-toggle::before, #cancel-comment-reply-link:before, .menu-toggle::before, .social-links a.back-to-top::before, .post-table-of-contents a:before, .posts .type-page::before, .search-results-listing .type-post::before, .entry-meta .author::before, .entry-meta .cat-links::before, .entry-meta .comments-link a::before, .entry-meta .entry-date::before, .entry-meta .tags-links::before, .entry-meta .entry-likes a::before, .entry-meta .entry-edit::before, .post-navigation .label::after, .post-navigation .label::before, .bypostauthor > .comment-body .comment-author::before, .comment-edit-link::before, .comment-reply-link::before, .widget_archive li::before, .widget_categories li::before, .widget_nav_menu li::before, .widget_pages li::before, .widget_recent_comments li::before, .widget_recent_entries li::before, .widget_zilla_likes_widget li::before, .posts .type-nova_menu_item::before, .rtb-booking-form legend::before, .rtb-booking-form .add-message a::before { font-family: 'Genericons-Neue'; font-style: normal; font-weight: normal; font-variant: normal; text-decoration: inherit; text-transform: none; speak: none; }
+.genericons-neue::before, pre::before, .nav-search-form form[role="search"]::after, .nav-search-form .form-search::after, .nav-search-form .search-form::after, .search-toggle::before, #cancel-comment-reply-link:before, .menu-toggle::before, .social-links a.back-to-top::before, .post-table-of-contents a:before, .posts .type-page::before, .search-results-listing .type-post::before, .entry-meta .author::before, .entry-meta .cat-links::before, .entry-meta .comments-link a::before, .entry-meta .entry-date::before, .entry-meta .tags-links::before, .entry-meta .entry-likes a::before, .entry-meta .entry-edit::before, .post-navigation .label::after, .post-navigation .label::before, .bypostauthor > .comment-body .comment-author::before, .comment-edit-link::before, .comment-reply-link::before, .widget_archive li::before, .widget_categories li::before, .widget_nav_menu li::before, .widget_pages li::before, .widget_recent_comments li::before, .widget_recent_entries li::before, .widget_zilla_likes_widget li::before, .posts .type-nova_menu_item::before, .rtb-booking-form legend::before, .rtb-booking-form .add-message a::before { font-family: 'Genericons-Neue'; font-style: normal; font-weight: normal; font-variant: normal; text-decoration: inherit; text-transform: none; speak: none; }
 
 .svgicon { display: inline-block; position: relative; width: 1em; height: 1em; top: -0.0625em; fill: currentColor; vertical-align: middle; }
 
@@ -916,15 +916,19 @@ select { padding: calc( 0.62em - 2px); }
 
 @media only screen and (min-width: 55em) { .nav-search-form { float: left; position: static; width: auto; height: auto; right: auto; top: auto; } }
 
-.nav-search-form .form-search { width: 100%; max-width: 100%; padding: 1rem; text-align: center; line-height: 1; overflow: hidden; box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2); transition: all .2s ease-in-out; }
+.nav-search-form form[role="search"], .nav-search-form .form-search, .nav-search-form .search-form { width: 100%; max-width: 100%; padding: 1em; line-height: 1; overflow: hidden; box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.2); transition: all .2s ease-in-out; }
 
-@media only screen and (min-width: 55em) { .nav-search-form .form-search { position: absolute; left: 0; top: -100%; opacity: 0; z-index: -1; } }
+@media only screen and (min-width: 55em) { .nav-search-form form[role="search"], .nav-search-form .form-search, .nav-search-form .search-form { position: absolute; left: 0; top: -100%; font-size: 1.62em; opacity: 0; z-index: -1; } }
 
-@media only screen and (min-width: 55em) { .nav-search-form .search-field { font-size: 1.62em; } }
+.nav-search-form form[role="search"]::after, .nav-search-form .form-search::after, .nav-search-form .search-form::after { content: '\f400'; position: absolute; left: 2em; top: 50%; -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); transform: translateY(-50%); vertical-align: top; }
 
-.nav-search-form .search-field, .nav-search-form .search-field:focus { padding: 4% 2%; vertical-align: top; }
+.nav-search-form .search-field, .nav-search-form .search-field:focus { padding: 1em; padding-left: 2.5em; vertical-align: top; }
 
-@media only screen and (min-width: 55em) { .nav-search-form.active .form-search, .no-js .nav-search-form:hover .form-search { top: 100%; opacity: 1; } }
+.nav-search-form [type="submit"] { position: absolute; width: 3em; height: 100%; left: 1em; top: 0; opacity: 0; overflow: hidden; z-index: 10; }
+
+.nav-search-form [type="submit"]:hover, .nav-search-form [type="submit"]:focus, .nav-search-form [type="submit"]:active { opacity: 0; }
+
+@media only screen and (min-width: 55em) { .nav-search-form.active form[role="search"], .nav-search-form.active .form-search, .nav-search-form.active .search-form, .no-js .nav-search-form:hover form[role="search"], .no-js .nav-search-form:hover .form-search, .no-js .nav-search-form:hover .search-form { top: 100%; opacity: 1; } }
 
 .search-toggle { display: none; }
 

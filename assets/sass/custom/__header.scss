@@ -19,9 +19,12 @@
 
 .nav-search-form {
 
-	.form-search {
+	form[role="search"],
+	.form-search,
+	.search-form {
 		background-color: map_get( $customize_options, 'color-accent' );
 		background-color: var(--color-accent);
+		color: #6a6c6e; //*
 	}
 
 	.search-field {

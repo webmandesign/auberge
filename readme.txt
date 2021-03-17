@@ -36,8 +36,8 @@ Please see `changelog.md` file.
 
 == Upgrade Notice ==
 
-= 2.7.5 =
-Updating JavaScript.
+= 2.7.6 =
+Fixing search form display in header.
 
 
 == Resources ==

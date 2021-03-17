@@ -1,5 +1,18 @@
 # Auberge Changelog
 
+## 2.7.6, 20210317
+
+### Fix
+- Search form display in header
+
+### File updates
+	changelog.md
+	readme.txt
+	style.css
+	assets/sass/custom.scss
+	assets/sass/main.scss
+
+
 ## 2.7.5, 20210120
 
 ### Update

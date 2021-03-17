@@ -58,7 +58,7 @@ mark, ins, .highlight { box-shadow: 0.38em 0 0 #0aac8e, -0.38em 0 0 #0aac8e; box
 /* FILE: custom/__header.scss */
 .site-header { background-color: #1a1c1e; color: #ffffff; background-color: var(--color-header); color: var(--color-header-text); }
 
-.nav-search-form .form-search { background-color: #0aac8e; background-color: var(--color-accent); }
+.nav-search-form form[role="search"], .nav-search-form .form-search, .nav-search-form .search-form { background-color: #0aac8e; background-color: var(--color-accent); color: #6a6c6e; }
 
 .nav-search-form .search-field { background-color: #fff; color: #6a6c6e; }
 
