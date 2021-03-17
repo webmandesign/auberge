@@ -61,15 +61,15 @@
 
 	// In main navigation menu
 
-		.menu .lang-item:last-child,
-		.menu .menu-item-language:last-child {
+		.nav-menu .lang-item:last-child,
+		.nav-menu .menu-item-language:last-child {
 			margin-#{$right}: 2em; // {{RTL}}
 		}
 
-		.menu .lang-item + li:not(.lang-item),
-		.menu .menu-item-language + li:not(.menu-item-language),
-		.menu li:not(.lang-item) + .lang-item,
-		.menu li:not(.menu-item-language) + .menu-item-language {
+		.nav-menu .lang-item + li:not(.lang-item),
+		.nav-menu .menu-item-language + li:not(.menu-item-language),
+		.nav-menu li:not(.lang-item) + .lang-item,
+		.nav-menu li:not(.menu-item-language) + .menu-item-language {
 			margin-#{$left}: 2em; // {{RTL}}
 		}
 

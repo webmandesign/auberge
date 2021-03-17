@@ -47,7 +47,7 @@
 
 	}
 
-	.menu {
+	.nav-menu {
 		@extend %font_size_smaller;
 
 		@include responsive( map_get( $breakpoint, 'l' ) ) {
@@ -123,7 +123,7 @@
  		@extend %font_weight_700;
  	}
 
-	.main-navigation .menu {
+	.main-navigation .nav-menu {
 
 		a:hover,
 		li:hover > a,

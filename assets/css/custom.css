@@ -67,12 +67,12 @@ mark, ins, .highlight { box-shadow: 0.38em 0 0 #0aac8e, -0.38em 0 0 #0aac8e; box
 
 .main-navigation li ul { background-color: #3a3c3e; color: #fff; background-color: var(--color-navigation); color: var(--color-navigation-text); }
 
-.main-navigation .menu li li:hover > a, .main-navigation .menu li li > a:hover, .main-navigation .menu li li.active-menu-item > a { background-color: #4a4c4e; background-color: var(--color-navigation-border); }
+.main-navigation .nav-menu li li:hover > a, .main-navigation .nav-menu li li > a:hover, .main-navigation .nav-menu li li.active-menu-item > a { background-color: #4a4c4e; background-color: var(--color-navigation-border); }
 
 @media only screen and (max-width: 54.9375em) { .main-navigation-inner { background-color: #3a3c3e; background-color: var(--color-navigation); }
   .main-navigation ul a { color: #fff; color: var(--color-navigation-text); }
-  .main-navigation .menu a:hover, .main-navigation .menu li:hover > a, .main-navigation .menu li li:hover > a, .main-navigation .menu li.active-menu-item > a, .main-navigation .menu li li.active-menu-item > a { background: transparent; color: #fff; color: var(--color-navigation-text); }
-  .main-navigation .menu li.current-menu-item > a, .main-navigation .menu li li.current-menu-item > a { background-color: #4a4c4e; background-color: var(--color-navigation-border); }
+  .main-navigation .nav-menu a:hover, .main-navigation .nav-menu li:hover > a, .main-navigation .nav-menu li li:hover > a, .main-navigation .nav-menu li.active-menu-item > a, .main-navigation .nav-menu li li.active-menu-item > a { background: transparent; color: #fff; color: var(--color-navigation-text); }
+  .main-navigation .nav-menu li.current-menu-item > a, .main-navigation .nav-menu li li.current-menu-item > a { background-color: #4a4c4e; background-color: var(--color-navigation-border); }
   .menu-toggle, .menu-toggle:hover, .menu-toggle:active, .menu-toggle:focus { background: transparent; }
   .menu-toggle::before { background: #0aac8e; background: var(--color-accent); } }
 

@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    2.0
- * @version  2.5.3
+ * @version  2.7.6
  */
 
 
@@ -26,13 +26,13 @@
 		<?php
 
 		wp_nav_menu( array(
-				'theme_location'  => 'primary',
-				'container'       => 'div',
-				'container_class' => 'menu',
-				'menu_class'      => 'menu', // Fallback for pagelist
-				'depth'           => 3,
-				'items_wrap'      => '<ul>%3$s</ul>',
-			) );
+			'theme_location'  => 'primary',
+			'container'       => 'div',
+			'container_class' => 'nav-menu',
+			'menu_class'      => 'nav-menu', // Fallback for pagelist
+			'depth'           => 3,
+			'items_wrap'      => '<ul>%3$s</ul>',
+		) );
 
 		?>
 

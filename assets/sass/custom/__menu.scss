@@ -19,7 +19,7 @@
 		color: var(--color-navigation-text); // Plus
 	}
 
-	.menu li li {
+	.nav-menu li li {
 
 		&:hover > a,
 		& > a:hover,
@@ -48,7 +48,7 @@
 			color: var(--color-navigation-text); // Plus
 		}
 
-		.menu {
+		.nav-menu {
 
 			a:hover,
 			li:hover > a,

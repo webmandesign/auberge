@@ -2,6 +2,9 @@
 
 ## 2.7.6, 20210317
 
+### Update
+- Navigation menu CSS class
+
 ### Fix
 - Search form display in header
 
@@ -11,6 +14,7 @@
 	style.css
 	assets/sass/custom.scss
 	assets/sass/main.scss
+	template-parts/menu-primary.php
 
 
 ## 2.7.5, 20210120
