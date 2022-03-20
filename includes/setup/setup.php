@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0
- * @version  2.7.2
+ * @version  2.8.0
  *
  * Contents:
  *
@@ -271,7 +271,7 @@
 	 * Theme setup
 	 *
 	 * @since    1.0
-	 * @version  2.6.0
+	 * @version  2.8.0
 	 */
 	if ( ! function_exists( 'wm_setup' ) ) {
 		function wm_setup() {
@@ -377,11 +377,14 @@
 					 * @link  https://codex.wordpress.org/Function_Reference/add_theme_support#HTML5
 					 */
 					add_theme_support( 'html5', array(
-						'comment-list',
-						'comment-form',
-						'search-form',
-						'gallery',
 						'caption',
+						'comment-form',
+						'comment-list',
+						'gallery',
+						'navigation-widgets',
+						'search-form',
+						'script',
+						'style',
 					) );
 
 				// Custom header
@@ -1388,39 +1391,65 @@
 
 
 	/**
-	 * Website HEAD
+	 * Meta charset.
+	 *
+	 * @since    2.8.0
+	 * @version  2.8.0
+	 */
+	if ( ! function_exists( 'wm_charset' ) ) {
+		function wm_charset() {
+
+			// Output
+
+				echo '<meta charset="' . esc_attr( get_bloginfo( 'charset' ) ) . '">' . PHP_EOL;
+
+		}
+	} // /wm_charset
+
+	add_action( 'wp_head', 'wm_charset', 0 );
+
+
+
+	/**
+	 * Website HEAD.
 	 *
 	 * @since    1.0
-	 * @version  2.6.0
+	 * @version  2.8.0
 	 */
 	if ( ! function_exists( 'wm_head' ) ) {
 		function wm_head() {
 
-			// Helper variables
-
-				$output = array();
-
-
-			// Processing
-
-				$output[10] = '<meta charset="' . esc_attr( get_bloginfo( 'charset' ) ) . '" />';
-				$output[20] = '<meta name="viewport" content="width=device-width, initial-scale=1" />';
-				$output[30] = '<link rel="profile" href="http://gmpg.org/xfn/11" />';
-				$output[40] = '<link rel="pingback" href="' . esc_attr( get_bloginfo( 'pingback_url' ) ) . '" />';
-
-				// Filter output array
-
-					$output = apply_filters( 'wmhook_wm_head_output_array', $output );
-
-
 			// Output
 
-				echo implode( "\r\n", $output ) . "\r\n";
+				echo '<meta name="viewport" content="width=device-width, initial-scale=1">' . PHP_EOL;
+				echo '<link rel="profile" href="http://gmpg.org/xfn/11">' . PHP_EOL;
 
 		}
 	} // /wm_head
 
 	add_action( 'wp_head', 'wm_head', 1 );
+
+
+
+	/**
+	 * Add a pingback url auto-discovery header for singularly identifiable articles.
+	 *
+	 * @since    2.8.0
+	 * @version  2.8.0
+	 */
+	if ( ! function_exists( 'wm_head_pingback' ) ) {
+		function wm_head_pingback() {
+
+			// Output
+
+				if ( is_singular() && pings_open() ) {
+					echo '<link rel="pingback" href="', esc_url( get_bloginfo( 'pingback_url' ) ), '">';
+				}
+
+		}
+	} // /wm_head_pingback
+
+	add_action( 'wp_head', 'wm_head_pingback', 1 );
 
 
 
@@ -1594,7 +1623,7 @@
 			 * Social links supported icons.
 			 *
 			 * @since    2.5.0
-			 * @version  2.7.1
+			 * @version  2.8.0
 			 */
 			function wm_social_links_icons() {
 
@@ -1635,6 +1664,7 @@
 						'spotify.com'       => 'spotify',
 						'stackoverflow.com' => 'stack-overflow',
 						'stumbleupon.com'   => 'stumbleupon',
+						'tiktok.'           => 'tiktok',
 						'trello.com'        => 'trello',
 						'tripadvisor.'      => 'tripadvisor',
 						'tumblr.com'        => 'tumblr',

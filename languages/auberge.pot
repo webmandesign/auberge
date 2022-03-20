@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Auberge\n"
 "Report-Msgid-Bugs-To: https://support.webmandesign.eu\n"
-"POT-Creation-Date: 2019-11-19 10:23+0100\n"
+"POT-Creation-Date: 2022-03-20 01:26+0100\n"
 "PO-Revision-Date: 2015-04-21 20:43+0100\n"
 "Last-Translator: Oliver Juhas, WebMan Design\n"
 "Language-Team: \n"
@@ -11,13 +11,13 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.4\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 3.0.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: 404.php:24
@@ -282,150 +282,150 @@ msgstr ""
 msgid "Social Links Menu"
 msgstr ""
 
-#: includes/setup/setup.php:409
+#: includes/setup/setup.php:412
 msgctxt "Header image description."
 msgid "Coffee machine"
 msgstr ""
 
-#: includes/setup/setup.php:415
+#: includes/setup/setup.php:418
 msgctxt "Header image description."
 msgid "Restaurant interior from above"
 msgstr ""
 
-#: includes/setup/setup.php:421
+#: includes/setup/setup.php:424
 msgctxt "Header image description."
 msgid "Pouring coffee"
 msgstr ""
 
-#: includes/setup/setup.php:559
+#: includes/setup/setup.php:562
 msgid "In posts list."
 msgstr ""
 
-#: includes/setup/setup.php:570
+#: includes/setup/setup.php:573
 msgid "In single post page."
 msgstr ""
 
-#: includes/setup/setup.php:576
+#: includes/setup/setup.php:579
 msgid "In front page banner."
 msgstr ""
 
-#: includes/setup/setup.php:582
+#: includes/setup/setup.php:585
 msgid "In food menu list."
 msgstr ""
 
-#: includes/setup/setup.php:652
+#: includes/setup/setup.php:655
 msgctxt "WordPress predefined image size name."
 msgid "Thumbnail size"
 msgstr ""
 
-#: includes/setup/setup.php:653
+#: includes/setup/setup.php:656
 msgctxt "WordPress predefined image size name."
 msgid "Medium size"
 msgstr ""
 
-#: includes/setup/setup.php:654
+#: includes/setup/setup.php:657
 msgctxt "WordPress predefined image size name."
 msgid "Large size"
 msgstr ""
 
-#: includes/setup/setup.php:687
+#: includes/setup/setup.php:690
 msgid "Recommended image sizes"
 msgstr ""
 
-#: includes/setup/setup.php:688
+#: includes/setup/setup.php:691
 msgid ""
 "For the theme to work correctly, please, set these recommended image sizes:"
 msgstr ""
 
-#: includes/setup/setup.php:694
+#: includes/setup/setup.php:697
 msgid "Size name"
 msgstr ""
 
-#: includes/setup/setup.php:695
+#: includes/setup/setup.php:698
 msgid "Size parameters"
 msgstr ""
 
-#: includes/setup/setup.php:696
+#: includes/setup/setup.php:699
 msgid "Theme usage"
 msgstr ""
 
-#: includes/setup/setup.php:704
+#: includes/setup/setup.php:707
 msgid "cropped"
 msgstr ""
 
-#: includes/setup/setup.php:704
+#: includes/setup/setup.php:707
 msgid "scaled"
 msgstr ""
 
-#: includes/setup/setup.php:712
+#: includes/setup/setup.php:715
 msgid ""
 "Additional image size added by the theme. Can not be changed on this page."
 msgstr ""
 
-#: includes/setup/setup.php:717
+#: includes/setup/setup.php:720
 #, php-format
 msgctxt "1: image width, 2: image height, 3: cropped or scaled?"
 msgid "%1$d &times; %2$d, %3$s"
 msgstr ""
 
-#: includes/setup/setup.php:912
+#: includes/setup/setup.php:915
 msgid "Button link"
 msgstr ""
 
-#: includes/setup/setup.php:1116
+#: includes/setup/setup.php:1119
 msgctxt "Back to food menu sections selectors button title."
 msgid "&uarr; Menu sections"
 msgstr ""
 
-#: includes/setup/setup.php:2197
+#: includes/setup/setup.php:2227
 msgid "Breadcrumbs navigation"
 msgstr ""
 
-#: includes/setup/setup.php:2685
+#: includes/setup/setup.php:2715
 msgid "Previous post"
 msgstr ""
 
-#: includes/setup/setup.php:2686
+#: includes/setup/setup.php:2716
 msgid "Next post"
 msgstr ""
 
-#: includes/setup/setup.php:2730
+#: includes/setup/setup.php:2760
 msgid "This is sticky post"
 msgstr ""
 
-#: includes/setup/setup.php:2764
+#: includes/setup/setup.php:2794
 msgid "This content is password protected."
 msgstr ""
 
-#: includes/setup/setup.php:2766
+#: includes/setup/setup.php:2796
 msgid "Enter the password to view it."
 msgstr ""
 
-#: includes/setup/setup.php:3046
+#: includes/setup/setup.php:3076
 msgctxt "Pagination text (visible): previous."
 msgid "&laquo;"
 msgstr ""
 
-#: includes/setup/setup.php:3047
+#: includes/setup/setup.php:3077
 msgctxt "Pagination text (hidden): previous."
 msgid "Previous page"
 msgstr ""
 
-#: includes/setup/setup.php:3048
+#: includes/setup/setup.php:3078
 msgctxt "Pagination text (hidden): next."
 msgid "Next page"
 msgstr ""
 
-#: includes/setup/setup.php:3049
+#: includes/setup/setup.php:3079
 msgctxt "Pagination text (visible): next."
 msgid "&raquo;"
 msgstr ""
 
-#: includes/setup/setup.php:3057
+#: includes/setup/setup.php:3087
 msgid "Posts Navigation"
 msgstr ""
 
-#: includes/setup/setup.php:3087
+#: includes/setup/setup.php:3117
 msgid "All posts"
 msgstr ""
 
@@ -894,6 +894,26 @@ msgstr ""
 msgid "One Click Demo Import (for installing theme demo content)"
 msgstr ""
 
+#: includes/tgmpa/plugins.php:71
+msgctxt "Plugin name."
+msgid "Classic Widgets"
+msgstr ""
+
+#: includes/tgmpa/plugins.php:72
+msgid "Improves widgets management screen."
+msgstr ""
+
+#: includes/tgmpa/plugins.php:72
+msgid "Restores the previous WordPress widgets settings screens."
+msgstr ""
+
+#: includes/tgmpa/plugins.php:72
+msgid ""
+"Sidebars and widgets are not going to be used in fully block themes in the "
+"future, so if your website still uses sidebars, it is better to use this "
+"plugin to enable classic user interface."
+msgstr ""
+
 #: includes/theme-options/theme-options.php:48
 #: includes/theme-options/theme-options.php:76
 #: includes/theme-options/theme-options.php:114
@@ -1329,15 +1349,6 @@ msgstr ""
 #: search.php:29
 #, php-format
 msgid "Search Results for: %s"
-msgstr ""
-
-#: searchform.php:21
-msgctxt "Search field label."
-msgid "Search"
-msgstr ""
-
-#: searchform.php:24
-msgid "Search field: type and press enter"
 msgstr ""
 
 #: sidebar-footer.php:38

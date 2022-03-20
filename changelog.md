@@ -1,5 +1,25 @@
 # Auberge Changelog
 
+## 2.8.0, 20220320
+
+### Added
+- TikTok social icon
+
+### Updated
+- Recommended plugins list
+- Improving HTML head code for better compatibility with SEO plugins
+- Localization
+
+### File updates
+	changelog.md
+	readme.txt
+	style.css
+	includes/plugins/one-click-demo-import/class-one-click-demo-import.php
+	includes/setup/setup.php
+	includes/tgmpa/plugins.php
+	languages/*.*
+
+
 ## 2.7.6, 20210317
 
 ### Update

@@ -1,7 +1,7 @@
 === Auberge ===
 Contributors: webmandesign
 Requires at least: 4.8
-Tested up to: 5.6
+Tested up to: 5.9
 Requires PHP: 5.6
 License: GPL-3.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-3.0-standalone.html
@@ -34,13 +34,7 @@ Please visit support forum at https://support.webmandesign.eu/
 Please see `changelog.md` file.
 
 
-== Upgrade Notice ==
-
-= 2.7.6 =
-Fixing search form display in header.
-
-
-== Resources ==
+== Copyright ==
 
 * TGM-Plugin-Activation © 2012 Thomas Griffin, GPL v2 or later
 * Normalize.css © Nicolas Gallagher and Jonathan Neal, MIT

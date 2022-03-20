@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    2.1
- * @version  2.7.2
+ * @version  2.8.0
  *
  * Contents:
  *
@@ -273,18 +273,16 @@ class Auberge_One_Click_Demo_Import {
 		 * OCDI plugin admin page styles
 		 *
 		 * @since    2.1.1
-		 * @version  2.1.1
+		 * @version  2.8.0
 		 */
 		public static function styles() {
 
 			// Processing
 
-				// OCDI 2.0 styling fix
-
-					wp_add_inline_style(
-							'ocdi-main-css',
-							'.ocdi.about-wrap { max-width: 66em; }'
-						);
+				wp_add_inline_style(
+					'ocdi-main-css',
+					'.ocdi__content-container { max-width: 1024px; }'
+				);
 
 		} // /styles
 

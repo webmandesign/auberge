@@ -2,21 +2,21 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Auberge Plus 1.4\n"
 "Report-Msgid-Bugs-To: https://support.webmandesign.eu\n"
-"POT-Creation-Date: 2019-11-19 10:23+0100\n"
-"PO-Revision-Date: 2019-11-19 10:26+0100\n"
+"POT-Creation-Date: 2022-03-20 01:26+0100\n"
+"PO-Revision-Date: 2022-03-20 01:26+0100\n"
 "Last-Translator: Oliver Juhas, WebMan Design\n"
 "Language-Team: \n"
 "Language: sk_SK\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2.4\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
+"X-Generator: Poedit 3.0.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
 "esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
-"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: 404.php:24
@@ -303,154 +303,154 @@ msgstr "Hlavné menu"
 msgid "Social Links Menu"
 msgstr "Odkazy sociálnych sietí"
 
-#: includes/setup/setup.php:409
+#: includes/setup/setup.php:412
 msgctxt "Header image description."
 msgid "Coffee machine"
 msgstr "Kávovar"
 
-#: includes/setup/setup.php:415
+#: includes/setup/setup.php:418
 msgctxt "Header image description."
 msgid "Restaurant interior from above"
 msgstr "Interiér reštaurácie zhora"
 
-#: includes/setup/setup.php:421
+#: includes/setup/setup.php:424
 msgctxt "Header image description."
 msgid "Pouring coffee"
 msgstr "Nalievanie kávy"
 
-#: includes/setup/setup.php:559
+#: includes/setup/setup.php:562
 msgid "In posts list."
 msgstr "V zozname článkov."
 
-#: includes/setup/setup.php:570
+#: includes/setup/setup.php:573
 msgid "In single post page."
 msgstr "Na stránke článku."
 
-#: includes/setup/setup.php:576
+#: includes/setup/setup.php:579
 msgid "In front page banner."
 msgstr "V banneri úvodnej stránky."
 
-#: includes/setup/setup.php:582
+#: includes/setup/setup.php:585
 msgid "In food menu list."
 msgstr "V jedálnom lístku."
 
-#: includes/setup/setup.php:652
+#: includes/setup/setup.php:655
 msgctxt "WordPress predefined image size name."
 msgid "Thumbnail size"
 msgstr "Veľkosť miniatúry"
 
-#: includes/setup/setup.php:653
+#: includes/setup/setup.php:656
 msgctxt "WordPress predefined image size name."
 msgid "Medium size"
 msgstr "Stredný rozmer"
 
-#: includes/setup/setup.php:654
+#: includes/setup/setup.php:657
 msgctxt "WordPress predefined image size name."
 msgid "Large size"
 msgstr "Veľký rozmer"
 
-#: includes/setup/setup.php:687
+#: includes/setup/setup.php:690
 msgid "Recommended image sizes"
 msgstr "Odporúčané rozmery obrázkov"
 
-#: includes/setup/setup.php:688
+#: includes/setup/setup.php:691
 msgid ""
 "For the theme to work correctly, please, set these recommended image sizes:"
 msgstr ""
 "Prosíme, nastavte tieto odporúčané rozmery obrázkov pre správne zobrazenie v "
 "téme:"
 
-#: includes/setup/setup.php:694
+#: includes/setup/setup.php:697
 msgid "Size name"
 msgstr "Názov rozmeru"
 
-#: includes/setup/setup.php:695
+#: includes/setup/setup.php:698
 msgid "Size parameters"
 msgstr "Parametre rozmeru"
 
-#: includes/setup/setup.php:696
+#: includes/setup/setup.php:699
 msgid "Theme usage"
 msgstr "Použitie v téme"
 
-#: includes/setup/setup.php:704
+#: includes/setup/setup.php:707
 msgid "cropped"
 msgstr "orezaný"
 
-#: includes/setup/setup.php:704
+#: includes/setup/setup.php:707
 msgid "scaled"
 msgstr "zmenšený"
 
-#: includes/setup/setup.php:712
+#: includes/setup/setup.php:715
 msgid ""
 "Additional image size added by the theme. Can not be changed on this page."
 msgstr ""
 "Dodatočný rozmer obrázkov vytvorený použitou témou. Nie je ho možné nastaviť "
 "na tejto stránke."
 
-#: includes/setup/setup.php:717
+#: includes/setup/setup.php:720
 #, php-format
 msgctxt "1: image width, 2: image height, 3: cropped or scaled?"
 msgid "%1$d &times; %2$d, %3$s"
 msgstr "%1$d &times; %2$d, %3$s"
 
-#: includes/setup/setup.php:912
+#: includes/setup/setup.php:915
 msgid "Button link"
 msgstr "Tlačidlo z odkazu"
 
-#: includes/setup/setup.php:1116
+#: includes/setup/setup.php:1119
 msgctxt "Back to food menu sections selectors button title."
 msgid "&uarr; Menu sections"
 msgstr "&uarr; Skupiny jedál"
 
-#: includes/setup/setup.php:2197
+#: includes/setup/setup.php:2227
 msgid "Breadcrumbs navigation"
 msgstr "Omrvinková navigácia"
 
-#: includes/setup/setup.php:2685
+#: includes/setup/setup.php:2715
 msgid "Previous post"
 msgstr "Predchádzajúca stránka"
 
-#: includes/setup/setup.php:2686
+#: includes/setup/setup.php:2716
 msgid "Next post"
 msgstr "Nasledujúca stránka"
 
-#: includes/setup/setup.php:2730
+#: includes/setup/setup.php:2760
 msgid "This is sticky post"
 msgstr "Odporúčaný článok"
 
-#: includes/setup/setup.php:2764
+#: includes/setup/setup.php:2794
 msgid "This content is password protected."
 msgstr "Tento obsah je chránený heslom."
 
-#: includes/setup/setup.php:2766
+#: includes/setup/setup.php:2796
 msgid "Enter the password to view it."
 msgstr "Zadajte heslo pre jeho zobrazenie."
 
-#: includes/setup/setup.php:3046
+#: includes/setup/setup.php:3076
 msgctxt "Pagination text (visible): previous."
 msgid "&laquo;"
 msgstr "&laquo;"
 
-#: includes/setup/setup.php:3047
+#: includes/setup/setup.php:3077
 msgctxt "Pagination text (hidden): previous."
 msgid "Previous page"
 msgstr "Predchádzajúca stránka"
 
-#: includes/setup/setup.php:3048
+#: includes/setup/setup.php:3078
 msgctxt "Pagination text (hidden): next."
 msgid "Next page"
 msgstr "Nasledujúca stránka"
 
-#: includes/setup/setup.php:3049
+#: includes/setup/setup.php:3079
 msgctxt "Pagination text (visible): next."
 msgid "&raquo;"
 msgstr "&raquo;"
 
-#: includes/setup/setup.php:3057
+#: includes/setup/setup.php:3087
 msgid "Posts Navigation"
 msgstr "Navigácia príspevkov"
 
-#: includes/setup/setup.php:3087
+#: includes/setup/setup.php:3117
 msgid "All posts"
 msgstr "Všetky články"
 
@@ -957,6 +957,29 @@ msgstr "Advanced Custom Fields (jednoduché nastavenie stránky)"
 msgid "One Click Demo Import (for installing theme demo content)"
 msgstr "One Click Demo Import (pre inštaláciu demo obsahu témy)"
 
+#: includes/tgmpa/plugins.php:71
+msgctxt "Plugin name."
+msgid "Classic Widgets"
+msgstr "Klasické widgety"
+
+#: includes/tgmpa/plugins.php:72
+msgid "Improves widgets management screen."
+msgstr "Zlepšuje obrazovku správy widgetov."
+
+#: includes/tgmpa/plugins.php:72
+msgid "Restores the previous WordPress widgets settings screens."
+msgstr "Obnoví predchádzajúce obrazovky nastavení widgetov vo WordPress."
+
+#: includes/tgmpa/plugins.php:72
+msgid ""
+"Sidebars and widgets are not going to be used in fully block themes in the "
+"future, so if your website still uses sidebars, it is better to use this "
+"plugin to enable classic user interface."
+msgstr ""
+"Bočné panely a widgety sa v budúcnosti nebudú používať v plne blokových "
+"témach, takže ak vaša webstránka stále využívajú bočné panely, je lepšie "
+"použiť tento plugin a obnoviť tak klasické používateľské rozhranie."
+
 #: includes/theme-options/theme-options.php:48
 #: includes/theme-options/theme-options.php:76
 #: includes/theme-options/theme-options.php:114
@@ -1406,15 +1429,6 @@ msgstr "Na celú šírku"
 msgid "Search Results for: %s"
 msgstr "Výsledky vyhľadávania pre: %s"
 
-#: searchform.php:21
-msgctxt "Search field label."
-msgid "Search"
-msgstr "Vyhľadávanie"
-
-#: searchform.php:24
-msgid "Search field: type and press enter"
-msgstr "Zadajte výraz a stlačte Enter"
-
 #: sidebar-footer.php:38
 msgctxt "Sidebar aria label"
 msgid "Footer sidebar"
@@ -1611,56 +1625,3 @@ msgstr "Späť nahor"
 #: template-parts/menu-social.php:40
 msgid "Social Menu"
 msgstr "Menu sociálnych sietí"
-
-#~ msgid "Theme demo content"
-#~ msgstr "Demo obsah témy"
-
-#~ msgid "Installing the theme demo content"
-#~ msgstr "Inštalácia demo obsahu témy"
-
-#~ msgid ""
-#~ "You can install the theme demo content including pages, posts, custom "
-#~ "post types, layouts, menus and widgets directly from your WordPress "
-#~ "dashboard by clicking the button bellow."
-#~ msgstr ""
-#~ "Kliknutím na doleuvedené tlačidlo inštalujete demo obsah témy obsahujúci "
-#~ "stránky, články, vlastné typy obsahu, rozloženia stránok, navigačné menu "
-#~ "a widgety."
-
-#~ msgid ""
-#~ "Alternatively (such as when the automated installation fails) you can "
-#~ "follow theme documentation instructions for manual demo content "
-#~ "installation."
-#~ msgstr ""
-#~ "Ako alternatívu (v prípade zlyhania automatického importu) môžete použiť "
-#~ "manuálny import demo obsahu témy popísaný v dokumentácii."
-
-#~ msgid "Read the instructions &raquo;"
-#~ msgstr "Prečítajte si inštrukcie &raquo;"
-
-#~ msgid "Install and run \"One Click Demo Import\" plugin"
-#~ msgstr "Inštaluj a spusti modul \"Importuj demo jedným klikom\""
-
-#~ msgid "Install theme demo content"
-#~ msgstr "Inštaluj demo obsah témy"
-
-#~ msgid ""
-#~ "Or head over to Appearance &raquo; Import Demo Data to start the import "
-#~ "process."
-#~ msgstr ""
-#~ "Alebo spustite proces importu v administračnom menu Vzhľad &raquo; Import "
-#~ "demo dát."
-
-#~ msgid "Install required plugins!"
-#~ msgstr "Inštalovať vyžadované moduly!"
-
-#~ msgctxt "%s: Theme name."
-#~ msgid "Thank you for installing the %s theme!"
-#~ msgstr "Ďakujeme, že používate tému %s!"
-
-#~ msgid "Please read the information about the theme."
-#~ msgstr "Prosíme, prečítajte si informácie o téme."
-
-#~ msgctxt "%s: Theme name."
-#~ msgid "Get started with %s"
-#~ msgstr "Začíname s %s"
