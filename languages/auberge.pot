@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Auberge\n"
 "Report-Msgid-Bugs-To: https://support.webmandesign.eu\n"
-"POT-Creation-Date: 2022-03-20 01:26+0100\n"
+"POT-Creation-Date: 2023-01-04 18:07+0100\n"
 "PO-Revision-Date: 2015-04-21 20:43+0100\n"
 "Last-Translator: Oliver Juhas, WebMan Design\n"
 "Language-Team: \n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.0.1\n"
+"X-Generator: Poedit 3.2.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
@@ -297,135 +297,107 @@ msgctxt "Header image description."
 msgid "Pouring coffee"
 msgstr ""
 
-#: includes/setup/setup.php:562
-msgid "In posts list."
-msgstr ""
-
-#: includes/setup/setup.php:573
-msgid "In single post page."
-msgstr ""
-
-#: includes/setup/setup.php:579
-msgid "In front page banner."
-msgstr ""
-
-#: includes/setup/setup.php:585
-msgid "In food menu list."
-msgstr ""
-
-#: includes/setup/setup.php:655
+#: includes/setup/setup.php:501 template-parts/admin/media-image-sizes.php:23
 msgctxt "WordPress predefined image size name."
 msgid "Thumbnail size"
 msgstr ""
 
-#: includes/setup/setup.php:656
+#: includes/setup/setup.php:502
+msgid "In posts list."
+msgstr ""
+
+#: includes/setup/setup.php:509 template-parts/admin/media-image-sizes.php:24
 msgctxt "WordPress predefined image size name."
 msgid "Medium size"
 msgstr ""
 
-#: includes/setup/setup.php:657
+#: includes/setup/setup.php:510
+msgid "This image size is not used by the theme."
+msgstr ""
+
+#: includes/setup/setup.php:517 template-parts/admin/media-image-sizes.php:26
 msgctxt "WordPress predefined image size name."
 msgid "Large size"
 msgstr ""
 
-#: includes/setup/setup.php:690
-msgid "Recommended image sizes"
+#: includes/setup/setup.php:518
+msgid "In single post page."
 msgstr ""
 
-#: includes/setup/setup.php:691
-msgid ""
-"For the theme to work correctly, please, set these recommended image sizes:"
+#: includes/setup/setup.php:525
+msgid "Banner size"
 msgstr ""
 
-#: includes/setup/setup.php:697
-msgid "Size name"
+#: includes/setup/setup.php:526
+msgid "In front page banner."
 msgstr ""
 
-#: includes/setup/setup.php:698
-msgid "Size parameters"
+#: includes/setup/setup.php:533
+msgid "Banner small size"
 msgstr ""
 
-#: includes/setup/setup.php:699
-msgid "Theme usage"
+#: includes/setup/setup.php:534
+msgid "In food menu list."
 msgstr ""
 
-#: includes/setup/setup.php:707
-msgid "cropped"
-msgstr ""
-
-#: includes/setup/setup.php:707
-msgid "scaled"
-msgstr ""
-
-#: includes/setup/setup.php:715
-msgid ""
-"Additional image size added by the theme. Can not be changed on this page."
-msgstr ""
-
-#: includes/setup/setup.php:720
-#, php-format
-msgctxt "1: image width, 2: image height, 3: cropped or scaled?"
-msgid "%1$d &times; %2$d, %3$s"
-msgstr ""
-
-#: includes/setup/setup.php:915
+#: includes/setup/setup.php:786
 msgid "Button link"
 msgstr ""
 
-#: includes/setup/setup.php:1119
+#: includes/setup/setup.php:990
 msgctxt "Back to food menu sections selectors button title."
 msgid "&uarr; Menu sections"
 msgstr ""
 
-#: includes/setup/setup.php:2227
+#: includes/setup/setup.php:2080
 msgid "Breadcrumbs navigation"
 msgstr ""
 
-#: includes/setup/setup.php:2715
+#: includes/setup/setup.php:2568
 msgid "Previous post"
 msgstr ""
 
-#: includes/setup/setup.php:2716
+#: includes/setup/setup.php:2569
 msgid "Next post"
 msgstr ""
 
-#: includes/setup/setup.php:2760
+#: includes/setup/setup.php:2613
 msgid "This is sticky post"
 msgstr ""
 
-#: includes/setup/setup.php:2794
+#: includes/setup/setup.php:2647
 msgid "This content is password protected."
 msgstr ""
 
-#: includes/setup/setup.php:2796
+#: includes/setup/setup.php:2649
 msgid "Enter the password to view it."
 msgstr ""
 
-#: includes/setup/setup.php:3076
+#: includes/setup/setup.php:2929
 msgctxt "Pagination text (visible): previous."
 msgid "&laquo;"
 msgstr ""
 
-#: includes/setup/setup.php:3077
+#: includes/setup/setup.php:2930
 msgctxt "Pagination text (hidden): previous."
 msgid "Previous page"
 msgstr ""
 
-#: includes/setup/setup.php:3078
+#: includes/setup/setup.php:2931
 msgctxt "Pagination text (hidden): next."
 msgid "Next page"
 msgstr ""
 
-#: includes/setup/setup.php:3079
+#: includes/setup/setup.php:2932
 msgctxt "Pagination text (visible): next."
 msgid "&raquo;"
 msgstr ""
 
-#: includes/setup/setup.php:3087
+#: includes/setup/setup.php:2940
 msgid "Posts Navigation"
 msgstr ""
 
-#: includes/setup/setup.php:3117
+#: includes/setup/setup.php:2970
 msgid "All posts"
 msgstr ""
 
@@ -1106,7 +1078,6 @@ msgid "Others"
 msgstr ""
 
 #: includes/theme-options/theme-options.php:354
-#: template-parts/component-notice-welcome.php:48
 msgid "Show \"Welcome\" page"
 msgstr ""
 
@@ -1153,27 +1124,32 @@ msgstr ""
 msgid "You can override this behavior here."
 msgstr ""
 
-#: includes/welcome/class-welcome.php:147 includes/welcome/class-welcome.php:149
+#: includes/welcome/class-welcome.php:124 includes/welcome/class-welcome.php:126
 msgid "Welcome"
 msgstr ""
 
-#: includes/welcome/class-welcome.php:222
+#. translators: %1$s: heart icon, %2$s: star icons.
+#: includes/welcome/class-welcome.php:187
 #, php-format
-msgctxt "%1$s: heart icon, %2$s: star icons"
-msgid "If you %1$s like this theme, please rate it %2$s"
+msgid "If you %1$s love this theme don't forget to rate it %2$s."
 msgstr ""
 
-#: includes/welcome/class-welcome.php:228
-msgid "And/or please consider a donation, thank you 🙏😊"
+#: includes/welcome/class-welcome.php:194
+msgid "And/or please consider a donation."
 msgstr ""
 
-#: includes/welcome/class-welcome.php:246
+#: includes/welcome/class-welcome.php:197
+#: template-parts/admin/welcome-promo.php:29
+msgid "Thank you!"
+msgstr ""
+
+#: includes/welcome/class-welcome.php:212
 msgid ""
 "Have a suggestion for improvement or something is not working as it should?"
 msgstr ""
 
-#: includes/welcome/class-welcome.php:248
-msgid "Contact support center &rarr;"
+#: includes/welcome/class-welcome.php:214
+msgid "&rarr; Contact support"
 msgstr ""
 
 #: library/controls/class-WM_Customizer_HTML.php:33
@@ -1370,98 +1346,245 @@ msgstr ""
 msgid "Toggle sidebar"
 msgstr ""
 
+#: template-parts/admin/media-image-sizes.php:25
+msgctxt "WordPress predefined image size name."
+msgid "Medium large size"
+msgstr ""
+
+#: template-parts/admin/media-image-sizes.php:33
+msgid "Recommended image sizes"
+msgstr ""
+
+#: template-parts/admin/media-image-sizes.php:36
+msgid ""
+"For the optimal theme display, please, set image sizes recommended in table "
+"below."
+msgstr ""
+
+#: template-parts/admin/media-image-sizes.php:37
+msgid ""
+"If you already have images uploaded to your website you need to resize them "
+"after changing the sizes here."
+msgstr ""
+
+#: template-parts/admin/media-image-sizes.php:38
+msgid "Resize images using plugin &rarr;"
+msgstr ""
+
+#: template-parts/admin/media-image-sizes.php:45
+msgid "Size name"
+msgstr ""
+
+#: template-parts/admin/media-image-sizes.php:46
+msgid "Size ID"
+msgstr ""
+
+#: template-parts/admin/media-image-sizes.php:47
+msgid "Size parameters"
+msgstr ""
+
+#: template-parts/admin/media-image-sizes.php:48
+msgid "Theme usage"
+msgstr ""
+
+#: template-parts/admin/media-image-sizes.php:61
+msgid "cropped"
+msgstr ""
+
+#: template-parts/admin/media-image-sizes.php:61
+msgid "scaled"
+msgstr ""
+
+#: template-parts/admin/media-image-sizes.php:65
+msgid ""
+"Additional image size added by the theme. Can not be changed on this page."
+msgstr ""
+
+#. translators: 1: image width, 2: image height, 3: cropped or scaled?
+#: template-parts/admin/media-image-sizes.php:93
+#, php-format
+msgid "%1$d &times; %2$d, %3$s"
+msgstr ""
+
+#. translators: %s: Theme name.
+#: template-parts/admin/notice-welcome.php:27
+#, php-format
+msgid "Thank you for installing %s theme!"
+msgstr ""
+
+#: template-parts/admin/notice-welcome.php:35
+msgid "Visit \"Welcome\" page for information on how to set up your website."
+msgstr ""
+
+#: template-parts/admin/notice-welcome.php:43
+msgid "Let's Get Started &raquo;"
+msgstr ""
+
+#: template-parts/admin/welcome-demo.php:24
+msgid "Theme Demo Content"
+msgstr ""
+
+#: template-parts/admin/welcome-demo.php:28
+msgid "Full theme demo content"
+msgstr ""
+
+#: template-parts/admin/welcome-demo.php:31
+msgid ""
+"You can install a full theme demo content to match the theme demo website."
+msgstr ""
+
+#: template-parts/admin/welcome-demo.php:32
+msgid "(Preview the demo &rarr;)"
+msgstr ""
+
+#: template-parts/admin/welcome-demo.php:33
+msgid "This provides a comprehensive start for building your own website."
+msgstr ""
+
+#: template-parts/admin/welcome-demo.php:37
+msgid "Please check out these information:"
+msgstr ""
+
+#: template-parts/admin/welcome-demo.php:38
+msgid "Information about theme demo content &rarr;"
+msgstr ""
+
+#: template-parts/admin/welcome-demo.php:39
+msgid "Specific instructions on how to install theme demo content &rarr;"
+msgstr ""
+
+#: template-parts/admin/welcome-demo.php:44
+msgid "Install demo content"
+msgstr ""
+
+#: template-parts/admin/welcome-demo.php:46
+msgid "(Appearance &rarr; Import Demo Data)"
+msgstr ""
+
+#: template-parts/admin/welcome-demo.php:49
+msgid "Use \"One Click Demo Import\" plugin &rarr;"
+msgstr ""
+
+#: template-parts/admin/welcome-footer.php:26
+msgid ""
+"You can disable this page in Appearance &rarr; Customize &rarr; Theme Options "
+"&rarr; Others."
+msgstr ""
+
+#: template-parts/admin/welcome-guide.php:22
+msgid "Quickstart Guide"
+msgstr ""
+
+#: template-parts/admin/welcome-guide.php:27
+msgid "Set up"
+msgstr ""
+
+#: template-parts/admin/welcome-guide.php:30
+msgid "Make sure to tweak \"Settings\" section of your site."
+msgstr ""
+
+#: template-parts/admin/welcome-guide.php:31
+msgid "(Pay attention to image size setup under Settings &rarr; Media.)"
+msgstr ""
+
+#: template-parts/admin/welcome-guide.php:33
+msgid "Settings"
+msgstr ""
+
+#: template-parts/admin/welcome-guide.php:39
+#: template-parts/admin/welcome-guide.php:45
+msgid "Customize"
+msgstr ""
+
+#: template-parts/admin/welcome-guide.php:42
+msgid "You can customize your website using a live-preview editor."
+msgstr ""
+
+#: template-parts/admin/welcome-guide.php:43
+msgid "Customization changes apply only after you publish them."
+msgstr ""
+
+#: template-parts/admin/welcome-guide.php:51
+msgid "New to WordPress?"
+msgstr ""
+
+#: template-parts/admin/welcome-guide.php:53
+msgid "If you are new to WordPress check out info in theme documentation."
+msgstr ""
+
+#: template-parts/admin/welcome-guide.php:54
+msgid "Get to know WordPress &rarr;"
+msgstr ""
+
+#. translators: 1: theme name, 2: theme developer link.
+#: template-parts/admin/welcome-header.php:32
+#, php-format
+msgid "Congratulations and thank you for choosing %1$s theme by %2$s!"
+msgstr ""
+
+#: template-parts/admin/welcome-header.php:38
+msgid "Information on this page introduces the theme and provides useful tips."
+msgstr ""
+
+#: template-parts/admin/welcome-header.php:43
+msgid "Quickstart"
+msgstr ""
+
+#: template-parts/admin/welcome-header.php:44
+msgid "Demo content"
+msgstr ""
+
+#: template-parts/admin/welcome-header.php:45
+msgid "Upgrade"
+msgstr ""
+
+#: template-parts/admin/welcome-header.php:50
+msgid "Documentation &rarr;"
+msgstr ""
+
+#: template-parts/admin/welcome-header.php:51
+msgid "Support Forum &rarr;"
+msgstr ""
+
+#: template-parts/admin/welcome-header.php:55
+msgctxt "Notice, hint."
+msgid "Tip:"
+msgstr ""
+
+#: template-parts/admin/welcome-promo.php:23
+msgid "Like the theme?"
+msgstr ""
+
+#: template-parts/admin/welcome-promo.php:27
+#, php-format
+msgid "You are using a fully functional 100% free WordPress theme."
+msgstr ""
+
+#: template-parts/admin/welcome-promo.php:28
+msgid ""
+"If you find it helpful, please support its updates and technical support "
+"service with a donation at WebManDesign.eu."
+msgstr ""
+
+#: template-parts/admin/welcome-promo.php:32
+msgid "Visit WebMan Design website now &rarr;"
+msgstr ""
+
+#: template-parts/admin/welcome-promo.php:35
+msgid ""
+"Or, if you need recipes functionality, option to set up custom front page "
+"slider, post formats, and more theme options, check out the paid version "
+"Auberge Plus."
+msgstr ""
+
+#: template-parts/admin/welcome-promo.php:36
+msgid "Auberge Plus info &rarr;"
+msgstr ""
+
 #: template-parts/component-link-more.php:22
 #, php-format
 msgctxt "%s: Name of current post."
 msgid "Continue reading%s&hellip;"
-msgstr ""
-
-#: template-parts/component-notice-welcome.php:35
-#, php-format
-msgctxt "%s: Theme name."
-msgid "Thank you for installing %s theme!"
-msgstr ""
-
-#: template-parts/component-notice-welcome.php:42
-msgid "Visit \"Welcome\" page for information on how to set up your website."
-msgstr ""
-
-#: template-parts/component-welcome-footer.php:38
-msgid ""
-"You can disable this page in Appearance &raquo; Customize &raquo; Theme "
-"Options &raquo; Others."
-msgstr ""
-
-#: template-parts/component-welcome-header.php:31
-#, php-format
-msgctxt "1: theme name, 2: theme version number."
-msgid "Welcome to %1$s %2$s"
-msgstr ""
-
-#: template-parts/component-welcome-header.php:43
-#, php-format
-msgctxt "1: theme name, 2: theme developer link."
-msgid "Thank you for using %1$s WordPress theme by %2$s!"
-msgstr ""
-
-#: template-parts/component-welcome-header.php:50
-msgid "Please take time to read the steps below to set up your website."
-msgstr ""
-
-#: template-parts/component-welcome-header.php:57
-msgid "Theme Documentation"
-msgstr ""
-
-#: template-parts/component-welcome-header.php:59
-msgid "Support Center"
-msgstr ""
-
-#: template-parts/component-welcome-quickstart.php:27
-msgid "Quickstart Guide"
-msgstr ""
-
-#: template-parts/component-welcome-quickstart.php:35
-msgid "The WordPress settings"
-msgstr ""
-
-#: template-parts/component-welcome-quickstart.php:38
-msgid ""
-"Do not forget to set up your WordPress in \"Settings\" section of the "
-"WordPress dashboard."
-msgstr ""
-
-#: template-parts/component-welcome-quickstart.php:39
-msgid "Please go through all the subsections and options."
-msgstr ""
-
-#: template-parts/component-welcome-quickstart.php:40
-msgid "This step is required for all WordPress websites."
-msgstr ""
-
-#: template-parts/component-welcome-quickstart.php:44
-msgid ""
-"Please, pay special attention to image sizes settings under Settings &raquo; "
-"Media."
-msgstr ""
-
-#: template-parts/component-welcome-quickstart.php:47
-msgid "Set Up WordPress &raquo;"
-msgstr ""
-
-#: template-parts/component-welcome-quickstart.php:55
-msgid "Customize the theme"
-msgstr ""
-
-#: template-parts/component-welcome-quickstart.php:58
-msgid "You can customize the theme using live-preview editor."
-msgstr ""
-
-#: template-parts/component-welcome-quickstart.php:59
-msgid "Customization changes will go live only after you save them!"
-msgstr ""
-
-#: template-parts/component-welcome-quickstart.php:62
-msgid "Customize the Theme &raquo;"
 msgstr ""
 
 #: template-parts/content-attachment-image.php:34
