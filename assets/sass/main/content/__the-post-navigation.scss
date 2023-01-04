@@ -71,7 +71,7 @@
 		padding: 10% 38% 4%;
 		padding-#{$left}: 8%; // {{RTL}}
 		margin-bottom: 2px;
-		font-size: nth( map_get( $h_tags_setup, 'h2, .h2' ), 1 ) +em;
+		font-size: nth( map_get( $h_tags_setup, 'h2, .h2' ), 1 ) + em;
 		color: inherit;
 		z-index: 1;
 

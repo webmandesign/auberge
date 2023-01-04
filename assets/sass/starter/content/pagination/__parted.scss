@@ -9,8 +9,8 @@
 
 
 .post-table-of-contents {
-	padding: ( $golden +em ) 0 0;
-	margin: ( $golden +em ) 0;
+	padding: ( $golden + em ) 0 0;
+	margin: ( $golden + em ) 0;
 	border-top-width: 2px;
 	border-top-style: solid;
 
@@ -28,7 +28,7 @@
 	}
 
 	li {
-		padding: ( $golden_minor / 2 +em ) 0;
+		padding: ( $golden_minor / 2 + em ) 0;
 	}
 
 	a {
@@ -53,7 +53,7 @@
 			max-width: percentage( $golden_minor );
 			padding: 0 1em 1em;
 			padding-#{$left}: 0; // {{RTL}}
-			margin: 0 ( $golden +em ) 1em;
+			margin: 0 ( $golden + em ) 1em;
 			margin-#{$left}: 0; // {{RTL}}
 			border-width: 0;
 			border-style: solid;

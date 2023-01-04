@@ -9,12 +9,12 @@
 
 
 .comment-respond {
-	padding: ( $golden +em ) 0 0;
+	padding: ( $golden + em ) 0 0;
 	border-top-width: 2px;
 	border-top-style: solid;
 
 	.comment-list & {
-		margin: ( $golden +em ) 0;
+		margin: ( $golden + em ) 0;
 		border-bottom-width: 2px;
 		border-bottom-style: solid;
 	}
@@ -22,7 +22,7 @@
 }
 
 .comment-reply-title {
-	margin-bottom: $golden_major +em;
+	margin-bottom: $golden_major + em;
 }
 
 #cancel-comment-reply-link {

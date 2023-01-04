@@ -90,7 +90,7 @@
 	blockquote {
 		@extend %font_style_italic;
 		text-align: center;
-		font-size: nth( map_get( $h_tags_setup, 'h2, .h2' ), 1 ) +em;
+		font-size: nth( map_get( $h_tags_setup, 'h2, .h2' ), 1 ) + em;
 
 		&::after,
 		&::before {

@@ -42,7 +42,7 @@
 	@if 'px' == $unit {
 		$width: $width * 1px;
 	} @else {
-		$width: $width / 16 +em;
+		$width: $width / 16 + em;
 	}
 
 	@media only screen and ( #{$property}: #{$width} ) {
@@ -80,8 +80,8 @@
 		$min: $min * 1px;
 		$max: $max * 1px;
 	} @else {
-		$min: $min / 16 +em;
-		$max: $max / 16 +em;
+		$min: $min / 16 + em;
+		$max: $max / 16 + em;
 	}
 
 	@media only screen and ( #{$property_min}: #{$min}) and (#{$property_max}: #{$max} ) {
@@ -114,18 +114,18 @@
 		}
 
 		#{$selector} {
-			font-size: $size +em;
+			font-size: $size + em;
 			line-height: $line_height;
 
 			@if 1 < $size {
 
-				margin-top: $margin_top +em;
-				margin-bottom: $margin_bottom +em;
+				margin-top: $margin_top + em;
+				margin-bottom: $margin_bottom + em;
 
 			} @else {
 
-				margin-top: $golden_major +em;
-				margin-bottom: $golden_major +em;
+				margin-top: $golden_major + em;
+				margin-bottom: $golden_major + em;
 
 			}
 

@@ -9,7 +9,7 @@
 
 
 form {
-	margin: 0 0 ( $golden +em );
+	margin: 0 0 ( $golden + em );
 }
 
 fieldset {
@@ -29,7 +29,7 @@ input,
 select,
 textarea {
 	max-width: 100%;
-	padding: $golden_major +em;
+	padding: $golden_major + em;
 	line-height: normal;
 	font-size: 1em;
 	font-family: inherit;
@@ -41,7 +41,7 @@ textarea {
 }
 
 select {
-	padding: calc( #{ $golden_major +em } - 4px ); // Compensating for border width
+	padding: calc( #{ $golden_major + em } - 4px ); // Compensating for border width
 }
 
 option {

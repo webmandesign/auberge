@@ -12,7 +12,7 @@
 	clear: both;
 	margin-top: 1em;
 	line-height: 1;
-	font-size: nth( map_get( $h_tags_setup, 'h3, .h3' ), 1 ) +em;
+	font-size: nth( map_get( $h_tags_setup, 'h3, .h3' ), 1 ) + em;
 
 	@include responsive( map_get( $breakpoint, 'l' ) ) {
 		clear: none;
@@ -68,8 +68,8 @@
 		transition: opacity .4s;
 
 		@include responsive( map_get( $breakpoint, 'xl' ) ) {
-			padding-left: $golden_minor / 2 +em;
-			padding-right: $golden_minor / 2 +em;
+			padding-left: $golden_minor / 2 + em;
+			padding-right: $golden_minor / 2 + em;
 		}
 
 		&:hover {
@@ -84,7 +84,7 @@
 				@extend %genericon;
 				content: '\f435';
 				display: inline-block;
-				padding: 0 ( $golden_minor +em );
+				padding: 0 ( $golden_minor + em );
 				vertical-align: top;
 			}
 

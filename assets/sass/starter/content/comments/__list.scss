@@ -10,10 +10,10 @@
 
 .comment-list {
 	padding: 0;
-	margin: 0 0 ( $golden +em );
+	margin: 0 0 ( $golden + em );
 
 	.comments-closed + & {
-		margin-top: $golden +em;
+		margin-top: $golden + em;
 	}
 
 	> li,
@@ -21,7 +21,7 @@
 		@extend .overflow-hidden;
 		position: relative;
 		min-height: 100 *$px;
-		padding: ( $golden +em ) 0 0;
+		padding: ( $golden + em ) 0 0;
 		padding-#{$left}: 50 *$px; // {{RTL}}
 		margin: 0;
 		background: none;
@@ -46,5 +46,5 @@
 }
 
 .comment-body {
-	padding: $golden +em;
+	padding: $golden + em;
 }

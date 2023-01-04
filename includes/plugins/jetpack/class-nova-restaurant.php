@@ -73,7 +73,7 @@
 
 				// Processing
 
-					if ( !$instance ) {
+					if ( ! $instance ) {
 						$instance = new WM_Nova_Restaurant;
 					}
 
@@ -208,7 +208,7 @@
 			 *
 			 * @param  string $template  Template file.
 			 */
-			function setup_menu_item_loop_markup__in_filter( $template ) {
+			public function setup_menu_item_loop_markup__in_filter( $template ) {
 
 				// Requirements check
 
@@ -293,14 +293,14 @@
 		 */
 
 			/**
-			 * Loop markup setup
+			 * Loop markup setup.
 			 *
 			 * @since    2.0
 			 * @version  2.0
 			 *
 			 * @param  string $field
 			 */
-			function get_menu_item_loop_markup( $field = null ) {
+			public function get_menu_item_loop_markup( $field = null ) {
 
 				// Helper variables
 
@@ -333,7 +333,7 @@
 
 
 			/**
-			 * Outputs the Menu Group Header
+			 * Outputs the Menu Group Header.
 			 *
 			 * Allowing HTML tags in taxonomy description.
 			 *
@@ -384,7 +384,7 @@
 
 
 			/**
-			 * Outputs a Menu Item Markup element opening tag
+			 * Outputs a Menu Item Markup element opening tag.
 			 *
 			 * @since    2.0
 			 * @version  2.1

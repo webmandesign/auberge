@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0
- * @version  2.8.0
+ * @version  2.9.0
  *
  * Contents:
  *
@@ -271,7 +271,7 @@
 	 * Theme setup
 	 *
 	 * @since    1.0
-	 * @version  2.8.0
+	 * @version  2.9.0
 	 */
 	if ( ! function_exists( 'wm_setup' ) ) {
 		function wm_setup() {
@@ -396,8 +396,8 @@
 						'default-text-color' => 'ffffff',
 						'header-text'        => true,
 						'random-default'     => true,
-						'width'              => ( isset( $image_sizes['auberge_banner'] ) ) ? ( $image_sizes['auberge_banner'][0] ) : ( 1920 ),
-						'height'             => ( isset( $image_sizes['auberge_banner'] ) ) ? ( $image_sizes['auberge_banner'][1] ) : ( 1080 ),
+						'width'              => ( isset( $image_sizes['auberge_banner'] ) ) ? ( $image_sizes['auberge_banner']['width'] ) : ( 1640 ),
+						'height'             => ( isset( $image_sizes['auberge_banner'] ) ) ? ( $image_sizes['auberge_banner']['height'] ) : ( 686 ),
 						'flex-height'        => true,
 						'flex-width'         => true,
 					) ) );
@@ -450,9 +450,9 @@
 								if ( !in_array( $size, array( 'thumbnail', 'medium', 'large' ) ) ) {
 									add_image_size(
 										$size,
-										$image_sizes[ $size ][0],
-										$image_sizes[ $size ][1],
-										$image_sizes[ $size ][2]
+										$image_sizes[ $size ]['width'],
+										$image_sizes[ $size ]['height'],
+										$image_sizes[ $size ]['crop']
 									);
 								}
 							}
@@ -473,74 +473,15 @@
 
 
 
-		/**
-		 * Initiate "Welcome" admin notice
-		 *
-		 * @since    2.2.0
-		 * @version  2.2.0
-		 */
-		if ( ! function_exists( 'wm_activation_admin_notice' ) ) {
-			function wm_activation_admin_notice() {
-
-				// Processing
-
-					global $pagenow;
-
-					if (
-						is_admin()
-						&& 'themes.php' == $pagenow
-						&& isset( $_GET['activated'] )
-					) {
-
-						add_action( 'admin_notices', 'wm_welcome_admin_notice', 99 );
-
-					}
-
-			}
-		} // /wm_activation_admin_notice
-
-		add_action( 'load-themes.php', 'wm_activation_admin_notice' );
-
-
-
-		/**
-		 * Display "Welcome" admin notice
-		 *
-		 * @since    2.2.0
-		 * @version  2.7.0
-		 */
-		if ( ! function_exists( 'wm_welcome_admin_notice' ) ) {
-			function wm_welcome_admin_notice() {
-
-				// Processing
-
-					get_template_part( 'template-parts/component-notice', 'welcome' );
-
-			}
-		} // /wm_welcome_admin_notice
-
-
-
 	/**
 	 * Setup images
 	 */
 
 		/**
-		 * Image sizes
-		 *
-		 * @example
-		 *
-		 *   $image_sizes = array(
-		 *     'image_size_id' => array(
-		 *       absint( width ),
-		 *       absint( height ),
-		 *       (bool) cropped?,
-		 *       (string) optional_theme_usage_explanation_text
-		 *     )
-		 *   );
+		 * Image sizes.
 		 *
 		 * @since    1.4
-		 * @version  2.0
+		 * @version  2.9.0
 		 *
 		 * @param  array $image_sizes
 		 */
@@ -555,36 +496,48 @@
 				// Processing
 
 					$image_sizes = array(
-							'thumbnail' => array(
-									480,
-									280,
-									true,
-									esc_html__( 'In posts list.', 'auberge' )
-								),
-							'medium' => array(
-									absint( $content_width * .62 ),
-									9999,
-									false
-								),
-							'large' => array(
-									absint( $content_width ),
-									9999,
-									false,
-									esc_html__( 'In single post page.', 'auberge' )
-								),
-							'auberge_banner' => array(
-									1640,
-									686, //@link http://en.wikipedia.org/wiki/Anamorphic_format
-									true,
-									esc_html__( 'In front page banner.', 'auberge' )
-								),
-							'auberge_banner_small' => array(
-									absint( $content_width ),
-									absint( $content_width / 2.39 ), //@link http://en.wikipedia.org/wiki/Anamorphic_format
-									true,
-									esc_html__( 'In food menu list.', 'auberge' )
-								),
-						);
+
+						'thumbnail' => array(
+							'name'        => esc_html_x( 'Thumbnail size', 'WordPress predefined image size name.', 'auberge' ),
+							'description' => esc_html__( 'In posts list.', 'auberge' ),
+							'width'       => 480,
+							'height'      => 280,
+							'crop'        => true,
+						),
+
+						'medium' => array(
+							'name'        => esc_html_x( 'Medium size', 'WordPress predefined image size name.', 'auberge' ),
+							'description' => esc_html__( 'This image size is not used by the theme.', 'auberge' ),
+							'width'       => absint( $content_width * .62 ),
+							'height'      => 9999,
+							'crop'        => false,
+						),
+
+						'large' => array(
+							'name'        => esc_html_x( 'Large size', 'WordPress predefined image size name.', 'auberge' ),
+							'description' => esc_html__( 'In single post page.', 'auberge' ),
+							'width'       => absint( $content_width ),
+							'height'      => 9999,
+							'crop'        => false,
+						),
+
+						'auberge_banner' => array(
+							'name'        => esc_html__( 'Banner size', 'auberge' ),
+							'description' => esc_html__( 'In front page banner.', 'auberge' ),
+							'width'       => 1640,
+							'height'      => 686,
+							'crop'        => true,
+						),
+
+						'auberge_banner_small' => array(
+							'name'        => esc_html__( 'Banner small size', 'auberge' ),
+							'description' => esc_html__( 'In food menu list.', 'auberge' ),
+							'width'       => absint( $content_width ),
+							'height'      => absint( $content_width / 2.39 ), //@link http://en.wikipedia.org/wiki/Anamorphic_format
+							'crop'        => true,
+						),
+
+					);
 
 
 				// Output
@@ -644,96 +597,14 @@
 		 * Display recommended image sizes notice
 		 *
 		 * @since    1.4
-		 * @version  1.4
+		 * @version  2.9.0
 		 */
 		if ( ! function_exists( 'wm_image_size_notice_html' ) ) {
 			function wm_image_size_notice_html() {
 
-				// Helper variables
+				// Processing
 
-					$default_image_size_names = array(
-							'thumbnail' => esc_html_x( 'Thumbnail size', 'WordPress predefined image size name.', 'auberge' ),
-							'medium'    => esc_html_x( 'Medium size', 'WordPress predefined image size name.', 'auberge' ),
-							'large'     => esc_html_x( 'Large size', 'WordPress predefined image size name.', 'auberge' ),
-						);
-
-					$image_sizes = array_filter( apply_filters( 'wmhook_wm_setup_image_sizes', array() ) );
-
-
-				// Requirements check
-
-					if ( empty( $image_sizes ) ) {
-						return;
-					}
-
-
-				// Output
-
-					// Section styles
-
-						echo '<style type="text/css" media="screen">'
-							. '.recommended-image-sizes { display: inline-block; padding: 1.62em; border: 2px solid #dadcde; }'
-							. '.recommended-image-sizes h3:first-child { margin-top: 0; }'
-							. '.recommended-image-sizes table { margin-top: 1em; }'
-							. '.recommended-image-sizes th, .recommended-image-sizes td { width: auto; padding: .19em 1em; border-bottom: 2px dotted #dadcde; vertical-align: top; }'
-							. '.recommended-image-sizes thead th { padding: .62em 1em; border-bottom-style: solid; }'
-							. '.recommended-image-sizes tr[title] { cursor: help; }'
-							. '.recommended-image-sizes .small, .recommended-image-sizes tr[title] th, .recommended-image-sizes tr[title] td { font-size: .81em; }'
-							. '</style>';
-
-					// Section HTML
-
-						echo '<div class="recommended-image-sizes">';
-
-							do_action( 'wmhook_wm_image_size_notice_html_top' );
-
-							echo '<h3>' . esc_html__( 'Recommended image sizes', 'auberge' ) . '</h3>'
-								. '<p>' . esc_html__( 'For the theme to work correctly, please, set these recommended image sizes:', 'auberge' ) . '</p>';
-
-							echo '<table>';
-
-								echo '<thead>'
-									. '<tr>'
-									. '<th>' . esc_html__( 'Size name', 'auberge' ) . '</th>'
-									. '<th>' . esc_html__( 'Size parameters', 'auberge' ) . '</th>'
-									. '<th>' . esc_html__( 'Theme usage', 'auberge' ) . '</th>'
-									. '</tr>'
-									. '</thead>';
-
-								echo '<tbody>';
-
-									foreach ( $image_sizes as $size => $setup ) {
-
-										$crop = ( $setup[2] ) ? ( esc_html__( 'cropped', 'auberge' ) ) : ( esc_html__( 'scaled', 'auberge' ) );
-
-										if ( isset( $default_image_size_names[ $size ] ) ) {
-
-											echo '<tr><th>' . esc_html( $default_image_size_names[ $size ] ) . ':</th>';
-
-										} else {
-
-											echo '<tr title="' . esc_attr__( 'Additional image size added by the theme. Can not be changed on this page.', 'auberge' ) . '"><th><code>' . esc_html( $size ) . '</code>:</th>';
-
-										}
-
-										echo '<td>' . sprintf(
-												esc_html_x( '%1$d &times; %2$d, %3$s', '1: image width, 2: image height, 3: cropped or scaled?', 'auberge' ),
-												absint( $setup[0] ),
-												absint( $setup[1] ),
-												$crop
-											) . '</td>'
-											. '<td class="small">' . ( ( isset( $setup[3] ) ) ? ( $setup[3] ) : ( '&mdash;' ) ) . '</td>'
-											. '</tr>';
-
-									} // /foreach
-
-								echo '</tbody>';
-
-							echo '</table>';
-
-							do_action( 'wmhook_wm_image_size_notice_html_bottom' );
-
-						echo '</div>';
+					get_template_part( 'template-parts/admin/media', 'image-sizes' );
 
 			}
 		} // /wm_image_size_notice_html
@@ -1391,43 +1262,22 @@
 
 
 	/**
-	 * Meta charset.
-	 *
-	 * @since    2.8.0
-	 * @version  2.8.0
-	 */
-	if ( ! function_exists( 'wm_charset' ) ) {
-		function wm_charset() {
-
-			// Output
-
-				echo '<meta charset="' . esc_attr( get_bloginfo( 'charset' ) ) . '">' . PHP_EOL;
-
-		}
-	} // /wm_charset
-
-	add_action( 'wp_head', 'wm_charset', 0 );
-
-
-
-	/**
 	 * Website HEAD.
 	 *
 	 * @since    1.0
-	 * @version  2.8.0
+	 * @version  2.9.0
 	 */
 	if ( ! function_exists( 'wm_head' ) ) {
 		function wm_head() {
 
 			// Output
 
-				echo '<meta name="viewport" content="width=device-width, initial-scale=1">' . PHP_EOL;
-				echo '<link rel="profile" href="http://gmpg.org/xfn/11">' . PHP_EOL;
+				get_template_part( 'template-parts/head' );
 
 		}
 	} // /wm_head
 
-	add_action( 'wp_head', 'wm_head', 1 );
+	add_action( 'wp_head', 'wm_head', 0 );
 
 
 
@@ -1825,7 +1675,7 @@
 		 * Menu item classes
 		 *
 		 * @since    1.0
-		 * @version  2.0
+		 * @version  2.9.0
 		 *
 		 * @param  array  $classes The CSS classes that are applied to the menu item's `<li>` element.
 		 * @param  object $item    The current menu item.
@@ -1850,7 +1700,10 @@
 
 					// General class for active menu
 
-						if ( false !== strpos( $classes, 'current-menu' ) ) {
+						if (
+							false !== strpos( $classes, 'current-menu' )
+							|| false !== strpos( $classes, 'current_page' )
+						) {
 							$classes .= ' active-menu-item';
 						}
 

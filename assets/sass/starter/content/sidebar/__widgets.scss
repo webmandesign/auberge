@@ -14,7 +14,7 @@
 	.widget {
 
 		.sidebar & {
-			margin: 0 0 ( power( $golden, 2 ) +em );
+			margin: 0 0 ( power( $golden, 2 ) + em );
 
 			&:last-child {
 				margin-bottom: 0;
@@ -27,7 +27,7 @@
 			list-style: none;
 
 			li {
-				padding: ( $golden_minor +em ) 0;
+				padding: ( $golden_minor + em ) 0;
 				border-top-width: 1px;
 				border-top-style: solid;
 				border-bottom-width: 1px;
@@ -75,7 +75,7 @@
 			th,
 			td {
 				width: auto;
-				height: power( $golden, 2 ) +em;
+				height: power( $golden, 2 ) + em;
 				padding: 0;
 				text-align: center;
 			}
@@ -130,7 +130,7 @@
 			.widget_recent_entries &,
 			.widget_zilla_likes_widget & {
 				position: relative;
-				padding-#{$left}: $golden +em; // {{RTL}}
+				padding-#{$left}: $golden + em; // {{RTL}}
 			}
 
 		}
@@ -159,7 +159,7 @@
 				position: relative;
 				display: inline-block;
 				width: auto;
-				padding: ( $golden_minor / 2 +em ) ( $golden_major +em );
+				padding: ( $golden_minor / 2 + em ) ( $golden_major + em );
 				margin: 2px 2px 0;
 				margin-#{$left}: 0; // {{RTL}}
 				white-space: nowrap;
@@ -203,7 +203,7 @@
 					display: none;
 					#{$left}: 100%; // {{RTL}}
 					top: -1px;
-					padding: ( $golden_minor / 2 +em ) ( $golden_major +em );
+					padding: ( $golden_minor / 2 + em ) ( $golden_major + em );
 					pointer-events: none;
 					border-width: 1px;
 					border-style: solid;

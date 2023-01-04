@@ -12,8 +12,8 @@
 
 	.sidebar {
 		@extend %line_height_golden;
-		margin: ( $golden +rem ) 0 0;
-		padding: ( $golden +rem ) 0 0;
+		margin: ( $golden + rem ) 0 0;
+		padding: ( $golden + rem ) 0 0;
 
 		@include responsive( map_get( $breakpoint, 'l' ) ) {
 			float: $right; // {{RTL}}

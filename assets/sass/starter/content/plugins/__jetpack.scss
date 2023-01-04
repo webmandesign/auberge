@@ -51,7 +51,7 @@
 		.posts {
 
 			&.masonry {
-				margin-bottom: power( $golden, 3 ) +rem;
+				margin-bottom: power( $golden, 3 ) + rem;
 			}
 
 		}
@@ -120,8 +120,8 @@
 		font-size: 1rem;
 
 		.site & {
-			padding-top: $golden +em;
-			margin: ( $golden +em ) 0 0;
+			padding-top: $golden + em;
+			margin: ( $golden + em ) 0 0;
 			border-top-width: 2px;
 			border-top-style: solid;
 
@@ -154,7 +154,7 @@
 
 				.jp-relatedposts-post-title,
 				h4.jp-relatedposts-post-title {
-					margin: ( $golden_major +em ) 0 ( $golden_minor +em );
+					margin: ( $golden_major + em ) 0 ( $golden_minor + em );
 					font-size: 1em;
 				}
 
@@ -165,7 +165,7 @@
 				.jp-relatedposts-post {
 					width: 100%;
 					padding: 0;
-					margin: ( $golden +em ) 0 0;
+					margin: ( $golden + em ) 0 0;
 					opacity: 1;
 
 					&:first-child {
@@ -203,7 +203,7 @@
 // Responsive videos
 
 	.jetpack-video-wrapper {
-		margin: ( $golden +em ) 0;
+		margin: ( $golden + em ) 0;
 
 		&:first-child {
 			margin-top: 0;
@@ -221,8 +221,8 @@
 // Sharing
 
 	div.sharedaddy {
-		padding: ( $golden +em ) 0 0;
-		margin: ( $golden +em ) 0 0;
+		padding: ( $golden + em ) 0 0;
+		margin: ( $golden + em ) 0 0;
 		font-size: 1rem;
 		border-top-width: 2px;
 		border-top-style: solid;
@@ -259,11 +259,11 @@
 					li {
 
 						a.sd-button {
-							margin: ( $golden_major / 2 +em ) ( $golden_major +em );
+							margin: ( $golden_major / 2 + em ) ( $golden_major + em );
 							margin-#{$left}: 0; // {{RTL}}
 
 							&:not(.no-text) {
-								padding: ( $golden_major +em ) 1em;
+								padding: ( $golden_major + em ) 1em;
 								line-height: normal;
 								border-width: 0;
 								border-radius: 0;
@@ -381,12 +381,12 @@
 			#subscribe-email {
 				float: $left; // {{RTL}}
 				width: percentage( $golden_major );
-				padding-#{$right}: $golden_major +em; // {{RTL}}
+				padding-#{$right}: $golden_major + em; // {{RTL}}
 				margin-bottom: 0;
 
 				input {
 					width: 100%;
-					padding: $golden_major +em;
+					padding: $golden_major + em;
 				}
 
 			}

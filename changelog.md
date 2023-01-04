@@ -1,5 +1,44 @@
 # Auberge Changelog
 
+## 2.9.0, 20230104
+
+### Updated
+- CSS Vars Ponyfill JavaScript library
+- HTML head code
+- Media size info
+- Welcome page
+- Localization
+
+### Fixed
+- Search form styles
+- Removing `aria-haspopup`
+- Removing font family CSS variables when not using Google Fonts
+- Making blog page a current menu ancestor when visiting a blog post
+
+### File updates
+	changelog.md
+	readme.txt
+	style.css
+	assets/js/scripts-navigation.js
+	assets/sass/main.scss
+	assets/sass/slick.scss
+	assets/sass/welcome.scss
+	assets/sass/starter/_starter.scss
+	assets/sass/starter/tools/_functions.scss
+	includes/setup/setup.php
+	includes/welcome/class-welcome.php
+	library/customize.php
+	library/js/vendor/css-vars-ponyfill/css-vars-ponyfill.min.js
+	template-parts/head.php
+	template-parts/admin/media-image-sizes.php
+	template-parts/admin/notice-welcome.php
+	template-parts/admin/welcome-demo.php
+	template-parts/admin/welcome-footer.php
+	template-parts/admin/welcome-guide.php
+	template-parts/admin/welcome-header.php
+	template-parts/admin/welcome-promo.php
+
+
 ## 2.8.0, 20220320
 
 ### Added

@@ -11,7 +11,7 @@
 .comment-meta {
 	@extend .overflow-hidden;
 	clear: both;
-	padding-bottom: $golden_major +em;
+	padding-bottom: $golden_major + em;
 	margin-bottom: 1em;
 	border-bottom-width: 2px;
 	border-bottom-style: solid;
@@ -20,7 +20,7 @@
 		position: absolute;
 		width: 60 *$px;
 		#{$left}: 0; // {{RTL}}
-		top: $golden +em;
+		top: $golden + em;
 		border-radius: 50%;
 
 		@include responsive( map_get( $breakpoint, 'm' ) ) {
@@ -48,7 +48,7 @@
 	}
 
 	.edit-link {
-		padding-#{$left}: $golden +em; // {{RTL}}
+		padding-#{$left}: $golden + em; // {{RTL}}
 		font-variant: small-caps;
 	}
 

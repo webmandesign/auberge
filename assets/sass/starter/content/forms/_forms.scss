@@ -18,14 +18,14 @@
 
 	label {
 		display: inline-block;
-		padding-bottom: $golden_minor / 2 +em;
+		padding-bottom: $golden_minor / 2 + em;
 
 		&[for] {
 			cursor: pointer;
 		}
 
 		+ input[type="checkbox"] {
-			margin-#{$left}: $golden_minor +em; // {{RTL}}
+			margin-#{$left}: $golden_minor + em; // {{RTL}}
 		}
 
 	}
@@ -63,7 +63,7 @@
 		width: 1em;
 		height: 1em;
 		bottom: $golden_minor / 2 * -1em;
-		margin-#{$right}: $golden_minor +em; // {{RTL}}
+		margin-#{$right}: $golden_minor + em; // {{RTL}}
 		vertical-align: baseline;
 	}
 

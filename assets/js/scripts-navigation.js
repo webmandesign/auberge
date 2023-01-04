@@ -8,7 +8,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.4.8
- * @version  2.7.0
+ * @version  2.9.0
  */
 
 ( function( $ ) {
@@ -27,16 +27,6 @@
 			$aubergeSiteNavigation   = $( document.getElementById( 'site-navigation' ) ),
 			$aubergeSiteMenuPrimary  = $( document.getElementById( 'menu-primary' ) ),
 			$aubergeMenuToggleButton = $( document.getElementById( 'menu-toggle' ) );
-
-
-
-	/**
-	 * Adding ARIA attributes
-	 */
-
-		$aubergeSiteNavigation
-			.find( '.menu-item-has-children' )
-				.attr( 'aria-haspopup', 'true' );
 
 
 

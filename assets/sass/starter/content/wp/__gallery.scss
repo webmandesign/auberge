@@ -12,7 +12,7 @@
 	@extend .clearfix;
 	@extend .overflow-hidden;
 	clear: both;
-	margin: 0 0 ( $golden +em );
+	margin: 0 0 ( $golden + em );
 
 	a {
 		display: block;
@@ -88,7 +88,7 @@
 			left: 0;
 			right: 0;
 			bottom: 0;
-			padding: ( $golden_major +em ) 1em;
+			padding: ( $golden_major + em ) 1em;
 			opacity: 0;
 			transition: opacity .3s;
 

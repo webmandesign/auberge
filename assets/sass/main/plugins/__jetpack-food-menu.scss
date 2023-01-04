@@ -206,7 +206,7 @@
 		overflow: hidden;
 
 		h3 {
-			font-size: nth( map_get( $h_tags_setup, 'h4, .h4' ), 1 ) +em;
+			font-size: nth( map_get( $h_tags_setup, 'h4, .h4' ), 1 ) + em;
 			line-height: 1.19;
 		}
 

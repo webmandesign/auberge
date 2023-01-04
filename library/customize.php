@@ -7,7 +7,7 @@
  *
  * @since    1.0
  * @version  2.5.2
- * @version  2.7.5
+ * @version  2.9.0
  *
  * Contents:
  *
@@ -964,7 +964,7 @@
 	 * Get CSS vars from theme options.
 	 *
 	 * @since    2.6.0
-	 * @version  2.7.0
+	 * @version  2.9.0
 	 */
 	if ( ! function_exists( 'wm_get_css_vars_from_theme_options' ) ) {
 		function wm_get_css_vars_from_theme_options() {
@@ -1024,6 +1024,15 @@
 						$value = $mod;
 					} else {
 						// No need to output CSS var if it was not changed in customizer.
+						continue;
+					}
+
+					// Skip empty font option.
+					if (
+						false !== stripos( $option['id'], 'font-family' )
+						&& empty( trim( $value ) )
+					) {
+						// No need to output CSS var.
 						continue;
 					}
 

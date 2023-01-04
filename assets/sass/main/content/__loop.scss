@@ -33,7 +33,7 @@
 		&-title {
 			margin-bottom: 1rem;
 			letter-spacing: 0;
-			font-size: nth( map_get( $h_tags_setup, 'h3, .h3' ), 1 ) +em;
+			font-size: nth( map_get( $h_tags_setup, 'h3, .h3' ), 1 ) + em;
 		}
 
 		&-summary {

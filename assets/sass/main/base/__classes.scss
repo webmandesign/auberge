@@ -52,13 +52,13 @@
 		&::first-letter {
 			float: $left; // {{RTL}}
 			display: block;
-			padding: 0 ( $golden_minor / 2 +em );
+			padding: 0 ( $golden_minor / 2 + em );
 			padding-#{$left}: 0; // {{RTL}}
 			line-height: 1;
-			font-size: power( $golden, 2 ) +em;
+			font-size: power( $golden, 2 ) + em;
 
 			@include responsive( map_get( $breakpoint, 'xl' ) ) {
-				font-size: power( $golden, 3 ) +em;
+				font-size: power( $golden, 3 ) + em;
 			}
 
 		}

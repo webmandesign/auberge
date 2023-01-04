@@ -11,7 +11,7 @@
 form[role="search"],
 .form-search,
 .search-form {
-	display: block;
+	display: flex;
 	position: relative;
 	max-width: 100%;
 	margin: 0;
@@ -23,6 +23,10 @@ form[role="search"],
 		width: 100%;
 		text-align: inherit;
 		z-index: 0;
+	}
+
+	[type="submit"] {
+		width: auto;
 	}
 
 }
