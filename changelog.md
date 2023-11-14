@@ -1,5 +1,23 @@
 # Auberge Changelog
 
+## 2.9.1, 20231114
+
+### Updated
+- Twitter/X icon
+
+### Fixed
+- Preventing issue with post formats
+- Updating TGMPA script to prevent PHP8 error
+
+### File updates
+	changelog.md
+	readme.txt
+	style.css
+	assets/images/svg/social-icons.svg
+	includes/setup/setup.php
+	includes/tgmpa/class-tgm-plugin-activation.php
+
+
 ## 2.9.0, 20230104
 
 ### Updated

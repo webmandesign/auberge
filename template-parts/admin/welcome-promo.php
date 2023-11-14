@@ -36,5 +36,4 @@ if ( ! class_exists( 'Auberge_Welcome' ) ) {
 		<a href="https://www.webmandesign.eu/portfolio/auberge-plus-wordpress-theme/"><strong><?php esc_html_e( 'Auberge Plus info &rarr;', 'auberge' ); ?></strong></a>
 	</p>
 
-
 </div>

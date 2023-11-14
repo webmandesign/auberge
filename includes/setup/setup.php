@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0
- * @version  2.9.0
+ * @version  2.9.1
  *
  * Contents:
  *
@@ -1473,7 +1473,7 @@
 			 * Social links supported icons.
 			 *
 			 * @since    2.5.0
-			 * @version  2.8.0
+			 * @version  2.9.1
 			 */
 			function wm_social_links_icons() {
 
@@ -1519,7 +1519,7 @@
 						'tripadvisor.'      => 'tripadvisor',
 						'tumblr.com'        => 'tumblr',
 						'twitch.tv'         => 'twitch',
-						'twitter.com'       => 'twitter',
+						'twitter.com'       => 'x',
 						'vimeo.com'         => 'vimeo',
 						'vine.co'           => 'vine',
 						'vk.com'            => 'vk',
