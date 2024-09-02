@@ -10,7 +10,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.1
- * @version  2.2.0
+ * @version  2.9.2
  *
  * Contents:
  *
@@ -42,16 +42,12 @@
 	 * Enables Jetpack features
 	 *
 	 * @since    1.0
-	 * @version  2.2.0
+	 * @version  2.9.2
 	 */
 	if ( ! function_exists( 'wm_jetpack' ) ) {
 		function wm_jetpack() {
 
 			// Processing
-
-				// Site logo
-
-					add_theme_support( 'site-logo' );
 
 				// Responsive videos
 

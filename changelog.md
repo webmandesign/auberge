@@ -1,5 +1,18 @@
 # Auberge Changelog
 
+## 2.9.2, 20240902
+
+### Updated
+- Confirming support with WordPress 6.6
+- Jetpack compatibility
+
+### File updates
+	changelog.md
+	readme.txt
+	style.css
+	includes/plugins/jetpack/jetpack.php
+
+
 ## 2.9.1, 20231114
 
 ### Updated
