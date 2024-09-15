@@ -1,5 +1,16 @@
 # Auberge Changelog
 
+## 2.9.3, 20240915
+
+### Updated
+- Improving and fixing social icons (introducing option to force the icon with `has-icon-#` class)
+
+### File updates
+	changelog.md
+	style.css
+	includes/setup/setup.php
+
+
 ## 2.9.2, 20240902
 
 ### Updated

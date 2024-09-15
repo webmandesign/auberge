@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0
- * @version  2.9.1
+ * @version  2.9.3
  *
  * Contents:
  *
@@ -1473,7 +1473,7 @@
 			 * Social links supported icons.
 			 *
 			 * @since    2.5.0
-			 * @version  2.9.1
+			 * @version  2.9.3
 			 */
 			function wm_social_links_icons() {
 
@@ -1526,6 +1526,7 @@
 						'wa.me'             => 'whatsapp',
 						'wordpress.org'     => 'wordpress',
 						'wordpress.com'     => 'wordpress',
+						'x.com'             => 'x',
 						'xing.com'          => 'xing',
 						'yelp.com'          => 'yelp',
 						'youtube.com'       => 'youtube',
@@ -1543,7 +1544,7 @@
 			 * Note that the menu has to be set to output `<!--{{icon}}-->` placeholders!
 			 *
 			 * @since    2.5.0
-			 * @version  2.5.4
+			 * @version  2.9.3
 			 *
 			 * @param  string  $item_output The menu item output.
 			 * @param  WP_Post $item        Menu item object.
@@ -1567,10 +1568,32 @@
 
 				// Processing
 
-					foreach ( $social_icons as $url => $icon ) {
-						if ( false !== strpos( $item_output, $url ) ) {
-							$social_icon = $icon;
-							break;
+					if (
+						! empty( $item->classes )
+						&& false !== stripos( implode( ' ', (array) $item->classes ), 'has-icon-' )
+					) {
+
+						$forced_icon = array_intersect(
+							$social_icons,
+							array_map(
+								function( $item ) {
+									return str_replace( 'has-icon-', '', trim( $item ) );
+								},
+								(array) $item->classes
+							)
+						);
+
+						if ( ! empty( $forced_icon ) ) {
+							$social_icon = reset( $forced_icon );
+						}
+
+					} else {
+
+						foreach ( $social_icons as $url => $icon ) {
+							if ( false !== strpos( $item_output, $url ) ) {
+								$social_icon = $icon;
+								break;
+							}
 						}
 					}
 
