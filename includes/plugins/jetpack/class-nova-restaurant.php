@@ -7,6 +7,9 @@
  * @package    Auberge
  * @copyright  WebMan Design, Oliver Juhas
  *
+ * @since    2.0
+ * @version  3.0.0
+ *
  * Contents:
  *
  *  1) Requirements check
@@ -21,7 +24,7 @@
  * 1) Requirements check
  */
 
-	if ( ! class_exists( 'Nova_Restaurant' ) ) {
+	if ( ! class_exists( 'Automattic\Jetpack\Classic_Theme_Helper\Nova_Restaurant' ) ) {
 		return;
 	}
 
@@ -46,7 +49,7 @@
 	 *  20) Processors
 	 *  30) Outputs
 	 */
-	class WM_Nova_Restaurant extends Nova_Restaurant {
+	class WM_Nova_Restaurant extends Automattic\Jetpack\Classic_Theme_Helper\Nova_Restaurant {
 
 
 
@@ -100,7 +103,7 @@
 			 * Add menu title rows to the list table
 			 *
 			 * @since    2.0
-			 * @version  2.0
+			 * @version  3.0.0
 			 *
 			 * @param  object $post
 			 */
@@ -114,20 +117,35 @@
 
 					$term = $this->get_menu_item_menu_leaf( $post->ID );
 
-					if ( false !== $last_term_id && $last_term_id === $term->term_id ) {
+					$term_id = $term instanceof \WP_Term ? $term->term_id : null;
+
+					if ( false !== $last_term_id && $last_term_id === $term_id ) {
 						return;
 					}
 
-					$last_term_id = $term->term_id;
-					$parents      = array();
-					$current_term = $term;
+					// Parent term names list.
+					$parent_names = array();
 
-					while ( $current_term->parent ) {
-						$current_term = get_term( $current_term->parent, self::MENU_TAX );
-						$parents[]    = esc_html( sanitize_term_field( 'name', $current_term->name, $current_term->term_id, self::MENU_TAX, 'display' ) );
+					if ( $term_id === null ) {
+						$last_term_id = null;
+						$term_name    = '';
+						$parent_count = 0;
+					} else {
+						$last_term_id = $term->term_id;
+						$term_name    = $term->name;
+						$parent_count = 0;
+						$current_term = $term;
+						while ( $current_term->parent ) {
+							++$parent_count;
+							$current_term = get_term( $current_term->parent, self::MENU_TAX );
+
+							// Add a parent term name to the list.
+							$parent_names[] = esc_html( sanitize_term_field( 'name', $current_term->name, $current_term->term_id, self::MENU_TAX, 'display' ) );
+						}
 					}
 
-					krsort( $parents );
+					// Revert sort parent term names list.
+					krsort( $parent_names );
 
 					$non_order_column_count = $wp_list_table->get_column_count() - 1;
 
@@ -135,50 +153,53 @@
 
 					$url = admin_url( $screen->parent_file );
 
-					$up_url = add_query_arg( array(
-						'action'  => 'move-menu-up',
-						'term_id' => (int) $term->term_id,
-					), wp_nonce_url( $url, 'nova_move_menu_up_' . $term->term_id ) );
+					$up_url = add_query_arg(
+						array(
+							'action'  => 'move-menu-up',
+							'term_id' => (int) $term_id,
+						),
+						wp_nonce_url( $url, 'nova_move_menu_up_' . $term_id )
+					);
 
-					$down_url = add_query_arg( array(
-						'action'  => 'move-menu-down',
-						'term_id' => (int) $term->term_id,
-					), wp_nonce_url( $url, 'nova_move_menu_down_' . $term->term_id ) );
+					$down_url = add_query_arg(
+						array(
+							'action'  => 'move-menu-down',
+							'term_id' => (int) $term_id,
+						),
+						wp_nonce_url( $url, 'nova_move_menu_down_' . $term_id )
+					);
 
 
 				// Output
 
 					?>
 
-					<tr class="no-items menu-label-row" data-term_id="<?php echo esc_attr( $term->term_id ) ?>">
+					<tr class="no-items menu-label-row" data-term_id="<?php echo esc_attr( (string) $term_id ) ?>">
 
 						<td class="colspanchange" colspan="<?php echo (int) $non_order_column_count; ?>">
 							<h3><?php
 
-								if ( ! empty( $parents ) ) {
-									echo implode( ' / ', (array) $parents ) . ' / ';
+								if ( ! empty( $parent_names ) ) {
+									echo implode( ' / ', (array) $parent_names ) . ' / ';
 								}
 
-								if ( ! is_wp_error( $term ) ) {
-
-									echo esc_html( sanitize_term_field( 'name', $term->name, $term->term_id, self::MENU_TAX, 'display' ) );
-
-									edit_term_link( esc_html__( 'edit', 'auberge' ), '<span class="edit-nova-section"><span class="dashicon dashicon-edit"></span>', '</span>', $term );
+								if ( $term instanceof \WP_Term ) {
+									echo esc_html( sanitize_term_field( 'name', $term_name, (int) $term_id, self::MENU_TAX, 'display' ) );
+									edit_term_link( __( 'edit', 'auberge' ), '<span class="edit-nova-section"><span class="dashicon dashicon-edit"></span>', '</span>', $term );
 
 								} else {
-
-									esc_html_e( 'Uncategorized' , 'auberge' );
-
+									esc_html_e( 'Uncategorized', 'auberge' );
 								}
 
 							?></h3>
 						</td>
 
 						<td>
-							<?php if ( ! is_wp_error( $term ) ) : ?>
-							<a class="nova-move-menu-up" title="<?php esc_attr_e( 'Move menu section up', 'auberge' ); ?>" href="<?php echo esc_url( $up_url ); ?>"><?php esc_html_e( 'UP', 'auberge' ); ?></a><br>
-							<a class="nova-move-menu-down" title="<?php esc_attr_e( 'Move menu section down', 'auberge' ); ?>" href="<?php echo esc_url( $down_url ); ?>"><?php esc_html_e( 'DOWN', 'auberge' ); ?></a>
-							<?php endif; ?>
+							<?php if ( $term instanceof \WP_Term ) { ?>
+							<a class="nova-move-menu-up" title="<?php esc_attr_e( 'Move menu section up', 'auberge' ); ?>" href="<?php echo esc_url( $up_url ); ?>"><?php echo esc_html_x( 'UP', 'indicates movement (up or down)', 'auberge' ); ?></a>
+							<br />
+							<a class="nova-move-menu-down" title="<?php esc_attr_e( 'Move menu section down', 'auberge' ); ?>" href="<?php echo esc_url( $down_url ); ?>"><?php echo esc_html_x( 'DOWN', 'indicates movement (up or down)', 'auberge' ); ?></a>
+							<?php } ?>
 						</td>
 
 					</tr>

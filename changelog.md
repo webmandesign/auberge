@@ -1,5 +1,18 @@
 # Auberge Changelog
 
+## 3.0.0, 20250116
+
+### Fix
+- Food Menu display in Jetpack 14+
+
+### File updates
+	changelog.md
+	readme.txt
+	style.css
+	includes/plugins/beaver-builder/beaver-builder.php
+	includes/plugins/jetpack/class-nova-restaurant.php
+
+
 ## 2.9.3, 20240915
 
 ### Updated
