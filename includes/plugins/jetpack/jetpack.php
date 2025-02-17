@@ -10,7 +10,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.1
- * @version  2.9.2
+ * @version  3.0.1
  *
  * Contents:
  *
@@ -42,59 +42,52 @@
 	 * Enables Jetpack features
 	 *
 	 * @since    1.0
-	 * @version  2.9.2
+	 * @version  3.0.1
 	 */
 	if ( ! function_exists( 'wm_jetpack' ) ) {
 		function wm_jetpack() {
 
 			// Processing
 
-				// Responsive videos
+				// Responsive videos.
+				add_theme_support( 'jetpack-responsive-videos' );
 
-					add_theme_support( 'jetpack-responsive-videos' );
+				// Infinite scroll.
+				add_theme_support( 'infinite-scroll', apply_filters( 'wmhook_wm_jetpack_infinite_scroll', array(
+					'container'      => 'posts',
+					'footer'         => false,
+					'posts_per_page' => 6,
+					'render'         => 'wm_jetpack_is_render',
+					'type'           => 'scroll',
+					'wrapper'        => false,
+				) ) );
 
-				// Infinite scroll
+				// Featured content.
+				add_theme_support( 'featured-content', apply_filters( 'wmhook_wm_jetpack_featured_content', array(
+					'featured_content_filter' => 'wm_get_banner_posts',
+					'max_posts'               => 6,
+					'post_types'              => array( 'post' ),
+				) ) );
 
-					add_theme_support( 'infinite-scroll', apply_filters( 'wmhook_wm_jetpack_infinite_scroll', array(
-							'container'      => 'posts',
-							'footer'         => false,
-							'posts_per_page' => 6,
-							'render'         => 'wm_jetpack_is_render',
-							'type'           => 'scroll',
-							'wrapper'        => false,
-						) ) );
+				// Food menu support.
+				if ( ! get_theme_mod( 'disable-food-menu', false ) ) {
 
-				// Featured content
+					add_theme_support( 'nova_menu_item' );
 
-					add_theme_support( 'featured-content', apply_filters( 'wmhook_wm_jetpack_featured_content', array(
-							'featured_content_filter' => 'wm_get_banner_posts',
-							'max_posts'               => 6,
-							'post_types'              => array( 'post' ),
-						) ) );
+					add_post_type_support( 'nova_menu_item', array( 'comments' ) );
 
-				// Food menu support
+					// Food Menu output.
+					if ( class_exists( 'WM_Nova_Restaurant' ) ) {
 
-					if ( ! get_theme_mod( 'disable-food-menu', false ) ) {
+						// Remove original Food Menu class as we replace it with enhanced one.
+						remove_action( 'init', array( 'Nova_Restaurant', 'init' ) );
+						remove_action( 'init', array( '\Automattic\Jetpack\Classic_Theme_Helper\Nova_Restaurant', 'init' ) );
 
-						add_theme_support( 'nova_menu_item' );
-
-						add_post_type_support( 'nova_menu_item', array( 'comments' ) );
-
-						// Food Menu output
-
-							if ( class_exists( 'WM_Nova_Restaurant' ) ) {
-
-								// Remove original Food Menu class as we replace it with enhanced one
-
-									remove_action( 'init', array( 'Nova_Restaurant', 'init' ) );
-
-								WM_Nova_Restaurant::init( array(
-										'menu_title_tag' => 'h2',
-									) );
-
-							}
-
+						WM_Nova_Restaurant::init( array(
+							'menu_title_tag' => 'h2',
+						) );
 					}
+				}
 
 		}
 	} // /wm_jetpack

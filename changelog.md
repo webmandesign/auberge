@@ -1,5 +1,17 @@
 # Auberge Changelog
 
+## 3.0.1, 20250217
+
+### Fix
+- Food Menu display in Jetpack 14.3+
+
+### File updates
+	changelog.md
+	readme.txt
+	style.css
+	includes/plugins/jetpack/jetpack.php
+
+
 ## 3.0.0, 20250116
 
 ### Fix
