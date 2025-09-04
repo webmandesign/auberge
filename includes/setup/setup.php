@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0
- * @version  2.9.3
+ * @version  3.0.2
  *
  * Contents:
  *
@@ -2651,7 +2651,7 @@
 		 * If the post has more tag, display the content appropriately.
 		 *
 		 * @since    1.0
-		 * @version  2.7.0
+		 * @version  3.0.2
 		 *
 		 * @param  string $excerpt
 		 */
@@ -2679,7 +2679,8 @@
 				// Processing
 
 					if (
-						! is_single( $post_id )
+						false === strpos( $excerpt, 'page-summary' )
+						&& ! is_single( $post_id )
 						&& wm_has_more_tag()
 					) {
 
